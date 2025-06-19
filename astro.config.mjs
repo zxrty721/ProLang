@@ -10,5 +10,9 @@ export default defineConfig({
   // **ต้องเป็นชื่อ Repository ของคุณ**
   base: '/ProLang',
 
+  output: 'static',
+
+  assetsPrefix: '/ProLang',
+
   integrations: [react()]
 });
