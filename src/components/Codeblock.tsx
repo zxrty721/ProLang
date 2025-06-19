@@ -32,7 +32,7 @@ const keywords = {
   php: ['abstract', 'and', 'array', 'as', 'break', 'callable', 'case', 'catch', 'class', 'clone', 'const', 'continue', 'declare', 'default', 'die', 'do', 'echo', 'else', 'elseif', 'empty', 'enddeclare', 'endfor', 'endforeach', 'endif', 'endswitch', 'endwhile', 'eval', 'exit', 'extends', 'final', 'finally', 'for', 'foreach', 'function', 'global', 'goto', 'if', 'implements', 'include', 'include_once', 'instanceof', 'insteadof', 'interface', 'isset', 'list', 'namespace', 'new', 'or', 'print', 'private', 'protected', 'public', 'require', 'require_once', 'return', 'static', 'switch', 'throw', 'trait', 'try', 'unset', 'use', 'var', 'while', 'xor', 'yield'],
   
   // Ruby
-  ruby: ['alias', 'and', 'begin', 'break', 'case', 'class', 'def', 'defined?', 'do', 'else', 'elsif', 'end', 'ensure', 'false', 'for', 'if', 'in', 'module', 'next', 'nil', 'not', 'or', 'redo', 'rescue', 'retry', 'return', 'self', 'super', 'then', 'true', 'undef', 'unless', 'until', 'when', 'while', 'yield'],
+  ruby: ['alias', 'and', 'begin', 'break', 'case', 'class', 'def', 'defined?', 'do', 'else', 'elsif', 'end', 'ensure', 'false', 'for', 'if', 'in', 'module', 'next', 'nil', 'not', 'or', 'redo', 'rescue', 'retry', 'return', 'self', 'super', 'then', 'true', 'undef', 'unless', 'until', 'when', 'while', 'yield', 'rand', 'gets', 'p', 'print', 'puts'],
   
   // Swift
   swift: ['associatedtype', 'class', 'deinit', 'enum', 'extension', 'fileprivate', 'func', 'import', 'init', 'inout', 'internal', 'let', 'open', 'operator', 'private', 'protocol', 'public', 'static', 'struct', 'subscript', 'typealias', 'var', 'break', 'case', 'continue', 'default', 'defer', 'do', 'else', 'fallthrough', 'for', 'guard', 'if', 'in', 'repeat', 'return', 'switch', 'where', 'while', 'as', 'catch', 'false', 'is', 'nil', 'rethrows', 'super', 'self', 'Self', 'throw', 'throws', 'true', 'try'],
@@ -44,7 +44,8 @@ const keywords = {
   sql: ['select', 'from', 'where', 'insert', 'update', 'delete', 'create', 'alter', 'drop', 'table', 'database', 'index', 'view', 'procedure', 'function', 'trigger', 'join', 'inner', 'left', 'right', 'full', 'outer', 'on', 'and', 'or', 'not', 'in', 'exists', 'between', 'like', 'is', 'null', 'as', 'set', 'values', 'group', 'by', 'order', 'having', 'limit', 'offset', 'union', 'intersect', 'except', 'all', 'distinct', 'count', 'sum', 'avg', 'min', 'max', 'primary', 'key', 'foreign', 'references', 'constraint', 'unique', 'check', 'default'],
   
   // Built-in types and common identifiers
-  types: ['String', 'Integer', 'Double', 'Boolean', 'char', 'byte', 'short', 'long', 'float', 'double', 'List', 'Map', 'Set', 'HashMap', 'ArrayList', 'LinkedList', 'Vector', 'Thread', 'Exception', 'System', 'console', 'document', 'window', 'Array', 'Object', 'Math', 'Date', 'RegExp', 'Error', 'Promise', 'Proxy', 'WeakSet', 'WeakMap', 'JSON', 'URL', 'URLSearchParams', 'fetch', 'XMLHttpRequest', 'alert', 'confirm', 'prompt', 'setTimeout', 'setInterval', 'clearInterval', 'clearTimeout']
+  types: ['String', 'Integer', 'Double', 'Boolean', 'char', 'byte', 'short', 'long', 'float', 'double', 'List', 'Map', 'Set', 'HashMap', 'ArrayList', 'LinkedList', 'Vector', 'Thread', 'Exception', 'System', 'console', 'document', 'window', 'Array', 'Object', 'Math', 'Date', 'RegExp', 'Error', 'Promise', 'Proxy', 'WeakSet', 'WeakMap', 'JSON', 'URL', 'URLSearchParams', 'fetch', 'XMLHttpRequest', 'alert', 'confirm', 'prompt', 'setTimeout', 'setInterval', 'clearInterval', 'clearTimeout'],
+
 };
 
 // Combine all keywords into one array

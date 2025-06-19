@@ -26,16 +26,15 @@ a {
 }
 
 .language-logo {
-  width: 3rem;  /* w-12 = 12 * 0.25rem = 3rem = 48px */
-  height: 3rem; /* h-12 = 48px */
-  /* background: linear-gradient(135deg, #3b82f6, #7c3aed);  */
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
   padding: 1rem;
-  border-radius: 0.75rem; /* rounded-xl = 12px */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: 500px; /* font-bold */
+  font-weight: 500px;
 }
 
 .logo-animate {
