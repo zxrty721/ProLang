@@ -1,0 +1,37 @@
+# C:\Users\User\Downloads\WEB-Lague\WebLang\astro.stie\.github\workflows\deploy.yml
+name: Deploy Astro Project to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Workflow จะทำงานเมื่อมีการ push โค้ดไปที่ branch 'main'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # รันบนระบบปฏิบัติการ Ubuntu ล่าสุด
+
+    permissions:
+      contents: write # ให้สิทธิ์ในการเขียนไฟล์ลงใน repository (จำเป็นสำหรับ GitHub Pages)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # ดึงโค้ดจาก repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # ใช้ Node.js เวอร์ชัน 20
+          cache: 'npm' # ใช้ cache สำหรับ npm เพื่อความเร็ว
+
+      - name: Install dependencies
+        run: npm install # ติดตั้งแพ็กเกจทั้งหมดที่ระบุใน package.json
+
+      - name: Build Astro project
+        run: npm run build # รันคำสั่ง build ของ Astro (จะสร้างโฟลเดอร์ dist/)
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4 # GitHub Action สำหรับ Deploy ไปยัง GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # ใช้โทเคนอัตโนมัติของ GitHub
+          publish_dir: ./dist # โฟลเดอร์ที่ Astro Build ออกมา
+          # cname: your-custom-domain.com # ถ้ามี Custom Domain

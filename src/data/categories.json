@@ -1,0 +1,31 @@
+[
+  {
+    "id": "general",
+    "name": "ทั่วไป",
+    "active": true
+  },
+  {
+    "id": "web",
+    "name": "Web Development"
+  },
+  {
+    "id": "mobile",
+    "name": "Mobile Development"
+  },
+  {
+    "id": "data",
+    "name": "Data Science"
+  },
+  {
+    "id": "system",
+    "name": "System Programming"
+  },
+  {
+    "id": "desktop",
+    "name": "Desktop Applications"
+  },
+  {
+    "id": "game",
+    "name": "Game Development"
+  }
+]

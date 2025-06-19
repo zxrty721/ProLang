@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+/* --- โครงสร้างพื้นฐาน --- */
+body {
+  font-family: 'Prompt', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #333;
+}
+
+/* --- Header / Footer --- */
+header, footer {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+/* --- พื้นหลังเคลื่อนไหวแบบ gradient --- */
+.gradient-bg {
+  background: linear-gradient(-45deg, #667eea, #764ba2, #6b73ff, #a855f7, #0ea5e9);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- กรอบใหญ่ (Block Container) ห่างจากพนัง --- */
+section {
+    margin: 3rem auto;
+    padding: 2.5rem;
+    max-width: 1400px;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+}
+
+/* --- การจัดเรียง Card --- */
+.sidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
