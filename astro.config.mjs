@@ -5,8 +5,8 @@ export default defineConfig({
   site: 'https://Tew0979271981.github.io',
   base: '/ProLang',
   output: 'static',
-  // assetsPrefix: '/ProLang', // <<< ลบบรรทัดนี้ออกไป!
+  // <<< ตรงนี้ต้องไม่มี assetsPrefix: '/ProLang', แล้ว
   integrations: [
     react(),
   ],
-}); 
+});
