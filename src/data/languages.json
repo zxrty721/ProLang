@@ -10,7 +10,7 @@
     "language_type": "1",
     "par": ["Procedural"],
     "cateid": [2],
-    "logo": "/img/c.png",
+    "logo": "c.png",
     "uses": ["ระบบปฏิบัติการ", "Embedded systems", "Compiler", "Firmware", "Driver"],
     "pros": [
       "ประสิทธิภาพสูงมาก",
@@ -110,7 +110,7 @@
     "level": "2",
     "par": ["Object-oriented", "Generic", "Imperative"],
     "cateid": [4, 6],
-    "logo": "/img/c-plus.png",
+    "logo": "c-plus.png",
     "uses": ["Operating Systems", "Games", "Embedded Systems", "Performance-critical Apps", "Compilers"],
     "pros": [
       "Performance สูงมาก - ใกล้เคียง machine code",
@@ -224,7 +224,7 @@
     "level": "4",
     "par": ["Object-oriented", "Event-driven"],
     "cateid": [1, 3],
-    "logo": "/img/c-sharp.png",
+    "logo": "c-sharp.png",
     "uses": ["Desktop App", "Web App (.NET)", "เกม (Unity)", "Mobile App (Xamarin)"],
     "pros": [
       "เป็นภาษาที่มีโครงสร้างดี เข้าใจง่าย",
@@ -326,7 +326,7 @@
     "level": "4",
     "par": ["Object-oriented", "Functional", "Event-driven"],
     "cateid": [1],
-    "logo": "/img/js.gif",
+    "logo": "js.gif",
     "uses": ["เว็บไซต์", "เว็บแอป", "Server (Node.js)", "แอปมือถือ", "Desktop Apps"],
     "pros": [
       "ไม่ต้องคอมไพล์ รันได้ทันที",
@@ -445,7 +445,7 @@
     "level": "4",
     "par": ["Object-oriented", "Imperative", "Functional"],
     "cateid": [1, 3],
-    "logo": "/img/python.png",
+    "logo": "python.png",
     "uses": ["Data Science", "AI/ML", "Web Backend", "Automation", "Scientific Computing"],
     "pros": [
       "Syntax ที่อ่านง่ายและเรียนรู้ง่าย",
@@ -560,7 +560,7 @@
     "level": "4",
     "par": ["Object-oriented", "Class-based"],
     "cateid": [2, 5],
-    "logo": "/img/java.png",
+    "logo": "java.png",
     "uses": ["Enterprise Apps", "Android Apps", "Web Backend", "Desktop Apps", "Big Data"],
     "pros": [
       "Platform independent (Write Once, Run Anywhere)",
@@ -670,7 +670,7 @@
     "level": "3",
     "par": ["Object-oriented", "Functional", "Protocol-oriented"],
     "cateid": [2],
-    "logo": "/img/swift.png",
+    "logo": "swift.png",
     "uses": ["iOS Apps", "macOS Apps", "watchOS Apps", "tvOS Apps", "Server-side"],
     "pros": [
       "Modern syntax ที่อ่านง่าย",
@@ -783,7 +783,7 @@
     "level": "4",
     "par": ["Object-oriented", "Functional"],
     "cateid": [2, 1],
-    "logo": "/img/kotlin.png",
+    "logo": "kotlin.png",
     "uses": ["Android Apps", "Web Backend", "Desktop Apps", "Cross-platform Mobile", "Server-side"],
     "pros": [
       "100% interoperable กับ Java",
@@ -897,7 +897,7 @@
     "level": "5",
     "par": ["Component-based", "Reactive"],
     "cateid": [1],
-    "logo": "/img/svelte.png",
+    "logo": "svelte.png",
     "uses": ["เว็บไซต์", "Single Page Apps", "Progressive Web Apps", "High-Performance Apps"],
     "pros": [
       "No Virtual DOM - ประสิทธิภาพสูง",
@@ -987,7 +987,7 @@
     "level": "3",
     "par": ["Imperative", "Concurrent"],
     "cateid": [1, 4],
-    "logo": "/img/go.png",
+    "logo": "go.png",
     "uses": ["Web Backend", "Microservices", "Cloud Services", "DevOps Tools", "Network Programming"],
     "pros": [
       "Fast compilation และ execution",
@@ -1094,7 +1094,7 @@
     "level": "3",
     "par": ["Imperative", "Functional", "Concurrent"],
     "cateid": [4],
-    "logo": "/img/rust.jfif",
+    "logo": "rust.jfif",
     "uses": ["Operating Systems", "Web Browsers", "Game Engines", "Blockchain", "WebAssembly"],
     "pros": [
       "Memory safety without garbage collection",
@@ -1204,7 +1204,7 @@
     "level": "4",
     "par": ["Object-oriented", "Functional", "Type-safe"],
     "cateid": [1, 5],
-    "logo": "/img/typescript.png",
+    "logo": "typescript.png",
     "uses": ["Large Web Apps", "Enterprise Software", "Node.js Backend", "React/Angular Apps"],
     "pros": [
       "Static type checking prevents runtime errors",
@@ -1297,7 +1297,7 @@
     "level": "5",
     "par": ["Imperative", "Functional", "Procedural"],
     "cateid": [4, 6],
-    "logo": "/img/lua.gif",
+    "logo": "lua.gif",
     "uses": ["Game Scripting", "Embedded Systems", "Roblox Development", "Configuration", "Scripting APIs"],
     "pros": [
       "Very lightweight และ fast",
@@ -1410,7 +1410,7 @@
       "level": "4",
       "par": ["Object-oriented", "Reflective"],
       "cateid": [1],
-      "logo": "/img/ruby.png",
+      "logo": "ruby.png",
       "uses": ["Web Development", "Scripting", "Automation", "DevOps Tools"],
       "pros": [
         "Very readable และ expressive syntax",
@@ -1478,7 +1478,7 @@
       "level": "1",
       "par": ["Imperative"],
       "cateid": [4],
-      "logo": "/img/asm.png",
+      "logo": "asm.png",
       "uses": ["Embedded Systems", "OS Kernels", "Reverse Engineering", "Performance Optimization"],
       "pros": [
         "Maximum performance และ efficiency",
@@ -1546,7 +1546,7 @@
       "level": "5",
       "par": ["Logic"],
       "cateid": [3],
-      "logo": "/img/prolang.png",
+      "logo": "prolang.png",
       "uses": ["AI", "Expert Systems", "NLP", "Symbolic Reasoning"],
       "pros": [
         "Excellent for logical reasoning",
@@ -1614,7 +1614,7 @@
       "level": "5",
       "par": ["Functional", "Vectorized"],
       "cateid": [3],
-      "logo": "/img/r.png",
+      "logo": "r.png",
       "uses": ["Statistics", "Data Analysis", "Machine Learning", "Data Visualization"],
       "pros": [
         "Excellent สำหรับ statistical analysis",
@@ -1682,7 +1682,7 @@
       "level": "5",
       "par": ["Pure Functional", "Lazy Evaluation"],
       "cateid": [3],
-      "logo": "/img/haskell.png",
+      "logo": "haskell.png",
       "uses": ["Academic Research", "Compilers", "Formal Verification", "Blockchain"],
       "pros": [
         "Pure functional programming - no side effects",
@@ -1752,7 +1752,7 @@
       "level": "3",
       "par": ["Declarative"],
       "cateid": [4],
-      "logo": "/img/sql.png",
+      "logo": "sql.png",
       "uses": ["จัดการฐานข้อมูล", "Business Intelligence", "Data Analysis", "Data Warehouse"],
       "pros": [
         "ใช้งานง่าย มีโครงสร้างชัดเจน",
@@ -1808,7 +1808,7 @@
       "level": "3",
       "par": ["Imperative", "Object-oriented", "Scripting"],
       "cateid": [1],
-      "logo": "/img/php.png",
+      "logo": "php.png",
       "uses": ["เว็บไซต์", "ระบบจัดการเนื้อหา (CMS)", "Web API", "Backend"],
       "pros": [
         "เรียนรู้ได้ง่าย",
@@ -1864,7 +1864,7 @@
       "level": "4",
       "par": ["Object-oriented", "Imperative"],
       "cateid": [3],
-      "logo": "/img/obj-c.jpg",
+      "logo": "obj-c.jpg",
       "uses": ["iOS/macOS Apps", "ระบบ Apple Legacy", "Cocoa / Cocoa Touch"],
       "pros": [
         "ทำงานร่วมกับ C ได้อย่างราบรื่น",
@@ -1918,7 +1918,7 @@
       "level": "5",
       "par": ["Functional", "Object-oriented"],
       "cateid": [2, 4],
-      "logo": "/img/scala.png",
+      "logo": "scala.png",
       "uses": ["Big Data (Apache Spark)", "Web Backend", "Distributed Systems", "JVM-based Apps"],
       "pros": [
         "สนับสนุน Functional และ OOP พร้อมกัน",
@@ -1973,7 +1973,7 @@
       "level": "2",
       "par": ["Scripting", "Procedural"],
       "cateid": [5],
-      "logo": "/img/bash.jfif",
+      "logo": "bash.jfif",
       "uses": ["ระบบอัตโนมัติ", "DevOps", "System Administration", "CI/CD"],
       "pros": [
         "เหมาะกับการเขียนสคริปต์อัตโนมัติ",
@@ -2026,7 +2026,7 @@
       "level": "3",
       "par": ["Object-oriented", "Class-based"],
       "cateid": [1, 4],
-      "logo": "/img/dart.png",
+      "logo": "dart.png",
       "uses": ["แอปมือถือ (Flutter)", "Web", "Backend", "Cross-platform apps"],
       "pros": [
         "เขียนแอปได้ทั้ง iOS และ Android ด้วยโค้ดชุดเดียว",
@@ -2084,7 +2084,7 @@
       "level": "4",
       "par": ["Procedural", "Low-level", "Manual memory management"],
       "cateid": [2],
-      "logo": "/img/zig.svg",
+      "logo": "zig.svg",
       "uses": ["System programming", "Game development", "Embedded systems", "Build tools"],
       "pros": [
         "เร็วระดับ C แต่ปลอดภัยกว่า",
@@ -2140,7 +2140,7 @@
       "level": "1",
       "par": ["Markup Language"],
       "cateid": [3],
-      "logo": "/img/html.jfif",
+      "logo": "html.jfif",
       "uses": ["เว็บไซต์", "เว็บแอป", "Mobile Web", "เอกสารอิเล็กทรอนิกส์"],
       "pros": [
         "เป็นพื้นฐานของเว็บไซต์ทั้งหมด",
@@ -2195,7 +2195,7 @@
       "level": "1",
       "par": ["Style Sheet Language"],
       "cateid": [3],
-      "logo": "/img/css.svg",
+      "logo": "css.svg",
       "uses": ["เว็บไซต์", "เว็บแอป", "Mobile Web"],
       "pros": [
         "แยกการจัดรูปแบบออกจากโครงสร้าง HTML",
@@ -2249,7 +2249,7 @@
       "level": "3",
       "par": ["Procedural", "Declarative"],
       "cateid": [3],
-      "logo": "/img/pl-sql.webp",
+      "logo": "pl-sql.webp",
       "uses": ["Database Programming", "Stored Procedure", "Trigger", "Function"],
       "pros": [
         "สามารถเขียน logic ซับซ้อนได้ใน SQL",
@@ -2301,7 +2301,7 @@
       "level": "3",
       "par": ["Procedural", "Declarative"],
       "cateid": [3],
-      "logo": "/img/tsql.png",
+      "logo": "tsql.png",
       "uses": ["Query Database", "Stored Procedures", "Trigger", "Report"],
       "pros": [
         "มีฟีเจอร์ครบสำหรับ SQL Server",
@@ -2353,7 +2353,7 @@
       "level": "3",
       "par": ["Scripting", "Object-oriented"],
       "cateid": [4],
-      "logo": "/img/powershell.png",
+      "logo": "powershell.png",
       "uses": ["Automation", "System Admin", "DevOps", "Script Task", "CI/CD"],
       "pros": [
         "จัดการ Windows ได้ลึก",
@@ -2408,7 +2408,7 @@
       "level": "2",
       "par": ["Scripting"],
       "cateid": [4],
-      "logo": "/img/zsh.jfif",
+      "logo": "zsh.jfif",
       "uses": ["Terminal Automation", "Command Line", "Script Jobs"],
       "pros": [
         "สั่งงานง่ายและ customizable",
@@ -2462,7 +2462,7 @@
       "level": "2",
       "par": ["Scripting"],
       "cateid": [5],
-      "logo": "/img/npm.jfif",
+      "logo": "npm.jfif",
       "uses": ["Build Tools", "Frontend Dev", "Automation", "Dev Task"],
       "pros": [
         "ใช้ง่าย ไม่ต้องติดตั้งเพิ่ม",

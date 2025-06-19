@@ -15,7 +15,7 @@ export default function LanguageCard({
     <div className={`card ${isSelected ? 'active' : ''}`} onClick={onClick}>
       {/* ใช้ language.logo สำหรับ src ของรูปภาพ และเพิ่ม onError สำหรับ fallback */}
       <img
-        src={language.logo}
+        src={import.meta.env.BASE_URL + language.logo}
         alt={`${language.name} logo`}
         className="language-logo logo-animate"
         onError={(e) => {

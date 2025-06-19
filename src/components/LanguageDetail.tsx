@@ -79,7 +79,7 @@ return (
     <div className="flex items-center space-x-4 mb-8 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 p-6 rounded-xl">
       <div className="relative">
         <img
-          src={language.logo}
+        src={import.meta.env.BASE_URL + language.logo}
           alt={`${language.name} logo`}
           className="logo-detail logo-animate w-16 h-16 object-contain"
           onError={(e) => {
