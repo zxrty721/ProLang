@@ -1,10 +1,7 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
-import github from '@astrojs/github';
 
+// https://astro.build/config
 export default defineConfig({
-  output: 'static', // ✅ สำคัญสำหรับ GitHub Pages
-  site: 'https://Tew0979271981.github.io', // ✅ ใส่ URL ของ GitHub Pages (user.github.io)
-  base: '/ProLang/', // ✅ ต้องมี / ข้างหน้าและข้างหลัง
-  integrations: [github()],
+  site: 'https://Tew0979271981.github.io', // **ต้องเป็นชื่อผู้ใช้ GitHub ของคุณ**
+  base: '/ProLang', // **ต้องเป็นชื่อ Repository ของคุณ**
 });
