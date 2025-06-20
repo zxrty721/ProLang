@@ -27,10 +27,10 @@ export default function LanguageCard({
       <div className="language-name">{language.name}</div>
       <div className="language-desc">{language.desc.substring(0, 80)}...</div> {/* ใช้ .desc */}
       <div className="language-meta">
-        <div>
+        <div className="flex flex-wrap gap-2">
           {/* ใช้ .par */}
           {language.par.map((paradigm, i) => (
-            <span key={i} className="paradigm">{paradigm}</span>
+            <span key={i} className="tag text-xs bg-gray-50 rounded-xl p-2 shadow-sm">{paradigm}</span>
           ))}
         </div>
         {/* ใช้ .level และ getDifficultyClass(language.level) */}

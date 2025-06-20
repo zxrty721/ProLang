@@ -1,6 +1,5 @@
 ---
 // src/layouts/BaseLayout.astro
-const { WebLang } = Astro.props;
 import '../styles/global.css';
 import '../styles/cards.css';
 import '../styles/detail.css';
@@ -16,15 +15,15 @@ import '../styles/codeblock.css';
   <body>
 
     <header class="gradient-bg">
-      <h1>🚀 Programming Languages Guide 🌐</h1>
-      <h2>เรียนรู้และเลือกภาษาโปรแกรมมิ่งที่เหมาะสมกับความต้องการของคุณ</h2>
+      <h1 class="text-5xl">🚀 Programming Languages Guide 🌐</h1>
+      <h2 class="text-2xl mt-6">เรียนรู้และเลือกภาษาโปรแกรมมิ่งที่เหมาะสมกับความต้องการของคุณ</h2>
     </header>
 
     <main>
         <slot />
     </main>
 
-    <footer class="gradient-bg">
+    <footer class="gradient-bg text-3xl">
       © 2025 ProLang นายทัศมา ภูลายยาว
     </footer>
 
