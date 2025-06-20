@@ -12,7 +12,7 @@ export default function LanguageCard({
   onClick: () => void;
 }) {
   return (
-    <div className={`card ${isSelected ? 'active' : ''}`} onClick={onClick}>
+    <div className={`card ${isSelected ? 'active' : ''} ${getDifficultyClass(language.level)}`} onClick={onClick}>
       {/* ใช้ language.logo สำหรับ src ของรูปภาพ และเพิ่ม onError สำหรับ fallback */}
       <img
         src={import.meta.env.BASE_URL + language.logo}
@@ -27,14 +27,14 @@ export default function LanguageCard({
       <div className="language-name">{language.name}</div>
       <div className="language-desc">{language.desc.substring(0, 80)}...</div> {/* ใช้ .desc */}
       <div className="language-meta">
-        <div className="flex flex-wrap gap-2">
+        <div>
           {/* ใช้ .par */}
           {language.par.map((paradigm, i) => (
             <span key={i} className="paradigm">{paradigm}</span>
           ))}
         </div>
         {/* ใช้ .level และ getDifficultyClass(language.level) */}
-        <span className={`lang-level ${getDifficultyClass(language.level)}`}>
+        <span className={`lang-level level-animate ${getDifficultyClass(language.level)}`}>
           {getDifficultyClass(language.level)} {/* แสดงระดับความยาก */}
         </span>
       </div>

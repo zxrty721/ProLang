@@ -1,4 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+@import "tailwindcss";
 
 /* --- โครงสร้างพื้นฐาน --- */
 body {
@@ -15,6 +18,7 @@ header, footer {
   text-align: center;
   padding: 2rem;
   font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 /* --- พื้นหลังเคลื่อนไหวแบบ gradient --- */
@@ -29,17 +33,6 @@ header, footer {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
-/* --- กรอบใหญ่ (Block Container) ห่างจากพนัง --- */
-section {
-    margin: 3rem auto;
-    padding: 2.5rem;
-    max-width: 1400px;
-    background-color: white;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.08);
-}
-
 /* --- การจัดเรียง Card --- */
 .sidebar {
     display: grid;

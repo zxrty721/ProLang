@@ -20,9 +20,9 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
   };
 
   return (
-    <div className="container flex flex-col md:flex-row p-4 md:p-8 space-y-4 md:space-y-0 md:space-x-8 min-h-screen font-inter">
+    <div className="mx-auto my-12 p-10 max-w-[1400px] bg-white rounded-3xl shadow-xl">
       {/* ส่วนของการ์ดภาษา (sidebar) */}
-      <section className="sidebar w-full md:w-1/3 p-4 bg-gray-100 rounded-lg shadow-md overflow-y-auto max-h-[90vh]">
+      <section className="sidebar">
         {/* ลบคำว่า "เลือกภาษา" ออกจากหัวข้อ */}
         {languages && languages.length > 0 ? (
           languages.map(lang => (
@@ -38,15 +38,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
         )}
       </section>
 
-      {/* ส่วนของรายละเอียดภาษา (content) - ในกรณีนี้คือพื้นที่หลักของหน้า ไม่ใช่ Modal */}
-      {/* ส่วนนี้จะว่างเปล่าเมื่อ LanguageDetail แสดงเป็น Modal */}
-      <div className="content w-full md:w-2/3 p-4 bg-white rounded-lg shadow-md flex items-center justify-center">
-        {!selectedLanguage && ( // แสดงข้อความเมื่อยังไม่มี Modal เปิดอยู่
-          <div className="text-gray-500 text-lg p-4">
-            แตะการ์ดเพื่อดูรายละเอียด
-          </div>
-        )}
-      </div>
+      
 
       {/* Modal Overlay และ LanguageDetail */}
       {/* จะแสดงก็ต่อเมื่อ selectedLanguage มีค่า (มีการเลือกการ์ด) */}

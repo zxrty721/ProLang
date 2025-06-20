@@ -1,12 +1,10 @@
 ---
 // src/layouts/BaseLayout.astro
 const { WebLang } = Astro.props;
-import '../assets/global.css';
-import '../assets/cards.css';
-import '../assets/detail.css';
-import '../assets/codeblock.css';
-
-import languagesData from '../data/languages.json';
+import '../styles/global.css';
+import '../styles/cards.css';
+import '../styles/detail.css';
+import '../styles/codeblock.css';
 
 ---
 
@@ -27,7 +25,7 @@ import languagesData from '../data/languages.json';
     </main>
 
     <footer class="gradient-bg">
-      © 2025 ProLang
+      © 2025 ProLang นายทัศมา ภูลายยาว
     </footer>
 
   </body>

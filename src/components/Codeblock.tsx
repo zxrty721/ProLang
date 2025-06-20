@@ -168,7 +168,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
       const beforeTokens = beforeArrow ? highlightInlineContent(beforeArrow, lineIndex, 0) : [];
       
       return (
-        <div key={lineIndex} className="code-line">
+        <div key={lineIndex} className="ine">
           {beforeTokens}
           <span className="code-comment">{arrowComment}</span>
         </div>
@@ -181,7 +181,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const firstSpaceIdx = line.indexOf(" ");
         if (firstSpaceIdx === -1) {
           return (
-            <div key={lineIndex} className="code-line">
+            <div key={lineIndex} className="ine">
               <span className="code-variable-type">{line}</span>
             </div>
           );
@@ -190,7 +190,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const restLine = line.substring(firstSpaceIdx + 1);
 
         return (
-          <div key={lineIndex} className="code-line">
+          <div key={lineIndex} className="ine">
             <span className="code-variable-type">{firstWord}</span>
             <span> </span>
             {highlightInlineContent(restLine, lineIndex, firstSpaceIdx + 1)}
@@ -202,7 +202,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const firstSpaceIdx = line.indexOf(" ");
         if (firstSpaceIdx === -1) {
           return (
-            <div key={lineIndex} className="code-line">
+            <div key={lineIndex} className="ine">
               <span className="code-function-name">{line}</span>
             </div>
           );
@@ -211,7 +211,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const restLine = line.substring(firstSpaceIdx + 1);
 
         return (
-          <div key={lineIndex} className="code-line">
+          <div key={lineIndex} className="ine">
             <span className="code-function-name">{firstWord}</span>
             <span> </span>
             {highlightInlineContent(restLine, lineIndex, firstSpaceIdx + 1)}
@@ -223,7 +223,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const firstSpaceIdx = line.indexOf(" ");
         if (firstSpaceIdx === -1) {
           return (
-            <div key={lineIndex} className="code-line">
+            <div key={lineIndex} className="ine">
               <span className="code-syntax-keyword">{line}</span>
             </div>
           );
@@ -232,7 +232,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const restLine = line.substring(firstSpaceIdx + 1);
 
         return (
-          <div key={lineIndex} className="code-line">
+          <div key={lineIndex} className="ine">
             <span className="code-syntax-keyword">{firstWord}</span>
             <span> </span>
             {highlightInlineContent(restLine, lineIndex, firstSpaceIdx + 1)}
@@ -242,7 +242,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
 
       case "frameworks": {
         return (
-          <div key={lineIndex} className="code-line">
+          <div key={lineIndex} className="ine">
             <span className="code-framework">{line}</span>
           </div>
         );
@@ -270,7 +270,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         });
 
         return (
-          <div key={lineIndex} className="code-line">
+          <div key={lineIndex} className="ine">
             {elements}
           </div>
         );
@@ -351,7 +351,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
           );
         }
 
-        return <div key={lineIndex} className="code-line">{tokens}</div>;
+        return <div key={lineIndex} className="ine">{tokens}</div>;
       }
     }
   };
