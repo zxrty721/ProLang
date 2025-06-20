@@ -32,7 +32,7 @@ const keywords = {
   sql: ['select', 'from', 'where', 'insert', 'update', 'delete', 'create', 'alter', 'drop', 'table', 'database', 'index', 'view', 'procedure', 'function', 'trigger', 'join', 'inner', 'left', 'right', 'full', 'outer', 'on', 'and', 'or', 'not', 'in', 'exists', 'between', 'like', 'is', 'null', 'as', 'set', 'values', 'group', 'by', 'order', 'having', 'limit', 'offset', 'union', 'intersect', 'except', 'all', 'distinct', 'count', 'sum', 'avg', 'min', 'max', 'primary', 'key', 'foreign', 'references', 'constraint', 'unique', 'check', 'default'],
   
   types: ['String', 'Integer', 'Double', 'Boolean', 'char', 'byte', 'short', 'long', 'float', 'double', 'List', 'Map', 'Set', 'HashMap', 'ArrayList', 'LinkedList', 'Vector', 'Thread', 'Exception', 'System', 'console', 'document', 'window', 'Array', 'Object', 'Math', 'Date', 'RegExp', 'Error', 'Promise', 'Proxy', 'WeakSet', 'WeakMap', 'JSON', 'URL', 'URLSearchParams', 'fetch', 'XMLHttpRequest', 'alert', 'confirm', 'prompt', 'setTimeout', 'setInterval', 'clearInterval', 'clearTimeout'],
-
+  
 };
 
 // Combine all keywords into one array
@@ -168,7 +168,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
       const beforeTokens = beforeArrow ? highlightInlineContent(beforeArrow, lineIndex, 0) : [];
       
       return (
-        <div key={lineIndex} className="ine">
+        <div key={lineIndex} className="code-line">
           {beforeTokens}
           <span className="code-comment">{arrowComment}</span>
         </div>
@@ -181,7 +181,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const firstSpaceIdx = line.indexOf(" ");
         if (firstSpaceIdx === -1) {
           return (
-            <div key={lineIndex} className="ine">
+            <div key={lineIndex} className="code-line">
               <span className="code-variable-type">{line}</span>
             </div>
           );
@@ -190,7 +190,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const restLine = line.substring(firstSpaceIdx + 1);
 
         return (
-          <div key={lineIndex} className="ine">
+          <div key={lineIndex} className="code-line">
             <span className="code-variable-type">{firstWord}</span>
             <span> </span>
             {highlightInlineContent(restLine, lineIndex, firstSpaceIdx + 1)}
@@ -202,7 +202,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const firstSpaceIdx = line.indexOf(" ");
         if (firstSpaceIdx === -1) {
           return (
-            <div key={lineIndex} className="ine">
+            <div key={lineIndex} className="code-line">
               <span className="code-function-name">{line}</span>
             </div>
           );
@@ -211,7 +211,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const restLine = line.substring(firstSpaceIdx + 1);
 
         return (
-          <div key={lineIndex} className="ine">
+          <div key={lineIndex} className="code-line">
             <span className="code-function-name">{firstWord}</span>
             <span> </span>
             {highlightInlineContent(restLine, lineIndex, firstSpaceIdx + 1)}
@@ -223,7 +223,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const firstSpaceIdx = line.indexOf(" ");
         if (firstSpaceIdx === -1) {
           return (
-            <div key={lineIndex} className="ine">
+            <div key={lineIndex} className="code-line">
               <span className="code-syntax-keyword">{line}</span>
             </div>
           );
@@ -232,7 +232,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         const restLine = line.substring(firstSpaceIdx + 1);
 
         return (
-          <div key={lineIndex} className="ine">
+          <div key={lineIndex} className="code-line">
             <span className="code-syntax-keyword">{firstWord}</span>
             <span> </span>
             {highlightInlineContent(restLine, lineIndex, firstSpaceIdx + 1)}
@@ -242,7 +242,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
 
       case "frameworks": {
         return (
-          <div key={lineIndex} className="ine">
+          <div key={lineIndex} className="code-line">
             <span className="code-framework">{line}</span>
           </div>
         );
@@ -270,7 +270,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
         });
 
         return (
-          <div key={lineIndex} className="ine">
+          <div key={lineIndex} className="code-line">
             {elements}
           </div>
         );
@@ -295,7 +295,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
 
           const token = match[0];
           let className = "code-text";
-
+          
           if (match[1]) {
             // Comments (รวมถึง => comments)
             className = "code-comment";
@@ -351,7 +351,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ content, typecontent }) =>
           );
         }
 
-        return <div key={lineIndex} className="ine">{tokens}</div>;
+        return <div key={lineIndex} className="code-line">{tokens}</div>;
       }
     }
   };

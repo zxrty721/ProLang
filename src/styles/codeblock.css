@@ -1,213 +1,214 @@
-/* Base code block styling */
-.code-block-container {
-    background: #1e1e1e;
-    border-radius: 8px;
-    padding: 16px;
-    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow-x: auto;
-    margin: 16px 0;
-    border: 1px solid #333;
+/* CodeBlock Container */
+.code-block-container { 
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.code-content {
+  display: block;
+}
+
+.code-line {
+  line-height: 1.6;
+  min-height: 1.6em;
+}
+
+/* Syntax Highlighting Colors */
+.code-text {
+  color: #0a3e86;
+}
+
+.code-comment {
+  color: #059669;
+  font-style: italic;
+}
+
+.code-string {
+  color: #f59e0b;
+}
+
+.code-number {
+  color: #3b82f6;
+}
+
+.code-tag {
+  color: #8b5cf6;
+}
+
+.code-operator {
+  color: #4b73e4;
+  font-weight: 500;
+}
+
+.code-function {
+  color: #eab308;
+  font-weight: 600;
+}
+
+.code-keyword-primary {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.code-keyword-sql {
+  color: #ec4899;
+  font-weight: 600;
+}
+
+.code-keyword-type {
+  color: #06b6d4;
+  font-weight: 600;
+}
+
+.code-keyword-literal {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.code-property {
+  color: #6366f1;
+}
+
+.code-identifier {
+  color: #ae50bb;
+}
+
+/* Type-specific Highlighting */
+.code-variable-type {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.code-function-name {
+  color: #ca8a04;
+  font-weight: 700;
+}
+
+.code-syntax-keyword {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.code-framework {
+  color: #059669;
+  font-weight: 600;
+}
+
+.code-url {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .code-block-container {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #06b6d4;
   }
   
-  .code-line {
-    display: block;
-    min-height: 1.5em;
-  }
-  
-  /* Default text color */
   .code-text {
-    color: #d4d4d4;
+    color: #f9fafb;
   }
   
-  /* Enhanced syntax highlighting for 40+ languages */
   .code-comment {
-    color: #6a9955;
-    font-style: italic;
+    color: #10b981;
   }
   
   .code-string {
-    color: #ce9178;
+    color: #fbbf24;
   }
   
   .code-number {
-    color: #b5cea8;
+    color: #eeff00;
   }
   
   .code-tag {
-    color: #569cd6;
+    color: #a78bfa;
   }
   
   .code-operator {
-    color: #d4d4d4;
+    color: #9ca3af;
   }
   
   .code-function {
-    color: #dcdcaa;
+    color: #facc15;
   }
   
-  .code-keyword-general {
-    color: #569cd6;
-    font-weight: bold;
+  .code-keyword-primary {
+    color: #3b82f6;
   }
   
   .code-keyword-sql {
-    color: #c586c0;
-    font-weight: bold;
+    color: #f472b6;
   }
   
   .code-keyword-type {
-    color: #4ec9b0;
-    font-weight: bold;
+    color: #c522ee;
   }
   
   .code-keyword-literal {
-    color: #569cd6;
-    font-weight: bold;
+    color: #f87171;
   }
   
   .code-property {
-    color: #9cdcfe;
+    color: #818cf8;
   }
   
   .code-identifier {
-    color: #9cdcfe;
+    color: #d1d5db;
   }
   
-  /* Type-specific styling for first words */
-  
-  /* Variables - Blue theme */
   .code-variable-type {
-    color: #4FC3F7;
-    font-weight: bold;
-    background: rgba(79, 195, 247, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border-left: 3px solid #4FC3F7;
+    color: #a855f7;
   }
   
-  /* Functions - Green theme */
   .code-function-name {
-    color: #66BB6A;
-    font-weight: bold;
-    background: rgba(102, 187, 106, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border-left: 3px solid #66BB6A;
+    color: #eab308;
   }
   
-  /* Syntax - Purple theme */
   .code-syntax-keyword {
-    color: #AB47BC;
-    font-weight: bold;
-    background: rgba(171, 71, 188, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border-left: 3px solid #AB47BC;
+    color: #3b82f6;
   }
   
-  /* Frameworks - Orange theme */
   .code-framework {
-    color: #FF9800;
-    font-weight: bold;
-    background: rgba(255, 152, 0, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border-left: 3px solid #FF9800;
-    display: inline-block;
+    color: #10b981;
   }
   
-  /* Learning Resources - Teal theme */
   .code-url {
-    color: #26A69A;
-    text-decoration: underline;
-    background: rgba(38, 166, 154, 0.1);
-    padding: 2px 4px;
-    border-radius: 4px;
+    color: #60a5fa;
   }
-  
-  .code-url:hover {
-    background: rgba(38, 166, 154, 0.2);
-    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .code-block-container {
+    font-size: 12px;
+    padding: 12px;
   }
-  
-  /* Enhanced styling for different contexts */
-  
-  /* Variables section enhanced colors */
-  .code-block-container[data-type="variables"] {
-    border-left: 4px solid #4FC3F7;
-    background: linear-gradient(135deg, #1e1e1e 0%, #1a1a2e 100%);
-  }
-  
-  .code-block-container[data-type="variables"] .code-keyword-general {
-    color: #81C784;
-  }
-  
-  /* Functions section enhanced colors */
-  .code-block-container[data-type="functions"] {
-    border-left: 4px solid #66BB6A;
-    background: linear-gradient(135deg, #1e1e1e 0%, #1e2e1a 100%);
-  }
-  
-  .code-block-container[data-type="functions"] .code-operator {
-    color: #FFB74D;
-  }
-  
-  /* Syntax section enhanced colors */
-  .code-block-container[data-type="syntax"] {
-    border-left: 4px solid #AB47BC;
-    background: linear-gradient(135deg, #1e1e1e 0%, #2e1a2e 100%);
-  }
-  
-  .code-block-container[data-type="syntax"] .code-string {
-    color: #F8BBD9;
-  }
-  
-  /* Frameworks section enhanced colors */
-  .code-block-container[data-type="frameworks"] {
-    border-left: 4px solid #FF9800;
-    background: linear-gradient(135deg, #1e1e1e 0%, #2e1e1a 100%);
-  }
-  
-  /* Learning resources section enhanced colors */
-  .code-block-container[data-type="learning_resources"] {
-    border-left: 4px solid #26A69A;
-    background: linear-gradient(135deg, #1e1e1e 0%, #1a2e2a 100%);
-  }
-  
-  .code-block-container[data-type="learning_resources"] .code-text {
-    color: #B2DFDB;
-  }
-  .code-operator {
-    color: #f92672; /* สีชมพูสำหรับ operators */
-    font-weight: bold;
-  }
-  /* Hover effects */
-  .code-variable-type:hover,
-  .code-function-name:hover,
-  .code-syntax-keyword:hover,
-  .code-framework:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
-  }
-  
-  /* Scrollbar styling */
-  .code-block-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .code-block-container::-webkit-scrollbar-track {
-    background: #2d2d2d;
-    border-radius: 4px;
-  }
-  
-  .code-block-container::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 4px;
-  }
-  
-  .code-block-container::-webkit-scrollbar-thumb:hover {
-    background: #777;
-  }
+}
+
+/* Scrollbar styling */
+.code-block-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.code-block-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.code-block-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
