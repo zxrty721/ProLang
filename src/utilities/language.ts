@@ -7,10 +7,11 @@ export interface Language {
   by: string;
   yr: string;
   level: string;
-  par: string[];
+  salary: 'entry' | 'mid' | 'high';
+  par: string[]; // เช่น ['backend', 'system']
   cateid: number[];
   logo: string;
-  uses: string[];
+  fields: string[];
   pros: string[];
   cons: string[];
   

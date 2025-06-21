@@ -126,11 +126,11 @@ return (
     </div>
 
     {/* ใช้ทำอะไรบ้าง */}
-    {language.uses && language.uses.length > 0 && (
+    {language.fields && language.fields.length > 0 && (
       <div className="section mb-8">
         <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง</h2>
         <div className="badge-group flex flex-wrap gap-2">
-          {language.uses.map((use, idx) => (
+          {language.fields.map((use, idx) => (
             <span key={idx} className="badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">{use}</span>
           ))}
         </div>
@@ -162,8 +162,8 @@ return (
         🧠 ข้อมูลทั่วไป
       </h2>
       
-      {language.uses && language.uses.length > 0 && (
-        <InfoSection title="การใช้งานหลัก" items={language.uses} color="text-blue-700" emoji='🚀' />
+      {language.fields && language.fields.length > 0 && (
+        <InfoSection title="การใช้งานหลัก" items={language.fields} color="text-blue-700" emoji='🚀' />
       )}
       
       {language.pros && language.pros.length > 0 && (

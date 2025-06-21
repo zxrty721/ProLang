@@ -1,61 +1,117 @@
-import React, { useState, useEffect } from 'react';
-import LanguageCard from './LanguageCard'; // นำเข้า LanguageCard
-import LanguageDetail from './LanguageDetail'; // นำเข้า LanguageDetail
-import type { Language } from '../utilities/language'; // นำเข้าประเภท Language
+// InteractiveCardSection.tsx
+import React, { useState } from 'react'; 
+import LanguageCard from './LanguageCard';
+import LanguageDetail from './LanguageDetail';
+import FilterPanel from './FilterPanel';
+import { getDifficultyClass } from '../utilities/card';
+import type { Language } from '../utilities/language';
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
-  // selectedLanguage จะเก็บข้อมูลภาษาที่ถูกเลือกสำหรับ Modal
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
+  const [levelFilter, setLevelFilter] = useState<string[]>([]);
+  const [fieldFilter, setFieldFilter] = useState<string[]>([]);
+  const [salaryFilter, setSalaryFilter] = useState<string[]>([]);
+  const [filteredLanguages, setFilteredLanguages] = useState<Language[] | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [showFilter, setShowFilter] = useState<boolean>(true);
 
-  // ฟังก์ชันสำหรับเปิด Modal
+  const handleFilterSubmit = () => {
+    const result = languages.filter((lang) => {
+      const levelClass = getDifficultyClass(lang.level);
+      const matchesLevel = levelFilter.length === 0 || levelFilter.includes(levelClass.toLowerCase());
+      const matchesField = fieldFilter.length === 0 || lang.fields.some(f => fieldFilter.includes(f));
+      const matchesSalary = salaryFilter.length === 0 || salaryFilter.includes(lang.salary);
+      const matchesSearch = lang.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesLevel && matchesField && matchesSalary && matchesSearch;
+    });
+    setFilteredLanguages(result);
+  };
+
+  const handleReset = () => {
+    setLevelFilter([]);
+    setFieldFilter([]);
+    setSalaryFilter([]);
+    setFilteredLanguages(null);
+    setSearchTerm('');
+  };
+
   const openLanguageModal = (lang: Language) => {
     setSelectedLanguage(lang);
-    document.body.style.overflow = 'hidden'; // ป้องกันการ scroll ของ body เมื่อ modal เปิด
+    document.body.style.overflow = 'hidden';
   };
 
-  // ฟังก์ชันสำหรับปิด Modal
   const closeModal = () => {
     setSelectedLanguage(null);
-    document.body.style.overflow = 'auto'; // คืนค่าการ scroll ของ body
+    document.body.style.overflow = 'auto';
   };
 
+  const dataToShow = filteredLanguages === null ? languages : filteredLanguages;
+
   return (
-    <div className="mx-auto my-12 p-10 max-w-[1400px] bg-white rounded-3xl shadow-xl">
-      {/* ส่วนของการ์ดภาษา (sidebar) */}
-      <section className="sidebar">
-        {/* ลบคำว่า "เลือกภาษา" ออกจากหัวข้อ */}
-        {languages && languages.length > 0 ? (
-          languages.map(lang => (
-            <LanguageCard
-              key={lang.id}
-              language={lang}
-              isSelected={selectedLanguage?.id === lang.id} // เช็คว่าเป็นการ์ดที่ถูกเลือกอยู่ใน Modal หรือไม่
-              onClick={() => openLanguageModal(lang)} // คลิกแล้วเปิด Modal
-            />
-          ))
-        ) : (
-          <p className="text-gray-500">ไม่พบข้อมูลภาษา</p>
-        )}
-      </section>
-
-      
-
-      {/* Modal Overlay และ LanguageDetail */}
-      {/* จะแสดงก็ต่อเมื่อ selectedLanguage มีค่า (มีการเลือกการ์ด) */}
-      {selectedLanguage && (
-        // Overlay นี้จะคลุมทั้งหน้าจอ
-        <div
-          className="language-modal-overlay"
-          onClick={(e) => {
-            // ปิด Modal เมื่อคลิกที่พื้นหลัง Overlay เท่านั้น ไม่ใช่คลิกภายใน Modal Content
-            if (e.target === e.currentTarget) {
-              closeModal();
-            }
-          }}
+    <div>
+      <div className="text-center my-4">
+        <button
+          onClick={() => setShowFilter(!showFilter)}
+          className="px-6 py-2 bg-gray-200 text-black rounded-xl hover:bg-gray-300 transition-all duration-300"
         >
-          <LanguageDetail language={selectedLanguage} onClose={closeModal} />
-        </div>
+          {showFilter ? 'ซ่อนการค้นหา' : 'แสดงการค้นหา'}
+        </button>
+      </div>
+
+      {showFilter && (
+        <FilterPanel
+          levelFilter={levelFilter}
+          setLevelFilter={setLevelFilter}
+          fieldFilter={fieldFilter}
+          setFieldFilter={setFieldFilter}
+          salaryFilter={salaryFilter}
+          setSalaryFilter={setSalaryFilter}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          onSubmit={handleFilterSubmit}
+          onReset={handleReset}
+        />
       )}
+
+      <div className="mx-auto my-5 p-10 max-w-[1400px] bg-white rounded-3xl shadow-xl">
+        <section className="sidebar grid gap-4 md:grid-cols-3">
+          {filteredLanguages && (
+            <p className="text-sm text-gray-500 col-span-full text-center">
+              พบ {filteredLanguages.length} ภาษา
+            </p>
+          )}
+
+          {dataToShow.length > 0 ? (
+            dataToShow.map(lang => (
+              <LanguageCard
+                key={lang.id}
+                language={lang}
+                isSelected={selectedLanguage?.id === lang.id}
+                onClick={() => openLanguageModal(lang)}
+              />
+            ))
+          ) : (
+            <p className="text-gray-500 col-span-full text-center">
+              ไม่พบภาษาตรงตามเงื่อนไข
+            </p>
+          )}
+        </section>
+
+        {selectedLanguage && (
+          <div
+            className="language-modal-overlay"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                closeModal();
+              }
+            }}
+          >
+            <LanguageDetail language={selectedLanguage} onClose={closeModal} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

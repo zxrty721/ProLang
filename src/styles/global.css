@@ -8,8 +8,9 @@ body {
   font-family: 'Prompt', sans-serif;
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  background: #eeeeee;
   color: #333;
+  box-shadow: black 10px;
 }
 
 /* --- Header / Footer --- */
@@ -26,6 +27,7 @@ header, footer {
   background: linear-gradient(-45deg, #667eea, #764ba2, #6b73ff, #a855f7, #0ea5e9);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
+  border: black solid 2px;
 }
 
 @keyframes gradientMove {
