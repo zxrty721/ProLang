@@ -306,7 +306,7 @@ const LanguageDetail = memo(({
   }, [language]);
 
   return (
-    <div className="language-detail max-h-screen overflow-y-auto">
+    <div className="language-modal-content max-h-screen overflow-y-auto">
       <button 
         className="modal-close-button group sticky top-4 right-4 z-10 float-right" 
         onClick={handleClose}
@@ -332,28 +332,28 @@ const LanguageDetail = memo(({
 
       {/* รายละเอียด */}
       <div className="mb-6">
-        <h3 className="section-title">🧾 รายละเอียด</h3>
+        <span className="section-title text-2xl font-bold mb-4">🧾 รายละเอียด</span>
         <p className="desc text-gray-700 leading-relaxed">{language.desc}</p>
       </div>
 
       {/* ข้อมูลทั่วไป */}
       <div className="info-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        <div className="info-box bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-          <span className="section-title block text-sm text-gray-600 mb-1">👨‍💻 ผู้สร้าง</span>
+        <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+          <span className="section-title block text-xl text-gray-600 mb-2">👨‍💻 ผู้สร้าง</span>
           <span className="text-lg font-medium text-gray-900">{language.by}</span>
         </div>
-        <div className="info-box bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-          <span className="section-title block text-sm text-gray-600 mb-1">📆 ปีที่เริ่มใช้</span>
+        <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+          <span className="section-title block text-xl text-gray-600 mb-2">📆 ปีที่เริ่มใช้</span>
           <span className="text-lg font-medium text-gray-900">{formattedYear}</span>
         </div>
-        <div className="info-box bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-          <span className="section-title block text-sm text-gray-600 mb-1">🌟 ระดับภาษา</span>
+        <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+          <span className="section-title block text-xl text-gray-600 mb-2">🌟 ระดับภาษา</span>
           <span className={`lang-level-detail ${difficultyClass} text-lg font-medium`}>
             {difficultyClass}
           </span>
         </div>
-        <div className="info-box bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-          <span className="section-title block text-sm text-gray-600 mb-1">🛠️ รูปแบบการเขียน</span>
+        <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+          <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>
           <div className="flex flex-wrap gap-2 mt-2">
             {language.par.map((p: string, i: number) => (
               <span key={i} className="tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">

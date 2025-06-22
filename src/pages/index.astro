@@ -1,15 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import InteractiveLanguageList from '../components/InteractiveCardSection';
-import languagesData from '../data/languages.json';
 import type { Language } from '../utils/language';
+import languagesData from '../data/languages.json';
 
+const totalLanguages = languagesData.length;
 ---
 
-<BaseLayout>
-  <!-- {languagesData.map((lang) => {
-    console.log(lang.name)
-  })} -->
-
+<BaseLayout count={totalLanguages}>
   <InteractiveLanguageList languages={languagesData as Language[]} client:load />
 </BaseLayout>

@@ -4348,5 +4348,117 @@
         "kubectl create configmap <name> --from-file=<file> // สร้าง config map"
       ]
     }
+  },
+  {
+    "id": 55,
+    "name": "Zig",
+    "slug": "zig",
+    "logo": "img/zig.png",
+    "desc": "Zig เป็นภาษาโปรแกรมที่ออกแบบมาเพื่อให้เป็นทางเลือกแทน C โดยเน้นที่ประสิทธิภาพ ความปลอดภัย และความโปร่งใสในการจัดการหน่วยความจำ เหมาะสำหรับงานระดับล่าง เช่น ระบบปฏิบัติการ, Embedded, และ Game Engine",
+    "by": "Andrew Kelley",
+    "yr": "2015",
+    "level": "5",
+    "par": ["Procedural", "Imperative", "Low-level", "No Hidden Control Flow"],
+    "fields": ["Systems Programming", "Embedded Systems", "Operating Systems", "Game Development", "Compiler Design"],
+    "rank": "Top 5 ภาษาเกิดใหม่สาย Systems Programming",
+    "salary_range": "฿50,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high", "veryhigh"],
+    "pros": [
+      "ไม่มี hidden control flow (ทำให้เข้าใจ flow ได้ชัดเจน)",
+      "แทนที่ C ได้โดยตรงและมี performance ใกล้เคียง",
+      "Built-in dependency management และ cross-compilation",
+      "ใช้เป็น compiler frontend แทน GCC/Clang ได้ (zig cc)",
+      "เหมาะสำหรับ embedded, OS-level และ high-performance system"
+    ],
+    "cons": [
+      "ยังไม่เป็นที่นิยมในวงกว้าง",
+      "เครื่องมือและ IDE รองรับยังน้อยเมื่อเทียบกับภาษาอื่น",
+      "การเรียนรู้สำหรับผู้เริ่มต้นอาจชันกว่าภาษา high-level",
+      "ไม่มี garbage collection ต้องจัดการ memory เองทั้งหมด"
+    ],
+    "frameworks": ["Zon (Package Manager)", "Zig Build System"],
+    "learn": ["ziglang.org", "Zig Learn", "Ziglings", "Zig YouTube Talks"],
+    "variables": {
+      "declaration": ["var", "const"],
+      "types": ["i32", "u64", "f32", "bool", "[]const u8 (string)", "struct", "enum"],
+      "examples": [
+        "const a: i32 = 10; // ค่าคงที่ a ประเภทจำนวนเต็ม",
+        "var name: []const u8 = \"Zig\"; // สร้าง string",
+        "var flag: bool = true; // ตัวแปร boolean"
+      ]
+    },
+    "functions": {
+      "declaration": ["fn name(param: type) type { ... }"],
+      "examples": [
+        "fn add(a: i32, b: i32) i32 { return a + b; } // ฟังก์ชันบวก",
+        "fn greet(name: []const u8) void { std.debug.print(\"Hello, {}!\\n\", .{name}); }"
+      ],
+      "built_in": ["std.debug.print()", "std.mem.copy()", "std.fs.File.read()", "std.heap.page_allocator"]
+    },
+    "syntax": {
+      "comments": ["// Single line comment", "/* Multi line comment */"],
+      "conditions": ["if", "else if", "else", "switch"],
+      "loops": ["while", "for"],
+      "operators": ["+", "-", "*", "/", "==", "!=", "&&", "||", "<", ">", "<=", ">="],
+      "examples": [
+        "if (x > 10) { std.debug.print(\"Big!\\n\", .{}); } else { std.debug.print(\"Small!\\n\", .{}); }",
+        "for (array) |item| { std.debug.print(\"{}\\n\", .{item}); }"
+      ]
+    }
+  },
+  {
+    "id": 56,
+    "name": "ZPL",
+    "slug": "zpl",
+    "logo": "img/zpl.jpg",
+    "desc": "ZPL เป็นภาษาเขียนโปรแกรมที่ออกแบบมาเพื่อการคำนวณแบบขนาน (Parallel Computation) โดยเฉพาะ ถูกพัฒนาขึ้นเพื่อใช้กับระบบคอมพิวเตอร์หลายแกนหรือคลัสเตอร์ขนาดใหญ่",
+    "by": "University of Washington",
+    "yr": "1993",
+    "level": "5",
+    "par": ["Data-parallel", "Imperative"],
+    "fields": ["High-Performance Computing", "Scientific Computing", "Matrix Computation", "Parallel Processing"],
+    "rank": "ใช้เฉพาะงานวิจัยและ HPC บางประเภท",
+    "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-110,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high", "veryhigh"],
+    "pros": [
+      "เขียนโปรแกรมแบบขนานได้ง่ายโดยไม่ต้องใช้ low-level thread",
+      "เหมาะกับการคำนวณทางคณิตศาสตร์ขนาดใหญ่",
+      "มี performance ที่ดีบนระบบ multi-core และ distributed",
+      "โครงสร้างภาษาเรียบง่ายและชัดเจน"
+    ],
+    "cons": [
+      "ไม่เหมาะกับงานทั่วไปหรือเชิงธุรกิจ",
+      "ไม่มีการใช้งานในอุตสาหกรรมมากนัก",
+      "ขาดเครื่องมือพัฒนาและ IDE ที่ดี",
+      "ทรัพยากรเรียนรู้น้อย"
+    ],
+    "frameworks": ["ไม่มี (ภาษานี้ใช้แบบ standalone)"],
+    "learn": ["cs.washington.edu/zpl", "Research papers on ZPL", "ZPL manual PDF"],
+    "variables": {
+      "declaration": ["var", "array"],
+      "types": ["integer", "float", "boolean", "region"],
+      "examples": [
+        "var A: array [1..100] of integer; // อาเรย์จำนวนเต็ม",
+        "var R: region = [1..10, 1..10]; // พื้นที่ 2 มิติ"
+      ]
+    },
+    "functions": {
+      "declaration": ["procedure name(params); ... end;"],
+      "examples": [
+        "procedure add(x: integer; y: integer); return x + y; end;",
+        "procedure print_array(A: array); ... end;"
+      ],
+      "built_in": ["read", "write", "forall", "region", "new"]
+    },
+    "syntax": {
+      "comments": ["// Single line comment", "/* Multi line comment */"],
+      "conditions": ["if", "then", "else", "endif"],
+      "loops": ["for", "while", "forall (parallel)"],
+      "operators": ["+", "-", "*", "/", "=", "<", ">", "<=", ">="],
+      "examples": [
+        "forall i in [1..100] do A[i] := i * 2; end;",
+        "if x > y then print(\"X is larger\"); else print(\"Y is larger\"); endif;"
+      ]
+    }
   }
 ] 

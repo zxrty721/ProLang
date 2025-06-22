@@ -1,5 +1,3 @@
-// src/components/InteractiveCardSection.tsx
-
 import { useState, useMemo, useCallback } from 'react';
 import LanguageCard from './LanguageCard';
 import LanguageDetail from './LanguageDetail';
@@ -9,60 +7,40 @@ import type { Language } from '../utils/language';
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
   const [levelFilter, setLevelFilter] = useState<string[]>([]);
   const [fieldFilter, setFieldFilter] = useState<string[]>([]);
   const [salaryFilter, setSalaryFilter] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [showFilter, setShowFilter] = useState<boolean>(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showFilter, setShowFilter] = useState(true);
 
-  // Memoize filtered languages เพื่อป้องกันการคำนวณซ้ำ
   const filteredLanguages = useMemo(() => {
-    // ถ้าไม่มี filter ใดๆ ให้ return languages ทั้งหมด
     if (
-      levelFilter.length === 0 && 
-      fieldFilter.length === 0 && 
-      salaryFilter.length === 0 && 
+      levelFilter.length === 0 &&
+      fieldFilter.length === 0 &&
+      salaryFilter.length === 0 &&
       searchTerm === ''
     ) {
       return languages;
     }
 
     return languages.filter((lang) => {
-      // Level filter
       if (levelFilter.length > 0) {
         const rawLevelClass = getDifficultyClass(lang.level);
-        if (!rawLevelClass || !levelFilter.includes(rawLevelClass.toLowerCase())) {
-          return false;
-        }
+        if (!rawLevelClass || !levelFilter.includes(rawLevelClass.toLowerCase())) return false;
       }
-
-      // Field filter
-      if (fieldFilter.length > 0) {
-        if (!lang.fields.some(f => fieldFilter.includes(f))) {
-          return false;
-        }
-      }
-
-      // Salary filter
+      if (fieldFilter.length > 0 && !lang.fields.some(f => fieldFilter.includes(f))) return false;
       if (salaryFilter.length > 0) {
         const langSalaries = Array.isArray(lang.salary) ? lang.salary : [lang.salary];
-        if (!salaryFilter.some(filterSal => 
+        if (!salaryFilter.some(filterSal =>
           langSalaries.includes(filterSal as 'low' | 'mid' | 'high' | 'veryhigh')
-        )) {
-          return false;
-        }
+        )) return false;
       }
-
-      // Search filter
-      if (searchTerm && !lang.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return false;
-      }
-
+      if (searchTerm && !lang.name.toLowerCase().includes(searchTerm.toLowerCase())) return false;
       return true;
     });
   }, [languages, levelFilter, fieldFilter, salaryFilter, searchTerm]);
 
-  // Memoize callbacks เพื่อป้องกัน re-render ของ child components
   const toggleShowFilter = useCallback(() => {
     setShowFilter(prev => !prev);
   }, []);
@@ -76,22 +54,25 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
 
   const openLanguageModal = useCallback((lang: Language) => {
     setSelectedLanguage(lang);
+    setIsClosing(false);
     document.body.style.overflow = 'hidden';
   }, []);
 
   const closeModal = useCallback(() => {
-    setSelectedLanguage(null);
-    document.body.style.overflow = 'auto';
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelectedLanguage(null);
+      setIsClosing(false);
+      document.body.style.overflow = 'auto';
+    }, 300);
   }, []);
 
-  // Memoize modal overlay click handler
   const handleModalOverlayClick = useCallback((e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       closeModal();
     }
   }, [closeModal]);
 
-  // Memoize filter change handlers
   const handleLevelFilterChange = useCallback((newFilter: string[]) => {
     setLevelFilter(newFilter);
   }, []);
@@ -108,18 +89,16 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
     setSearchTerm(newTerm);
   }, []);
 
-  // Memoize whether to show "no results" message
-  const showNoResults = useMemo(() => 
-    filteredLanguages.length === 0 && 
+  const showNoResults = useMemo(() =>
+    filteredLanguages.length === 0 &&
     (levelFilter.length > 0 || fieldFilter.length > 0 || salaryFilter.length > 0 || searchTerm !== ''),
-    [filteredLanguages.length, levelFilter.length, fieldFilter.length, salaryFilter.length, searchTerm]
+    [filteredLanguages, levelFilter, fieldFilter, salaryFilter, searchTerm]
   );
 
-  // Memoize filter count for display
   const filterCount = useMemo(() => {
     const hasFilters = levelFilter.length > 0 || fieldFilter.length > 0 || salaryFilter.length > 0 || searchTerm !== '';
     return hasFilters ? filteredLanguages.length : null;
-  }, [filteredLanguages.length, levelFilter.length, fieldFilter.length, salaryFilter.length, searchTerm]);
+  }, [filteredLanguages, levelFilter, fieldFilter, salaryFilter, searchTerm]);
 
   return (
     <div>
@@ -172,7 +151,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
 
         {selectedLanguage && (
           <div
-            className="language-modal-overlay"
+            className={`language-modal-overlay ${isClosing ? 'fade-out' : ''}`}
             role="dialog"
             aria-modal="true"
             onClick={handleModalOverlayClick}
