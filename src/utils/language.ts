@@ -15,13 +15,13 @@ export interface Language {
   // ****************************
   par: string[];
   fields: string[];
-  popularity_rank: string;
+  rank: string;
   salary_range: string;
   salary: Array<'low' | 'mid' | 'high' | 'veryhigh'>;
   pros: string[];
   cons: string[];
   frameworks: string[];
-  learning_resources: string[];
+  learn: string[];
   variables?: {
       declaration: string[];
       types: string[];

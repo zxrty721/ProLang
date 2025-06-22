@@ -170,11 +170,11 @@ return (
     )}
 
     {/* Additional Information */}
-    {language.popularity_rank && (
+    {language.rank && (
       <div className="section mb-8">
         <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม</h2>
         <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-          <span className="text-lg">อันดับความนิยม: <strong>#{language.popularity_rank}</strong></span>
+          <span className="text-lg">อันดับความนิยม: <strong>#{language.rank}</strong></span>
         </div>
       </div>
     )}
@@ -211,8 +211,8 @@ return (
         <InfoSection title="เฟรมเวิร์คและไลบรารี" items={language.frameworks} color="text-purple-700" emoji='🧩' borderColor="border-purple-500" />
       )}
 
-      {language.learning_resources && language.learning_resources.length > 0 && (
-        <InfoSection title="แหล่งเรียนรู้" items={language.learning_resources} color="text-indigo-700" emoji='📚' borderColor="border-indigo-500" />
+      {language.learn && language.learn.length > 0 && (
+        <InfoSection title="แหล่งเรียนรู้" items={language.learn} color="text-indigo-700" emoji='📚' borderColor="border-indigo-500" />
       )}
     </div>
 

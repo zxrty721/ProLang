@@ -10,7 +10,7 @@
       "level": "4",
       "par": ["Multi-paradigm", "Event-driven", "Functional"],
       "fields": ["Web Frontend", "Web Backend", "Mobile Apps", "Desktop Applications", "Game Development", "AI / Machine Learning", "DevOps / Automation"],
-      "popularity_rank": "สูงสุด (ติด Top 1-3)",
+      "rank": "สูงสุด (ติด Top 1-3)",
       "salary_range": "Junior: 35K-60K, Mid: 60K-90K, Senior: 90K+",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
@@ -28,7 +28,7 @@
           "โค้ดบนเว็บสามารถถูกดูและแก้ไขง่าย"
       ],
       "frameworks": ["React", "Angular", "Vue.js", "Node.js (Runtime)", "Express.js", "Next.js"],
-      "learning_resources": ["MDN Web Docs", "freeCodeCamp", "The Modern JavaScript Tutorial", "JavaScript.info"],
+      "learn": ["MDN Web Docs", "freeCodeCamp", "The Modern JavaScript Tutorial", "JavaScript.info"],
       "variables": {
           "declaration": ["var", "let", "const"],
           "types": ["String", "Number", "Boolean", "Null", "Undefined", "Symbol", "BigInt", "Object", "Array"],
@@ -70,7 +70,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Imperative", "Functional", "Procedural", "Reflective"],
       "fields": ["AI / Machine Learning", "Data Science / Analytics", "Web Backend", "Scripting / Automation", "Robotics / IoT", "Scientific Computing", "System Programming", "Game Development"],
-      "popularity_rank": "สูงสุด (ติด Top 1-2)",
+      "rank": "สูงสุด (ติด Top 1-2)",
       "salary_range": "สูง (ผู้เชี่ยวชาญเฉพาะทาง C/Embedded อาจได้สูงมาก)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
@@ -85,7 +85,7 @@
           "Global Interpreter Lock (GIL) จำกัดการทำงานแบบมัลติเธรดสำหรับงานที่ใช้ CPU มาก"
       ],
       "frameworks": ["Django", "Flask", "FastAPI", "NumPy", "Pandas", "Scikit-learn", "TensorFlow", "PyTorch"],
-      "learning_resources": ["Python.org Official Docs", "Codecademy: Learn Python", "Real Python", "Google's Python Class"],
+      "learn": ["Python.org Official Docs", "Codecademy: Learn Python", "Real Python", "Google's Python Class"],
       "variables": {
           "declaration": ["variable_name = value", "x, y, z = 1, 2, 3 (Multiple Assignment)"],
           "types": ["int", "float", "str", "list", "tuple", "dict", "set", "bool", "NoneType"],
@@ -126,7 +126,7 @@
       "level": "3",
       "par": ["Procedural", "Imperative"],
       "fields": ["Game Development", "High-Performance Computing", "System Programming", "Embedded Systems", "Desktop Applications", "Finance / Trading Systems", "Robotics / IoT", "Network Programming", "AR / VR Development"],
-      "popularity_rank": "ปานกลาง",
+      "rank": "ปานกลาง",
       "salary_range": "สูง (ผู้เชี่ยวชาญเฉพาะทาง C/Embedded อาจได้สูงมาก)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
@@ -144,7 +144,7 @@
         "ใช้เวลาในการพัฒนาค่อนข้างนาน"
       ],
       "frameworks": ["None (เป็นภาษาพื้นฐาน)", "OpenGL (Graphics)", "GTK+ (GUI)"],
-      "learning_resources": ["The C Programming Language (K&R)", "GeeksforGeeks C Tutorial", "Learn C The Hard Way", "C Programming Tutorial by Tutorials Point"],
+      "learn": ["The C Programming Language (K&R)", "GeeksforGeeks C Tutorial", "Learn C The Hard Way", "C Programming Tutorial by Tutorials Point"],
       "variables": {
         "declaration": [
           "int age;",
@@ -229,8 +229,8 @@
       "yr": "1979",
       "level": "3",
       "par": ["Multi-paradigm", "Object-Oriented", "Procedural", "Generic"],
-      "fields": ["Game Development, High-Performance Computing, System Programming, Embedded Systems, Desktop Applications, Finance / Trading Systems, Robotics / IoT, Network Programming, AR / VR Development"],
-      "popularity_rank": "สูง (ติด Top 10)",
+      "fields": ["Game Development", "High-Performance Computing", "System Programming", "Embedded Systems", "Desktop Applications", "Finance / Trading Systems", "Robotics / IoT", "Network Programming", "AR / VR Development"],
+      "rank": "สูง (ติด Top 10)",
       "salary_range": "สูง (ผู้เชี่ยวชาญเฉพาะทางอาจได้สูงมาก)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
@@ -248,7 +248,7 @@
         "การดีบักอาจทำได้ยากกว่าภาษาที่มี abstraction สูง"
       ],
       "frameworks": ["Qt (GUI)", "Boost (General Purpose)", "Unreal Engine (Game Dev)", "SFML (Game Dev)"],
-      "learning_resources": ["C++ Primer", "Effective Modern C++", "learncpp.com", "GeeksforGeeks C++ Tutorial"],
+      "learn": ["C++ Primer", "Effective Modern C++", "learncpp.com", "GeeksforGeeks C++ Tutorial"],
       "variables": {
         "declaration": [
           "int num;",
@@ -336,7 +336,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Component-Oriented", "Structured", "Imperative", "Functional"],
       "fields": ["Desktop Applications", "Web Backend", "Game Development", "Cloud Infrastructure"],
-      "popularity_rank": "สูง (ติด Top 10)",
+      "rank": "สูง (ติด Top 10)",
       "salary_range": "สูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -354,7 +354,7 @@
         "ชุมชนอาจไม่ใหญ่เท่า JavaScript หรือ Python ในบางด้าน"
       ],
       "frameworks": ["ASP.NET", "Unity (Game Engine)", "Xamarin (Mobile)", "Blazor (Web)"],
-      "learning_resources": ["Microsoft Learn: C#", "Head First C#", "Pluralsight C# Courses", "C# Station"],
+      "learn": ["Microsoft Learn: C#", "Head First C#", "Pluralsight C# Courses", "C# Station"],
       "variables": {
         "declaration": [
           "int age;",
@@ -443,7 +443,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Concurrent", "Structured", "Imperative", "Generic"],
       "fields": ["Web Backend", "Mobile Apps", "Cloud Infrastructure", "Data Science / Analytics", "Finance / Trading Systems"],
-      "popularity_rank": "สูง (ติด Top 5)",
+      "rank": "สูง (ติด Top 5)",
       "salary_range": "สูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -460,7 +460,7 @@
         "เวลาในการ Start-up แอปพลิเคชันอาจช้า"
       ],
       "frameworks": ["Spring Boot", "Hibernate", "Android SDK", "Apache Kafka", "Apache Spark"],
-      "learning_resources": ["Oracle Java Documentation", "Baeldung", "GeeksforGeeks Java Tutorial", "Coursera: Java Programming"],
+      "learn": ["Oracle Java Documentation", "Baeldung", "GeeksforGeeks Java Tutorial", "Coursera: Java Programming"],
       "variables": {
         "declaration": [
           "int count;",
@@ -542,7 +542,7 @@
       "level": "4",
       "par": ["Concurrent", "Structured", "Imperative"],
       "fields": ["Web Backend", "Cloud Infrastructure", "System Programming", "Network Programming"],
-      "popularity_rank": "ปานกลางถึงสูง (ความนิยมเพิ่มขึ้นต่อเนื่อง)",
+      "rank": "ปานกลางถึงสูง (ความนิยมเพิ่มขึ้นต่อเนื่อง)",
       "salary_range": "สูง (เป็นที่ต้องการสูง)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -559,7 +559,7 @@
         "ชุมชนยังเล็กกว่าภาษาเก่าแก่"
       ],
       "frameworks": ["Gin", "Echo", "Revel"],
-      "learning_resources": ["Go Tour", "Go by Example", "Effective Go", "Golang Official Documentation"],
+      "learn": ["Go Tour", "Go by Example", "Effective Go", "Golang Official Documentation"],
       "variables": {
         "declaration": [
           "var name string = \"John\"",
@@ -641,7 +641,7 @@
       "level": "2",
       "par": ["Multi-paradigm", "Functional", "Imperative", "Concurrent"],
       "fields": ["System Programming", "Web Backend", "Blockchain", "Embedded Systems", "Network Programming", "Game Development"],
-      "popularity_rank": "ปานกลาง (แต่เพิ่มขึ้นอย่างรวดเร็ว)",
+      "rank": "ปานกลาง (แต่เพิ่มขึ้นอย่างรวดเร็ว)",
       "salary_range": "สูงมาก (เป็นที่ต้องการสูงมากสำหรับผู้เชี่ยวชาญ)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
@@ -658,7 +658,7 @@
         "ชุมชนยังเล็กกว่าภาษาหลักๆ"
       ],
       "frameworks": ["Actix Web", "Rocket", "Yew (WebAssembly)"],
-      "learning_resources": ["The Rust Programming Language Book", "Rustlings", "Rust by Example", "Ferris' Guide"],
+      "learn": ["The Rust Programming Language Book", "Rustlings", "Rust by Example", "Ferris' Guide"],
       "variables": {
         "declaration": [
           "let x = 5; // Immutable by default",
@@ -734,7 +734,7 @@
       "level": "4",
       "par": ["Multi-paradigm", "Object-Oriented", "Functional"],
       "fields": ["Web Frontend", "Web Backend", "Mobile Apps", "Desktop Applications"],
-      "popularity_rank": "สูง (ความนิยมเพิ่มขึ้นอย่างรวดเร็ว)",
+      "rank": "สูง (ความนิยมเพิ่มขึ้นอย่างรวดเร็ว)",
       "salary_range": "สูง (ใกล้เคียงกับ JavaScript)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -751,7 +751,7 @@
         "Error Messages บางครั้งอาจเข้าใจยาก"
       ],
       "frameworks": ["Angular", "React (with TS)", "Vue.js (with TS)", "Node.js (with TS)", "NestJS"],
-      "learning_resources": ["TypeScript Handbook", "Definitely Typed", "TypeScript for JavaScript Developers", "FreeCodeCamp TypeScript"],
+      "learn": ["TypeScript Handbook", "Definitely Typed", "TypeScript for JavaScript Developers", "FreeCodeCamp TypeScript"],
       "variables": {
         "declaration": [
           "let name: string = \"Alice\";",
@@ -833,7 +833,7 @@
       "level": "4",
       "par": ["Procedural", "Object-Oriented", "Imperative", "Functional"],
       "fields": ["Web Backend"],
-      "popularity_rank": "ปานกลางถึงสูง",
+      "rank": "ปานกลางถึงสูง",
       "salary_range": "กลางถึงสูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -850,7 +850,7 @@
         "อาจมีปัญหาเรื่องความปลอดภัยหากไม่ระมัดระวัง"
       ],
       "frameworks": ["Laravel", "Symfony", "CodeIgniter", "Zend Framework", "WordPress"],
-      "learning_resources": ["PHP.net Official Manual", "Laracasts", "W3Schools PHP Tutorial", "Traversy Media PHP"],
+      "learn": ["PHP.net Official Manual", "Laracasts", "W3Schools PHP Tutorial", "Traversy Media PHP"],
       "variables": {
         "declaration": [
           "$name = \"John\";",
@@ -930,7 +930,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Imperative", "Functional", "Reflective"],
       "fields": ["Web Backend"],
-      "popularity_rank": "ปานกลาง (ลดลงเล็กน้อย)",
+      "rank": "ปานกลาง (ลดลงเล็กน้อย)",
       "salary_range": "กลางถึงสูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -947,7 +947,7 @@
         "อาจมีปัญหาเรื่อง Scaling ในบางกรณี"
       ],
       "frameworks": ["Ruby on Rails", "Sinatra"],
-      "learning_resources": ["Ruby-Doc.org", "Ruby Guides", "Learn Ruby the Hard Way", "Codecademy: Learn Ruby"],
+      "learn": ["Ruby-Doc.org", "Ruby Guides", "Learn Ruby the Hard Way", "Codecademy: Learn Ruby"],
       "variables": {
         "declaration": [
           "name = \"Alice\"",
@@ -1024,7 +1024,7 @@
       "level": "4",
       "par": ["Multi-paradigm", "Object-Oriented", "Functional", "Protocol-Oriented"],
       "fields": ["Mobile Apps", "Desktop Applications"],
-      "popularity_rank": "ปานกลาง",
+      "rank": "ปานกลาง",
       "salary_range": "สูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1041,7 +1041,7 @@
         "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาอื่นๆ"
       ],
       "frameworks": ["UIKit", "SwiftUI", "Combine", "Vapor", "Kitura"],
-      "learning_resources": ["Apple Swift Documentation", "Hacking with Swift", "Ray Wenderlich", "Codecademy: Learn Swift"],
+      "learn": ["Apple Swift Documentation", "Hacking with Swift", "Ray Wenderlich", "Codecademy: Learn Swift"],
       "variables": {
         "declaration": [
           "var greeting = \"Hello\"; // Mutable",
@@ -1122,7 +1122,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Functional", "Procedural", "Concurrent"],
       "fields": ["Mobile Apps", "Web Backend", "Desktop Applications"],
-      "popularity_rank": "ปานกลาง",
+      "rank": "ปานกลาง",
       "salary_range": "สูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1139,7 +1139,7 @@
         "ความเร็วในการคอมไพล์อาจช้ากว่า Java เล็กน้อยในโปรเจกต์ขนาดใหญ่"
       ],
       "frameworks": ["Spring Boot (with Kotlin)", "Ktor", "Jetpack Compose (Android)", "Exposed"],
-      "learning_resources": ["Kotlin Official Documentation", "Kotlin Koans", "Kotlin by Example", "Android Developers Kotlin"],
+      "learn": ["Kotlin Official Documentation", "Kotlin Koans", "Kotlin by Example", "Android Developers Kotlin"],
       "variables": {
         "declaration": [
           "val name = \"Kotlin\"; // Immutable",
@@ -1221,7 +1221,7 @@
       "level": "4",
       "par": ["Functional", "Procedural", "Object-Oriented"],
       "fields": ["Data Science / Analytics", "Scientific Computing"],
-      "popularity_rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่ม Data Science/สถิติ)",
+      "rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่ม Data Science/สถิติ)",
       "salary_range": "สูง (สำหรับตำแหน่ง Data Scientist, Statistician)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1238,7 +1238,7 @@
         "เหมาะสำหรับ Data Science เป็นหลัก ไม่ใช่ General-purpose"
       ],
       "frameworks": ["Shiny (Web Apps)", "Tidyverse (Data Science)"],
-      "learning_resources": ["R-project.org Official Docs", "R for Data Science", "Coursera: R Programming", "DataCamp R Courses"],
+      "learn": ["R-project.org Official Docs", "R for Data Science", "Coursera: R Programming", "DataCamp R Courses"],
       "variables": {
         "declaration": [
           "my_var <- 10",
@@ -1313,7 +1313,7 @@
       "level": "5",
       "par": ["Declarative"],
       "fields": ["Database / SQL"],
-      "popularity_rank": "สูง (เป็นภาษามาตรฐานสำหรับฐานข้อมูล, ใช้ควบคู่กับภาษาอื่นเสมอ)",
+      "rank": "สูง (เป็นภาษามาตรฐานสำหรับฐานข้อมูล, ใช้ควบคู่กับภาษาอื่นเสมอ)",
       "salary_range": "กลางถึงสูง (มักใช้ร่วมกับภาษาอื่น)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1330,7 +1330,7 @@
         "การ Scale อาจเป็นความท้าทายสำหรับข้อมูลขนาดใหญ่มาก"
       ],
       "frameworks": ["None (เป็นภาษาฐานข้อมูล)", "ORMs (Object-Relational Mappers) ในภาษาโปรแกรมต่างๆ"],
-      "learning_resources": ["W3Schools SQL Tutorial", "SQLBolt", "Khan Academy SQL", "Mode Analytics SQL Tutorials"],
+      "learn": ["W3Schools SQL Tutorial", "SQLBolt", "Khan Academy SQL", "Mode Analytics SQL Tutorials"],
       "variables": {
         "declaration": [
           "SELECT * FROM Users; -- No direct variable declaration like programming languages"
@@ -1397,7 +1397,7 @@
       "level": "0",
       "par": ["Declarative", "Functional"],
       "fields": ["Mobile Apps", "Desktop Applications", "(UI Framework)"],
-      "popularity_rank": "N/A (เป็น Framework, ไม่ใช่ภาษา)",
+      "rank": "N/A (เป็น Framework, ไม่ใช่ภาษา)",
       "salary_range": "N/A (เงินเดือนขึ้นอยู่กับ Swift)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1414,7 +1414,7 @@
         "ชุมชนและการเรียนรู้ยังไม่เยอะเท่า UIKit"
       ],
       "frameworks": ["None (เป็น Framework)", "Combine (for Data Flow)"],
-      "learning_resources": ["Apple SwiftUI Documentation", "Hacking with Swift: SwiftUI", "SwiftUI by Example", "Ray Wenderlich SwiftUI"],
+      "learn": ["Apple SwiftUI Documentation", "Hacking with Swift: SwiftUI", "SwiftUI by Example", "Ray Wenderlich SwiftUI"],
       "variables": {
         "declaration": [
           "@State var counter = 0 // สำหรับจัดการสถานะใน View",
@@ -1486,7 +1486,7 @@
       "level": "0",
       "par": ["Event-driven", "Asynchronous"],
       "fields": ["Web Backend", "DevOps / Automation", "(Runtime Environment)"],
-      "popularity_rank": "N/A (เป็น Runtime Environment, ไม่ใช่ภาษา)",
+      "rank": "N/A (เป็น Runtime Environment, ไม่ใช่ภาษา)",
       "salary_range": "N/A (เงินเดือนขึ้นอยู่กับ JavaScript)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1503,7 +1503,7 @@
         "เวอร์ชันของ Node.js และแพ็คเกจมีการเปลี่ยนแปลงบ่อย"
       ],
       "frameworks": ["Express.js", "NestJS", "Fastify", "Koa.js"],
-      "learning_resources": ["Node.js Official Documentation", "Node.js by Example", "The Node.js Project", "freeCodeCamp Node.js"],
+      "learn": ["Node.js Official Documentation", "Node.js by Example", "The Node.js Project", "freeCodeCamp Node.js"],
       "variables": {
         "declaration": [
           "const http = require('http');",
@@ -1579,7 +1579,7 @@
     "level": "0",
     "par": ["Markup Language", "Structural"],
     "fields": ["Web Frontend", "(Markup Language)"],
-    "popularity_rank": "N/A (เป็นพื้นฐานของเว็บ)",
+    "rank": "N/A (เป็นพื้นฐานของเว็บ)",
     "salary_range": "N/A (มักใช้คู่กับ CSS/JS)",
     "salary": ["n/a"],
     "pros": [
@@ -1594,7 +1594,7 @@
       "โค้ดอาจยาวและซับซ้อนสำหรับหน้าใหญ่ๆ"
     ],
     "frameworks": [],
-    "learning_resources": ["MDN Web Docs", "W3Schools"],
+    "learn": ["MDN Web Docs", "W3Schools"],
     "variables": {
       "declaration": [],
       "types": [],
@@ -1630,7 +1630,7 @@
     "level": "0",
     "par": ["Styling Language", "Declarative"],
     "fields": ["Web Frontend", "(Stylesheet Language)"],
-    "popularity_rank": "N/A (เป็นพื้นฐานของเว็บ)",
+    "rank": "N/A (เป็นพื้นฐานของเว็บ)",
     "salary_range": "N/A (มักใช้คู่กับ HTML/JS)",
     "salary": ["n/a"],
     "pros": [
@@ -1645,7 +1645,7 @@
       "การดีบัก Layout อาจใช้เวลา"
     ],
     "frameworks": ["Bootstrap", "Tailwind CSS", "Sass", "Less"],
-    "learning_resources": ["MDN Web Docs", "W3Schools", "CSS-Tricks"],
+    "learn": ["MDN Web Docs", "W3Schools", "CSS-Tricks"],
     "variables": {
       "declaration": [
         ":root { --primary-color: #007bff; }",
@@ -1700,7 +1700,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Imperative", "Functional"],
       "fields": ["Mobile Apps", "Web Frontend", "Desktop Applications"],
-      "popularity_rank": "ปานกลาง (ความนิยมเพิ่มขึ้นตาม Flutter)",
+      "rank": "ปานกลาง (ความนิยมเพิ่มขึ้นตาม Flutter)",
       "salary_range": "สูง",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1717,7 +1717,7 @@
         "ขนาดของแอปพลิเคชันที่สร้างอาจจะใหญ่"
       ],
       "frameworks": ["Flutter"],
-      "learning_resources": ["Dart Official Documentation", "Flutter Documentation", "Effective Dart", "DartPad"],
+      "learn": ["Dart Official Documentation", "Flutter Documentation", "Effective Dart", "DartPad"],
       "variables": {
         "declaration": [
           "var name = 'Dart'; // Type inferred",
@@ -1800,7 +1800,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Functional", "Concurrent"],
       "fields": ["Big Data", "Web Backend", "Finance / Trading Systems"],
-      "popularity_rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่ม Big Data/High-Performance)",
+      "rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่ม Big Data/High-Performance)",
       "salary_range": "สูงมาก (เป็นที่ต้องการสูงในบางอุตสาหกรรม)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
@@ -1818,7 +1818,7 @@
         "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาหลัก"
       ],
       "frameworks": ["Play Framework", "Akka", "Apache Spark"],
-      "learning_resources": ["Scala Documentation", "Scala Book", "Coursera: Functional Programming in Scala", "Rock the JVM"],
+      "learn": ["Scala Documentation", "Scala Book", "Coursera: Functional Programming in Scala", "Rock the JVM"],
       "variables": {
         "declaration": [
           "val name: String = \"Scala\"; // Immutable",
@@ -1900,7 +1900,7 @@
       "level": "4",
       "par": ["Procedural", "Object-Oriented", "Functional"],
       "fields": ["Scripting / Automation", "Web Backend", "Network Programming"],
-      "popularity_rank": "ต่ำ (ลดลงจากเดิม)",
+      "rank": "ต่ำ (ลดลงจากเดิม)",
       "salary_range": "กลางถึงสูง (สำหรับงาน Maintenance หรือเฉพาะทาง)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -1917,7 +1917,7 @@
         "การบำรุงรักษาโค้ดอาจเป็นเรื่องยาก"
       ],
       "frameworks": ["Catalyst", "Mojolicious"],
-      "learning_resources": ["Perl.org", "Perl Tutorial", "Learning Perl (book)", "CPAN"],
+      "learn": ["Perl.org", "Perl Tutorial", "Learning Perl (book)", "CPAN"],
       "variables": {
         "declaration": [
           "$scalar_var = 'hello';",
@@ -1995,7 +1995,7 @@
       "level": "3",
       "par": ["Object-Oriented", "Reflective", "Imperative"],
       "fields": ["Mobile Apps", "Desktop Applications", "(Legacy)"],
-      "popularity_rank": "ต่ำมาก (ส่วนใหญ่ถูกแทนที่ด้วย Swift)",
+      "rank": "ต่ำมาก (ส่วนใหญ่ถูกแทนที่ด้วย Swift)",
       "salary_range": "N/A (งานใหม่น้อยลง)",
       "salary": ["N/A"],
       "pros": [
@@ -2011,7 +2011,7 @@
         "การจัดการหน่วยความจำ (Manual Reference Counting) อาจเกิดข้อผิดพลาดได้ง่าย"
       ],
       "frameworks": ["Cocoa", "Cocoa Touch"],
-      "learning_resources": ["Apple Objective-C Documentation", "Ray Wenderlich Objective-C", "Stanford CS193p (legacy courses)"],
+      "learn": ["Apple Objective-C Documentation", "Ray Wenderlich Objective-C", "Stanford CS193p (legacy courses)"],
       "variables": {
         "declaration": [
           "NSString *name = @\"John\";",
@@ -2085,7 +2085,7 @@
       "level": "1",
       "par": ["Imperative", "Procedural"],
       "fields": ["System Programming", "Embedded Systems", "Reverse Engineering", "Operating Systems"],
-      "popularity_rank": "ต่ำมาก (เฉพาะกลุ่ม Low-level Programming)",
+      "rank": "ต่ำมาก (เฉพาะกลุ่ม Low-level Programming)",
       "salary_range": "N/A (ไม่ใช่งานทั่วไป)",
       "salary": ["N/A"],
       "pros": [
@@ -2102,7 +2102,7 @@
         "การดีบักซับซ้อน"
       ],
       "frameworks": ["None"],
-      "learning_resources": ["Assembly Language for x86 Processors", "The Art of Assembly Language", "NASM Documentation", "MASM Documentation"],
+      "learn": ["Assembly Language for x86 Processors", "The Art of Assembly Language", "NASM Documentation", "MASM Documentation"],
       "variables": {
         "declaration": [
           "section .data",
@@ -2172,7 +2172,7 @@
       "level": "4",
       "par": ["Array-oriented", "Procedural", "Object-Oriented"],
       "fields": ["Scientific Computing", "Data Science / Analytics", "Robotics / IoT"],
-      "popularity_rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่มวิศวกรรม/วิทยาศาสตร์)",
+      "rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่มวิศวกรรม/วิทยาศาสตร์)",
       "salary_range": "สูง (สำหรับสายวิศวกรรม, วิจัย)",
       "salary": ["low", "mid", "high"],
       "pros": [
@@ -2189,7 +2189,7 @@
         "Learning Curve สำหรับผู้ที่ไม่มีพื้นฐานคณิตศาสตร์/วิศวกรรม"
       ],
       "frameworks": ["None (เป็นแพลตฟอร์ม)"],
-      "learning_resources": ["MathWorks Official Documentation", "Coursera: MATLAB Programming", "MATLAB Academy", "Tutorials Point MATLAB"],
+      "learn": ["MathWorks Official Documentation", "Coursera: MATLAB Programming", "MATLAB Academy", "Tutorials Point MATLAB"],
       "variables": {
         "declaration": [
           "x = 10; % Scalar",
@@ -2267,7 +2267,7 @@
       "level": "4",
       "par": ["Procedural", "Imperative"],
       "fields": ["Finance / Trading Systems", "(Legacy)"],
-      "popularity_rank": "ต่ำมาก (เฉพาะกลุ่ม Legacy Mainframe)",
+      "rank": "ต่ำมาก (เฉพาะกลุ่ม Legacy Mainframe)",
       "salary_range": "N/A (งานใหม่น้อยมาก, ผู้เชี่ยวชาญหายากและอาจได้สูงมาก)",
       "salary": ["mid", "high"],
       "pros": [
@@ -2284,7 +2284,7 @@
         "ค่าใช้จ่ายในการบำรุงรักษาสูง"
       ],
       "frameworks": ["None (เป็นภาษาพื้นฐาน)"],
-      "learning_resources": ["OpenCOBOL Programmer's Guide", "COBOL Tutorial", "IBM COBOL Documentation"],
+      "learn": ["OpenCOBOL Programmer's Guide", "COBOL Tutorial", "IBM COBOL Documentation"],
       "variables": {
         "declaration": [
           "01 WS-EMP-REC.",
@@ -2366,7 +2366,7 @@
       "level": "4",
       "par": ["Procedural", "Imperative", "Array-oriented"],
       "fields": ["Scientific Computing"],
-      "popularity_rank": "ต่ำมาก (ส่วนใหญ่ในงานวิทยาศาสตร์/วิศวกรรมเฉพาะทาง)",
+      "rank": "ต่ำมาก (ส่วนใหญ่ในงานวิทยาศาสตร์/วิศวกรรมเฉพาะทาง)",
       "salary_range": "เฉพาะทางสูง (Numerical and Scientific Computing, HPC)",
       "salary": ["mid", "high"],
       "pros": [
@@ -2383,7 +2383,7 @@
         "การเรียนรู้อาจยากสำหรับผู้เริ่มต้น"
       ],
       "frameworks": ["None (เป็นภาษาพื้นฐาน)"],
-      "learning_resources": ["Fortran Wiki", "Fortran-lang.org", "Fortran 90/95 for Scientists and Engineers"],
+      "learn": ["Fortran Wiki", "Fortran-lang.org", "Fortran 90/95 for Scientists and Engineers"],
       "variables": {
         "declaration": [
           "INTEGER :: i",
@@ -2460,7 +2460,7 @@
       "level": "5",
       "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming"],
       "fields": ["AI / Machine Learning", "Compiler / Language Design", "Education / Teaching Tools"],
-      "popularity_rank": "ต่ำมาก (ส่วนใหญ่ในงานวิชาการ/วิจัย/Legacy AI)",
+      "rank": "ต่ำมาก (ส่วนใหญ่ในงานวิชาการ/วิจัย/Legacy AI)",
       "salary_range": "N/A (ส่วนใหญ่ในงานวิจัยหรือเฉพาะทาง)",
       "salary": ["mid", "high"],
       "pros": [
@@ -2478,7 +2478,7 @@
         "ประสิทธิภาพอาจไม่ดีเท่าภาษาคอมไพล์"
       ],
       "frameworks": ["Common Lisp HyperSpec", "Clojure (JVM Lisp)", "Scheme"],
-      "learning_resources": ["Structure and Interpretation of Computer Programs (SICP)", "Practical Common Lisp", "Common Lisp: A Gentle Introduction"],
+      "learn": ["Structure and Interpretation of Computer Programs (SICP)", "Practical Common Lisp", "Common Lisp: A Gentle Introduction"],
       "variables": {
         "declaration": [
           "(setq x 10)",
@@ -2546,7 +2546,7 @@
       "level": "5",
       "par": ["Functional", "Lazy Evaluation"],
       "fields": ["Functional Programming", "Blockchain", "Compiler / Language Design", "Finance / Trading Systems"],
-      "popularity_rank": "ต่ำ (เฉพาะกลุ่มวิชาการ/Functional Programming)",
+      "rank": "ต่ำ (เฉพาะกลุ่มวิชาการ/Functional Programming)",
       "salary_range": "N/A (เป็นที่ต้องการในตลาดเฉพาะกลุ่ม)",
       "salary": ["mid", "high"],
       "pros": [
@@ -2564,7 +2564,7 @@
         "ไม่ได้รับความนิยมในอุตสาหกรรมทั่วไป"
       ],
       "frameworks": ["Yesod", "Servant"],
-      "learning_resources": ["Learn You a Haskell for Great Good!", "Haskell Book", "Haskell.org", "Stackage"],
+      "learn": ["Learn You a Haskell for Great Good!", "Haskell Book", "Haskell.org", "Stackage"],
       "variables": {
         "declaration": [
           "let x = 5",
@@ -2638,7 +2638,7 @@
       "level": "5",
       "par": ["Logic Programming", "Declarative"],
       "fields": ["AI / Machine Learning", "Database / SQL"],
-      "popularity_rank": "ต่ำมาก (เฉพาะกลุ่ม Logic Programming/AI Research)",
+      "rank": "ต่ำมาก (เฉพาะกลุ่ม Logic Programming/AI Research)",
       "salary_range": "N/A (ส่วนใหญ่ในงานวิจัยหรือเฉพาะทาง)",
       "salary": ["mid", "high"],
       "pros": [
@@ -2656,7 +2656,7 @@
         "การดีบักอาจทำได้ยากเมื่อเกิด Failure"
       ],
       "frameworks": ["None (เป็นภาษาพื้นฐาน)"],
-      "learning_resources": ["Learn Prolog Now!", "The Art of Prolog", "SWI-Prolog Documentation", "Tutorials Point Prolog"],
+      "learn": ["Learn Prolog Now!", "The Art of Prolog", "SWI-Prolog Documentation", "Tutorials Point Prolog"],
       "variables": {
         "declaration": [
           "X is 10. % X is a variable",
@@ -2736,7 +2736,7 @@
         "level": "4",
         "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)"],
         "fields": ["Game Development", "Embedded Systems", "Scripting / Automation", "Plugin / Extension Development"],
-        "popularity_rank": "ต่ำ (แต่สูงในบางโดเมนเช่น Game Scripting)",
+        "rank": "ต่ำ (แต่สูงในบางโดเมนเช่น Game Scripting)",
         "salary_range": "กลางถึงสูง (ขึ้นอยู่กับอุตสาหกรรม)",
         "salary": ["mid", "high"],
         "pros": [
@@ -2754,7 +2754,7 @@
           "ไม่เหมาะสำหรับการพัฒนาแอปพลิเคชันขนาดใหญ่โดยลำพัง"
         ],
         "frameworks": ["Luvit (Web/Networking), OpenResty (Web Platform), Corona SDK (Game Dev), Love2D (Game Dev)"],
-        "learning_resources": ["Lua.org Official Manual", "Programming in Lua (book)", "Learn Lua in 15 Minutes", "Codecademy"],
+        "learn": ["Lua.org Official Manual", "Programming in Lua (book)", "Learn Lua in 15 Minutes", "Codecademy"],
         "variables": {
           "declaration": [
             "local myVar = 10 -- Local variable",
@@ -2836,7 +2836,7 @@
         "level": "4",
         "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)", "Gradual Typing"],
         "fields": ["Game Development", "(Roblox specific)"],
-        "popularity_rank": "ต่ำมาก (เฉพาะสำหรับ Roblox)", 
+        "rank": "ต่ำมาก (เฉพาะสำหรับ Roblox)", 
         "salary_range": "กลางถึงสูง (ขึ้นอยู่กับความสำเร็จของเกม/แพลตฟอร์ม)",
         "salary": ["mid", "high"],
         "pros": [
@@ -2853,7 +2853,7 @@
           "ทรัพยากรการเรียนรู้นอก Roblox อาจจำกัด"
         ],
         "frameworks": ["Roblox API"],
-        "learning_resources": ["Roblox Creator Hub (Official Documentation)", "The Roblox Wiki", "YouTube Tutorials for Luau"],
+        "learn": ["Roblox Creator Hub (Official Documentation)", "The Roblox Wiki", "YouTube Tutorials for Luau"],
         "variables": {
           "declaration": [
             "local myVar = 10 -- Local variable",
@@ -2938,7 +2938,7 @@
         "level": "4",
         "par": ["Functional", "Concurrent", "Dynamic"],
         "fields": ["Web Backend", "Cloud Infrastructure", "Network Programming"],
-        "popularity_rank": "ต่ำ (แต่เพิ่มขึ้นในกลุ่มเฉพาะ)",
+        "rank": "ต่ำ (แต่เพิ่มขึ้นในกลุ่มเฉพาะ)",
         "salary_range": "สูงมาก (เป็นที่ต้องการสูงในตลาดเฉพาะทาง)",
         "salary": ["high", "veryhigh"],
         "pros": [
@@ -2955,7 +2955,7 @@
           "การจัดการ Memory อาจต้องใช้ความเข้าใจเฉพาะ"
         ],
         "frameworks": ["Phoenix (Web Framework), Nerves (Embedded Systems), Ecto (Database Wrapper)"],
-        "learning_resources": ["Elixir Official Website", "Elixir School", "Programming Elixir (Book)", "Phoenix Guides"],
+        "learn": ["Elixir Official Website", "Elixir School", "Programming Elixir (Book)", "Phoenix Guides"],
         "variables": {
           "declaration": [
             "name = \"Alice\"",
@@ -3032,7 +3032,7 @@
         "level": "4",
         "par": ["Functional", "Concurrent", "Dynamic", "Lisp"],
         "fields": ["Web Backend", "Data Science / Analytics", "AI / Machine Learning", "Finance / Trading Systems"],
-        "popularity_rank": "ต่ำ (เฉพาะกลุ่ม Functional Programming)",
+        "rank": "ต่ำ (เฉพาะกลุ่ม Functional Programming)",
         "salary_range": "สูงมาก (เป็นที่ต้องการในตลาดเฉพาะกลุ่ม)",
         "salary": ["high", "veryhigh"],
         "pros": [
@@ -3051,7 +3051,7 @@
           "Debugging อาจท้าทายกว่า"
         ],
         "frameworks": ["Luminus (Web), Reagent (Frontend with ClojureScript), yada (Web API)"],
-        "learning_resources": ["Clojure.org Official Guide", "Brave Clojure (Book)", "Clojure for the Brave and True", "Practicalli Clojure"],
+        "learn": ["Clojure.org Official Guide", "Brave Clojure (Book)", "Clojure for the Brave and True", "Practicalli Clojure"],
         "variables": {
           "declaration": [
             "(def x 10) ; global",
@@ -3134,7 +3134,7 @@
         "level": "3",
         "par": ["Structured", "Object-Oriented", "Concurrent", "Imperative"],
         "fields": ["Embedded Systems", "Operating Systems", "Aerospace & Defense"],
-        "popularity_rank": "ต่ำมาก (เฉพาะทางสูงมาก)",
+        "rank": "ต่ำมาก (เฉพาะทางสูงมาก)",
         "salary_range": "N/A (เป็นที่ต้องการสูงมากในอุตสาหกรรมเฉพาะทาง)",
         "salary": ["n/a"],
         "pros": [
@@ -3152,7 +3152,7 @@
           "ขาด Library ที่หลากหลายเมื่อเทียบกับภาษาอื่น"
         ],
         "frameworks": [],
-        "learning_resources": ["AdaCore", "Wikibooks: Ada Programming", "Learn Ada"],
+        "learn": ["AdaCore", "Wikibooks: Ada Programming", "Learn Ada"],
         "variables": {
           "declaration": [
             "Variable_Name : Type_Name := Initial_Value;",
@@ -3212,7 +3212,7 @@
         "level": "4",
         "par": ["Functional", "Procedural", "Reflective", "Metaprogramming"],
         "fields": ["Education / Teaching Tools", "Compiler / Language Design", "AI / Machine Learning"],
-        "popularity_rank": "ต่ำมาก (เฉพาะกลุ่มวิชาการ)",
+        "rank": "ต่ำมาก (เฉพาะกลุ่มวิชาการ)",
         "salary_range": "N/A (ส่วนใหญ่ในงานวิชาการหรือวิจัย)",
         "salary": ["n/a"],
         "pros": [
@@ -3230,7 +3230,7 @@
           "ประสิทธิภาพอาจไม่ดีเท่าภาษาที่คอมไพล์แบบ Native"
         ],
         "frameworks": [],
-        "learning_resources": ["SICP (Structure and Interpretation of Computer Programs)", "Racket (dialect of Scheme)", "Scheme R7RS"],
+        "learn": ["SICP (Structure and Interpretation of Computer Programs)", "Racket (dialect of Scheme)", "Scheme R7RS"],
         "variables": {
           "declaration": [
             "(define variable-name value)"
@@ -3288,7 +3288,7 @@
         "level": "4",
         "par": ["Object-Oriented", "Reflective", "Dynamic"],
         "fields": ["Education / Teaching Tools", "Rapid Prototyping", "(Legacy)"],
-        "popularity_rank": "ต่ำมาก (เฉพาะกลุ่ม Legacy Systems, Academic)",
+        "rank": "ต่ำมาก (เฉพาะกลุ่ม Legacy Systems, Academic)",
         "salary_range": "N/A (เป็นที่ต้องการในงาน Maintenance หรือเฉพาะทาง)",
         "salary": ["n/a"],
         "pros": [
@@ -3306,7 +3306,7 @@
           "ประสิทธิภาพอาจไม่ดีเท่าภาษาที่คอมไพล์แบบ Native"
         ],
         "frameworks": ["Seaside (Web Framework)"],
-        "learning_resources": ["Pharo (modern Smalltalk environment)", "Squeak Smalltalk", "Smalltalk-80: The Language and its Implementation"],
+        "learn": ["Pharo (modern Smalltalk environment)", "Squeak Smalltalk", "Smalltalk-80: The Language and its Implementation"],
         "variables": {
           "declaration": [
             "| variableName | (Temporary variables)",
@@ -3365,7 +3365,7 @@
         "level": "4",
         "par": ["Multi-paradigm", "Multiple dispatch", "High-performance"],
         "fields": ["Scientific Computing", "Data Science / Analytics", "AI / Machine Learning", "High-Performance Computing", "Numerical Computing"],
-        "popularity_rank": "ต่ำถึงปานกลาง (กำลังเติบโตในสายเฉพาะทาง)",
+        "rank": "ต่ำถึงปานกลาง (กำลังเติบโตในสายเฉพาะทาง)",
         "salary_range": "สูงมาก (ผู้เชี่ยวชาญเฉพาะทางอาจได้ 80K+)",
         "salary": ["high", "veryhigh"],
         "pros": [
@@ -3382,7 +3382,7 @@
             "ตลาดงานในไทยยังค่อนข้างเฉพาะทาง"
         ],
         "frameworks": ["Flux.jl (Machine Learning)", "DataFrames.jl (Data Manipulation)", "Plots.jl (Visualization)"],
-        "learning_resources": ["Julia Documentation", "Julia Academy", "Julia for Data Science"],
+        "learn": ["Julia Documentation", "Julia Academy", "Julia for Data Science"],
         "variables": {
             "declaration": ["var_name = value"],
             "types": ["Int", "Float64", "Complex", "String", "Char", "Bool", "Array", "Tuple", "Dict"],
@@ -3418,7 +3418,7 @@
       "level": "4",
       "par": ["Object-Oriented", "Imperative", "Contract-Oriented"],
       "fields": ["Blockchain Development", "Smart Contracts", "Decentralized Applications (dApps)", "Web3"],
-      "popularity_rank": "ปานกลาง (เฉพาะกลุ่ม Blockchain)",
+      "rank": "ปานกลาง (เฉพาะกลุ่ม Blockchain)",
       "salary_range": "สูงมาก (ผู้เชี่ยวชาญเฉพาะทาง 100K+)",
       "salary": ["veryhigh"],
       "pros": [
@@ -3434,7 +3434,7 @@
           "การดีบักและการทดสอบอาจซับซ้อนกว่าภาษาทั่วไป"
       ],
       "frameworks": ["Hardhat", "Truffle", "Foundry", "OpenZeppelin"],
-      "learning_resources": ["Solidity Documentation", "CryptoZombies", "freeCodeCamp - Blockchain Development"],
+      "learn": ["Solidity Documentation", "CryptoZombies", "freeCodeCamp - Blockchain Development"],
       "variables": {
           "declaration": ["type visibility name;"],
           "types": ["uint (unsigned integer)", "int (signed integer)", "address", "bool", "bytes", "string", "array (fixed/dynamic)", "struct", "enum", "mapping"],
@@ -3470,7 +3470,7 @@
     "level": "1",
     "par": ["Hardware Description", "Concurrent", "Dataflow", "Behavioral"],
     "fields": ["Hardware Design", "Embedded Systems", "Digital Circuit Design", "FPGA / ASIC Development", "Microelectronics"],
-    "popularity_rank": "ต่ำมาก (จำเป็นในสายงานเฉพาะ)",
+    "rank": "ต่ำมาก (จำเป็นในสายงานเฉพาะ)",
     "salary_range": "สูงมาก (ผู้เชี่ยวชาญหายาก 80K+)",
     "salary": ["veryhigh"],
     "pros": [
@@ -3486,7 +3486,7 @@
         "ตลาดงานเฉพาะทางสูงมาก"
     ],
     "frameworks": ["Vivado (Xilinx)", "Quartus Prime (Intel Altera)", "ModelSim (Siemens EDA)"],
-    "learning_resources": ["Nand2Tetris (concept)", "Online FPGA/ASIC courses", "Textbooks on Digital Design"],
+    "learn": ["Nand2Tetris (concept)", "Online FPGA/ASIC courses", "Textbooks on Digital Design"],
     "variables": {
         "declaration": ["wire signal_name;", "reg variable_name;"],
         "types": ["wire", "reg", "integer", "real", "time", "bit", "logic"],
@@ -3521,7 +3521,7 @@
     "level": "4",
     "par": ["Imperative", "Procedural", "Scripting"],
     "fields": ["Scripting / Automation", "DevOps / Automation", "System Administration", "Command-line Tools"],
-    "popularity_rank": "สูง (ในกลุ่ม System Admin/DevOps)",
+    "rank": "สูง (ในกลุ่ม System Admin/DevOps)",
     "salary_range": "กลางถึงสูง (มักใช้ร่วมกับภาษาอื่น)",
     "pros": [
       "ใช้งานง่ายสำหรับการจัดการระบบและไฟล์",
@@ -3536,7 +3536,7 @@
       "ไม่เหมาะกับงานที่ต้องมีการคำนวณซับซ้อน"
     ],
     "frameworks": [],
-    "learning_resources": ["Bash Manual", "Linux Command Line Basics", "Shell Scripting Tutorial"],
+    "learn": ["Bash Manual", "Linux Command Line Basics", "Shell Scripting Tutorial"],
     "variables": {
       "declaration": ["variable_name=value"],
       "types": ["String", "Number (Implicit)", "Array"],
@@ -3577,7 +3577,7 @@
     "level": "4",
     "par": ["Object-Oriented", "Imperative", "Procedural", "Scripting"],
     "fields": ["Scripting / Automation", "DevOps / Automation", "System Administration", "Cloud Infrastructure (Azure)", "Windows Management"],
-    "popularity_rank": "ปานกลาง (ในกลุ่ม System Admin/DevOps บน Windows)",
+    "rank": "ปานกลาง (ในกลุ่ม System Admin/DevOps บน Windows)",
     "salary_range": "กลางถึงสูง (มักใช้ร่วมกับภาษาอื่น)",
     "pros": [
       "ทรงพลังในการจัดการระบบ Windows และ Azure",
@@ -3592,7 +3592,7 @@
       "เน้นไปที่ Ecosystem ของ Microsoft เป็นหลัก"
     ],
     "frameworks": [],
-    "learning_resources": ["PowerShell Documentation", "Microsoft Learn - PowerShell"],
+    "learn": ["PowerShell Documentation", "Microsoft Learn - PowerShell"],
     "variables": {
       "declaration": ["$variable_name = value"],
       "types": ["String", "Int32", "Boolean", "Array", "HashTable", "Object"],
@@ -3633,7 +3633,7 @@
     "level": "unknown (เป็น Framework ของภาษา Python)",
     "par": ["Deep Learning", "Machine Learning"],
     "fields": ["AI / Machine Learning", "Deep Learning", "Data Science / Analytics", "Cloud Infrastructure"],
-    "popularity_rank": "สูงสุด (หนึ่งใน Framework ML ที่ได้รับความนิยมสูงสุด)",
+    "rank": "สูงสุด (หนึ่งใน Framework ML ที่ได้รับความนิยมสูงสุด)",
     "salary_range": "สูงมาก (สำหรับ Data Scientist, ML Engineer)",
     "pros": [
       "รองรับงาน Deep Learning ที่ซับซ้อน",
@@ -3647,7 +3647,7 @@
       "บางครั้งอาจรู้สึกเป็น 'Black Box'"
     ],
     "frameworks": [],
-    "learning_resources": ["TensorFlow Official Docs", "Coursera - TensorFlow Courses"],
+    "learn": ["TensorFlow Official Docs", "Coursera - TensorFlow Courses"],
     "variables": {
       "declaration": ["tf.constant", "tf.Variable"],
       "types": ["tf.Tensor (float32, int32, etc.)"],
@@ -3689,7 +3689,7 @@
     "level": "unknown (เป็น Library/Framework ของภาษา Python)",
     "par": ["Deep Learning", "Machine Learning"],
     "fields": ["AI / Machine Learning", "Deep Learning", "Data Science / Analytics", "Research & Development"],
-    "popularity_rank": "สูงสุด (ได้รับความนิยมอย่างมากในงานวิจัยและวิชาการ)",
+    "rank": "สูงสุด (ได้รับความนิยมอย่างมากในงานวิจัยและวิชาการ)",
     "salary_range": "สูงมาก (สำหรับ Data Scientist, ML Engineer)",
     "pros": [
       "ใช้งานง่ายและยืดหยุ่นสำหรับงานวิจัยและ Prototyping",
@@ -3702,7 +3702,7 @@
       "การ Deploy บน Production Scale อาจต้องใช้เครื่องมือเสริม"
     ],
     "frameworks": [],
-    "learning_resources": ["PyTorch Official Docs", "Fast.ai Courses"],
+    "learn": ["PyTorch Official Docs", "Fast.ai Courses"],
     "variables": {
       "declaration": ["torch.tensor", "torch.nn.Parameter"],
       "types": ["torch.Tensor (float32, int32, etc.)"],
@@ -3744,7 +3744,7 @@
     "level": "unknown (เป็น Query Language)",
     "par": ["Declarative"],
     "fields": ["API Development", "Web Backend", "Data Fetching"],
-    "popularity_rank": "ปานกลางถึงสูง (ได้รับความนิยมเพิ่มขึ้น)",
+    "rank": "ปานกลางถึงสูง (ได้รับความนิยมเพิ่มขึ้น)",
     "salary_range": "สูง (มักใช้ร่วมกับภาษา Backend)",
     "pros": [
       "Client สามารถระบุข้อมูลที่ต้องการได้อย่างแม่นยำ (ลด Over-fetching/Under-fetching)",
@@ -3759,7 +3759,7 @@
       "อาจทำให้เกิด Query ที่ซับซ้อนและมีประสิทธิภาพต่ำหากออกแบบไม่ดี"
     ],
     "frameworks": ["Apollo Server", "Relay", "Hasura"],
-    "learning_resources": ["GraphQL Official Website", "How to GraphQL", "Apollo GraphQL Docs"],
+    "learn": ["GraphQL Official Website", "How to GraphQL", "Apollo GraphQL Docs"],
     "variables": {
       "declaration": ["Query variables ($varName: Type!)"],
       "types": ["String", "Int", "Float", "Boolean", "ID", "Enum", "Custom Scalar"],
@@ -3821,7 +3821,7 @@
     "level": "5",
     "par": ["Procedural", "Declarative (SQL embedded)"],
     "fields": ["Database / SQL", "Backend Development", "Enterprise Systems"],
-    "popularity_rank": "ต่ำถึงปานกลาง (เฉพาะผู้ใช้ Oracle Database)",
+    "rank": "ต่ำถึงปานกลาง (เฉพาะผู้ใช้ Oracle Database)",
     "salary_range": "สูง (สำหรับผู้เชี่ยวชาญ Oracle DBA/Developer)",
     "pros": [
       "ประสิทธิภาพสูงในการประมวลผลข้อมูลใน Database Server",
@@ -3836,7 +3836,7 @@
       "ไม่เหมาะกับงานนอก Database"
     ],
     "frameworks": [],
-    "learning_resources": ["Oracle PL/SQL Documentation", "Oracle Academy"],
+    "learn": ["Oracle PL/SQL Documentation", "Oracle Academy"],
     "variables": {
       "declaration": ["variable_name datatype;"],
       "types": ["VARCHAR2", "NUMBER", "DATE", "BOOLEAN", "RECORD", "TABLE"],
@@ -3874,7 +3874,7 @@
     "level": "5",
     "par": ["Procedural", "Declarative (SQL embedded)"],
     "fields": ["Database / SQL", "Backend Development", "Enterprise Systems"],
-    "popularity_rank": "ต่ำถึงปานกลาง (เฉพาะผู้ใช้ Microsoft SQL Server)",
+    "rank": "ต่ำถึงปานกลาง (เฉพาะผู้ใช้ Microsoft SQL Server)",
     "salary_range": "สูง (สำหรับผู้เชี่ยวชาญ SQL Server DBA/Developer)",
     "pros": [
       "มีประสิทธิภาพในการประมวลผลข้อมูลขนาดใหญ่บน SQL Server",
@@ -3888,7 +3888,7 @@
       "ไวยากรณ์และแนวคิดแตกต่างจากภาษาโปรแกรมมิ่งทั่วไป"
     ],
     "frameworks": [],
-    "learning_resources": ["Microsoft T-SQL Documentation", "SQL Server Tutorials"],
+    "learn": ["Microsoft T-SQL Documentation", "SQL Server Tutorials"],
     "variables": {
       "declaration": ["DECLARE @variable_name datatype;"],
       "types": ["VARCHAR", "NVARCHAR", "INT", "DECIMAL", "DATETIME", "BIT", "TABLE"],
@@ -3929,7 +3929,7 @@
     "par": ["N/A"],
     "type": "JavaScript Runtime",
     "fields": ["Web Backend", "Web Frontend", "Tooling", "DevOps / Automation", "Performance Optimization"],
-    "popularity_rank": "กำลังเติบโตอย่างรวดเร็ว (โดยเฉพาะในสาย JavaScript)",
+    "rank": "กำลังเติบโตอย่างรวดเร็ว (โดยเฉพาะในสาย JavaScript)",
     "why_good": "ดีเยี่ยมสำหรับ JavaScript/TypeScript Development ที่ต้องการความเร็วและประสิทธิภาพสูงสุด ลดความซับซ้อนด้วยการรวม Package Manager และ Bundler ไว้ในตัว ทำให้ Workflow การพัฒนา JavaScript ง่ายและรวดเร็วขึ้น",
     "pros": [
       "ประสิทธิภาพสูงมาก (เร็วกว่า Node.js และ Deno)",
@@ -3943,7 +3943,7 @@
       "บาง Library เก่าๆ อาจยังไม่รองรับเต็มที่"
     ],
     "frameworks": [],
-    "learning_resources": ["Bun Official Website", "Bun Documentation"]
+    "learn": ["Bun Official Website", "Bun Documentation"]
   },
   {
     "id": 50,
@@ -3957,7 +3957,7 @@
     "par": ["N/A"],
     "type": "Operating System (Kernel)",
     "fields": ["Operating Systems", "Server Management", "Cloud Infrastructure", "DevOps / Automation", "Embedded Systems", "Cybersecurity"],
-    "popularity_rank": "สูงสุด (โดยเฉพาะใน Server และ Cloud)",
+    "rank": "สูงสุด (โดยเฉพาะใน Server และ Cloud)",
     "why_good": "ดีเยี่ยมสำหรับ Server, Cloud Infrastructure และงาน DevOps มีความเสถียรสูง, ปลอดภัย, ยืดหยุ่น และมีเครื่องมือ Command Line ที่ทรงพลัง รวมถึงเป็น Open Source ที่มี Community ขนาดใหญ่",
     "pros": [
       "เสถียรภาพและความน่าเชื่อถือสูง",
@@ -3972,7 +3972,7 @@
       "ซอฟต์แวร์ Desktop บางตัวอาจไม่รองรับ"
     ],
     "frameworks": [],
-    "learning_resources": ["Linux Foundation", "Linux Journey", "Ubuntu Documentation"]
+    "learn": ["Linux Foundation", "Linux Journey", "Ubuntu Documentation"]
   },
   {
     "id": 51,
@@ -3986,7 +3986,7 @@
     "par": ["N/A"],
     "type": "Package Manager",
     "fields": ["JavaScript Development", "Node.js Development", "Web Frontend", "Web Backend", "Tooling"],
-    "popularity_rank": "สูงสุด (สำหรับ JavaScript Ecosystem)",
+    "rank": "สูงสุด (สำหรับ JavaScript Ecosystem)",
     "why_good": "จำเป็นอย่างยิ่งสำหรับการจัดการ Dependency และ Library ในโครงการ JavaScript/Node.js ทำให้การนำโค้ดที่ผู้อื่นเขียนไว้มาใช้งานหรือการเผยแพร่โค้ดของตัวเองทำได้ง่ายและเป็นมาตรฐาน",
     "pros": [
       "เป็นมาตรฐานสำหรับ JavaScript Package Management",
@@ -4000,7 +4000,7 @@
       "อาจมีช่องโหว่ด้านความปลอดภัยใน Packages ที่ไม่ได้รับการดูแล"
     ],
     "frameworks": [],
-    "learning_resources": ["npm Docs", "Node.js Documentation"]
+    "learn": ["npm Docs", "Node.js Documentation"]
   },
   {
     "id": 52,
@@ -4014,7 +4014,7 @@
     "par": ["N/A"],
     "type": "Version Control System",
     "fields": ["Software Development", "Collaboration", "DevOps / Automation", "Source Code Management"],
-    "popularity_rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรม)",
+    "rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรม)",
     "why_good": "จำเป็นอย่างยิ่งสำหรับการทำงานร่วมกันในทีมพัฒนาซอฟต์แวร์ และการจัดการเวอร์ชันของ Source Code ทำให้สามารถติดตามการเปลี่ยนแปลง, ผสานโค้ด, และแก้ไขข้อผิดพลาดได้อย่างมีประสิทธิภาพ",
     "pros": [
       "กระจายศูนย์ (Decentralized) ทำให้ทำงานแบบ Offline ได้",
@@ -4028,7 +4028,7 @@
       "GUI Tools บางตัวอาจยังไม่สมบูรณ์"
     ],
     "frameworks": [],
-    "learning_resources": ["Git Official Documentation", "Pro Git Book", "GitHub Guides"]
+    "learn": ["Git Official Documentation", "Pro Git Book", "GitHub Guides"]
   },
   {
     "id": 53,
@@ -4042,7 +4042,7 @@
     "par": ["N/A"],
     "type": "Containerization Platform",
     "fields": ["DevOps / Automation", "Cloud Infrastructure", "Deployment", "Microservices", "Application Packaging"],
-    "popularity_rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรมสำหรับ Containerization)",
+    "rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรมสำหรับ Containerization)",
     "why_good": "ดีเยี่ยมสำหรับการทำให้กระบวนการ Deploy แอปพลิเคชันมีความสอดคล้องและง่ายขึ้น แก้ปัญหา \"It works on my machine!\" ทำให้แอปพลิเคชันทำงานได้เหมือนกันในทุกสภาพแวดล้อมตั้งแต่ Dev, Test ไปจนถึง Production",
     "pros": [
       "Portable: แอปพลิเคชันทำงานเหมือนกันในทุกสภาพแวดล้อม",
@@ -4056,7 +4056,7 @@
       "ไม่เหมาะกับการรัน VM ขนาดใหญ่"
     ],
     "frameworks": [],
-    "learning_resources": ["Docker Official Documentation", "Play with Docker"]
+    "learn": ["Docker Official Documentation", "Play with Docker"]
   },
   {
     "id": 54,
@@ -4070,7 +4070,7 @@
     "par": ["N/A"],
     "type": "Container Orchestration System",
     "fields": ["Cloud Infrastructure", "DevOps / Automation", "Microservices", "Deployment", "Scalability"],
-    "popularity_rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรมสำหรับ Orchestration)",
+    "rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรมสำหรับ Orchestration)",
     "why_good": "ดีที่สุดสำหรับการจัดการ Containerized Applications ขนาดใหญ่ บน Cloud หรือ On-Premises ช่วยให้การ Deploy, Scaling, Healing ตัวเอง และ Load Balancing ของ Microservices ทำได้โดยอัตโนมัติและมีประสิทธิภาพสูง",
     "pros": [
       "Automate การ Deploy และ Scaling แอปพลิเคชัน",
@@ -4084,6 +4084,6 @@
       "ต้องมีความรู้ด้าน Networking และ System Administration สูง"
     ],
     "frameworks": [],
-    "learning_resources": ["Kubernetes Official Documentation", "Certified Kubernetes Administrator (CKA)"]
+    "learn": ["Kubernetes Official Documentation", "Certified Kubernetes Administrator (CKA)"]
   }
 ]
