@@ -10,8 +10,8 @@
       "level": "4",
       "par": ["Multi-paradigm", "Event-driven", "Functional"],
       "fields": ["Web Frontend", "Web Backend", "Mobile Apps", "Desktop Applications", "Game Development", "AI / Machine Learning", "DevOps / Automation"],
-      "rank": "สูงสุด (ติด Top 1-3)",
-      "salary_range": "Junior: 35K-60K, Mid: 60K-90K, Senior: 90K+",
+      "rank": "1 ในกลุ่ม Web Development (ใช้โดย 62.3% ของนักพัฒนาทั่วโลก)",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-85,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
           "ใช้ได้หลายแพลตฟอร์ม (เว็บ, มือถือ, คอมพิวเตอร์)",
@@ -70,8 +70,8 @@
       "level": "4",
       "par": ["Object-Oriented", "Imperative", "Functional", "Procedural", "Reflective"],
       "fields": ["AI / Machine Learning", "Data Science / Analytics", "Web Backend", "Scripting / Automation", "Robotics / IoT", "Scientific Computing", "System Programming", "Game Development"],
-      "rank": "สูงสุด (ติด Top 1-2)",
-      "salary_range": "สูง (ผู้เชี่ยวชาญเฉพาะทาง C/Embedded อาจได้สูงมาก)",
+      "rank": "1 ภาษายอดนิยมสูงสุดโลก (TIOBE Index 2025 - 23.88%)",
+      "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
           "ไวยากรณ์เรียบง่าย อ่านและเรียนรู้ง่าย",
@@ -123,11 +123,11 @@
       "desc": "C คือภาษาโปรแกรมที่มีประสิทธิภาพสูง ใช้สำหรับพัฒนาซอฟต์แวร์ระบบ เช่น ระบบปฏิบัติการ, ไดรเวอร์ และโปรแกรมที่ต้องการความเร็วสูง เหมาะสำหรับงานที่ต้องควบคุมฮาร์ดแวร์โดยตรง",
       "by": "Dennis Ritchie",
       "yr": "1972",
-      "level": "3",
+      "level": "2",
       "par": ["Procedural", "Imperative"],
       "fields": ["Game Development", "High-Performance Computing", "System Programming", "Embedded Systems", "Desktop Applications", "Finance / Trading Systems", "Robotics / IoT", "Network Programming", "AR / VR Development"],
-      "rank": "ปานกลาง",
-      "salary_range": "สูง (ผู้เชี่ยวชาญเฉพาะทาง C/Embedded อาจได้สูงมาก)",
+      "rank": "4 ใน TIOBE Index 2025 (9.84% แต่ลดลง)",
+      "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-80,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
         "ประสิทธิภาพสูงมาก (ใกล้เคียงภาษาเครื่อง)",
@@ -230,8 +230,8 @@
       "level": "3",
       "par": ["Multi-paradigm", "Object-Oriented", "Procedural", "Generic"],
       "fields": ["Game Development", "High-Performance Computing", "System Programming", "Embedded Systems", "Desktop Applications", "Finance / Trading Systems", "Robotics / IoT", "Network Programming", "AR / VR Development"],
-      "rank": "สูง (ติด Top 10)",
-      "salary_range": "สูง (ผู้เชี่ยวชาญเฉพาะทางอาจได้สูงมาก)",
+      "rank": "2 ใน TIOBE Index 2025 (11.37% และเติบโตแรง)",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
         "ประสิทธิภาพสูงมาก (ใกล้เคียง C)",
@@ -333,11 +333,11 @@
       "desc": "C# (C-sharp) คือภาษาโปรแกรมเชิงวัตถุที่พัฒนาโดย Microsoft ใช้สำหรับสร้างแอปพลิเคชันหลากหลายประเภทบนแพลตฟอร์ม .NET เช่น Windows desktop apps, เว็บไซต์ (ASP.NET), เกม (Unity) และแอปบนมือถือ (Xamarin)",
       "by": "Microsoft (.NET team)",
       "yr": "2000",
-      "level": "4",
+      "level": "3",
       "par": ["Object-Oriented", "Component-Oriented", "Structured", "Imperative", "Functional"],
       "fields": ["Desktop Applications", "Web Backend", "Game Development", "Cloud Infrastructure"],
-      "rank": "สูง (ติด Top 10)",
-      "salary_range": "สูง",
+      "rank": "5 ใน TIOBE Index 2025 (4.12%)",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-85,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "เป็นภาษาเชิงวัตถุที่ทันสมัยและทรงพลัง",
@@ -440,11 +440,11 @@
       "desc": "Java เป็นภาษาโปรแกรมเชิงวัตถุที่ได้รับความนิยมสูง ถูกออกแบบมาให้เขียนครั้งเดียวสามารถรันได้ทุกที่ (Write Once, Run Anywhere) มีการใช้งานอย่างกว้างขวางในแอปพลิเคชันระดับองค์กร, Android, และ Big Data",
       "by": "James Gosling",
       "yr": "1995",
-      "level": "4",
+      "level": "3",
       "par": ["Object-Oriented", "Concurrent", "Structured", "Imperative", "Generic"],
       "fields": ["Web Backend", "Mobile Apps", "Cloud Infrastructure", "Data Science / Analytics", "Finance / Trading Systems"],
-      "rank": "สูง (ติด Top 5)",
-      "salary_range": "สูง",
+      "rank": "3 ใน TIOBE Index 2025 (10.66%)",
+      "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-100,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "แพลตฟอร์มเป็นอิสระ (JVM)",
@@ -539,11 +539,11 @@
       "desc": "Go (หรือ Golang) เป็นภาษาโปรแกรมที่พัฒนาโดย Google เน้นความเรียบง่าย, ประสิทธิภาพสูง และรองรับการทำงานแบบ Concurrency ได้ดี เหมาะสำหรับ Backend services, Cloud computing, และ Networking tools",
       "by": "Robert Griesemer, Rob Pike, Ken Thompson",
       "yr": "2009",
-      "level": "4",
+      "level": "2",
       "par": ["Concurrent", "Structured", "Imperative"],
       "fields": ["Web Backend", "Cloud Infrastructure", "System Programming", "Network Programming"],
-      "rank": "ปานกลางถึงสูง (ความนิยมเพิ่มขึ้นต่อเนื่อง)",
-      "salary_range": "สูง (เป็นที่ต้องการสูง)",
+      "rank": "6-8 และเติบโตแรงใน Cloud/Backend (เพิ่มขึ้น 1.2% ใน 2024)",
+      "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-130,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "ประสิทธิภาพสูง (ใกล้เคียง C/C++)",
@@ -641,8 +641,8 @@
       "level": "2",
       "par": ["Multi-paradigm", "Functional", "Imperative", "Concurrent"],
       "fields": ["System Programming", "Web Backend", "Blockchain", "Embedded Systems", "Network Programming", "Game Development"],
-      "rank": "ปานกลาง (แต่เพิ่มขึ้นอย่างรวดเร็ว)",
-      "salary_range": "สูงมาก (เป็นที่ต้องการสูงมากสำหรับผู้เชี่ยวชาญ)",
+      "rank": "15 ใน TIOBE แต่เป็น Most Loved Language (84.9% ของนักพัฒนาชอบ)",
+      "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
         "ความปลอดภัยของหน่วยความจำ (Memory Safety) โดยไม่มี GC",
@@ -734,8 +734,8 @@
       "level": "4",
       "par": ["Multi-paradigm", "Object-Oriented", "Functional"],
       "fields": ["Web Frontend", "Web Backend", "Mobile Apps", "Desktop Applications"],
-      "rank": "สูง (ความนิยมเพิ่มขึ้นอย่างรวดเร็ว)",
-      "salary_range": "สูง (ใกล้เคียงกับ JavaScript)",
+      "rank": "12 แต่เติบโตแรงใน Modern Web Development (ใช้โดย 38.8% ของนักพัฒนา)",
+      "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "เพิ่มความปลอดภัยของโค้ดด้วย Type Checking",
@@ -833,8 +833,8 @@
       "level": "4",
       "par": ["Procedural", "Object-Oriented", "Imperative", "Functional"],
       "fields": ["Web Backend"],
-      "rank": "ปานกลางถึงสูง",
-      "salary_range": "กลางถึงสูง",
+      "rank": "13-17 ลดลงอย่างต่อเนื่อง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
+      "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-70,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "เรียนรู้และเริ่มต้นใช้งานง่าย",
@@ -930,8 +930,8 @@
       "level": "4",
       "par": ["Object-Oriented", "Imperative", "Functional", "Reflective"],
       "fields": ["Web Backend"],
-      "rank": "ปานกลาง (ลดลงเล็กน้อย)",
-      "salary_range": "กลางถึงสูง",
+      "rank": "14 และลดลงต่อเนื่อง (2.1% ใน TIOBE)",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-95,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "Syntax สวยงามและอ่านง่าย",
@@ -1021,11 +1021,11 @@
       "desc": "Swift เป็นภาษาโปรแกรมที่พัฒนาโดย Apple สำหรับสร้างแอปพลิเคชันบน iOS, macOS, watchOS, tvOS และ Linux เน้นความปลอดภัย, ประสิทธิภาพ และความทันสมัยในการเขียนโค้ด",
       "by": "Apple Inc.",
       "yr": "2014",
-      "level": "4",
+      "level": "3",
       "par": ["Multi-paradigm", "Object-Oriented", "Functional", "Protocol-Oriented"],
       "fields": ["Mobile Apps", "Desktop Applications"],
-      "rank": "ปานกลาง",
-      "salary_range": "สูง",
+      "rank": "10-12 สำหรับ iOS Development แต่กำลังลดลง (1.8% ใน TIOBE)",
+      "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "ประสิทธิภาพสูง",
@@ -1119,11 +1119,11 @@
       "desc": "Kotlin เป็นภาษาโปรแกรมที่ทันสมัย, Statically typed และพัฒนาโดย JetBrains สามารถทำงานบน JVM และถูกเลือกให้เป็นภาษาหลักสำหรับการพัฒนา Android แทน Java ได้รับความนิยมอย่างรวดเร็ว",
       "by": "JetBrains",
       "yr": "2011",
-      "level": "4",
+      "level": "3",
       "par": ["Object-Oriented", "Functional", "Procedural", "Concurrent"],
       "fields": ["Mobile Apps", "Web Backend", "Desktop Applications"],
-      "rank": "ปานกลาง",
-      "salary_range": "สูง",
+      "rank": "18-20 Android Official Language แต่ความนิยมลดลง",
+      "salary_range": "฿38,000-60,000 บาท/เดือน (Junior), ฿60,000-105,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "ใช้งานร่วมกับ Java ได้ 100% (Interoperability)",
@@ -1218,11 +1218,11 @@
       "desc": "R เป็นภาษาโปรแกรมและสภาพแวดล้อมซอฟต์แวร์สำหรับการวิเคราะห์ทางสถิติ, การแสดงผลข้อมูล และ Data Science มีแพ็กเกจจำนวนมากที่รองรับงานด้านสถิติและ Machine Learning",
       "by": "Ross Ihaka and Robert Gentleman",
       "yr": "1993",
-      "level": "4",
+      "level": "5",
       "par": ["Functional", "Procedural", "Object-Oriented"],
       "fields": ["Data Science / Analytics", "Scientific Computing"],
-      "rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่ม Data Science/สถิติ)",
-      "salary_range": "สูง (สำหรับตำแหน่ง Data Scientist, Statistician)",
+      "rank": "11-13 แต่กำลังลดลงเรื่อยๆ (แพ้ Python ใน Data Science)",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "ประสิทธิภาพสูงสำหรับการวิเคราะห์ข้อมูลทางสถิติ",
@@ -1313,8 +1313,8 @@
       "level": "5",
       "par": ["Declarative"],
       "fields": ["Database / SQL"],
-      "rank": "สูง (เป็นภาษามาตรฐานสำหรับฐานข้อมูล, ใช้ควบคู่กับภาษาอื่นเสมอ)",
-      "salary_range": "กลางถึงสูง (มักใช้ร่วมกับภาษาอื่น)",
+      "rank": "9-11 แต่กำลังลดลง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
+      "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-75,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "เป็นมาตรฐานอุตสาหกรรมสำหรับการจัดการฐานข้อมูล",
@@ -1394,11 +1394,11 @@
       "desc": "SwiftUI ไม่ใช่ภาษาโปรแกรมมิ่ง แต่เป็น Declarative UI Framework ของ Apple สำหรับสร้าง User Interfaces ข้ามแพลตฟอร์ม (iOS, macOS, watchOS, tvOS) โดยใช้ภาษา Swift เน้นการเขียนโค้ดที่กระชับและเข้าใจง่าย",
       "by": "Apple Inc.",
       "yr": "2019",
-      "level": "0",
+      "level": "5",
       "par": ["Declarative", "Functional"],
       "fields": ["Mobile Apps", "Desktop Applications", "(UI Framework)"],
-      "rank": "N/A (เป็น Framework, ไม่ใช่ภาษา)",
-      "salary_range": "N/A (เงินเดือนขึ้นอยู่กับ Swift)",
+      "rank": "เติบโตในชุมชน iOS แต่จำกัดเฉพาะ Apple Platform",
+      "salary_range": "฿42,000-68,000 บาท/เดือน (Junior), ฿68,000-115,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "เขียนโค้ด UI ได้กระชับและอ่านง่าย",
@@ -1483,11 +1483,11 @@
       "desc": "Node.js ไม่ใช่ภาษาโปรแกรมมิ่ง แต่เป็น Runtime Environment ที่ทำให้ JavaScript สามารถรันอยู่นอก Web Browser ได้ ใช้สำหรับสร้าง Server-side applications, APIs และ Command-line tools",
       "by": "Ryan Dahl",
       "yr": "2009",
-      "level": "0",
+      "level": "Unknown",
       "par": ["Event-driven", "Asynchronous"],
       "fields": ["Web Backend", "DevOps / Automation", "(Runtime Environment)"],
-      "rank": "N/A (เป็น Runtime Environment, ไม่ใช่ภาษา)",
-      "salary_range": "N/A (เงินเดือนขึ้นอยู่กับ JavaScript)",
+      "rank": "ใช้โดย 42.7% ของนักพัฒนา Backend JavaScript",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "ใช้ JavaScript ทั้ง Frontend และ Backend (Full-stack JS)",
@@ -1576,11 +1576,11 @@
     "desc": "โครงสร้าง HTML หลักสำหรับหน้าแสดงข้อมูลภาษาโปรแกรมมิ่งทั้งหมด",
     "by": "AI Assistant",
     "yr": "2025",
-    "level": "0",
+    "level": "5",
     "par": ["Markup Language", "Structural"],
     "fields": ["Web Frontend", "(Markup Language)"],
-    "rank": "N/A (เป็นพื้นฐานของเว็บ)",
-    "salary_range": "N/A (มักใช้คู่กับ CSS/JS)",
+    "rank": "52.9% ของนักพัฒนาทั่วโลก",
+    "salary_range": "฿20,000-35,000 บาท/เดือน (Junior), ฿35,000-55,000 บาท/เดือน (Senior)",
     "salary": ["n/a"],
     "pros": [
       "กำหนดโครงสร้างเนื้อหาของเว็บเพจ",
@@ -1627,11 +1627,11 @@
     "desc": "สไตล์ CSS สำหรับหน้าแสดงข้อมูลภาษาโปรแกรมมิ่งทั้งหมด",
     "by": "AI Assistant",
     "yr": "2025",
-    "level": "0",
+    "level": "5",
     "par": ["Styling Language", "Declarative"],
     "fields": ["Web Frontend", "(Stylesheet Language)"],
-    "rank": "N/A (เป็นพื้นฐานของเว็บ)",
-    "salary_range": "N/A (มักใช้คู่กับ HTML/JS)",
+    "rank": "ใช้คู่กับ HTML ในทุก Web Project (48.2% ของนักพัฒนา)",
+    "salary_range": "฿22,000-38,000 บาท/เดือน (Junior), ฿38,000-60,000 บาท/เดือน (Senior)",
     "salary": ["n/a"],
     "pros": [
       "ควบคุมการแสดงผลของ HTML ได้อย่างละเอียด",
@@ -1697,11 +1697,11 @@
       "desc": "Dart เป็นภาษาโปรแกรมที่พัฒนาโดย Google เน้นการสร้างแอปพลิเคชันแบบ Multi-platform โดยเฉพาะอย่างยิ่ง Mobile App ด้วย Flutter Framework สามารถ Compile เป็น Native Code ได้ ทำให้มีประสิทธิภาพสูง",
       "by": "Google",
       "yr": "2011",
-      "level": "4",
+      "level": "3",
       "par": ["Object-Oriented", "Imperative", "Functional"],
       "fields": ["Mobile Apps", "Web Frontend", "Desktop Applications"],
-      "rank": "ปานกลาง (ความนิยมเพิ่มขึ้นตาม Flutter)",
-      "salary_range": "สูง",
+      "rank": "25-30 แต่เติบโตแรงด้วย Flutter (6.2% ของนักพัฒนา Mobile)",
+      "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-85,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "เหมาะกับการพัฒนา Cross-platform ด้วย Flutter",
@@ -1797,11 +1797,11 @@
       "desc": "Scala เป็นภาษาโปรแกรม Multi-paradigm ที่ทำงานบน JVM (Java Virtual Machine) ผสมผสานคุณสมบัติของ Object-Oriented และ Functional Programming ได้อย่างลงตัว เหมาะสำหรับ Big Data, Web Backend และ Distributed Systems",
       "by": "Martin Odersky",
       "yr": "2004",
-      "level": "4",
+      "level": "3",
       "par": ["Object-Oriented", "Functional", "Concurrent"],
       "fields": ["Big Data", "Web Backend", "Finance / Trading Systems"],
-      "rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่ม Big Data/High-Performance)",
-      "salary_range": "สูงมาก (เป็นที่ต้องการสูงในบางอุตสาหกรรม)",
+      "rank": "20-25 แข็งแกร่งใน Big Data (2.1% แต่เงินเดือนสูง)",
+      "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-125,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high", "veryhigh"],
       "pros": [
         "ทำงานร่วมกับ Java ได้ดีเยี่ยม",
@@ -1897,11 +1897,11 @@
       "desc": "Perl เป็นภาษาโปรแกรมที่ยืดหยุ่นและมีพลังมาก มักใช้สำหรับการจัดการข้อความ, การประมวลผลระบบ และ Web Development ได้รับฉายาว่า 'Swiss Army Chainsaw' ของภาษาโปรแกรม",
       "by": "Larry Wall",
       "yr": "1987",
-      "level": "4",
+      "level": "3",
       "par": ["Procedural", "Object-Oriented", "Functional"],
       "fields": ["Scripting / Automation", "Web Backend", "Network Programming"],
-      "rank": "ต่ำ (ลดลงจากเดิม)",
-      "salary_range": "กลางถึงสูง (สำหรับงาน Maintenance หรือเฉพาะทาง)",
+      "rank": "30-35 ลดลงมาก แต่ยังใช้ใน Legacy Systems",
+      "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-75,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "มีประสิทธิภาพสูงในการจัดการข้อความและ Regex",
@@ -1992,11 +1992,11 @@
       "desc": "Objective-C เป็นภาษาโปรแกรมเชิงวัตถุที่พัฒนามาจากภาษา C และเป็นภาษาหลักสำหรับการพัฒนาแอปพลิเคชันบน macOS และ iOS มายาวนานก่อน Swift จะเข้ามาแทนที่",
       "by": "Brad Cox and Tom Love",
       "yr": "1980s",
-      "level": "3",
+      "level": "2",
       "par": ["Object-Oriented", "Reflective", "Imperative"],
       "fields": ["Mobile Apps", "Desktop Applications", "(Legacy)"],
-      "rank": "ต่ำมาก (ส่วนใหญ่ถูกแทนที่ด้วย Swift)",
-      "salary_range": "N/A (งานใหม่น้อยลง)",
+      "rank": "35-40 ลดลงอย่างรวดเร็วเนื่องจาก Swift",
+      "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-80,000 บาท/เดือน (Senior)",
       "salary": ["N/A"],
       "pros": [
         "เคยเป็นภาษาหลักสำหรับ Apple Ecosystem",
@@ -2085,8 +2085,8 @@
       "level": "1",
       "par": ["Imperative", "Procedural"],
       "fields": ["System Programming", "Embedded Systems", "Reverse Engineering", "Operating Systems"],
-      "rank": "ต่ำมาก (เฉพาะกลุ่ม Low-level Programming)",
-      "salary_range": "N/A (ไม่ใช่งานทั่วไป)",
+      "rank": "40+ Niche แต่จำเป็นสำหรับ Low-level Programming",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-95,000 บาท/เดือน (Senior)",
       "salary": ["N/A"],
       "pros": [
         "ประสิทธิภาพสูงสุด",
@@ -2169,11 +2169,11 @@
       "desc": "MATLAB เป็นภาษาและแพลตฟอร์มสำหรับการคำนวณเชิงตัวเลข (Numerical Computing) และการเขียนโปรแกรมเชิงเทคนิค มีชื่อเสียงในการวิเคราะห์ข้อมูล, พัฒนาอัลกอริทึม, สร้างโมเดล และ Simulation ทางวิศวกรรมและวิทยาศาสตร์",
       "by": "MathWorks",
       "yr": "1984",
-      "level": "4",
+      "level": "5",
       "par": ["Array-oriented", "Procedural", "Object-Oriented"],
       "fields": ["Scientific Computing", "Data Science / Analytics", "Robotics / IoT"],
-      "rank": "ต่ำถึงปานกลาง (เฉพาะกลุ่มวิศวกรรม/วิทยาศาสตร์)",
-      "salary_range": "สูง (สำหรับสายวิศวกรรม, วิจัย)",
+      "rank": "16-20 แข็งแกร่งใน Academic และ Engineering",
+      "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-85,000 บาท/เดือน (Senior)",
       "salary": ["low", "mid", "high"],
       "pros": [
         "ทรงพลังสำหรับการคำนวณเชิงตัวเลขและเมทริกซ์",
@@ -2264,11 +2264,11 @@
       "desc": "COBOL (Common Business-Oriented Language) เป็นภาษาโปรแกรมที่เก่าแก่และถูกออกแบบมาเพื่อการประมวลผลข้อมูลทางธุรกิจโดยเฉพาะ มักใช้ในระบบ Mainframe ของธนาคารและหน่วยงานรัฐบาล",
       "by": "CODASYL Committee",
       "yr": "1959",
-      "level": "4",
+      "level": "1",
       "par": ["Procedural", "Imperative"],
       "fields": ["Finance / Trading Systems", "(Legacy)"],
-      "rank": "ต่ำมาก (เฉพาะกลุ่ม Legacy Mainframe)",
-      "salary_range": "N/A (งานใหม่น้อยมาก, ผู้เชี่ยวชาญหายากและอาจได้สูงมาก)",
+      "rank": "45+ ลดลงแต่ยังจำเป็นใน Legacy Banking Systems",
+      "salary_range": "฿25,000-42,000 บาท/เดือน (Junior), ฿42,000-75,000 บาท/เดือน (Senior)",
       "salary": ["mid", "high"],
       "pros": [
         "เสถียรและเชื่อถือได้สำหรับงาน Business Critical",
@@ -2363,11 +2363,11 @@
       "desc": "Fortran (Formula Translation) เป็นภาษาโปรแกรมที่เก่าแก่และยังคงใช้กันอย่างแพร่หลายในงานทางวิทยาศาสตร์และการคำนวณทางวิศวกรรม โดยเฉพาะงานที่เกี่ยวข้องกับ Supercomputing และ Numerical Analysis",
       "by": "John Backus (IBM)",
       "yr": "1957",
-      "level": "4",
+      "level": "1",
       "par": ["Procedural", "Imperative", "Array-oriented"],
       "fields": ["Scientific Computing"],
-      "rank": "ต่ำมาก (ส่วนใหญ่ในงานวิทยาศาสตร์/วิศวกรรมเฉพาะทาง)",
-      "salary_range": "เฉพาะทางสูง (Numerical and Scientific Computing, HPC)",
+      "rank": "35-40 ยังใช้ใน High-Performance Scientific Computing",
+      "salary_range": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-80,000 บาท/เดือน (Senior)",
       "salary": ["mid", "high"],
       "pros": [
         "ประสิทธิภาพสูงมากสำหรับการคำนวณตัวเลขและ Array",
@@ -2457,11 +2457,11 @@
       "desc": "Lisp (LISt Processing) เป็นภาษาโปรแกรมที่เก่าแก่เป็นอันดับสองรองจาก Fortran มีชื่อเสียงในด้าน AI, การประมวลผลสัญลักษณ์ และ Functional Programming โดดเด่นด้วยการใช้ Parentheses จำนวนมาก",
       "by": "John McCarthy",
       "yr": "1958",
-      "level": "5",
+      "level": "3",
       "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming"],
       "fields": ["AI / Machine Learning", "Compiler / Language Design", "Education / Teaching Tools"],
-      "rank": "ต่ำมาก (ส่วนใหญ่ในงานวิชาการ/วิจัย/Legacy AI)",
-      "salary_range": "N/A (ส่วนใหญ่ในงานวิจัยหรือเฉพาะทาง)",
+      "rank": "40+ Niche ใน AI Research และ Academic",
+      "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
       "salary": ["mid", "high"],
       "pros": [
         "ทรงพลังสำหรับ AI และ Symbolic computing",
@@ -2543,11 +2543,11 @@
       "desc": "Haskell เป็นภาษาโปรแกรม Functional ที่บริสุทธิ์ (Purely Functional) และเป็น Statically-typed เน้นความถูกต้องทางคณิตศาสตร์และการเขียนโค้ดที่ไม่เปลี่ยนแปลง (Immutable) เหมาะสำหรับงานวิจัย, การศึกษา และโปรแกรมที่ต้องการความเสถียรสูง",
       "by": "Simon Peyton Jones, Philip Wadler, et al.",
       "yr": "1990",
-      "level": "5",
+      "level": "3",
       "par": ["Functional", "Lazy Evaluation"],
       "fields": ["Functional Programming", "Blockchain", "Compiler / Language Design", "Finance / Trading Systems"],
-      "rank": "ต่ำ (เฉพาะกลุ่มวิชาการ/Functional Programming)",
-      "salary_range": "N/A (เป็นที่ต้องการในตลาดเฉพาะกลุ่ม)",
+      "rank": "35-40 Niche ใน Functional Programming",
+      "salary_range": "฿38,000-60,000 บาท/เดือน (Junior), ฿60,000-105,000 บาท/เดือน (Senior)",
       "salary": ["mid", "high"],
       "pros": [
         "โค้ดมีความถูกต้องทางคณิตศาสตร์สูง (Guaranteed Correctness)",
@@ -2635,11 +2635,11 @@
       "desc": "Prolog (PROgramming in LOGic) เป็นภาษาโปรแกรมเชิงตรรกะ (Logic Programming) ที่ใช้ในการสร้างระบบผู้เชี่ยวชาญ (Expert Systems), การประมวลผลภาษาธรรมชาติ และ AI เป็นหลัก โปรแกรมถูกเขียนในรูปของข้อเท็จจริงและกฎเกณฑ์",
       "by": "Alain Colmerauer and Robert Kowalski",
       "yr": "1972",
-      "level": "5",
+      "level": "4",
       "par": ["Logic Programming", "Declarative"],
       "fields": ["AI / Machine Learning", "Database / SQL"],
-      "rank": "ต่ำมาก (เฉพาะกลุ่ม Logic Programming/AI Research)",
-      "salary_range": "N/A (ส่วนใหญ่ในงานวิจัยหรือเฉพาะทาง)",
+      "rank": "45+ Niche ใน Logic Programming",
+      "salary_range": "฿25,000-42,000 บาท/เดือน (Junior), ฿42,000-75,000 บาท/เดือน (Senior)",
       "salary": ["mid", "high"],
       "pros": [
         "เหมาะสำหรับงาน AI ที่เกี่ยวข้องกับตรรกะและการค้นหา (Search)",
@@ -2733,11 +2733,11 @@
         "desc": "Lua เป็นภาษา Scripting ที่มีน้ำหนักเบา (lightweight), ประสิทธิภาพสูง, และมีความสามารถในการขยาย (extensible) สูง เหมาะสำหรับการฝัง (embedding) ในแอปพลิเคชันอื่น ๆ เช่น เกม และระบบฝังตัว (embedded systems) มีไวยากรณ์ที่เรียบง่ายและเรียนรู้ได้เร็ว",
         "by": "Roberto Ierusalimschy, Luiz Henrique de Figueiredo, and Waldemar Celes",
         "yr": "1993",
-        "level": "4",
+        "level": "2",
         "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)"],
         "fields": ["Game Development", "Embedded Systems", "Scripting / Automation", "Plugin / Extension Development"],
-        "rank": "ต่ำ (แต่สูงในบางโดเมนเช่น Game Scripting)",
-        "salary_range": "กลางถึงสูง (ขึ้นอยู่กับอุตสาหกรรม)",
+        "rank": "25-30 ใช้ใน Game Development และ Embedded Systems",
+        "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
         "salary": ["mid", "high"],
         "pros": [
           "มีน้ำหนักเบาและรวดเร็ว เหมาะสำหรับการฝัง",
@@ -2833,11 +2833,11 @@
         "desc": "Luau เป็นภาษา Scripting ที่พัฒนาโดย Roblox โดยอิงจาก Lua มีประสิทธิภาพสูง, มีระบบ Type ที่ค่อยๆ เพิ่มเข้ามาได้ (Gradual Typing), และคุณสมบัติที่ทันสมัยอื่น ๆ เพื่อการพัฒนาเกมบนแพลตฟอร์ม Roblox Studio โดยเฉพาะ",
         "by": "Roblox",
         "yr": "2019",
-        "level": "4",
+        "level": "3",
         "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)", "Gradual Typing"],
         "fields": ["Game Development", "(Roblox specific)"],
-        "rank": "ต่ำมาก (เฉพาะสำหรับ Roblox)", 
-        "salary_range": "กลางถึงสูง (ขึ้นอยู่กับความสำเร็จของเกม/แพลตฟอร์ม)",
+        "rank": "เติบโตในชุมชน Game Development (Roblox Ecosystem)", 
+        "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
         "salary": ["mid", "high"],
         "pros": [
           "ประสิทธิภาพดีเยี่ยมบน Roblox",
@@ -2935,11 +2935,11 @@
         "desc": "Elixir เป็นภาษา Functional Programming ที่ทำงานบน Erlang Virtual Machine (BEAM) มีจุดเด่นด้าน Concurrency, Fault-tolerance (ความทนทานต่อข้อผิดพลาด) และ Scalability สูงมาก ออกแบบมาเพื่อสร้างระบบที่มีความทนทานสูงและสามารถรองรับผู้ใช้จำนวนมหาศาล เหมาะสำหรับ Web Servers, APIs, Chat applications และ Distributed Systems",
         "by": "José Valim",
         "yr": "2012",
-        "level": "4",
+        "level": "3",
         "par": ["Functional", "Concurrent", "Dynamic"],
         "fields": ["Web Backend", "Cloud Infrastructure", "Network Programming"],
-        "rank": "ต่ำ (แต่เพิ่มขึ้นในกลุ่มเฉพาะ)",
-        "salary_range": "สูงมาก (เป็นที่ต้องการสูงในตลาดเฉพาะทาง)",
+        "rank": "30-35 เติบโตใน High-concurrency Systems",
+        "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-88,000 บาท/เดือน (Senior)",
         "salary": ["high", "veryhigh"],
         "pros": [
           "Concurrency สูงและจัดการได้ง่าย (ผ่าน Actor Model)",
@@ -3029,11 +3029,11 @@
         "desc": "Clojure เป็นภาษา Functional Programming ในตระกูล Lisp ที่ทำงานบน JVM (Java Virtual Machine) มีจุดเด่นด้าน Persistent Data Structures, Concurrency ที่แข็งแกร่ง และการพัฒนาแบบ Interactive Development (REPL) เป็นที่นิยมใน Data Science, Web Development (ClojureScript) และ Distributed Systems สำหรับการสร้างแอปพลิเคชันที่ทนทานและมีประสิทธิภาพสูง",
         "by": "Rich Hickey",
         "yr": "2007",
-        "level": "4",
+        "level": "3",
         "par": ["Functional", "Concurrent", "Dynamic", "Lisp"],
         "fields": ["Web Backend", "Data Science / Analytics", "AI / Machine Learning", "Finance / Trading Systems"],
-        "rank": "ต่ำ (เฉพาะกลุ่ม Functional Programming)",
-        "salary_range": "สูงมาก (เป็นที่ต้องการในตลาดเฉพาะกลุ่ม)",
+        "rank": "35-40 Niche ใน Functional Programming บน JVM",
+        "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-92,000 บาท/เดือน (Senior)",
         "salary": ["high", "veryhigh"],
         "pros": [
           "Functional Programming ที่บริสุทธิ์ ช่วยให้โค้ด Predictable",
@@ -3131,10 +3131,10 @@
         "desc": "Ada เป็นภาษาโปรแกรมที่มีโครงสร้างชัดเจนและแข็งแกร่ง (Strongly-typed) พัฒนาขึ้นโดยกระทรวงกลาโหมสหรัฐฯ เน้นความน่าเชื่อถือและความปลอดภัยสูง เหมาะสำหรับระบบฝังตัว (Embedded Systems), ระบบควบคุมแบบเรียลไทม์ (Real-time Systems) และระบบที่มีความสำคัญด้านความปลอดภัยสูง เช่น การบินและอวกาศ, การทหาร, และการควบคุมการจราจรทางอากาศ",
         "by": "Jean Ichbiah (ทีมงาน)",
         "yr": "1980 (Ada 83)",
-        "level": "3",
+        "level": "1",
         "par": ["Structured", "Object-Oriented", "Concurrent", "Imperative"],
         "fields": ["Embedded Systems", "Operating Systems", "Aerospace & Defense"],
-        "rank": "ต่ำมาก (เฉพาะทางสูงมาก)",
+        "rank": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-80,000 บาท/เดือน (Senior)",
         "salary_range": "N/A (เป็นที่ต้องการสูงมากในอุตสาหกรรมเฉพาะทาง)",
         "salary": ["n/a"],
         "pros": [
@@ -3209,11 +3209,11 @@
         "desc": "Scheme เป็นภาษาโปรแกรม Functional Programming ในตระกูล Lisp ที่เน้นความเรียบง่าย (Minimalism) และความสอดคล้องทางทฤษฎี (Theoretical Consistency) เป็นอย่างสูง ถูกใช้ในการศึกษาด้านวิทยาการคอมพิวเตอร์, การวิจัย และการพัฒนาแอปพลิเคชันที่ต้องการความยืดหยุ่นสูงและการจัดการโค้ดในฐานะข้อมูล (Code as Data)",
         "by": "Guy L. Steele Jr. and Gerald Jay Sussman",
         "yr": "1975",
-        "level": "4",
+        "level": "3",
         "par": ["Functional", "Procedural", "Reflective", "Metaprogramming"],
         "fields": ["Education / Teaching Tools", "Compiler / Language Design", "AI / Machine Learning"],
-        "rank": "ต่ำมาก (เฉพาะกลุ่มวิชาการ)",
-        "salary_range": "N/A (ส่วนใหญ่ในงานวิชาการหรือวิจัย)",
+        "rank": "45+ Niche ใน Education และ Computer Science Research",
+        "salary_range": "฿24,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
         "salary": ["n/a"],
         "pros": [
           "ไวยากรณ์ที่เรียบง่ายและสอดคล้อง (S-expressions)",
@@ -3285,11 +3285,11 @@
         "desc": "Smalltalk เป็นภาษาโปรแกรมเชิงวัตถุบริสุทธิ์ (Pure Object-Oriented) ที่มีแนวคิดการทำงานแบบ Message Passing และสภาพแวดล้อมการพัฒนาแบบโต้ตอบ (Interactive Development Environment - IDE) ซึ่งเป็นผู้บุกเบิกแนวคิด GUI และการพัฒนาแบบ Rapid Prototyping มีอิทธิพลอย่างมากต่อภาษาและ Frameworks สมัยใหม่หลายตัว",
         "by": "Alan Kay, Dan Ingalls, Adele Goldberg, etc. (Xerox PARC)",
         "yr": "1970s (Smalltalk-80)",
-        "level": "4",
+        "level": "3",
         "par": ["Object-Oriented", "Reflective", "Dynamic"],
         "fields": ["Education / Teaching Tools", "Rapid Prototyping", "(Legacy)"],
-        "rank": "ต่ำมาก (เฉพาะกลุ่ม Legacy Systems, Academic)",
-        "salary_range": "N/A (เป็นที่ต้องการในงาน Maintenance หรือเฉพาะทาง)",
+        "rank": "45+ ลดลงมาก แต่ยังมีใช้ใน Legacy Enterprise",
+        "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
         "salary": ["n/a"],
         "pros": [
           "Pure Object-Oriented System (ทุกอย่างเป็น Object)",
@@ -3362,11 +3362,11 @@
         "desc": "Julia คือภาษาโปรแกรมที่มีความเร็วสูง เหมาะสำหรับงานคำนวณทางวิทยาศาสตร์ วิเคราะห์ข้อมูล และ Machine Learning โดยเฉพาะ ถูกออกแบบมาให้มีความง่ายในการเขียนเหมือน Python แต่มีความเร็วใกล้เคียง C",
         "by": "Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
         "yr": "February 2012",
-        "level": "4",
+        "level": "3",
         "par": ["Multi-paradigm", "Multiple dispatch", "High-performance"],
         "fields": ["Scientific Computing", "Data Science / Analytics", "AI / Machine Learning", "High-Performance Computing", "Numerical Computing"],
-        "rank": "ต่ำถึงปานกลาง (กำลังเติบโตในสายเฉพาะทาง)",
-        "salary_range": "สูงมาก (ผู้เชี่ยวชาญเฉพาะทางอาจได้ 80K+)",
+        "rank": "25-30 เติบโตใน Scientific Computing (1.9% แต่กำลังเพิ่ม)",
+        "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-98,000 บาท/เดือน (Senior)",
         "salary": ["high", "veryhigh"],
         "pros": [
             "ประสิทธิภาพสูงมากสำหรับการคำนวณตัวเลข",
@@ -3415,11 +3415,11 @@
       "desc": "Solidity คือภาษาโปรแกรมที่ใช้สำหรับเขียน Smart Contracts ที่ทำงานบน Ethereum Blockchain และ EVM (Ethereum Virtual Machine) Compatible Chains อื่นๆ เช่น BNB Smart Chain, Polygon เป็นภาษาหลักในการพัฒนาแอปพลิเคชันแบบกระจายศูนย์ (dApps) และ Token",
       "by": "Gavin Wood, Christian Reitwiessner, Alex Beregszaszi, Liana Husikyan, Yoichi Hirai",
       "yr": "2014",
-      "level": "4",
+      "level": "3",
       "par": ["Object-Oriented", "Imperative", "Contract-Oriented"],
       "fields": ["Blockchain Development", "Smart Contracts", "Decentralized Applications (dApps)", "Web3"],
-      "rank": "ปานกลาง (เฉพาะกลุ่ม Blockchain)",
-      "salary_range": "สูงมาก (ผู้เชี่ยวชาญเฉพาะทาง 100K+)",
+      "rank": "30+ เติบโตตาม Blockchain และ Web3 Trend",
+      "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-130,000 บาท/เดือน (Senior)",
       "salary": ["veryhigh"],
       "pros": [
           "ภาษามาตรฐานสำหรับการพัฒนา Smart Contracts บน Ethereum",
@@ -3470,8 +3470,8 @@
     "level": "1",
     "par": ["Hardware Description", "Concurrent", "Dataflow", "Behavioral"],
     "fields": ["Hardware Design", "Embedded Systems", "Digital Circuit Design", "FPGA / ASIC Development", "Microelectronics"],
-    "rank": "ต่ำมาก (จำเป็นในสายงานเฉพาะ)",
-    "salary_range": "สูงมาก (ผู้เชี่ยวชาญหายาก 80K+)",
+    "rank": "40+ Niche ใน Hardware Design",
+    "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-90,000 บาท/เดือน (Senior)",
     "salary": ["veryhigh"],
     "pros": [
         "เป็นมาตรฐานในการออกแบบและจำลองวงจรดิจิทัล",
@@ -3518,11 +3518,12 @@
     "desc": "Bash (Bourne-Again SHell) เป็น Command Language Interpreter และ Shell Scripting Language ที่ใช้กันอย่างแพร่หลายในระบบปฏิบัติการ Linux, Unix และ macOS สำหรับการทำงานอัตโนมัติ, การจัดการระบบ, การประมวลผลไฟล์ และการทำงานผ่าน Command Line Interface (CLI)",
     "by": "Brian Fox",
     "yr": "1989",
-    "level": "4",
+    "level": "Unknown",
     "par": ["Imperative", "Procedural", "Scripting"],
     "fields": ["Scripting / Automation", "DevOps / Automation", "System Administration", "Command-line Tools"],
-    "rank": "สูง (ในกลุ่ม System Admin/DevOps)",
-    "salary_range": "กลางถึงสูง (มักใช้ร่วมกับภาษาอื่น)",
+    "rank": "ใช้โดย 28.1% ของนักพัฒนา System Administration",
+    "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
     "pros": [
       "ใช้งานง่ายสำหรับการจัดการระบบและไฟล์",
       "เป็นมาตรฐานบนระบบ Unix-like ส่วนใหญ่",
@@ -3574,11 +3575,12 @@
     "desc": "PowerShell เป็น Command-line Shell และ Scripting Language ของ Microsoft ที่พัฒนาขึ้นมาเพื่อการจัดการระบบ Windows และ Cloud (Azure) มีความสามารถในการจัดการวัตถุ (Objects) ทำให้มีพลังมากกว่า Command Prompt เดิม และเป็นส่วนสำคัญในงาน DevOps และ Automation บนแพลตฟอร์ม Microsoft",
     "by": "Microsoft (Jeffrey Snover)",
     "yr": "2006",
-    "level": "4",
+    "level": "Unknown",
     "par": ["Object-Oriented", "Imperative", "Procedural", "Scripting"],
     "fields": ["Scripting / Automation", "DevOps / Automation", "System Administration", "Cloud Infrastructure (Azure)", "Windows Management"],
-    "rank": "ปานกลาง (ในกลุ่ม System Admin/DevOps บน Windows)",
-    "salary_range": "กลางถึงสูง (มักใช้ร่วมกับภาษาอื่น)",
+    "rank": "30+ แข็งแกร่งใน Windows Ecosystem",
+    "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
     "pros": [
       "ทรงพลังในการจัดการระบบ Windows และ Azure",
       "ทำงานกับ Objects ได้ ทำให้จัดการข้อมูลได้มีประสิทธิภาพ",
@@ -3623,7 +3625,7 @@
     }
   },
   {
-    "id": 44,
+    "id": 43,
     "name": "TensorFlow (Python API)",
     "slug": "tensorflow",
     "logo": "img/tensorflow.png",
@@ -3633,8 +3635,9 @@
     "level": "unknown (เป็น Framework ของภาษา Python)",
     "par": ["Deep Learning", "Machine Learning"],
     "fields": ["AI / Machine Learning", "Deep Learning", "Data Science / Analytics", "Cloud Infrastructure"],
-    "rank": "สูงสุด (หนึ่งใน Framework ML ที่ได้รับความนิยมสูงสุด)",
-    "salary_range": "สูงมาก (สำหรับ Data Scientist, ML Engineer)",
+    "rank": "1 ML Framework ทั่วโลก (ใช้โดย 12.1% ของนักพัฒนา AI)",
+    "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-125,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high", "veryhigh"],
     "pros": [
       "รองรับงาน Deep Learning ที่ซับซ้อน",
       "มี Ecosystem ขนาดใหญ่และเครื่องมือที่หลากหลาย",
@@ -3679,7 +3682,7 @@
     }
   },
   {
-    "id": 45,
+    "id": 44,
     "name": "PyTorch (Python API)",
     "slug": "pytorch",
     "logo": "img/pytorch.png",
@@ -3689,8 +3692,9 @@
     "level": "unknown (เป็น Library/Framework ของภาษา Python)",
     "par": ["Deep Learning", "Machine Learning"],
     "fields": ["AI / Machine Learning", "Deep Learning", "Data Science / Analytics", "Research & Development"],
-    "rank": "สูงสุด (ได้รับความนิยมอย่างมากในงานวิจัยและวิชาการ)",
-    "salary_range": "สูงมาก (สำหรับ Data Scientist, ML Engineer)",
+    "rank": "2 ML Framework และเติบโตแซง TensorFlow (10.2% ของนักพัฒนา)",
+    "salary_range": "฿42,000-68,000 บาท/เดือน (Junior), ฿68,000-120,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high", "veryhigh"],
     "pros": [
       "ใช้งานง่ายและยืดหยุ่นสำหรับงานวิจัยและ Prototyping",
       "Dynamic Computational Graph ช่วยให้ดีบักง่าย",
@@ -3734,18 +3738,19 @@
     }
   },
   {
-    "id": 46,
+    "id": 45,
     "name": "GraphQL",
     "slug": "graphql",
     "logo": "img/graphql.png",
     "desc": "GraphQL คือภาษา Query Language สำหรับ API และเป็น Runtime สำหรับการทำ Query ด้วยข้อมูลที่มีอยู่ คุณลักษณะเฉพาะของ GraphQL คือความสามารถในการให้ Client กำหนดรูปแบบโครงสร้างของข้อมูลที่ต้องการจาก Server ได้อย่างชัดเจน",
     "by": "Facebook",
     "yr": "2015 (Open Sourced)",
-    "level": "unknown (เป็น Query Language)",
+    "level": "5",
     "par": ["Declarative"],
     "fields": ["API Development", "Web Backend", "Data Fetching"],
-    "rank": "ปานกลางถึงสูง (ได้รับความนิยมเพิ่มขึ้น)",
-    "salary_range": "สูง (มักใช้ร่วมกับภาษา Backend)",
+    "rank": "20-25 เติบโตใน Modern API Development (5.1% ของนักพัฒนา)",
+    "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-98,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high"],
     "pros": [
       "Client สามารถระบุข้อมูลที่ต้องการได้อย่างแม่นยำ (ลด Over-fetching/Under-fetching)",
       "Single Endpoint สำหรับ Query ข้อมูลหลายประเภท",
@@ -3811,7 +3816,7 @@
     "why_good": "ดีเยี่ยมสำหรับการสร้าง API ที่ยืดหยุ่นและมีประสิทธิภาพสูง ทำให้ Client สามารถควบคุมข้อมูลที่จะได้รับได้อย่างละเอียด ลด Over-fetching และ Under-fetching"
   },
   {
-    "id": 47,
+    "id": 46,
     "name": "PL/SQL",
     "slug": "plsql",
     "logo": "img/oracle.png",
@@ -3821,8 +3826,9 @@
     "level": "5",
     "par": ["Procedural", "Declarative (SQL embedded)"],
     "fields": ["Database / SQL", "Backend Development", "Enterprise Systems"],
-    "rank": "ต่ำถึงปานกลาง (เฉพาะผู้ใช้ Oracle Database)",
-    "salary_range": "สูง (สำหรับผู้เชี่ยวชาญ Oracle DBA/Developer)",
+    "rank": "35+ แข็งแกร่งใน Oracle Database Ecosystem",
+    "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-78,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
     "pros": [
       "ประสิทธิภาพสูงในการประมวลผลข้อมูลใน Database Server",
       "ลด Traffic ระหว่าง Client กับ Server",
@@ -3864,7 +3870,7 @@
     "why_good": "ดีเยี่ยมสำหรับการจัดการและประมวลผลข้อมูลที่ซับซ้อนภายใน Oracle Database ช่วยเพิ่มประสิทธิภาพและลด Traffic ระหว่าง Client กับ Server"
   },
   {
-    "id": 48,
+    "id": 47,
     "name": "T-SQL",
     "slug": "tsql",
     "logo": "img/sqlserver.png",
@@ -3874,8 +3880,9 @@
     "level": "5",
     "par": ["Procedural", "Declarative (SQL embedded)"],
     "fields": ["Database / SQL", "Backend Development", "Enterprise Systems"],
-    "rank": "ต่ำถึงปานกลาง (เฉพาะผู้ใช้ Microsoft SQL Server)",
-    "salary_range": "สูง (สำหรับผู้เชี่ยวชาญ SQL Server DBA/Developer)",
+    "rank": "35+ แข็งแกร่งใน Microsoft SQL Server Environment",
+    "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
     "pros": [
       "มีประสิทธิภาพในการประมวลผลข้อมูลขนาดใหญ่บน SQL Server",
       "ช่วยลด Network Traffic",
@@ -3918,19 +3925,20 @@
     "why_good": "ดีเยี่ยมสำหรับการจัดการและประมวลผลข้อมูลที่ซับซ้อนภายใน Microsoft SQL Server และ Azure SQL Database ช่วยเพิ่มประสิทธิภาพและควบคุม Transaction ได้ดี"
   },
   {
-    "id": 49,
+    "id": 48,
     "name": "Bun",
     "slug": "bun",
     "logo": "img/bun.png",
-    "desc": "Bun คือ JavaScript Runtime แบบ All-in-one ที่สร้างขึ้นด้วยภาษา Zig ถูกออกแบบมาเพื่อความเร็วและประสิทธิภาพสูง มี Built-in Package Manager, Bundler และ Test Runner ทำให้เป็นเครื่องมือครบวงจรสำหรับ JavaScript/TypeScript Development.",
+    "desc": "Bun คือ JavaScript Runtime แบบ All-in-one ที่สร้างขึ้นด้วยภาษา Zig ถูกออกแบบมาเพื่อความเร็วและประสิทธิภาพสูง มี Built-in Package Manager, Bundler และ Test Runner ทำให้เป็นเครื่องมือครบวงจรสำหรับ JavaScript/TypeScript Development.ดีเยี่ยมสำหรับ JavaScript/TypeScript Development ที่ต้องการความเร็วและประสิทธิภาพสูงสุด ลดความซับซ้อนด้วยการรวม Package Manager และ Bundler ไว้ในตัว ทำให้ Workflow การพัฒนา JavaScript ง่ายและรวดเร็วขึ้น",
     "by": "Jarred Sumner",
     "yr": "2022",
     "level": "N/A (เป็น JavaScript Runtime)",
     "par": ["N/A"],
     "type": "JavaScript Runtime",
     "fields": ["Web Backend", "Web Frontend", "Tooling", "DevOps / Automation", "Performance Optimization"],
-    "rank": "กำลังเติบโตอย่างรวดเร็ว (โดยเฉพาะในสาย JavaScript)",
-    "why_good": "ดีเยี่ยมสำหรับ JavaScript/TypeScript Development ที่ต้องการความเร็วและประสิทธิภาพสูงสุด ลดความซับซ้อนด้วยการรวม Package Manager และ Bundler ไว้ในตัว ทำให้ Workflow การพัฒนา JavaScript ง่ายและรวดเร็วขึ้น",
+    "rank": "เติบโตเร็วใน JavaScript Ecosystem (ทางเลือกของ Node.js)",
+    "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-85,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high"],
     "pros": [
       "ประสิทธิภาพสูงมาก (เร็วกว่า Node.js และ Deno)",
       "All-in-one Toolchain (มี Package Manager, Bundler, Test Runner ในตัว)",
@@ -3943,10 +3951,42 @@
       "บาง Library เก่าๆ อาจยังไม่รองรับเต็มที่"
     ],
     "frameworks": [],
-    "learn": ["Bun Official Website", "Bun Documentation"]
+    "learn": ["Bun Official Website", "Bun Documentation"],
+    "commands": {
+        "installation": [
+            "curl -fsSL https://bun.sh/install | bash // ติดตั้ง Bun",
+            "bun --version // ตรวจสอบเวอร์ชัน"
+        ],
+        "project_management": [
+            "bun init // สร้างโปรเจค JavaScript/TypeScript ใหม่",
+            "bun install // ติดตั้ง dependencies",
+            "bun add <package> // เพิ่ม package",
+            "bun remove <package> // ลบ package",
+            "bun update // อัพเดท packages"
+        ],
+        "run_build": [
+            "bun run <script> // รันสคริปต์จาก package.json",
+            "bun <file.js> // รันไฟล์ JavaScript โดยตรง",
+            "bun build <entry> --outdir <dir> // build โปรเจค",
+            "bun test // รัน tests"
+        ],
+        "examples": [
+            "// สร้างเซิร์ฟเวอร์ HTTP ง่ายๆ",
+            "const server = Bun.serve({",
+            "  port: 3000,",
+            "  fetch(req) {",
+            "    return new Response('Hello Bun!');",
+            "  },",
+            "});",
+            "",
+            "// อ่านไฟล์แบบ async",
+            "const file = Bun.file('data.txt');",
+            "const text = await file.text();"
+        ]
+    }
   },
   {
-    "id": 50,
+    "id": 49,
     "name": "Linux",
     "slug": "linux",
     "logo": "img/linux.png",
@@ -3957,8 +3997,9 @@
     "par": ["N/A"],
     "type": "Operating System (Kernel)",
     "fields": ["Operating Systems", "Server Management", "Cloud Infrastructure", "DevOps / Automation", "Embedded Systems", "Cybersecurity"],
-    "rank": "สูงสุด (โดยเฉพาะใน Server และ Cloud)",
-    "why_good": "ดีเยี่ยมสำหรับ Server, Cloud Infrastructure และงาน DevOps มีความเสถียรสูง, ปลอดภัย, ยืดหยุ่น และมีเครื่องมือ Command Line ที่ทรงพลัง รวมถึงเป็น Open Source ที่มี Community ขนาดใหญ่",
+    "rank": "ใช้โดย 55.6% ของนักพัฒนาทั่วโลก",
+    "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-85,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high"],
     "pros": [
       "เสถียรภาพและความน่าเชื่อถือสูง",
       "Open Source และปรับแต่งได้สูง",
@@ -3972,10 +4013,41 @@
       "ซอฟต์แวร์ Desktop บางตัวอาจไม่รองรับ"
     ],
     "frameworks": [],
-    "learn": ["Linux Foundation", "Linux Journey", "Ubuntu Documentation"]
+    "learn": ["Linux Foundation", "Linux Journey", "Ubuntu Documentation"],
+    "commands": {
+        "file_operations": [
+            "ls -la // แสดงรายการไฟล์และโฟลเดอร์",
+            "cd /path/to/directory // เปลี่ยนไดเรกทอรี",
+            "cp file1 file2 // คัดลอกไฟล์",
+            "mv file1 file2 // ย้าย/เปลี่ยนชื่อไฟล์",
+            "rm file // ลบไฟล์",
+            "mkdir directory // สร้างโฟลเดอร์",
+            "rmdir directory // ลบโฟลเดอร์ว่าง"
+        ],
+        "system_info": [
+            "ps aux // แสดงกระบวนการที่ทำงาน",
+            "top // แสดงการใช้ CPU และ Memory",
+            "df -h // แสดงพื้นที่ฮาร์ดดิสก์",
+            "free -h // แสดงการใช้ RAM",
+            "uname -a // แสดงข้อมูลระบบ"
+        ],
+        "network": [
+            "ping google.com // ทดสอบการเชื่อมต่อ",
+            "wget https://example.com/file // ดาวน์โหลดไฟล์",
+            "curl https://api.example.com // ส่ง HTTP request",
+            "netstat -tuln // แสดงพอร์ตที่เปิดใช้งาน"
+        ],
+        "package_management": [
+            "apt update && apt upgrade // อัพเดท Ubuntu/Debian",
+            "yum update // อัพเดท CentOS/RHEL",
+            "apt install package-name // ติดตั้ง software",
+            "systemctl start service // เริ่มบริการ",
+            "systemctl enable service // เปิดใช้บริการตอน boot"
+        ]
+    }
   },
   {
-    "id": 51,
+    "id": 50,
     "name": "npm",
     "slug": "npm",
     "logo": "img/npm.png",
@@ -3986,8 +4058,9 @@
     "par": ["N/A"],
     "type": "Package Manager",
     "fields": ["JavaScript Development", "Node.js Development", "Web Frontend", "Web Backend", "Tooling"],
-    "rank": "สูงสุด (สำหรับ JavaScript Ecosystem)",
-    "why_good": "จำเป็นอย่างยิ่งสำหรับการจัดการ Dependency และ Library ในโครงการ JavaScript/Node.js ทำให้การนำโค้ดที่ผู้อื่นเขียนไว้มาใช้งานหรือการเผยแพร่โค้ดของตัวเองทำได้ง่ายและเป็นมาตรฐาน",
+    "rank": "ใช้โดย 67.0% ของนักพัฒนา JavaScript",
+    "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-75,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
     "pros": [
       "เป็นมาตรฐานสำหรับ JavaScript Package Management",
       "มี Library และ Tools ให้เลือกใช้มากมายมหาศาล",
@@ -4000,10 +4073,37 @@
       "อาจมีช่องโหว่ด้านความปลอดภัยใน Packages ที่ไม่ได้รับการดูแล"
     ],
     "frameworks": [],
-    "learn": ["npm Docs", "Node.js Documentation"]
+    "learn": ["npm Docs", "Node.js Documentation"],
+    "commands": {
+        "installation": [
+            "npm install // ติดตั้ง dependencies ทั้งหมด",
+            "npm install <package> // ติดตั้ง package",
+            "npm install <package> -g // ติดตั้ง package แบบ global",
+            "npm install <package> --save-dev // ติดตั้งเป็น devDependency"
+        ],
+        "project_management": [
+            "npm init // สร้าง package.json ใหม่",
+            "npm init -y // สร้าง package.json แบบเร็ว",
+            "npm uninstall <package> // ถอนการติดตั้ง package",
+            "npm update // อัพเดท packages",
+            "npm outdated // ตรวจสอบ packages ที่ล้าสมัย"
+        ],
+        "scripts": [
+            "npm run <script> // รัน script จาก package.json",
+            "npm start // รัน start script",
+            "npm test // รัน test script",
+            "npm run build // รัน build script"
+        ],
+        "info": [
+            "npm list // แสดง packages ที่ติดตั้ง",
+            "npm search <package> // ค้นหา package",
+            "npm info <package> // ดูข้อมูล package",
+            "npm audit // ตรวจสอบ security vulnerabilities"
+        ]
+    }
   },
   {
-    "id": 52,
+    "id": 51,
     "name": "Git",
     "slug": "git",
     "logo": "img/git.png",
@@ -4014,8 +4114,9 @@
     "par": ["N/A"],
     "type": "Version Control System",
     "fields": ["Software Development", "Collaboration", "DevOps / Automation", "Source Code Management"],
-    "rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรม)",
-    "why_good": "จำเป็นอย่างยิ่งสำหรับการทำงานร่วมกันในทีมพัฒนาซอฟต์แวร์ และการจัดการเวอร์ชันของ Source Code ทำให้สามารถติดตามการเปลี่ยนแปลง, ผสานโค้ด, และแก้ไขข้อผิดพลาดได้อย่างมีประสิทธิภาพ",
+    "rank": "ใช้โดย 87.2% ของนักพัฒนาทั่วโลก",
+    "salary_range": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-78,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
     "pros": [
       "กระจายศูนย์ (Decentralized) ทำให้ทำงานแบบ Offline ได้",
       "ประสิทธิภาพสูงและรวดเร็ว",
@@ -4028,10 +4129,40 @@
       "GUI Tools บางตัวอาจยังไม่สมบูรณ์"
     ],
     "frameworks": [],
-    "learn": ["Git Official Documentation", "Pro Git Book", "GitHub Guides"]
+    "learn": ["Git Official Documentation", "Pro Git Book", "GitHub Guides"],
+    "commands": {
+        "basic": [
+            "git init // เริ่มต้น repository ใหม่",
+            "git clone <url> // ดาวน์โหลด repository",
+            "git status // ดูสถานะไฟล์",
+            "git add <file> // เพิ่มไฟล์เข้า staging area",
+            "git add . // เพิ่มไฟล์ทั้งหมด",
+            "git commit -m 'message' // บันทึกการเปลี่ยนแปลง"
+        ],
+        "branching": [
+            "git branch // ดู branch ทั้งหมด",
+            "git branch <name> // สร้าง branch ใหม่",
+            "git checkout <branch> // เปลี่ยน branch",
+            "git checkout -b <branch> // สร้างและเปลี่ยนไป branch ใหม่",
+            "git merge <branch> // รวม branch",
+            "git branch -d <branch> // ลบ branch"
+        ],
+        "remote": [
+            "git remote add origin <url> // เพิ่ม remote repository",
+            "git push origin <branch> // อัพโหลดไป remote",
+            "git pull origin <branch> // ดาวน์โหลดจาก remote",
+            "git fetch // ดึงข้อมูลจาก remote โดยไม่ merge"
+        ],
+        "history": [
+            "git log // ดูประวัติ commit",
+            "git log --oneline // ดูประวัติแบบย่อ",
+            "git diff // ดูการเปลี่ยนแปลงไฟล์",
+            "git reset --hard <commit> // ย้อนกลับไปยัง commit"
+        ]
+    }
   },
   {
-    "id": 53,
+    "id": 52,
     "name": "Docker",
     "slug": "docker",
     "logo": "img/docker.png",
@@ -4042,8 +4173,9 @@
     "par": ["N/A"],
     "type": "Containerization Platform",
     "fields": ["DevOps / Automation", "Cloud Infrastructure", "Deployment", "Microservices", "Application Packaging"],
-    "rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรมสำหรับ Containerization)",
-    "why_good": "ดีเยี่ยมสำหรับการทำให้กระบวนการ Deploy แอปพลิเคชันมีความสอดคล้องและง่ายขึ้น แก้ปัญหา \"It works on my machine!\" ทำให้แอปพลิเคชันทำงานได้เหมือนกันในทุกสภาพแวดล้อมตั้งแต่ Dev, Test ไปจนถึง Production",
+    "rank": "ใช้โดย 48.7% ของนักพัฒนาใน DevOps",
+    "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-92,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high"],
     "pros": [
       "Portable: แอปพลิเคชันทำงานเหมือนกันในทุกสภาพแวดล้อม",
       "Lightweight: Container ใช้ทรัพยากรน้อยกว่า Virtual Machine",
@@ -4056,10 +4188,41 @@
       "ไม่เหมาะกับการรัน VM ขนาดใหญ่"
     ],
     "frameworks": [],
-    "learn": ["Docker Official Documentation", "Play with Docker"]
+    "learn": ["Docker Official Documentation", "Play with Docker"],
+    "commands": {
+        "images": [
+            "docker pull <image> // ดาวน์โหลด image",
+            "docker images // ดูรายการ images",
+            "docker build -t <name> . // สร้าง image จาก Dockerfile",
+            "docker rmi <image> // ลบ image",
+            "docker tag <image> <new-name> // เปลี่ยนชื่อ image"
+        ],
+        "containers": [
+            "docker run <image> // สร้างและรัน container",
+            "docker run -d <image> // รัน container แบบ background",
+            "docker run -p 8080:80 <image> // map port",
+            "docker ps // ดู container ที่ทำงาน",
+            "docker ps -a // ดู container ทั้งหมด",
+            "docker stop <container> // หยุด container",
+            "docker rm <container> // ลบ container"
+        ],
+        "management": [
+            "docker exec -it <container> bash // เข้าไปใน container",
+            "docker logs <container> // ดู logs",
+            "docker cp <file> <container>:/path // คัดลอกไฟล์",
+            "docker volume create <volume> // สร้าง volume",
+            "docker network create <network> // สร้าง network"
+        ],
+        "compose": [
+            "docker-compose up // รัน services จาก docker-compose.yml",
+            "docker-compose up -d // รัน services แบบ background",
+            "docker-compose down // หยุด services",
+            "docker-compose logs // ดู logs ของ services"
+        ]
+    }
   },
   {
-    "id": 54,
+    "id": 53,
     "name": "Kubernetes (K8s)",
     "slug": "kubernetes",
     "logo": "img/kubernetes.png",
@@ -4070,8 +4233,9 @@
     "par": ["N/A"],
     "type": "Container Orchestration System",
     "fields": ["Cloud Infrastructure", "DevOps / Automation", "Microservices", "Deployment", "Scalability"],
-    "rank": "สูงสุด (เป็นมาตรฐานอุตสาหกรรมสำหรับ Orchestration)",
-    "why_good": "ดีที่สุดสำหรับการจัดการ Containerized Applications ขนาดใหญ่ บน Cloud หรือ On-Premises ช่วยให้การ Deploy, Scaling, Healing ตัวเอง และ Load Balancing ของ Microservices ทำได้โดยอัตโนมัติและมีประสิทธิภาพสูง",
+    "rank": "ใช้โดย 28.7% ของนักพัฒนาใน Container Orchestration",
+    "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-115,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high", "veryhigh"],
     "pros": [
       "Automate การ Deploy และ Scaling แอปพลิเคชัน",
       "จัดการ Self-healing และ Load Balancing",
@@ -4084,6 +4248,105 @@
       "ต้องมีความรู้ด้าน Networking และ System Administration สูง"
     ],
     "frameworks": [],
-    "learn": ["Kubernetes Official Documentation", "Certified Kubernetes Administrator (CKA)"]
+    "learn": ["Kubernetes Official Documentation", "Certified Kubernetes Administrator (CKA)"],
+    "commands": {
+        "cluster": [
+            "kubectl cluster-info // ดูข้อมูล cluster",
+            "kubectl get nodes // ดู nodes ใน cluster",
+            "kubectl describe node <node> // ดูรายละเอียด node",
+            "kubectl top nodes // ดูการใช้ทรัพยากรของ nodes"
+        ],
+        "pods": [
+            "kubectl get pods // ดู pods ทั้งหมด",
+            "kubectl get pods -o wide // ดู pods พร้อมข้อมูลเพิ่มเติม",
+            "kubectl describe pod <pod> // ดูรายละเอียด pod",
+            "kubectl logs <pod> // ดู logs ของ pod",
+            "kubectl exec -it <pod> -- bash // เข้าไปใน pod"
+        ],
+        "deployments": [
+            "kubectl create deployment <name> --image=<image> // สร้าง deployment",
+            "kubectl get deployments // ดู deployments",
+            "kubectl scale deployment <name> --replicas=3 // เพิ่ม replicas",
+            "kubectl rollout status deployment/<name> // ดูสถานะ rollout",
+            "kubectl delete deployment <name> // ลบ deployment"
+        ],
+        "services": [
+            "kubectl get services // ดู services",
+            "kubectl expose deployment <name> --port=80 // สร้าง service",
+            "kubectl port-forward service/<name> 8080:80 // forward port",
+            "kubectl describe service <name> // ดูรายละเอียด service"
+        ],
+        "config": [
+            "kubectl apply -f <file.yaml> // apply configuration",
+            "kubectl get configmaps // ดู config maps",
+            "kubectl get secrets // ดู secrets",
+            "kubectl create configmap <name> --from-file=<file> // สร้าง config map"
+        ]
+    }
+  },
+  {
+    "id": 54,
+    "name": "Flutter",
+    "slug": "flutter",
+    "logo": "img/flutter.png",
+    "desc": "Flutter คือ UI Toolkit แบบ Open Source ที่พัฒนาโดย Google สำหรับการสร้าง Native-like Applications สำหรับ Mobile (iOS, Android), Web, Desktop (Windows, macOS, Linux) และ Embedded Devices จาก Single Codebase ด้วยภาษา Dart ทำให้การพัฒนาแอปพลิเคชันข้ามแพลตฟอร์มรวดเร็วและมีประสิทธิภาพ",
+    "by": "Google",
+    "yr": "2017",
+    "level": "4",
+    "par": ["Declarative UI", "Reactive Programming"],
+    "type": "Cross-Platform UI Toolkit",
+    "fields": ["Mobile Development", "Web Development", "Desktop Development", "UI/UX Development", "Cross-Platform Development"],
+    "rank": "#3 Cross-platform Framework (ใช้โดย 9.1% ของนักพัฒนา Mobile)",
+    "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-88,000 บาท/เดือน (Senior)",
+    "salary": ["mid", "high"],
+    "pros": [
+      "Cross-Platform: เขียนโค้ดครั้งเดียว รันได้หลายแพลตฟอร์ม (Mobile, Web, Desktop)",
+      "Hot Reload & Hot Restart: ช่วยให้พัฒนาได้รวดเร็ว เห็นการเปลี่ยนแปลงทันที",
+      "Performance: แอปพลิเคชันมีประสิทธิภาพใกล้เคียง Native",
+      "Rich Widgets: มี Widget ที่สวยงามและปรับแต่งได้หลากหลาย",
+      "Growing Community: ชุมชนที่เติบโตและให้การสนับสนุนดี"
+    ],
+    "cons": [
+      "ขนาดไฟล์แอปพลิเคชันอาจใหญ่กว่า Native เล็กน้อย",
+      "Learning Curve สำหรับภาษา Dart (ถ้าไม่คุ้นเคย)",
+      "ยังไม่เหมาะกับทุก Use Case ที่ต้องการเข้าถึง Native Feature ที่ลึกซึ้งมากๆ",
+      "Ecosystem บางส่วนยังไม่สมบูรณ์เท่า Native"
+    ],
+    "frameworks": [],
+    "learn": ["Flutter Official Website", "Flutter Docs", "Codecademy Flutter"],
+    "commands": {
+      "cluster": [
+        "kubectl cluster-info // ดูข้อมูล cluster",
+        "kubectl get nodes // ดู nodes ใน cluster",
+        "kubectl describe node <node> // ดูรายละเอียด node",
+        "kubectl top nodes // ดูการใช้ทรัพยากรของ nodes"
+      ],
+      "pods": [
+        "kubectl get pods // ดู pods ทั้งหมด",
+        "kubectl get pods -o wide // ดู pods พร้อมข้อมูลเพิ่มเติม",
+        "kubectl describe pod <pod> // ดูรายละเอียด pod",
+        "kubectl logs <pod> // ดู logs ของ pod",
+        "kubectl exec -it <pod> -- bash // เข้าไปใน pod"
+      ],
+      "deployments": [
+        "kubectl create deployment <name> --image=<image> // สร้าง deployment",
+        "kubectl get deployments // ดู deployments",
+        "kubectl scale deployment <name> --replicas=3 // เพิ่ม replicas",
+        "kubectl rollout status deployment/<name> // ดูสถานะ rollout",
+        "kubectl delete deployment <name> // ลบ deployment"
+      ],
+      "services": [
+        "kubectl get services // ดู services",
+        "kubectl expose deployment <name> --port=80 // สร้าง service",
+        "kubectl port-forward service/<name> 8080:80 // forward port",
+        "kubectl describe service <name> // ดูรายละเอียด service"
+      ],
+      "config": [
+        "kubectl apply -f <file.yaml> // apply configuration",
+        "kubectl get configmaps // ดู config maps",
+        "kubectl get secrets // ดู secrets",
+        "kubectl create configmap <name> --from-file=<file> // สร้าง config map"
+      ]
+    }
   }
-]
+] 

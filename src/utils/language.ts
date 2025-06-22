@@ -39,4 +39,15 @@ export interface Language {
       operators: string[];
       examples: string[];
   };
+  commands?: {
+    installation: string[];
+    project_management: string[];
+    run_build: string[];
+    examples: string[];
+    cluster: string[];
+    pods: string[];
+    deployments: string[];
+    services: string[];
+    config: string[];
+  };
 }

@@ -156,7 +156,7 @@
     box-shadow: 0 4px 15px rgba(251, 194, 235, 0.3);
   }
 
-  .lang-level-detail.unknown {
+  .lang-level-detail.Unknown {
     background: linear-gradient(135deg, #8b8b8b, #575757, #686868);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
   }

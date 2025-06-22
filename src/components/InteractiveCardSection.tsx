@@ -1,69 +1,131 @@
 // src/components/InteractiveCardSection.tsx
 
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import LanguageCard from './LanguageCard';
 import LanguageDetail from './LanguageDetail';
 import FilterPanel from './FilterPanel';
 import { getDifficultyClass } from '../utils/card';
-import type { Language } from '../utils/language'; // อย่าลืม import type Language
+import type { Language } from '../utils/language';
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
   const [levelFilter, setLevelFilter] = useState<string[]>([]);
   const [fieldFilter, setFieldFilter] = useState<string[]>([]);
-  const [salaryFilter, setSalaryFilter] = useState<string[]>([]); // ตรงนี้เป็น string[] ปกติ
-  const [filteredLanguages, setFilteredLanguages] = useState<Language[] | null>(null);
+  const [salaryFilter, setSalaryFilter] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [showFilter, setShowFilter] = useState<boolean>(true);
 
-  const handleFilterSubmit = () => {
-    const result = languages.filter((lang) => {
-      const rawLevelClass = getDifficultyClass(lang.level);
-      const matchesLevel = levelFilter.length === 0 || 
-                           (rawLevelClass && levelFilter.includes(rawLevelClass.toLowerCase()));
+  // Memoize filtered languages เพื่อป้องกันการคำนวณซ้ำ
+  const filteredLanguages = useMemo(() => {
+    // ถ้าไม่มี filter ใดๆ ให้ return languages ทั้งหมด
+    if (
+      levelFilter.length === 0 && 
+      fieldFilter.length === 0 && 
+      salaryFilter.length === 0 && 
+      searchTerm === ''
+    ) {
+      return languages;
+    }
 
-      const matchesField = fieldFilter.length === 0 || lang.fields.some(f => fieldFilter.includes(f));
+    return languages.filter((lang) => {
+      // Level filter
+      if (levelFilter.length > 0) {
+        const rawLevelClass = getDifficultyClass(lang.level);
+        if (!rawLevelClass || !levelFilter.includes(rawLevelClass.toLowerCase())) {
+          return false;
+        }
+      }
 
-      // **** แก้ไขตรงนี้: เพิ่ม Type Assertion ให้ filterSal ****
-      const matchesSalary = salaryFilter.length === 0 || salaryFilter.some(filterSal => {
+      // Field filter
+      if (fieldFilter.length > 0) {
+        if (!lang.fields.some(f => fieldFilter.includes(f))) {
+          return false;
+        }
+      }
+
+      // Salary filter
+      if (salaryFilter.length > 0) {
         const langSalaries = Array.isArray(lang.salary) ? lang.salary : [lang.salary];
-        // ใช้ as 'low' | 'mid' | 'high' เพื่อบอก TypeScript ว่า filterSal จะเป็นหนึ่งในค่าเหล่านี้
-        return langSalaries.includes(filterSal as 'low' | 'mid' | 'high' | 'veryhigh'); 
-      });
-      // ******************************************************
+        if (!salaryFilter.some(filterSal => 
+          langSalaries.includes(filterSal as 'low' | 'mid' | 'high' | 'veryhigh')
+        )) {
+          return false;
+        }
+      }
 
-      const matchesSearch = lang.name.toLowerCase().includes(searchTerm.toLowerCase());
+      // Search filter
+      if (searchTerm && !lang.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return false;
+      }
 
-      return matchesLevel && matchesField && matchesSalary && matchesSearch;
+      return true;
     });
-    setFilteredLanguages(result);
-  };
+  }, [languages, levelFilter, fieldFilter, salaryFilter, searchTerm]);
 
-  const handleReset = () => {
+  // Memoize callbacks เพื่อป้องกัน re-render ของ child components
+  const toggleShowFilter = useCallback(() => {
+    setShowFilter(prev => !prev);
+  }, []);
+
+  const handleReset = useCallback(() => {
     setLevelFilter([]);
     setFieldFilter([]);
     setSalaryFilter([]);
-    setFilteredLanguages(null);
     setSearchTerm('');
-  };
+  }, []);
 
-  const openLanguageModal = (lang: Language) => {
+  const openLanguageModal = useCallback((lang: Language) => {
     setSelectedLanguage(lang);
     document.body.style.overflow = 'hidden';
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setSelectedLanguage(null);
     document.body.style.overflow = 'auto';
-  };
+  }, []);
 
-  const dataToShow = filteredLanguages === null ? languages : filteredLanguages;
+  // Memoize modal overlay click handler
+  const handleModalOverlayClick = useCallback((e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  }, [closeModal]);
+
+  // Memoize filter change handlers
+  const handleLevelFilterChange = useCallback((newFilter: string[]) => {
+    setLevelFilter(newFilter);
+  }, []);
+
+  const handleFieldFilterChange = useCallback((newFilter: string[]) => {
+    setFieldFilter(newFilter);
+  }, []);
+
+  const handleSalaryFilterChange = useCallback((newFilter: string[]) => {
+    setSalaryFilter(newFilter);
+  }, []);
+
+  const handleSearchTermChange = useCallback((newTerm: string) => {
+    setSearchTerm(newTerm);
+  }, []);
+
+  // Memoize whether to show "no results" message
+  const showNoResults = useMemo(() => 
+    filteredLanguages.length === 0 && 
+    (levelFilter.length > 0 || fieldFilter.length > 0 || salaryFilter.length > 0 || searchTerm !== ''),
+    [filteredLanguages.length, levelFilter.length, fieldFilter.length, salaryFilter.length, searchTerm]
+  );
+
+  // Memoize filter count for display
+  const filterCount = useMemo(() => {
+    const hasFilters = levelFilter.length > 0 || fieldFilter.length > 0 || salaryFilter.length > 0 || searchTerm !== '';
+    return hasFilters ? filteredLanguages.length : null;
+  }, [filteredLanguages.length, levelFilter.length, fieldFilter.length, salaryFilter.length, searchTerm]);
 
   return (
     <div>
       <div className="text-center my-4">
         <button
-          onClick={() => setShowFilter(!showFilter)}
+          onClick={toggleShowFilter}
           className="px-6 py-2 bg-gray-200 text-black rounded-xl hover:bg-gray-300 transition-all duration-300"
         >
           {showFilter ? 'ซ่อนการค้นหา' : 'แสดงการค้นหา'}
@@ -73,28 +135,31 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
       {showFilter && (
         <FilterPanel
           levelFilter={levelFilter}
-          setLevelFilter={setLevelFilter}
+          setLevelFilter={handleLevelFilterChange}
           fieldFilter={fieldFilter}
-          setFieldFilter={setFieldFilter}
+          setFieldFilter={handleFieldFilterChange}
           salaryFilter={salaryFilter}
-          setSalaryFilter={setSalaryFilter}
+          setSalaryFilter={handleSalaryFilterChange}
           searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          onSubmit={handleFilterSubmit}
+          setSearchTerm={handleSearchTermChange}
           onReset={handleReset}
         />
       )}
 
       <div className="mx-auto my-5 p-10 max-w-[1400px] bg-white rounded-3xl shadow-xl">
         <section className="sidebar grid gap-4 md:grid-cols-3">
-          {filteredLanguages && (
+          {filterCount !== null && (
             <p className="text-sm text-gray-500 col-span-full text-center">
-              พบ {filteredLanguages.length} ภาษา
+              พบ {filterCount} ภาษา
             </p>
           )}
 
-          {dataToShow.length > 0 ? (
-            dataToShow.map(lang => (
+          {showNoResults ? (
+            <p className="text-gray-500 col-span-full text-center">
+              ไม่พบภาษาตรงตามเงื่อนไข
+            </p>
+          ) : (
+            filteredLanguages.map(lang => (
               <LanguageCard
                 key={lang.id}
                 language={lang}
@@ -102,10 +167,6 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                 onClick={() => openLanguageModal(lang)}
               />
             ))
-          ) : (
-            <p className="text-gray-500 col-span-full text-center">
-              ไม่พบภาษาตรงตามเงื่อนไข
-            </p>
           )}
         </section>
 
@@ -114,11 +175,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
             className="language-modal-overlay"
             role="dialog"
             aria-modal="true"
-            onClick={(e) => {
-              if (e.target === e.currentTarget) {
-                closeModal();
-              }
-            }}
+            onClick={handleModalOverlayClick}
           >
             <LanguageDetail language={selectedLanguage} onClose={closeModal} />
           </div>

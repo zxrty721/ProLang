@@ -42,7 +42,7 @@
   border: 2px solid #da23ff; 
 }
 
-.card.unknown:hover {
+.card.Unknown:hover {
   box-shadow: 0 10px 30px rgba(109, 109, 109, 0.5), 0 0 40px rgba(206, 206, 206, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
   border: 2px solid #8b8b8b; 
 }
@@ -135,7 +135,7 @@ a {
   box-shadow: 0 4px 15px rgba(251, 194, 235, 0.3);
 }
 
-.lang-level.unknown {
+.lang-level.Unknown {
   background: linear-gradient(135deg, #8b8b8b, #575757, #686868);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }

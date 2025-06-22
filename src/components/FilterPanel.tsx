@@ -6,11 +6,10 @@ interface FilterPanelProps {
   setLevelFilter: (levels: string[]) => void;
   fieldFilter: string[];
   setFieldFilter: (fields: string[]) => void;
-  salaryFilter: string[]; // ถูกต้องแล้ว
-  setSalaryFilter: (salary: string[]) => void; // ถูกต้องแล้ว
+  salaryFilter: string[];
+  setSalaryFilter: (salary: string[]) => void;
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onSubmit: () => void;
   onReset: () => void;
 }
 
@@ -23,7 +22,6 @@ export default function FilterPanel({
   setSalaryFilter,
   searchTerm,
   setSearchTerm,
-  onSubmit,
   onReset,
 }: FilterPanelProps) {
   const toggle = (value: string, current: string[], setFunc: (val: string[]) => void) => {
@@ -34,8 +32,7 @@ export default function FilterPanel({
     <div className="mx-auto p-7 max-w-[1400px] grid grid-cols-1 md:grid-cols-4 gap-4 bg-white rounded-3xl shadow-xl">
       <div>
         <h3 className="font-bold mb-2">ระดับภาษา</h3>
-        {/* ให้แน่ใจว่าค่าเหล่านี้ตรงกับค่าที่ getDifficultyClass คืนมา */}
-        {['machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level'].map(level => (
+        {['machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level', 'unknown'].map(level => (
           <label key={level} className="block">
             <input
               type="checkbox"
@@ -65,7 +62,6 @@ export default function FilterPanel({
 
       <div>
         <h3 className="font-bold mb-2">ช่วงเงินเดือน</h3>
-        {/* ตรงนี้คือค่า 'low', 'mid', 'high' ที่จะตรงกับค่าใน salary Array ของ JSON */}
         {['low', 'mid', 'high', 'veryhigh'].map(sal => (
           <label key={sal} className="block">
             <input
@@ -88,12 +84,6 @@ export default function FilterPanel({
           placeholder="ค้นหาชื่อภาษา..."
           className="w-full p-2 border border-gray-300 rounded-xl mb-2"
         />
-        <button
-          onClick={onSubmit}
-          className="w-full mb-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700"
-        >
-          ค้นหา
-        </button>
         <button
           onClick={onReset}
           className="w-full px-4 py-2 bg-gray-200 text-black rounded-xl hover:bg-gray-300"

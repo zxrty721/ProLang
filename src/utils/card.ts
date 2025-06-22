@@ -11,7 +11,7 @@ export function getDifficultyClass(diff: string): string {
     case "5":
       return 'Very-High-Level';
     default:
-      return 'unknown';
+      return 'Unknown';
   }
 }
 
