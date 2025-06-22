@@ -15,6 +15,7 @@ export function getDifficultyClass(diff: string): string {
   }
 }
 
+
 // ระดับภาษา (level) แบบ string number → แปลงเป็นชื่อระดับ
 export const levelMapping: Record<string, string> = {
   "0": "Machine-Level",

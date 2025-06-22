@@ -1,27 +1,39 @@
-// InteractiveCardSection.tsx
-import React, { useState } from 'react'; 
+// src/components/InteractiveCardSection.tsx
+
+import { useState } from 'react';
 import LanguageCard from './LanguageCard';
 import LanguageDetail from './LanguageDetail';
 import FilterPanel from './FilterPanel';
-import { getDifficultyClass } from '../utilities/card';
-import type { Language } from '../utilities/language';
+import { getDifficultyClass } from '../utils/card';
+import type { Language } from '../utils/language'; // อย่าลืม import type Language
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
   const [levelFilter, setLevelFilter] = useState<string[]>([]);
   const [fieldFilter, setFieldFilter] = useState<string[]>([]);
-  const [salaryFilter, setSalaryFilter] = useState<string[]>([]);
+  const [salaryFilter, setSalaryFilter] = useState<string[]>([]); // ตรงนี้เป็น string[] ปกติ
   const [filteredLanguages, setFilteredLanguages] = useState<Language[] | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [showFilter, setShowFilter] = useState<boolean>(true);
 
   const handleFilterSubmit = () => {
     const result = languages.filter((lang) => {
-      const levelClass = getDifficultyClass(lang.level);
-      const matchesLevel = levelFilter.length === 0 || levelFilter.includes(levelClass.toLowerCase());
+      const rawLevelClass = getDifficultyClass(lang.level);
+      const matchesLevel = levelFilter.length === 0 || 
+                           (rawLevelClass && levelFilter.includes(rawLevelClass.toLowerCase()));
+
       const matchesField = fieldFilter.length === 0 || lang.fields.some(f => fieldFilter.includes(f));
-      const matchesSalary = salaryFilter.length === 0 || salaryFilter.includes(lang.salary);
+
+      // **** แก้ไขตรงนี้: เพิ่ม Type Assertion ให้ filterSal ****
+      const matchesSalary = salaryFilter.length === 0 || salaryFilter.some(filterSal => {
+        const langSalaries = Array.isArray(lang.salary) ? lang.salary : [lang.salary];
+        // ใช้ as 'low' | 'mid' | 'high' เพื่อบอก TypeScript ว่า filterSal จะเป็นหนึ่งในค่าเหล่านี้
+        return langSalaries.includes(filterSal as 'low' | 'mid' | 'high' | 'veryhigh'); 
+      });
+      // ******************************************************
+
       const matchesSearch = lang.name.toLowerCase().includes(searchTerm.toLowerCase());
+
       return matchesLevel && matchesField && matchesSalary && matchesSearch;
     });
     setFilteredLanguages(result);

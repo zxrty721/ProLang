@@ -12,9 +12,8 @@
   "dependencies": {
     "@astrojs/react": "^4.3.0",
     "@tailwindcss/vite": "^4.1.10",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
     "astro": "^5.9.3",
+    "clsx": "^2.1.1",
     "highlight.js": "^11.11.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -23,6 +22,8 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@types/react-syntax-highlighter": "^15.5.13",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",

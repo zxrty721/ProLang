@@ -8,7 +8,26 @@
     "dist"
   ],
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsx": "react-jsx", // <--- ต้องมี
+    "jsxImportSource": "react", // <--- ต้องมี
+    "moduleResolution": "bundler",
+    "lib": ["dom", "esnext"],
+    "target": "esnext",
+    "module": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": [
+      "astro/client",
+      "react",
+      "react-dom",
+      "node"
+    ],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true
   }
 }

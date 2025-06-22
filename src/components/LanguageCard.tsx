@@ -1,41 +1,39 @@
-import React from 'react';
-import type { Language } from '../utilities/language'; // อ้างอิงจากตำแหน่งไฟล์ src/components ไป src/types
-import { getDifficultyClass } from '../utilities/card'; // นำเข้าฟังก์ชัน getDifficultyClass
+// src/components/LanguageCard.tsx
 
-export default function LanguageCard({
-  language,
-  isSelected,
-  onClick
-}: {
+import React from 'react';
+import type { Language } from '../utils/language';
+import { getDifficultyClass } from '../utils/card';
+
+interface LanguageCardProps {
   language: Language;
   isSelected: boolean;
   onClick: () => void;
-}) {
+}
+
+export default function LanguageCard({ language, isSelected, onClick }: LanguageCardProps) {
   return (
     <div className={`card ${isSelected ? 'active' : ''} ${getDifficultyClass(language.level)}`} onClick={onClick}>
-      {/* ใช้ language.logo สำหรับ src ของรูปภาพ และเพิ่ม onError สำหรับ fallback */}
       <img
         src={import.meta.env.BASE_URL + language.logo}
         alt={`${language.name} logo`}
         className="language-logo logo-animate"
         onError={(e) => {
-          e.currentTarget.onerror = null; // ป้องกัน infinite loop หากภาพเสีย
-          // ใช้ placeholder image ที่เหมาะสมสำหรับเด็กและไม่มีเนื้อหาไม่เหมาะสม
-          e.currentTarget.src = `https://placehold.co/60x60/cccccc/ffffff?text=${language.name.charAt(0)}`; // Placeholder image
+          e.currentTarget.onerror = null;
+          e.currentTarget.src = `https://placehold.co/60x60/cccccc/ffffff?text=${language.name.charAt(0)}`;
         }}
       />
       <div className="language-name">{language.name}</div>
-      <div className="language-desc">{language.desc.substring(0, 80)}...</div> {/* ใช้ .desc */}
+      <div className="language-desc">
+        {language.desc.length > 80 ? language.desc.substring(0, 80) + '...' : language.desc}
+      </div>
       <div className="language-meta">
         <div className="flex flex-wrap gap-2">
-          {/* ใช้ .par */}
           {language.par.map((paradigm, i) => (
             <span key={i} className="tag text-xs bg-gray-50 rounded-xl p-2 shadow-sm">{paradigm}</span>
           ))}
         </div>
-        {/* ใช้ .level และ getDifficultyClass(language.level) */}
         <span className={`lang-level level-animate ${getDifficultyClass(language.level)}`}>
-          {getDifficultyClass(language.level)} {/* แสดงระดับความยาก */}
+          {getDifficultyClass(language.level)}
         </span>
       </div>
     </div>
