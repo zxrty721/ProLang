@@ -8,7 +8,7 @@
   "yr": "1999 (เวอร์ชัน 1.0)",
   "level": "4",
   "par": ["Object-Oriented", "Imperative", "Concurrent", "Event-Driven"],
-  "fields": ["Embedded Systems", "Hardware Design & Verification", "Electronic Design Automation (EDA)", "System-on-Chip (SoC) Design", "Digital Signal Processing"],
+  "fields": ["Embedded", "Hardware", "Digital", "Hardware"],
   "rank": "Niche (เป็นมาตรฐานในอุตสาหกรรม EDA/Semiconductor)",
   "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-130,000 บาท/เดือน (Senior)",
   "salary": ["veryhigh"],

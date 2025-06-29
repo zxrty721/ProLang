@@ -51,7 +51,7 @@ export const fieldMap: Record<string, string> = {
   Testing: "Testing / QA Automation",
   Plugin: "Plugin / Extension Development",
   Hardware: "Hardware Design",
-  Digital: "Digital Electronics",
+  Digital: "Digital / Electronics",
   Math:	"Mathematical Computing",
   Tele: "Telecommunications",
   Distributed: "Distributed Systems",
