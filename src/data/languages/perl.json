@@ -1,0 +1,109 @@
+{
+  "id": 18,
+  "name": "Perl",
+  "slug": "perl",
+  "logo": "img/perl.png",
+  "desc": "Perl เป็นภาษาโปรแกรมที่ยืดหยุ่นและมีพลังมาก มักใช้สำหรับการจัดการข้อความ, การประมวลผลระบบ และ Web Development ได้รับฉายาว่า 'Swiss Army Chainsaw' ของภาษาโปรแกรม",
+  "by": "Larry Wall",
+  "yr": "1987",
+  "level": "3",
+  "par": ["Procedural", "Object-Oriented", "Functional"],
+  "fields": ["Script", "QA", "Testing"],
+  "rank": "30-35 ลดลงมาก แต่ยังใช้ใน Legacy Systems",
+  "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-75,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "มีประสิทธิภาพสูงในการจัดการข้อความและ Regex",
+      "มี CPAN (Comprehensive Perl Archive Network) ที่มี Modules จำนวนมาก",
+      "ยืดหยุ่นและเขียนโค้ดได้กระชับ",
+      "ใช้งานได้หลากหลายแพลตฟอร์ม",
+      "ทำงานร่วมกับ Command Line ได้ดี"
+  ],
+  "cons": [
+      "Syntax อาจอ่านยากและเข้าใจยาก ('write-only language')",
+      "ไม่ได้รับความนิยมเท่าในอดีตสำหรับ Web Development",
+      "Learning Curve สูงสำหรับบางคุณสมบัติ",
+      "การบำรุงรักษาโค้ดอาจเป็นเรื่องยาก"
+  ],
+  "frameworks": ["Catalyst", "Mojolicious"],
+  "learn": ["Perl.org", "Perl Tutorial", "Learning Perl (book)", "CPAN"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "$scalar_var = 'hello'; // การประกาศตัวแปร Scalar",
+        "@array_var = (1, 2, 3); // การประกาศตัวแปร Array",
+        "%hash_var = ('key' => 'value'); // การประกาศตัวแปร Hash"
+      ],
+      "types (ประเภท)": [
+        "Scalar ($) // ใช้สำหรับค่าเดี่ยว (ตัวเลข, สตริง, บูลีน)",
+        "Array (@) // ใช้สำหรับรายการของค่า (เรียงลำดับตาม Index)",
+        "Hash (%) // ใช้สำหรับ Key-Value pairs"
+      ],
+      "examples (ตัวอย่าง)": [
+          "$name = \"Perl\"; // ตัวแปร Scalar เก็บสตริง",
+          "@numbers = (10, 20, 30); // ตัวแปร Array เก็บรายการ",
+          "%config = ('host' => 'localhost', 'port' => 8080); // ตัวแปร Hash เก็บ Key-Value",
+          "$first_number = $numbers[0]; # เข้าถึงสมาชิกแรกของ Array\nprint \"First number: $first_number\\n\"; # แสดงผล 'First number: 10'",
+          "$hostname = $config{'host'}; # เข้าถึงค่าของ Hash ด้วย Key\nprint \"Hostname: $hostname\\n\"; # แสดงผล 'Hostname: localhost'"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "sub my_function { /* ... */ } // การประกาศ Subroutine (ฟังก์ชัน)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nsub add {\n  my ($a, $b) = @_;\n  return $a + $b;\n}\n",
+          "// ฟังก์ชันทักทาย\nsub greet {\n  my ($name) = @_;\n  print \"Hello, $name!\\n\";\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nmy $sum = add(5, 7); // $sum จะมีค่า 12\ngreet(\"Perl User\"); // แสดงผล 'Hello, Perl User!'\n",
+          "// ฟังก์ชันที่มี Optional Arguments\nsub get_info {\n    my ($name, $age) = @_;\n    $age = $age // 0; # กำหนดค่าเริ่มต้นเป็น 0 ถ้า $age เป็น undefined/false\n    print \"Name: $name, Age: $age\\n\";\n}\nget_info(\"Alice\"); # Name: Alice, Age: 0\nget_info(\"Bob\", 25); # Name: Bob, Age: 25\n",
+          "// Asynchronous Programming (Conceptual - ใช้ Modules)\n// Perl สามารถทำงานแบบ Asynchronous ได้โดยใช้ Modules เช่น `AnyEvent` หรือ `Mojo::IOLoop`\n// ตัวอย่างนี้แสดงแนวคิดโดยการใช้ `sleep` สำหรับการจำลองการหน่วงเวลา\n/*\nuse strict;\nuse warnings;\n\n# การจำลอง Asynchronous Task (ในสภาพแวดล้อมจริงจะใช้ Non-blocking I/O)\nsub fetch_data {\n    my ($callback) = @_;\n    print \"Fetching data...\\n\";\n    # ในสภาพแวดล้อมจริง อาจจะเป็นการอ่านจาก Network, Disk\n    sleep(1); # จำลองการหน่วงเวลา\n    print \"Data fetched!\\n\";\n    $callback->(\"Data from async source\");\n}\n\n# Call fetch_data และจัดการผลลัพธ์ผ่าน Callback\n# print \"Main program continues...\\n\";\n# fetch_data(sub { my ($data) = @_; print \"Received: $data\\n\"; });\n# print \"Main program finished...\\n\";\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "print() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "chomp() // ใช้ลบอักขระขึ้นบรรทัดใหม่จากท้ายสตริง",
+        "split() // ใช้แบ่งสตริงออกเป็นส่วนๆ โดยใช้ Delimiter",
+        "join() // ใช้รวมรายการของสตริงเข้าด้วยกัน",
+        "sort() // ใช้เรียงลำดับรายการ",
+        "open() // ใช้เปิดไฟล์",
+        "close() // ใช้ปิดไฟล์",
+        "die() // ใช้หยุดการทำงานของโปรแกรมพร้อมข้อความ Error",
+        "warn() // ใช้แสดงข้อความเตือน",
+        "scalar() // ใช้บังคับบริบท Scalar"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "# Single line comment // คอมเมนต์บรรทัดเดียว",
+        "=pod\nMulti-line\ncomment\n=cut // คอมเมนต์หลายบรรทัด (Pod-style documentation)"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } elsif (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-elsif-else",
+        "unless (condition) { /* ... */ } // คำสั่ง unless (ตรงข้ามกับ if)",
+        "given ($variable) { when (value) { /* ... */ } default { /* ... */ } } // คำสั่ง given-when (คล้าย switch - Perl 5.10+)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (my $i = 0; $i < 5; $i++) { /* ... */ } // ลูป for แบบ C-style",
+        "while (condition) { /* ... */ } // ลูป while",
+        "foreach my $item (@array) { /* ... */ } // ลูป foreach สำหรับวนซ้ำ Array/List",
+        "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison (Numeric): ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบตัวเลข: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+        "Comparison (String): eq, ne, lt, gt, le, ge // ตัวดำเนินการเปรียบเทียบสตริง: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        ". // ตัวดำเนินการเชื่อมสตริง (Concatenation)",
+        "x // ตัวดำเนินการทำซ้ำสตริง (Replication)",
+        "=~ // ตัวดำเนินการ Match Regex",
+        "!~ // ตัวดำเนินการ Not Match Regex"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nmy $score = 60;\nif ($score >= 50) {\n  print \"Passed\\n\";\n} else {\n  print \"Failed\\n\";\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (my $i = 0; $i < 3; $i++) {\n  print \"Loop Perl: $i\\n\";\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Foreach Loop กับ Array\nmy @fruits = ('apple', 'banana', 'cherry');\nforeach my $fruit (@fruits) {\n  print \"I like $fruit\\n\";\n}\n",
+          "// ตัวอย่างที่ 4: การทำงานกับ Hash (Dictionary)\nmy %user = ('name' => 'John', 'age' => 30);\nprint \"User Name: $user{'name'}\\n\"; # เข้าถึงค่าด้วย Key\n$user{'city'} = 'New York'; # เพิ่ม Key-Value ใหม่\nprint \"User City: $user{'city'}\\n\";\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย eval\n# การใช้ eval เพื่อดักจับข้อผิดพลาด\nmy $result = eval { 10 / $divisor; };\nif ($@) { # $@ จะมีค่าเป็น Error message ถ้า eval ล้มเหลว\n  print \"Error occurred: $@\";\n} else {\n  print \"Result: $result\\n\";\n}\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ Regex (Regular Expressions)\nmy $text = \"The quick brown fox\";\nif ($text =~ /fox/) { # ตรวจสอบว่ามีคำว่า 'fox' ในสตริงหรือไม่\n  print \"'fox' found!\\n\";\n}\n$text =~ s/quick/slow/; # แทนที่ 'quick' ด้วย 'slow'\nprint \"Modified text: $text\\n\"; # The slow brown fox\n"
+      ]
+  }
+}

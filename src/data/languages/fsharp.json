@@ -1,0 +1,113 @@
+{
+  "id": 48,
+  "name": "F#",
+  "slug": "fsharp",
+  "logo": "img/fsharp.png",
+  "desc": "F# (F Sharp) เป็นภาษา Functional Programming ที่ทำงานบนแพลตฟอร์ม .NET พัฒนาโดย Microsoft Research มีคุณสมบัติเด่นด้าน Type Safety, Conciseness (กระชับ) และ Immutability (ไม่เปลี่ยนแปลงค่า) เหมาะสำหรับงาน Data Science, Web Development (Backend), Machine Learning และ Financial Modeling ที่ต้องการความน่าเชื่อถือสูง",
+  "by": "Microsoft Research",
+  "yr": "2005",
+  "level": "4",
+  "par": ["Functional", "Imperative", "Object-Oriented"],
+  "fields": ["Finance", "Scientific"],
+  "rank": "35+ Niche ใน Functional Programming บน .NET",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "รองรับ Functional Programming ที่บริสุทธิ์ ช่วยลด Bug",
+    "ทำงานร่วมกับ .NET Ecosystem ได้อย่างสมบูรณ์",
+    "Type Inference ที่แข็งแกร่งและ Type Safety สูง",
+    "โค้ดกระชับและอ่านง่าย (Concise Syntax)",
+    "เหมาะสำหรับงาน Data Transformation และ Algorithm ที่ซับซ้อน"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับ Functional Programming",
+    "ชุมชนนักพัฒนาเล็กกว่าภาษาหลักทั่วไป",
+    "เครื่องมือพัฒนาและการรองรับ IDE อาจไม่สมบูรณ์เท่า C#",
+    "ทรัพยากรการเรียนรู้มีจำกัด",
+    "ยังไม่เป็นที่นิยมในวงกว้างสำหรับแอปพลิเคชันเชิงพาณิชย์"
+  ],
+  "frameworks": ["Giraffe (Web Framework)", "Fable (F# to JavaScript Compiler)", "Saturn (Web Framework)", "Suave (Web Framework)"],
+  "learn": ["F# Official Documentation", "F# for Fun and Profit", "Microsoft Learn: F#", "Pluralsight F# Courses"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "let x = 10 // การประกาศค่าคงที่ (Immutable by default)",
+      "let mutable y = 20 // การประกาศตัวแปรที่เปลี่ยนแปลงได้ (Mutable)"
+    ],
+    "types (ประเภท)": [
+      "int // จำนวนเต็ม",
+      "float // ทศนิยม (Single-precision)",
+      "double // ทศนิยม (Double-precision)",
+      "bool // ค่าตรรกะ (true/false)",
+      "char // ตัวอักขระ",
+      "string // ข้อความ",
+      "list<'a> // List (Immutable, Linked List)",
+      "array<'a> // Array (Mutable, Fixed Size)",
+      "option<'a> // Optional type (Some(value) or None)",
+      "Result<'ok, 'error> // Result type (Ok(value) or Error(error))",
+      "tuple<'a, 'b> // Tuple (กลุ่มของค่าที่มีประเภทต่างกันได้)",
+      "record // Record (คล้าย Struct/Object ที่ Immutable)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "let count = 100 // กำหนดค่าคงที่ count เป็นตัวเลข 100",
+      "let message = \"Functional Programming\" // กำหนดค่าคงที่ message เป็นสตริง",
+      "let is_active = true // กำหนดค่าคงที่ is_active เป็น Boolean",
+      "let numbers = [1; 2; 3] // สร้าง List ของตัวเลข",
+      "let data_array = [|1.0; 2.5; 3.0|] // สร้าง Array ของทศนิยม",
+      "let user = { Name = \"Alice\"; Age = 30 } // สร้าง Record\n"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "let functionName param1 param2 = // code // การประกาศฟังก์ชัน (Implicit Return)",
+      "let functionName param = function // Pattern matching on input\n  | Pattern -> result // ... code ...",
+      "let inline add x y = x + y // Inline Function"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\nlet add a b = a + b\n",
+      "// ฟังก์ชันทักทาย\nlet greet name = printfn \"Hello, %s!\" name\n",
+      "// การเรียกใช้ฟังก์ชัน:\n// let sum_result = add 5 5 // sum_result จะมีค่า 10\n// greet \"F# User\" // แสดงผล 'Hello, F# User!'\n",
+      "// ฟังก์ชันที่มี Pattern Matching (คล้าย Switch)\nlet describeNumber n = \n    match n with\n    | 0 -> \"Zero\"\n    | 1 -> \"One\"\n    | _ -> \"Other number\"\n// printfn \"%s\" (describeNumber 0) // Output: Zero\n// printfn \"%s\" (describeNumber 5) // Output: Other number\n",
+      "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\nlet applyTwice f x = f (f x)\n// let result = applyTwice (fun z -> z + 1) 5 // Result: 7\n// printfn \"Result: %d\" result\n",
+      "// Asynchronous Programming (Async Workflows)\n// F# มี Async Workflows ที่ช่วยให้เขียนโค้ด Asynchronous ได้อย่างเป็นธรรมชาติและมีประสิทธิภาพ\n// ซึ่งคอมไพล์ไปเป็น State Machine ที่ทำงานบน .NET Task Parallel Library (TPL)\n// open System\n// open System.Threading.Tasks\n\n// let fetchDataAsync () = async {\n//     printfn \"Fetching data...\"\n//     do! Async.Sleep 1000 // จำลองการหน่วงเวลา 1 วินาที\n//     printfn \"Data fetched!\"\n//     return \"Data fetched asynchronously\"\n// }\n\n// // การเรียกใช้ Async Function\n// // let main () = async {\n// //     printfn \"Main program started.\"\n// //     let! data = fetchDataAsync () // ใช้ 'let!' เพื่อรอผลลัพธ์ของ async operation\n// //     printfn \"Received: %s\" data\n// //     printfn \"Main program finished.\"\n// // }\n// // // ต้องรัน Async Workflow ด้วย Async.RunSynchronously หรือ Async.StartAsTask\n// // // main() |> Async.RunSynchronously\n"
+    ],
+    "built_in (ในตัว)": [
+      "printfn // ใช้แสดงผลข้อมูลออกทาง Console (พร้อมขึ้นบรรทัดใหม่)",
+      "List.map // ใช้แปลงทุก Element ใน List",
+      "List.filter // ใช้กรอง Element ใน List",
+      "String.length // หาความยาวของสตริง",
+      "Option.map // สำหรับแปลงค่าใน Optional",
+      "Result.bind // สำหรับเชื่อมต่อ Result"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "(* Multi-line\n   comment *) // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition then expression1 else expression2 // คำสั่ง If-Else (เป็น Expression ที่คืนค่า)",
+      "match expression with // Pattern Matching ด้วย Match Expression\n  | Pattern1 -> result1\n  | Pattern2 -> result2\n  | _ -> defaultResult // Wildcard สำหรับค่าอื่นๆ"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for i in 1..5 do // code // ลูป for สำหรับช่วงตัวเลข (รวมค่าสุดท้าย)",
+      "for item in collection do // code // ลูป for-in สำหรับวนซ้ำ Collection",
+      "while condition do // code // ลูป while",
+      "// F# เน้น Functional Programming ดังนั้นมักใช้ Recursion หรือ Higher-Order Functions (map, filter, fold) สำหรับการวนซ้ำมากกว่าลูป Imperative"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Comparison: =, <>, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), not (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "|> // Pipe-forward Operator (ส่งผลลัพธ์จากซ้ายไปขวา)",
+      "// // Function Composition (เขียนฟังก์ชันเรียงต่อกัน)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else Expression\nlet temperature = 25\nlet weather_status = if temperature > 30 then \"Hot\"\n                     elif temperature < 10 then \"Cold\"\n                     else \"Normal\"\n// printfn \"%s\" weather_status // Output: Normal\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For\nfor i in 0..2 do\n  printfn \"Loop F#: %d\" i\n",
+      "// ตัวอย่างที่ 3: การใช้ Match Expression (Pattern Matching)\nlet check_fruit fruit = \n    match fruit with\n    | \"Apple\" -> \"It's a red fruit.\"\n    | \"Banana\" -> \"It's a yellow fruit.\"\n    | _ -> \"Unknown fruit.\"\n// printfn \"%s\" (check_fruit \"Apple\") // Output: It's a red fruit.\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Records และ Discriminated Unions (Type Safety)\ntype Person = { Name: string; Age: int }\ntype PaymentStatus = \n  | Pending\n  | Completed of string // Completed พร้อม Transaction ID\n  | Failed of int // Failed พร้อม Error Code\n\nlet customer = { Name = \"Bob\"; Age = 40 }\n// printfn \"Customer name: %s\" customer.Name\n\nlet processPayment status = \n    match status with\n    | Pending -> printfn \"Payment is pending.\"\n    | Completed(id) -> printfn \"Payment completed with ID: %s\" id\n    | Failed(code) -> printfn \"Payment failed with code: %d\" code\n\n// processPayment Pending\n// processPayment (Completed \"TX12345\")\n// processPayment (Failed 500)\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาดด้วย Option และ Result Types\nlet safeDivide x y = \n    if y = 0 then None\n    else Some(x / y)\n\nlet result1 = safeDivide 10 2\nmatch result1 with\n| Some(value) -> printfn \"Result: %d\" value // Output: Result: 5\n| None -> printfn \"Cannot divide by zero.\"\n\nlet result2 = safeDivide 10 0\nmatch result2 with\n| Some(value) -> printfn \"Result: %d\" value\n| None -> printfn \"Cannot divide by zero.\" // Output: Cannot divide by zero.\n",
+      "// ตัวอย่างที่ 6: การใช้ Pipe-forward Operator (|>) และ Function Chaining\nlet calculate tax_rate price = price * (1.0 + tax_rate)\nlet format_currency amount = sprintf \"฿%.2f\" amount\n\nlet final_price = 100.0\n|> calculate 0.07 // 107.0\n|> format_currency // \"฿107.00\"\n\n// printfn \"Final price: %s\" final_price // Output: Final price: ฿107.00\n"
+    ]
+  }
+}

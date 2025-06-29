@@ -1,0 +1,113 @@
+{
+    "id": 2,
+    "name": "C++",
+    "slug": "cpp",
+    "logo": "img/cpp.png",
+    "desc": "C++ คือภาษาโปรแกรมที่พัฒนาต่อยอดมาจาก C โดยเพิ่มความสามารถเชิงวัตถุ (Object-Oriented Programming) ทำให้สามารถสร้างโปรแกรมที่ซับซ้อนและมีโครงสร้างที่ดีได้ เหมาะสำหรับเกม, ซอฟต์แวร์ประสิทธิภาพสูง และระบบฝังตัว",
+    "by": "Bjarne Stroustrup",
+    "yr": "1979",
+    "level": "3",
+    "par": ["Multi-paradigm", "Object-Oriented", "Procedural", "Generic"],
+    "fields": ["Game", "Desktop", "System", "Compiler", "VR", "Security", "Robot", "Network", "Finance", "Plugin", "HPC", "Aero", "Graphics", "Render"],
+    "rank": "2 ใน TIOBE Index 2025 (11.37% และเติบโตแรง)",
+    "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high", "veryhigh"],
+    "pros": [
+        "ประสิทธิภาพสูงมาก (ใกล้เคียง C)",
+        "รองรับการเขียนโปรแกรมเชิงวัตถุ (OOP)",
+        "ควบคุมฮาร์ดแวร์และหน่วยความจำได้ละเอียด",
+        "ใช้งานได้หลากหลายแพลตฟอร์ม",
+        "มีไลบรารีมาตรฐานที่ทรงพลัง (STL)"
+    ],
+    "cons": [
+        "มีความซับซ้อนในการเรียนรู้และใช้งาน",
+        "การจัดการหน่วยความจำด้วยตนเองอาจเกิดข้อผิดพลาดได้ง่าย",
+        "เวลาในการคอมไพล์โปรเจกต์ขนาดใหญ่อาจนาน",
+        "Syntax และคุณสมบัติของภาษามีความซับซ้อนมาก",
+        "การดีบักอาจทำได้ยากกว่าภาษาที่มี abstraction สูง"
+    ],
+    "frameworks": ["Qt (GUI)", "Boost (General Purpose)", "Unreal Engine (Game Dev)", "SFML (Game Dev)"],
+    "learn": ["C++ Primer", "Effective Modern C++", "learncpp.com", "GeeksforGeeks C++ Tutorial"],
+    "variables": {
+        "declaration (การประกาศ)": [
+          "int num; // การประกาศตัวแปรจำนวนเต็ม",
+          "std::string text; // การประกาศตัวแปรสตริง",
+          "bool isValid; // การประกาศตัวแปรบูลีน"
+        ],
+        "types (ประเภท)": [
+          "int // จำนวนเต็ม",
+          "float // ทศนิยมความแม่นยำเดี่ยว",
+          "double // ทศนิยมความแม่นยำคู่",
+          "char // ตัวอักขระ",
+          "bool // ค่าจริงหรือเท็จ",
+          "long // จำนวนเต็มขนาดยาว",
+          "short // จำนวนเต็มขนาดสั้น",
+          "unsigned // ไม่มีเครื่องหมาย (สำหรับจำนวนเต็ม)",
+          "std::string // สตริง (จากไลบรารีมาตรฐาน)"
+        ],
+        "examples (ตัวอย่าง)": [
+            "int score = 100; // กำหนดตัวแปร score เก็บตัวเลข 100",
+            "double pi = 3.14; // กำหนดตัวแปร pi เก็บเลขทศนิยม",
+            "std::string name = \"Alice\"; // กำหนดตัวแปร name เก็บข้อความ",
+            "bool is_active = true; // กำหนดตัวแปร is_active เก็บค่าความจริง",
+            "int grades[5] = {90, 85, 70, 95, 80}; // ประกาศและกำหนดค่าอาร์เรย์",
+            "int* ptr_score = &score; // ประกาศ pointer และชี้ไปยัง score"
+        ]
+    },
+    "functions": {
+        "declaration (การประกาศ)": [
+          "return_type function_name(parameters) { /* ... */ } // การประกาศฟังก์ชันทั่วไป",
+          "// Class member function (ฟังก์ชันสมาชิกคลาส)\nclass MyClass { \npublic: \n  void myMethod(); \n};"
+        ],
+        "examples (ตัวอย่าง)": [
+            "// ฟังก์ชันคูณเลขสองจำนวน\nint multiply(int a, int b) {\n  return a * b;\n}\n",
+            "// ฟังก์ชันแสดงผล Vector (ใช้ STL)\n#include <vector>\n#include <iostream>\nvoid print_vector(const std::vector<int>& vec) {\n  for (int x : vec) { \n    std::cout << x << \" \"; \n  }\n  std::cout << std::endl;\n}\n",
+            "// ฟังก์ชัน Overloading (ชื่อฟังก์ชันเดียวกันแต่พารามิเตอร์ต่างกัน)\nint add(int a, int b) { return a + b; }\ndouble add(double a, double b) { return a + b; }\n",
+            "// การเรียกใช้ฟังก์ชัน\nint product = multiply(4, 2); // product จะมีค่า 8\nstd::vector<int> numbers = {1, 2, 3};\nprint_vector(numbers); // แสดงผล '1 2 3'\n",
+            "// การเรียกใช้ฟังก์ชัน Overloading\nint sum_int = add(10, 20); // เรียก add(int, int)\ndouble sum_double = add(10.5, 20.5); // เรียก add(double, double)"
+        ],
+        "built_in (ในตัว)": [
+          "std::cout // ใช้แสดงผลข้อมูลออกทาง Console",
+          "std::cin // ใช้รับข้อมูลจากผู้ใช้",
+          "std::vector // คอนเทนเนอร์แบบไดนามิก (Dynamic Array)",
+          "std::map // คอนเทนเนอร์สำหรับ Key-Value Pairs (แผนที่)",
+          "new // ตัวดำเนินการจัดสรรหน่วยความจำแบบไดนามิก",
+          "delete // ตัวดำเนินการคืนหน่วยความจำที่จัดสรรแบบไดนามิก"
+        ]
+    },
+    "syntax": {
+        "comments (คอมเมนต์)": [
+          "// Single line comment // คอมเมนต์บรรทัดเดียว",
+          "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+        ],
+        "conditions (เงื่อนไข)": [
+          "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+          "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+        ],
+        "loops (การวนซ้ำ)": [
+          "for (initialization; condition; increment) { /* ... */ } // ลูป for แบบดั้งเดิม",
+          "while (condition) { /* ... */ } // ลูป while",
+          "do { /* ... */ } while (condition); // ลูป do-while",
+          "for (type var : collection) { /* ... */ } // Range-based for loop (ลูป for ตามช่วง)"
+        ],
+        "operators (ตัวดำเนินการ)": [
+          "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+          "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+          "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+          "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+          "Bitwise: &, |, ^, ~, <<, >> // ตัวดำเนินการบิตไวส์",
+          "sizeof() // ตัวดำเนินการหาขนาดของตัวแปร/ประเภทข้อมูล",
+          "& // ตัวดำเนินการ Address-of (ใช้หาที่อยู่หน่วยความจำ)",
+          "* // ตัวดำเนินการ Dereference (ใช้เข้าถึงค่าที่ pointer ชี้ไป)",
+          ":: // Scope Resolution Operator (ตัวดำเนินการระบุขอบเขต)"
+        ],
+        "examples (ตัวอย่าง)": [
+            "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\n#include <iostream>\nint val = 20;\nif (val > 15) {\n  std::cout << \"Val is greater than 15\" << std::endl;\n} else {\n  std::cout << \"Val is not greater than 15\" << std::endl;\n}\n",
+            "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\n#include <iostream>\nfor (int i = 0; i < 3; i++) {\n  std::cout << \"Loop C++: \" << i << std::endl;\n}\n",
+            "// ตัวอย่างที่ 3: การใช้ Switch Statement\n#include <iostream>\nchar grade = 'B';\nswitch (grade) {\n  case 'A':\n    std::cout << \"Excellent!\" << std::endl;\n    break;\n  case 'B':\n    std::cout << \"Very Good!\" << std::endl;\n    break;\n  default:\n    std::cout << \"Pass\" << std::endl;\n}\n",
+            "// ตัวอย่างที่ 4: การใช้งานคลาสและ Object-Oriented Programming (OOP)\n#include <iostream>\n#include <string>\nclass Dog {\npublic:\n  std::string name;\n  int age;\n  void bark() {\n    std::cout << name << \" says Woof!\" << std::endl;\n  }\n};\nDog myDog; // สร้าง Object จากคลาส Dog\nmyDog.name = \"Buddy\";\nmyDog.age = 3;\nmyDog.bark(); // เรียกใช้เมธอดของ Object\n",
+            "// ตัวอย่างที่ 5: การจัดการหน่วยความจำด้วย Pointer (Memory Management with Pointers)\n#include <iostream>\nint* dynamic_int = new int; // จัดสรรหน่วยความจำสำหรับ int\n*dynamic_int = 100; // กำหนดค่า\nstd::cout << \"Dynamic int value: \" << *dynamic_int << std::endl;\ndelete dynamic_int; // คืนหน่วยความจำ\ndynamic_int = nullptr; // ตั้งค่าเป็น nullptr เพื่อป้องกัน Dangling Pointer"
+        ]
+    }
+  }
+  

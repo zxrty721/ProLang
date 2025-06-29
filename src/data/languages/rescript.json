@@ -1,0 +1,110 @@
+{
+  "id": 43,
+  "name": "ReScript",
+  "slug": "rescript",
+  "logo": "img/rescript.png",
+  "desc": "ReScript คือภาษาโปรแกรมที่คอมไพล์เป็น JavaScript ที่มีประสิทธิภาพสูง ออกแบบมาเพื่อการพัฒนา Web Application ที่เน้นความน่าเชื่อถือ, Type Safety และประสิทธิภาพสูงสุด เป็นทางเลือกที่น่าสนใจสำหรับ JavaScript และ TypeScript โดยใช้ Type Inference ที่ทรงพลังและ Functional Programming",
+  "by": "Facebook (พัฒนาต่อจาก ReasonML)",
+  "yr": "2020",
+  "level": "4",
+  "par": ["Functional", "Imperative", "Static-Typed"],
+  "fields": ["Frontend"],
+  "rank": "Niche ในตลาดเฉพาะทาง (ยังไม่เป็นที่นิยมในวงกว้าง)",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "Type System ที่แข็งแกร่งและปลอดภัยสูง",
+    "คอมไพล์เป็น JavaScript ที่อ่านง่ายและมีขนาดเล็ก",
+    "Fast Compilation Speed (คอมไพล์เร็วมาก)",
+    "มี Null Safety ในตัว",
+    "Interoperability กับ JavaScript ที่ยอดเยี่ยม",
+    "เน้น Functional Programming ช่วยลด Bug"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับ Functional Programming/ML family languages",
+    "ชุมชนนักพัฒนาเล็ก",
+    "ขาด Library และ Frameworks ที่หลากหลายเมื่อเทียบกับ JavaScript/TypeScript",
+    "เครื่องมือพัฒนาอาจยังไม่สมบูรณ์เท่า",
+    "จำเป็นต้องเรียนรู้แนวคิดใหม่ๆ"
+  ],
+  "frameworks": ["Melange (formerly ReScript React)", "ReScript Node.js", "Rescript-Relay"],
+  "learn": ["ReScript Official Documentation", "ReScript Forum", "ReScript Playground"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "let x = 10 // การประกาศค่าคงที่ (Immutable by default)",
+      "let mutable y = 20 // การประกาศตัวแปรที่เปลี่ยนแปลงได้ (Mutable)"
+    ],
+    "types (ประเภท)": [
+      "int // จำนวนเต็ม (Mapped to JavaScript Number)",
+      "float // ทศนิยม (Mapped to JavaScript Number)",
+      "string // ข้อความ (Mapped to JavaScript String)",
+      "bool // ค่าตรรกะ (true/false, Mapped to JavaScript Boolean)",
+      "array<'a> // Array (เช่น array<int>)",
+      "list<'a> // List (Functional List, Immutable)",
+      "option<'a> // Optional type (Some('a') or None)",
+      "result<'ok, 'error> // Result type (Ok('ok') or Error('error'))",
+      "tuple<'a, 'b> // Tuple (กลุ่มของค่าที่มีประเภทต่างกันได้)",
+      "record // Record (คล้าย Object/Struct ที่มี Type กำหนดชัดเจน)",
+      "variant // Variant (Algebraic Data Types - ADT)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "let greeting = \"Hello, ReScript!\" // กำหนดค่าคงที่สตริง",
+      "let count = 0 // กำหนดตัวแปร mutable integer",
+      "let isActive = true // กำหนดค่าคงที่ boolean",
+      "let numbers = [1, 2, 3] // สร้าง Array ของ int",
+      "let user = {name: \"Alice\", age: 30} // สร้าง Record",
+      "let optionalValue = Some(123) // ค่า Optional ที่มีค่า\nlet noValue = None // ค่า Optional ที่ไม่มีค่า"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "let functionName = (param1: Type, param2: Type): ReturnType => { /* ... */ } // การประกาศฟังก์ชัน",
+      "let functionName = (param) => ... // ฟังก์ชันแบบย่อ (ถ้ามีพารามิเตอร์เดียวหรือชัดเจน)",
+      "let add = (a, b) => a + b // ฟังก์ชันบวกเลขแบบย่อ"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\nlet add = (a: int, b: int): int => { a + b }\n",
+      "// ฟังก์ชันทักทาย\nlet greet = (name: string): unit => { Js.log(`Hello, ${name}!`) }\n",
+      "// การเรียกใช้ฟังก์ชัน\nlet sum = add(5, 5) // sum จะมีค่า 10\ngreet(\"ReScript User\") // แสดงผล 'Hello, ReScript User!'\n",
+      "// ฟังก์ชันที่มี Optional Labelled Arguments\nlet introduce = (~name: string, ~age: int=?, ()): unit => {\n  switch age {\n  | Some(a) => Js.log(`Name: ${name}, Age: ${a}`)\n  | None => Js.log(`Name: ${name}, Age: not provided`)\n  }\n}\nintroduce(~name=\"Bob\") // แสดงผล 'Name: Bob, Age: not provided'\nintroduce(~name=\"Charlie\", ~age=25) // แสดงผล 'Name: Charlie, Age: 25'\n",
+      "// Asynchronous Programming (Promises)\n// ReScript ใช้ Promises สำหรับ Asynchronous Programming ซึ่งคอมไพล์ไปเป็น JavaScript Promises\nlet fetchData = (): Promise<string> => {\n  Js.log(\"Fetching data...\")\n  Js.Promise.make((~resolve, ~reject) => {\n    Js.Global.setTimeout(() => {\n      Js.log(\"Data fetched!\")\n      resolve(\"Data from async source\", ())\n    }, 1000)\n  })\n}\n// การเรียกใช้ Async Function\n// fetchData()\n// |> Js.Promise.then_(data => {\n//   Js.log(`Received: ${data}`)\n//   Js.Promise.resolve((), ())\n// })\n// |> ignore\n"
+    ],
+    "built_in (ในตัว)": [
+      "Js.log() // ใช้แสดงผลข้อมูลออกทาง Console (คอมไพล์เป็น console.log())",
+      "Array.map // เมธอดสำหรับวนซ้ำและสร้าง Array ใหม่",
+      "String.length // Property สำหรับหาความยาวของสตริง",
+      "Option.map // สำหรับแปลงค่าใน Optional",
+      "Result.map // สำหรับแปลงค่าใน Result"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition { /* ... */ } else { /* ... */ } // คำสั่ง if-else (เป็น Expression ที่คืนค่า)",
+      "switch expression { | Pattern1 => Result1 | Pattern2 => Result2 | _ => DefaultResult } // Pattern Matching ด้วย Switch Expression"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for i in 0 to 5 { /* ... */ } // ลูป for (สำหรับช่วงตัวเลข)",
+      "while condition { /* ... */ } // ลูป while",
+      "// โดยทั่วไปจะใช้ Recursive functions หรือ Higher-Order Functions (map, filter) สำหรับการวนซ้ำแบบ Functional",
+      "Array.forEach(func, array) // วนซ้ำ Array เพื่อ Side Effect"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, mod // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "-> // Function Arrow (สำหรับฟังก์ชัน)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else as expression)\nlet result = if 10 > 5 { \"Greater\" } else { \"Smaller\" }\nJs.log(result) // แสดงผล 'Greater'\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor i in 0 to 2 { Js.log(`Loop ReScript: ${i}`) } // แสดงผล 'Loop ReScript: 0', 'Loop ReScript: 1', 'Loop ReScript: 2'\n",
+      "// ตัวอย่างที่ 3: การใช้ Switch Expression (Pattern Matching)\nlet status = `Success\nswitch status {\n| `Success => Js.log(\"Operation Successful\")\n| `Error => Js.log(\"Operation Failed\")\n| _ => Js.log(\"Unknown Status\") // Wildcard สำหรับค่าอื่นๆ\n}\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Record และ Variant (Type Safety)\ntype user = { id: int, name: string }\ntype response = | Success(user) | NotFound | ServerError(int)\n\nlet fetchUser = (userId: int): response => {\n  if userId == 1 then Success({id: 1, name: \"Jane\"})\n  else if userId == 2 then NotFound\n  else ServerError(500)\n}\n\nlet userResponse = fetchUser(1)\nswitch userResponse {\n| Success(u) => Js.log(`User found: ${u.name}`)\n| NotFound => Js.log(\"User not found\")\n| ServerError(code) => Js.log(`Server error: ${code}`)\n}\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาดด้วย Option และ Result Types\nlet safeDivide = (a: int, b: int): option<int> => {\n  if b == 0 then None else Some(a / b)\n}\n\nswitch safeDivide(10, 2) {\n| Some(value) => Js.log(`Result: ${value}`)\n| None => Js.log(\"Cannot divide by zero\")\n}\n\nswitch safeDivide(10, 0) {\n| Some(value) => Js.log(`Result: ${value}`)\n| None => Js.log(\"Cannot divide by zero\")\n}\n",
+      "// ตัวอย่างที่ 6: Pipe Operator (|>)\n// Pipe operator ช่วยให้อ่านโค้ดได้ง่ายขึ้น โดยส่งผลลัพธ์จากฟังก์ชันหนึ่งไปยังอีกฟังก์ชันหนึ่ง\nlet addOne = (x: int) => x + 1\nlet double = (x: int) => x * 2\n\nlet finalResult = 5\n|> addOne\n|> double\n|> Js.log // (5 + 1) * 2 = 12\n"
+    ]
+  }
+}

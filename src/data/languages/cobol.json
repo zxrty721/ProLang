@@ -1,0 +1,95 @@
+{
+  "id": 22,
+  "name": "COBOL",
+  "slug": "cobol",
+  "logo": "img/cobol.png",
+  "desc": "COBOL (Common Business-Oriented Language) เป็นภาษาโปรแกรมที่เก่าแก่และถูกออกแบบมาเพื่อการประมวลผลข้อมูลทางธุรกิจโดยเฉพาะ มักใช้ในระบบ Mainframe ของธนาคารและหน่วยงานรัฐบาล",
+  "by": "CODASYL Committee",
+  "yr": "1959",
+  "level": "1",
+  "par": ["Procedural", "Imperative"],
+  "fields": ["Finance"],
+  "rank": "45+ ลดลงแต่ยังจำเป็นใน Legacy Banking Systems",
+  "salary_range": "฿25,000-42,000 บาท/เดือน (Junior), ฿42,000-75,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+      "เสถียรและเชื่อถือได้สำหรับงาน Business Critical",
+      "มีประสิทธิภาพสูงในการประมวลผลข้อมูลจำนวนมาก (Batch Processing)",
+      "อ่านง่าย (คล้ายภาษาอังกฤษ)",
+      "เหมาะสำหรับระบบ Mainframe ที่ยังคงใช้งานอยู่"
+  ],
+  "cons": [
+      "ล้าสมัยและไม่เหมาะกับการพัฒนาสมัยใหม่",
+      "ทรัพยากรการเรียนรู้และนักพัฒนามีน้อย",
+      "การปรับตัวเข้ากับเทคโนโลยีใหม่ๆ ทำได้ยาก",
+      "มี Learning Curve สำหรับผู้เริ่มต้น",
+      "ค่าใช้จ่ายในการบำรุงรักษาสูง"
+  ],
+  "frameworks": ["None (เป็นภาษาพื้นฐาน)"],
+  "learn": ["OpenCOBOL Programmer's Guide", "COBOL Tutorial", "IBM COBOL Documentation"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "01 WS-EMP-REC. // การประกาศ Record Level (Level 01)\n   05 WS-EMP-ID   PIC 9(5). // Field ระดับ 05, ตัวเลข 5 หลัก\n   05 WS-EMP-NAME PIC X(30). // Field ระดับ 05, ตัวอักษร 30 ตัว"
+      ],
+      "types (ประเภท)": [
+        "PIC 9(n) // Numeric (ตัวเลข n หลัก)",
+        "PIC X(n) // Alphanumeric (ตัวอักษร n ตัว หรือตัวเลขรวมกัน)",
+        "PIC A(n) // Alphabetic (ตัวอักษร n ตัวเท่านั้น)",
+        "COMP // Binary (สำหรับเลขฐานสอง, Internal Representation)",
+        "DISPLAY // Character (Standard Character Representation)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "DATA DIVISION. // ส่วนสำหรับประกาศข้อมูล\nWORKING-STORAGE SECTION. // ส่วนสำหรับประกาศตัวแปรที่ใช้ชั่วคราว\n01 WS-CUSTOMER-NAME PIC X(20) VALUE 'John Doe'. // ตัวแปรสตริงชื่อ WS-CUSTOMER-NAME ขนาด 20 ตัวอักษร มีค่าเริ่มต้น 'John Doe'\n01 WS-QUANTITY      PIC 9(3) VALUE 123. // ตัวแปรตัวเลขชื่อ WS-QUANTITY ขนาด 3 หลัก มีค่าเริ่มต้น 123\n01 WS-TOTAL-PRICE   PIC 9(5)V99. // ตัวแปรตัวเลขทศนิยม 5 หลักหน้าจุด 2 หลักหลังจุด\n\nPROCEDURE DIVISION. // ส่วนสำหรับโค้ดคำสั่ง\n    MOVE 'Jane Smith' TO WS-CUSTOMER-NAME. // กำหนดค่า 'Jane Smith' ให้กับตัวแปร WS-CUSTOMER-NAME\n    ADD 10 TO WS-QUANTITY. // บวก 10 เข้าไปใน WS-QUANTITY\n    MULTIPLY 5.00 BY WS-QUANTITY GIVING WS-TOTAL-PRICE. // คูณ 5.00 ด้วย WS-QUANTITY แล้วเก็บผลลัพธ์ใน WS-TOTAL-PRICE"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "SECTION-NAME SECTION. // การประกาศ Section (เหมือนกลุ่มฟังก์ชัน)\nPARAGRAPH-NAME. // การประกาศ Paragraph (เหมือนฟังก์ชันย่อย/Subroutine)\n    STATEMENT. // คำสั่ง COBOL\n    EXIT. // ออกจาก Paragraph"
+      ],
+      "examples (ตัวอย่าง)": [
+          "PROCEDURE DIVISION. // จุดเริ่มต้นของ Logic Program\nMAIN-LOGIC SECTION. // การประกาศ Section หลัก\n    DISPLAY 'Hello, COBOL!'. // แสดงข้อความออกทาง Console\n    PERFORM CALCULATE-SUM. // เรียกใช้ Paragraph ชื่อ CALCULATE-SUM\n    STOP RUN. // หยุดการทำงานของโปรแกรม\n\nCALCULATE-SUM SECTION. // การประกาศ Section สำหรับคำนวณผลรวม\n    ADD WS-AMOUNT-1 TO WS-AMOUNT-2 GIVING WS-TOTAL-AMOUNT. // บวก WS-AMOUNT-1 กับ WS-AMOUNT-2 เก็บใน WS-TOTAL-AMOUNT\n    DISPLAY 'Total is: ' WS-TOTAL-AMOUNT. // แสดงผลรวม\n    EXIT. // ออกจาก Section/Paragraph\n",
+          "// การเรียกใช้ฟังก์ชัน/Paragraphs\n// ใน COBOL เราใช้คำสั่ง PERFORM เพื่อเรียกใช้ Paragraph หรือ Section อื่นๆ\n// ซึ่งคล้ายกับการเรียกฟังก์ชันในภาษาอื่น\n// ตัวอย่างที่ 1: PERFORM เพื่อรัน Paragraph ครั้งเดียว\n// PERFORM INITIALIZE-VARIABLES.\n// ตัวอย่างที่ 2: PERFORM เพื่อรัน Paragraph ซ้ำๆ ตามจำนวนครั้ง\n// PERFORM PROCESS-RECORDS 10 TIMES.\n// ตัวอย่างที่ 3: PERFORM เพื่อรัน Paragraph ซ้ำๆ จนกว่าเงื่อนไขจะเป็นจริง\n// PERFORM PROCESS-NEXT-ITEM UNTIL END-OF-FILE."
+      ],
+      "built_in (ในตัว)": [
+        "DISPLAY // ใช้แสดงผลข้อมูลออกทาง Console",
+        "ACCEPT // ใช้รับข้อมูลจากผู้ใช้งาน",
+        "MOVE // ใช้กำหนดค่าจากตัวแปรหนึ่งไปยังอีกตัวแปรหนึ่ง",
+        "ADD // ใช้บวกเลข",
+        "SUBTRACT // ใช้ลบเลข",
+        "MULTIPLY // ใช้คูณเลข",
+        "DIVIDE // ใช้หารเลข",
+        "COMPUTE // ใช้คำนวณนิพจน์ทางคณิตศาสตร์ที่ซับซ้อน",
+        "STRING // ใช้เชื่อมสตริง",
+        "UNSTRING // ใช้แยกสตริง"
+      ],
+      "async (แนวคิด)": [
+        "// COBOL เป็นภาษาที่ออกแบบมาสำหรับการประมวลผลแบบ Batch Processing (Sequential)\n// จึงไม่มีแนวคิดเรื่อง Asynchronous Programming แบบ Native เหมือนภาษาสมัยใหม่\n// การทำงานแบบ Concurrency หรือ Multithreading มักถูกจัดการในระดับของระบบปฏิบัติการ (Mainframe) หรือผ่าน Extensions/Middleware เฉพาะ"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "* This is a comment line // คอมเมนต์บรรทัดเดียว (ขึ้นต้นด้วย * ใน Column 7)",
+        "*> Another comment line // คอมเมนต์บรรทัดเดียว (ขึ้นต้นด้วย *> ใน Column 7)",
+        "// This is a free-form comment (COBOL 2002+ standard) // คอมเมนต์แบบ Free-form (ในเวอร์ชันใหม่)"
+      ],
+      "conditions (เงื่อนไข)": [
+        "IF condition THEN\n    statement(s)\nELSE\n    statement(s)\nEND-IF. // คำสั่ง IF-ELSE (ต้องมี END-IF ปิดท้าย)",
+        "EVALUATE expression\n    WHEN value1\n        statement(s)\n    WHEN value2\n        statement(s)\n    WHEN OTHER\n        statement(s)\nEND-EVALUATE. // คำสั่ง EVALUATE (คล้าย Switch)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "PERFORM VARYING I FROM 1 BY 1 UNTIL I > 10\n    statement(s)\nEND-PERFORM. // ลูป PERFORM VARYING (วนซ้ำโดยใช้ตัวแปรนับ)",
+        "PERFORM paragraph-name THRU paragraph-end UNTIL condition. // รัน Paragraph ซ้ำๆ จนกว่าเงื่อนไขเป็นจริง"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, ยกกำลัง",
+        "Comparison: IS EQUAL TO, IS NOT EQUAL TO, IS GREATER THAN, IS LESS THAN, IS GREATER THAN OR EQUAL TO, IS LESS THAN OR EQUAL TO // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: AND, OR, NOT // ตัวดำเนินการตรรกะ: AND, OR, NOT"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้ IF-ELSE\n    WORKING-STORAGE SECTION.\n    01 WS-AGE PIC 99 VALUE 20.\n    PROCEDURE DIVISION.\n    MAIN-PARA.\n        IF WS-AGE IS GREATER THAN 18 THEN\n            DISPLAY 'Adult'\n        ELSE\n            DISPLAY 'Minor'\n        END-IF.\n        STOP RUN.\n",
+          "// ตัวอย่างที่ 2: การใช้ PERFORM VARYING (Loop)\n    WORKING-STORAGE SECTION.\n    01 I PIC 9 VALUE 0.\n    PROCEDURE DIVISION.\n    MAIN-PARA.\n        PERFORM VARYING I FROM 1 BY 1 UNTIL I > 3\n            DISPLAY 'Loop COBOL: ' I\n        END-PERFORM.\n        STOP RUN.\n",
+          "// ตัวอย่างที่ 3: การใช้ EVALUATE (Switch-like)\n    WORKING-STORAGE SECTION.\n    01 WS-GRADE PIC X VALUE 'B'.\n    PROCEDURE DIVISION.\n    MAIN-PARA.\n        EVALUATE WS-GRADE\n            WHEN 'A'\n                DISPLAY 'Excellent!'\n            WHEN 'B'\n                DISPLAY 'Very Good!'\n            WHEN OTHER\n                DISPLAY 'Needs Improvement'\n        END-EVALUATE.\n        STOP RUN.\n",
+          "// ตัวอย่างที่ 4: การจัดการไฟล์ (Sequential File Input/Output)\n    ENVIRONMENT DIVISION.\n    INPUT-OUTPUT SECTION.\n    FILE-CONTROL.\n        SELECT INPUT-FILE ASSIGN TO 'input.txt'\n            ORGANIZATION IS SEQUENTIAL\n            ACCESS MODE IS SEQUENTIAL.\n    DATA DIVISION.\n    FILE SECTION.\n    FD INPUT-FILE.\n    01 INPUT-RECORD PIC X(80).\n    WORKING-STORAGE SECTION.\n    01 WS-EOF-FLAG PIC X VALUE 'N'.\n        88 EOF-REACHED VALUE 'Y'.\n    PROCEDURE DIVISION.\n    MAIN-PROCESS.\n        OPEN INPUT INPUT-FILE.\n        PERFORM READ-NEXT-RECORD.\n        PERFORM PROCESS-RECORDS UNTIL EOF-REACHED.\n        CLOSE INPUT-FILE.\n        STOP RUN.\n\n    READ-NEXT-RECORD.\n        READ INPUT-FILE NEXT RECORD\n            AT END SET EOF-REACHED TO TRUE\n        END-READ.\n\n    PROCESS-RECORDS.\n        DISPLAY 'Read: ' INPUT-RECORD.\n        PERFORM READ-NEXT-RECORD."
+      ]
+  }
+}

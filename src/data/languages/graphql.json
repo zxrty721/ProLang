@@ -1,0 +1,57 @@
+{
+  "id": 38,
+  "name": "GraphQL",
+  "slug": "graphql",
+  "logo": "img/graphql.png",
+  "desc": "GraphQL คือภาษา Query Language สำหรับ API และเป็น Runtime สำหรับการทำ Query ด้วยข้อมูลที่มีอยู่ คุณลักษณะเฉพาะของ GraphQL คือความสามารถในการให้ Client กำหนดรูปแบบโครงสร้างของข้อมูลที่ต้องการจาก Server ได้อย่างชัดเจน",
+  "by": "Facebook",
+  "yr": "2015 (Open Sourced)",
+  "level": "5",
+  "par": ["Declarative"],
+  "fields": ["Backend", "API"],
+  "rank": "20-25 เติบโตใน Modern API Development (5.1% ของนักพัฒนา)",
+  "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-98,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "Client สามารถระบุข้อมูลที่ต้องการได้อย่างแม่นยำ (ลด Over-fetching/Under-fetching)",
+    "Single Endpoint สำหรับ Query ข้อมูลหลายประเภท",
+    "ลดจำนวน Round Trips ระหว่าง Client กับ Server",
+    "มีเครื่องมือและ Ecosystem ที่เติบโตอย่างรวดเร็ว (เช่น Apollo, Relay)"
+  ],
+  "cons": [
+    "Learning Curve สูงกว่า REST สำหรับบางกรณี",
+    "การจัดการ Caching อาจซับซ้อนกว่า",
+    "ไม่เหมาะกับทุก Use Case (บางครั้ง REST ก็พอ)",
+    "อาจทำให้เกิด Query ที่ซับซ้อนและมีประสิทธิภาพต่ำหากออกแบบไม่ดี"
+  ],
+  "frameworks": ["Apollo Server", "Relay", "Hasura"],
+  "learn": ["GraphQL Official Website", "How to GraphQL", "Apollo GraphQL Docs"],
+  "variables": {
+    "declaration (การประกาศ)": ["Query variables ($varName: Type!)"],
+    "types (ประเภท)": ["String", "Int", "Float", "Boolean", "ID", "Enum", "Custom Scalar"],
+    "examples (ตัวอย่าง)": [
+      "query GetUserById($id: ID!) { // กำหนด Query และตัวแปร id\n  user(id: $id) { // ดึงข้อมูล user โดยใช้ id\n    name\n    email\n    posts { // ดึงข้อมูลโพสต์ของ user นั้นๆ ด้วย\n      title\n      content\n    }\n  }\n}",
+      "mutation CreateUser($name: String!, $email: String!) { // กำหนด Mutation และตัวแปร\n  createUser(input: { name: $name, email: $email }) {\n    id\n    name\n  }\n}"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": ["Queries", "Mutations", "Subscriptions"],
+    "examples (ตัวอย่าง)": [
+      "query { allUsers { id name } } // Query เพื่อดึงข้อมูลผู้ใช้ทั้งหมด",
+      "mutation { createUser(name: \"New User\") { id } } // Mutation เพื่อสร้างผู้ใช้ใหม่",
+      "subscription { newPost { id title } } // Subscription เพื่อรับการแจ้งเตือนเมื่อมีโพสต์ใหม่"
+    ],
+    "built_in (ในตัว)": []
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": ["# Single line comment // คอมเมนต์บรรทัดเดียว"],
+    "conditions (เงื่อนไข)": ["N/A (Logic handled by resolver functions in backend)"],
+    "loops (การวนซ้ำ)": ["N/A (Logic handled by resolver functions in backend)"],
+    "operators (ตัวดำเนินการ)": ["N/A (Logical operations handled by backend)"],
+    "examples (ตัวอย่าง)": [
+      "query { product(id: \"123\") { name price } } // Query ดึงชื่อและราคาของสินค้าที่มี ID 123",
+      "fragment UserFields on User { // Fragment สำหรับระบุ Field ที่ใช้ซ้ำๆ\n  id\n  name\n}",
+      "query GetUserAndPosts {\n  user(id: \"456\") { ...UserFields }\n  posts(userId: \"456\") { title }\n}"
+    ]
+  }
+}

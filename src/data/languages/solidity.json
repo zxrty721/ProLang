@@ -1,0 +1,106 @@
+{
+  "id": 35,
+  "name": "Solidity",
+  "slug": "solidity",
+  "logo": "img/solidity.png",
+  "desc": "Solidity คือภาษาโปรแกรมที่ใช้สำหรับเขียน Smart Contracts ที่ทำงานบน Ethereum Blockchain และ EVM (Ethereum Virtual Machine) Compatible Chains อื่นๆ เช่น BNB Smart Chain, Polygon เป็นภาษาหลักในการพัฒนาแอปพลิเคชันแบบกระจายศูนย์ (dApps) และ Token",
+  "by": "Gavin Wood, Christian Reitwiessner, Alex Beregszaszi, Liana Husikyan, Yoichi Hirai",
+  "yr": "2014",
+  "level": "3",
+  "par": ["Object-Oriented", "Imperative", "Contract-Oriented"],
+  "fields": ["Blockchain"],
+  "rank": "30+ เติบโตตาม Blockchain และ Web3 Trend",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-130,000 บาท/เดือน (Senior)",
+  "salary": ["veryhigh"],
+  "pros": [
+    "ภาษามาตรฐานสำหรับการพัฒนา Smart Contracts บน Ethereum",
+    "มีเครื่องมือและไลบรารีสำหรับ Blockchain Development ค่อนข้างเยอะ",
+    "รองรับการทำงานกับเครือข่าย EVM-compatible หลากหลาย",
+    "ความต้องการในตลาด Blockchain สูงและรายได้ดี"
+  ],
+  "cons": [
+    "การเขียนโค้ดต้องระมัดระวังเรื่องความปลอดภัยสูงมาก (ช่องโหว่)",
+    "ค่าธรรมเนียม Gas ในการทำงานบน Blockchain ทำให้การทำงานบางอย่างมีต้นทุนสูง",
+    "ไม่เหมาะสำหรับงานทั่วไปที่ไม่เกี่ยวข้องกับ Blockchain",
+    "การดีบักและการทดสอบอาจซับซ้อนกว่าภาษาทั่วไป"
+  ],
+  "frameworks": ["Hardhat", "Truffle", "Foundry", "OpenZeppelin"],
+  "learn": ["Solidity Documentation", "CryptoZombies", "freeCodeCamp - Blockchain Development"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "type visibility name; // รูปแบบการประกาศตัวแปร"
+    ],
+    "types (ประเภท)": [
+      "uint (unsigned integer) // จำนวนเต็มบวก",
+      "int (signed integer) // จำนวนเต็มบวก/ลบ",
+      "address // ที่อยู่บน Blockchain",
+      "bool // บูลีน (true, false)",
+      "bytes // ไบต์ (Fixed-size หรือ Dynamic)",
+      "string // สตริง",
+      "array (fixed/dynamic) // อาร์เรย์ (ขนาดคงที่/ปรับได้)",
+      "struct // โครงสร้างข้อมูลที่กำหนดเอง",
+      "enum // ประเภทแบบแจงนับ",
+      "mapping // Map (Key-Value store)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "uint public myNumber = 10; // ตัวแปรจำนวนเต็มบวกสาธารณะ",
+      "address public owner; // ตัวแปรที่อยู่บน Blockchain",
+      "bool private _isActive; // ตัวแปรบูลีนส่วนตัว",
+      "string public greeting = \"Hello Solidity\"; // ตัวแปรสตริงสาธารณะ",
+      "mapping(address => uint) public balances; // Mapping จาก address ไปยัง uint"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function name(params) visibility stateMutability { ... } // รูปแบบการประกาศฟังก์ชัน"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันถอนเงิน\nfunction withdraw(uint amount) public {\n    require(balances[msg.sender] >= amount, \"Insufficient balance\"); // ตรวจสอบยอดเงิน\n    balances[msg.sender] -= amount; // ลดจำนวนเงิน\n}\n",
+      "// ฟังก์ชันดูยอดคงเหลือ\nfunction getBalance() public view returns (uint) {\n    return balances[msg.sender];\n}\n",
+      "// ฟังก์ชันสำหรับฝากเงิน\nfunction deposit() public payable {\n    balances[msg.sender] += msg.value; // เพิ่มยอดเงินด้วยจำนวน ETH ที่ส่งมา\n}\n",
+      "// การจัดการ Event (สำหรับ Log การทำงานบน Blockchain)\n// event Transfer(address indexed from, address indexed to, uint value);\n// function transfer(address _to, uint _value) public {\n//     require(balances[msg.sender] >= _value, \"Insufficient balance\");\n//     balances[msg.sender] -= _value;\n//     balances[_to] += _value;\n//     emit Transfer(msg.sender, _to, _value);\n// }\n",
+      "// Asynchronous Programming (Conceptual - Through External Calls/Events)\n// Solidity โดยธรรมชาติไม่ได้มี Asynchronous Programming แบบ Threading หรือ Async/Await\n// การทำงาน \"แบบ asynchronous\" ใน Smart Contracts มักจะหมายถึงการเรียกใช้ Smart Contracts อื่นๆ (External Calls)\n// ซึ่งจะมีการทำงานแบบ Non-blocking ในระดับของ Transaction Processing แต่ไม่ใช่ภายใน Execution Flow ของ Contract เดียวกัน\n/*\n// interface IAnotherContract {\n//     function doSomething(uint _value) external;\n// }\n\n// contract MyContract {\n//     address public anotherContractAddress;\n\n//     constructor(address _anotherContractAddress) {\n//         anotherContractAddress = _anotherContractAddress;\n//     }\n\n//     function callAnotherContract(uint _value) public {\n//         IAnotherContract(anotherContractAddress).doSomething(_value); // การเรียกใช้ External Contract (คล้าย Async Call)\n//     }\n\n//     // ฟังก์ชันรับเงินสำรองสำหรับ Fallback/Receive Ether\n//     receive() external payable {\n//         // Handle incoming Ether\n//     }\n// }\n*/"
+    ],
+    "built_in (ในตัว)": [
+      "msg.sender // ที่อยู่ของผู้ที่เรียกใช้ฟังก์ชันปัจจุบัน",
+      "msg.value // จำนวน Ether ที่ส่งมาพร้อมกับการเรียกใช้ฟังก์ชัน",
+      "block.timestamp // เวลาปัจจุบันของบล็อกเป็น Unix timestamp",
+      "require() // ใช้ตรวจสอบเงื่อนไข ถ้าไม่เป็นจริงจะ revert transaction",
+      "revert() // ใช้ยกเลิก transaction และคืนค่า Gas ที่เหลือ",
+      "assert() // ใช้ตรวจสอบเงื่อนไข (คล้าย require แต่ใช้สำหรับ Internal Errors)",
+      "sha256() // ฟังก์ชัน Hash SHA256",
+      "keccak256() // ฟังก์ชัน Hash Keccak256 (นิยมใช้ใน Ethereum)",
+      "abi.encodePacked() // เข้ารหัส Argument แบบ Pack",
+      "address.balance // ตรวจสอบยอดคงเหลือของ Address นั้นๆ",
+      "address.transfer() // ส่ง Ether ไปยัง Address (Depreciated)",
+      "address.send() // ส่ง Ether ไปยัง Address (Depreciated)",
+      "address.call() // เรียกใช้ External Contract ในระดับ Low-level"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line // คอมเมนต์บรรทัดเดียว",
+      "/* Multi line */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { ... } else { ... } // คำสั่ง if-else"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (uint i = 0; i < 10; i++) { ... } // ลูป for",
+      "while (condition) { ... } // ลูป while"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "Assignment: = // กำหนดค่า",
+      "Bitwise: &, |, ^, ~ // Bitwise operators"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nuint public value = 5;\nfunction checkValue() public view returns (string memory) {\n    if (value > 10) {\n        return \"Value is greater than 10\";\n    } else {\n        return \"Value is 10 or less\";\n    }\n}\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for\nfunction sumUpTo(uint n) public pure returns (uint) {\n    uint sum = 0;\n    for (uint i = 1; i <= n; i++) {\n        sum += i;\n    }\n    return sum;\n}\n",
+      "// ตัวอย่างที่ 3: การทำงานกับ Structs และ Mappings\nstruct User {\n    uint id;\n    string name;\n    address walletAddress;\n}\n\nmapping(address => User) public users;\n\nfunction registerUser(uint _id, string memory _name) public {\n    users[msg.sender] = User(_id, _name, msg.sender);\n}\n\nfunction getUserName(address _userAddress) public view returns (string memory) {\n    return users[_userAddress].name;\n}\n",
+      "// ตัวอย่างที่ 4: การจัดการข้อผิดพลาด (Require, Revert, Assert)\nfunction transferFunds(address _to, uint _amount) public {\n    require(balances[msg.sender] >= _amount, \"Insufficient balance.\"); // ตรวจสอบยอดเงิน\n    // assert(balances[msg.sender] - _amount <= balances[msg.sender]); // ใช้สำหรับ internal errors (ไม่ค่อยนิยม)\n    balances[msg.sender] -= _amount;\n    balances[_to] += _amount;\n}\n"
+    ]
+  }
+}

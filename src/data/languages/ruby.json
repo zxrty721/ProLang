@@ -1,0 +1,113 @@
+{
+  "id": 11,
+  "name": "Ruby",
+  "slug": "ruby",
+  "logo": "img/ruby.png",
+  "desc": "Ruby เป็นภาษาโปรแกรม Dynamic, Object-Oriented ที่เน้นความเรียบง่ายและ Productivitiy สูง โดยเฉพาะอย่างยิ่งเมื่อใช้ร่วมกับ Ruby on Rails Framework ซึ่งเป็นที่นิยมในการสร้าง Web Application",
+  "by": "Yukihiro Matsumoto",
+  "yr": "1995",
+  "level": "4",
+  "par": ["Object-Oriented", "Imperative", "Functional", "Reflective"],
+  "fields": ["Backend", "Script", "Testing"],
+  "rank": "14 และลดลงต่อเนื่อง (2.1% ใน TIOBE)",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-95,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "Syntax สวยงามและอ่านง่าย",
+      "มี Ruby on Rails Framework ที่ทรงพลังสำหรับการพัฒนาเว็บ",
+      "มีชุมชนที่กระตือรือร้น",
+      "การพัฒนาที่รวดเร็ว (Rapid Development)",
+      "เน้นความเป็น Object-Oriented"
+  ],
+  "cons": [
+      "ประสิทธิภาพอาจไม่สูงเท่าภาษาอื่นๆ สำหรับงานที่ต้องใช้ความเร็วสูง",
+      "Learning Curve ของ Rails Framework อาจสูงสำหรับผู้เริ่มต้น",
+      "ทรัพยากรสำหรับการเรียนรู้ภาษา Ruby อย่างเดียวอาจน้อยกว่าภาษาอื่น",
+      "อาจมีปัญหาเรื่อง Scaling ในบางกรณี"
+  ],
+  "frameworks": ["Ruby on Rails", "Sinatra"],
+  "learn": ["Ruby-Doc.org", "Ruby Guides", "Learn Ruby the Hard Way", "Codecademy: Learn Ruby"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "name = \"Alice\" // ตัวแปร Local",
+        "@instance_var = 10 // ตัวแปร Instance (ของ Object)",
+        "@@class_var = 20 // ตัวแปร Class (ของ Class)",
+        "$global_var = 30 // ตัวแปร Global"
+      ],
+      "types (ประเภท)": [
+        "String // ประเภทข้อมูลข้อความ",
+        "Integer // ประเภทข้อมูลตัวเลขจำนวนเต็ม",
+        "Float // ประเภทข้อมูลตัวเลขทศนิยม",
+        "Boolean // ประเภทข้อมูลค่าจริงหรือเท็จ (true/false)",
+        "Array // ประเภทข้อมูลสำหรับเก็บข้อมูลหลายค่าในลำดับ",
+        "Hash // ประเภทข้อมูลสำหรับ Key-Value Pairs (คล้าย Dictionary/Map)",
+        "Symbol // ประเภทข้อมูลสำหรับ Identifier ที่ไม่เปลี่ยนแปลง (ประสิทธิภาพสูง)",
+        "NilClass // ประเภทข้อมูลสำหรับค่าว่างเปล่า (nil)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "product = \"Book\" // กำหนดตัวแปร product เป็นสตริง",
+          "quantity = 5 // กำหนดตัวแปร quantity เป็นตัวเลข",
+          "is_available = true # กำหนดตัวแปร is_available เป็น Boolean",
+          "colors = ['red', 'green', 'blue'] # กำหนด Array",
+          "user_data = { name: 'Bob', age: 25 } # กำหนด Hash",
+          ":my_symbol # ตัวอย่าง Symbol"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "def method_name(param1, param2)\n  # ...\nend // การประกาศเมธอด (ฟังก์ชัน) แบบปกติ",
+        "lambda { |param| ... } // Lambda expression (ฟังก์ชันนิรนาม)",
+        "->(param) { ... } // Lambda expression แบบย่อ"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// เมธอด (ฟังก์ชัน) ทักทาย\ndef greet(name)\n  \"Hello, \\#{name}!\"\nend\n",
+          "// เมธอด (ฟังก์ชัน) บวกเลขสองจำนวน\ndef add(a, b)\n  a + b\nend\n",
+          "// การเรียกใช้เมธอด (ฟังก์ชัน)\nmessage = greet(\"Ruby\") # message จะมีค่า 'Hello, Ruby!'\nsum = add(10, 15) # sum จะมีค่า 25\n",
+          "// เมธอดที่มี Optional Parameter และ Default Value\ndef describe_item(item, price = nil)\n  if price\n    \"\\#{item} costs \\#{price} baht.\"\n  else\n    \"\\#{item} is available.\"\n  end\nend\nputs describe_item(\"Apple\") # Apple is available.\nputs describe_item(\"Laptop\", 35000) # Laptop costs 35000 baht.\n",
+          "// เมธอดที่คืนค่าหลายค่า (ด้วย Array)\ndef get_user_details()\n  ['Jane Doe', 28, 'jane@example.com']\nend\nname, age, email = get_user_details()\nputs \"User: \\#{name}, Age: \\#{age}\"\n",
+          "// Asynchronous Programming ใน Ruby (แนวคิด)\n// Ruby ไม่ได้มี Asynchronous I/O ในตัวแบบ C#/Go แต่สามารถทำได้ด้วย Gems/Libraries เช่น Celluloid, EventMachine หรือ Fibers (ใน Ruby 3.0+)\n// ตัวอย่างนี้แสดงการใช้งาน Fibers ซึ่งช่วยให้เขียนโค้ด Asynchronous ได้ง่ายขึ้น\n/*\nrequire 'fiber'\n\ndef long_running_task(name)\n  puts \"\\#{name}: Starting long task...\"\n  Fiber.yield # หยุดการทำงานชั่วคราวและส่งการควบคุมคืน\n  puts \"\\#{name}: Resumed and finished!\"\nend\n\nmain_fiber = Fiber.new do\n  puts \"Main: Starting.\"\n  long_running_task(\"Task 1\")\n  puts \"Main: After Task 1.\"\n  long_running_task(\"Task 2\")\n  puts \"Main: After Task 2.\"\n  puts \"Main: Done.\"\nend\n\nmain_fiber.resume # เริ่มทำงาน Fiber หลัก\nputs \"Outside: Still running!\"\nmain_fiber.resume # กลับมาทำงาน Fiber หลักต่อ\nputs \"Outside: More work.\"\nmain_fiber.resume # กลับมาทำงาน Fiber หลักต่ออีกครั้ง\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "puts // ใช้แสดงผลข้อมูลออกทาง Console (เพิ่มบรรทัดใหม่)",
+        "print // ใช้แสดงผลข้อมูลออกทาง Console (ไม่เพิ่มบรรทัดใหม่)",
+        "gets // ใช้รับข้อมูลจากผู้ใช้งาน",
+        "length // เมธอดสำหรับหาความยาวของ String หรือ Array",
+        "each // เมธอดสำหรับวนซ้ำสมาชิกใน Collection",
+        "map // เมธอดสำหรับวนซ้ำและสร้าง Array ใหม่",
+        "require // ใช้สำหรับโหลดไฟล์ Ruby หรือ Gems อื่นๆ"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "# Single line comment // คอมเมนต์บรรทัดเดียว",
+        "=begin\nMulti-line\ncomment\n=end // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if condition\n  # ...\nelsif another_condition\n  # ...\nelse\n  # ...\nend // คำสั่ง if-elsif-else",
+        "case expression\nwhen value1 then # ...\nwhen value2 then # ...\nelse # ...\nend // คำสั่ง case (คล้าย switch)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for item in collection do\n  # ...\nend // ลูป for (ไม่ค่อยนิยมใน Ruby)",
+        "while condition do\n  # ...\nend // ลูป while",
+        "loop do\n  # ...\n  break if condition # ออกจากลูป\nend // Infinite loop (ลูปไม่รู้จบ) พร้อมเงื่อนไขออก",
+        "collection.each { |item| # ... } // Iterator 'each' สำหรับวนซ้ำ Array/Hash (นิยมใช้)",
+        "collection.map { |item| # ... } // Iterator 'map' สำหรับสร้าง Array ใหม่จากการแปลงค่า"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, %, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, >, <, >=, <=, <=> // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ ( <=> คือ Spaceship operator)",
+        "Logical: && (and), || (or), ! (not) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        ". // Dot operator (เรียกใช้เมธอด)",
+        ":: // Scope Resolution operator (เข้าถึงค่าคงที่หรือเมธอดของ Class/Module)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nage = 22\nif age >= 18\n  puts \"Adult\"\nelsif age >= 13\n  puts \"Teenager\"\nelse\n  puts \"Child\"\nend\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) กับ Range\nfor i in 0..2 # Range รวมถึงค่าสุดท้าย\n  puts \"Loop Ruby: \\#{i}\"\nend\n",
+          "// ตัวอย่างที่ 3: การใช้ Case Statement (คล้าย Switch)\nstatus = 'active'\ncase status\nwhen 'active'\n  puts \"User is active.\"\nwhen 'inactive'\n  puts \"User is inactive.\"\nelse\n  puts \"Unknown status.\"\nend\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Class และ Object-Oriented Programming (OOP)\nclass Animal\n  attr_accessor :name, :species\n\n  def initialize(name, species)\n    @name = name\n    @species = species\n  end\n\n  def make_sound\n    puts \"\\#{name} makes a sound.\"\n  end\nend\n\nclass Dog < Animal # สืบทอดมาจาก Animal\n  def initialize(name)\n    super(name, \"Dog\") # เรียก constructor ของ parent class\n  end\n\n  def make_sound\n    puts \"\\#{name} says Woof!\"\n  end\nend\n\nmy_dog = Dog.new(\"Buddy\") # สร้าง Object\nmy_dog.make_sound # Buddy says Woof!\nputs my_dog.species # Dog\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling) ด้วย Begin-Rescue-Ensure\nbegin\n  result = 10 / 0 # จะเกิด ZeroDivisionError\n  puts \"Result: \\#{result}\"\nrescue ZeroDivisionError => e\n  puts \"Error: \\#{e.message}\"\nrescue => e # ดักจับ Error อื่นๆ ทั้งหมด\n  puts \"An unexpected error occurred: \\#{e.message}\"\nensure\n  puts \"Execution finished.\"\nend\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ Array และ Hash\nfruits = ['Apple', 'Banana', 'Cherry']\nputs \"My favorite fruits:\"\nfruits.each do |fruit|\n  puts \"- \\#{fruit}\"\nend\n\nstudent_grades = { 'Alice' => 'A', 'Bob' => 'B' }\nputs \"Student grades:\"\nstudent_grades.each do |name, grade|\n  puts \"\\#{name} got a grade of \\#{grade}\"\nend\n"
+      ]
+  }
+}

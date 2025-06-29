@@ -1,51 +1,69 @@
 /* --- Card Style --- */
 .card {
-    position: relative; /* ✅ เพิ่มตรงนี้ */
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid #f1f5f9;
+  position: relative;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.3s ease;
+  border: 1px solid #e2e8f0; /* soft border */
   }
   
+  
+.lang-level.Machine-Level {
+  background: linear-gradient(135deg, #5a2020, #ff3b3b, #5a2020);
+}
+.lang-level.Low-Level {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1e3a8a);
+}
+.lang-level.Mid-Level {
+  background: linear-gradient(135deg, #b45309, #fde047, #b45309);
+}
+.lang-level.High-Level {
+  background: linear-gradient(135deg, #065f46, #34d399, #065f46);
+}
+.lang-level.Very-High-Level {
+  background: linear-gradient(135deg, #6d28d9, #c084fc, #6d28d9);
+}
+.lang-level.Unknown {
+  background: linear-gradient(135deg, #4b5563, #9ca3af, #4b5563);
+}
+
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card.Machine-Level:hover {
-  box-shadow: 0 10px 30px rgba(82, 13, 13, 0.5), 0 0 40px rgba(139, 92, 246, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
-  border: 2px solid #ea3333; 
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.35);
+  border: 0.17rem solid #dc2626;
 }
-/* ระดับที่ 2 - Low-Level */
+
 .card.Low-Level:hover {
-  box-shadow: 0 10px 30px rgba(6, 32, 80, 0.5), 0 0 40px rgba(139, 92, 246, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
-  border: 2px solid #3413f1; 
+  box-shadow: 0 10px 30px rgba(0, 98, 255, 0.404);
+  border: 0.17rem solid #3b82f6;
 }
 
-/* ระดับที่ 3 - Mid-Level */
 .card.Mid-Level:hover {
-  box-shadow: 0 10px 30px rgba(138, 88, 14, 0.5), 0 0 40px rgba(139, 92, 246, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
-  border: 2px solid #eaaa33; 
+  box-shadow: 0 10px 30px rgba(255, 183, 0, 0.418);
+  border: 0.17rem solid #facc15;
 }
 
-/* ระดับที่ 4 - High-Level */
 .card.High-Level:hover {
-  box-shadow: 0 10px 30px rgba(9, 116, 18, 0.5), 0 0 40px rgba(139, 92, 246, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
-  border: 2px solid #33ff00; 
+  box-shadow: 0 10px 30px rgba(89, 241, 0, 0.35);
+  border: 0.17rem solid #10b981;
 }
 
-/* ระดับที่ 5 - Very High-Level */
 .card.Very-High-Level:hover {
-  box-shadow: 0 10px 30px rgba(71, 9, 87, 0.5), 0 0 40px rgba(139, 92, 246, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
-  border: 2px solid #da23ff; 
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.35);
+  border: 0.17rem solid #a855f7;
 }
 
 .card.Unknown:hover {
-  box-shadow: 0 10px 30px rgba(109, 109, 109, 0.5), 0 0 40px rgba(206, 206, 206, 0.4); /* เพิ่มเงาที่เข้มขึ้นและแสงม่วงที่ชัดขึ้น */
-  border: 2px solid #8b8b8b; 
+  box-shadow: 0 10px 30px rgba(156, 163, 175, 0.35);
+  border: 0.17rem solid #9ca3af;
 }
+
 
 a {
   text-decoration: none;
@@ -78,16 +96,16 @@ a {
 }
 
 .language-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1e293b;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937; /* สีเทาเข้มนุ่ม */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .language-desc {
-    color: #64748b;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+  color: #475569; /* เทาอ่อน อ่านง่าย */
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
 }
 
 .lang-level {
@@ -105,39 +123,9 @@ a {
 .level-animate {
   animation: logoFloat 3s ease-out infinite;
 }
-/* ระดับที่ 1 - Machine-Level */
-.lang-level.Machine-Level {
-  background: linear-gradient(135deg, #5a2020, #ff0000, #5a2020);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
 
-/* ระดับที่ 2 - Low-Level */
-.lang-level.Low-Level {
-  background: linear-gradient(135deg, #764ba2, #667eea, #764ba2);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-/* ระดับที่ 3 - Mid-Level */
-.lang-level.Mid-Level {
-  background: linear-gradient(135deg, #fda085, #f6d365, #fda085);
-  box-shadow: 0 4px 15px rgba(253, 160, 133, 0.3);
-}
-
-/* ระดับที่ 4 - High-Level */
-.lang-level.High-Level {
-  background: linear-gradient(135deg, #8fd3f4, #84fab0, #8fd3f4);
-  box-shadow: 0 4px 15px rgba(132, 250, 176, 0.3);
-}
-
-/* ระดับที่ 5 - Very High-Level */
-.lang-level.Very-High-Level {
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb, #a18cd1);
-  box-shadow: 0 4px 15px rgba(251, 194, 235, 0.3);
-}
-
-.lang-level.Unknown {
-  background: linear-gradient(135deg, #8b8b8b, #575757, #686868);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+.SearchBox {
+  border: orange 2;
 }
 
 @media (max-width: 768px) {

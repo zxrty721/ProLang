@@ -1,0 +1,105 @@
+{
+  "id": 24,
+  "name": "Lisp",
+  "slug": "lisp",
+  "logo": "img/lisp.png",
+  "desc": "Lisp (LISt Processing) เป็นภาษาโปรแกรมที่เก่าแก่เป็นอันดับสองรองจาก Fortran มีชื่อเสียงในด้าน AI, การประมวลผลสัญลักษณ์ และ Functional Programming โดดเด่นด้วยการใช้ Parentheses จำนวนมาก",
+  "by": "John McCarthy",
+  "yr": "1958",
+  "level": "3",
+  "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming"],
+  "fields": ["Edu", "AI"],
+  "rank": "40+ Niche ใน AI Research และ Academic",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+      "ทรงพลังสำหรับ AI และ Symbolic computing",
+      "มี Metaprogramming (Macros) ที่ยืดหยุ่น",
+      "Functional Programming ที่บริสุทธิ์",
+      "มีการใช้งานใน Emacs และ CAD/CAM",
+      "มีคุณสมบัติในการปรับเปลี่ยนภาษาได้เอง (Homoiconicity)"
+  ],
+  "cons": [
+      "Syntax ใช้ Parentheses จำนวนมาก (Lisp is a lot of parentheses)",
+      "Learning Curve สูงมาก",
+      "ไม่ได้รับความนิยมในอุตสาหกรรมทั่วไป",
+      "ทรัพยากรการเรียนรู้มีจำกัด",
+      "ประสิทธิภาพอาจไม่ดีเท่าภาษาคอมไพล์"
+  ],
+  "frameworks": ["Common Lisp HyperSpec", "Clojure (JVM Lisp)", "Scheme"],
+  "learn": ["Structure and Interpretation of Computer Programs (SICP)", "Practical Common Lisp", "Common Lisp: A Gentle Introduction"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "(setq x 10) ; กำหนดค่า x เป็น 10 (Local Variable)",
+        "(defvar *name* \"Lisp\") ; กำหนด Global Variable ชื่อ *name*"
+      ],
+      "types (ประเภท)": [
+        "numbers // ตัวเลข (Integer, Float, etc.)",
+        "strings // ข้อความ",
+        "booleans // ค่าตรรกะ (T = true, NIL = false)",
+        "symbols // สัญลักษณ์ (ใช้เป็นชื่อตัวแปร, ฟังก์ชัน, ฯลฯ)",
+        "lists // รายการ (โครงสร้างข้อมูลหลักใน Lisp)",
+        "vectors // เวกเตอร์ (Array แบบ Index ได้)",
+        "hash-tables // ตาราง Hash (Key-Value pairs)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "(setq count 10) ; กำหนดตัวแปร count เป็น 10",
+          "(setq greeting \"Hello Lisp\") ; กำหนดตัวแปร greeting เป็นสตริง",
+          "(setq my-list '(1 2 3)) ; สร้าง List (Quote เพื่อไม่ให้ประเมินค่า)",
+          "(setf my-array (make-array 3 :initial-contents '(10 20 30))) ; สร้าง Array/Vector\n; (aref my-array 0) ; เข้าถึงสมาชิกแรก (10)"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "(defun function-name (params) body) ; การประกาศฟังก์ชัน"
+      ],
+      "examples (ตัวอย่าง)": [
+          "(defun add (a b) (+ a b)) ; ฟังก์ชันบวกเลขสองจำนวน\n",
+          "(defun greet (name) (format t \"Hello, ~a!~%\" name)) ; ฟังก์ชันทักทาย (format t คือ print)\n",
+          "// การเรียกใช้ฟังก์ชัน\n(setq sum (add 5 5)) ; sum จะมีค่า 10\n(greet \"World\") ; แสดงผล 'Hello, World!'\n",
+          "(defun multiply-by-two (num) (* num 2)) ; ฟังก์ชันคูณด้วย 2\n(mapcar #'multiply-by-two '(1 2 3)) ; ใช้ mapcar กับฟังก์ชัน (2 4 6)\n",
+          "(defun factorial (n)\n  (if (zerop n)\n      1\n      (* n (factorial (- n 1))))) ; ฟังก์ชัน Factorial แบบ Recursive\n(factorial 5) ; 120\n",
+          "// Asynchronous Programming (Conceptual - Lisp ใช้ Libraries/Extensions)\n// Lisp โดยพื้นฐานไม่ใช่ภาษาที่มี Asynchronous I/O ในตัวแบบ Modern Language\n// แต่สามารถใช้ Libraries หรือ Extensions (เช่น 'cl-async' สำหรับ Common Lisp)\n// หรือใน Clojure (Lisp บน JVM) มี core.async สำหรับ Concurrency\n/*\n; ตัวอย่างแนวคิด (ไม่ใช่โค้ดที่รันได้โดยตรง)\n(defun simulate-async-task (callback)\n  (format t \"Starting async task...~%\")\n  (sleep 1) ; จำลองการหน่วงเวลา\n  (format t \"Async task finished!~%\")\n  (funcall callback \"Data from async source\"))\n\n; (simulate-async-task (lambda (data) (format t \"Received: ~a~%\" data)))\n; (format t \"Main program continues...~%\")\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "car // คืนค่าสมาชิกแรกของ List",
+        "cdr // คืนค่า List ที่เหลือทั้งหมด ยกเว้นสมาชิกแรก",
+        "cons // สร้าง Pair หรือเพิ่ม Element เข้าไปใน List",
+        "atom // ตรวจสอบว่าเป็น Atom หรือไม่ (ไม่ใช่ List)",
+        "list // สร้าง List",
+        "quote // ป้องกันการประเมินค่าของ Expression",
+        "lambda // สร้าง Anonymous Function (ฟังก์ชันนิรนาม)",
+        "defun // กำหนดฟังก์ชัน",
+        "format // ฟังก์ชันสำหรับการแสดงผลแบบจัดรูปแบบ",
+        "print // แสดงผลข้อมูล"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "; Single line comment ; คอมเมนต์บรรทัดเดียว",
+        "#| Multi-line\n   comment |# // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "(if condition then-form else-form) // คำสั่ง if-else",
+        "(cond (test1 expr1) (test2 expr2) (t default-expr)) // คำสั่ง cond (คล้าย If-Else If-Else หรือ Switch)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "(loop for i from 1 to 5 do (format t \"~a~%\" i)) // ลูป loop for (แบบ Loop Macro)",
+        "(dolist (item list) (format t \"~a~%\" item)) // ลูป dolist สำหรับวนซ้ำ List",
+        "(dotimes (i 5) (format t \"~a~%\" i)) // ลูป dotimes สำหรับวนซ้ำตามจำนวนครั้ง"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, rem // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, เศษเหลือ",
+        "Comparison: =, /=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+        "Logical: and, or, not // ตัวดำเนินการตรรกะ: AND, OR, NOT"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้ If-Else\n(setq age 20)\n(if (> age 18)\n    (format t \"Adult~%\")\n    (format t \"Minor~%\"))\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป Dotimes\n(dotimes (i 3)\n  (format t \"Loop Lisp: ~a~%\" i))\n",
+          "// ตัวอย่างที่ 3: การใช้ Cond (Conditional)\n(setq score 75)\n(cond\n  ((>= score 90) (format t \"Grade A~%\"))\n  ((>= score 70) (format t \"Grade B~%\"))\n  (t (format t \"Grade C~%\")))\n",
+          "// ตัวอย่างที่ 4: การทำงานกับ List และ Recursion\n(defun list-length (lst)\n  (if (null lst)\n      0\n      (+ 1 (list-length (cdr lst))))) ; ฟังก์ชันนับความยาว List แบบ Recursive\n(list-length '(a b c d)) ; 4\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Condition System)\n; Lisp มี Condition System ที่ซับซ้อนกว่า Try-Catch ทั่วไป\n; ซึ่งสามารถ Resume จาก Error ได้ (ไม่ใช่แค่ดักจับแล้วหยุด)\n; ตัวอย่างนี้แสดงการใช้ handler-case เพื่อดักจับ Error\n;\n; (handler-case\n;    (/ 10 0) ; จะเกิด division-by-zero error\n;  (division-by-zero (c) ; ดักจับ error ประเภท division-by-zero\n;    (format t \"Caught error: ~a~%\" c)\n;    nil)) ; คืนค่า nil แทน\n; (format t \"Program continues after error handling.~%\")\n",
+          "// ตัวอย่างที่ 6: การใช้ Macros (Metaprogramming)\n; Macros ใน Lisp อนุญาตให้คุณเขียนโค้ดที่สร้างโค้ดอื่นขึ้นมาได้ใน Compile Time\n; ทำให้ภาษา Lisp ยืดหยุ่นและปรับเปลี่ยนได้สูง\n; (defmacro my-unless (condition &body body)\n;   `(if (not ,condition) ,@body))\n;\n; (my-unless (= 1 2)\n;   (format t \"This will print because 1 is not equal to 2.~%\"))\n"
+      ]
+  }
+}

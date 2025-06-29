@@ -1,0 +1,107 @@
+{
+    "id": 15,
+    "name": "SQL",
+    "slug": "sql",
+    "logo": "img/sql.png",
+    "desc": "SQL (Structured Query Language) ไม่ใช่ภาษาโปรแกรมมิ่งแบบทั่วไป แต่เป็นภาษามาตรฐานที่ใช้ในการจัดการและสอบถามข้อมูลจากฐานข้อมูลเชิงสัมพันธ์ (Relational Databases) เป็นสิ่งจำเป็นสำหรับนักพัฒนาซอฟต์แวร์ทุกคน",
+    "by": "Donald D. Chamberlin and Raymond F. Boyce",
+    "yr": "1970s",
+    "level": "5",
+    "par": ["Declarative"],
+    "fields": ["DB"],
+    "rank": "9-11 แต่กำลังลดลง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
+    "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-75,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high"],
+    "pros": [
+        "เป็นมาตรฐานอุตสาหกรรมสำหรับการจัดการฐานข้อมูล",
+        "มีประสิทธิภาพสูงในการดึงข้อมูลจำนวนมาก",
+        "ใช้งานง่ายและเรียนรู้ได้เร็วสำหรับพื้นฐาน",
+        "ทำงานร่วมกับภาษาโปรแกรมอื่นๆ ได้ดี",
+        "รองรับการ Query ข้อมูลที่ซับซ้อน"
+    ],
+    "cons": [
+        "ไม่ใช่ภาษา General-purpose (ใช้สำหรับฐานข้อมูลเท่านั้น)",
+        "ประสิทธิภาพอาจลดลงเมื่อ Query ซับซ้อนมาก",
+        "แต่ละ Database System (MySQL, PostgreSQL) อาจมี Syntax ต่างกันเล็กน้อย",
+        "การ Scale อาจเป็นความท้าทายสำหรับข้อมูลขนาดใหญ่มาก"
+    ],
+    "frameworks": ["None (เป็นภาษาฐานข้อมูล)", "ORMs (Object-Relational Mappers) ในภาษาโปรแกรมต่างๆ"],
+    "learn": ["W3Schools SQL Tutorial", "SQLBolt", "Khan Academy SQL", "Mode Analytics SQL Tutorials"],
+    "variables": {
+        "declaration (การประกาศ)": [
+          "// ใน SQL ไม่มีการประกาศตัวแปรในลักษณะเดียวกับภาษาโปรแกรมทั่วไป\n// แต่เป็นการกำหนดโครงสร้างของตารางและคอลัมน์ในฐานข้อมูล (Data Definition Language - DDL)\n// หรือประกาศตัวแปรชั่วคราวใน Stored Procedure (ซึ่งเป็นส่วนขยายของ SQL)"
+        ],
+        "types (ประเภท)": [
+          "INT // จำนวนเต็ม",
+          "VARCHAR(size) // สตริงความยาวแปรผัน (ระบุขนาดสูงสุด)",
+          "TEXT // สตริงขนาดยาว",
+          "DATE // วันที่ (YYYY-MM-DD)",
+          "DATETIME // วันที่และเวลา (YYYY-MM-DD HH:MM:SS)",
+          "BOOLEAN // ค่าจริงหรือเท็จ (TRUE/FALSE)",
+          "DECIMAL(p, s) // ตัวเลขทศนิยมที่มีความแม่นยำคงที่ (p=จำนวนหลักทั้งหมด, s=จำนวนหลักหลังจุดทศนิยม)",
+          "FLOAT // ตัวเลขทศนิยมความแม่นยำเดี่ยว",
+          "PRIMARY KEY // คีย์หลัก (ใช้ระบุแถวที่ไม่ซ้ำกันในตาราง)",
+          "FOREIGN KEY // คีย์นอก (ใช้เชื่อมโยงกับคีย์หลักในตารางอื่น)"
+        ],
+        "examples (ตัวอย่าง)": [
+            "CREATE TABLE Products ( // สร้างตารางชื่อ Products\n  ProductID INT PRIMARY KEY, // คอลัมน์ ProductID เป็นคีย์หลัก ชนิด INT\n  ProductName VARCHAR(255) NOT NULL, // คอลัมน์ ProductName ชนิด VARCHAR ห้ามเป็น NULL\n  Price DECIMAL(10, 2) // คอลัมน์ Price ชนิด DECIMAL มี 10 หลัก ทศนิยม 2 หลัก\n);",
+            "INSERT INTO Users (Name, Age) VALUES ('John Doe', 30); // เพิ่มข้อมูลใหม่ลงในตาราง Users",
+            "INSERT INTO Orders (OrderID, CustomerID, OrderDate) VALUES (101, 1, '2023-05-15');",
+            "ALTER TABLE Customers ADD Email VARCHAR(255); -- เพิ่มคอลัมน์ Email ในตาราง Customers"
+        ]
+    },
+    "functions": {
+        "declaration (การประกาศ)": [
+          "// ใน SQL ฟังก์ชันมักจะเป็น Built-in (ฟังก์ชันในตัว) หรือ User-Defined Functions (UDFs)\n// ซึ่งถูกสร้างขึ้นเพื่อใช้ในการประมวลผลข้อมูลใน Query หรือ Stored Procedure\nSELECT COUNT(column_name) FROM table_name; -- ตัวอย่างการใช้งานฟังก์ชัน COUNT"
+        ],
+        "examples (ตัวอย่าง)": [
+            "SELECT AVG(Price) FROM Products; -- หาค่าเฉลี่ยของราคาในตาราง Products",
+            "SELECT MAX(OrderDate) FROM Orders; -- หาวันที่สั่งซื้อล่าสุดในตาราง Orders",
+            "SELECT CONCAT(FirstName, ' ', LastName) AS FullName FROM Employees; -- รวมชื่อและนามสกุลเป็น FullName",
+            "SELECT LEFT(ProductName, 5) FROM Products; -- ดึง 5 ตัวแรกของชื่อสินค้า\n",
+            "SELECT \n  CustomerID, \n  COUNT(OrderID) AS TotalOrders, \n  SUM(TotalAmount) AS TotalSpent \nFROM Orders \nGROUP BY CustomerID \nHAVING COUNT(OrderID) > 5; -- หาจำนวนและยอดรวมคำสั่งซื้อของลูกค้าที่มีมากกว่า 5 คำสั่งซื้อ"
+        ],
+        "built_in (ในตัว)": [
+          "COUNT() // นับจำนวนแถว",
+          "SUM() // หาผลรวม",
+          "AVG() // หาค่าเฉลี่ย",
+          "MIN() // หาค่าน้อยที่สุด",
+          "MAX() // หาค่ามากที่สุด",
+          "UPPER() // แปลงสตริงเป็นตัวพิมพ์ใหญ่",
+          "LOWER() // แปลงสตริงเป็นตัวพิมพ์เล็ก",
+          "LENGTH() // หาความยาวของสตริง",
+          "SUBSTR() // ดึงสตริงย่อย",
+          "NOW() // วันที่และเวลาปัจจุบัน",
+          "CURDATE() // วันที่ปัจจุบัน"
+        ]
+    },
+    "syntax": {
+        "comments (คอมเมนต์)": [
+          "-- Single line comment // คอมเมนต์บรรทัดเดียว",
+          "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+        ],
+        "conditions (เงื่อนไข)": [
+          "WHERE condition // ใช้กำหนดเงื่อนไขในการเลือกข้อมูล (ใน SELECT, UPDATE, DELETE)",
+          "HAVING condition (for grouped data) // ใช้กำหนดเงื่อนไขสำหรับข้อมูลที่ถูกจัดกลุ่ม (หลัง GROUP BY)",
+          "CASE WHEN condition THEN result ELSE result END // คำสั่ง Case (คล้าย If-Else หรือ Switch)"
+        ],
+        "loops (การวนซ้ำ)": [
+          "// ใน SQL มาตรฐานไม่มีคำสั่ง Loop โดยตรงเหมือนภาษาโปรแกรมทั่วไป\n// การวนซ้ำมักจะถูกจัดการผ่าน Stored Procedures, Cursors หรือ Logic ใน Application Layer ที่เรียกใช้ SQL แทน"
+        ],
+        "operators (ตัวดำเนินการ)": [
+          "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+          "Comparison: =, <>, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+          "Logical: AND, OR, NOT // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+          "Special: IN, BETWEEN, LIKE, IS NULL // ตัวดำเนินการพิเศษ: อยู่ในรายการ, อยู่ระหว่าง, คล้ายกับ, เป็นค่าว่าง"
+        ],
+        "examples (ตัวอย่าง)": [
+            "// ตัวอย่างที่ 1: การเลือกข้อมูล (SELECT) พร้อมเงื่อนไข\nSELECT * FROM Customers WHERE Age > 25 AND City = 'New York'; // เลือกข้อมูลลูกค้าที่อายุมากกว่า 25 และอยู่ในนิวยอร์ก",
+            "// ตัวอย่างที่ 2: การอัปเดตข้อมูล (UPDATE)\nUPDATE Products SET Price = Price * 1.10 WHERE Category = 'Electronics'; // เพิ่มราคา 10% สำหรับสินค้าหมวด Electronics",
+            "// ตัวอย่างที่ 3: การลบข้อมูล (DELETE)\nDELETE FROM Orders WHERE OrderDate < '2023-01-01'; // ลบคำสั่งซื้อที่เกิดขึ้นก่อนปี 2023",
+            "// ตัวอย่างที่ 4: การรวมตาราง (JOIN)\nSELECT Orders.OrderID, Customers.Name\nFROM Orders\nJOIN Customers ON Orders.CustomerID = Customers.CustomerID\nWHERE Orders.TotalAmount > 100; // เลือก OrderID และชื่อลูกค้าสำหรับคำสั่งซื้อที่มีมูลค่ามากกว่า 100",
+            "// ตัวอย่างที่ 5: การจัดกลุ่มและเรียงลำดับ (GROUP BY, ORDER BY)\nSELECT Category, COUNT(ProductID) AS NumberOfProducts\nFROM Products\nGROUP BY Category\nORDER BY NumberOfProducts DESC; // นับจำนวนสินค้าแต่ละหมวดหมู่และเรียงจากมากไปน้อย",
+            "// ตัวอย่างที่ 6: การใช้ Subquery\nSELECT ProductName, Price\nFROM Products\nWHERE ProductID IN (SELECT ProductID FROM OrderDetails WHERE Quantity > 5); // เลือกชื่อและราคาสินค้าที่ถูกสั่งมากกว่า 5 ชิ้น"
+        ]
+    }
+  }
+  

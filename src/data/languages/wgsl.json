@@ -1,0 +1,112 @@
+{
+  "id": 59,
+  "name": "WGSL",
+  "slug": "wgsl",
+  "logo": "img/webgpu.png",
+  "desc": "WGSL (WebGPU Shading Language) เป็นภาษา Shading Language ใหม่ล่าสุดที่ออกแบบมาสำหรับ WebGPU API โดยเฉพาะ มีเป้าหมายเพื่อให้เป็นภาษาที่ปลอดภัย, มีประสิทธิภาพสูง และทำงานได้หลากหลายแพลตฟอร์มสำหรับกราฟิก 3D บนเว็บและ Native แอปพลิเคชัน เป็นส่วนหนึ่งของวิวัฒนาการในการแสดงผลกราฟิกบนเว็บให้มีประสิทธิภาพเทียบเท่า Native Desktop Graphics APIs",
+  "by": "W3C (GPU for the Web Community Group)",
+  "yr": "2020 (ร่างมาตรฐาน)",
+  "level": "2",
+  "par": ["Procedural", "Imperative", "Concurrent (implicitly)"],
+  "fields": ["Game", "Graphics", "Scientific", "Render"],
+  "rank": "กำลังจะกลายเป็นมาตรฐานใหม่สำหรับ Web Graphics (ร่วมกับ WebGPU)",
+  "salary_range": "฿45,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "ออกแบบมาเพื่อ WebGPU โดยเฉพาะ ทำให้เข้ากันได้อย่างสมบูรณ์",
+    "ความปลอดภัยสูงกว่า GLSL/HLSL ในบริบทของเว็บ",
+    "ประสิทธิภาพสูงใกล้เคียง Native Graphics APIs (DirectX, Vulkan, Metal)",
+    "เป็นภาษาที่ทันสมัย มี Type System ที่ชัดเจนและ Features ที่ดีขึ้น",
+    "สามารถ Compile จาก HLSL/GLSL ได้ในบางกรณี",
+    "ทำงานบนหลายแพลตฟอร์มและ GPU Vendors ได้"
+  ],
+  "cons": [
+    "ใหม่มากและยังอยู่ในช่วงการพัฒนา/นำไปใช้",
+    "Ecosystem และ Community ยังเล็กมากเมื่อเทียบกับ GLSL/HLSL",
+    "Learning Curve สูงสำหรับผู้ที่ไม่มีพื้นฐาน Graphics Programming",
+    "เครื่องมือดีบักและ Optimize ยังไม่สมบูรณ์เท่าที่ควร",
+    "ยังไม่ได้รับการรองรับเต็มรูปแบบในทุก Browser/Hardware"
+  ],
+  "frameworks": ["WebGPU (Graphics API)"],
+  "learn": ["WebGPU Specification", "WebGPU Samples", "Mozilla WebGPU Docs", "Khronos Group WGSL Tutorials"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "var my_var: f32; // การประกาศตัวแปร float",
+      "let my_const: i32 = 10; // การประกาศค่าคงที่ integer",
+      "struct VertexInput { position: vec4<f32>; color: vec4<f32>; }; // การประกาศ Struct"
+    ],
+    "types (ประเภท)": [
+      "bool // ค่าตรรกะ (true/false)",
+      "i32 // จำนวนเต็ม 32 บิต",
+      "u32 // จำนวนเต็มบวก 32 บิต",
+      "f32 // ทศนิยมความแม่นยำเดี่ยว",
+      "f16 // ทศนิยมความแม่นยำครึ่ง (ถ้ามี Hardware Support)",
+      "vec2<T>, vec3<T>, vec4<T> // Vector (เช่น vec3<f32>)",
+      "mat2x2<T>, mat3x3<T>, mat4x4<T> // Matrix (เช่น mat4x4<f32>)",
+      "array<T, N> // Array (ขนาดคงที่)",
+      "sampler // Sampler สำหรับ Texture",
+      "texture_2d<f32> // Texture Object (ระบุมิติและประเภทข้อมูล)",
+      "ptr<address_space, type> // Pointer สำหรับการเข้าถึง Memory"
+    ],
+    "examples (ตัวอย่าง)": [
+      "var position: vec3<f32>; // ตัวแปร Vector 3 มิติของ float",
+      "let PI: f32 = 3.14159; // ค่าคงที่ PI",
+      "var vertices: array<vec4<f32>, 4>; // Array ของ vec4<f32> 4 ตัว",
+      "var my_color: vec4<f32> = vec4<f32>(1.0, 0.0, 0.0, 1.0); // กำหนดสีแดง"
+    ]
+  },
+  "functions": {
+    "declaration (การเขียน Shader)": [
+      "@vertex fn vs_main(parameters) -> ReturnType { /* ... */ } // Vertex Shader Entry Point",
+      "@fragment fn fs_main(parameters) -> ReturnType { /* ... */ } // Fragment Shader Entry Point",
+      "fn my_function(param: Type) -> ReturnType { /* ... */ } // User-defined Function"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// Vertex Shader\\n@vertex\\nfn vs_main(\\n  @builtin(vertex_index) vertex_index : u32\\n) -> @builtin(position) vec4<f32> {\\n  let pos = array<vec2<f32>, 3>(\\n    vec2<f32>(0.0, 0.5),\\n    vec2<f32>(-0.5, -0.5),\\n    vec2<f32>(0.5, -0.5)\\n  );\\n  return vec4<f32>(pos[vertex_index], 0.0, 1.0);\\n}\\n",
+      "// Fragment Shader\\n@fragment\\nfn fs_main(\\n  @builtin(position) frag_coord : vec4<f32>\\n) -> @location(0) vec4<f32> {\\n  return vec4<f32>(1.0, 0.0, 0.0, 1.0); // สีแดง\\n}\\n",
+      "// User-defined Function\\nfn calculate_light(normal: vec3<f32>, light_dir: vec3<f32>) -> f32 {\\n  return max(dot(normal, light_dir), 0.0);\\n}\\n"
+    ],
+    "built_in (ในตัว)": [
+      "@builtin(position) // Vertex/Fragment position",
+      "@builtin(vertex_index) // Index ของ Vertex",
+      "@location(n) // Binding location สำหรับ Input/Output",
+      "vec2<T>(), vec3<T>(), vec4<T>() // Constructor สำหรับ Vector",
+      "mat2x2<T>(), mat3x3<T>(), mat4x4<T>() // Constructor สำหรับ Matrix",
+      "length() // หาความยาว Vector",
+      "dot() // Dot Product",
+      "cross() // Cross Product",
+      "normalize() // ทำให้ Vector เป็น Unit Vector",
+      "mix() // Linear Interpolation",
+      "clamp() // จำกัดค่าให้อยู่ในช่วง",
+      "max(), min() // หาค่าสูงสุด/ต่ำสุด",
+      "textureSample() // Sample ค่าจาก Texture",
+      "sin(), cos(), tan() // ฟังก์ชันตรีโกณมิติ"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (var i: i32 = 0; i < 5; i = i + 1) { /* ... */ } // ลูป for",
+      "while (condition) { /* ... */ } // ลูป while",
+      "loop { /* ... */ break if condition; } // ลูปไม่รู้จบพร้อมเงื่อนไขออก"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+      ". (component access) // เข้าถึง Component ของ Vector/Matrix (เช่น myVec.x, myMat[0][1])"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else) ใน Fragment Shader\\n@fragment\\nfn fs_conditional(\\n  @builtin(position) frag_coord : vec4<f32>\\n) -> @location(0) vec4<f32> {\\n  if (frag_coord.x > 0.5) {\\n    return vec4<f32>(1.0, 0.0, 0.0, 1.0); // สีแดง\\n  } else {\\n    return vec4<f32>(0.0, 1.0, 0.0, 1.0); // สีเขียว\\n  }\\n}\\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for ใน Compute Shader (Conceptual)\\n@compute\\n@workgroup_size(64)\\nfn cs_blur_effect(\\n  @builtin(global_invocation_id) global_id : vec3<u32>\\n) {\\n  // จำลองการคำนวณ Blur Effect ง่ายๆ บน Pixel\\n  var sum_color: vec4<f32> = vec4<f32>(0.0, 0.0, 0.0, 0.0);\\n  for (var i: i32 = -1; i <= 1; i = i + 1) {\\n    for (var j: i32 = -1; j <= 1; j = j + 1) {\\n      // sum_color = sum_color + textureLoad(my_texture, global_id.xy + vec2<i32>(i, j));\\n      // (การเข้าถึง Texture ใน compute shader จะซับซ้อนกว่านี้)\\n      sum_color = sum_color + vec4<f32>(0.1, 0.1, 0.1, 0.0); // จำลองการบวกสี\\n    }\\n  }\\n  // textureStore(output_texture, global_id.xy, sum_color / 9.0);\\n}\\n",
+      "// ตัวอย่างที่ 3: การทำงานกับ Vector และ Matrix\\nvar a_vec: vec3<f32> = vec3<f32>(1.0, 2.0, 3.0);\\nvar b_vec: vec3<f32> = vec3<f32>(4.0, 5.0, 6.0);\\nlet result_vec_add = a_vec + b_vec; // (5.0, 7.0, 9.0)\\nlet result_dot = dot(a_vec, b_vec); // 1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32.0\\n\\nvar my_matrix: mat4x4<f32> = mat4x4<f32>( // Identity Matrix\\n  vec4<f32>(1.0, 0.0, 0.0, 0.0),\\n  vec4<f32>(0.0, 1.0, 0.0, 0.0),\\n  vec4<f32>(0.0, 0.0, 1.0, 0.0),\\n  vec4<f32>(0.0, 0.0, 0.0, 1.0)\\n);\\n\\nlet transformed_vec = my_matrix * vec4<f32>(1.0, 2.0, 3.0, 1.0); // การคูณ Matrix กับ Vector\\n"
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": 34,
+  "name": "Julia",
+  "slug": "julia",
+  "logo": "img/julia.png",
+  "desc": "Julia คือภาษาโปรแกรมที่มีความเร็วสูง เหมาะสำหรับงานคำนวณทางวิทยาศาสตร์ วิเคราะห์ข้อมูล และ Machine Learning โดยเฉพาะ ถูกออกแบบมาให้มีความง่ายในการเขียนเหมือน Python แต่มีความเร็วใกล้เคียง C",
+  "by": "Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
+  "yr": "February 2012",
+  "level": "3",
+  "par": ["Multi-paradigm", "Multiple dispatch", "High-performance"],
+  "fields": ["Scientific", "Data", "Math", "HPC"],
+  "rank": "25-30 เติบโตใน Scientific Computing (1.9% แต่กำลังเพิ่ม)",
+  "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-98,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "ประสิทธิภาพสูงมากสำหรับการคำนวณตัวเลข",
+    "เขียนง่ายและมีไวยากรณ์คล้าย Python",
+    "สามารถเรียกใช้ไลบรารีจาก Python, R, C, Fortran ได้โดยตรง",
+    "เหมาะสำหรับงานวิจัยและพัฒนาโมเดลที่ซับซ้อน",
+    "มีระบบประเภทข้อมูล (type system) ที่แข็งแกร่งแต่ยืดหยุ่น"
+  ],
+  "cons": [
+    "ชุมชนนักพัฒนายังไม่ใหญ่เท่า Python หรือ R",
+    "มีแพ็คเกจและไลบรารีให้เลือกใช้น้อยกว่าภาษาที่นิยมกว่า",
+    "เวลาในการคอมไพล์ครั้งแรก (Time To First Plot - TTFP) อาจช้า",
+    "ตลาดงานในไทยยังค่อนข้างเฉพาะทาง"
+  ],
+  "frameworks": ["Flux.jl (Machine Learning)", "DataFrames.jl (Data Manipulation)", "Plots.jl (Visualization)"],
+  "learn": ["Julia Documentation", "Julia Academy", "Julia for Data Science"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "var_name = value // วิธีการกำหนดค่าให้กับตัวแปร"
+    ],
+    "types (ประเภท)": [
+      "Int // จำนวนเต็ม",
+      "Float64 // ทศนิยมความแม่นยำสองเท่า",
+      "Complex // จำนวนเชิงซ้อน",
+      "String // สตริง",
+      "Char // ตัวอักขระ",
+      "Bool // บูลีน (true, false)",
+      "Array // อาร์เรย์ (Vector, Matrix)",
+      "Tuple // ทูเพิล (คอลเลกชันที่ไม่สามารถเปลี่ยนแปลงได้)",
+      "Dict // ดิกชันนารี (Key-Value pairs)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "x = 10 // กำหนดตัวแปร x เก็บตัวเลข 10",
+      "name = \"Julia\" // กำหนดตัวแปร name เก็บสตริง \"Julia\"",
+      "is_ready = true // กำหนดตัวแปร is_ready เก็บค่าความจริง true",
+      "A = [1 2; 3 4] // กำหนดเมทริกซ์ 2x2",
+      "my_vector = [10, 20, 30] // กำหนด Vector",
+      "person = Dict(\"name\" => \"Alice\", \"age\" => 30) // กำหนด Dictionary"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function name(params) ... end // การประกาศฟังก์ชันแบบปกติ",
+      "name(params) = ... // การประกาศฟังก์ชันแบบ Single-line"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชัน greet เพื่อทักทาย\nfunction greet(name)\n  return \"Hello $(name)\"\nend\nprintln(greet(\"Julia User\")) # แสดงผล \"Hello Julia User\"\n",
+      "// ฟังก์ชัน add แบบย่อ เพื่อบวกเลข\nadd(a, b) = a + b\nprintln(add(5, 7)) # แสดงผล 12\n",
+      "// ฟังก์ชันที่คืนค่าหลายค่า (Tuple)\nfunction get_minmax(numbers)\n  min_val = minimum(numbers)\n  max_val = maximum(numbers)\n  return min_val, max_val\nend\nmin_v, max_v = get_minmax([1, 5, 2, 8, 3])\nprintln(\"Min: $(min_v), Max: $(max_v)\") # แสดงผล \"Min: 1, Max: 8\"\n",
+      "// Asynchronous Programming (Tasks and Channels)\n// Julia มีกลไก Concurrency ที่เรียกว่า Task ซึ่งทำงานแบบ lightweight cooperative multitasking\n// สามารถใช้ @async และ Channel สำหรับการสื่อสารระหว่าง Tasks\n/*\n# async_example.jl\nusing DelimitedFiles\n\nfunction long_computation(id)\n    println(\"Task $(id): Starting long computation...\")\n    sleep(1) # Simulate time-consuming operation\n    println(\"Task $(id): Finished long computation.\")\n    return \"Result from Task $(id)\"\nend\n\nfunction main_async()\n    println(\"Main: Starting...\")\n    \n    # Run long_computation in a separate task\n    task1 = @async long_computation(1)\n    task2 = @async long_computation(2)\n\n    println(\"Main: Continuing with other work...\")\n    \n    # Wait for tasks to complete and fetch results\n    result1 = fetch(task1)\n    result2 = fetch(task2)\n    \n    println(\"Main: Received result1: $(result1)\")\n    println(\"Main: Received result2: $(result2)\")\n    println(\"Main: All tasks completed.\")\nend\n\n# To run this, save it as a .jl file and execute in Julia REPL:\n# include(\"async_example.jl\")\n# main_async()\n*/"
+    ],
+    "built_in (ในตัว)": [
+      "print() // ใช้แสดงผลข้อมูลออกทาง Console (ไม่มี Newline)",
+      "println() // ใช้แสดงผลข้อมูลออกทาง Console (พร้อม Newline)",
+      "sqrt() // คำนวณรากที่สอง",
+      "sum() // คำนวณผลรวมของ Collection",
+      "length() // หาความยาวของ Collection",
+      "minimum() // หาค่าน้อยที่สุด",
+      "maximum() // หาค่ามากที่สุด",
+      "typeof() // ตรวจสอบประเภทข้อมูล",
+      "parse() // แปลงสตริงเป็นตัวเลข/ประเภทอื่น"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single line comment // คอมเมนต์บรรทัดเดียว",
+      "#= Multi line comment =# // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition\n  # code\nelseif another_condition\n  # code\nelse\n  # code\nend // คำสั่ง if-elseif-else"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for i = 1:10\n  # code\nend // ลูป for (สำหรับช่วงตัวเลข)",
+      "for item in collection\n  # code\nend // ลูป for (สำหรับวนซ้ำ Collection)",
+      "while condition\n  # code\nend // ลูป while"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, ^, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, ยกกำลัง, โมดูลัส",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "$ // String Interpolation",
+      "// // Element-wise operations (เช่น .*, ./)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nscore = 75\nif score >= 90\n  println(\"Grade A\")\nelseif score >= 70\n  println(\"Grade B\")\nelse\n  println(\"Grade C\")\nend\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for (นับเลข)\nfor i = 1:3\n  println(\"Loop: $(i)\")\nend\n",
+      "// ตัวอย่างที่ 3: การวนลูปผ่าน Array\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits\n  println(\"I like $(fruit)\")\nend\n",
+      "// ตัวอย่างที่ 4: การจัดการข้อผิดพลาด (try-catch)\ntry\n  result = 10 / 0 # จะเกิด DivideError\n  println(result)\ncatch e\n  if isa(e, DivideError)\n    println(\"Error: Cannot divide by zero!\")\n  else\n    println(\"An unexpected error occurred: $(e)\")\n  end\nfinally\n  println(\"Execution completed.\")\nend\n",
+      "// ตัวอย่างที่ 5: การทำงานกับ Metaprogramming (Macros)\n# Macro สำหรับ debugging แบบง่ายๆ\nmacro debug_println(ex)\n    esc(quote\n        println(\"DEBUG: \" * $(string(ex)) * \" = \", $(ex))\n    end)\nend\n\nx = 10\ny = 20\n@debug_println(x + y) # Output: DEBUG: x + y = 30"
+    ]
+  }
+}

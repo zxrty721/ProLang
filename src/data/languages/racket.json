@@ -1,0 +1,123 @@
+{
+  "id": 44,
+  "name": "Racket",
+  "slug": "racket",
+  "logo": "img/racket.png",
+  "desc": "Racket เป็นภาษาโปรแกรม Multi-paradigm ในตระกูล Scheme/Lisp ที่เน้นการออกแบบภาษาโปรแกรมและ Metaprogramming มีสภาพแวดล้อมที่ครบวงจรสำหรับการศึกษา, การวิจัย และการพัฒนาซอฟต์แวร์ที่ซับซ้อน เป็นที่รู้จักกันดีในการให้คุณสร้างภาษาโปรแกรมของคุณเอง (DSLs) ได้อย่างง่ายดาย",
+  "by": "PLT Inc.",
+  "yr": "2010",
+  "level": "3",
+  "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming", "Logic Programming (with extensions)"],
+  "fields": ["Edu", "Compiler"],
+  "rank": "Niche ใน Education และ Research",
+  "salary_range": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-80,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "สภาพแวดล้อมการพัฒนาภาษาที่ทรงพลัง (Language-oriented programming)",
+    "มีเครื่องมือสำหรับสร้างภาษาเฉพาะทาง (DSLs) ได้ง่าย",
+    "รองรับ Functional Programming และ Meta-programming ได้ดี",
+    "เหมาะสำหรับการศึกษาและวิจัยด้านวิทยาการคอมพิวเตอร์",
+    "มี IDE ที่ดี (DrRacket) ที่ออกแบบมาเพื่อการเรียนรู้",
+    "เป็นภาษา Lisp ที่มีโครงสร้างและ Modules ที่ทันสมัย"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับ Lisp/Functional Programming",
+    "ไวยากรณ์วงเล็บ (Parentheses) อาจดูซับซ้อนสำหรับผู้เริ่มต้น",
+    "ชุมชนนักพัฒนาเล็กและเฉพาะทาง",
+    "ไม่เหมาะกับการพัฒนาแอปพลิเคชันเชิงพาณิชย์ขนาดใหญ่โดยตรง",
+    "ประสิทธิภาพอาจไม่ดีเท่าภาษาที่คอมไพล์แบบ Native สำหรับบางงาน"
+  ],
+  "frameworks": ["Web Servers (built-in via `web-server` library)", "GUI Framework (built-in via `gui/2d` and `racket/gui`)"],
+  "learn": ["Racket-Lang.org", "How to Design Programs (HtDP)", "Realm of Racket", "Programming Languages: Application and Interpretation (PLAI)"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "(define variable-name value) ; การประกาศตัวแปร/ค่าคงที่"
+    ],
+    "types (ประเภท)": [
+      "Numbers (integers, reals, complex) // ตัวเลข (จำนวนเต็ม, ทศนิยม, จำนวนเชิงซ้อน)",
+      "Booleans (#t, #f) // ค่าความจริง (#t = true, #f = false)",
+      "Characters // ตัวอักขระ",
+      "Strings // ข้อความ",
+      "Symbols // สัญลักษณ์ (ใช้เป็นชื่อตัวแปร, ฟังก์ชัน, ฯลฯ)",
+      "Lists // รายการ (โครงสร้างข้อมูลแบบ Linked List)",
+      "Pairs // คู่ (พื้นฐานของ List)",
+      "Procedures (Functions) // ฟังก์ชัน (เป็น First-class citizen)",
+      "Vectors // เวกเตอร์ (คล้าย Array, เข้าถึงด้วย Index)",
+      "Hash Tables // ตาราง Hash (Key-Value pairs)",
+      "Structures // โครงสร้างข้อมูลที่กำหนดเอง"
+    ],
+    "examples (ตัวอย่าง)": [
+      "(define x 10) ; กำหนดตัวแปร x เก็บค่า 10",
+      "(define message \"Hello Racket\") ; กำหนดตัวแปร message เก็บสตริง",
+      "(define pi 3.14159) ; กำหนดตัวแปร pi เก็บค่าทศนิยม",
+      "(define my-list '(1 2 3)) ; สร้าง List ด้วย Quote เพื่อไม่ให้ประเมินค่า",
+      "(define my-vector (vector 1 2 3)) ; สร้าง Vector",
+      "(define my-hash (hash 'name \"Alice\" 'age 25)) ; สร้าง Hash Table"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "(define (function-name parameters) body) ; การประกาศฟังก์ชัน (Procedure)",
+      "(lambda (parameters) body) ; Anonymous function (ฟังก์ชันนิรนาม)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\n(define (add a b) \n  (+ a b))\n",
+      "// ฟังก์ชันทักทาย\n(define (greet name) \n  (displayln (string-append \"Hello \" name \"!\")))\n",
+      "// การเรียกใช้ฟังก์ชัน\n(define sum (add 5 5)) ; sum จะมีค่า 10\n(greet \"Racket User\") ; แสดงผล 'Hello Racket User!'\n",
+      "// ฟังก์ชัน Recursive สำหรับ Factorial\n(define (factorial n)\n  (if (zero? n)\n      1\n      (* n (factorial (sub1 n))))) ; ถ้า n เป็น 0 คืน 1 ไม่งั้น n * factorial(n-1)\n; (factorial 5) ; 120\n",
+      "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\n(define (apply-twice f x) \n  (f (f x)))\n; (apply-twice (lambda (y) (+ y 1)) 5) ; 7 (5 -> 6 -> 7)\n",
+      "// การทำงานกับ List โดยใช้ Recursion\n(define (list-sum lst)\n  (if (null? lst)\n      0\n      (+ (car lst) (list-sum (cdr lst))))) ; ถ้า List ว่าง คืน 0 ไม่งั้น Head + Sum ของ Tail\n; (list-sum '(1 2 3 4)) ; 10\n",
+      "// Asynchronous Programming (แนวคิด - Racket ใช้ Threads หรือ Libraries)\n// Racket มี `thread` สำหรับการทำงานแบบ Concurrency และ `racket/async-io` สำหรับ Asynchronous I/O\n// ตัวอย่างนี้แสดงแนวคิดการใช้ Threads\n/*\n(require racket/thread)\n\n(define (long-task msg)\n  (displayln (string-append \"Thread: Starting \" msg \"...\"))\n  (sleep 1) ; จำลองการทำงานที่ใช้เวลา\n  (displayln (string-append \"Thread: Finished \" msg \"!\")))\n\n; (thread (lambda () (long-task \"Task A\")))\n; (thread (lambda () (long-task \"Task B\")))\n; (displayln \"Main program continues...\")\n; (sleep 2) ; ให้เวลากับ Threads ได้รัน\n; (displayln \"Main program done.\")\n*/"
+    ],
+    "built_in (ในตัว)": [
+      "displayln // ใช้แสดงผลข้อมูลออกทาง Console พร้อมขึ้นบรรทัดใหม่",
+      "read // ใช้รับข้อมูลจากผู้ใช้งาน",
+      "list // สร้าง List",
+      "vector // สร้าง Vector",
+      "hash // สร้าง Hash Table",
+      "map // ใช้แปลงทุก Element ใน Collection",
+      "filter // ใช้กรอง Element ใน Collection",
+      "foldl // ใช้ลด (Reduce) Collection จากซ้ายไปขวา",
+      "car // คืนค่าสมาชิกแรกของ List",
+      "cdr // คืนค่า List ที่เหลือทั้งหมด ยกเว้นสมาชิกแรก",
+      "cons // สร้าง Pair หรือเพิ่ม Element เข้าไปใน List",
+      "lambda // ใช้สร้าง Anonymous Function",
+      "define // ใช้กำหนดตัวแปรหรือฟังก์ชัน",
+      "if // คำสั่งเงื่อนไข",
+      "cond // คำสั่งเงื่อนไขแบบหลายเงื่อนไข",
+      "begin // ใช้จัดกลุ่ม Expression ให้เป็น Block",
+      "null? // ตรวจสอบว่าเป็น List ว่างหรือไม่",
+      "number? // ตรวจสอบว่าเป็นตัวเลขหรือไม่",
+      "string-append // ใช้เชื่อมสตริง"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "; Single-line comment ; คอมเมนต์บรรทัดเดียว",
+      "#| Multi-line\\n   comment |# ; คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "(if condition then-expression else-expression) // คำสั่ง if-else (เป็น Expression ที่คืนค่า)",
+      "(cond (condition1 expr1) (condition2 expr2) (else default-expr)) // คำสั่ง cond (หลายเงื่อนไข คล้าย if-elseif-else หรือ switch)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "(for ([i (in-range 5)]) (displayln i)) ; ลูป for (สำหรับช่วงตัวเลข)",
+      "(for ([item list-of-items]) (displayln item)) ; ลูป for (สำหรับวนซ้ำ Collection)",
+      "(let loop ((i 0)) (when (< i 3) (displayln i) (loop (add1 i)))) ; ลูปแบบ Recursive โดยใช้ Named Let (idiomatic loop)",
+      "// การใช้ฟังก์ชัน Higher-Order เช่น map, filter, foldl เป็นวิธีที่นิยมสำหรับการวนซ้ำใน Functional Programming"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, remainder // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, เศษเหลือ (เป็นฟังก์ชันทั้งหมด)",
+      "Comparison: =, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ (เป็นฟังก์ชันทั้งหมด)",
+      "Logical: and, or, not // ตัวดำเนินการตรรกะ: AND, OR, NOT (เป็นฟังก์ชัน/macro)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else\n(define x 10)\n(if (> x 0)\n    (displayln \"Positive\")\n    (displayln \"Non-positive\"))\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For Comprehension\n(for ([i (in-range 3)]) \n  (displayln (string-append \"Loop Racket: \" (number->string i))))\n",
+      "// ตัวอย่างที่ 3: การใช้ Cond (Conditional Expression)\n(define score 75)\n(cond\n  ((>= score 90) (displayln \"Grade A\"))\n  ((>= score 70) (displayln \"Grade B\"))\n  (else (displayln \"Grade C\")))\n",
+      "// ตัวอย่างที่ 4: การทำงานกับ List\n(define my-numbers '(10 20 30))\n(displayln (car my-numbers)) ; 10 (ดึงสมาชิกแรก)\n(displayln (cdr my-numbers)) ; (20 30) (ดึงส่วนที่เหลือ)\n(displayln (cons 5 my-numbers)) ; (5 10 20 30) (สร้าง List ใหม่โดยเพิ่ม 5 เข้าไป)\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\n; ใน Racket มีระบบ Exception Handling ที่คล้ายกับภาษาอื่นๆ\n(require racket/exn)\n(define (divide a b)\n  (if (zero? b)\n      (raise (exn:fail:contract \"division by zero\"))\n      (/ a b)))\n\n(with-handlers\n  ([exn:fail:contract? (lambda (exn) (displayln (string-append \"Caught error: \" (exn-message exn))))])\n  (divide 10 0)) ; จะถูกจับโดย handler\n(displayln \"Program continues after error handling.\")\n",
+      "// ตัวอย่างที่ 6: การสร้างภาษาเฉพาะทาง (DSL - Domain Specific Language) (Conceptual)\n; Racket มี Macro System ที่ทรงพลัง ทำให้สามารถสร้าง DSL ได้ง่าย\n; ตัวอย่างเช่น การสร้างภาษาที่คล้าย HTML\n; (define-syntax html\n;   (syntax-rules ()\n;     [(_ tag body ...) `(,tag ,@body)]))\n;\n; (html p \"Hello, World!\") ; จะถูกขยายเป็น '(p \"Hello, World!\")'\n"
+    ]
+  }
+}

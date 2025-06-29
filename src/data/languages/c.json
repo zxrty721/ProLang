@@ -1,0 +1,115 @@
+{
+    "id": 1,
+    "name": "C",
+    "slug": "c",
+    "logo": "img/c.png",
+    "desc": "C คือภาษาโปรแกรมที่มีประสิทธิภาพสูง ใช้สำหรับพัฒนาซอฟต์แวร์ระบบ เช่น ระบบปฏิบัติการ, ไดรเวอร์ และโปรแกรมที่ต้องการความเร็วสูง เหมาะสำหรับงานที่ต้องควบคุมฮาร์ดแวร์โดยตรง",
+    "by": "Dennis Ritchie",
+    "yr": "1972",
+    "level": "2",
+    "par": ["Procedural", "Imperative"],
+    "fields": ["System", "Embedded", "OS", "Robot", "Compiler", "Security", "Network", "Tele", "Graphics"],
+    "rank": "4 ใน TIOBE Index 2025 (9.84% แต่ลดลง)",
+    "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
+    "salary": ["low", "mid", "high", "veryhigh"],
+    "pros": [
+        "ประสิทธิภาพสูงมาก (ใกล้เคียงภาษาเครื่อง)",
+        "ควบคุมฮาร์ดแวร์ได้ละเอียด",
+        "มีไลบรารีขนาดใหญ่และหลากหลาย",
+        "พื้นฐานสำคัญสำหรับภาษาอื่นๆ",
+        "ขนาดโปรแกรมเล็ก ประหยัดทรัพยากร"
+    ],
+    "cons": [
+        "เรียนรู้และใช้งานยากกว่าภาษาอื่นๆ",
+        "ไม่มีการจัดการหน่วยความจำอัตโนมัติ (ต้องจัดการเอง)",
+        "โค้ดอาจอ่านยากและเข้าใจยากสำหรับผู้เริ่มต้น",
+        "ไม่มีคุณสมบัติ Object-Oriented โดยตรง",
+        "ใช้เวลาในการพัฒนาค่อนข้างนาน"
+    ],
+    "frameworks": ["None (เป็นภาษาพื้นฐาน)", "OpenGL (Graphics)", "GTK+ (GUI)"],
+    "learn": ["The C Programming Language (K&R)", "GeeksforGeeks C Tutorial", "Learn C The Hard Way", "C Programming Tutorial by Tutorials Point"],
+    "variables": {
+        "declaration (การประกาศ)": [
+          "int age; // ประกาศตัวแปร age ชนิด int",
+          "float salary; // ประกาศตัวแปร salary ชนิด float",
+          "char initial; // ประกาศตัวแปร initial ชนิด char",
+          "double temperature; // ประกาศตัวแปร temperature ชนิด double"
+        ],
+        "types (ประเภท)": [
+          "int // integer (จำนวนเต็ม)",
+          "float // single-precision floating-point (ทศนิยมความแม่นยำเดี่ยว)",
+          "double // double-precision floating-point (ทศนิยมความแม่นยำคู่)",
+          "char // character (ตัวอักขระ)",
+          "void // no type (ไม่มีประเภท)",
+          "short // short integer (จำนวนเต็มขนาดสั้น)",
+          "long // long integer (จำนวนเต็มขนาดยาว)",
+          "signed // signed integer (จำนวนเต็มแบบมีเครื่องหมาย)",
+          "unsigned // unsigned integer (จำนวนเต็มแบบไม่มีเครื่องหมาย)"
+        ],
+        "examples (ตัวอย่าง)": [
+            "int count = 10; // กำหนดตัวแปร count เก็บตัวเลข 10",
+            "float price = 99.99f; // กำหนดตัวแปร price เก็บเลขทศนิยม",
+            "char grade = 'A'; // กำหนดตัวแปร grade เก็บตัวอักษร",
+            "double pi = 3.14159; // กำหนดตัวแปร pi เก็บเลขทศนิยมความละเอียดสูง",
+            "int numbers[5]; // ประกาศอาร์เรย์ของตัวเลขจำนวนเต็มขนาด 5",
+            "int *ptr; // ประกาศตัวแปร pointer ที่ชี้ไปยัง int"
+        ]
+    },
+    "functions": {
+        "declaration (การประกาศ)": [
+          "return_type function_name(parameters) { /* ... */ } // การประกาศฟังก์ชัน"
+        ],
+        "examples (ตัวอย่าง)": [
+            "// ฟังก์ชันบวกเลขสองจำนวน\nint add(int a, int b) {\n  return a + b;\n}\n",
+            "// ฟังก์ชันแสดงข้อความ\nvoid print_message(char *msg) {\n  printf(\"%s\\n\", msg);\n}\n",
+            "// การเรียกใช้ฟังก์ชัน\nint sum = add(5, 3); // sum จะมีค่า 8\nprint_message(\"Hello, C!\\n\"); // แสดงผล 'Hello, C!\\n'\n",
+            "// ฟังก์ชันคำนวณ factorial แบบ recursive\nlong long factorial(int n) {\n  if (n == 0)\n    return 1;\n  else\n    return n * factorial(n - 1);\n}\n",
+            "// การเรียกใช้ factorial\nlong long fact_5 = factorial(5); // fact_5 จะมีค่า 120"
+        ],
+        "built_in (ในตัว)": [
+          "printf() // แสดงผลข้อมูล",
+          "scanf() // รับข้อมูลจากผู้ใช้",
+          "malloc() // จัดสรรหน่วยความจำแบบไดนามิก",
+          "free() // คืนหน่วยความจำที่จัดสรรไว้",
+          "strlen() // หาความยาวของสตริง",
+          "strcpy() // คัดลอกสตริง"
+        ]
+    },
+    "syntax": {
+        "comments (คอมเมนต์)": [
+          "// Single line comment // คอมเมนต์บรรทัดเดียว",
+          "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+        ],
+        "conditions (เงื่อนไข)": [
+          "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+          "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+        ],
+        "loops (การวนซ้ำ)": [
+          "for (initialization; condition; increment) { /* ... */ } // ลูป for",
+          "while (condition) { /* ... */ } // ลูป while",
+          "do { /* ... */ } while (condition); // ลูป do-while"
+        ],
+        "operators (ตัวดำเนินการ)": [
+          "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+          "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+          "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+          "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+          "Bitwise: &, |, ^, ~, <<, >> // ตัวดำเนินการบิตไวส์",
+          "sizeof() // ตัวดำเนินการหาขนาดของตัวแปร/ประเภทข้อมูล",
+          "& // ตัวดำเนินการ Address-of (ใช้หาที่อยู่หน่วยความจำ)",
+          "* // ตัวดำเนินการ Dereference (ใช้เข้าถึงค่าที่ pointer ชี้ไป)"
+        ],
+        "examples (ตัวอย่าง)": [
+            "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nint x = 10;\nif (x > 5) {\n  printf(\"x is greater than 5\\n\");\n} else {\n  printf(\"x is not greater than 5\\n\");\n}",
+            "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (int i = 0; i < 3; i++) {\n  printf(\"Loop: %d\\n\", i);\n}",
+            "// ตัวอย่างที่ 3: การใช้ Switch Statement\nchar grade = 'B';\nswitch (grade) {\n  case 'A':\n    printf(\"Excellent!\\n\");\n    break;\n  case 'B':\n    printf(\"Very Good!\\n\");\n    break;\n  case 'C':\n    printf(\"Good!\\n\");\n    break;\n  default:\n    printf(\"Pass\\n\");\n}",
+            "// ตัวอย่างที่ 4: การใช้วงลูป (while loop)\nint count = 0;\nwhile (count < 3) {\n  printf(\"Count is: %d\\n\", count);\n  count++;\n}",
+            "// ตัวอย่างที่ 5: การใช้วงลูป (do-while loop)\nint i = 0;\ndo {\n  printf(\"Do-While Count: %d\\n\", i);\n  i++;\n} while (i < 3);",
+            "// ตัวอย่างที่ 6: การใช้งาน Structure (โครงสร้างข้อมูล)\nstruct Person {\n  char name[50];\n  int age;\n};\nstruct Person p1; // ประกาศตัวแปร struct\nstrcpy(p1.name, \"Alice\"); // กำหนดค่าให้กับสมาชิก name\np1.age = 30; // กำหนดค่าให้กับสมาชิก age\nprintf(\"Person: %s, %d years old.\\n\", p1.name, p1.age);",
+            "// ตัวอย่างที่ 7: การใช้งาน Pointer\nint num = 100;\nint *ptr = &num; // ptr เก็บที่อยู่ของ num\nprintf(\"Value of num: %d\\n\", num); // 100\nprintf(\"Address of num: %p\\n\", &num); // ที่อยู่หน่วยความจำของ num\nprintf(\"Value using pointer: %d\\n\", *ptr); // 100 (เข้าถึงค่าผ่าน pointer)",
+            "// ตัวอย่างที่ 8: การจัดการไฟล์ (File I/O) - การเขียนไฟล์\n#include <stdio.h>\nint main() {\n  FILE *fp;\n  fp = fopen(\"example.txt\", \"w\"); // เปิดไฟล์เพื่อเขียน\n  if (fp == NULL) {\n    printf(\"Error opening file!\\n\");\n    return 1;\n  }\n  fprintf(fp, \"Hello from C file!\\n\"); // เขียนข้อมูลลงไฟล์\n  fclose(fp); // ปิดไฟล์\n  printf(\"File 'example.txt' created.\\n\");\n  return 0;\n}",
+            "// ตัวอย่างที่ 9: การจัดการสตริง (String Manipulation)\n#include <string.h>\nint main() {\n  char str1[20] = \"Hello\";\n  char str2[20];\n  strcpy(str2, str1); // คัดลอก str1 ไปยัง str2\n  printf(\"Copied string: %s\\n\", str2); // แสดงผล 'Hello'\n  int len = strlen(str1); // หาความยาวของ str1\n  printf(\"Length of str1: %d\\n\", len); // แสดงผล 5\n  return 0;\n}"
+        ]
+    }
+  }
+  

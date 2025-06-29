@@ -1,0 +1,111 @@
+{
+  "id": 12,
+  "name": "Swift",
+  "slug": "swift",
+  "logo": "img/swift.png",
+  "desc": "Swift เป็นภาษาโปรแกรมที่พัฒนาโดย Apple สำหรับสร้างแอปพลิเคชันบน iOS, macOS, watchOS, tvOS และ Linux เน้นความปลอดภัย, ประสิทธิภาพ และความทันสมัยในการเขียนโค้ด",
+  "by": "Apple Inc.",
+  "yr": "2014",
+  "level": "3",
+  "par": ["Multi-paradigm", "Object-Oriented", "Functional", "Protocol-Oriented"],
+  "fields": ["Mobile", "Desktop"],
+  "rank": "10-12 สำหรับ iOS Development แต่กำลังลดลง (1.8% ใน TIOBE)",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "ประสิทธิภาพสูง",
+      "ปลอดภัยจากข้อผิดพลาดของหน่วยความจำ (Memory Safety)",
+      "Syntax ที่อ่านง่ายและกระชับ",
+      "มี Playgrounds สำหรับทดลองโค้ดได้ทันที",
+      "รองรับ Concurrency และ Asynchronous Programming ได้ดี"
+  ],
+  "cons": [
+      "ส่วนใหญ่ผูกติดกับ Ecosystem ของ Apple",
+      "Learning Curve อาจสูงสำหรับผู้เริ่มต้น",
+      "เครื่องมือพัฒนา (Xcode) อาจใช้ทรัพยากรมาก",
+      "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาอื่นๆ"
+  ],
+  "frameworks": ["UIKit", "SwiftUI", "Combine", "Vapor", "Kitura"],
+  "learn": ["Apple Swift Documentation", "Hacking with Swift", "Ray Wenderlich", "Codecademy: Learn Swift"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "var greeting = \"Hello\"; // ตัวแปรที่สามารถเปลี่ยนแปลงค่าได้ (Mutable)",
+        "let name = \"World\"; // ค่าคงที่ (Immutable)"
+      ],
+      "types (ประเภท)": [
+        "String // ประเภทข้อมูลข้อความ",
+        "Int // ประเภทข้อมูลจำนวนเต็ม",
+        "Double // ประเภทข้อมูลทศนิยมความแม่นยำคู่",
+        "Bool // ประเภทข้อมูลค่าจริงหรือเท็จ (true/false)",
+        "Character // ประเภทข้อมูลตัวอักขระ",
+        "Array<T> // Generic Type สำหรับ Array (เช่น Array<Int> หรือ [Int])",
+        "Dictionary<K, V> // Generic Type สำหรับ Key-Value Pairs (เช่น Dictionary<String, Int>)",
+        "Optional<T> // ประเภทข้อมูลที่อาจมีค่าหรือไม่ก็ได้ (เช่น String? หรือ Int?)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "var score = 100 // กำหนดตัวแปร score เป็นตัวเลข",
+          "let username = \"swift_dev\" // กำหนดค่าคงที่ username เป็นสตริง",
+          "var isValid = true // กำหนดตัวแปร isValid เป็น boolean",
+          "let numbers: [Int] = [1, 2, 3, 4, 5] // การประกาศ Array",
+          "var ages: [String: Int] = [\"Alice\": 25, \"Bob\": 30] // การประกาศ Dictionary",
+          "var optionalValue: Int? = nil // ตัวแปร Optional ที่ยังไม่มีค่า"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "func functionName(param1: Type) -> ReturnType { ... } // การประกาศฟังก์ชันปกติ",
+        "{ (param) -> ReturnType in ... } // Closure (ฟังก์ชันนิรนาม)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nfunc add(a: Int, b: Int) -> Int {\n  return a + b\n}\n",
+          "// ฟังก์ชันทักทาย\nfunc greet(name: String) {\n  print(\"Hello, \\(name)!\")\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nlet sum = add(a: 10, b: 20) // sum จะมีค่า 30\ngreet(name: \"Swift\") // แสดงผล 'Hello, Swift!'\n",
+          "// ฟังก์ชันที่คืนค่าหลายค่า (ด้วย Tuple)\nfunc getUserInfo() -> (name: String, age: Int) {\n  return (\"Alice\", 30)\n}\nlet user = getUserInfo()\nprint(\"User: \\(user.name), Age: \\(user.age)\")\n",
+          "// ฟังก์ชันที่มี Optional Binding (การจัดการ Optional)\nfunc displayOptionalMessage(message: String?) {\n  if let msg = message {\n    print(\"Message: \\(msg)\")\n  } else {\n    print(\"No message provided.\")\n  }\n}\ndisplayOptionalMessage(message: \"This is a message.\") // แสดงผล 'Message: This is a message.'\ndisplayOptionalMessage(message: nil) // แสดงผล 'No message provided.'\n",
+          "// การใช้งาน Closure (Anonymous Function)\nlet multiply: (Int, Int) -> Int = { (num1, num2) in\n  return num1 * num2\n}\nprint(\"Multiply: \\(multiply(5, 5))\") // แสดงผล 'Multiply: 25'\n",
+          "// Asynchronous Programming (Async/Await - Swift 5.5+)\n// Swift จัดการ Asynchronous ผ่านโครงสร้าง async/await ซึ่งทำให้โค้ด Asynchronous อ่านง่ายขึ้น\n// async func fetchData() async -> String {\n//   print(\"Fetching data...\")\n//   try? await Task.sleep(nanoseconds: 1_000_000_000) // จำลองการหน่วงเวลา 1 วินาที\n//   print(\"Data fetched!\")\n//   return \"Data fetched asynchronously\"\n// }\n// // ตัวอย่างการเรียกใช้ Async Function (ต้องอยู่ในบริบทของ Task หรือ Async Context)\n// /*\n// Task {\n//     let data = await fetchData()\n//     print(\"Received: \\(data)\")\n// }\n// */"
+      ],
+      "built_in (ในตัว)": [
+        "print() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "Array.append() // เมธอดสำหรับเพิ่มสมาชิกใน Array",
+        "Dictionary.keys // Property สำหรับเข้าถึง Key ทั้งหมดใน Dictionary",
+        "String.count // Property สำหรับนับจำนวนอักขระใน String",
+        "Optional.map() // เมธอดสำหรับแปลงค่าใน Optional หากมีค่า",
+        "min() // ฟังก์ชันสำหรับหาค่าน้อยที่สุด",
+        "max() // ฟังก์ชันสำหรับหาค่ามากที่สุด"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if condition { /* ... */ } else if condition { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "switch expression { case value: /* ... */ default: /* ... */ } // คำสั่ง switch (ต้องครอบคลุมทุกกรณี หรือมี default)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for i in 1...5 { /* ... */ } // ลูป for-in สำหรับ Range แบบรวมค่าสุดท้าย",
+        "for i in 0..<3 { /* ... */ } // ลูป for-in สำหรับ Range แบบไม่รวมค่าสุดท้าย",
+        "while condition { /* ... */ } // ลูป while",
+        "repeat { /* ... */ } while condition; // ลูป repeat-while (คล้าย do-while ในภาษาอื่น)",
+        "for item in collection { /* ... */ } // ลูป for-in สำหรับวนซ้ำ Collection (เช่น Array)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "Range: ... (Inclusive), ..< (Exclusive) // ตัวดำเนินการสำหรับช่วงตัวเลข",
+        "?? // Nil-Coalescing Operator (ตัวดำเนินการค่า Nil)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nlet score = 85\nif score >= 90 {\n  print(\"Grade A\")\n} else if score >= 75 {\n  print(\"Grade B\")\n} else {\n  print(\"Grade C\")\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) กับ Range\nfor i in 0..<3 {\n  print(\"Loop Swift: \\(i)\")\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\nlet weather = \"Sunny\"\nswitch weather {\ncase \"Sunny\":\n  print(\"Wear sunglasses.\")\ncase \"Rainy\":\n  print(\"Take an umbrella.\")\ndefault:\n  print(\"Check weather app.\")\n}\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Class และ Inheritance (OOP)\nclass Vehicle {\n  var brand: String\n  init(brand: String) { self.brand = brand }\n  func drive() { print(\"\\(brand) is driving.\") }\n}\nclass Car: Vehicle {\n  var model: String\n  init(brand: String, model: String) {\n    self.model = model\n    super.init(brand: brand)\n  }\n  override func drive() { // Override เมธอดจาก Parent Class\n    print(\"\\(brand) \\(model) is driving fast!\")\n  }\n}\nlet myCar = Car(brand: \"Honda\", model: \"Civic\")\nmyCar.drive() // แสดงผล 'Honda Civic is driving fast!'\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย Do-Catch\nenum NetworkError: Error {\n  case badURL\n  case serverError(code: Int)\n}\nfunc fetchData(from urlString: String) throws -> String {\n  guard let url = URL(string: urlString) else { throw NetworkError.badURL }\n  // จำลองการเรียก API\n  if urlString.contains(\"error\") { throw NetworkError.serverError(code: 500) }\n  return \"Data from \\(urlString)\"\n}\ndo {\n  let data = try fetchData(from: \"https://api.example.com/data\")\n  print(data)\n  let errorData = try fetchData(from: \"https://api.example.com/error\")\n  print(errorData)\n} catch NetworkError.badURL {\n  print(\"Invalid URL provided.\")\n} catch NetworkError.serverError(let code) {\n  print(\"Server error with code: \\(code)\")\n} catch {\n  print(\"An unexpected error occurred: \\(error)\")\n}\n",
+          "// ตัวอย่างที่ 6: การใช้งาน Array และ Dictionary\nvar fruits = [\"Apple\", \"Banana\", \"Cherry\"]\nfruits.append(\"Date\") // เพิ่มสมาชิก\nprint(\"Fruits: \\(fruits)\")\n\nvar scores: [String: Int] = [\"Alice\": 90, \"Bob\": 75]\nscores[\"Charlie\"] = 88 // เพิ่มสมาชิกใหม่\nprint(\"Scores: \\(scores)\")\n"
+      ]
+  }
+}

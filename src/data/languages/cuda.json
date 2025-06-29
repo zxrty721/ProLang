@@ -1,0 +1,106 @@
+{
+  "id": 54,
+  "name": "CUDA",
+  "slug": "cuda",
+  "logo": "img/cuda.jfif",
+  "desc": "CUDA (Compute Unified Device Architecture) เป็นแพลตฟอร์มการประมวลผลแบบขนาน (Parallel Computing Platform) และ Application Programming Interface (API) ที่พัฒนาโดย NVIDIA ช่วยให้นักพัฒนาสามารถใช้ GPU ของ NVIDIA ในการประมวลผลงานที่ซับซ้อนได้เร็วกว่าการใช้ CPU เพียงอย่างเดียว เหมาะสำหรับงานที่ต้องการการคำนวณจำนวนมาก เช่น Machine Learning, Data Science, Scientific Simulation และ Game Development",
+  "by": "NVIDIA",
+  "yr": "2006",
+  "level": "1",
+  "par": ["Parallel Programming", "Imperative", "Low-level"],
+  "fields": ["HPC", "AI"],
+  "rank": "เป็นมาตรฐานสำหรับ GPGPU (General-Purpose computing on Graphics Processing Units)",
+  "salary_range": "฿50,000-90,000 บาท/เดือน (Junior), ฿90,000-180,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "เพิ่มประสิทธิภาพการประมวลผลได้อย่างมหาศาลสำหรับงานที่เหมาะสม",
+    "รองรับการคำนวณแบบขนานด้วย GPU",
+    "มี Library และ Tools ที่หลากหลายสำหรับการพัฒนา",
+    "เป็นมาตรฐานในอุตสาหกรรม Machine Learning และ AI",
+    "สามารถทำงานร่วมกับภาษาโปรแกรมยอดนิยม (C/C++, Python, Fortran)"
+  ],
+  "cons": [
+    "ผูกติดกับ Hardware ของ NVIDIA (ไม่สามารถใช้กับ GPU ค่ายอื่นได้โดยตรง)",
+    "Learning Curve สูง (ต้องเข้าใจ Parallel Programming และสถาปัตยกรรม GPU)",
+    "การดีบักและการ Optimize โค้ดซับซ้อน",
+    "ไม่เหมาะสำหรับงานที่ประมวลผลแบบ Sequential",
+    "ต้องมีการจัดการ Memory ระหว่าง Host (CPU) และ Device (GPU)"
+  ],
+  "frameworks": ["TensorFlow (with CUDA)", "PyTorch (with CUDA)", "cuDNN", "cuBLAS", "OptiX"],
+  "learn": ["NVIDIA CUDA Documentation", "CUDA C++ Programming Guide", "Udemy/Coursera CUDA courses", "NVIDIA GTC (GPU Technology Conference)"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "__global__ void kernel_name(int* data); // การประกาศ Kernel (ฟังก์ชันที่รันบน GPU)",
+      "int* host_array; // Pointer ไปยัง Memory บน Host (CPU)",
+      "int* device_array; // Pointer ไปยัง Memory บน Device (GPU)",
+      "dim3 threadsPerBlock(32, 32); // การกำหนดขนาดของ Block (Threads per Block)",
+      "dim3 numBlocks(gridDimX, gridDimY); // การกำหนดขนาดของ Grid (Number of Blocks)"
+    ],
+    "types (ประเภท)": [
+      "int, float, double // ประเภทข้อมูลพื้นฐานที่ใช้ใน Kernel",
+      "char, short, long // ประเภทข้อมูลพื้นฐานอื่นๆ",
+      "dim3 // ใช้สำหรับกำหนดมิติของ Grid และ Block",
+      "cudaStream_t // Stream สำหรับการจัดการ Asynchronous Operations",
+      "cudaError_t // ประเภทสำหรับการจัดการข้อผิดพลาด CUDA"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ในไฟล์ .cu (CUDA C++ file)\n// __global__ void add_vectors(float* a, float* b, float* c, int N) {\n//   int idx = blockIdx.x * blockDim.x + threadIdx.x;\n//   if (idx < N) {\n//     c[idx] = a[idx] + b[idx];\n//   }\n// }\n//",
+      "// ใน Host Code (CPU)\n// float* h_a, *h_b, *h_c; // Host-side pointers\n// float* d_a, *d_b, *d_c; // Device-side pointers\n// cudaMalloc((void**)&d_a, N * sizeof(float)); // Allocate memory on GPU\n// cudaMemcpy(d_a, h_a, N * sizeof(float), cudaMemcpyHostToDevice); // Copy data from CPU to GPU"
+    ]
+  },
+  "functions": {
+    "declaration (การประมวลผลแบบขนานบน GPU)": [
+      "__global__ void kernel_name(parameters) { /* ... */ } // Kernel Function (รันบน GPU)",
+      "cudaMalloc(ptr, size); // ฟังก์ชันสำหรับจัดสรร Memory บน GPU",
+      "cudaMemcpy(dst, src, size, kind); // ฟังก์ชันสำหรับคัดลอก Memory ระหว่าง CPU และ GPU"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// การประกาศ Kernel สำหรับ Vector Addition\n// __global__ void vectorAdd(float* A, float* B, float* C, int numElements)\n// {\n//    int i = blockDim.x * blockIdx.x + threadIdx.x;\n//    if (i < numElements)\n//    {\n//        C[i] = A[i] + B[i];\n//    }\n// }\n//",
+      "// การเรียกใช้ Kernel จาก Host (CPU)\n// // กำหนดขนาด Grid และ Block\n// int blockSize = 256;\n// int numBlocks = (N + blockSize - 1) / blockSize;\n//\n// // เรียกใช้ Kernel (Launch Kernel)\n// vectorAdd<<<numBlocks, blockSize>>>(d_A, d_B, d_C, N);\n"
+    ],
+    "built_in (ในตัว)": [
+      "blockIdx.x, blockIdx.y, blockIdx.z // Index ของ Block ใน Grid",
+      "blockDim.x, blockDim.y, blockDim.z // ขนาดของ Block (จำนวน Threads)",
+      "threadIdx.x, threadIdx.y, threadIdx.z // Index ของ Thread ภายใน Block",
+      "gridDim.x, gridDim.y, gridDim.z // ขนาดของ Grid (จำนวน Blocks)",
+      "cudaMalloc() // จัดสรร Memory บน GPU",
+      "cudaFree() // คืน Memory บน GPU",
+      "cudaMemcpy() // คัดลอก Memory ระหว่าง Host/Device",
+      "__syncthreads() // Synchronize Threads ภายใน Block",
+      "atomicAdd() // Atomic Operation (สำหรับ Shared Memory)",
+      "cudaDeviceSynchronize() // Synchronize CPU กับ GPU (รอให้ GPU ทำงานเสร็จ)"
+    ],
+    "async (Asynchronous Operations)": [
+      "cudaStreamCreate(&stream); // สร้าง Stream",
+      "cudaMemcpyAsync(dst, src, size, kind, stream); // Copy Memory แบบ Asynchronous",
+      "kernel_name<<<numBlocks, blockSize, 0, stream>>>(params); // Launch Kernel แบบ Asynchronous",
+      "cudaStreamSynchronize(stream); // รอให้ Stream ทำงานเสร็จ"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว (เหมือน C++)",
+      "/* Multi-line comment */ // คอมเมนต์หลายบรรทัด (เหมือน C++)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else (ใน Kernel หรือ Host Code)",
+      "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch (ใน Kernel หรือ Host Code)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (int i = 0; i < N; i++) { /* ... */ } // ลูป for (ใน Kernel หรือ Host Code)",
+      "while (condition) { /* ... */ } // ลูป while (ใน Kernel หรือ Host Code)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+      "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+      "Bitwise: &, |, ^, ~, <<, >> // ตัวดำเนินการบิตไวส์"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else ใน Kernel\\n// __global__ void process_data(float* input, float* output, int N) {\\n//   int idx = blockIdx.x * blockDim.x + threadIdx.x;\\n//   if (idx < N) {\\n//     if (input[idx] > 0) {\\n//       output[idx] = input[idx] * 2;\\n//     } else {\\n//       output[idx] = input[idx] / 2;\\n//     }\\n//   }\\n// }\\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For ใน Kernel\\n// __global__ void initialize_array(int* arr, int N, int value) {\\n//   int idx = blockIdx.x * blockDim.x + threadIdx.x;\\n//   if (idx < N) {\\n//     for (int i = 0; i < 10; i++) { // Loop ภายใน Thread\\n//       arr[idx] += value;\\n//     }\\n//   }\\n// }\\n",
+      "// ตัวอย่างที่ 3: การจัดการ Memory และ Error Handling ใน Host Code\\n// cudaError_t err = cudaMalloc((void**)&d_data, data_size);\\n// if (err != cudaSuccess) {\\n//   fprintf(stderr, \"Failed to allocate device memory!\\n\");\\n//   return 1;\\n// }\\n// // ... kernel launch ...\\n// err = cudaDeviceSynchronize(); // Synchronize and check for errors\\n// if (err != cudaSuccess) {\\n//   fprintf(stderr, \"Kernel launch failed: %s\\n\", cudaGetErrorString(err));\\n//   return 1;\\n// }\\n// cudaFree(d_data);\\n"
+    ]
+  }
+}

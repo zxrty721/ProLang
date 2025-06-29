@@ -1,0 +1,111 @@
+{
+  "id": 33,
+  "name": "Smalltalk",
+  "slug": "smalltalk",
+  "logo": "img/smalltalk.png",
+  "desc": "Smalltalk เป็นภาษาโปรแกรมเชิงวัตถุบริสุทธิ์ (Pure Object-Oriented) ที่มีแนวคิดการทำงานแบบ Message Passing และสภาพแวดล้อมการพัฒนาแบบโต้ตอบ (Interactive Development Environment - IDE) ซึ่งเป็นผู้บุกเบิกแนวคิด GUI และการพัฒนาแบบ Rapid Prototyping มีอิทธิพลอย่างมากต่อภาษาและ Frameworks สมัยใหม่หลายตัว",
+  "by": "Alan Kay, Dan Ingalls, Adele Goldberg, etc. (Xerox PARC)",
+  "yr": "1970s (Smalltalk-80)",
+  "level": "3",
+  "par": ["Object-Oriented", "Reflective", "Dynamic"],
+  "fields": ["Edu"],
+  "rank": "45+ ลดลงมาก แต่ยังมีใช้ใน Legacy Enterprise",
+  "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
+  "salary": ["n/a"],
+  "pros": [
+    "Pure Object-Oriented System (ทุกอย่างเป็น Object)",
+    "สภาพแวดล้อมการพัฒนาแบบโต้ตอบ (REPL) ที่ทรงพลัง",
+    "Hot-swapping code (เปลี่ยนโค้ดขณะรันได้)",
+    "Concept ที่เรียบง่ายแต่ทรงพลัง (Message Passing)",
+    "เป็นผู้บุกเบิกแนวคิด GUI และ OOP สมัยใหม่"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับแนวคิด Pure OOP",
+    "ไวยากรณ์ที่แตกต่างจากภาษาตระกูล C อย่างมาก",
+    "ชุมชนนักพัฒนาขนาดเล็กและเฉพาะทาง",
+    "ไม่ได้รับความนิยมในตลาดหลักในปัจจุบัน (เน้น Legacy Systems)",
+    "ประสิทธิภาพอาจไม่ดีเท่าภาษาที่คอมไพล์แบบ Native"
+  ],
+  "frameworks": ["Seaside (Web Framework)"],
+  "learn": ["Pharo (modern Smalltalk environment)", "Squeak Smalltalk", "Smalltalk-80: The Language and its Implementation"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "| variableName | \"ประกาศตัวแปรชั่วคราว (Temporary variables)\"",
+      "ClassName new \"การสร้าง Instance ของคลาส\""
+    ],
+    "types (ประเภท)": [
+      "Boolean // ค่าตรรกะ (true, false)",
+      "Integer // จำนวนเต็ม",
+      "Float // ทศนิยม",
+      "Fraction // เศษส่วน",
+      "Character // ตัวอักขระ",
+      "String // ข้อความ",
+      "Array // อาร์เรย์",
+      "Dictionary // พจนานุกรม (Key-Value pairs)",
+      "Block (code block) // บล็อกโค้ด (First-class citizen)",
+      "Object (base class) // คลาสพื้นฐานของทุกอย่าง"
+    ],
+    "examples (ตัวอย่าง)": [
+      "| myNumber | \"ประกาศตัวแปรชั่วคราว myNumber\"",
+      "myNumber := 10. \"กำหนดค่า 10 ให้ myNumber\"",
+      "| greeting | greeting := 'Hello Smalltalk'. \"กำหนดสตริง\"",
+      "Object new \"สร้าง Object ใหม่ (Instance ของคลาส Object)\"",
+      "| anArray | anArray := #(1 2 3). \"สร้าง Array\""
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "methodName: argument1 with: argument2\n  \"Comment explaining the method\"\n  | temporaryVar |\n  ... method body ...\n  ^ result // คืนค่า"
+    ],
+    "examples (ตัวอย่าง)": [
+      "add: a and: b\n  ^ a + b \"เมธอดบวกเลขสองจำนวน\"",
+      "greet: aName\n  Transcript show: 'Hello ' , aName; cr \"เมธอดทักทายและแสดงผลออก Transcript\"",
+      "// การเรียกใช้เมธอด (Message Sending)\n\"Hello\" size. \"ส่ง Message 'size' ไปยัง Object 'Hello' (คืนค่า 5)\"\n(3 + 4) * 2. \"ส่ง Message '+' ให้ 3 ด้วย Argument 4, แล้วส่ง Message '*' ให้ผลลัพธ์ด้วย Argument 2 (คืนค่า 14)\"\nmyObject myMethod: arg1 anotherArg: arg2. \"ส่ง Message ที่มีหลาย Keyword Argument\"\n\n// เมธอดสำหรับ Factorial (Recursive)\nfactorial\n  ^ self = 0\n    ifTrue: [ 1 ]\n    ifFalse: [ self * (self - 1) factorial ]\n\"ตัวอย่างการใช้งาน: 5 factorial.\" \"คืนค่า 120\"",
+      "// Asynchronous Programming (Conceptual - Through Actor Model/Processes)\n// Smalltalk ไม่ได้มี async/await ในตัวแบบภาษาสมัยใหม่ แต่ใช้แนวคิดของ Processes/Blocks\n// และ Message Passing สำหรับ Concurrency\n// Pharo (Modern Smalltalk) มี Block closure และ Processes ที่สามารถทำงานแบบ Concurrent ได้\n/*\n| aProcess |\naProcess := [ \n  1 to: 5 do: [ :i | \n    Transcript show: 'Process running: ' , i asString; cr.\n    (Delay forSeconds: 0.1) wait. \"จำลองการทำงานที่ใช้เวลา\"\n  ]\n] fork. \"สร้างและรัน Process ใน Background\"\n\nTranscript show: 'Main program continues...'; cr.\n(Delay forSeconds: 0.5) wait. \"ให้เวลา Process อื่นรัน\"\nTranscript show: 'Main program finished.'; cr.\n\n\"Output:\nMain program continues...\nProcess running: 1\nProcess running: 2\nMain program running: 3\n...\"\n*/"
+    ],
+    "built_in (ในตัว)": [
+      "at: // เข้าถึงสมาชิกของ Collection ด้วย Index/Key",
+      "put: // กำหนดค่าให้กับสมาชิกของ Collection ด้วย Index/Key",
+      "do: // วนซ้ำ (Iterate) ผ่าน Collection",
+      "collect: // แปลง Collection (คล้าย map)",
+      "select: // กรอง Collection (คล้าย filter)",
+      "ifTrue:ifFalse: // เมธอดสำหรับเงื่อนไข (Conditional)",
+      "asString // แปลง Object เป็น String",
+      "asInteger // แปลง Object เป็น Integer",
+      "new // สร้าง Instance ใหม่ของ Class",
+      "show: // แสดงผลออก Transcript (Console)",
+      "cr // ขึ้นบรรทัดใหม่ใน Transcript"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "\"This is a Smalltalk comment\" // คอมเมนต์บรรทัดเดียวหรือหลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "condition ifTrue: [ ... ] ifFalse: [ ... ] // เงื่อนไข If-Else (ใช้ Block closures)",
+      "condition ifTrue: [ ... ] // เงื่อนไข If-Then",
+      "number isZero ifTrue: [ ... ] // ตรวจสอบว่าตัวเลขเป็นศูนย์หรือไม่"
+    ],
+    "loops (การวนซ้ำ)": [
+      "1 to: 5 do: [ :i | Transcript show: i asString; cr ] // ลูป For (วนซ้ำตามช่วงตัวเลข)",
+      "collection do: [ :each | ... ] // วนซ้ำผ่าน Collection",
+      "collection select: [ :each | each > 10 ] // เลือกสมาชิกที่ตรงเงื่อนไข (คล้าย Filter)",
+      "collection collect: [ :each | each * 2 ] // แปลงสมาชิก (คล้าย Map)",
+      "whileTrue: [ condition ] do: [ ... ] // ลูป While"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "+, -, *, / // ตัวดำเนินการทางคณิตศาสตร์ (เป็น Binary Message)",
+      "=, <, >, <=, >=, ~= // ตัวดำเนินการเปรียบเทียบ (เป็น Binary Message)",
+      "// // Message Sending (การส่งข้อความไปยัง Object)",
+      ":= // Assignment (การกำหนดค่า)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else \n10 > 5 ifTrue: [ Transcript show: '10 is greater than 5'; cr ]\n  ifFalse: [ Transcript show: '10 is not greater than 5'; cr ].",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For (Iterating over a Range)\n1 to: 3 do: [ :i | Transcript show: 'Loop: ' , i asString; cr ].",
+      "// ตัวอย่างที่ 3: การทำงานกับ Collection (Array)\n| numbers |\nnumbers := #(10 20 30 40 50).\nnumbers do: [ :n | Transcript show: 'Number: ' , n asString; cr ]. \"วนซ้ำและแสดงผลแต่ละตัวเลข\"\n\n| doubledNumbers |\ndoubledNumbers := numbers collect: [ :n | n * 2 ]. \"สร้าง Array ใหม่ที่แต่ละตัวคูณสอง\"\nTranscript show: 'Doubled Numbers: ' , doubledNumbers asString; cr. \"แสดงผล Array ที่สร้างขึ้นใหม่\"",
+      "// ตัวอย่างที่ 4: การจัดการข้อผิดพลาด (Exception Handling)\n[ \n  1 / 0. \"จะเกิด ZeroDivisionError\"\n] on: ZeroDivisionError do: [ :ex | \n  Transcript show: 'Error caught: ' , ex description; cr.\n].\nTranscript show: 'Program continues after error handling.'; cr.",
+      "// ตัวอย่างที่ 5: การทำงานกับ Dictionary (Map)\n| userInfo |\nuserInfo := Dictionary new.\nuserInfo at: #name put: 'Charlie'.\nuserInfo at: #age put: 28.\nTranscript show: 'User name: ' , (userInfo at: #name); cr.\nTranscript show: 'User age: ' , (userInfo at: #age) asString; cr.",
+      "// ตัวอย่างที่ 6: การสร้างและการเรียกใช้ Class (Object-Oriented Basics)\n\"ประกาศคลาส Animal\nObject subclass: #Animal\n  instanceVariableNames: 'name'\n  classVariableNames: ''\n  poolDictionaries: ''\n  category: 'My-Examples'\n\n!Animal methodsFor: 'accessing'!\nname\n  ^ name\n!\nname: aString\n  name := aString\n!\n!Animal methodsFor: 'actions'!\nspeak\n  ^ 'Hello, I am ' , name\n!\n\n\"สร้าง Object และเรียกใช้เมธอด\n| myAnimal |\nmyAnimal := Animal new.\nmyAnimal name: 'Leo'.\nTranscript show: myAnimal speak; cr. \"แสดงผล 'Hello, I am Leo'\""
+    ]
+  }
+}

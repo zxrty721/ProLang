@@ -1,0 +1,113 @@
+{
+  "id": 45,
+  "name": "Nim",
+  "slug": "nim",
+  "logo": "img/nim.png",
+  "desc": "Nim เป็นภาษาโปรแกรม Statically-typed, Compiled ที่มุ่งเน้นประสิทธิภาพ, ความสามารถในการแสดงออก (Expressiveness), และความยืดหยุ่นในการเขียนโปรแกรม รองรับทั้ง Imperative, Object-Oriented, และ Functional Programming สามารถคอมไพล์เป็น Native Code, JavaScript หรือ C/C++ ได้ เหมาะสำหรับงาน System Programming, Web Development และ Game Development ที่ต้องการความเร็วสูง",
+  "by": "Andreas Rumpf",
+  "yr": "2008 (เปิดตัวครั้งแรก)",
+  "level": "4",
+  "par": ["Imperative", "Object-Oriented", "Functional", "Metaprogramming"],
+  "fields": ["System", "Game"],
+  "rank": "35-40 (กำลังเติบโตใน Niche Areas)",
+  "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-100,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "ประสิทธิภาพสูงมาก (ใกล้เคียง C/C++)",
+    "ไวยากรณ์ที่อ่านง่ายและกระชับ (คล้าย Python)",
+    "มี Garbage Collector ที่ควบคุมได้ (Reference Counting)",
+    "รองรับ Metaprogramming (Macros) ที่ทรงพลัง",
+    "สามารถคอมไพล์เป็นหลายภาษาเป้าหมาย (Native, JS, C/C++)",
+    "มี Native Concurrency ด้วย Async/Await"
+  ],
+  "cons": [
+    "Learning Curve ที่อาจสูงสำหรับบางแนวคิด (โดยเฉพาะ Metaprogramming)",
+    "ชุมชนนักพัฒนาเล็กกว่าภาษาหลัก",
+    "ขาด Library และ Frameworks ที่หลากหลายเมื่อเทียบกับภาษาที่มีมานาน",
+    "เวลาในการคอมไพล์สำหรับโปรเจกต์ขนาดใหญ่อาจใช้เวลา",
+    "การดีบักอาจท้าทายในบางกรณี"
+  ],
+  "frameworks": ["Nimble (Package Manager)", "Karax (Web Frontend)", "Jester (Web Framework)", "Chronos (Async IO)"],
+  "learn": ["Nim-Lang.org Official Documentation", "Nim by Example", "Nim Tutorial (Official)", "Nim Forum"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "var myInt: int = 10 // ตัวแปรที่เปลี่ยนแปลงได้ (Mutable)",
+      "let myString = \"Hello Nim\" // ค่าคงที่ (Immutable, อนุมาน Type ได้)",
+      "const PI = 3.14159 // ค่าคงที่ที่กำหนดใน Compile-time"
+    ],
+    "types (ประเภท)": [
+      "int, int8, int16, int32, int64 // จำนวนเต็ม (มีขนาดบิตต่างกัน)",
+      "uint, uint8, uint16, uint32, uint64 // จำนวนเต็มบวก (ไม่มีเครื่องหมาย)",
+      "float, float32, float64 // ทศนิยม",
+      "bool // ค่าตรรกะ (true/false)",
+      "char // ตัวอักขระ",
+      "string // ข้อความ",
+      "array[N, T] // อาร์เรย์ (ขนาดคงที่, เช่น array[5, int])",
+      "seq[T] // Sequence (คล้าย Dynamic Array/List, เช่น seq[string])",
+      "object // Object (คล้าย Structs ใน C หรือ Class ที่ไม่มีเมธอดในตัว)",
+      "ref Object // Reference to an Object (คล้าย Class ใน OOP)",
+      "enum // Enumeration Type"
+    ],
+    "examples (ตัวอย่าง)": [
+      "var counter: int = 0 // กำหนดตัวแปร counter เป็นจำนวนเต็ม เริ่มที่ 0",
+      "let username = \"nim_user\" // กำหนดค่าคงที่ username เป็นสตริง",
+      "var isActive = true // กำหนดตัวแปร isActive เป็น Boolean",
+      "let numbers = @[1, 2, 3, 4, 5] // สร้าง Sequence ของตัวเลข",
+      "type Person = object // กำหนด Object Type\n  name: string\n  age: int\nvar john = Person(name: \"John\", age: 30) // สร้าง Instance ของ Object"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "proc functionName(param1: Type): ReturnType = // การประกาศฟังก์ชัน (proc)",
+      "func functionName(param1: Type): ReturnType = // การประกาศฟังก์ชันบริสุทธิ์ (func - ไม่มี Side Effects)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\nproc add(a, b: int): int =\n  result = a + b\n\n// การเรียกใช้ฟังก์ชัน: let sum = add(5, 5) # sum จะมีค่า 10\n",
+      "// ฟังก์ชันทักทาย (ใช้ echo สำหรับแสดงผล)\nproc greet(name: string) =\n  echo \"Hello, \" & name & \"!\"\n\n// การเรียกใช้ฟังก์ชัน: greet(\"Nim User\") # แสดงผล 'Hello, Nim User!'\n",
+      "// ฟังก์ชันที่มี Optional Parameters และ Named Arguments\nproc createMessage(msg: string; prefix = \"Info\": string; suffix = \"!\": string): string =\n  result = prefix & \": \" & msg & suffix\n\n// การเรียกใช้:\n// echo createMessage(\"Task complete\") # Info: Task complete!\n// echo createMessage(\"Error occurred\", prefix = \"ERROR\", suffix = \"!!!\") # ERROR: Error occurred!!!\n",
+      "// Asynchronous Programming (Async/Await - ใช้โมดูล Chronos หรือ AsyncSocket)\n// Nim รองรับ Asynchronous Programming ผ่าน Coroutines และ Syntax async/await\n// ซึ่งทำให้การเขียนโค้ดที่ต้องรอ I/O หรือการทำงานคู่ขนานทำได้ง่ายขึ้น\n\n// import asyncdispatch, os, times\n\n// proc simulateApiCall(): Future[string] = async :\n//   echo \"Fetching data...\"\n//   await sleepAsync(1000) # หน่วงเวลา 1 วินาที\n//   echo \"Data fetched!\"\n//   result = \"Data from async source\"\n\n// proc mainAsync() = async :\n//   echo \"Main program started.\"\n//   let data = await simulateApiCall()\n//   echo \"Received: \" & data\n//   echo \"Main program finished.\"\n\n// when isMainModule: # ต้องรันใน Event Loop\n//   mainAsync().waitFor\n"
+    ],
+    "built_in (ในตัว)": [
+      "echo() // ใช้แสดงผลข้อมูลออกทาง Console",
+      "len() // ใช้หาความยาวของ String, Sequence, Array",
+      "new() // ใช้สร้าง Object บน Heap (คืนค่า Reference)",
+      "alloc() // ใช้จัดสรรหน่วยความจำ",
+      "dealloc() // ใช้คืนหน่วยความจำ",
+      "readFile() // อ่านเนื้อหาจากไฟล์",
+      "writeFile() // เขียนเนื้อหาลงไฟล์",
+      "contains() // ตรวจสอบว่า Sequence/String มีค่าที่ระบุหรือไม่",
+      "add() // เพิ่ม Element ใน Sequence"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single line comment // คอมเมนต์บรรทัดเดียว",
+      "#[ Multi-line\n   comment ]# // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition: // คำสั่ง if\n  # code\nelif anotherCondition: // คำสั่ง elif\n  # code\nelse: // คำสั่ง else\n  # code",
+      "case expression: // คำสั่ง case (Pattern Matching)\n  of value1:\n    # code\n  of value2, value3:\n    # code\n  else:\n    # code"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for i in 0..5: // ลูป for สำหรับช่วงตัวเลข (รวมค่าสุดท้าย)",
+      "for item in mySequence: // ลูป for-in สำหรับวนซ้ำ Sequence/Array",
+      "while condition: // ลูป while\n  # code"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, div, mod, ^ // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร (ทศนิยม), หาร (จำนวนเต็ม), โมดูลัส, ยกกำลัง",
+      "Assignment: =, +=, -=, *=, /=, &=, |=, xor=, shl=, shr= // ตัวดำเนินการกำหนดค่า",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ",
+      "Logical: and, or, not // ตัวดำเนินการตรรกะ",
+      "& // Concatenation (เชื่อมสตริง)",
+      "[] // Indexing/Slicing (เข้าถึงสมาชิกใน Collection)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-elif-else)\nvar temperature = 25\nif temperature > 30:\n  echo \"Hot day\"\nelif temperature < 10:\n  echo \"Cold day\"\nelse:\n  echo \"Normal day\"\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for\nfor i in 0..2:\n  echo \"Loop Nim: \" & $i # $i เป็น String interpolation\n",
+      "// ตัวอย่างที่ 3: การใช้ Case Statement\nvar command = \"open\"\ncase command:\n  of \"open\":\n    echo \"Opening file...\"\n  of \"save\":\n    echo \"Saving file...\"\n  else:\n    echo \"Unknown command.\"\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Object และ Method\ntype Dog = ref object # ref object หมายถึงสร้างบน Heap\n  name: string\n  age: int\n\nproc bark(d: Dog) = # เมธอดสำหรับ Dog\n  echo d.name & \" says Woof!\"\n\nvar myDog = Dog(name: \"Buddy\", age: 3) # สร้าง Object\nmyDog.bark() # แสดงผล 'Buddy says Woof!'\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\nproc divide(a, b: int): float = # ใช้ float สำหรับผลลัพธ์การหาร\n  if b == 0:\n    raise newException(DivByZeroError, \"Cannot divide by zero!\")\n  result = float(a) / float(b)\n\ntry:\n  var res = divide(10, 2)\n  echo \"Result: \" & $res\n  var errRes = divide(10, 0)\n  echo \"Result: \" & $errRes\nexcept DivByZeroError as e:\n  echo \"Caught error: \" & e.msg\nexcept: # ดักจับ Exception อื่นๆ ทั้งหมด\n  echo \"An unexpected error occurred.\"\n",
+      "// ตัวอย่างที่ 6: การทำงานกับ Sequences (Dynamic Arrays) และ Iterators\nvar fruits = @[\"Apple\", \"Banana\", \"Cherry\"]\nfruits.add(\"Date\") # เพิ่มสมาชิก\necho \"Fruits: \" & $fruits\n\nfor fruit in fruits:\n  echo \"- \" & fruit\n"
+    ]
+  }
+}

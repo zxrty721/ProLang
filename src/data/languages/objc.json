@@ -1,0 +1,110 @@
+{
+  "id": 19,
+  "name": "Objective-C",
+  "slug": "objective-c",
+  "logo": "img/objc.png",
+  "desc": "Objective-C เป็นภาษาโปรแกรมเชิงวัตถุที่พัฒนามาจากภาษา C และเป็นภาษาหลักสำหรับการพัฒนาแอปพลิเคชันบน macOS และ iOS มายาวนานก่อน Swift จะเข้ามาแทนที่",
+  "by": "Brad Cox and Tom Love",
+  "yr": "1980s",
+  "level": "2",
+  "par": ["Object-Oriented", "Reflective", "Imperative"],
+  "fields": ["Mobile", "Desktop"],
+  "rank": "35-40 ลดลงอย่างรวดเร็วเนื่องจาก Swift",
+  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-80,000 บาท/เดือน (Senior)",
+  "pros": [
+      "เคยเป็นภาษาหลักสำหรับ Apple Ecosystem",
+      "ทำงานร่วมกับ C และ C++ ได้ดี",
+      "มี Dynamic Runtime",
+      "รองรับการเขียนโค้ดที่ยืดหยุ่น"
+  ],
+  "cons": [
+      "Learning Curve สูงมาก",
+      "Syntax ค่อนข้างซับซ้อนและยาว",
+      "ไม่ได้รับความนิยมเท่าในอดีต (ถูกแทนที่ด้วย Swift)",
+      "การจัดการหน่วยความจำ (Manual Reference Counting) อาจเกิดข้อผิดพลาดได้ง่าย"
+  ],
+  "frameworks": ["Cocoa", "Cocoa Touch"],
+  "learn": ["Apple Objective-C Documentation", "Ray Wenderlich Objective-C", "Stanford CS193p (legacy courses)"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "NSString *name = @\"John\"; // ประกาศตัวแปร NSString (Object)",
+        "int age = 30; // ประกาศตัวแปรพื้นฐาน (Primitive type)",
+        "BOOL isActive = YES; // ประกาศตัวแปร Boolean"
+      ],
+      "types (ประเภท)": [
+        "id // Dynamic type (สามารถเก็บ Object ชนิดใดก็ได้)",
+        "Class // ประเภทข้อมูลสำหรับ Class",
+        "SEL // ประเภทข้อมูลสำหรับ Selector (ชื่อเมธอด)",
+        "IMP // ประเภทข้อมูลสำหรับ Pointer ไปยัง Method Implementation",
+        "BOOL // ประเภทข้อมูล Boolean (YES/NO)",
+        "NSInteger // ประเภทข้อมูลจำนวนเต็มที่เหมาะสมกับสถาปัตยกรรม (32-bit/64-bit)",
+        "NSUInteger // ประเภทข้อมูลจำนวนเต็มบวกที่เหมาะสมกับสถาปัตยกรรม",
+        "NSString // คลาสสำหรับจัดการข้อความ",
+        "NSArray // คลาสสำหรับจัดการ Array ของ Object",
+        "NSDictionary // คลาสสำหรับจัดการ Key-Value pairs ของ Object"
+      ],
+      "examples (ตัวอย่าง)": [
+          "NSString *message = @\"Hello Obj-C!\"; // กำหนดตัวแปร message เป็นสตริง",
+          "NSNumber *count = @(100); // กำหนดตัวแปร count เป็น Object ตัวเลข",
+          "BOOL success = YES; // กำหนดตัวแปร success เป็น Boolean",
+          "NSArray *fruits = @[@\"Apple\", @\"Banana\", @\"Cherry\"]; // สร้าง Array ของสตริง",
+          "NSDictionary *person = @{@\"name\": @\"Alice\", @\"age\": @(25)}; // สร้าง Dictionary"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "- (returnType)methodName:(param1Type)param1Name; // การประกาศ Instance Method",
+        "+ (returnType)classMethod:(paramType)paramName; // การประกาศ Class Method"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// Instance Method สำหรับบวกเลขสองจำนวน\n- (int)add:(int)a and:(int)b {\n  return a + b;\n}\n",
+          "// Instance Method สำหรับแสดงข้อความ\n- (void)printMessage:(NSString *)msg {\n  NSLog(@\"%@\", msg);\n}\n",
+          "// การเรียกใช้ Instance Method (ในคลาสเดียวกัน)\n// สมมติว่ามี instance ของคลาสอยู่ (self)\nint sum = [self add:5 and:5]; // sum จะมีค่า 10\n[self printMessage:@\"Hello, Objective-C!\"]; // แสดงผล 'Hello, Objective-C!'\n",
+          "// Class Method (เมธอดที่ไม่ต้องสร้าง Object ก่อนเรียกใช้)\n+ (NSString *)appName {\n  return @\"My Awesome App\";\n}\n// การเรียกใช้ Class Method\nNSString *app = [MyClass appName]; // ถ้าเมธอดอยู่ใน MyClass\nNSLog(@\"App Name: %@\", app);\n",
+          "// การสร้าง Object และเรียกใช้เมธอด\n#import <Foundation/Foundation.h>\n@interface MyClass : NSObject\n- (NSString *)sayHelloTo:(NSString *)personName;\n@end\n@implementation MyClass\n- (NSString *)sayHelloTo:(NSString *)personName {\n  return [NSString stringWithFormat:@\"Hello, %@!\", personName];\n}\n@end\n// ใน main function หรือเมธอดอื่น:\n// MyClass *myObject = [[MyClass alloc] init];\n// NSString *greeting = [myObject sayHelloTo:@\"World\"];\n// NSLog(@\"%@\", greeting); // Hello, World!\n",
+          "// Asynchronous Programming (Grand Central Dispatch - GCD)\n// Objective-C ใช้ Grand Central Dispatch (GCD) สำหรับการจัดการ Concurrency\n// DispatchQueue เป็นวิธีที่นิยมในการรันโค้ดแบบ Asynchronous\n// #import <Foundation/Foundation.h>\n// - (void)performAsyncTask {\n//   NSLog(@\"Start Async Task\");\n//   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{\n//     // โค้ดที่ทำงานใน Background thread\n//     [NSThread sleepForTimeInterval:1.0]; // จำลองการทำงานที่ใช้เวลา\n//     NSLog(@\"Async Task Done\");\n//     dispatch_async(dispatch_get_main_queue(), ^{\n//       // โค้ดที่กลับมารันบน Main thread (UI Updates)\n//       NSLog(@\"Update UI on Main Thread\");\n//     });\n//   });\n//   NSLog(@\"Main thread continues...\");\n// }"
+      ],
+      "built_in (ในตัว)": [
+        "NSLog() // ใช้แสดงผลข้อมูลออกทาง Console (สำหรับ Objective-C)",
+        "alloc // เมธอดสำหรับจัดสรรหน่วยความจำสำหรับ Object ใหม่",
+        "init // เมธอดสำหรับเริ่มต้น Object ที่จัดสรรหน่วยความจำแล้ว",
+        "release // เมธอดสำหรับลด Reference Count (Manual Reference Counting - Deprecated)",
+        "retain // เมธอดสำหรับเพิ่ม Reference Count (Manual Reference Counting - Deprecated)",
+        "autorelease // เมธอดสำหรับจัดการหน่วยความจำแบบอัตโนมัติใน Autorelease Pool (ARC เข้ามาแทนที่)",
+        "viewDidLoad // เมธอด Lifecycle ของ ViewController (iOS)",
+        "didReceiveMemoryWarning // เมธอด Lifecycle สำหรับจัดการหน่วยความจำ (iOS)"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (int i = 0; i < 5; i++) { /* ... */ } // ลูป for แบบ C-style",
+        "while (condition) { /* ... */ } // ลูป while",
+        "do { /* ... */ } while (condition); // ลูป do-while",
+        "for (id object in collection) { /* ... */ } // Fast Enumeration (ลูป foreach สำหรับ Objective-C Collection)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+        ". // Dot Syntax (ใช้เข้าถึง Property แทน Message Sending)",
+        "[] // Message Sending (รูปแบบหลักในการเรียกเมธอด)",
+        "* // Pointer Dereference (เข้าถึงค่าที่ Pointer ชี้ไป)",
+        "& // Address-of Operator (หาที่อยู่หน่วยความจำ)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nint score = 70;\nif (score >= 60) {\n  NSLog(@\"Passed\");\n} else {\n  NSLog(@\"Failed\");\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (int i = 0; i < 3; i++) {\n  NSLog(@\"Loop Obj-C: %d\", i);\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Fast Enumeration กับ NSArray\nNSArray *colors = @[@\"Red\", @\"Green\", @\"Blue\"];\nfor (NSString *color in colors) {\n  NSLog(@\"Color: %@\", color);\n}\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Class และ Properties\n#import <Foundation/Foundation.h>\n@interface Person : NSObject\n@property (nonatomic, strong) NSString *name;\n@property (nonatomic, assign) NSInteger age;\n- (void)sayHello;\n@end\n@implementation Person\n- (void)sayHello {\n  NSLog(@\"Hello, my name is %@ and I am %ld years old.\", self.name, (long)self.age);\n}\n@end\n// ใน main function หรือเมธอดอื่น:\n// Person *person1 = [[Person alloc] init];\n// person1.name = @\"John\";\n// person1.age = 30;\n// [person1 sayHello]; // Hello, my name is John and I am 30 years old.\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย NSError\n#import <Foundation/Foundation.h>\n- (BOOL)processData:(NSString *)data error:(NSError **)errorPtr {\n  if ([data isEqualToString:@\"invalid\"]) {\n    if (errorPtr) {\n      *errorPtr = [NSError errorWithDomain:@\"com.example.app\"\n                                       code:1001\n                                   userInfo:@{NSLocalizedDescriptionKey: @\"Invalid data provided.\"}];\n    }\n    return NO;\n  }\n  NSLog(@\"Processing data: %@\", data);\n  return YES;\n}\n// ใน main function หรือเมธอดอื่น:\n// NSError *error = nil;\n// BOOL success = [self processData:@\"valid_data\" error:&error];\n// if (success) { NSLog(@\"Data processed successfully.\"); } else { NSLog(@\"Error: %@\", error.localizedDescription); }\n// error = nil;\n// success = [self processData:@\"invalid\" error:&error];\n// if (success) { NSLog(@\"Data processed successfully.\"); } else { NSLog(@\"Error: %@\", error.localizedDescription); }"
+      ]
+  }
+}

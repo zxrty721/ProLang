@@ -1,0 +1,111 @@
+{
+  "id": 53,
+  "name": "VHDL",
+  "slug": "vhdl",
+  "logo": "img/vhdl.png",
+  "desc": "VHDL (Very High Speed Integrated Circuit Hardware Description Language) เป็นภาษา Hardware Description Language (HDL) มาตรฐาน IEEE ที่ใช้ในการออกแบบ, จำลอง และสังเคราะห์วงจรอิเล็กทรอนิกส์ดิจิทัลและ Mixed-signal มีความนิยมในการออกแบบ FPGA และ ASIC โดยเฉพาะในงานที่เน้นความน่าเชื่อถือและความปลอดภัยสูง เช่น ระบบการบินและอวกาศ",
+  "by": "U.S. Department of Defense (Initiated)",
+  "yr": "1987 (IEEE 1076-1987)",
+  "level": "1",
+  "par": ["Declarative", "Concurrent", "Structured", "Behavioral", "Dataflow"],
+  "fields": ["Embedded", "Hardware", "Digital", "Aero"],
+  "rank": "Top 2 HDL (ร่วมกับ Verilog/SystemVerilog)",
+  "salary_range": "฿45,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "เป็นภาษา HDL ที่เป็นมาตรฐาน IEEE",
+    "มีความสามารถในการอธิบายพฤติกรรมวงจรและโครงสร้าง Hardware",
+    "เหมาะสำหรับงานที่ต้องการความน่าเชื่อถือและความปลอดภัยสูง",
+    "รองรับการจำลอง (Simulation) และสังเคราะห์ (Synthesis)",
+    "มี Type System ที่แข็งแกร่ง (Strongly-typed)"
+  ],
+  "cons": [
+    "ไวยากรณ์ที่ละเอียดและซับซ้อน (Verbose Syntax)",
+    "Learning Curve สูงมากสำหรับผู้เริ่มต้น",
+    "ไม่เหมาะกับการเขียน Software ทั่วไป",
+    "การดีบักซับซ้อนและต้องใช้เครื่องมือเฉพาะ",
+    "เวลาในการสังเคราะห์และรันบน Hardware อาจนาน"
+  ],
+  "frameworks": ["None (เป็นภาษาพื้นฐาน)", "EDA Tools (Cadence, Synopsys, Mentor Graphics)"],
+  "learn": ["VHDL Tutorial", "The Designer's Guide to VHDL", "VHDL Quick Reference Guide", "FPGA design courses"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "signal my_signal : std_logic; -- ประกาศ Signal (ใช้เชื่อมต่อวงจร)",
+      "variable my_variable : integer := 0; -- ประกาศ Variable (ใช้ใน Sequential Block)",
+      "constant MY_CONSTANT : integer := 10; -- ประกาศ Constant",
+      "port (clk : in std_logic; data_out : out std_logic_vector(7 downto 0)); -- ประกาศ Port ของ Entity"
+    ],
+    "types (ประเภท)": [
+      "std_logic // Standard Logic (4-value: '0', '1', 'X', 'Z')",
+      "std_logic_vector // Vector ของ std_logic (เช่น std_logic_vector(7 downto 0))",
+      "bit // 2-value logic ('0', '1')",
+      "bit_vector // Vector ของ bit",
+      "integer // จำนวนเต็ม",
+      "real // ทศนิยม (สำหรับ Simulation Only)",
+      "time // เวลา (สำหรับ Simulation Only)",
+      "boolean // ค่าตรรกะ (TRUE, FALSE)",
+      "character // ตัวอักขระ",
+      "string // ข้อความ",
+      "type state_type is (IDLE, ACTIVE); -- การประกาศ Enumerated Type"
+    ],
+    "examples (ตัวอย่าง)": [
+      "signal enable : std_logic; -- ประกาศ Signal ชื่อ enable ชนิด std_logic",
+      "variable counter : integer range 0 to 255 := 0; -- ประกาศ Variable counter ชนิด integer มีช่วงค่า 0-255 เริ่มต้นที่ 0",
+      "constant CLK_PERIOD : time := 10 ns; -- ประกาศ Constant CLK_PERIOD เป็นเวลา 10 นาโนวินาที",
+      "signal data_bus : std_logic_vector(15 downto 0); -- ประกาศ Signal data_bus เป็น Vector 16 บิต"
+    ]
+  },
+  "functions": {
+    "declaration (การออกแบบ Hardware และ Behavioral Modeling)": [
+      "entity Entity_Name is\\n  port (...);\\nend Entity_Name; -- การประกาศ Entity (ส่วนติดต่อภายนอกของ Hardware Block)",
+      "architecture Architecture_Name of Entity_Name is\\nbegin\\n  -- Concurrent Statements\\n  process (sensitivity_list)\\n  begin\\n    -- Sequential Statements\\n  end process;\\nend Architecture_Name; -- การประกาศ Architecture (พฤติกรรมหรือโครงสร้างภายใน)",
+      "function Function_Name (parameters) return return_type is\\n  -- declarations\\nbegin\\n  -- statements\\n  return value;\\nend Function_Name; -- การประกาศ Function",
+      "procedure Procedure_Name (parameters) is\\n  -- declarations\\nbegin\\n  -- statements\\nend Procedure_Name; -- การประกาศ Procedure"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// Entity และ Architecture: Half Adder (วงจรบวกครึ่งหนึ่ง)\nentity half_adder is\n  port (\n    a, b    : in  std_logic;\n    sum, carry : out std_logic\n  );\nend half_adder;\n\narchitecture behavioral of half_adder is\nbegin\n  sum <= a xor b;\n  carry <= a and b;\nend behavioral;\n",
+      "// Process (Always Block): D Flip-Flop\nentity d_flip_flop is\n  port (\n    clk : in  std_logic;\n    d   : in  std_logic;\n    q   : out std_logic\n  );\nend d_flip_flop;\n\narchitecture rtl of d_flip_flop is\nbegin\n  process (clk) -- เมื่อ clk เปลี่ยนแปลง\n  begin\n    if rising_edge(clk) then -- เมื่อ clock ขอบขาขึ้น\n      q <= d; -- กำหนดค่า d ให้ q (Non-blocking assignment)\n    end if;\n  end process;\nend rtl;\n",
+      "// Process: Counter 8-bit พร้อม Synchronous Reset\nentity counter_8bit is\n  port (\n    clk   : in  std_logic;\n    reset : in  std_logic;\n    count : out std_logic_vector(7 downto 0)\n  );\nend counter_8bit;\n\narchitecture behavioral of counter_8bit is\n  signal internal_count : std_logic_vector(7 downto 0) := (others => '0');\nbegin\n  process (clk, reset)\n  begin\n    if rising_edge(reset) then -- ถ้า reset เป็น High (Synchronous Reset)\n      internal_count <= (others => '0'); -- Reset counter เป็น 0\n    elsif rising_edge(clk) then -- เมื่อ clock ขอบขาขึ้น\n      internal_count <= internal_count + 1; -- นับเพิ่มทีละ 1\n    end if;\n  end process;\n  count <= internal_count; -- กำหนดค่า Internal_count ให้ Output Port\nend behavioral;\n",
+      "// Testbench (สำหรับจำลอง Simulation)\nentity testbench is\nend testbench;\n\narchitecture testbench_arch of testbench is\n  signal clk, reset : std_logic := '0';\n  signal counter_out : std_logic_vector(7 downto 0);\n  constant CLK_PERIOD : time := 10 ns;\nbegin\n  -- Instantiate DUT (Device Under Test)\n  DUT : entity work.counter_8bit\n    port map (\n      clk   => clk,\n      reset => reset,\n      count => counter_out\n    );\n\n  -- Generate Clock\n  clk_process : process\n  begin\n    loop\n      clk <= '0';\n      wait for CLK_PERIOD / 2;\n      clk <= '1';\n      wait for CLK_PERIOD / 2;\n    end loop;\n  end process clk_process;\n\n  -- Generate Reset and Stimulus\n  stimulus_process : process\n  begin\n    reset <= '1';\n    wait for 20 ns; -- Reset active for 20 ns\n    reset <= '0';\n    wait for 100 ns; -- Run for 100 ns\n    report \"Simulation Finished\"; -- แสดงข้อความใน Simulation log\n    wait; -- หยุด Simulation\n  end process stimulus_process;\nend testbench_arch;\n"
+    ],
+    "built_in (ในตัว)": [
+      "and, or, xor, not // Gate-level operators (สำหรับ Logic Gates)",
+      "assign <= // Signal Assignment (Non-blocking)",
+      "report // ใช้แสดงข้อความใน Simulation log",
+      "assert // ใช้สำหรับ Hardware Assertion (ตรวจสอบคุณสมบัติ)",
+      "wait for // หน่วงเวลาใน Simulation",
+      "rising_edge(signal) // ตรวจสอบขอบขาขึ้นของ Signal",
+      "falling_edge(signal) // ตรวจสอบขอบขาลงของ Signal",
+      "to_integer() // แปลง std_logic_vector เป็น Integer",
+      "to_signed() // แปลง std_logic_vector เป็น Signed Integer",
+      "to_unsigned() // แปลง std_logic_vector เป็น Unsigned Integer"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "-- Single-line comment // คอมเมนต์บรรทัดเดียว (เริ่มต้นด้วย Double Dash)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition then\\n  -- statements\\nelsif another_condition then\\n  -- statements\\nelse\\n  -- statements\\nend if; -- คำสั่ง if-elsif-else (ใน Process)",
+      "case expression is\\n  when value1 =>\\n    -- statements\\n  when value2 | value3 =>\\n    -- statements (หลายค่า)\\n  when others =>\\n    -- statements (กรณีอื่นๆ)\\nend case; -- คำสั่ง case (ใน Process)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for Loop_Variable in Range loop\\n  -- statements\\nend loop; -- ลูป for (สำหรับช่วงตัวเลข)",
+      "while Condition loop\\n  -- statements\\nend loop; -- ลูป while",
+      "loop\\n  -- statements\\n  exit when Condition;\\nend loop; -- Infinite loop พร้อมเงื่อนไขออก"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, mod, rem, abs, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, Modulo, Remainder, Absolute, ยกกำลัง",
+      "Comparison: =, /=, <, <=, >, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, น้อยกว่าหรือเท่ากับ, มากกว่า, มากกว่าหรือเท่ากับ",
+      "Logical: and, or, nand, nor, xor, xnor, not // ตัวดำเนินการตรรกะ: AND, OR, NAND, NOR, XOR, XNOR, NOT",
+      "Concatenation: & // ตัวดำเนินการเชื่อมต่อ Vector/String"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else ใน Process (Combinational Logic)\narchitecture comb_logic of example is\n  signal a, b, sel : std_logic;\n  signal result : std_logic;\nbegin\n  process (a, b, sel)\n  begin\n    if sel = '1' then\n      result <= a;\n    else\n      result <= b;\n    end if;\n  end process;\nend comb_logic;\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For ใน Process (Simulation หรือ Synthesizable Logic บางกรณี)\narchitecture loop_example of example is\n  signal data_in : std_logic_vector(3 downto 0);\n  signal sum_bits : std_logic;\nbegin\n  process (data_in)\n    variable temp_sum : std_logic := '0';\n  begin\n    temp_sum := '0';\n    for i in 0 to 3 loop\n      temp_sum := temp_sum xor data_in(i);\n    end loop;\n    sum_bits <= temp_sum;\n  end process;\nend loop_example;\n",
+      "// ตัวอย่างที่ 3: การใช้ Case Statement ใน Process\narchitecture case_example of example is\n  type state_type is (IDLE, READ, WRITE);\n  signal current_state : state_type := IDLE;\n  signal opcode : std_logic_vector(1 downto 0);\n  signal next_state : state_type;\nbegin\n  process (current_state, opcode)\n  begin\n    case current_state is\n      when IDLE =>\n        if opcode = \"01\" then\n          next_state <= READ;\n        else\n          next_state <= IDLE;\n        end if;\n      when READ =>\n        next_state <= IDLE;\n      when WRITE =>\n        next_state <= IDLE;\n      when others => -- ต้องมี when others สำหรับทุกกรณีที่เป็นไปได้ (Synthesizable)\n        next_state <= IDLE;\n    end case;\n  end process;\nend case_example;\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Components (Instantiation) และ Port Mapping\n-- ตัวอย่างการเรียกใช้ Half Adder ที่ประกาศไว้ข้างต้น\n-- entity top_level is\n--   port (\n--     x, y    : in  std_logic;\n--     s_out, c_out : out std_logic\n--   );\n-- end top_level;\n--\n-- architecture structure of top_level is\n--   component half_adder\n--     port (\n--       a, b    : in  std_logic;\n--       sum, carry : out std_logic\n--     );\n--   end component;\n-- begin\n--   U1 : half_adder\n--     port map (\n--       a     => x,\n--       b     => y,\n--       sum   => s_out,\n--       carry => c_out\n--     );\n-- end structure;\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Assertion) ใน Simulation\narchitecture assertion_example of example is\n  signal data_valid : boolean := false;\n  signal count_val : integer := 0;\nbegin\n  process (clk) -- สมมติมี clk\n  begin\n    if rising_edge(clk) then\n      -- Simulate some logic\n      if count_val = 5 then\n        data_valid <= true;\n      else\n        count_val <= count_val + 1;\n      end if;\n    end if;\n  end process;\n\n  -- Assertion: data_valid should be true after count_val reaches 5\n  -- assert data_valid report \"Data did not become valid after counter reached 5\" severity ERROR;\n  -- (Assertion สามารถวางใน process หรือเป็น concurrent statement ก็ได้)\nend assertion_example;\n"
+    ]
+  }
+}

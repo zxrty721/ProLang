@@ -1,0 +1,101 @@
+{
+  "id": 37,
+  "name": "PowerShell",
+  "slug": "powershell",
+  "logo": "img/powershell.png",
+  "desc": "PowerShell เป็น Command-line Shell และ Scripting Language ของ Microsoft ที่พัฒนาขึ้นมาเพื่อการจัดการระบบ Windows และ Cloud (Azure) มีความสามารถในการจัดการวัตถุ (Objects) ทำให้มีพลังมากกว่า Command Prompt เดิม และเป็นส่วนสำคัญในงาน DevOps และ Automation บนแพลตฟอร์ม Microsoft",
+  "by": "Microsoft (Jeffrey Snover)",
+  "yr": "2006",
+  "level": "2",
+  "par": ["Object-Oriented", "Imperative", "Procedural", "Scripting"],
+  "fields": ["Script", "Admin"],
+  "rank": "30+ แข็งแกร่งใน Windows Ecosystem",
+  "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+    "ทรงพลังในการจัดการระบบ Windows และ Azure",
+    "ทำงานกับ Objects ได้ ทำให้จัดการข้อมูลได้มีประสิทธิภาพ",
+    "มี Module และ Cmdlet (Command-let) จำนวนมาก",
+    "รองรับการทำงานแบบ Cross-platform (Core)"
+  ],
+  "cons": [
+    "ไวยากรณ์อาจแตกต่างจากภาษา Scripting อื่นๆ",
+    "การเริ่มต้นเรียนรู้อาจมี Learning Curve",
+    "ประสิทธิภาพไม่สูงเท่าภาษา Compiled",
+    "เน้นไปที่ Ecosystem ของ Microsoft เป็นหลัก"
+  ],
+  "frameworks": [],
+  "learn": ["PowerShell Documentation", "Microsoft Learn - PowerShell"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "$variable_name = value // รูปแบบการประกาศตัวแปร"
+    ],
+    "types (ประเภท)": [
+      "String // สตริง (ข้อความ)",
+      "Int32 // จำนวนเต็ม 32 บิต",
+      "Boolean // บูลีน (True/False)",
+      "Array // อาร์เรย์ (ชุดข้อมูล)",
+      "HashTable // ตารางแฮช (Key-Value pairs)",
+      "Object // วัตถุทั่วไป"
+    ],
+    "examples (ตัวอย่าง)": [
+      "$name = \"Jane Doe\" // กำหนดตัวแปร name เก็บสตริง 'Jane Doe'",
+      "$age = 25 // กำหนดตัวแปร age เก็บตัวเลข 25",
+      "$files = @(\"file1.txt\", \"file2.txt\") // กำหนดอาร์เรย์ files",
+      "$config = @{ 'Path' = 'C:\\temp'; 'Verbose' = $true } // กำหนด HashTable"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function function-name { ... } // รูปแบบการประกาศฟังก์ชันแบบปกติ",
+      "function name { param(...) ... } // รูปแบบการประกาศฟังก์ชันพร้อมการประกาศพารามิเตอร์"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันทักทายรับพารามิเตอร์\nfunction Get-Greeting {\n    param(\n        [string]$Name\n    )\n    \"Hello, $Name!\"\n}\n",
+      "// ฟังก์ชันบวกเลขสองจำนวน\nfunction Add-Numbers {\n    param(\n        [int]$a,\n        [int]$b\n    )\n    return ($a + $b)\n}\n",
+      "// การเรียกใช้ฟังก์ชัน\n$msg = Get-Greeting -Name \"PowerShell User\" // $msg จะมีค่า 'Hello, PowerShell User!'\n$sumResult = Add-Numbers -a 10 -b 5 // $sumResult จะมีค่า 15\n"
+    ],
+    "built_in (ในตัว)": [
+      "Get-Process // ดึงข้อมูล Process ที่กำลังทำงานอยู่",
+      "Set-Item // ตั้งค่า Item (เช่น ไฟล์, Registry)",
+      "Remove-Item // ลบ Item",
+      "Get-Content // อ่านเนื้อหาจากไฟล์",
+      "Invoke-WebRequest // ส่ง Web Request",
+      "Select-Object // เลือก Property จาก Object",
+      "Where-Object // กรอง Object ตามเงื่อนไข",
+      "ForEach-Object // วนซ้ำแต่ละ Object ใน Collection",
+      "New-Item // สร้าง Item ใหม่ (เช่น ไฟล์, โฟลเดอร์)"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single line comment // คอมเมนต์บรรทัดเดียว",
+      "<# Multi line #> // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { ... } elseif (condition) { ... } else { ... } // คำสั่ง if-elseif-else",
+      "switch (expression) { case value { ... } default { ... } } // คำสั่ง switch"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (initialization; condition; increment) { ... } // ลูป for แบบ C-style",
+      "foreach ($item in $collection) { ... } // ลูป foreach สำหรับวนซ้ำ Collection",
+      "while (condition) { ... } // ลูป while",
+      "do { ... } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Numeric Comparison: -eq (เท่ากับ), -ne (ไม่เท่ากับ), -gt (มากกว่า), -lt (น้อยกว่า), -ge (มากกว่าหรือเท่ากับ), -le (น้อยกว่าหรือเท่ากับ)",
+      "String Comparison: -eq (เท่ากับ), -ne (ไม่เท่ากับ), -like (คล้าย), -notlike (ไม่คล้าย), -match (ตรงกับ Regex), -notmatch (ไม่ตรงกับ Regex)",
+      "Logical: -and (AND), -or (OR), -not (NOT), -xor (XOR)",
+      "Assignment: =, +=, -=, *=, /=, %=",
+      "Type Operators: -is (เป็นประเภท), -isnot (ไม่เป็นประเภท)",
+      "Join/Split: -join (รวมสตริง), -split (แยกสตริง)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\n$age = 20\nif ($age -ge 18) {\n    \"Adult\"\n} else {\n    \"Minor\"\n}\n",
+      "// ตัวอย่างที่ 2: การกรอง Process ที่กำลังทำงานอยู่\nGet-Process | Where-Object {$_.Status -eq 'Running'} | Select-Object Name, Id, CPU\n",
+      "// ตัวอย่างที่ 3: การวนลูปประมวลผลไฟล์\n$files = @(\"script1.ps1\", \"script2.ps1\", \"script3.log\")\nforeach ($file in $files) {\n    Write-Host \"Processing $file\"\n}\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Switch Statement\n$day = \"Wednesday\"\nswitch ($day) {\n    \"Monday\" { \"Start of week\" }\n    \"Friday\" { \"End of week\" }\n    default { \"Mid-week\" }\n}\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Try-Catch-Finally)\ntry {\n    $num1 = 10\n    $num2 = 0\n    $result = $num1 / $num2 # จะเกิด DivisionByZeroException\n    Write-Host \"Result: $result\"\n} catch [System.DivideByZeroException] {\n    Write-Host \"Error: Cannot divide by zero!\"\n} catch {\n    Write-Host \"An unexpected error occurred: $($_.Exception.Message)\"\n} finally {\n    Write-Host \"Execution completed.\"\n}\n"
+    ]
+  }
+}

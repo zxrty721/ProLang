@@ -1,0 +1,115 @@
+{
+  "id": 56,
+  "name": "Chisel",
+  "slug": "chisel",
+  "logo": "img/chisel.jfif",
+  "desc": "Chisel (Constructing Hardware In a Scala Embedded Language) เป็นภาษา Hardware Description Language (HDL) แบบ Open-source ที่ฝังอยู่ใน Scala ใช้สำหรับออกแบบวงจรดิจิทัลและสร้าง Generator ของฮาร์ดแวร์แบบ Parameterized มีจุดเด่นในการนำแนวคิดของภาษาโปรแกรมสมัยใหม่มาใช้ในการออกแบบฮาร์ดแวร์ เช่น OOP และ Functional Programming ช่วยให้การออกแบบที่ซับซ้อนทำได้ง่ายขึ้นและสามารถนำโค้ดกลับมาใช้ใหม่ได้",
+  "by": "UC Berkeley (คณะวิจัยของ Krste Asanović)",
+  "yr": "2010",
+  "level": "2",
+  "par": ["Hardware Description", "Functional", "Object-Oriented", "Metaprogramming"],
+  "fields": ["Hardware", "Digital"],
+  "rank": "Niche ในงานวิจัยและออกแบบ Hardware ที่ทันสมัย",
+  "salary_range": "฿50,000-90,000 บาท/เดือน (Junior), ฿90,000-180,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "นำเสนอการออกแบบฮาร์ดแวร์ในระดับ Abstraction ที่สูงขึ้น",
+    "ใช้ประโยชน์จากคุณสมบัติของ Scala (OOP, Functional, Metaprogramming)",
+    "ช่วยให้สร้าง Hardware Generator ที่ยืดหยุ่นและ Parameterized ได้ง่าย",
+    "ลดข้อผิดพลาดในการออกแบบฮาร์ดแวร์ที่ซับซ้อน",
+    "สามารถ Compile เป็น Verilog (หรือ FIRRTL) เพื่อสังเคราะห์ได้"
+  ],
+  "cons": [
+    "ต้องมีความรู้ทั้ง Scala และแนวคิดการออกแบบฮาร์ดแวร์",
+    "Learning Curve สูงมากสำหรับผู้เริ่มต้น",
+    "Ecosystem และ Community ยังเล็กกว่า Verilog/VHDL",
+    "การดีบักซับซ้อนเมื่อเกิดปัญหาทั้งในส่วน Scala และ Generated Hardware",
+    "เวลาในการสังเคราะห์อาจนานสำหรับ Designs ขนาดใหญ่"
+  ],
+  "frameworks": ["FIRRTL (Intermediate Representation)", "RISC-V (Processor Architecture often designed with Chisel)"],
+  "learn": ["Chisel Website", "Chisel Tutorial (UC Berkeley)", "Digital Design with Chisel (book/online)"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "val myWire = Wire(UInt(8.W)) // การประกาศ Wire ขนาด 8 บิต",
+      "val myReg = RegInit(0.U(8.W)) // การประกาศ Register ขนาด 8 บิต พร้อมค่าเริ่มต้น 0",
+      "val myInput = IO(Input(UInt(4.W))) // การประกาศ Input Port ขนาด 4 บิต"
+    ],
+    "types (ประเภท)": [
+      "UInt // Unsigned Integer (จำนวนเต็มบวก)",
+      "SInt // Signed Integer (จำนวนเต็มมีเครื่องหมาย)",
+      "Bool // Boolean (True/False)",
+      "FixedPoint // Fixed-point number",
+      "Bundle // กลุ่มของ Signals (คล้าย Struct)",
+      "Vec // Array ของ Signals (Vector)",
+      "Clock // สัญญาณ Clock",
+      "Reset // สัญญาณ Reset"
+    ],
+    "examples (ตัวอย่าง)": [
+      "val dataIn = IO(Input(UInt(16.W))) // ประกาศ Input Port ชื่อ dataIn ขนาด 16 บิต (UInt)",
+      "val dataOut = IO(Output(UInt(16.W))) // ประกาศ Output Port ชื่อ dataOut ขนาด 16 บิต (UInt)",
+      "val counter = RegInit(0.U(8.W)) // ประกาศ Register ชื่อ counter ขนาด 8 บิต พร้อมค่าเริ่มต้น 0",
+      "val stateMachine = RegInit(Idle.Type) // ประกาศ Register สำหรับ State Machine"
+    ]
+  },
+  "functions": {
+    "declaration (การออกแบบ Hardware)": [
+      "class MyModule extends Module { /* ... */ } // การประกาศ Module (บล็อกของฮาร์ดแวร์)",
+      "myOutput := myInput + 1.U // การกำหนดค่าแบบ Combinational Logic (:=)",
+      "when(condition) { /* ... */ } .elsewhen(anotherCondition) { /* ... */ } .otherwise { /* ... */ } // คำสั่ง Conditional (เมื่อเงื่อนไขเป็นจริง)",
+      "myReg := nextValue // การกำหนดค่าแบบ Sequential Logic (สำหรับ Register)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// Module: Adder (วงจรบวก)\\nclass Adder extends Module {\\n  val io = IO(new Bundle {\\n    val a = Input(UInt(8.W))\\n    val b = Input(UInt(8.W))\\n    val sum = Output(UInt(8.W))\\n  })\\n  io.sum := io.a + io.b\\n}\\n",
+      "// Module: Counter (วงจรนับ)\\nclass MyCounter extends Module {\\n  val io = IO(new Bundle {\\n    val en = Input(Bool())\\n    val out = Output(UInt(8.W))\\n  })\\n  val counter = RegInit(0.U(8.W))\\n  when(io.en) {\\n    counter := counter + 1.U\\n  }\\n  io.out := counter\\n}\\n",
+      "// Conditional Logic: Multiplexer\\nclass Mux2 extends Module {\\n  val io = IO(new Bundle {\\n    val sel = Input(Bool())\\n    val in0 = Input(UInt(4.W))\\n    val in1 = Input(UInt(4.W))\\n    val out = Output(UInt(4.W))\\n  })\\n  when(io.sel) {\\n    io.out := io.in1\\n  } .otherwise {\\n    io.out := io.in0\\n  }\\n}\\n",
+      "// FSM (Finite State Machine) Example (Conceptual)\\n// val state = RegInit(Idle)\\n// when(state === Idle) {\\n//   when(inputReady) { state := Busy }\\n// } .elsewhen(state === Busy) {\\n//   when(taskDone) { state := Idle }\\n// }\\n"
+    ],
+    "built_in (ในตัว)": [
+      "Module // Class พื้นฐานสำหรับ Module ของฮาร์ดแวร์",
+      "IO() // ฟังก์ชันสำหรับประกาศ Input/Output Port",
+      "Input() // กำหนด Input Port",
+      "Output() // กำหนด Output Port",
+      "Wire() // สร้าง Signal แบบ Combinational (ไม่เก็บสถานะ)",
+      "RegInit() // สร้าง Register พร้อมค่าเริ่มต้น (Sequential Logic)",
+      ":= // ตัวดำเนินการกำหนดค่า (Assign) Signal (Combinational)",
+      "<= // ตัวดำเนินการกำหนดค่า (Assign) Register (Sequential)",
+      "when() // เริ่มต้น Conditional Block",
+      "otherwise() // กรณีอื่นๆ ใน Conditional Block",
+      "printf() // (สำหรับ Simulation/Debugging) แสดงผลข้อความ",
+      "assert() // (สำหรับ Verification) ตรวจสอบเงื่อนไข"
+    ],
+    "async (Parallelism inherent in Hardware)": [
+      "// Chisel เป็นภาษาสำหรับ Hardware Description ซึ่งโดยธรรมชาติแล้วการทำงานของ Hardware เป็นแบบขนาน (Parallel) อยู่แล้ว\\n// คำสั่งต่างๆ ใน Chisel จะถูกตีความเป็นการเชื่อมต่อวงจรที่ทำงานพร้อมกัน\\n// ดังนั้นจึงไม่มีแนวคิด 'Asynchronous Programming' เหมือนใน Software ที่ทำงานบน CPU ตัวเดียว\\n// Logic ทั้งหมดภายใน Module จะทำงานแบบ Concurrent (ขนานกัน) โดยตรง"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว (เหมือน Scala/Java)",
+      "/* Multi-line comment */ // คอมเมนต์หลายบรรทัด (เหมือน Scala/Java)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "when(condition) { /* ... */ } .elsewhen(anotherCondition) { /* ... */ } .otherwise { /* ... */ } // คำสั่งเมื่อ (when/elsewhen/otherwise)",
+      "Mux(sel, in1, in0) // Multiplexer (เลือกค่าตามเงื่อนไข)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (i <- 0 until N) { /* ... */ } // ลูป for-in (สำหรับการสร้าง Hardware ซ้ำๆ เช่น Array ของ Logic Gates)",
+      "// Chisel มักจะใช้ Loops ในการสร้างโครงสร้าง Hardware ซ้ำๆ (Hardware Generation)\\n// ไม่ได้ใช้สำหรับการวนซ้ำในรันไทม์เหมือนภาษา Software"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+      "Bitwise: &, |, ^, ~ // ตัวดำเนินการระดับบิต (AND, OR, XOR, NOT)",
+      "Shift: <<, >> // ตัวดำเนินการ Shift",
+      "Comparison: ===, =/=, <, <=, >, >= // ตัวดำเนินการเปรียบเทียบ (เท่ากับ, ไม่เท่ากับ, น้อยกว่า ฯลฯ)",
+      ":= // การกำหนดค่า Combinational (Continuous Assignment)",
+      "<= // การกำหนดค่า Sequential (Register Assignment)",
+      ".asUInt, .asSInt, .asBool // การแปลง Type",
+      ".io // เข้าถึง Input/Output Port ของ Module"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ when/otherwise (Conditional Logic)\\nval inputA = IO(Input(UInt(1.W)))\\nval inputB = IO(Input(UInt(1.W)))\\nval select = IO(Input(Bool()))\\nval outputZ = IO(Output(UInt(1.W)))\\nwhen(select) {\\n  outputZ := inputA\\n} .otherwise {\\n  outputZ := inputB\\n}\\n",
+      "// ตัวอย่างที่ 2: การใช้ Loops เพื่อสร้าง Array ของ Hardware\\n// สร้าง Adder 8 ตัวพร้อมกัน\\nclass VectorAdder extends Module {\\n  val io = IO(new Bundle {\\n    val inA = Input(Vec(8, UInt(4.W)))\\n    val inB = Input(Vec(8, UInt(4.W)))\\n    val sum = Output(Vec(8, UInt(4.W)))\\n  })\\n  for (i <- 0 until 8) {\\n    io.sum(i) := io.inA(i) + io.inB(i)\\n  }\\n}\\n",
+      "// ตัวอย่างที่ 3: การใช้ Mux (Multiplexer)\\nval control = IO(Input(Bool()))\\nval data0 = IO(Input(UInt(8.W)))\\nval data1 = IO(Input(UInt(8.W)))\\nval result = IO(Output(UInt(8.W)))\\nresult := Mux(control, data1, data0) // ถ้า control เป็น true ใช้ data1, ไม่งั้นใช้ data0\\n",
+      "// ตัวอย่างที่ 4: การทำงานกับ Registers และ Reset\\nval enableSignal = IO(Input(Bool()))\\nval outputReg = IO(Output(UInt(8.W)))\\nval myRegister = RegInit(0.U(8.W))\\nwhen(enableSignal) {\\n  myRegister := myRegister + 1.U\\n}\\noutputReg := myRegister\\n// เมื่อ Reset (Global Reset) myRegister จะถูกตั้งค่าเป็น 0"
+    ]
+  }
+}

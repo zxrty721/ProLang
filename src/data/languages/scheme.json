@@ -1,0 +1,114 @@
+{
+  "id": 32,
+  "name": "Scheme",
+  "slug": "scheme",
+  "logo": "img/scheme.png",
+  "desc": "Scheme เป็นภาษาโปรแกรม Functional Programming ในตระกูล Lisp ที่เน้นความเรียบง่าย (Minimalism) และความสอดคล้องทางทฤษฎี (Theoretical Consistency) เป็นอย่างสูง ถูกใช้ในการศึกษาด้านวิทยาการคอมพิวเตอร์, การวิจัย และการพัฒนาแอปพลิเคชันที่ต้องการความยืดหยุ่นสูงและการจัดการโค้ดในฐานะข้อมูล (Code as Data)",
+  "by": "Guy L. Steele Jr. and Gerald Jay Sussman",
+  "yr": "1975",
+  "level": "3",
+  "par": ["Functional", "Procedural", "Reflective", "Metaprogramming"],
+  "fields": ["Edu", "Compiler"],
+  "rank": "45+ Niche ใน Education และ Computer Science Research",
+  "salary_range": "฿24,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
+  "salary": ["n/a"],
+  "pros": [
+    "ไวยากรณ์ที่เรียบง่ายและสอดคล้อง (S-expressions)",
+    "รองรับ Functional Programming อย่างเต็มที่",
+    "ความสามารถในการ Meta-programming สูง (Macro System)",
+    "เหมาะสำหรับการเรียนรู้แนวคิดพื้นฐานของวิทยาการคอมพิวเตอร์",
+    "มีระบบ Continuations ที่ทรงพลัง"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับ Lisp หรือ Functional Programming",
+    "ไวยากรณ์วงเล็บ (Parentheses) อาจดูสับสนสำหรับผู้เริ่มต้น",
+    "ชุมชนนักพัฒนาและ Library เล็กกว่าภาษาหลัก",
+    "ไม่เหมาะกับแอปพลิเคชันเชิงพาณิชย์ขนาดใหญ่โดยตรง",
+    "ประสิทธิภาพอาจไม่ดีเท่าภาษาที่คอมไพล์แบบ Native"
+  ],
+  "frameworks": [],
+  "learn": ["SICP (Structure and Interpretation of Computer Programs)", "Racket (dialect of Scheme)", "Scheme R7RS"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "(define variable-name value) ; การประกาศตัวแปร/ค่าคงที่"
+    ],
+    "types (ประเภท)": [
+      "Numbers (integers, reals, complex) // ตัวเลข (จำนวนเต็ม, ทศนิยม, จำนวนเชิงซ้อน)",
+      "Booleans (#t, #f) // ค่าความจริง (#t = true, #f = false)",
+      "Characters // ตัวอักขระ",
+      "Strings // ข้อความ",
+      "Symbols // สัญลักษณ์ (ใช้เป็นชื่อตัวแปร, ฟังก์ชัน, ฯลฯ)",
+      "Lists // รายการ (โครงสร้างข้อมูลหลักใน Scheme)",
+      "Pairs // คู่ (พื้นฐานของ List)",
+      "Procedures (Functions) // ฟังก์ชัน (เป็น First-class citizen)",
+      "Vectors // เวกเตอร์ (คล้าย Array, เข้าถึงด้วย Index)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "(define x 10) ; กำหนดตัวแปร x เก็บค่า 10",
+      "(define message \"Hello Scheme\") ; กำหนดตัวแปร message เก็บสตริง",
+      "(define pi 3.14159) ; กำหนดตัวแปร pi เก็บค่าทศนิยม",
+      "(define my-list '(a b c)) ; สร้าง List ด้วย Quote",
+      "(define my-vector (vector 1 2 3)) ; สร้าง Vector"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "(define (function-name parameters) body) ; การประกาศฟังก์ชัน (Procedure)",
+      "(lambda (parameters) body) ; Anonymous function (ฟังก์ชันนิรนาม)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\n(define (add a b) (+ a b))",
+      "// ฟังก์ชันทักทาย\n(define (greet name) (display \"Hello \") (display name) (newline))",
+      "// การเรียกใช้ฟังก์ชัน\n(define sum (add 5 5)) ; sum จะมีค่า 10\n(greet \"World\") ; แสดงผล 'Hello World!'\n",
+      "// ฟังก์ชัน Recursive สำหรับ Factorial\n(define (factorial n)\n  (if (= n 0)\n      1\n      (* n (factorial (- n 1))))) ; ถ้า n เป็น 0 คืน 1 ไม่งั้น n * factorial(n-1)\n; (factorial 5) ; 120\n",
+      "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\n(define (apply-twice f x) (f (f x)))\n; (apply-twice (lambda (y) (+ y 1)) 5) ; 7 (5 -> 6 -> 7)\n",
+      "// การทำงานกับ List โดยใช้ Recursion\n(define (list-sum lst)\n  (if (null? lst)\n      0\n      (+ (car lst) (list-sum (cdr lst))))) ; ถ้า List ว่าง คืน 0 ไม่งั้น Head + Sum ของ Tail\n; (list-sum '(1 2 3 4)) ; 10\n",
+      "// Asynchronous Programming (แนวคิด - ผ่าน Continuations หรือ Libraries)\n// Scheme มี Continuations ที่ทรงพลัง ซึ่งสามารถใช้สร้าง Control Flow ที่ซับซ้อน รวมถึง Asynchronous behaviors ได้\n// อย่างไรก็ตาม โดยทั่วไปแล้ว Scheme ไม่ได้มี Model Async/Await ในตัวแบบภาษาสมัยใหม่\n// การทำงาน Asynchronous อาจต้องพึ่งพา Extensions หรือ Libraries ของแต่ละ Implementation\n/*\n; ตัวอย่างแนวคิดของการใช้ Call/CC (Call with Current Continuation) สำหรับควบคุม Flow\n; ซึ่งเป็นพื้นฐานของการทำ Async ในระดับลึกของ Functional Programming\n; (define (producer consumer)\n;   (display \"Producer starts... \") (newline)\n;   (call/cc\n;     (lambda (k) (set! consumer k)))\n;   (display \"Producer yields... \") (newline)\n;   (consumer \"data\"))\n;\n; (define (consumer-fn)\n;   (let ((data (producer (lambda (x) x)))) ; สร้าง Continuation สำหรับ producer\n;     (display \"Consumer received: \") (display data) (newline)))\n;\n; (consumer-fn)\n*/"
+    ],
+    "built_in (ในตัว)": [
+      "+, -, *, / // ตัวดำเนินการทางคณิตศาสตร์ (เป็นฟังก์ชัน)",
+      "display // ใช้แสดงผลข้อมูลออกทาง Console (ไม่ขึ้นบรรทัดใหม่)",
+      "newline // ใช้ขึ้นบรรทัดใหม่",
+      "car // คืนค่าสมาชิกแรกของ List",
+      "cdr // คืนค่า List ที่เหลือทั้งหมด ยกเว้นสมาชิกแรก",
+      "cons // สร้าง Pair หรือเพิ่ม Element เข้าไปใน List",
+      "list // สร้าง List",
+      "lambda // ใช้สร้าง Anonymous Function",
+      "define // ใช้กำหนดตัวแปรหรือฟังก์ชัน",
+      "if // คำสั่งเงื่อนไข",
+      "cond // คำสั่งเงื่อนไขแบบหลายเงื่อนไข",
+      "begin // ใช้จัดกลุ่ม Expression ให้เป็น Block",
+      "null? // ตรวจสอบว่าเป็น List ว่างหรือไม่",
+      "number? // ตรวจสอบว่าเป็นตัวเลขหรือไม่"
+    ],
+    "async": []
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "; Single-line comment ; คอมเมนต์บรรทัดเดียว",
+      "#| Multi line |# ; คอมเมนต์หลายบรรทัด (ใช้ได้ในบาง Implementation เช่น Racket)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "(if condition then-expression else-expression) // คำสั่ง if-else (เป็น Expression ที่คืนค่า)",
+      "(cond (condition1 expr1) (condition2 expr2) (else default-expr)) // คำสั่ง cond (หลายเงื่อนไข คล้าย if-elseif-else หรือ switch)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "(do ((var init step) ...) (test result ...) body ...) // ลูป do (สำหรับ Imperative-style looping)",
+      "recursive functions (common for iteration) // การใช้ฟังก์ชัน Recursive (นิยมใช้สำหรับการวนซ้ำแบบ Functional)",
+      "(map (lambda (x) (* x 2)) '(1 2 3)) ; การใช้ map เพื่อวนซ้ำและแปลงค่า (Functional approach)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "(+ a b) ; (ลบ a b) ; (* a b) ; (/ a b) ; (remainder a b) ; ตัวดำเนินการทางคณิตศาสตร์ (เป็นฟังก์ชัน)",
+      "(= a b) ; (< a b) ; (> a b) ; (<= a b) ; (>= a b) ; ตัวดำเนินการเปรียบเทียบ (เป็นฟังก์ชัน)",
+      "(and cond1 cond2) ; (or cond1 cond2) ; (not cond) ; ตัวดำเนินการตรรกะ (เป็นฟังก์ชัน)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else\n(define x 10)\n(if (> x 0)\n    (display \"Positive\")\n    (display \"Non-positive\"))\n(newline)\n",
+      "// ตัวอย่างที่ 2: ฟังก์ชันนับถอยหลัง (Recursive Loop)\n(define (countdown n)\n  (if (= n 0)\n      (display \"Blastoff!\")\n      (begin (display n) (newline) (countdown (- n 1))))) ; นับถอยหลังและแสดงผลทีละบรรทัด\n; (countdown 3)\n; Output:\n; 3\n; 2\n; 1\n; Blastoff!\n",
+      "// ตัวอย่างที่ 3: การใช้ Cond (Conditional Expression)\n(define score 75)\n(cond\n  ((>= score 90) (display \"Grade A\"))\n  ((>= score 70) (display \"Grade B\"))\n  (else (display \"Grade C\")))\n(newline)\n",
+      "// ตัวอย่างที่ 4: การทำงานกับ List\n(define my-numbers '(10 20 30))\n(display (car my-numbers)) ; 10 (ดึงสมาชิกแรก)\n(newline)\n(display (cdr my-numbers)) ; (20 30) (ดึงส่วนที่เหลือ)\n(newline)\n(display (cons 5 my-numbers)) ; (5 10 20 30) (สร้าง List ใหม่โดยเพิ่ม 5 เข้าไป)\n(newline)\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling)\n; ใน Scheme, Error Handling มักจะใช้ `with-exception-handler` หรือ `guard` (ใน R6RS/R7RS)\n; เพื่อจับ Exceptions หรือ Conditions\n; (with-exception-handler\n;   (lambda (exn) (display (string-append \"Caught error: \" (exn-message exn))) (newline))\n;   (lambda () (/ 10 0))) ; พยายามหารด้วย 0 ซึ่งจะเกิด error\n; Output: Caught error: division by zero\n",
+      "// ตัวอย่างที่ 6: การใช้ Macro (Metaprogramming)\n; Macros ใน Scheme เป็นวิธีที่ทรงพลังในการขยายไวยากรณ์ของภาษา\n; ทำให้คุณสามารถสร้างไวยากรณ์ใหม่ได้เอง\n; (define-syntax my-unless\n;   (syntax-rules ()\n;     ((_ condition body ...)\n;      (if (not condition) (begin body ...)))))\n;\n; (my-unless (= 1 2)\n;   (display \"This will print because 1 is not equal to 2.\")\n;   (newline))\n"
+    ]
+  }
+}

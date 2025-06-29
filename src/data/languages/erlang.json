@@ -1,0 +1,112 @@
+{
+  "id": 60,
+  "name": "Erlang",
+  "slug": "erlang",
+  "logo": "img/erlang.png",
+  "desc": "Erlang เป็นภาษาโปรแกรม Functional Programming และ Runtime System (VM) ที่สร้างขึ้นโดย Ericsson สำหรับการสร้างระบบโทรคมนาคมที่มีความทนทานสูง, สามารถปรับขนาดได้ และทำงานพร้อมกันได้จำนวนมาก (Massively Concurrent) เป็นที่รู้จักกันดีในเรื่องความสามารถในการทนต่อข้อผิดพลาด (Fault-tolerance) และ Hot Code Swapping",
+  "by": "Ericsson",
+  "yr": "1986",
+  "level": "2",
+  "par": ["Functional", "Concurrent", "Declarative"],
+  "fields": ["Tele", "Distributed"],
+  "rank": "40+ (Niche ในตลาดเฉพาะทาง)",
+  "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-110,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "ความสามารถในการทำงานพร้อมกันสูง (Massive Concurrency) ด้วย Actor Model",
+    "ความทนทานต่อข้อผิดพลาด (Fault-tolerance) ในตัว (Let It Crash philosophy)",
+    "สามารถอัปเดตโค้ดได้ขณะรัน (Hot Code Swapping)",
+    "เหมาะสำหรับ Distributed Systems และ Real-time Applications",
+    "มี Garbage Collection ที่ไม่บล็อกการทำงาน (Non-blocking GC)"
+  ],
+  "cons": [
+    "Learning Curve สูงมาก (แนวคิด Actor Model และ Functional Programming)",
+    "ไวยากรณ์ที่แตกต่างจากภาษาหลักทั่วไป",
+    "ชุมชนนักพัฒนาขนาดเล็กและเฉพาะทาง",
+    "ไม่เหมาะสำหรับงานคำนวณเชิงตัวเลขที่หนักหน่วง (Number-crunching)",
+    "การดีบักและการ Trace อาจซับซ้อน"
+  ],
+  "frameworks": ["OTP (Open Telecom Platform)", "Cowboy (Web Server)", "Mnesia (Database)"],
+  "learn": ["Erlang.org", "Learn You Some Erlang for Great Good!", "Erlang Programming (book)", "The Erlang Battleground"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "X = 10. % ตัวแปร (เริ่มต้นด้วยตัวพิมพ์ใหญ่, Immutable)",
+      "MyAtom = hello. % Atom (ค่าคงที่ที่เริ่มต้นด้วยตัวพิมพ์เล็ก, ไม่ต้องมี quote)",
+      "String = \"Erlang\". % String (Double Quotes)"
+    ],
+    "types (ประเภท)": [
+      "Atom // ค่าคงที่ที่เริ่มต้นด้วยตัวพิมพ์เล็ก (เช่น ok, error, hello)",
+      "Integer // จำนวนเต็ม",
+      "Float // ทศนิยม",
+      "Binary // ข้อมูลไบนารี",
+      "Bitstring // Bitstring",
+      "Boolean (true, false) // ค่าความจริง",
+      "List // รายการ (คล้าย Linked List)",
+      "Tuple // Tuple (ลำดับของค่าที่มีขนาดคงที่)",
+      "Map // Map (Key-Value store, ตั้งแต่ Erlang/OTP 17.0)",
+      "PID (Process Identifier) // Process Identifier (สำหรับ Concurrency)",
+      "Reference // Reference",
+      "Port // Port (สำหรับสื่อสารกับ External Program)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "Name = \"Joe\". % กำหนดตัวแปร Name เป็นสตริง",
+      "Age = 30. % กำหนดตัวแปร Age เป็นตัวเลข",
+      "IsActive = true. % กำหนดตัวแปร IsActive เป็น Boolean (Atom)",
+      "Numbers = [1, 2, 3]. % สร้าง List ของตัวเลข",
+      "User = {user, \"Alice\", 25}. % สร้าง Tuple (มี Atom 'user' เป็น Tag)",
+      "Config = #{host => \"localhost\", port => 8080}. % สร้าง Map (Key-Value pairs)"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function_name(Param1, Param2) -> Result. % การประกาศฟังก์ชัน (Module function)",
+      "fun (Param) -> Body end. % Anonymous function (ฟังก์ชันนิรนาม)"
+    ],
+    "examples": [
+      "// ฟังก์ชันบวกเลขสองจำนวน (ใน Module `my_math`)\n-module(my_math).\n-export([add/2]).\n\nadd(A, B) -> A + B. % ฟังก์ชัน add รับ 2 Arguments\n",
+      "// ฟังก์ชันทักทาย (ใน Module `my_greeter`)\n-module(my_greeter).\n-export([greet/1]).\n\ngreet(Name) -> io:format(\"Hello, ~s!~n\", [Name]). % ฟังก์ชัน greet รับ 1 Argument\n",
+      "// การเรียกใช้ฟังก์ชัน (ใน Shell หรือ Module อื่น)\n% my_math:add(10, 20). % เรียกใช้ฟังก์ชัน add จาก Module my_math (คืนค่า 30)\n% my_greeter:greet(\"Erlang User\"). % แสดงผล 'Hello, Erlang User!'\n",
+      "// ฟังก์ชัน Recursive สำหรับ Factorial\n-module(my_factorial).\n-export([factorial/1]).\n\nfactorial(0) -> 1;\nfactorial(N) when N > 0 -> N * factorial(N-1).\n% my_factorial:factorial(5). % คืนค่า 120\n",
+      "// Concurrency (Spawning Processes and Message Passing)\n-module(my_process).\n-export([start/0, worker/0]).\n\nstart() -> spawn(fun my_process:worker/0). % สร้าง Process ใหม่และรันฟังก์ชัน worker/0\n\nworker() ->\n    io:format(\"Worker process started with PID ~p~n\", [self()]),\n    receive % รอรับข้อความ\n        {hello, Name} ->\n            io:format(\"Worker received hello from ~s~n\", [Name]),\n            worker(); % ทำงานต่อ\n        stop ->\n            io:format(\"Worker stopping.~n\")\n    end.\n\n% // ใน Erlang Shell:\n% % Pid = my_process:start(). % จะได้ PID ของ Process กลับมา\n% % Pid ! {hello, \"Alice\"}. % ส่งข้อความ {hello, \"Alice\"} ไปยัง Process\n% % Pid ! stop. % ส่งข้อความ stop ไปยัง Process เพื่อให้หยุดทำงาน\n"
+    ],
+    "built_in (ในตัว)": [
+      "self() // คืนค่า PID ของ Process ปัจจุบัน",
+      "spawn(Fun) // สร้าง Process ใหม่และรัน Fun",
+      "send(Pid, Msg) // ส่งข้อความ Msg ไปยัง Process ที่มี PID",
+      "receive ... end // ใช้สำหรับรอรับข้อความจาก Process อื่น",
+      "io:format() // ใช้แสดงผลข้อมูลออกทาง Console (Format String)",
+      "lists:map() // ใช้แปลงทุก Element ใน List",
+      "lists:filter() // ใช้กรอง Element ใน List",
+      "erlang:now() // คืนค่าปัจจุบันของนาฬิการะบบ",
+      "erlang:exit(Reason) // ใช้ทำให้ Process หยุดทำงาน"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "% Single-line comment // คอมเมนต์บรรทัดเดียว (เริ่มต้นด้วย %)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if Condition1 -> Body1; Condition2 -> Body2; true -> DefaultBody end. % คำสั่ง if (เป็น Expression)",
+      "case Expression of\\n  Pattern1 -> Body1;\\n  Pattern2 -> Body2;\\n  _ -> DefaultBody\\nend. % คำสั่ง case (Pattern Matching)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "// Erlang ไม่มี loop แบบ Imperative โดยตรง (for, while)\n// แต่ใช้ Recursion (การเรียกตัวเองของฟังก์ชัน) และ Pattern Matching เพื่อวนซ้ำ\n\n% ตัวอย่าง Recursion สำหรับนับเลขใน List\nsum_list([]) -> 0;\nsum_list([H|T]) -> H + sum_list(T).\n\n% ตัวอย่าง Tail Recursion สำหรับลูป\nloop_n(N) when N > 0 ->\n    io:format(\"Loop: ~p~n\", [N]),\n    loop_n(N-1);\nloop_n(0) -> ok.\n"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, div, rem // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร (ทศนิยม), หาร (จำนวนเต็ม), เศษเหลือ",
+      "Comparison: ==, /=, <, >, =<, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: and, or, not, xor // ตัวดำเนินการตรรกะ (สำหรับ Boolean)",
+      "Bitwise: band, bor, bnot, bxor, bsl, bsr // ตัวดำเนินการระดับบิต",
+      "++ // Concatenation (สำหรับ List)",
+      "-- // List Subtraction",
+      "!, -> // Message Sending Operator and Function Arrow"
+    ],
+    "examples": [
+      "// ตัวอย่างที่ 1: การใช้ If Expression\nMyNum = 10.\nResult = if MyNum > 5 -> \"Greater than 5\";\n            MyNum =< 5 -> \"Less than or equal to 5\"\n         end.\n% io:format(\"Result: ~s~n\", [Result]). % แสดงผล 'Result: Greater than 5'\n",
+      "// ตัวอย่างที่ 2: การใช้ Case Expression (Pattern Matching)\nStatus = {error, \"File not found\"}.\nInfo = case Status of\n           {ok, Data} -> Data;\n           {error, Reason} -> Reason;\n           _ -> \"Unknown Status\"\n       end.\n% io:format(\"Info: ~s~n\", [Info]). % แสดงผล 'Info: File not found'\n",
+      "// ตัวอย่างที่ 3: Recursion และ List Processing\n-module(list_ops).\n-export([sum/1, reverse/1]).\n\nsum([]) -> 0;\nsum([H|T]) -> H + sum(T).\n\nreverse(L) -> reverse(L, []).\nreverse([], Acc) -> Acc;\nreverse([H|T], Acc) -> reverse(T, [H|Acc]).\n\n% % ใน Shell:\n% % list_ops:sum([1,2,3]). % คืนค่า 6\n% % list_ops:reverse([a,b,c]). % คืนค่า [c,b,a]\n",
+      "// ตัวอย่างที่ 4: Error Handling (Fault-Tolerance) ด้วย Supervisor\n% Erlang ใช้ Supervisor Tree สำหรับ Fault-tolerance\n% Supervisor จะตรวจสอบ Child Processes ถ้า Child Crash, Supervisor จะ Restart Child\n% (โค้ดจริงจะซับซ้อนกว่านี้มาก แต่แนวคิดคือ 'Let It Crash')\n\n% -module(my_worker).\n% -export([start_link/0, crash_me/0]).\n% \n% start_link() ->\n%     proc_lib:start_link(?MODULE, worker, []).\n% \n% worker() ->\n%     io:format(\"Worker ~p started.~n\", [self()]),\n%     receive\n%         crash ->\n%             exit(an_error);\n%         _ -> ok\n%     end,\n%     worker().\n% \n% crash_me(Pid) -> Pid ! crash.\n% \n% % ใน Shell:\n% % {ok, WorkerPid} = my_worker:start_link().\n% % my_worker:crash_me(WorkerPid). % Worker Crash\n% % % Supervisor (ถ้ามี) จะ Restart Worker ให้อัตโนมัติ\n",
+      "// ตัวอย่างที่ 5: Hot Code Swapping\n% Erlang สามารถอัปเดตโค้ดขณะรันโดยไม่ต้องหยุดระบบ\n% (นี่คือแค่แนวคิด)\n% 1. รันเวอร์ชันเก่าของ Module\n% 2. คอมไพล์เวอร์ชันใหม่ของ Module\n% 3. โหลดเวอร์ชันใหม่ (Code:load_abs/1)\n% 4. ส่ง Message ให้ Process รันเวอร์ชันใหม่ (โดยใช้ process_flag(trap_exit, true))"
+    ]
+  }
+}

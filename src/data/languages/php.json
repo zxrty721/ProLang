@@ -1,0 +1,114 @@
+{
+  "id": 10,
+  "name": "PHP",
+  "slug": "php",
+  "logo": "img/php.png",
+  "desc": "PHP เป็นภาษา Scripting ฝั่ง Server ที่ออกแบบมาเพื่อพัฒนา Web Application โดยเฉพาะ มีความนิยมอย่างมากในการสร้างเว็บไซต์แบบ Dynamic และมีการใช้งานอย่างแพร่หลายใน CMS ยอดนิยมอย่าง WordPress",
+  "by": "Rasmus Lerdorf",
+  "yr": "1994",
+  "level": "4",
+  "par": ["Procedural", "Object-Oriented", "Imperative", "Functional"],
+  "fields": ["Backend", "Testing"],
+  "rank": "13-17 ลดลงอย่างต่อเนื่อง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
+  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-70,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "เรียนรู้และเริ่มต้นใช้งานง่าย",
+      "มี Frameworks และ Libraries ที่หลากหลาย",
+      "ทำงานได้ดีกับฐานข้อมูล",
+      "มีชุมชนขนาดใหญ่",
+      "รองรับ Web Hosting ได้กว้างขวาง"
+  ],
+  "cons": [
+      "ประสิทธิภาพอาจไม่สูงเท่าบางภาษาในบางกรณี",
+      "การจัดการ Error อาจไม่ดีเท่าที่ควรในเวอร์ชันเก่าๆ",
+      "ความสอดคล้องของ Syntax อาจไม่ชัดเจนเท่าภาษาอื่น",
+      "อาจมีปัญหาเรื่องความปลอดภัยหากไม่ระมัดระวัง"
+  ],
+  "frameworks": ["Laravel", "Symfony", "CodeIgniter", "Zend Framework", "WordPress"],
+  "learn": ["PHP.net Official Manual", "Laracasts", "W3Schools PHP Tutorial", "Traversy Media PHP"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "$name = \"John\"; // การประกาศตัวแปรสตริง",
+        "$age = 30; // การประกาศตัวแปรจำนวนเต็ม"
+      ],
+      "types (ประเภท)": [
+        "Integer // ประเภทข้อมูลตัวเลขจำนวนเต็ม",
+        "Float // ประเภทข้อมูลตัวเลขทศนิยม",
+        "String // ประเภทข้อมูลข้อความ",
+        "Boolean // ประเภทข้อมูลค่าจริงหรือเท็จ (true/false)",
+        "Array // ประเภทข้อมูลสำหรับเก็บข้อมูลหลายค่าในตัวแปรเดียว",
+        "Object // ประเภทข้อมูลสำหรับ Instance ของ Class",
+        "NULL // ประเภทข้อมูลสำหรับค่าว่างเปล่าโดยเจตนา",
+        "Resource // ประเภทข้อมูลสำหรับ Resource ภายนอก (เช่น การเชื่อมต่อฐานข้อมูล)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "$product = \"Laptop\"; // กำหนดตัวแปร product เก็บสตริง",
+          "$quantity = 10; // กำหนดตัวแปร quantity เก็บตัวเลข",
+          "$is_available = true; // กำหนดตัวแปร is_available เก็บค่าความจริง",
+          "$prices = [100, 200, 300]; // กำหนดตัวแปร prices เก็บ Array",
+          "$user = (object)['name' => 'Alice', 'age' => 30]; // กำหนดตัวแปร user เก็บ Object",
+          "$colors = array('red', 'green', 'blue'); // การประกาศ Array แบบเก่า"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "function functionName($param1, $param2) { /* ... */ } // การประกาศฟังก์ชันทั่วไป",
+        "function ($param) use ($variable) { /* ... */ }; // Anonymous function (Closure)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันทักทาย\nfunction greet($name) {\n  return \"Hello, \" . $name . \"!\";\n}\n",
+          "// ฟังก์ชันบวกเลขสองจำนวน\nfunction add($a, $b) {\n  return $a + $b;\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\n$message = greet(\"PHP\"); // $message จะมีค่า 'Hello, PHP!'\n$sum = add(10, 15); // $sum จะมีค่า 25\n",
+          "// ฟังก์ชันที่มี Optional Parameter และ Default Value\nfunction calculate_price($base_price, $tax_rate = 0.07) {\n  return $base_price * (1 + $tax_rate);\n}\n$final_price1 = calculate_price(100); // ใช้ tax_rate ค่าเริ่มต้น (107)\n$final_price2 = calculate_price(100, 0.10); // ใช้ tax_rate ที่กำหนด (110)\n",
+          "// ฟังก์ชันที่คืนค่าหลายค่า (ด้วย Array)\nfunction get_user_info() {\n  return ['John Doe', 30];\n}\nlist($name, $age) = get_user_info(); // รับค่าที่คืนกลับมา\n// หรือ: [$name, $age] = get_user_info(); (PHP 7.1+)\n",
+          "// Asynchronous Programming ใน PHP (แนวคิด)\n// PHP ไม่ได้มี Asynchronous I/O ในตัวเหมือน Node.js หรือ Go\n// แต่สามารถทำได้ผ่าน Extensions เช่น ReactPHP หรือ Swoole\n// ตัวอย่างนี้เป็นการจำลองการทำงานที่ใช้เวลาโดยไม่บล็อกการทำงาน (ใน PHP 8.1+ มี Fibers)\n/*\nfunction simulate_async_task() {\n    echo \"Start long task...\\n\";\n    sleep(2); // จำลองการทำงานที่ใช้เวลา\n    echo \"Long task finished!\\n\";\n}\n// ใน PHP ที่ไม่มี Extension async โดยตรง จะต้องรันแบบ Synchronous\n// หรือใช้ Library อย่าง ReactPHP/Swoole\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "echo() // ใช้แสดงผลข้อมูลออกทาง Browser/Console",
+        "print() // ใช้แสดงผลข้อมูลออกทาง Browser/Console (คืนค่า 1 เสมอ)",
+        "strlen() // ใช้หาความยาวของสตริง",
+        "str_replace() // ใช้แทนที่ส่วนหนึ่งของสตริง",
+        "array_push() // ใช้เพิ่มสมาชิกใน Array",
+        "isset() // ใช้ตรวจสอบว่าตัวแปรถูกกำหนดค่าและไม่ใช่ NULL",
+        "empty() // ใช้ตรวจสอบว่าตัวแปรว่างเปล่าหรือไม่",
+        "var_dump() // ใช้แสดงข้อมูลโครงสร้างของตัวแปรเพื่อ Debug",
+        "json_encode() // ใช้แปลงข้อมูล PHP เป็น JSON string"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "# Another single line comment // คอมเมนต์บรรทัดเดียวอีกรูปแบบ",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } elseif (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-elseif-else",
+        "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (initialization; condition; increment) { /* ... */ } // ลูป for แบบดั้งเดิม",
+        "while (condition) { /* ... */ } // ลูป while",
+        "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)",
+        "foreach ($array as $item) { /* ... */ } // ลูป foreach สำหรับวนซ้ำ Array (ค่าเท่านั้น)",
+        "foreach ($array as $key => $value) { /* ... */ } // ลูป foreach สำหรับวนซ้ำ Array (Key และ Value)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, %, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, ===, !=, !==, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ (หลวม/เข้มงวด), ไม่เท่ากับ (หลวม/เข้มงวด) ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "Concatenation: . // ตัวดำเนินการเชื่อมสตริง",
+        "Ternary: ? : // ตัวดำเนินการเงื่อนไขแบบย่อ (Conditional Operator)",
+        "Null Coalescing: ?? // ตัวดำเนินการค่า Null (PHP 7+)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\n<?php\n$age = 20;\nif ($age >= 18) {\n  echo \"Adult\";\n} else {\n  echo \"Minor\";\n}\n?>\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\n<?php\nfor ($i = 0; $i < 3; $i++) {\n  echo \"Loop PHP: \" . $i . \"\\n\";\n}\n?>\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\n<?php\n$day = \"Wednesday\";\nswitch ($day) {\n  case \"Monday\":\n    echo \"Start of week\";\n    break;\n  case \"Friday\":\n    echo \"End of week\";\n    break;\n  default:\n    echo \"Mid-week\";\n}\n?>\n",
+          "// ตัวอย่างที่ 4: การใช้งานคลาสและ Object-Oriented Programming (OOP)\n<?php\nclass Dog {\n  public $name;\n  public $age;\n\n  public function __construct($name, $age) {\n    $this->name = $name;\n    $this->age = $age;\n  }\n\n  public function bark() {\n    echo $this->name . \" says Woof!\\n\";\n  }\n}\n// สร้าง Object จากคลาส Dog\n$myDog = new Dog(\"Buddy\", 3);\n$myDog->bark(); // แสดงผล \"Buddy says Woof!\"\n?>\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย Try-Catch\n<?php\ntry {\n  $num1 = 10;\n  $num2 = 0;\n  if ($num2 === 0) {\n    throw new Exception(\"Cannot divide by zero\");\n  }\n  $result = $num1 / $num2;\n  echo \"Result: \" . $result . \"\\n\";\n} catch (Exception $e) {\n  echo \"Caught an error: \" . $e->getMessage() . \"\\n\";\n} finally {\n  echo \"Operation finished.\\n\";\n}\n?>\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ Array และ Foreach Loop\n<?php\n$fruits = ['Apple', 'Banana', 'Cherry'];\necho \"My favorite fruits:\\n\";\nforeach ($fruits as $fruit) {\n  echo \"- \" . $fruit . \"\\n\";\n}\n// หรือใช้ Key และ Value\n$student_grades = ['Alice' => 'A', 'Bob' => 'B'];\nforeach ($student_grades as $name => $grade) {\n  echo \"{$name} got a grade of {$grade}\\n\";\n}\n?>\n"
+      ]
+  }
+}

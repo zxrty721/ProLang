@@ -1,0 +1,111 @@
+{
+  "id": 16,
+  "name": "Dart",
+  "slug": "dart",
+  "logo": "img/dart.png",
+  "desc": "Dart เป็นภาษาโปรแกรมที่พัฒนาโดย Google เน้นการสร้างแอปพลิเคชันแบบ Multi-platform โดยเฉพาะอย่างยิ่ง Mobile App ด้วย Flutter Framework สามารถ Compile เป็น Native Code ได้ ทำให้มีประสิทธิภาพสูง",
+  "by": "Google",
+  "yr": "2011",
+  "level": "3",
+  "par": ["Object-Oriented", "Imperative", "Functional"],
+  "fields": ["Mobile", "Frontend"],
+  "rank": "25-30 แต่เติบโตแรงด้วย Flutter (6.2% ของนักพัฒนา Mobile)",
+  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-85,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "เหมาะกับการพัฒนา Cross-platform ด้วย Flutter",
+      "มี Hot Reload สำหรับการพัฒนาที่รวดเร็ว",
+      "ประสิทธิภาพสูง (Compiled to Native Code)",
+      "มี Null Safety ในตัว",
+      "รองรับ Asynchronous Programming ได้ดี"
+  ],
+  "cons": [
+      "Learning Curve อาจสูงสำหรับผู้เริ่มต้น",
+      "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาหลัก",
+      "ต้องพึ่งพา Flutter เป็นหลักสำหรับการพัฒนา Mobile",
+      "ขนาดของแอปพลิเคชันที่สร้างอาจจะใหญ่"
+  ],
+  "frameworks": ["Flutter"],
+  "learn": ["Dart Official Documentation", "Flutter Documentation", "Effective Dart", "DartPad"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "var name = 'Dart'; // Type inferred (อนุมานประเภทข้อมูล)",
+        "String message = 'Hello'; // ระบุประเภทข้อมูลชัดเจน",
+        "const pi = 3.14; // Compile-time constant (ค่าคงที่ที่กำหนดตอน Compile)",
+        "final age = 30; // Runtime constant (ค่าคงที่ที่กำหนดตอนรัน)"
+      ],
+      "types (ประเภท)": [
+        "int // จำนวนเต็ม",
+        "double // ทศนิยม",
+        "String // ข้อความ",
+        "bool // ค่าจริงหรือเท็จ (true/false)",
+        "List // รายการ (คล้าย Array)",
+        "Map // แผนที่ (Key-Value pairs)",
+        "Set // เซต (ชุดของค่าที่ไม่ซ้ำกัน)",
+        "dynamic // ประเภทข้อมูลที่ยืดหยุ่น (สามารถเก็บค่าประเภทใดก็ได้)",
+        "Object // คลาสพื้นฐานของทุกอ็อบเจกต์ใน Dart",
+        "Null // ประเภทข้อมูลสำหรับค่าว่างเปล่า (null)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "int count = 10; // กำหนดตัวแปร count เก็บตัวเลข 10",
+          "String greeting = \"Welcome!\"; // กำหนดตัวแปร greeting เก็บสตริง",
+          "bool isActive = false; // กำหนดตัวแปร isActive เก็บค่าความจริง",
+          "List<String> fruits = ['apple', 'banana']; // กำหนด List ของสตริง",
+          "Map<String, int> ages = {'Alice': 25, 'Bob': 30}; // กำหนด Map"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "returnType functionName(param1, param2) { /* ... */ } // การประกาศฟังก์ชันทั่วไป",
+        "(params) => expression; // Anonymous function / Lambda (ฟังก์ชันนิรนาม)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nint add(int a, int b) {\n  return a + b;\n}\n",
+          "// ฟังก์ชันแสดงข้อความ\nvoid printMessage(String msg) {\n  print(msg);\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nint sum = add(5, 5); // sum จะมีค่า 10\nprintMessage(\"Hello, Dart!\"); // แสดงผล 'Hello, Dart!'\n",
+          "// ฟังก์ชันที่มี Named Parameters และ Optional Parameters\nvoid displayUserInfo({String? name, int? age}) {\n  if (name != null) print('Name: $name');\n  if (age != null) print('Age: $age');\n}\ndisplayUserInfo(name: 'Alice', age: 30); // เรียกใช้ด้วย Named Arguments\ndisplayUserInfo(name: 'Bob'); // เรียกใช้โดยไม่ส่ง age\n",
+          "// Asynchronous Programming (Async/Await)\n// Dart จัดการ Asynchronous Programming ได้ดีด้วย Future และ async/await\nFuture<String> fetchData() async {\n  print(\"Fetching data...\");\n  await Future.delayed(Duration(seconds: 1)); // จำลองการหน่วงเวลา 1 วินาที\n  print(\"Data fetched!\");\n  return \"Data fetched asynchronously\";\n}\n// ตัวอย่างการเรียกใช้ Async Function\n/*\nvoid main() async {\n  String data = await fetchData();\n  print(\"Received: $data\");\n}\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "print() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "List.add() // เมธอดสำหรับเพิ่มสมาชิกใน List",
+        "Map.containsKey() // เมธอดสำหรับตรวจสอบ Key ใน Map",
+        "Future.delayed() // ใช้สร้าง Future ที่หน่วงเวลา",
+        "int.parse() // ใช้แปลง String เป็น Integer",
+        "String.length // Property สำหรับหาความยาวของสตริง",
+        "List.map() // เมธอดสำหรับแปลง List"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด",
+        "/// Documentation comment // คอมเมนต์สำหรับเอกสาร (จะถูกประมวลผลเป็นเอกสาร)"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (int i = 0; i < 5; i++) { /* ... */ } // ลูป for แบบดั้งเดิม",
+        "while (condition) { /* ... */ } // ลูป while",
+        "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)",
+        "for (var item in collection) { /* ... */ } // ลูป for-in สำหรับวนซ้ำ Collection"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "Null-aware: ??, ??=, ?., !. // ตัวดำเนินการสำหรับจัดการค่า Null และเข้าถึงสมาชิกแบบ Null-safe"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nint score = 70;\nif (score >= 60) {\n  print('Passed');\n} else {\n  print('Failed');\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (int i = 0; i < 3; i++) {\n  print('Loop Dart: $i');\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\nString command = 'OPEN';\nswitch (command) {\n  case 'OPEN':\n    print('Opening file...');\n    break;\n  case 'SAVE':\n    print('Saving file...');\n    break;\n  default:\n    print('Unknown command.');\n}\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Class และ Object-Oriented Programming (OOP)\nclass Car {\n  String brand;\n  int year;\n\n  Car(this.brand, this.year); // Constructor แบบย่อ\n\n  void drive() {\n    print('$brand from $year is driving.');\n  }\n}\n// สร้าง Object จากคลาส Car\nCar myCar = Car('Toyota', 2023);\nmyCar.drive(); // แสดงผล 'Toyota from 2023 is driving.'\n",
+          "// ตัวอย่างที่ 5: Null Safety\nString? nullableName = 'John'; // ตัวแปรที่สามารถเป็น null ได้\nprint(nullableName?.toUpperCase()); // ใช้ ?. เพื่อเรียกเมธอดแบบ Null-safe\nnullableName = null;\nprint(nullableName?.toUpperCase()); // จะแสดง null (ไม่เกิด error)\n\nString nonNullableName = nullableName ?? 'Guest'; // ใช้ ?? เพื่อให้ค่าเริ่มต้นหากเป็น null\nprint(nonNullableName); // จะแสดง 'Guest'\n",
+          "// ตัวอย่างที่ 6: การจัดการข้อผิดพลาด (Exception Handling)\ntry {\n  int result = 10 ~/ 0; // ~/ คือ integer division\n  print(result);\n} on IntegerDivisionByZeroException {\n  print('Error: Cannot divide by zero!');\n} catch (e) {\n  print('An unexpected error occurred: $e');\n} finally {\n  print('Operation completed.');\n}\n"
+      ]
+  }
+}

@@ -1,43 +1,57 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-
 @import "tailwindcss";
 
-/* --- โครงสร้างพื้นฐาน --- */
+/* --- พื้นฐาน --- */
 body {
   font-family: 'Prompt', sans-serif;
   margin: 0;
   padding: 0;
-  background: #eeeeee;
-  color: #333;
-  box-shadow: black 10px;
+  color: #1f2937;
+  background: #9c9c9c34; /* สีพื้นหลังหลัก */
+  background-image: url("background/bc.gif");
 }
 
-/* --- Header / Footer --- */
+/* --- Header --- */
 header, footer {
-  color: white;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
   text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  animation: bgFloat 30s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* เนียนกับ body (fade ขอบล่าง header) */
+
+/* --- Maincard หุ้มการ์ดทั้งหมด --- */
+.maincard {
   padding: 2rem;
-  /* font-size: 1.5rem; */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  border-radius: 1.25rem;
+  background: rgb(219, 219, 219);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 
-/* --- พื้นหลังเคลื่อนไหวแบบ gradient --- */
-.gradient-bg {
-  background: linear-gradient(-45deg, #667eea, #764ba2, #6b73ff, #a855f7, #0ea5e9);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
-  border: black solid 2px;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-/* --- การจัดเรียง Card --- */
+/* --- Sidebar / Cards Layout --- */
 .sidebar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- ลื่นไหล --- */
+* {
+  transition: all 0.2s ease;
+}
+
+/* --- พื้นหลัง header/footer เคลื่อนไหวเบาๆ */
+@keyframes bgFloat {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
 }

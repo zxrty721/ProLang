@@ -1,0 +1,101 @@
+{
+  "id": 49,
+  "name": "OCaml",
+  "slug": "ocaml",
+  "logo": "img/ocaml.png",
+  "desc": "OCaml เป็นภาษาโปรแกรม Multi-paradigm ที่เน้น Functional Programming (โดยเฉพาะอย่างยิ่ง Static Type Inference) มีประสิทธิภาพสูงและมีความน่าเชื่อถือ พัฒนาโดย INRIA ใช้ในการวิจัย, การศึกษา, การสร้าง Compiler, ระบบการเงิน และ Web Development (ผ่าน ReScript/ReasonML)",
+  "by": "INRIA (French Institute for Research in Computer Science and Automation)",
+  "yr": "1996",
+  "level": "4",
+  "par": ["Functional", "Imperative", "Object-Oriented"],
+  "fields": ["Compiler", "Edu"],
+  "rank": "Niche ใน Functional Programming และ Compiler Development",
+  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-120,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high", "veryhigh"],
+  "pros": [
+    "ประสิทธิภาพสูง (ใกล้เคียง C)",
+    "Type Inference ที่ทรงพลังและ Type Safety สูง",
+    "รองรับ Functional Programming อย่างเต็มรูปแบบ",
+    "มีการจัดการ Memory อัตโนมัติ (Garbage Collection)",
+    "เหมาะสำหรับงานที่ต้องการความน่าเชื่อถือสูง",
+    "ระบบ Module ที่ดีเยี่ยม"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับ Functional Programming",
+    "ชุมชนนักพัฒนาเล็กและ Niche",
+    "Ecosystem และ Library ยังจำกัดกว่าภาษาหลัก",
+    "ไวยากรณ์อาจดูแปลกตา",
+    "การดีบักอาจท้าทายในโค้ดที่ซับซ้อน"
+  ],
+  "frameworks": ["Opam (Package Manager)", "Coq (Proof Assistant, related)", "Dune (Build System)", "Dream (Web Framework)"],
+  "learn": ["OCaml.org Official Documentation", "Real World OCaml (Book)", "Functional Programming in OCaml (online course)", "OCaml Tutorials"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "let x = 10;; // การประกาศค่าคงที่ (Immutable by default)",
+      "let mutable y = 20;; // การประกาศตัวแปรที่เปลี่ยนแปลงได้ (Mutable)"
+    ],
+    "types (ประเภท)": [
+      "int // จำนวนเต็ม",
+      "float // ทศนิยม",
+      "bool // ค่าตรรกะ (true/false)",
+      "char // ตัวอักขระ",
+      "string // ข้อความ",
+      "unit // ประเภทที่ไม่มีค่า (คล้าย void ใน C/Java)",
+      "list<'a> // List ของ Type 'a' ใดๆ (Immutable)",
+      "array<'a> // Array ของ Type 'a' ใดๆ (Mutable, Fixed Size)",
+      "option<'a> // Optional type (Some(value) or None)",
+      "result<'ok, 'error> // Result type (Ok(value) or Error(error))",
+      "tuple<'a, 'b> // Tuple (กลุ่มของค่าที่มีประเภทต่างกันได้)",
+      "record // Record (คล้าย Struct/Object ที่ Immutable)",
+      "variant // Variant (Algebraic Data Types - ADT)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ไม่มีการแสดงตัวอย่างโค้ดตามคำขอ"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "let func_name param1 param2 = (* code *) ;; // การประกาศฟังก์ชันมาตรฐาน",
+      "fun x -> x + 1 // Anonymous function (ฟังก์ชันนิรนาม)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ไม่มีการแสดงตัวอย่างโค้ดตามคำขอ"
+    ],
+    "built_in (ในตัว)": [
+      "print_endline // ใช้แสดงสตริงพร้อมขึ้นบรรทัดใหม่",
+      "fst // ดึงสมาชิกตัวแรกของคู่ (Pair)",
+      "snd // ดึงสมาชิกตัวที่สองของคู่ (Pair)",
+      "List.map // ใช้แปลงทุก Element ใน List",
+      "List.filter // ใช้กรอง Element ใน List",
+      "Option.map // สำหรับแปลงค่าใน Optional หากมีค่า",
+      "string_of_int // แปลง int เป็น string",
+      "int_of_string // แปลง string เป็น int"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "(* Multi-line comment *) // คอมเมนต์หลายบรรทัด",
+      "// Single-line comment (OCaml 4.02+ syntax) // คอมเมนต์บรรทัดเดียว (ไวยากรณ์ใหม่)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition then expression1 else expression2 // คำสั่ง If-Else (เป็น Expression ที่คืนค่า)",
+      "match expression with // Pattern Matching ด้วย Match Expression\n  | Pattern1 -> result1\n  | Pattern2 -> result2\n  | _ -> defaultResult // Wildcard สำหรับค่าอื่นๆ"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for i = 1 to 10 do (* code *) done // ลูป for (สำหรับช่วงตัวเลข)",
+      "while condition do (* code *) done // ลูป while",
+      "// OCaml เน้น Functional Programming ดังนั้นมักใช้ Recursion หรือ Higher-Order Functions (map, filter, fold) สำหรับการวนซ้ำมากกว่าลูป Imperative"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, mod // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Comparison: =, <>, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), not (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      ":: // Cons operator (สำหรับเพิ่ม Element เข้าไปใน List)",
+      "@ // List concatenation (เชื่อม List)",
+      ";; // End of expression (ใช้บอกจุดสิ้นสุดของ Expression ใน Interactive mode)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ไม่มีการแสดงตัวอย่างโค้ดตามคำขอ"
+    ]
+  }
+}

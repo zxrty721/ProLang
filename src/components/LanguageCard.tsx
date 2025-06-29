@@ -10,7 +10,7 @@ interface LanguageCardProps {
   onClick: () => void;
 }
 
-export default function LanguageCard({ language, isSelected, onClick }: LanguageCardProps) {
+function LanguageCard({ language, isSelected, onClick }: LanguageCardProps) {
   return (
     <div className={`card ${isSelected ? 'active' : ''} ${getDifficultyClass(language.level)}`} onClick={onClick}>
       <img
@@ -39,3 +39,5 @@ export default function LanguageCard({ language, isSelected, onClick }: Language
     </div>
   );
 }
+
+export default React.memo(LanguageCard);

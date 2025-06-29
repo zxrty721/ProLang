@@ -1,0 +1,124 @@
+{
+  "id": 7,
+  "name": "Go",
+  "slug": "go",
+  "logo": "img/go.png",
+  "desc": "Go (หรือ Golang) เป็นภาษาโปรแกรมที่พัฒนาโดย Google เน้นความเรียบง่าย, ประสิทธิภาพสูง และรองรับการทำงานแบบ Concurrency ได้ดี เหมาะสำหรับ Backend services, Cloud computing, และ Networking tools",
+  "by": "Robert Griesemer, Rob Pike, Ken Thompson",
+  "yr": "2009",
+  "level": "2",
+  "par": ["Concurrent", "Structured", "Imperative"],
+  "fields": ["Cloud", "System", "Network", "Testing", "Security", "Distributed"],
+  "rank": "6-8 และเติบโตแรงใน Cloud/Backend (เพิ่มขึ้น 1.2% ใน 2024)",
+  "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-130,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "ประสิทธิภาพสูง (ใกล้เคียง C/C++)",
+      "รองรับ Concurrency ได้ดีด้วย Goroutines",
+      "Syntax เรียบง่าย เรียนรู้ง่าย",
+      "มีเครื่องมือในตัวครบวงจร (Go tools)",
+      "คอมไพล์เป็น Single Binary ทำให้ง่ายต่อการ Deploy"
+  ],
+  "cons": [
+      "ไม่มี Generics จนถึง Go 1.18 (แต่ตอนนี้มีแล้ว)",
+      "ไม่มี OOP แบบคลาส (ใช้ Structs แทน)",
+      "การจัดการ Error ที่ค่อนข้างเยอะ (error handling)",
+      "ชุมชนยังเล็กกว่าภาษาเก่าแก่"
+  ],
+  "frameworks": ["Gin", "Echo", "Revel"],
+  "learn": ["Go Tour", "Go by Example", "Effective Go", "Golang Official Documentation"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "var name string = \"John\" // การประกาศตัวแปรแบบเต็มรูปแบบ",
+        "age := 30 // การประกาศแบบย่อ (Type Inference)"
+      ],
+      "types (ประเภท)": [
+        "int // จำนวนเต็ม",
+        "int8 // จำนวนเต็ม 8 บิต",
+        "int16 // จำนวนเต็ม 16 บิต",
+        "int32 // จำนวนเต็ม 32 บิต",
+        "int64 // จำนวนเต็ม 64 บิต",
+        "uint // จำนวนเต็มบวก",
+        "uint8 // จำนวนเต็มบวก 8 บิต",
+        "uint16 // จำนวนเต็มบวก 16 บิต",
+        "uint32 // จำนวนเต็มบวก 32 บิต",
+        "uint64 // จำนวนเต็มบวก 64 บิต",
+        "float32 // ทศนิยมความแม่นยำเดี่ยว",
+        "float64 // ทศนิยมความแม่นยำคู่",
+        "bool // ค่าความจริง (true/false)",
+        "string // ข้อความ",
+        "array // อาร์เรย์ (ขนาดคงที่)",
+        "slice // สไลซ์ (อาร์เรย์ยืดหยุ่น)",
+        "map // แผนที่ (Key-Value pairs)",
+        "struct // โครงสร้างข้อมูล (คล้าย Class แต่ไม่มีเมธอดในตัว)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "var message string = \"Hello Go!\" // กำหนดตัวแปร message เป็นสตริง",
+          "count := 100 // กำหนดตัวแปร count เป็นตัวเลขด้วย := (การประกาศแบบย่อ)",
+          "isActive := true // กำหนดตัวแปร isActive เป็น boolean",
+          "var numbers [3]int // ประกาศอาร์เรย์ขนาด 3 ของ int\nnumbers[0] = 1\nnumbers[1] = 2\nnumbers[2] = 3",
+          "colors := []string{\"red\", \"green\", \"blue\"} // ประกาศและกำหนดค่า slice",
+          "user := map[string]string{\"name\": \"Alice\", \"city\": \"Wonderland\"} // ประกาศและกำหนดค่า map",
+          "type Person struct { Name string; Age int } // การประกาศ struct\np1 := Person{Name: \"Bob\", Age: 25} // การสร้าง instance ของ struct"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "func functionName(param1 type) returnType { /* ... */ } // การประกาศฟังก์ชันทั่วไป"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nfunc add(a, b int) int {\n  return a + b\n}\n",
+          "// ฟังก์ชันทักทาย\nfunc greet(name string) string {\n  return fmt.Sprintf(\"Hello, %s!\", name)\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nresult := add(10, 20) // result จะมีค่า 30\nmessage := greet(\"Gopher\") // message จะมีค่า 'Hello, Gopher!'\n",
+          "// ฟังก์ชันที่คืนค่าหลายค่า\nfunc swap(x, y string) (string, string) {\n  return y, x\n}\na, b := swap(\"hello\", \"world\") // a = \"world\", b = \"hello\"\n",
+          "// ฟังก์ชันนิรนาม (Anonymous Function) และ Closure\nfunc makeGreeter(greeting string) func(name string) string {\n  return func(name string) string {\n    return greeting + \" \" + name + \"!\"\n  }\n}\nenglishGreeter := makeGreeter(\"Hello\")\nspanishGreeter := makeGreeter(\"Hola\")\nfmt.Println(englishGreeter(\"Alice\")) // Hello Alice!\nfmt.Println(spanishGreeter(\"Bob\")) // Hola Bob!\n",
+          "// เมธอดบน Struct (Method on Struct)\ntype Rectangle struct {\n  Width, Height float64\n}\nfunc (r Rectangle) Area() float64 {\n  return r.Width * r.Height\n}\nrect := Rectangle{Width: 10, Height: 5}\nfmt.Println(\"Area:\", rect.Area()) // Area: 50\n",
+          "// Asynchronous Programming (Concurrency) ด้วย Goroutine\n// Go จัดการ Concurrency ผ่าน Goroutines (lightweight threads) และ Channels\n// ตัวอย่างนี้แสดงการทำงานแบบ Concurrency โดยไม่บล็อกการทำงานหลัก\nfunc doSomething(message string) {\n  for i := 0; i < 3; i++ {\n    fmt.Println(message)\n    time.Sleep(time.Millisecond * 100) // หน่วงเวลาชั่วคราว\n  }\n}\n// การเรียกใช้ Goroutine (ต้อง import \"time\")\n// go doSomething(\"Hello from Goroutine!\")\n// fmt.Println(\"Main function continues...\")\n// time.Sleep(time.Second) // รอให้ Goroutine ทำงานจนเสร็จก่อนโปรแกรมหลักจบ"
+      ],
+      "built_in (ในตัว)": [
+        "fmt.Println() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "make() // ใช้สร้าง slice, map, channel",
+        "len() // ใช้หาความยาวของ slice, array, string, map, channel",
+        "append() // ใช้เพิ่มสมาชิกใน slice",
+        "copy() // ใช้คัดลอกข้อมูลจาก slice หนึ่งไปอีก slice หนึ่ง",
+        "cap() // ใช้หาความจุของ slice, array, channel",
+        "new() // ใช้จัดสรรหน่วยความจำสำหรับประเภทข้อมูล (คืนค่า pointer)",
+        "close() // ใช้ปิด channel",
+        "panic() // ใช้ทำให้โปรแกรมหยุดทำงานและแสดง error",
+        "recover() // ใช้ดักจับ panic"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if condition { /* ... */ } else if condition { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for initialization; condition; post { /* ... */ } // ลูป for แบบดั้งเดิม (คล้าย C/C++)",
+        "for condition { /* ... */ } // ลูป for แบบ While",
+        "for { /* ... */ } // Infinite loop (ลูปไม่รู้จบ)",
+        "for index, value := range collection { /* ... */ } // Range-based for loop สำหรับวนซ้ำ Slice, Array, Map, String, Channel"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+        "Bitwise: &, |, ^, ~ (XOR), <<, >> // ตัวดำเนินการบิตไวส์",
+        "& // Address-of Operator (หาที่อยู่หน่วยความจำ)",
+        "* // Dereference Operator (เข้าถึงค่าผ่าน Pointer)",
+        "<- // Channel Operator (ส่ง/รับข้อมูลผ่าน Channel)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\npackage main\nimport \"fmt\"\nfunc main() {\n  age := 18\n  if age >= 18 {\n    fmt.Println(\"Adult\")\n  } else {\n    fmt.Println(\"Minor\")\n  }\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\npackage main\nimport \"fmt\"\nfunc main() {\n  for i := 0; i < 3; i++ {\n    fmt.Println(\"Loop Go:\", i)\n  }\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\npackage main\nimport \"fmt\"\nfunc main() {\n  day := \"Monday\"\n  switch day {\n  case \"Monday\":\n    fmt.Println(\"Start of the week.\")\n  case \"Friday\":\n    fmt.Println(\"End of the week!\")\n  default:\n    fmt.Println(\"Mid-week.\")\n  }\n}\n",
+          "// ตัวอย่างที่ 4: การจัดการ Error\npackage main\nimport (\"errors\"; \"fmt\")\nfunc divide(a, b float64) (float64, error) {\n  if b == 0 {\n    return 0, errors.New(\"cannot divide by zero\")\n  }\n  return a / b, nil\n}\nfunc main() {\n  result, err := divide(10, 2)\n  if err != nil {\n    fmt.Println(\"Error:\", err)\n  } else {\n    fmt.Println(\"Result:\", result)\n  }\n  result, err = divide(10, 0)\n  if err != nil {\n    fmt.Println(\"Error:\", err)\n  }\n}\n",
+          "// ตัวอย่างที่ 5: การใช้งาน Slice (Dynamic Array)\npackage main\nimport \"fmt\"\nfunc main() {\n  numbers := []int{1, 2, 3, 4, 5}\n  fmt.Println(\"Original slice:\", numbers)\n  numbers = append(numbers, 6) // เพิ่มสมาชิก\n  fmt.Println(\"After append:\", numbers)\n  // การวนซ้ำด้วย range\n  for i, num := range numbers {\n    fmt.Printf(\"Index %d, Value %d\\n\", i, num)\n  }\n}\n",
+          "// ตัวอย่างที่ 6: การใช้งาน Goroutines และ Channels\npackage main\nimport (\"fmt\"; \"time\")\nfunc worker(done chan bool) {\n  fmt.Println(\"Worker: Starting...\")\n  time.Sleep(time.Second) // จำลองการทำงาน\n  fmt.Println(\"Worker: Done!\")\n  done <- true // ส่งสัญญาณว่าเสร็จสิ้น\n}\nfunc main() {\n  done := make(chan bool, 1)\n  go worker(done) // รัน worker เป็น Goroutine\n  fmt.Println(\"Main: Waiting for worker...\")\n  <-done // รอรับสัญญาณจาก worker\n  fmt.Println(\"Main: Worker finished.\")\n}"
+      ]
+  }
+}

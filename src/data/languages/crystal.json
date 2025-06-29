@@ -1,0 +1,116 @@
+{
+  "id": 46,
+  "name": "Crystal",
+  "slug": "crystal",
+  "logo": "img/crystal.png",
+  "desc": "Crystal เป็นภาษาโปรแกรม Statically-typed, Compiled ที่เน้นความเร็ว, ประสิทธิภาพ และไวยากรณ์ที่อ่านง่าย (คล้าย Ruby) ออกแบบมาเพื่อเป็นทางเลือกที่มีประสิทธิภาพสูงสำหรับ Ruby เหมาะสำหรับ Web Development, Command-line Tools และ System Programming",
+  "by": "Ary Borenszweig, Juan Wajnerman, Brian Cardiff",
+  "yr": "2014 (เปิดตัวครั้งแรก)",
+  "level": "4",
+  "par": ["Object-Oriented", "Imperative", "Functional"],
+  "fields": ["System", "Backend"],
+  "rank": "ยังไม่ติดอันดับหลัก (กำลังเติบโตใน Niche Performance)",
+  "salary_range": "฿38,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "ประสิทธิภาพสูง (ใกล้เคียง C/C++/Go)",
+    "ไวยากรณ์ที่สะอาดและอ่านง่าย (คล้าย Ruby)",
+    "มี Type Inference ที่แข็งแกร่ง (ไม่ต้องระบุ Type มากเกินไป)",
+    "คอมไพล์เป็น Native Code ทำให้รันได้เร็ว",
+    "มี Macro System ที่ทรงพลังสำหรับการ Metaprogramming",
+    "Concurrency ด้วย Fibers (คล้าย Goroutines)"
+  ],
+  "cons": [
+    "Learning Curve อาจสูงสำหรับผู้ที่ไม่คุ้นเคยกับ Type System หรือ Functional Programming",
+    "ชุมชนนักพัฒนาเล็กกว่าภาษาหลัก",
+    "Library และ Frameworks ยังไม่หลากหลายเท่าภาษาที่มีมานาน",
+    "เวลาในการคอมไพล์สำหรับโปรเจกต์ขนาดใหญ่อาจใช้เวลา",
+    "การดีบักอาจท้าทายในบางกรณี"
+  ],
+  "frameworks": ["Kemal (Web Framework)", "Amber (Web Framework)", "Lucky (Web Framework)"],
+  "learn": ["Crystal-Lang.org Official Documentation", "Crystal by Example", "The Crystal Book", "DevDocs Crystal"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "var my_var = 10 // ตัวแปรที่เปลี่ยนแปลงได้ (Mutable), Type Inference",
+      "val my_const = \"Hello\" // ค่าคงที่ (Immutable, Type Inference)",
+      "my_var: Int32 = 100 // การระบุ Type ชัดเจน"
+    ],
+    "types (ประเภท)": [
+      "Int32, Int64 // จำนวนเต็ม (มีขนาดบิตต่างกัน)",
+      "Float32, Float64 // ทศนิยม (ความแม่นยำต่างกัน)",
+      "Bool // ค่าตรรกะ (true/false)",
+      "Char // ตัวอักขระ",
+      "String // ข้อความ",
+      "Array(T) // อาร์เรย์ (เช่น Array(Int32))",
+      "Hash(K, V) // Hash (Key-Value pairs)",
+      "Tuple // Tuple (กลุ่มของค่าที่มีประเภทต่างกันได้)",
+      "Enum // Enumeration Type",
+      "Struct // โครงสร้างข้อมูล (คล้าย Structs ใน C)",
+      "Class // คลาส (สำหรับ Object-Oriented)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "name = \"Crystal\" // กำหนดตัวแปร name เป็นสตริง",
+      "version = 1.0 // กำหนดตัวแปร version เป็นทศนิยม",
+      "is_ready = true // กำหนดตัวแปร is_ready เป็น Boolean",
+      "numbers = [1, 2, 3] // สร้าง Array ของตัวเลข",
+      "user = {name: \"Alice\", age: 30} // สร้าง Hash (Key เป็น Symbol หรือ String ได้)",
+      "point = {10, 20} // สร้าง Tuple"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "def function_name(param1, param2)\n  # ... code ...\nend // การประกาศฟังก์ชัน/เมธอด",
+      "->(a, b) { a + b } // Lambda / Block (ฟังก์ชันนิรนาม)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\ndef add(a, b)\n  a + b\nend\n",
+      "// ฟังก์ชันทักทาย\ndef greet(name)\n  puts \"Hello, #{name}!\"\nend\n",
+      "// การเรียกใช้ฟังก์ชัน:\n# sum = add(5, 5) # sum จะมีค่า 10\n# greet(\"Crystal User\") # แสดงผล 'Hello, Crystal User!'\n",
+      "// ฟังก์ชันที่มี Optional Parameters และ Named Arguments\ndef create_message(msg, prefix = \"Info\", suffix = \"!\")\n  \"#{prefix}: #{msg}#{suffix}\"\nend\n# puts create_message(\"Task complete\") # Info: Task complete!\n# puts create_message(\"Error occurred\", prefix: \"ERROR\", suffix: \"!!!\") # ERROR: Error occurred!!!\n",
+      "// Asynchronous Programming (Fibers)\n// Crystal รองรับ Concurrency ผ่าน Fibers ซึ่งเป็น Lightweight Concurrent Primitives\n// สามารถใช้ 'spawn' เพื่อรันโค้ดใน Fiber ใหม่ได้\n\n# def long_task(name)\n#   puts \"#{name}: Starting long task...\"\n#   sleep 1 # จำลองการทำงานที่ใช้เวลา\n#   puts \"#{name}: Finished long task!\"\n# end\n\n# puts \"Main: Before spawning tasks.\"\n# spawn long_task(\"Task A\") # รันใน Fiber ใหม่\n# spawn long_task(\"Task B\") # รันใน Fiber ใหม่\n# puts \"Main: After spawning tasks. Waiting...\"\n# sleep 2 # รอให้ Fibers ทำงานจนเสร็จก่อนโปรแกรมหลักจะจบ\n# puts \"Main: All tasks completed.\""
+    ],
+    "built_in (ในตัว)": [
+      "puts // ใช้แสดงผลข้อมูลออกทาง Console (พร้อมขึ้นบรรทัดใหม่)",
+      "print // ใช้แสดงผลข้อมูลออกทาง Console (ไม่ขึ้นบรรทัดใหม่)",
+      "gets // ใช้รับข้อมูลจากผู้ใช้งาน",
+      "Array.new // สร้าง Array ใหม่",
+      "String.size // หาความยาวของสตริง",
+      "Hash.new // สร้าง Hash ใหม่",
+      "spawn // ใช้สำหรับ Concurrency (Fibers)",
+      "raise // ใช้สำหรับโยน Exception"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single line comment // คอมเมนต์บรรทัดเดียว",
+      "# Multi-line\n# comment // คอมเมนต์หลายบรรทัด (ใช้ # ในทุกบรรทัด)",
+      "#= Multi-line comment =# // คอมเมนต์หลายบรรทัด (คล้าย Pod-style ใน Perl)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition\n  # ... code ...\nelsif another_condition\n  # ... code ...\nelse\n  # ... code ...\nend // คำสั่ง if-elsif-else (เป็น Expression)",
+      "case expression\nwhen value1 then\n  # ... code ...\nwhen value2 then\n  # ... code ...\nelse\n  # ... code ...\nend // คำสั่ง case (คล้าย Switch)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for item in collection\n  # ... code ...\nend // ลูป for (วนซ้ำ Collection)",
+      "while condition\n  # ... code ...\nend // ลูป while",
+      "loop\n  # ... code ...\n  break if condition # ออกจากลูป\nend // Infinite loop (ลูปไม่รู้จบ) พร้อมเงื่อนไขออก",
+      "collection.each { |item| # ... } // Iterator 'each' (สำหรับ Side Effects)",
+      "collection.map { |item| # ... } // Iterator 'map' (สำหรับสร้าง Array ใหม่)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "String Concatenation: + // ตัวดำเนินการเชื่อมสตริง"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nscore = 75\nif score >= 90\n  puts \"Grade A\"\nelsif score >= 70\n  puts \"Grade B\"\nelse\n  puts \"Grade C\"\nend\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for\nnumbers = [10, 20, 30]\nfor num in numbers\n  puts \"Number: #{num}\"\nend\n",
+      "// ตัวอย่างที่ 3: การใช้ Case Statement\nstatus = :active\ncase status\nwhen :active\n  puts \"User is active.\"\nwhen :inactive\n  puts \"User is inactive.\"\nelse\n  puts \"Unknown status.\"\nend\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Class และ Object-Oriented Programming (OOP)\nclass Greeter\n  def initialize(@name)\n  end\n\n  def greet\n    puts \"Hello, #{@name}!\"\n  end\nend\n\nmy_greeter = Greeter.new(\"Object\")\nmy_greeter.greet # แสดงผล 'Hello, Object!'\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\nbegin\n  result = 10 / 0 # จะเกิด DivisionByZeroError\n  puts \"Result: #{result}\"\nrescue DivisionByZeroError => e\n  puts \"Error: #{e.message}\"\nrescue e\n  puts \"An unexpected error occurred: #{e.message}\"\nensure\n  puts \"Execution finished.\"\nend\n",
+      "// ตัวอย่างที่ 6: การทำงานกับ Array และ Hash\nfruits = [\"Apple\", \"Banana\", \"Cherry\"]\nfruits << \"Date\" # เพิ่มสมาชิก\nputs \"Fruits: #{fruits}\"\n\nuser_data = {\"name\" => \"John\", \"age\" => 30}\nuser_data[\"city\"] = \"New York\" # เพิ่ม Key-Value ใหม่\nputs \"User Data: #{user_data}\"\n"
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "id": 55,
+  "name": "OpenCL",
+  "slug": "opencl",
+  "logo": "img/opencl.png",
+  "desc": "OpenCL (Open Computing Language) เป็นเฟรมเวิร์กมาตรฐานแบบเปิด (Open Standard) สำหรับการเขียนโปรแกรมแบบขนาน (Parallel Programming) บนแพลตฟอร์มต่าง ๆ รวมถึง CPUs, GPUs, DSPs และ FPGAs ช่วยให้นักพัฒนาสามารถเขียนโปรแกรมที่สามารถทำงานบนฮาร์ดแวร์ที่หลากหลายได้เพื่อเร่งประสิทธิภาพการประมวลผล เหมาะสำหรับงานด้าน Scientific Computing, Image Processing, Machine Learning และ Financial Modeling",
+  "by": "Apple Inc. (original proposal to Khronos Group)",
+  "yr": "2008",
+  "level": "1",
+  "par": ["Parallel Programming", "Imperative", "Low-level"],
+  "fields": ["HPC", "Scientific"],
+  "rank": "เป็นมาตรฐานสำหรับ GPGPU (General-Purpose computing on Graphics Processing Units) ข้ามแพลตฟอร์ม",
+  "salary_range": "฿45,000-85,000 บาท/เดือน (Junior), ฿85,000-160,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "รองรับฮาร์ดแวร์ได้หลากหลาย (Cross-platform) ทั้ง CPU, GPU, FPGA จากผู้ผลิตต่าง ๆ",
+    "เพิ่มประสิทธิภาพการประมวลผลด้วยการใช้ Parallel Computing",
+    "เป็น Open Standard ทำให้ไม่มีข้อจำกัดด้าน Vendor Lock-in",
+    "เหมาะสำหรับงานที่ต้องการการคำนวณจำนวนมากและสามารถทำแบบขนานได้",
+    "สามารถทำงานร่วมกับภาษาโปรแกรมหลัก ๆ (C/C++, Python)"
+  ],
+  "cons": [
+    "Learning Curve สูงมาก (ต้องเข้าใจ Parallel Programming และสถาปัตยกรรมฮาร์ดแวร์)",
+    "การจัดการ Memory และ Synchronization ซับซ้อน",
+    "การดีบักและการ Optimize โค้ดทำได้ยาก",
+    "ประสิทธิภาพอาจแตกต่างกันไปในแต่ละ Vendor/Hardware",
+    "โค้ดมีความซับซ้อนและใช้เวลานานในการพัฒนา"
+  ],
+  "frameworks": ["None (เป็น API มาตรฐาน)", "Libraries/SDKs จากผู้ผลิต Hardware (Intel, AMD, NVIDIA)"],
+  "learn": ["Khronos OpenCL Website", "OpenCL Programming Guide (book)", "Udemy/Coursera OpenCL courses", "AMD/Intel/NVIDIA Developer Resources"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "__kernel void kernel_name(__global int* data); // การประกาศ Kernel (ฟังก์ชันที่รันบน Device)",
+      "cl_mem buffer; // Object สำหรับ Memory Buffer บน Device",
+      "cl_program program; // Object สำหรับ OpenCL Program",
+      "cl_kernel kernel; // Object สำหรับ OpenCL Kernel"
+    ],
+    "types (ประเภท)": [
+      "char, short, int, long // ประเภทข้อมูลจำนวนเต็ม",
+      "uchar, ushort, uint, ulong // ประเภทข้อมูลจำนวนเต็มแบบไม่มีเครื่องหมาย",
+      "float, double // ประเภทข้อมูลทศนิยม",
+      "__global // Address space qualifier สำหรับ Global Memory",
+      "__local // Address space qualifier สำหรับ Local Memory (Shared Memory ใน Work-group)",
+      "__constant // Address space qualifier สำหรับ Constant Memory",
+      "__private // Address space qualifier สำหรับ Private Memory (ใน Thread)",
+      "size_t // ประเภทข้อมูลสำหรับขนาดและ Index",
+      "cl_context // Object สำหรับ OpenCL Context",
+      "cl_command_queue // Object สำหรับ Command Queue",
+      "cl_device_id // Object สำหรับ Device ID"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ในไฟล์ .cl (OpenCL Kernel file)\n// __kernel void add_vectors(__global float* a, __global float* b, __global float* c, int N) {\n//   int idx = get_global_id(0);\n//   if (idx < N) {\n//     c[idx] = a[idx] + b[idx];\n//   }\n// }\n//",
+      "// ใน Host Code (C/C++ file)\n// cl_context context; // OpenCL Context\n// cl_command_queue queue; // Command Queue\n// cl_program program; // OpenCL Program\n// cl_kernel kernel; // OpenCL Kernel\n// cl_mem bufferA, bufferB, bufferC; // Memory Buffers\n// cl_uint num_platforms; clGetPlatformIDs(0, NULL, &num_platforms); // การดึงข้อมูล Platform"
+    ]
+  },
+  "functions": {
+    "declaration (การประมวลผลแบบขนานบน Device)": [
+      "__kernel void kernel_name(parameters) { /* ... */ } // Kernel Function (รันบน Device)",
+      "clCreateBuffer(context, flags, size, host_ptr, errcode_ret); // ฟังก์ชันสำหรับจัดสรร Memory Buffer บน Device",
+      "clEnqueueNDRangeKernel(queue, kernel, work_dim, global_work_offset, global_work_size, local_work_size, event_wait_list, event); // ฟังก์ชันสำหรับ Launch Kernel"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// การประกาศ Kernel สำหรับ Vector Addition (ในไฟล์ .cl)\n// __kernel void vector_add(__global const float* A, __global const float* B, __global float* C, int num_elements)\n// {\n//    int gid = get_global_id(0); // ได้ Global ID ของ Work-item\n//    if (gid < num_elements)\n//    {\n//        C[gid] = A[gid] + B[gid];\n//    }\n// }\n//",
+      "// การเรียกใช้ Kernel จาก Host (ในไฟล์ .c/.cpp)\n// // กำหนดขนาด Global และ Local Work-size\n// size_t global_item_size = N; // จำนวนรวมของ Work-items\n// size_t local_item_size = 256; // จำนวน Work-items ต่อ Work-group\n//\n// // Launch Kernel\n// cl_event event;\n// clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_item_size, &local_item_size, 0, NULL, &event);\n// clWaitForEvents(1, &event); // รอให้ Kernel ทำงานเสร็จ\n"
+    ],
+    "built_in (ในตัว)": [
+      "get_global_id(dim) // ได้ Global ID ของ Work-item ในมิติที่ระบุ",
+      "get_local_id(dim) // ได้ Local ID ของ Work-item ภายใน Work-group",
+      "get_group_id(dim) // ได้ Group ID ของ Work-group",
+      "get_global_size(dim) // ได้ขนาดรวมของ Work-items ในมิติที่ระบุ",
+      "get_local_size(dim) // ได้ขนาดของ Work-group ในมิติที่ระบุ",
+      "barrier(flags) // Synchronize Work-items ภายใน Work-group",
+      "atomic_add() // Atomic Operation (สำหรับ Shared Memory)",
+      "async_work_group_copy() // คัดลอกข้อมูลแบบ Asynchronous ภายใน Work-group",
+      "printf() // (OpenCL 2.0+) ใช้แสดงผลใน Kernel (สำหรับ Debugging)",
+      "clamp() // จำกัดค่าให้อยู่ในช่วงที่กำหนด"
+    ],
+    "async (Asynchronous Operations)": [
+      "clEnqueueReadBuffer() // อ่านข้อมูลจาก Device Buffer ไป Host (สามารถเป็น Blocking/Non-blocking)",
+      "clEnqueueWriteBuffer() // เขียนข้อมูลจาก Host ไป Device Buffer (สามารถเป็น Blocking/Non-blocking)",
+      "clEnqueueNDRangeKernel() // Launch Kernel (เป็น Non-blocking โดยธรรมชาติ)",
+      "clFinish() // บล็อกจนกว่า Command ทั้งหมดใน Command Queue จะเสร็จสิ้น",
+      "clWaitForEvents() // บล็อกจนกว่า Event ที่ระบุจะเสร็จสิ้น"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว (เหมือน C)",
+      "/* Multi-line comment */ // คอมเมนต์หลายบรรทัด (เหมือน C)"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else (ใน Kernel หรือ Host Code)",
+      "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch (ใน Kernel หรือ Host Code)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (int i = 0; i < N; i++) { /* ... */ } // ลูป for (ใน Kernel หรือ Host Code)",
+      "while (condition) { /* ... */ } // ลูป while (ใน Kernel หรือ Host Code)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+      "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+      "Bitwise: &, |, ^, ~, <<, >> // ตัวดำเนินการบิตไวส์",
+      "// Pointers and Address-of operators used similar to C/C++"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else ใน Kernel\\n// __kernel void process_threshold(__global float* input, __global float* output, float threshold) {\\n//   int gid = get_global_id(0);\\n//   if (input[gid] > threshold) {\\n//     output[gid] = 1.0f;\\n//   } else {\\n//     output[gid] = 0.0f;\\n//   }\\n// }\\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For ใน Kernel\\n// __kernel void sum_array(__global const int* input, __local int* temp_sum, __global int* output) {\\n//   int lid = get_local_id(0);\\n//   int gid = get_global_id(0);\\n//   int group_size = get_local_size(0);\\n//   \\n//   temp_sum[lid] = input[gid];\\n//   barrier(CLK_LOCAL_MEM_FENCE); // Synchronize within work-group\\n//   \\n//   for (int offset = group_size / 2; offset > 0; offset /= 2) {\\n//     if (lid < offset) {\\n//       temp_sum[lid] += temp_sum[lid + offset];\\n//     }\\n//     barrier(CLK_LOCAL_MEM_FENCE);\\n//   }\\n//   \\n//   if (lid == 0) {\\n//     output[get_group_id(0)] = temp_sum[0];\\n//   }\\n// }\\n",
+      "// ตัวอย่างที่ 3: การจัดการ Memory และ Context ใน Host Code\\n// cl_platform_id platform_id = NULL;\\n// cl_device_id device_id = NULL;\\n// cl_context context = NULL;\\n// cl_command_queue command_queue = NULL;\\n// cl_int ret;\\n\\n// // 1. เลือก Platform และ Device\\n// ret = clGetPlatformIDs(1, &platform_id, NULL);\\n// ret = clGetDeviceIDs(platform_id, CL_DEVICE_TYPE_GPU, 1, &device_id, NULL);\\n\\n// // 2. สร้าง Context\\n// context = clCreateContext(NULL, 1, &device_id, NULL, NULL, &ret);\\n\\n// // 3. สร้าง Command Queue\\n// command_queue = clCreateCommandQueue(context, device_id, 0, &ret);\\n\\n// // 4. สร้าง Memory Buffer (ตัวอย่าง)\\n// float h_data[] = {1.0f, 2.0f, 3.0f, 4.0f};\\n// cl_mem d_data = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(h_data), h_data, &ret);\\n",
+      "// ตัวอย่างที่ 4: การโหลดและคอมไพล์ OpenCL Program (ใน Host Code)\\n// // อ่าน Kernel Source Code จากไฟล์\\n// FILE *fp;\\n// char *source_str;\\n// size_t source_size;\\n// fp = fopen(\"kernel.cl\", \"r\");\\n// if (!fp) { /* handle error */ }\\n// source_str = (char*)malloc(MAX_SOURCE_SIZE);\\n// source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);\\n// fclose(fp);\\n\\n// // สร้าง Program จาก Source Code\\n// cl_program program = clCreateProgramWithSource(context, 1, (const char **)&source_str, (const size_t *)&source_size, &ret);\\n\\n// // คอมไพล์ Program\\n// ret = clBuildProgram(program, 1, &device_id, NULL, NULL, NULL);\\n// if (ret != CL_SUCCESS) { /* check build log for errors */ }\\n\\n// // สร้าง Kernel\\n// cl_kernel kernel = clCreateKernel(program, \"vector_add\", &ret);\\n"
+    ]
+  }
+}

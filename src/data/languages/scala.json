@@ -1,0 +1,121 @@
+{
+  "id": 17,
+  "name": "Scala",
+  "slug": "scala",
+  "logo": "img/scala.png",
+  "desc": "Scala เป็นภาษาโปรแกรม Multi-paradigm ที่ทำงานบน JVM (Java Virtual Machine) ผสมผสานคุณสมบัติของ Object-Oriented และ Functional Programming ได้อย่างลงตัว เหมาะสำหรับ Big Data, Web Backend และ Distributed Systems",
+  "by": "Martin Odersky",
+  "yr": "2004",
+  "level": "3",
+  "par": ["Object-Oriented", "Functional", "Concurrent"],
+  "fields": ["Backend", "Data", "Finance", "Distributed"],
+  "rank": "20-25 แข็งแกร่งใน Big Data (2.1% แต่เงินเดือนสูง)",
+  "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-125,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high", "veryhigh"],
+  "pros": [
+      "ทำงานร่วมกับ Java ได้ดีเยี่ยม",
+      "รองรับ Functional Programming ที่ทรงพลัง",
+      "เหมาะสำหรับ Big Data ด้วย Apache Spark",
+      "มี Type System ที่ยืดหยุ่นและปลอดภัย",
+      "สามารถเขียนโค้ดที่กระชับและแสดงออกได้ดี"
+  ],
+  "cons": [
+      "Learning Curve สูงมาก",
+      "เวลาในการคอมไพล์ค่อนข้างนาน",
+      "Error Messages อาจเข้าใจยากสำหรับผู้เริ่มต้น",
+      "Syntax ที่ซับซ้อนและหลายรูปแบบ",
+      "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาหลัก"
+  ],
+  "frameworks": ["Play Framework", "Akka", "Apache Spark"],
+  "learn": ["Scala Documentation", "Scala Book", "Coursera: Functional Programming in Scala", "Rock the JVM"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "val name: String = \"Scala\"; // ค่าคงที่ (Immutable)",
+        "var age: Int = 10; // ตัวแปรที่เปลี่ยนแปลงได้ (Mutable)"
+      ],
+      "types (ประเภท)": [
+        "Int // จำนวนเต็ม",
+        "Long // จำนวนเต็มขนาดใหญ่",
+        "Float // ทศนิยมความแม่นยำเดี่ยว",
+        "Double // ทศนิยมความแม่นยำคู่",
+        "Boolean // ค่าจริงหรือเท็จ (true/false)",
+        "Char // ตัวอักขระ",
+        "String // ข้อความ",
+        "List[T] // รายการ (Immutable)",
+        "Vector[T] // Vector (Immutable, มีประสิทธิภาพในการเข้าถึง Random)",
+        "Map[K, V] // แผนที่ (Key-Value pairs, Immutable)",
+        "Set[T] // เซต (ชุดของค่าที่ไม่ซ้ำกัน, Immutable)",
+        "Option[T] // ประเภทข้อมูลที่อาจมีค่าหรือไม่ก็ได้ (Some(T) หรือ None)",
+        "Unit // ประเภทที่ไม่มีค่าคืนกลับ (คล้าย void ใน Java)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "val message = \"Hello Scala!\" // กำหนดค่าคงที่ message เป็นสตริง",
+          "var counter = 0 // กำหนดตัวแปร counter เป็นตัวเลข",
+          "val pi = 3.14159 // กำหนดค่าคงที่ pi เป็น Double (Type Inference)",
+          "val numbers = List(1, 2, 3) // กำหนด List ของตัวเลข",
+          "var mutableList = scala.collection.mutable.ListBuffer(\"apple\", \"banana\") // กำหนด Mutable List",
+          "val userMap = Map(\"name\" -> \"Alice\", \"age\" -> 25) // กำหนด Map"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "def functionName(param: Type): ReturnType = { /* ... */ } // การประกาศฟังก์ชัน/เมธอด",
+        "(param: Type) => expression // Anonymous function / Lambda (ฟังก์ชันนิรนาม)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\ndef add(a: Int, b: Int): Int = a + b\n",
+          "// ฟังก์ชันทักทาย\ndef greet(name: String): Unit = println(s\"Hello, $name!\")\n",
+          "// การเรียกใช้ฟังก์ชัน\nval total = add(10, 10) // total จะมีค่า 20\ngreet(\"Spark\") // แสดงผล 'Hello, Spark!'\n",
+          "// ฟังก์ชันที่มี Default Arguments และ Named Arguments\ndef calculateVolume(length: Int, width: Int = 1, height: Int = 1): Int = {\n  length * width * height\n}\nprintln(calculateVolume(10)) // 10\nprintln(calculateVolume(10, height = 5)) // 50 (ใช้ Named Arguments)\n",
+          "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\ndef operate(a: Int, b: Int, operation: (Int, Int) => Int): Int = {\n  operation(a, b)\n}\nval result = operate(5, 3, (x, y) => x * y) // Result: 15\nprintln(s\"Operate Result: $result\")\n",
+          "// Curried Function (ฟังก์ชันที่รับ Argument ทีละชุด)\ndef sumCurried(x: Int)(y: Int): Int = x + y\nval addFive = sumCurried(5)_ // Partial Application\nprintln(s\"Curried Sum: ${addFive(10)}\") // Curried Sum: 15\n",
+          "// Asynchronous Programming (Futures)\n// Scala จัดการ Asynchronous Programming ด้วย Futures ซึ่งเป็น Immutable Object ที่แสดงถึงผลลัพธ์ของการคำนวณที่อาจจะยังไม่เสร็จสิ้น\n// ต้องมีการ import และใช้งาน ExecutionContext\n// import scala.concurrent.{Future, Await}\n// import scala.concurrent.ExecutionContext.Implicits.global\n// import scala.concurrent.duration._\n//\n// def fetchData(): Future[String] = Future {\n//   println(\"Fetching data...\")\n//   Thread.sleep(1000) // จำลองการหน่วงเวลา 1 วินาที\n//   println(\"Data fetched!\")\n//   \"Data fetched asynchronously\"\n// }\n//\n// // ตัวอย่างการเรียกใช้ Future และรอผลลัพธ์\n// val futureResult: Future[String] = fetchData()\n// println(\"Main thread continues...\")\n// // บล็อกการทำงานของ Main thread ชั่วคราวเพื่อรอผลลัพธ์ (ไม่แนะนำใน Production)\n// val result = Await.result(futureResult, 2.seconds)\n// println(s\"Received: $result\")"
+      ],
+      "built_in (ในตัว)": [
+        "println() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "List() // ใช้สร้าง List (Immutable)",
+        "Map() // ใช้สร้าง Map (Immutable)",
+        "Option // ใช้จัดการค่าที่อาจมีหรือไม่มี (Some/None)",
+        "Try // ใช้จัดการผลลัพธ์ที่อาจสำเร็จหรือล้มเหลว (Success/Failure)",
+        "Future // ใช้จัดการการคำนวณแบบ Asynchronous",
+        "filter() // เมธอดสำหรับกรองข้อมูลใน Collection",
+        "map() // เมธอดสำหรับแปลงข้อมูลใน Collection",
+        "reduce() // เมธอดสำหรับรวมข้อมูลใน Collection",
+        "foreach() // เมธอดสำหรับวนซ้ำ Collection"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "match expression { case value => /* ... */ case _ => /* ... */ } // คำสั่ง match (Pattern Matching) ที่ทรงพลัง"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (i <- 1 to 5) { /* ... */ } // ลูป for-in สำหรับ Range (รวมค่าสุดท้าย)",
+        "for (i <- 0 until 3) { /* ... */ } // ลูป for-in สำหรับ Range (ไม่รวมค่าสุดท้าย)",
+        "while (condition) { /* ... */ } // ลูป while",
+        "// Scala ไม่มี do-while loop โดยตรง แต่สามารถเลียนแบบได้ด้วย while true { ... if (condition) break }",
+        "collection.foreach { item => /* ... */ } // เมธอด foreach สำหรับวนซ้ำ Collection (นิยมใช้ใน Functional Style)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "-> // ใช้สำหรับ Key-Value pairs ใน Map (e.g., \"key\" -> value)",
+        "<- // Generator Arrow ใน for-comprehensions",
+        ":: // Cons operator (สำหรับเพิ่ม Element เข้าไปใน List)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else) และ If as Expression\nval temperature = 28\nval message = if (temperature > 30) {\n  \"Hot\"\n} else if (temperature < 10) {\n  \"Cold\"\n} else {\n  \"Normal\"\n}\nprintln(message) // แสดงผล 'Normal'\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) และ String Interpolation\nfor (i <- 0 until 3) {\n  println(s\"Loop Scala: $i\")\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Match Expression (Pattern Matching)\nval status = \"success\"\nval result = status match {\n  case \"success\" => \"Operation Successful\"\n  case \"error\" => \"Operation Failed\"\n  case _ => \"Unknown Status\" // Wildcard สำหรับค่าอื่นๆ ที่ไม่ได้ระบุ\n}\nprintln(result) // แสดงผล 'Operation Successful'\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Class และ Object-Oriented Programming (OOP)\nclass Dog(val name: String, var age: Int) { // Primary Constructor\n  def bark(): Unit = {\n    println(s\"$name says Woof!\")\n  }\n}\n// สร้าง Object จากคลาส Dog\nval myDog = new Dog(\"Buddy\", 3)\nmyDog.bark() // แสดงผล 'Buddy says Woof!'\nprintln(s\"Dog's age: ${myDog.age}\")\nmyDog.age = 4 // เปลี่ยนแปลงค่า age เพราะเป็น var\n\ntrait Greeter { // Trait (คล้าย Interface ใน Java)\n  def greet(name: String): Unit\n}\nclass EnglishGreeter extends Greeter { // Implement Trait\n  override def greet(name: String): Unit = {\n    println(s\"Hello, $name!\")\n  }\n}\nval greeter: Greeter = new EnglishGreeter()\ngreeter.greet(\"World\") // Hello, World!\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling) ด้วย Try-Catch-Finally\nimport scala.util.{Try, Success, Failure}\n\ndef divide(a: Int, b: Int): Try[Int] = Try {\n  a / b\n}\n\n// การใช้งาน Try\ndivide(10, 2) match {\n  case Success(value) => println(s\"Result: $value\")\n  case Failure(exception) => println(s\"Error: ${exception.getMessage}\")\n}\ndivide(10, 0) match {\n  case Success(value) => println(s\"Result: $value\")\n  case Failure(exception) => println(s\"Error: ${exception.getMessage}\")\n}\n\n// ตัวอย่าง Try-Catch-Finally แบบ Block\ntry {\n  val x = 10 / 0 // จะเกิด ArithmeticException\n  println(x)\n} catch {\n  case e: ArithmeticException => println(s\"Caught an error: ${e.getMessage}\")\n  case e: Exception => println(s\"An unexpected error occurred: ${e.getMessage}\")\n} finally {\n  println(\"Execution finished.\")\n}\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ Collections (List, Map) และ Functional Methods\nval fruits = List(\"Apple\", \"Banana\", \"Cherry\") // Immutable List\nprintln(s\"Fruits: $fruits\")\nval filteredFruits = fruits.filter(_.length > 5) // กรองคำที่ยาวกว่า 5 ตัวอักษร\nprintln(s\"Filtered fruits: $filteredFruits\") // List(Banana, Cherry)\n\nval upperFruits = fruits.map(_.toUpperCase) // แปลงเป็นตัวพิมพ์ใหญ่\nprintln(s\"Upper fruits: $upperFruits\") // List(APPLE, BANANA, CHERRY)\n\nval userMap = Map(\"name\" -> \"John\", \"age\" -> 30) // Immutable Map\nprintln(s\"User Map: $userMap\")\nval ageOption = userMap.get(\"age\") // ได้ Option[Int]\nageOption.foreach(age => println(s\"User age: $age\")) // User age: 30\n"
+      ]
+  }
+}

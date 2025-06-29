@@ -1,0 +1,106 @@
+{
+  "id": 47,
+  "name": "Zig",
+  "slug": "zig",
+  "logo": "img/zig.png",
+  "desc": "Zig เป็นภาษาโปรแกรมที่ออกแบบมาเพื่อให้เป็นทางเลือกแทน C โดยเน้นที่ประสิทธิภาพ ความปลอดภัย และความโปร่งใสในการจัดการหน่วยความจำ เหมาะสำหรับงานระดับล่าง เช่น ระบบปฏิบัติการ, Embedded, และ Game Engine",
+  "by": "Andrew Kelley",
+  "yr": "2015",
+  "level": "5",
+  "par": ["Procedural", "Imperative", "Low-level", "No Hidden Control Flow"],
+  "fields": ["System", "OS", "Game"],
+  "rank": "Top 5 ภาษาเกิดใหม่สาย Systems Programming",
+  "salary_range": "฿50,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high", "veryhigh"],
+  "pros": [
+    "ไม่มี hidden control flow (ทำให้เข้าใจ flow ได้ชัดเจน)",
+    "แทนที่ C ได้โดยตรงและมี performance ใกล้เคียง",
+    "Built-in dependency management และ cross-compilation",
+    "ใช้เป็น compiler frontend แทน GCC/Clang ได้ (zig cc)",
+    "เหมาะสำหรับ embedded, OS-level และ high-performance system"
+  ],
+  "cons": [
+    "ยังไม่เป็นที่นิยมในวงกว้าง",
+    "เครื่องมือและ IDE รองรับยังน้อยเมื่อเทียบกับภาษาอื่น",
+    "การเรียนรู้สำหรับผู้เริ่มต้นอาจชันกว่าภาษา high-level",
+    "ไม่มี garbage collection ต้องจัดการ memory เองทั้งหมด"
+  ],
+  "frameworks": ["Zon (Package Manager)", "Zig Build System"],
+  "learn": ["ziglang.org", "Zig Learn", "Ziglings", "Zig YouTube Talks"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "var // สำหรับตัวแปรที่เปลี่ยนแปลงได้ (Mutable)",
+      "const // สำหรับค่าคงที่ (Immutable)"
+    ],
+    "types (ประเภท)": [
+      "i8, i16, i32, i64, i128 // จำนวนเต็มแบบมีเครื่องหมาย (Signed Integers)",
+      "u8, u16, u32, u64, u128 // จำนวนเต็มแบบไม่มีเครื่องหมาย (Unsigned Integers)",
+      "f16, f32, f64, f128 // ทศนิยม (Floating-point)",
+      "bool // ค่าตรรกะ (true/false)",
+      "[]const u8 (string) // สตริง (เป็น Slice ของ Unsigned 8-bit Integer ที่ไม่สามารถเปลี่ยนแปลงได้)",
+      "struct // โครงสร้างข้อมูล (คล้าย Structs ใน C)",
+      "enum // Enumeration Type",
+      "union // Union Type"
+    ],
+    "examples (ตัวอย่าง)": [
+      "const a: i32 = 10; // ค่าคงที่ a ประเภทจำนวนเต็ม 32 บิต\n",
+      "var name: []const u8 = \"Zig\"; // ตัวแปร name เก็บสตริง\n",
+      "var flag: bool = true; // ตัวแปร flag เก็บค่าตรรกะ\n",
+      "var count: u64 = 0; // ตัวแปร count เป็นจำนวนเต็มบวก 64 บิต\n",
+      "const numbers = [_]i32{1, 2, 3}; // Array ขนาดคงที่\n",
+      "var user = struct { name: []const u8, age: u8 }{ .name = \"Bob\", .age = 30 }; // Struct"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "fn name(param: type) type { ... } // การประกาศฟังก์ชัน"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\nfn add(a: i32, b: i32) i32 {\n    return a + b;\n}\n",
+      "// ฟังก์ชันทักทาย (คืนค่าเป็น void หรือไม่มีอะไรเลย)\nconst std = @import(\"std\");\nfn greet(name: []const u8) void {\n    std.debug.print(\"Hello, {}!\\n\", .{name});\n}\n",
+      "// การเรียกใช้ฟังก์ชัน:\n// var sum_result = add(10, 20); // sum_result จะมีค่า 30\n// greet(\"Zig User\"); // แสดงผล 'Hello, Zig User!'\n",
+      "// ฟังก์ชันที่คืนค่า Error Union (สำหรับการจัดการข้อผิดพลาด)\n// Zig ใช้ Error Union แทน Exception เพื่อการจัดการข้อผิดพลาดที่ชัดเจน\nconst MyError = error{\n    DivisionByZero,\n    NegativeInput\n};\n\nfn safeDivide(numerator: f32, denominator: f32) MyError!f32 {\n    if (denominator == 0.0) return MyError.DivisionByZero;\n    if (numerator < 0 or denominator < 0) return MyError.NegativeInput;\n    return numerator / denominator;\n}\n\n// การเรียกใช้และจัดการ Error\n// var result = safeDivide(10.0, 2.0);\n// if (result) |value| {\n//     std.debug.print(\"Result: {}\\n\", .{value});\n// } else |err| switch (err) {\n//     MyError.DivisionByZero => std.debug.print(\"Error: Cannot divide by zero!\\n\", .{}),\n//     MyError.NegativeInput => std.debug.print(\"Error: Input must be positive!\\n\", .{}),\n// };\n",
+      "// Asynchronous Programming (Conceptual - ผ่าน Context Switch หรือ Libraries)\n// Zig ไม่ได้มี Async/Await ในตัวแบบภาษาสมัยใหม่ แต่ใช้แนวคิดของ Coroutines\n// และ Promises ผ่าน Libraries หรือการจัดการ Context Switch ด้วยตนเอง\n// ซึ่งทำให้การเขียน Asynchronous Code เป็นไปได้ในระดับ Low-level\n\n// ตัวอย่างแนวคิดการเขียนโค้ดที่อาจจะทำงานในบริบทของ Fiber/Coroutine library\n// const std = @import(\"std\");\n// const sleep = std.time.sleep;\n\n// fn longTask(msg: []const u8) !void {\n//     std.debug.print(\"{} Starting long task...\\n\", .{msg});\n//     try sleep(1_000_000_000); // จำลองการหน่วงเวลา 1 วินาที\n//     std.debug.print(\"{} Finished long task!\\n\", .{msg});\n// }\n//\n// pub fn main() !void {\n//     std.debug.print(\"Main: Before tasks\\n\", .{});\n//     const task1 = @asyncCall longTask(\"Task A\"); // สร้าง Asynchronous Call\n//     const task2 = @asyncCall longTask(\"Task B\");\n//     std.debug.print(\"Main: After tasks, waiting...\\n\", .{});\n//     @await(task1); // รอให้ Task A เสร็จ\n//     @await(task2); // รอให้ Task B เสร็จ\n//     std.debug.print(\"Main: All tasks done\\n\", .{});\n// }"
+    ],
+    "built_in (ในตัว)": [
+      "std.debug.print() // ใช้แสดงผลข้อมูลออกทาง Console",
+      "std.mem.copy() // ใช้คัดลอกหน่วยความจำ",
+      "std.fs.File.read() // ใช้สำหรับอ่านไฟล์",
+      "std.heap.page_allocator // Allocator สำหรับการจัดการหน่วยความจำ",
+      "std.testing.expect() // สำหรับการเขียน Test",
+      "std.fmt.format() // สำหรับจัดรูปแบบสตริง"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi line comment */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+      "switch (expression) { /* ... */ } // คำสั่ง switch"
+    ],
+    "loops (การวนซ้ำ)": [
+      "while (condition) { /* ... */ } // ลูป while",
+      "for (array) |item, index| { /* ... */ } // ลูป for สำหรับวนซ้ำ Array/Slice"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, %, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: and (&&), or (||), not (!) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "Bitwise: &, |, ^, ~, <<, >> // ตัวดำเนินการบิตไวส์",
+      ". // Field Access Operator (เข้าถึงสมาชิก Struct)",
+      "-> // Pointer Dereference (ในบางบริบท)",
+      "[] // Indexing (เข้าถึงสมาชิก Array/Slice)",
+      ": // Type Annotation",
+      ".{} // Anonymous Struct Literal (สำหรับ arguments ของ print)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nconst std = @import(\"std\");\nfn checkNumber(x: i32) void {\n    if (x > 10) {\n        std.debug.print(\"Big!\\n\", .{});\n    } else {\n        std.debug.print(\"Small!\\n\", .{});\n    }\n}\n// main: checkNumber(15); checkNumber(5);\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for\nconst std = @import(\"std\");\nfn printArray(arr: []const i32) void {\n    for (arr) |item, index| {\n        std.debug.print(\"Index {}: {}\\n\", .{index, item});\n    }\n}\n// main: printArray(&[_]i32{10, 20, 30});\n",
+      "// ตัวอย่างที่ 3: การใช้ Switch Statement\nconst std = @import(\"std\");\nfn checkDay(day_num: u8) void {\n    switch (day_num) {\n        1 => std.debug.print(\"Monday\\n\", .{}),\n        5 => std.debug.print(\"Friday\\n\", .{}),\n        else => std.debug.print(\"Other day\\n\", .{}),\n    }\n}\n// main: checkDay(1); checkDay(5); checkDay(3);\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Struct และ Pointer\nconst std = @import(\"std\");\nconst Person = struct {\n    name: []const u8,\n    age: u8,\n};\n\nfn modifyAge(p: *Person) void {\n    p.age += 1;\n}\n\npub fn main() !void {\n    var alice = Person{ .name = \"Alice\", .age = 25 };\n    std.debug.print(\"Initial age: {}\\n\", .{alice.age});\n    modifyAge(&alice); // ส่ง Address ของ Struct ไปให้ฟังก์ชัน\n    std.debug.print(\"New age: {}\\n\", .{alice.age});\n}\n",
+      "// ตัวอย่างที่ 5: การจัดการ Memory ด้วย Allocator (Manual Memory Management)\nconst std = @import(\"std\");\npub fn main() !void {\n    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n    const allocator = gpa.allocator();\n\n    // จัดสรรหน่วยความจำสำหรับ Array 5 ints\n    var numbers = try allocator.alloc(i32, 5);\n    defer allocator.free(numbers); // รับประกันว่าจะถูก Free เมื่อออกจาก Scope\n\n    numbers[0] = 100;\n    numbers[1] = 200;\n    std.debug.print(\"Number at index 0: {}\\n\", .{numbers[0]});\n}\n"
+    ]
+  }
+}

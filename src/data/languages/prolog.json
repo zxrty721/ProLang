@@ -1,0 +1,99 @@
+{
+  "id": 26,
+  "name": "Prolog",
+  "slug": "prolog",
+  "logo": "img/prolog.png",
+  "desc": "Prolog (PROgramming in LOGic) เป็นภาษาโปรแกรมเชิงตรรกะ (Logic Programming) ที่ใช้ในการสร้างระบบผู้เชี่ยวชาญ (Expert Systems), การประมวลผลภาษาธรรมชาติ และ AI เป็นหลัก โปรแกรมถูกเขียนในรูปของข้อเท็จจริงและกฎเกณฑ์",
+  "by": "Alain Colmerauer and Robert Kowalski",
+  "yr": "1972",
+  "level": "4",
+  "par": ["Logic Programming", "Declarative"],
+  "fields": ["AI", "Edu"],
+  "rank": "45+ Niche ใน Logic Programming",
+  "salary_range": "฿25,000-42,000 บาท/เดือน (Junior), ฿42,000-75,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+      "เหมาะสำหรับงาน AI ที่เกี่ยวข้องกับตรรกะและการค้นหา (Search)",
+      "สามารถสร้าง Expert Systems ได้ง่าย",
+      "มีการ Backtracking ในตัว",
+      "มีคุณสมบัติในการประมวลผลภาษาธรรมชาติ",
+      "สามารถเขียนโปรแกรมที่กระชับและทรงพลังสำหรับปัญหาบางประเภท"
+  ],
+  "cons": [
+      "Learning Curve สูงมาก (แนวคิดการเขียนโปรแกรมที่แตกต่าง)",
+      "ไม่เหมาะสำหรับการพัฒนาแอปพลิเคชันทั่วไป",
+      "ประสิทธิภาพอาจไม่ดีสำหรับงานคำนวณเชิงตัวเลข",
+      "ชุมชนนักพัฒนาเล็กและ Niche",
+      "การดีบักอาจทำได้ยากเมื่อเกิด Failure"
+  ],
+  "frameworks": ["None (เป็นภาษาพื้นฐาน)"],
+  "learn": ["Learn Prolog Now!", "The Art of Prolog", "SWI-Prolog Documentation", "Tutorials Point Prolog"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "X is 10. % X คือตัวแปร (เริ่มต้นด้วยตัวพิมพ์ใหญ่)",
+        "Name = 'Alice'. % Name คือตัวแปร (เริ่มต้นด้วยตัวพิมพ์ใหญ่)"
+      ],
+      "types (ประเภท)": [
+        "Atoms // ค่าคงที่ที่เริ่มต้นด้วยตัวพิมพ์เล็กหรืออยู่ในเครื่องหมาย Single Quote (เช่น 'hello', world)",
+        "Numbers // ตัวเลข (จำนวนเต็ม, ทศนิยม)",
+        "Variables // ตัวแปร (เริ่มต้นด้วยตัวพิมพ์ใหญ่ หรือ _)",
+        "Lists // รายการ (เช่น [1, 2, 3])",
+        "Structures // โครงสร้างข้อมูลที่ซับซ้อน (เช่น person(Name, Age))"
+      ],
+      "examples (ตัวอย่าง)": [
+          "father(john, mary). % Fact: John เป็นพ่อของ Mary",
+          "likes(mary, books). % Fact: Mary ชอบหนังสือ",
+          "age(peter, 30). % Fact: อายุของ Peter คือ 30"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "rule_name(Head) :- Body. % การกำหนด Rule (ถ้า Body เป็นจริง, Head ก็เป็นจริง)",
+        "fact_name(Arg1, Arg2). % การกำหนด Fact (ข้อเท็จจริง)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// การกำหนด Rules (กฎเกณฑ์)\nparent(X, Y) :- father(X, Y). % X เป็นพ่อแม่ของ Y ถ้า X เป็นพ่อของ Y\nparent(X, Y) :- mother(X, Y). % X เป็นพ่อแม่ของ Y ถ้า X เป็นแม่ของ Y\ngrandparent(X, Z) :- parent(X, Y), parent(Y, Z). % X เป็นปู่ย่าตายายของ Z ถ้า X เป็นพ่อแม่ของ Y และ Y เป็นพ่อแม่ของ Z (ใช้ ',' สำหรับ AND)\n",
+          "// การ Query (สอบถาม)\n?- grandparent(john, Z). % Query: ใครคือหลานของ John? (Z จะถูก Binding ด้วยค่าที่เป็นไปได้)\n?- father(F, mary). % Query: ใครคือพ่อของ Mary? (F จะถูก Binding ด้วยค่าที่เป็นไปได้)\n?- parent(john, X). % Query: John เป็นพ่อแม่ของใครบ้าง?\n",
+          "// ฟังก์ชัน Recursive สำหรับความสัมพันธ์ทางญาติ\nsibling(X, Y) :- parent(Z, X), parent(Z, Y), X \\= Y. % X เป็นพี่น้องกับ Y ถ้ามีพ่อแม่ร่วมกัน และ X ไม่ใช่ Y\n\n// การทำงานกับ Lists\nmember(X, [X|_]). % X เป็นสมาชิกของ List ถ้า X คือ Head\nmember(X, [_|T]) :- member(X, T). % X เป็นสมาชิกของ List ถ้า X เป็นสมาชิกของ Tail\n\n// การ Query กับ List\n?- member(a, [a, b, c]). % true\n?- member(d, [a, b, c]). % false\n",
+          "// Asynchronous Programming (แนวคิด - ผ่านระบบ Multi-threading/External Calls)\n// Prolog โดยพื้นฐานไม่ใช่ภาษาสำหรับการทำงาน Asynchronous I/O ในตัว\n// การทำงานแบบ Concurrency มักจะเกี่ยวข้องกับการใช้ Modules สำหรับ Multi-threading หรือการเชื่อมต่อกับภาษาอื่น\n// ซึ่งเป็นเรื่องที่ซับซ้อนและไม่ได้อยู่ใน Core Concept ของ Logic Programming\n/*\n% ตัวอย่างแนวคิด (ไม่ใช่โค้ด Prolog มาตรฐานสำหรับ Async I/O)\n% การทำ async ใน Prolog มักจะเป็นการเรียกใช้ Predicate ที่ทำงานแบบ non-blocking ผ่าน Foreign Language Interface (FLI)\n% หรือใช้ Library ที่จัดการ Threads\n% :- use_module(library(prolog_threads)).\n% \n% my_async_task(Result) :-\n%     thread_create(long_computation(Result), _, [detached(true)]).\n% \n% long_computation(Result) :-\n%     writeln('Starting long computation...'),\n%     sleep(1), % จำลองการหน่วงเวลา\n%     writeln('Long computation finished!'),\n%     Result = 'Data from async source'.\n% \n% % ใน Console:\n% % ?- my_async_task(R).\n% % R = <thread_id> % จะได้ thread ID กลับมาทันที\n% % ?- thread_join(<thread_id>, Status). % รอผลลัพธ์ (อาจจะ blocking)\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "write() // ใช้แสดง Term ออกทาง Console",
+        "read() // ใช้รับ Term จากผู้ใช้งาน",
+        "findall() // ใช้หา Solution ทั้งหมดของ Goal และเก็บใน List",
+        "member() // Predicate สำหรับตรวจสอบว่า Element เป็นสมาชิกของ List หรือไม่",
+        "is // ใช้ประเมินนิพจน์ทางคณิตศาสตร์ (เช่น X is 5 + 3)",
+        "consult() // ใช้โหลดไฟล์ Prolog",
+        "nl // ขึ้นบรรทัดใหม่ (Newline)",
+        "fail // ทำให้ Goal ล้มเหลว (บังคับ Backtracking)",
+        "not // Negation as Failure (การปฏิเสธในฐานะความล้มเหลว)"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "% Single line comment // คอมเมนต์บรรทัดเดียว (เริ่มต้นด้วย %)",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "A :- B, C. % A เป็นจริง ถ้า B เป็นจริง AND C เป็นจริง (ใช้ ',' สำหรับ AND)",
+        "A :- B; C. % A เป็นจริง ถ้า B เป็นจริง OR C เป็นจริง (ใช้ ';' สำหรับ OR)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "// Prolog ไม่มี loop แบบ Imperative โดยตรง (for, while)\n// แต่จะใช้ Recursion (การเรียกตัวเองของ Predicate) และ Backtracking (การค้นหา Solution ทั้งหมด) เพื่อจำลองพฤติกรรมของลูป\n\ncount(0). % Base Case: ถ้า 0, หยุด\ncount(N) :- count(M), N is M+1. % Recursive Case: ถ้า N, ให้หา M และ N คือ M+1 (จะนับขึ้นไปเรื่อยๆ)\n\n% ?- count(X). % จะนับ 0, 1, 2, ... ไปเรื่อยๆ จนกว่าจะหยุดด้วย ; หรือ End Of Solutions"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, mod // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, เศษเหลือ",
+        "Comparison: =:=, =\\=, <, >, =<, >= // ตัวดำเนินการเปรียบเทียบตัวเลข: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า, น้อยกว่าหรือเท่ากับ, มากกว่าหรือเท่ากับ",
+        "Logical: , (AND), ; (OR), \\+ (NOT) // ตัวดำเนินการตรรกะ: AND, OR, NOT (Negation as Failure)",
+        ":- // Implication (ถ้า...แล้ว...)",
+        ". // Full Stop (จบ Fact หรือ Rule)",
+        "| // List Separator (Head|Tail)"
+      ],
+      "examples": [
+          "// ตัวอย่างที่ 1: การใช้ Rule (If-Then)\ncan_vote(Person) :- age(Person, Age), Age >= 18. % Person สามารถโหวตได้ ถ้า Person มีอายุ (Age) และ Age มากกว่าหรือเท่ากับ 18\n\n% กำหนด Fact สำหรับทดสอบ\nage(peter, 20).\nage(susan, 16).\n\n% Query:\n% ?- can_vote(peter). % true\n% ?- can_vote(susan). % false\n",
+          "// ตัวอย่างที่ 2: Recursion (Loop-like behavior) และ List Processing\n% Predicate สำหรับแสดงสมาชิกของ List ทีละบรรทัด\nlist_items([]). % Base Case: ถ้า List ว่าง, หยุด\nlist_items([Head|Tail]) :- % Recursive Case: ถ้า List มี Head และ Tail\n    write(Head), nl, % แสดง Head และขึ้นบรรทัดใหม่\n    list_items(Tail). % เรียกตัวเองซ้ำกับ Tail\n\n% Query:\n% ?- list_items([apple, banana, cherry]).\n% apple\n% banana\n% cherry\n% true.\n",
+          "// ตัวอย่างที่ 3: การทำงานกับ Database (Facts และ Rules)\n% Facts: รายการหนังสือ\nbook(title('The Hitchhiker''s Guide to the Galaxy'), author('Douglas Adams'), year(1979)).\nbook(title('Pride and Prejudice'), author('Jane Austen'), year(1813)).\nbook(title('1984'), author('George Orwell'), year(1949)).\n\n% Rule: หาหนังสือที่ตีพิมพ์ก่อนปีที่กำหนด\nold_book(Title, Year) :- book(title(Title), _, year(Year)), Year < 1950.\n\n% Query:\n% ?- old_book(Title, Year).\n% Title = 'Pride and Prejudice', Year = 1813 ;\n% Title = '1984', Year = 1949 ;\n% false.\n",
+          "// ตัวอย่างที่ 4: Expert System (ระบบผู้เชี่ยวชาญ)\n% Facts: อาการต่างๆ\nsymptom(fever, high_temperature).\nsymptom(cough, dry).\nsymptom(sore_throat, mild).\n\n% Rule: วินิจฉัยโรคไข้หวัดใหญ่\ndisease(flu) :- symptom(fever, high_temperature), symptom(cough, dry), symptom(body_ache, yes).\n\n% Query:\n% ?- disease(flu).\n% (ถ้ามี facts body_ache(yes) อยู่ด้วย จะได้ true)\n"
+      ]
+  }
+}

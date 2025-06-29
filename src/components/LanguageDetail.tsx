@@ -3,6 +3,7 @@ import type { Language } from '../utils/language.ts';
 import { getDifficultyClass } from '../utils/card.ts';
 import { CodeBlock } from './Codeblock.tsx';
 import clsx from 'clsx';
+import { fieldMap } from '../utils/card';
 
 // Interface สำหรับ props ของ LanguageDetail
 interface LanguageDetailProps {
@@ -187,7 +188,7 @@ const LanguageDetail = memo(({
         condition: Boolean(language.fields?.length),
         config: {
           title: "การใช้งานหลัก",
-          items: language.fields || [],
+          items: (language.fields || []).map(f => fieldMap[f] ?? f) || [],
           color: "text-sky-400",
           emoji: '🚀',
           borderColor: "border-sky-500"
@@ -371,7 +372,7 @@ const LanguageDetail = memo(({
           <div className="badge-group flex flex-wrap gap-2">
             {language.fields.map((use, idx) => (
               <span key={idx} className="badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                {use}
+                {fieldMap[use] ?? use}
               </span>
             ))}
           </div>
@@ -444,4 +445,4 @@ const LanguageDetail = memo(({
 
 LanguageDetail.displayName = 'LanguageDetail';
 
-export default LanguageDetail;
+export default React.memo(LanguageDetail);

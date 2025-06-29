@@ -1,0 +1,119 @@
+{
+  "id": 28,
+  "name": "Luau",
+  "slug": "luau",
+  "logo": "img/luau.png",
+  "desc": "Luau เป็นภาษาโปรแกรมที่พัฒนาต่อยอดมาจาก Lua โดยเพิ่มคุณสมบัติ Static Typing และประสิทธิภาพที่สูงขึ้น เน้นการใช้งานในสภาพแวดล้อมของ Roblox สำหรับการพัฒนาเกมและแอปพลิเคชันบนแพลตฟอร์มนี้ ช่วยให้นักพัฒนาสร้างโค้ดที่ปลอดภัย มีประสิทธิภาพ และดูแลรักษาง่ายขึ้น",
+  "by": "Roblox Corporation",
+  "yr": "2017",
+  "level": "3",
+  "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)", "Statically-typed (Optional)"],
+  "fields": ["Game", "Script", "Plugin"],
+  "rank": "เป็นภาษาหลักสำหรับการพัฒนาใน Roblox (แพลตฟอร์มเกมยอดนิยม)",
+  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-80,000 บาท/เดือน (Senior) - ในอุตสาหกรรมเกม Roblox",
+  "salary": ["mid", "high"],
+  "pros": [
+    "เพิ่มความปลอดภัยของโค้ดด้วย Static Typing (Optional Typing)",
+    "ประสิทธิภาพสูงกว่า Lua ดั้งเดิมในหลายกรณี",
+    "ไวยากรณ์คล้าย Lua เดิม ทำให้เรียนรู้ได้ง่ายสำหรับผู้ใช้ Lua",
+    "เครื่องมือพัฒนาใน Roblox Studio รองรับได้ดี",
+    "ลดข้อผิดพลาดในรันไทม์ (Runtime Errors) ด้วย Type Checking",
+    "มี Garbage Collection จัดการหน่วยความจำอัตโนมัติ"
+  ],
+  "cons": [
+    "ผูกติดกับแพลตฟอร์ม Roblox เป็นหลัก",
+    "ระบบ Type ยังไม่สมบูรณ์เท่าภาษาที่มี Type System ที่แข็งแกร่งกว่า",
+    "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาหลักบางภาษาภายนอก Roblox",
+    "การดีบักบางครั้งอาจซับซ้อนขึ้นเมื่อใช้ Type System"
+  ],
+  "frameworks": ["Roblox API", "Roblox Luau Standard Library"],
+  "learn": ["Roblox Creator Documentation (Luau)", "Luau Official Documentation", "The DevKing (YouTube)", "AlvinBlox (YouTube)"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "local myVar: number = 10 -- Local variable with type annotation",
+      "local name: string = \"Alice\" -- String variable with type annotation",
+      "globalVar = \"Hello\" -- Global variable (discouraged, no type annotation here)"
+    ],
+    "types (ประเภท)": [
+      "nil // ไม่มีค่า (คล้าย null หรือ undefined)",
+      "boolean (true, false) // ค่าความจริง",
+      "number (integers, floats) // ตัวเลข (ทั้งจำนวนเต็มและทศนิยม)",
+      "string // ข้อความ",
+      "function // ฟังก์ชัน",
+      "userdata // ข้อมูลที่กำหนดโดยผู้ใช้",
+      "thread // Coroutine",
+      "table<K, V> // Table ที่ระบุประเภท Key และ Value (เช่น table<string, number>)",
+      "{[key: string]: any} // Generic table",
+      "any // ประเภทใดก็ได้ (ควรหลีกเลี่ยงถ้าเป็นไปได้)",
+      "unknown // ไม่ทราบประเภท (ต้องตรวจสอบก่อนใช้)",
+      "union types (e.g., number | string) // Union type (เป็นได้หลายประเภท)",
+      "enum // ประเภท Enum (ค่าคงที่ที่กำหนดชื่อ)",
+      "class // สำหรับการเขียน OOP ด้วย Class syntax (ใน Luau)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "local score: number = 100 -- กำหนดตัวแปร score เป็นตัวเลข 100",
+      "local isActive: boolean = true -- กำหนดตัวแปร isActive เป็น Boolean",
+      "local message: string = \"Welcome!\" -- กำหนดตัวแปร message เป็นสตริง",
+      "local myTable: { [string]: number } = {x = 10, y = 20} -- กำหนด Table (Map-like) ด้วย Type Annotation",
+      "local colors: {string} = {\"red\", \"green\", \"blue\"} -- Table ใช้เป็น Array ด้วย Type Annotation",
+      "local user_data: {name: string, age: number} = {name = \"Bob\", age = 25} -- Table ใช้เป็น Object ด้วย Type Annotation"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function funcName(param1: Type1, param2: Type2): ReturnType\n  -- code\n  return result\nend -- การประกาศฟังก์ชันปกติพร้อม Type Annotation",
+      "local anonFunc = function(x: number): number return x * 2 end -- Anonymous function with Type Annotation"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวนพร้อม Type Annotation\nlocal function add(a: number, b: number): number\n  return a + b\nend\nprint(add(5, 3)) -- แสดงผล 8\n",
+      "// ฟังก์ชัน Recursive สำหรับ Factorial พร้อม Type Annotation\nlocal function factorial(n: number): number\n  if n == 0 then return 1 end\n  return n * factorial(n - 1)\nend\nprint(factorial(5)) -- แสดงผล 120\n",
+      "// ฟังก์ชันที่มี Optional Parameters และ Multiple Returns พร้อม Type Annotation\nlocal function get_info(name: string, age: number?): (string, string)\n  age = age or \"Unknown\"\n  return \"Name: \" .. name, \"Age: \" .. age\nend\nlocal n, a = get_info(\"Alice\")\nprint(n, a) -- Name: Alice    Age: Unknown\nlocal n2, a2 = get_info(\"Bob\", 30)\nprint(n2, a2) -- Name: Bob    Age: 30\n",
+      "// Asynchronous Programming (Conceptual - Luau ใช้ Coroutines และ Event System ของ Roblox)\n// Luau ใน Roblox Studio รองรับ Concurrency ผ่าน Coroutines และ Events\n// ตัวอย่างนี้เป็นการสาธิตแนวคิด ไม่ได้เป็นการรันโค้ดจริงโดยตรงในสภาพแวดล้อมนี้\n\n-- local HttpService = game:GetService(\"HttpService\")\n-- local Players = game:GetService(\"Players\")\n\n-- function fetchDataAsync(url: string): (any, string?)\n--     local success, result = pcall(function()\n--         return HttpService:GetAsync(url)\n--     end)\n--     if success then\n--         return HttpService:JSONDecode(result), nil\n--     else\n--         return nil, result\n--     end\n-- end\n\n-- local function displayPlayerCount(): () -> ()\n--     coroutine.wrap(function()\n--         while true do\n--             local numPlayers = #Players:GetPlayers()\n--             print(\"Current Players: \" .. numPlayers)\n--             task.wait(5) -- รอ 5 วินาที (Luau/Roblox task.wait)\n--         end\n--     end)()\n-- end\n-- \n-- displayPlayerCount()\n"
+    ],
+    "built_in (ในตัว)": [
+      "print() // ใช้แสดงผลข้อมูลออกทาง Console",
+      "type() // ใช้ตรวจสอบประเภทข้อมูล (runtime type)",
+      "typeof() // ใช้ตรวจสอบประเภทข้อมูล (static type, Luau-specific)",
+      "tonumber() // ใช้แปลงสตริงเป็นตัวเลข",
+      "tostring() // ใช้แปลงค่าเป็นสตริง",
+      "require() // ใช้โหลด Module/Library",
+      "ipairs() // Iterator สำหรับวนซ้ำ Array-like Table (ตามลำดับ Index)",
+      "pairs() // Iterator สำหรับวนซ้ำ Table (Key-Value และ Array-like)",
+      "table.insert() // เมธอดสำหรับเพิ่มสมาชิกใน Table",
+      "table.remove() // เมธอดสำหรับลบสมาชิกออกจาก Table",
+      "math.random() // ใช้สร้างเลขสุ่ม",
+      "task.spawn() // (Luau/Roblox) ใช้สร้าง Coroutine/Task แบบ Asynchronous",
+      "task.wait() // (Luau/Roblox) ใช้หยุดการทำงานชั่วคราว"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "-- Single-line comment // คอมเมนต์บรรทัดเดียว",
+      "--[[ Multi-line\n  comment --]] // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition then\n  -- code\nelseif anotherCondition then\n  -- code\nelse\n  -- code\nend // คำสั่ง if-elseif-else"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for i = 1, 10 do\n  print(i)\nend // ลูป for (นับเลข)",
+      "for i = 1, 10, 2 do\n  print(i)\nend -- ลูป for พร้อม Step (เช่น นับทีละ 2)",
+      "while condition do\n  -- code\nend // ลูป while",
+      "repeat\n  -- code\nuntil condition // ลูป repeat-until (ทำงานอย่างน้อยหนึ่งครั้ง)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, %, ^ // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+      "Comparison: ==, ~=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: and, or, not // ตัวดำเนินการตรรกะ: AND, OR, NOT",
+      "Concatenation: .. // ตัวดำเนินการเชื่อมสตริง",
+      "# // Length operator (สำหรับหาความยาวของ String หรือ Table)",
+      ":: // Type assertion (สำหรับบอก Type System ว่า Object นี้มี Type อะไร)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nlocal age: number = 20\nif age >= 18 then\n  print(\"Adult\")\nelse\n  print(\"Minor\")\nend\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for (นับเลข)\nfor i: number = 1, 3 do\n  print(\"Loop: \" .. i)\nend\n",
+      "// ตัวอย่างที่ 3: การใช้วงลูป Generic For (สำหรับ Table)\nlocal numbers: {number} = {10, 20, 30}\nfor i, v in ipairs(numbers) do -- ipairs สำหรับ Array-like tables (ตาม index)\n  print(i, v) -- แสดงผล Index และ Value\nend\n\nlocal user_info: {name: string, city: string} = {name = \"Charlie\", city = \"London\"}\nfor k, v in pairs(user_info) do -- pairs สำหรับทุก Key-Value ใน Table\n  print(k, v) -- แสดงผล Key และ Value\nend\n",
+      "// ตัวอย่างที่ 4: การทำงานกับ Class (ใน Luau มี Class syntax)\nclass Vehicle\n  public Color: string\n  public Speed: number\n\n  constructor(color: string, speed: number)\n    self.Color = color\n    self.Speed = speed\n  end\n\n  public function Drive()\n    print(`Driving at ${self.Speed} mph with a ${self.Color} vehicle.`)\n  end\nend\n\nlocal myCar: Vehicle = Vehicle.new(\"Blue\", 60)\nmyCar:Drive() -- แสดงผล 'Driving at 60 mph with a Blue vehicle.'\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย Pcall\nlocal function risky_division(a: number, b: number): (number?, string?)\n  if b == 0 then\n    error(\"Cannot divide by zero!\")\n  end\n  return a / b\nend\n\nlocal success, result = pcall(risky_division, 10, 2) -- pcall จะคืนค่า boolean (success) และผลลัพธ์/error\nif success then\n  print(\"Result: \" .. result)\nelse\n  print(\"Error: \" .. result)\nend\n\nlocal success2, result2 = pcall(risky_division, 10, 0)\nif success2 then\n  print(\"Result: \" .. result2)\nelse\n  print(\"Error: \" .. result2)\nend"
+    ]
+  }
+}

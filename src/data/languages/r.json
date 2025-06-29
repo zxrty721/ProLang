@@ -1,0 +1,122 @@
+{
+  "id": 14,
+  "name": "R",
+  "slug": "r",
+  "logo": "img/r.png",
+  "desc": "R เป็นภาษาโปรแกรมและสภาพแวดล้อมซอฟต์แวร์สำหรับการวิเคราะห์ทางสถิติ, การแสดงผลข้อมูล และ Data Science มีแพ็กเกจจำนวนมากที่รองรับงานด้านสถิติและ Machine Learning",
+  "by": "Ross Ihaka and Robert Gentleman",
+  "yr": "1993",
+  "level": "5",
+  "par": ["Functional", "Procedural", "Object-Oriented"],
+  "fields": ["Data", "Scientific"],
+  "rank": "11-13 แต่กำลังลดลงเรื่อยๆ (แพ้ Python ใน Data Science)",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "ประสิทธิภาพสูงสำหรับการวิเคราะห์ข้อมูลทางสถิติ",
+      "มีแพ็กเกจ (CRAN) จำนวนมากและหลากหลาย",
+      "สร้างกราฟและ Visualization ได้สวยงาม",
+      "มีชุมชนนักสถิติและ Data Scientists ที่แข็งแกร่ง",
+      "ฟรีและ Open-source"
+  ],
+  "cons": [
+      "Learning Curve สูงสำหรับผู้ที่ไม่มีพื้นฐานสถิติ",
+      "ประสิทธิภาพอาจไม่ดีเท่าภาษาอื่นสำหรับการทำงานทั่วไป",
+      "การจัดการหน่วยความจำอาจเป็นปัญหาสำหรับ Big Data",
+      "เหมาะสำหรับ Data Science เป็นหลัก ไม่ใช่ General-purpose"
+  ],
+  "frameworks": ["Shiny (Web Apps)", "Tidyverse (Data Science)"],
+  "learn": ["R-project.org Official Docs", "R for Data Science", "Coursera: R Programming", "DataCamp R Courses"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "my_var <- 10 // การกำหนดค่าให้กับตัวแปร (นิยมใช้)",
+        "my_string = \"Hello R\" // การกำหนดค่าให้กับตัวแปร (สามารถใช้ได้)"
+      ],
+      "types (ประเภท)": [
+        "numeric // ประเภทข้อมูลตัวเลข (รวมทั้งจำนวนเต็มและทศนิยม)",
+        "integer // ประเภทข้อมูลตัวเลขจำนวนเต็ม",
+        "character // ประเภทข้อมูลสตริง (ข้อความ)",
+        "logical // ประเภทข้อมูลบูลีน (TRUE/FALSE)",
+        "complex // ประเภทข้อมูลตัวเลขเชิงซ้อน",
+        "raw // ประเภทข้อมูลดิบ (bytes)",
+        "vector // โครงสร้างข้อมูลพื้นฐานที่สุดของ R (เก็บข้อมูลประเภทเดียวกัน)",
+        "matrix // เมทริกซ์ (เก็บข้อมูลประเภทเดียวกันใน 2 มิติ)",
+        "array // อาร์เรย์ (เก็บข้อมูลประเภทเดียวกันใน N มิติ)",
+        "list // ลิสต์ (เก็บข้อมูลได้หลายประเภท)",
+        "data.frame // โครงสร้างข้อมูลแบบตาราง (คล้ายตารางในฐานข้อมูล)",
+        "factor // ประเภทข้อมูลสำหรับตัวแปรเชิงหมวดหมู่"
+      ],
+      "examples (ตัวอย่าง)": [
+          "age <- 30 // กำหนดตัวแปร age เก็บตัวเลข 30",
+          "name <- \"Emily\" // กำหนดตัวแปร name เก็บสตริง",
+          "is_active <- TRUE // กำหนดตัวแปร is_active เก็บค่าความจริง",
+          "numbers <- c(1, 2, 3) // สร้าง vector ของตัวเลข",
+          "text_vector <- c(\"apple\", \"banana\", \"cherry\") // สร้าง vector ของสตริง",
+          "my_matrix <- matrix(1:9, nrow = 3) // สร้างเมทริกซ์ 3x3",
+          "my_list <- list(name = \"John\", age = 25, is_student = TRUE) // สร้างลิสต์",
+          "my_df <- data.frame(ID = 1:2, Name = c(\"A\", \"B\")) // สร้าง data.frame"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "function_name <- function(param1, param2) { /* ... */ } // การประกาศฟังก์ชัน"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nadd_numbers <- function(a, b) {\n  return(a + b)\n}\n",
+          "// ฟังก์ชันแสดงข้อความทักทาย\nprint_greeting <- function(name) {\n  cat(\"Hello, \", name, \"!\\n\")\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nsum_result <- add_numbers(10, 20) // sum_result จะมีค่า 30\nprint_greeting(\"R User\") // แสดงผล 'Hello, R User!'\n",
+          "// ฟังก์ชันที่มี Optional Arguments และ Default Values\ncalculate_bmi <- function(weight, height, unit = \"metric\") {\n  if (unit == \"metric\") {\n    bmi <- weight / (height^2)\n  } else if (unit == \"imperial\") {\n    bmi <- (weight * 703) / (height^2)\n  } else {\n    stop(\"Invalid unit. Use 'metric' or 'imperial'.\")\n  }\n  return(bmi)\n}\nprint(calculate_bmi(70, 1.75)) // คำนวณ BMI แบบเมตริก\nprint(calculate_bmi(150, 68, unit = \"imperial\")) // คำนวณ BMI แบบอิมพีเรียล\n",
+          "// ฟังก์ชันที่คืนค่าหลายค่า (ด้วย List)\nget_summary_stats <- function(data_vector) {\n  list(\n    mean = mean(data_vector),\n    median = median(data_vector),\n    sd = sd(data_vector)\n  )\n}\nstats <- get_summary_stats(c(1, 2, 3, 4, 5))\nprint(stats$mean) // เข้าถึงค่าเฉลี่ย\n",
+          "// การใช้งาน Apply Family Functions (Higher-Order Functions)\n# lapply: ใช้ฟังก์ชันกับแต่ละ Element ใน List/Vector (คืนค่าเป็น List)\nmy_list <- list(a = 1:3, b = 4:6)\nsquares_list <- lapply(my_list, function(x) x^2)\nprint(squares_list) # [[1,4,9], [16,25,36]]\n# sapply: ใช้ฟังก์ชันกับแต่ละ Element ใน List/Vector (คืนค่าเป็น Vector/Matrix หากเป็นไปได้)\nmy_vector <- c(1, 2, 3)\ndouble_vector <- sapply(my_vector, function(x) x * 2)\nprint(double_vector) # [2, 4, 6]\n",
+          "// Asynchronous Programming (Conceptual - R ใช้ packages)\n// R ไม่ได้มี Asynchronous Programming ในตัวแบบ native เหมือน Go/JS\n// แต่มี packages เช่น 'future' หรือ 'promises' ที่ช่วยในการทำงานแบบ Asynchronous\n// ตัวอย่างนี้แสดงแนวคิดการทำงานแบบ Non-blocking โดยใช้ future package\n/*\n# install.packages('future')\nlibrary(future)\nplan(multisession) # รัน tasks ใน session แยกต่างหาก\n\nlong_computation <- function() {\n  message(\"Starting long computation...\")\n  Sys.sleep(2) # จำลองการทำงานที่ใช้เวลา\n  message(\"Long computation finished!\")\n  return(42)\n}\n\nasync_result <- future({ long_computation() })\nmessage(\"Main program continues while computation runs...\")\n\n# รอผลลัพธ์ (blocking ในจุดนี้)\nresult <- value(async_result)\nmessage(\"Received result: \", result)\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "print() // ใช้แสดงผล Object",
+        "cat() // ใช้แสดงผลข้อมูลออกทาง Console (เชื่อมสตริงและพิมพ์)",
+        "c() // ใช้สร้าง Vector",
+        "mean() // ใช้คำนวณค่าเฉลี่ย",
+        "sum() // ใช้คำนวณผลรวม",
+        "length() // ใช้หาความยาวของ Vector/List",
+        "data.frame() // ใช้สร้าง Data Frame",
+        "list() // ใช้สร้าง List",
+        "matrix() // ใช้สร้าง Matrix",
+        "read.csv() // ใช้อ่านไฟล์ CSV",
+        "plot() // ใช้สร้างกราฟพื้นฐาน"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "# Single line comment // คอมเมนต์บรรทัดเดียว"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "ifelse(test, yes, no) // ฟังก์ชันเงื่อนไขแบบ Vectorized (สำหรับ Vector)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (item in collection) { /* ... */ } // ลูป for-in สำหรับวนซ้ำ Collection (นิยมใช้)",
+        "while (condition) { /* ... */ } // ลูป while",
+        "repeat { /* ... */ if (condition) break } // ลูป repeat (ทำงานอย่างน้อยหนึ่งครั้ง) พร้อมเงื่อนไขออก",
+        "sapply(list, function) // ใช้ฟังก์ชันกับแต่ละ Element ใน List/Vector (คืนค่าเป็น Vector)",
+        "lapply(list, function) // ใช้ฟังก์ชันกับแต่ละ Element ใน List/Vector (คืนค่าเป็น List)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, %%, ^ // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+        "Assignment: <-, = // ตัวดำเนินการกำหนดค่า: '<-' เป็นที่นิยมมากกว่า",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ (Vectorized), หรือ (Vectorized), ไม่",
+        "Vectorized Logical: & (AND), | (OR) // ตัวดำเนินการตรรกะแบบ Element-wise (สำหรับ Vector)",
+        "%in% // ตัวดำเนินการตรวจสอบการเป็นสมาชิก",
+        "$ // ตัวดำเนินการเข้าถึง Element ใน List/Data Frame ด้วยชื่อ",
+        "[[]] // ตัวดำเนินการเข้าถึง Element ใน List/Data Frame ด้วยชื่อหรือ Index (คืนค่าเป็น Element)",
+        "[] // ตัวดำเนินการเข้าถึง Element ใน Vector/List/Data Frame ด้วย Index (คืนค่าเป็น Sub-structure)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nscore <- 75\nif (score >= 90) {\n  print(\"Grade A\")\n} else if (score >= 70) {\n  print(\"Grade B\")\n} else {\n  print(\"Grade C\")\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) และ Vector\nnumbers <- c(10, 20, 30)\nfor (num in numbers) {\n  print(paste(\"Number:\", num))\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ ifelse (Vectorized Conditional)\nages <- c(15, 20, 17, 22)\nstatus <- ifelse(ages >= 18, \"Adult\", \"Minor\")\nprint(status) // แสดงผล [1] \"Minor\" \"Adult\" \"Minor\" \"Adult\"\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Data Frame\nstudents <- data.frame(\n  Name = c(\"Alice\", \"Bob\", \"Charlie\"),\n  Age = c(20, 22, 21),\n  Major = c(\"CS\", \"Math\", \"Physics\")\n)\nprint(students) # แสดง data frame\nprint(students$Name) # เข้าถึงคอลัมน์ Name\nprint(students[2, \"Age\"]) # เข้าถึงค่าใน row 2, column 'Age'\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย tryCatch\ntryCatch({\n  result <- 10 / 0 # จะเกิด error\n  print(result)\n}, error = function(e) {\n  print(paste(\"Error occurred:\", e$message))\n}, finally = {\n  print(\"Execution finished.\")\n})\n",
+          "// ตัวอย่างที่ 6: การสร้างกราฟเบื้องต้น (Plotting)\n# plot(x, y, type, main, xlab, ylab)\nx_coords <- c(1, 2, 3, 4, 5)\ny_coords <- c(2, 4, 1, 5, 3)\n# plot(x_coords, y_coords, type = \"b\", \n#      main = \"Simple Line Plot\", \n#      xlab = \"X-axis\", ylab = \"Y-axis\")\n# ผลลัพธ์: กราฟเส้นเชื่อมจุด"
+      ]
+  }
+}

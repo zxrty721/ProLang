@@ -1,0 +1,108 @@
+{
+  "id": 61,
+  "name": "APL",
+  "slug": "apl",
+  "logo": "img/apl.png",
+  "desc": "APL (A Programming Language) เป็นภาษาโปรแกรมเชิง Array-oriented ที่มีชื่อเสียงจากการใช้สัญลักษณ์เฉพาะตัว (Special Symbols) เพื่อดำเนินการกับ Array ได้อย่างมีประสิทธิภาพสูง เหมาะสำหรับการคำนวณทางคณิตศาสตร์, สถิติ, วิทยาศาสตร์ และงานที่เกี่ยวข้องกับข้อมูลเชิงตัวเลขจำนวนมาก",
+  "by": "Kenneth E. Iverson",
+  "yr": "1960s (พัฒนา), 1966 (เผยแพร่)",
+  "level": "1",
+  "par": ["Array-oriented", "Functional", "Procedural"],
+  "fields": ["Math", "Scientific"],
+  "rank": "45+ (Niche ในตลาดเฉพาะทาง)",
+  "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-95,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "ความสามารถในการประมวลผล Array ที่ทรงพลังและกระชับ",
+    "ช่วยลดปริมาณโค้ดที่ต้องเขียนลงอย่างมาก (Conciseness)",
+    "ประสิทธิภาพสูงสำหรับการคำนวณเชิงตัวเลข",
+    "เหมาะสำหรับงานวิเคราะห์ข้อมูลขนาดใหญ่",
+    "มี Interactive Environment ที่ดี"
+  ],
+  "cons": [
+    "ใช้สัญลักษณ์พิเศษที่ต้องเรียนรู้และจดจำจำนวนมาก",
+    "Learning Curve สูงมากสำหรับผู้เริ่มต้น",
+    "โค้ดอ่านยากมากสำหรับผู้ที่ไม่คุ้นเคย ('write-only language')",
+    "ชุมชนนักพัฒนาเล็กและเฉพาะทาง",
+    "ไม่เหมาะสำหรับการพัฒนาแอปพลิเคชันทั่วไป"
+  ],
+  "frameworks": ["None (เป็นภาษาพื้นฐาน)", "Dyalog APL", "GNU APL"],
+  "learn": ["Dyalog APL Documentation", "APL Wiki", "Mastering Dyalog APL", "Array-oriented Programming"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "X ← 10     ⍝ กำหนดค่า 10 ให้ตัวแปร X",
+      "ARRAY ← 1 2 3 4 5  ⍝ กำหนด Array ด้วยค่าต่างๆ"
+    ],
+    "types (ประเภท)": [
+      "Numeric (Integer, Float, Complex) // ตัวเลข (จำนวนเต็ม, ทศนิยม, จำนวนเชิงซ้อน)",
+      "Character // ตัวอักขระ",
+      "Boolean (0, 1) // ค่าตรรกะ (0 คือ False, 1 คือ True)",
+      "Array // โครงสร้างข้อมูลหลักใน APL (สามารถมีได้หลายมิติ)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "Salary ← 50000        ⍝ ตัวแปร Scalar (เงินเดือน)",
+      "Names ← 'Alice' 'Bob' 'Charlie' ⍝ Array ของสตริง",
+      "Matrix ← 2 3 ⍴ ⍳6    ⍝ สร้าง Matrix ขนาด 2x3 จากเลข 1 ถึง 6 (1 2 3)(4 5 6)",
+      "IsActive ← 1          ⍝ ตัวแปร Boolean (True)"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "∇ Z ← A FunctionName B  ⍝ ฟังก์ชัน Binary (รับ 2 Argument)",
+      "∇ Z ← FunctionName A    ⍝ ฟังก์ชัน Monadic (รับ 1 Argument)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน (Binary Function)\\n∇ Z ← A ADD B\\n  Z ← A + B\\n∇\\n",
+      "// ฟังก์ชันคูณด้วย 2 (Monadic Function)\\n∇ Z ← DOUBLE A\\n  Z ← 2 × A\\n∇\\n",
+      "// การเรียกใช้ฟังก์ชัน\\n10 ADD 20   ⍝ ผลลัพธ์ 30\\nDOUBLE 5    ⍝ ผลลัพธ์ 10\\n",
+      "// ฟังก์ชันหาผลรวมของ Array\\n∇ Z ← SUM_ARRAY A\\n  Z ← +/A   ⍝ ใช้ Reduction Operator (+/) เพื่อหาผลรวม\\n∇\\nSUM_ARRAY 1 2 3 4 5 ⍝ ผลลัพธ์ 15\\n",
+      "// ฟังก์ชันหาค่าเฉลี่ยของ Array\\n∇ Z ← AVG_ARRAY A\\n  Z ← (+/A) ÷ (⍴A)  ⍝ ผลรวมหารด้วยจำนวนสมาชิก (⍴A คือ Shape หรือจำนวนสมาชิก)\\n∇\\nAVG_ARRAY 1 2 3 4 5 ⍝ ผลลัพธ์ 3\\n"
+    ],
+    "built_in (ในตัว)": [
+      "+ // บวก (Monadic: Positive, Binary: Addition)",
+      "- // ลบ (Monadic: Negative, Binary: Subtraction)",
+      "× // คูณ (Monadic: Signum, Binary: Multiplication)",
+      "÷ // หาร (Monadic: Reciprocal, Binary: Division)",
+      "⍳ // Index Generator (สร้างลำดับตัวเลข)",
+      "⍴ // Reshape (เปลี่ยนรูปร่าง Array) หรือ Shape (หาขนาด Array)",
+      "↑ // Take (เลือก Element จาก Array)",
+      "↓ // Drop (ละทิ้ง Element จาก Array)",
+      "? // Roll (สุ่ม) หรือ Deal (สุ่มไม่ซ้ำ)",
+      "⌹ // Matrix Inverse (ผกผันเมทริกซ์) หรือ Matrix Division (หารเมทริกซ์)",
+      ", // Ravel (เปลี่ยน Array หลายมิติเป็น Vector) หรือ Concatenate (เชื่อม Array)",
+      "⍪ // Laminate (เชื่อม Array เป็นมิติใหม่)"
+    ],
+    "async (แนวคิด)": [
+      "// APL โดยพื้นฐานเป็นภาษาที่เน้นการประมวลผลแบบ Synchronous และ Vectorized\n// การทำงานแบบ Asynchronous หรือ Concurrency มักถูกจัดการโดยสภาพแวดล้อม APL Implementation นั้นๆ\n// เช่น Dyalog APL มีคุณสมบัติสำหรับ Parallel Computing (Multithreading) และการทำงานแบบ Non-blocking I/O ผ่าน Extensions หรือ Primitives เฉพาะ"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "⍝ Single line comment // คอมเมนต์บรรทัดเดียว (เริ่มต้นด้วย Symbol '⍝')"
+    ],
+    "conditions (เงื่อนไข)": [
+      "→ (Condition) / Label // Go-to based conditional branch",
+      "→ (Condition) LABEL_TRUE ⋄ 'Statement if true' ⋄ → 0  ⍝ If true then goto LABEL_TRUE, else print statement and exit",
+      "→ (Condition) LABEL_TRUE LABEL_FALSE // If true then goto LABEL_TRUE else goto LABEL_FALSE"
+    ],
+    "loops (การวนซ้ำ)": [
+      "// APL ไม่ได้มีโครงสร้างลูป (for, while) โดยตรงเหมือนภาษาอื่นที่เน้น Imperative\n// แต่จะใช้การดำเนินการกับ Array โดยตรง (Vectorized Operations) หรือ Recursion แทน\n// For: (+/⍳N)  ⍝ ผลรวมของตัวเลข 1 ถึง N (Vectorized approach)\n// While: มักใช้ร่วมกับ Branching (→) หรือการทำซ้ำแบบ Recursive"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Monadic Operators (รับ 1 Argument, วางทางขวา): + (Positive), - (Negative), × (Signum), ÷ (Reciprocal), ⍳ (Iota)",
+      "Binary Operators (รับ 2 Arguments, วางตรงกลาง): + (Addition), - (Subtraction), × (Multiplication), ÷ (Division)",
+      "Scalar Functions: ทำงานแบบ Element-wise บน Array (เช่น 2 + 1 2 3 จะได้ 3 4 5)",
+      "Reduction Operators: +/ (Sum Reduction), ×/ (Product Reduction)",
+      "Scan Operators: +\\ (Cumulative Sum), ×\\ (Cumulative Product)",
+      "Outer Product: ∘. (เช่น A ∘.+ B จะได้ Matrix การบวกทุก Element ของ A กับ B)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การคำนวณ Array แบบ Vectorized (โดยไม่ต้องวนลูป)\\nC ← A + B  ⍝ บวก Array A กับ Array B แบบ Element-wise",
+      "// ตัวอย่างที่ 2: การสร้างลำดับตัวเลขและหาผลรวม\\n+/⍳10  ⍝ ผลลัพธ์ 55 (ผลรวมของตัวเลข 1 ถึง 10)\\n",
+      "// ตัวอย่างที่ 3: การเปลี่ยนรูปร่าง Array (Reshape) และการดำเนินการ Element-wise\\nMATRIX ← 2 3 ⍴ ⍳6 ⍝ สร้าง Matrix 2x3 จาก 1-6\n      MATRIX\n1 2 3\n4 5 6\n\nMATRIX × 10 ⍝ คูณทุก Element ด้วย 10\n10 20 30\n40 50 60\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Reduction และ Scan Operations\\nNUMBERS ← 1 2 3 4 5\n+/NUMBERS ⍝ ผลรวม 15\n+\\NUMBERS ⍝ Cumulative Sum (1 3 6 10 15)\n",
+      "// ตัวอย่างที่ 5: การทำงานกับสตริง\\nMESSAGE ← 'Hello, APL'\n⍴MESSAGE ⍝ ความยาวของสตริง (10)\n",
+      "// ตัวอย่างที่ 6: การจัดการข้อผิดพลาด (Error Handling)\\n// APL มีกลไกการจัดการข้อผิดพลาดที่เรียกว่า 'Error Trapping' หรือ 'Monadic Error Function'\n// (⎕TRAP 'SYNTAX ERROR' 'Your_Error_Handler')\n// ซึ่งช่วยให้โปรแกรมสามารถดักจับและจัดการข้อผิดพลาดได้"
+    ]
+  }
+}

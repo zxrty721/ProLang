@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import InteractiveLanguageList from '../components/InteractiveCardSection';
+import { loadAllLanguages } from '../data/languageLoader';
+const allLanguages = await loadAllLanguages();
 import type { Language } from '../utils/language';
-import languagesData from '../data/languages.json';
 
-const totalLanguages = languagesData.length;
+const languages = allLanguages as Language[];
+const totalLanguages = languages.length;
 ---
 
 <BaseLayout count={totalLanguages}>
-  <InteractiveLanguageList languages={languagesData as Language[]} client:load />
+  <InteractiveLanguageList languages={languages} client:load />
 </BaseLayout>

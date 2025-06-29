@@ -1,0 +1,95 @@
+{
+  "id": 40,
+  "name": "T-SQL",
+  "slug": "tsql",
+  "logo": "img/sqlserver.png",
+  "desc": "T-SQL เป็นภาษา Extension ที่เพิ่มความสามารถเชิงโครงสร้าง (Procedural) ให้กับ SQL สำหรับ Microsoft SQL Server และ Azure SQL Database ใช้สำหรับสร้าง Stored Procedures, Functions, และ Triggers เพื่อขยายความสามารถของ SQL และประมวลผลข้อมูลที่ซับซ้อนบนฐานข้อมูลฝั่ง Server",
+  "by": "Microsoft",
+  "yr": "1980s",
+  "level": "5",
+  "par": ["Procedural", "Declarative (SQL embedded)"],
+  "fields": ["DB"],
+  "rank": "35+ แข็งแกร่งใน Microsoft SQL Server Environment",
+  "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+    "มีประสิทธิภาพในการประมวลผลข้อมูลขนาดใหญ่บน SQL Server",
+    "ช่วยลด Network Traffic",
+    "รองรับ Transaction Control ได้ดี",
+    "เป็นส่วนสำคัญของ Microsoft SQL Server Ecosystem"
+  ],
+  "cons": [
+    "เฉพาะสำหรับ Microsoft SQL Server",
+    "การจัดการ Version Control อาจเป็นเรื่องท้าทาย",
+    "ไวยากรณ์และแนวคิดแตกต่างจากภาษาโปรแกรมมิ่งทั่วไป"
+  ],
+  "frameworks": [],
+  "learn": ["Microsoft T-SQL Documentation", "SQL Server Tutorials"],
+  "variables": {
+    "declaration (การประกาศ)": ["DECLARE @variable_name datatype; // รูปแบบการประกาศตัวแปร"],
+    "types (ประเภท)": [
+      "VARCHAR // สตริงความยาวแปรผัน",
+      "NVARCHAR // สตริงความยาวแปรผัน (รองรับ Unicode)",
+      "INT // จำนวนเต็ม",
+      "DECIMAL // ตัวเลขทศนิยมที่มีความแม่นยำคงที่",
+      "DATETIME // วันที่และเวลา",
+      "BIT // ค่าบูลีน (0 หรือ 1)",
+      "TABLE // ประเภทข้อมูลตาราง (สำหรับตัวแปรตารางชั่วคราว)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "DECLARE @employeeName VARCHAR(100); // ประกาศตัวแปรสตริงชื่อ @employeeName",
+      "DECLARE @salary DECIMAL(10, 2) = 55000.00; // ประกาศตัวแปรตัวเลขทศนิยมพร้อมค่าเริ่มต้น",
+      "SELECT @employeeName = Name FROM Employees WHERE Id = 2; // กำหนดค่าให้กับตัวแปรจากผลลัพธ์ Query"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": ["CREATE FUNCTION function_name (@params datatype) RETURNS datatype AS BEGIN ... END; // รูปแบบการประกาศฟังก์ชัน"],
+    "examples (ตัวอย่าง)": [
+      "CREATE FUNCTION dbo.GetTotalSales (@year INT) RETURNS DECIMAL(18,2) AS\nBEGIN\n    DECLARE @total DECIMAL(18,2);\n    SELECT @total = SUM(SalesAmount) FROM Sales WHERE YEAR(SaleDate) = @year;\n    RETURN @total;\nEND;\n",
+      "CREATE FUNCTION dbo.GetFullName (@firstName NVARCHAR(50), @lastName NVARCHAR(50)) RETURNS NVARCHAR(100) AS\nBEGIN\n    RETURN @firstName + ' ' + @lastName;\nEND;\n",
+      "// การเรียกใช้ฟังก์ชัน\nSELECT dbo.GetTotalSales(2023) AS TotalSalesFor2023;\nSELECT dbo.GetFullName('John', 'Doe') AS EmployeeFullName;"
+    ],
+    "built_in (ในตัว)": [
+      "PRINT // ใช้แสดงผลข้อความออกทาง Console/Messages Tab",
+      "GETDATE // ดึงวันที่และเวลาปัจจุบันของระบบ",
+      "SUBSTRING // ดึงสตริงย่อยจากสตริง",
+      "SUM // หาผลรวมของกลุ่มข้อมูล",
+      "COUNT // นับจำนวนแถวในกลุ่มข้อมูล",
+      "AVG // หาค่าเฉลี่ยของกลุ่มข้อมูล",
+      "MAX // หาค่าสูงสุดในกลุ่มข้อมูล",
+      "MIN // หาค่าต่ำสุดในกลุ่มข้อมูล",
+      "CAST // แปลงข้อมูลจากประเภทหนึ่งไปอีกประเภทหนึ่ง",
+      "CONVERT // แปลงข้อมูลจากประเภทหนึ่งไปอีกประเภทหนึ่ง (มี Option มากกว่า CAST)"
+    ],
+    "async (แนวคิด)": [
+      "// T-SQL เป็นภาษาที่ทำงานบน Database Server และโดยธรรมชาติเป็น Synchronous\n-- การทำงานแบบ Asynchronous มักจะทำผ่านเทคนิคเช่น Service Broker (สำหรับ Message Queuing)\n-- หรือการใช้ SQL Agent Jobs สำหรับการรันงาน Background\n-- ไม่ได้มีโครงสร้าง async/await เหมือนภาษาสมัยใหม่"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "-- Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi line */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "IF condition BEGIN ... END ELSE BEGIN ... END // คำสั่ง IF-ELSE",
+      "CASE WHEN condition THEN result ELSE result END // คำสั่ง CASE (คล้าย If-Else หรือ Switch)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "WHILE condition BEGIN ... END // ลูป WHILE"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Assignment: = // ตัวดำเนินการกำหนดค่า",
+      "Comparison: =, <>, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+      "Logical: AND, OR, NOT // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      "+ (Concatenation for strings) // ตัวดำเนินการเชื่อมสตริง"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (IF-ELSE)\nDECLARE @salary DECIMAL(10, 2) = 65000.00;\nIF @salary > 60000\nBEGIN\n    PRINT 'High Salary';\nEND\nELSE\nBEGIN\n    PRINT 'Standard Salary';\nEND;\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป WHILE\nDECLARE @counter INT = 1;\nWHILE @counter <= 5\nBEGIN\n    PRINT 'Loop: ' + CAST(@counter AS VARCHAR); // CAST ใช้แปลง INT เป็น VARCHAR เพื่อเชื่อมสตริง\n    SET @counter = @counter + 1;\nEND;\n",
+      "// ตัวอย่างที่ 3: การใช้ CASE Statement\nSELECT\n    ProductName,\n    Price,\n    CASE\n        WHEN Price > 1000 THEN 'Expensive'\n        WHEN Price >= 500 THEN 'Moderate'\n        ELSE 'Affordable'\n    END AS PriceCategory\nFROM Products;\n",
+      "// ตัวอย่างที่ 4: การจัดการข้อผิดพลาด (TRY-CATCH)\nBEGIN TRY\n    DECLARE @num1 INT = 10;\n    DECLARE @num2 INT = 0;\n    DECLARE @result INT;\n    SET @result = @num1 / @num2; -- จะเกิด Division by zero error\n    PRINT 'Result: ' + CAST(@result AS VARCHAR);\nEND TRY\nBEGIN CATCH\n    PRINT 'Error occurred: ' + ERROR_MESSAGE();\nEND CATCH;\n",
+      "// ตัวอย่างที่ 5: การใช้งาน Stored Procedure\n-- CREATE PROCEDURE dbo.GetEmployeeDetails\n--     @EmployeeId INT\n-- AS\n-- BEGIN\n--     SELECT EmployeeId, Name, Salary FROM Employees WHERE EmployeeId = @EmployeeId;\n-- END;\n-- EXEC dbo.GetEmployeeDetails @EmployeeId = 1; -- การเรียกใช้ Stored Procedure\n"
+    ]
+  }
+}

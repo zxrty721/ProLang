@@ -1,0 +1,114 @@
+{
+  "id": 9,
+  "name": "TypeScript",
+  "slug": "typescript",
+  "logo": "img/ts.png",
+  "desc": "TypeScript คือ Superset ของ JavaScript ที่เพิ่มความสามารถด้าน Static Typing ทำให้โค้ดมีโครงสร้างมากขึ้น, ตรวจสอบข้อผิดพลาดได้ตั้งแต่ตอนพัฒนา และช่วยให้พัฒนาโปรเจกต์ขนาดใหญ่ได้ง่ายขึ้น",
+  "by": "Microsoft",
+  "yr": "2012",
+  "level": "4",
+  "par": ["Multi-paradigm", "Object-Oriented", "Functional"],
+  "fields": ["Frontend", "Backend", "Cloud", "Plugin", "Blockchain", "Render"],
+  "rank": "12 แต่เติบโตแรงใน Modern Web Development (ใช้โดย 38.8% ของนักพัฒนา)",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "เพิ่มความปลอดภัยของโค้ดด้วย Type Checking",
+      "ช่วยให้โค้ดมีโครงสร้างและอ่านง่ายขึ้น",
+      "รองรับคุณสมบัติใหม่ๆ ของ JavaScript ล่วงหน้า",
+      "เครื่องมือพัฒนา (IDE) รองรับได้ดีเยี่ยม",
+      "ปรับปรุงการ Refactor และ Maintenance โค้ด"
+  ],
+  "cons": [
+      "ต้องใช้เวลาเรียนรู้เพิ่มเติมจาก JavaScript",
+      "ต้องมีการตั้งค่าและ Compile ก่อนรัน (Transpilation)",
+      "อาจเพิ่มความซับซ้อนในโปรเจกต์ขนาดเล็ก",
+      "Error Messages บางครั้งอาจเข้าใจยาก"
+  ],
+  "frameworks": ["Angular", "React (with TS)", "Vue.js (with TS)", "Node.js (with TS)", "NestJS"],
+  "learn": ["TypeScript Handbook", "Definitely Typed", "TypeScript for JavaScript Developers", "FreeCodeCamp TypeScript"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "let name: string = \"Alice\"; // การประกาศตัวแปรชนิด string",
+        "const age: number = 25; // การประกาศค่าคงที่ชนิด number",
+        "let isActive: boolean = true; // การประกาศตัวแปรชนิด boolean"
+      ],
+      "types (ประเภท)": [
+        "string // ประเภทข้อมูลข้อความ",
+        "number // ประเภทข้อมูลตัวเลข (ทั้งจำนวนเต็มและทศนิยม)",
+        "boolean // ประเภทข้อมูลค่าจริงหรือเท็จ",
+        "null // ประเภทข้อมูลค่าว่างเปล่าโดยเจตนา",
+        "undefined // ประเภทข้อมูลค่าที่ยังไม่ได้กำหนด",
+        "symbol // ประเภทข้อมูลค่าเฉพาะที่ไม่ซ้ำกัน",
+        "bigint // ประเภทข้อมูลตัวเลขขนาดใหญ่มาก",
+        "any // ประเภทข้อมูลที่ยอมรับค่าใดก็ได้ (ควรหลีกเลี่ยง)",
+        "unknown // ประเภทข้อมูลที่ระบุว่าไม่ทราบประเภท แต่ต้องตรวจสอบก่อนใช้",
+        "void // ประเภทข้อมูลสำหรับฟังก์ชันที่ไม่มีค่าคืนกลับ",
+        "never // ประเภทข้อมูลสำหรับฟังก์ชันที่ไม่สามารถทำจนจบได้",
+        "Array<T> // Generic Type สำหรับ Array (เช่น Array<string>)",
+        "T[] // Shorthand สำหรับ Array (เช่น string[])",
+        "Object // ประเภทข้อมูลกลุ่มของข้อมูลที่มีโครงสร้าง",
+        "Tuple // ประเภทข้อมูลรายการที่มีจำนวนและประเภทที่กำหนดไว้ล่วงหน้า",
+        "Enum // ประเภทข้อมูลสำหรับชุดของค่าคงที่ที่กำหนดชื่อ"
+      ],
+      "examples (ตัวอย่าง)": [
+          "let message: string = \"Hello TS!\"; // กำหนดตัวแปร message เป็นสตริง",
+          "let count: number = 50; // กำหนดตัวแปร count เป็นตัวเลข",
+          "const PI: number = 3.14159; // กำหนดค่าคงที่ PI",
+          "let users: string[] = [\"Bob\", \"Charlie\"]; // กำหนดตัวแปร users เป็น Array ของสตริง",
+          "type User = { id: number; name: string; }; // กำหนด Type Alias สำหรับ Object\nlet user: User = { id: 1, name: \"Alice\" }; // กำหนดตัวแปร user เป็น Object ตาม Type",
+          "let mixedTuple: [string, number] = [\"TS\", 2024]; // กำหนดตัวแปรเป็น Tuple"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "function funcName(param: Type): ReturnType { ... } // การประกาศฟังก์ชันแบบปกติ",
+        "const arrowFunc = (param: Type): ReturnType => { ... }; // การประกาศฟังก์ชันแบบ Arrow Function"
+      ],
+      "examples (ตัวอย่าง)": [
+          "function sum(a: number, b: number): number { return a + b; } // ฟังก์ชันบวกเลขสองจำนวน",
+          "const greet = (name: string): string => `Hello, ${name}!`; // ฟังก์ชัน Arrow Function สำหรับทักทาย",
+          "// การเรียกใช้ฟังก์ชัน\nlet total: number = sum(10, 5); // total จะมีค่า 15\nlet welcome: string = greet(\"TypeScript\"); // welcome จะมีค่า 'Hello, TypeScript!'\n",
+          "function printOptional(message: string, count?: number): void { // ฟังก์ชันที่มี Optional Parameter\n  console.log(message);\n  if (count !== undefined) {\n    console.log(`Count: ${count}`);\n  }\n}\nprintOptional(\"Hello\"); // เรียกใช้โดยไม่ส่ง count\nprintOptional(\"Hello\", 5); // เรียกใช้พร้อมส่ง count\n",
+          "function sumRest(...numbers: number[]): number { // ฟังก์ชันที่มี Rest Parameters (รับอาร์กิวเมนต์ได้ไม่จำกัด)\n  return numbers.reduce((acc, current) => acc + current, 0);\n}\nconsole.log(sumRest(1, 2, 3, 4)); // แสดงผล 10\n",
+          "// Asynchronous Function (using async/await)\n// โค้ดด้านล่างนี้เป็นตัวอย่างการใช้งานฟังก์ชันแบบ Asynchronous ซึ่งต้องรันในบริบทของ JavaScript runtime (เช่น Node.js, Browser)\n// async function fetchData(): Promise<string> {\n//   console.log(\"Fetching data...\");\n//   await new Promise(resolve => setTimeout(resolve, 1000)); // จำลองการหน่วงเวลา (เช่น การเรียก API)\n//   console.log(\"Data fetched!\");\n//   return \"Data fetched asynchronously\";\n// }\n// // ตัวอย่างการเรียกใช้ Async Function (ต้องอยู่ในบริบทของ async function อื่น)\n// /*\n// (async () => {\n//     const data = await fetchData();\n//     console.log(\"Received: \", data);\n// })();\n// */"
+      ],
+      "built_in (ในตัว)": [
+        "console.log() // ใช้แสดงผลข้อมูลใน Console (สำหรับนักพัฒนา)",
+        "Array.prototype.map() // เมธอดสำหรับวนซ้ำและสร้าง Array ใหม่",
+        "JSON.parse() // ใช้แปลงข้อความที่เป็นรูปแบบ JSON ให้เป็น Object",
+        "Date // Object สำหรับทำงานกับวันที่และเวลา",
+        "Promise // Object สำหรับจัดการการทำงานแบบ Asynchronous"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (let i = 0; i < 5; i++) { /* ... */ } // ลูป for แบบดั้งเดิม",
+        "while (condition) { /* ... */ } // ลูป while",
+        "for (const item of array) { /* ... */ } // ลูป for...of สำหรับวนซ้ำ Iterable objects (เช่น Array)",
+        "array.forEach(item => { /* ... */ }); // เมธอด forEach สำหรับ Array"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, ===, !==, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ (หลวม/เข้มงวด), ไม่เท่ากับ (หลวม/เข้มงวด) ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nlet temperature: number = 25;\nif (temperature > 30) {\n  console.log('Hot day');\n} else if (temperature < 10) {\n  console.log('Cold day');\n} else {\n  console.log('Normal day');\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (let i = 0; i < 3; i++) {\n  console.log(`Loop TS: ${i}`);\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\nlet day: string = \"Wednesday\";\nswitch (day) {\n  case \"Monday\":\n    console.log(\"Start of week\");\n    break;\n  case \"Friday\":\n    console.log(\"End of week\");\n    break;\n  default:\n    console.log(\"Mid-week\");\n}\n",
+          "// ตัวอย่างที่ 4: การใช้งาน Class และ Interface (OOP)\ninterface Shape {\n  area(): number;\n}\nclass Circle implements Shape {\n  radius: number;\n  constructor(radius: number) {\n    this.radius = radius;\n  }\n  area(): number {\n    return Math.PI * this.radius * this.radius;\n  }\n}\nlet myCircle = new Circle(5);\nconsole.log(`Area of circle: ${myCircle.area()}`);\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย Try-Catch\ntry {\n  let num1: number = 10;\n  let num2: number = 0;\n  if (num2 === 0) {\n    throw new Error(\"Cannot divide by zero\");\n  }\n  let result: number = num1 / num2;\n  console.log(\"Result: \", result);\n} catch (error: any) {\n  console.error(\"Caught an error: \", error.message);\n}\n",
+          "// ตัวอย่างที่ 6: การใช้งาน Enum\nenum Direction {\n  Up, Down, Left, Right\n}\nlet move: Direction = Direction.Up;\nconsole.log(`Moving: ${Direction[move]}`); // แสดงผล 'Moving: Up'\n"
+      ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": 3,
+  "name": "C#",
+  "slug": "csharp",
+  "logo": "img/csharp.png",
+  "desc": "C# (C-sharp) คือภาษาโปรแกรมเชิงวัตถุที่พัฒนาโดย Microsoft ใช้สำหรับสร้างแอปพลิเคชันหลากหลายประเภทบนแพลตฟอร์ม .NET เช่น Windows desktop apps, เว็บไซต์ (ASP.NET), เกม (Unity) และแอปบนมือถือ (Xamarin)",
+  "by": "Microsoft (.NET team)",
+  "yr": "2000",
+  "level": "3",
+  "par": ["Object-Oriented", "Component-Oriented", "Structured", "Imperative", "Functional"],
+  "fields": ["Game", "Desktop", "Mobile", "Plugin", "Render"],
+  "rank": "5 ใน TIOBE Index 2025 (4.12%)",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-85,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "เป็นภาษาเชิงวัตถุที่ทันสมัยและทรงพลัง",
+      "มี Ecosystem ที่สมบูรณ์แบบบน .NET",
+      "เครื่องมือพัฒนา (Visual Studio) ที่มีประสิทธิภาพสูง",
+      "มี Garbage Collection จัดการหน่วยความจำอัตโนมัติ",
+      "สามารถสร้างแอปพลิเคชันได้หลากหลายประเภท"
+  ],
+  "cons": [
+      "ผูกติดกับแพลตฟอร์ม .NET (แม้จะเปิดกว้างมากขึ้นกับ .NET Core)",
+      "ประสิทธิภาพอาจไม่เท่า C/C++ สำหรับงานระดับต่ำมาก",
+      "การเรียนรู้อาจมี Learning Curve สูงสำหรับบางฟีเจอร์",
+      "โปรแกรมที่สร้างขึ้นมีขนาดใหญ่กว่า C/C++",
+      "ชุมชนอาจไม่ใหญ่เท่า JavaScript หรือ Python ในบางด้าน"
+  ],
+  "frameworks": ["ASP.NET", "Unity (Game Engine)", "Xamarin (Mobile)", "Blazor (Web)"],
+  "learn": ["Microsoft Learn: C#", "Head First C#", "Pluralsight C# Courses", "C# Station"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "int age; // การประกาศตัวแปรจำนวนเต็ม",
+        "string name; // การประกาศตัวแปรสตริง",
+        "bool isActive; // การประกาศตัวแปรบูลีน"
+      ],
+      "types (ประเภท)": [
+        "int (System.Int32) // จำนวนเต็ม",
+        "double (System.Double) // ทศนิยมความแม่นยำคู่",
+        "string (System.String) // ข้อความ",
+        "bool (System.Boolean) // ค่าจริงหรือเท็จ",
+        "char (System.Char) // ตัวอักขระ",
+        "float (System.Single) // ทศนิยมความแม่นยำเดี่ยว",
+        "decimal (System.Decimal) // ทศนิยมความแม่นยำสูง (สำหรับงานการเงิน)",
+        "long (System.Int64) // จำนวนเต็มขนาดยาว"
+      ],
+      "examples (ตัวอย่าง)": [
+          "int quantity = 50; // กำหนดตัวแปร quantity เก็บตัวเลข 50",
+          "string product_name = \"Laptop\"; // กำหนดตัวแปร product_name เก็บข้อความ",
+          "bool has_stock = true; // กำหนดตัวแปร has_stock เก็บค่าความจริง",
+          "double price = 1200.50; // กำหนดตัวแปร price เก็บเลขทศนิยม",
+          "int[] numbers = {1, 2, 3, 4, 5}; // ประกาศและกำหนดค่าอาร์เรย์",
+          "var dynamicValue = \"Hello\"; // การใช้ var เพื่อให้ compiler อนุมานประเภทข้อมูล"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "public returnType MethodName(parameters) { /* ... */ } // การประกาศเมธอด (ฟังก์ชัน) แบบปกติ",
+        "(parameters) => expression // Lambda expression (ฟังก์ชันนิรนามแบบย่อ)",
+        "public static returnType MethodName(parameters) { /* ... */ } // การประกาศ Static Method"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชัน (เมธอด) สำหรับบวกเลขสองจำนวน\npublic int Add(int a, int b) {\n  return a + b;\n}\n",
+          "// ฟังก์ชัน (เมธอด) สำหรับแสดงข้อความออกทาง Console\nprivate void DisplayMessage(string message) {\n  Console.WriteLine(message);\n}\n",
+          "// การเรียกใช้ฟังก์ชัน (เมธอด)\nint result = Add(10, 20); // result จะมีค่า 30\nDisplayMessage(\"Hello from C#!\"); // แสดงผล 'Hello from C#!'\n",
+          "// การใช้งาน Lambda expression (ฟังก์ชันนิรนาม)\nFunc<int, int, int> multiply = (a, b) => a * b;\nConsole.WriteLine($\"Multiply: {multiply(5, 4)}\"); // แสดงผล 'Multiply: 20'\n",
+          "// Asynchronous Function (using async/await)\n// ฟังก์ชันนี้แสดงการทำงานแบบ Asynchronous ซึ่งจะรันโดยไม่บล็อกการทำงานหลักของโปรแกรม\n// ต้องใช้ 'async' และ 'await' ร่วมกับ Task<T> หรือ Task\nusing System.Threading.Tasks;\npublic async Task<string> FetchDataAsync() {\n  Console.WriteLine(\"Fetching data...\");\n  await Task.Delay(1000); // จำลองการหน่วงเวลา (เช่น การเรียก API)\n  Console.WriteLine(\"Data fetched!\");\n  return \"Data fetched asynchronously\";\n}\n// ตัวอย่างการเรียกใช้ Async Function (ต้องอยู่ในบริบทของ Async Method หรือ Main method ใน C# 7.1+)\n/*\nasync Task Main(string[] args)\n{\n    string data = await FetchDataAsync();\n    Console.WriteLine(data);\n}\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "Console.WriteLine() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "List<T> // คอลเลกชันแบบไดนามิกที่ปรับขนาดได้",
+        "Dictionary<TKey, TValue> // คอลเลกชันสำหรับ Key-Value Pairs",
+        "DateTime.Now // ใช้สำหรับรับเวลาปัจจุบัน",
+        "File.ReadAllText() // ใช้สำหรับอ่านข้อความทั้งหมดจากไฟล์"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (initialization; condition; increment) { /* ... */ } // ลูป for แบบดั้งเดิม",
+        "while (condition) { /* ... */ } // ลูป while",
+        "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)",
+        "foreach (var item in collection) { /* ... */ } // ลูป foreach สำหรับวนซ้ำคอลเลกชัน"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "Null-coalescing: ??, ??= // ตัวดำเนินการสำหรับจัดการค่า null",
+        "Ternary: ? : // ตัวดำเนินการเงื่อนไขแบบย่อ (Conditional Operator)",
+        "as // ตัวดำเนินการแปลงประเภท (Type Casting) อย่างปลอดภัย",
+        "is // ตัวดำเนินการตรวจสอบประเภท (Type Checking)",
+        "new // ตัวดำเนินการสร้าง Object ใหม่"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nint score = 75;\nif (score >= 80) {\n  Console.WriteLine(\"Grade A\");\n} else if (score >= 60) {\n  Console.WriteLine(\"Grade B\");\n} else {\n  Console.WriteLine(\"Grade C\");\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (int i = 0; i < 3; i++) {\n  Console.WriteLine($\"Loop C#: {i}\");\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\nstring day = \"Monday\";\nswitch (day) {\n  case \"Monday\":\n    Console.WriteLine(\"Start of the week.\");\n    break;\n  case \"Friday\":\n    Console.WriteLine(\"End of the week!\");\n    break;\n  default:\n    Console.WriteLine(\"Mid-week.\");\n}\n",
+          "// ตัวอย่างที่ 4: การใช้งานคลาสและ Object-Oriented Programming (OOP)\nusing System;\npublic class Car {\n  public string Model { get; set; }\n  public int Year { get; set; }\n  public void StartEngine() {\n    Console.WriteLine($\"{Model} engine started!\");\n  }\n}\n// สร้าง Object จากคลาส Car\nCar myCar = new Car();\nmyCar.Model = \"Toyota\";\nmyCar.Year = 2023;\nmyCar.StartEngine(); // เรียกใช้เมธอด\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\nusing System;\ntry {\n  int dividend = 10;\n  int divisor = 0;\n  int result = dividend / divisor; // จะเกิด DivideByZeroException\n  Console.WriteLine(result);\n}\ncatch (DivideByZeroException ex) {\n  Console.WriteLine($\"Error: {ex.Message}\");\n}\nfinally {\n  Console.WriteLine(\"Execution completed.\");\n}\n",
+          "// ตัวอย่างที่ 6: การใช้ LINQ (Language Integrated Query) กับ List\nusing System.Collections.Generic;\nusing System.Linq;\nList<int> numbers = new List<int> { 1, 5, 2, 8, 3 };\nvar evenNumbers = numbers.Where(n => n % 2 == 0).OrderBy(n => n).ToList();\nConsole.WriteLine(\"Even numbers (sorted): \" + string.Join(\", \", evenNumbers)); // แสดงผล 'Even numbers (sorted): 2, 4, 8' (สมมติ 4 ด้วย)"
+      ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "id": 13,
+  "name": "Kotlin",
+  "slug": "kotlin",
+  "logo": "img/kotlin.png",
+  "desc": "Kotlin เป็นภาษาโปรแกรมที่ทันสมัย, Statically typed และพัฒนาโดย JetBrains สามารถทำงานบน JVM และถูกเลือกให้เป็นภาษาหลักสำหรับการพัฒนา Android แทน Java ได้รับความนิยมอย่างรวดเร็ว",
+  "by": "JetBrains",
+  "yr": "2011",
+  "level": "3",
+  "par": ["Object-Oriented", "Functional", "Procedural", "Concurrent"],
+  "fields": ["Mobile", "Backend"],
+  "rank": "18-20 Android Official Language แต่ความนิยมลดลง",
+  "salary_range": "฿38,000-60,000 บาท/เดือน (Junior), ฿60,000-105,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "ใช้งานร่วมกับ Java ได้ 100% (Interoperability)",
+      "ลด boilerplate code",
+      "มี Null Safety ในตัว",
+      "รองรับ Coroutines สำหรับ Asynchronous Programming",
+      "มีเครื่องมือพัฒนา (IntelliJ IDEA) ที่ยอดเยี่ยม"
+  ],
+  "cons": [
+      "Learning Curve อาจมีบ้างสำหรับผู้ที่มาจาก Java โดยตรง",
+      "ขนาดของแอปพลิเคชันอาจใหญ่ขึ้นเล็กน้อย (จาก Kotlin Runtime)",
+      "ทรัพยากรการเรียนรู้ยังไม่เยอะเท่า Java",
+      "ความเร็วในการคอมไพล์อาจช้ากว่า Java เล็กน้อยในโปรเจกต์ขนาดใหญ่"
+  ],
+  "frameworks": ["Spring Boot (with Kotlin)", "Ktor", "Jetpack Compose (Android)", "Exposed"],
+  "learn": ["Kotlin Official Documentation", "Kotlin Koans", "Kotlin by Example", "Android Developers Kotlin"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "val name = \"Kotlin\"; // Immutable (ค่าคงที่)",
+        "var age = 10; // Mutable (ตัวแปรที่เปลี่ยนแปลงได้)"
+      ],
+      "types (ประเภท)": [
+        "Int // จำนวนเต็ม",
+        "Long // จำนวนเต็มขนาดใหญ่",
+        "Float // ทศนิยมความแม่นยำเดี่ยว",
+        "Double // ทศนิยมความแม่นยำคู่",
+        "Boolean // ค่าจริงหรือเท็จ (true/false)",
+        "Char // ตัวอักขระ",
+        "String // ข้อความ",
+        "Array<T> // อาร์เรย์ (เช่น Array<Int>)",
+        "List<T> // List ที่ไม่สามารถเปลี่ยนแปลงได้",
+        "MutableList<T> // List ที่สามารถเปลี่ยนแปลงได้",
+        "Set<T> // Set ที่ไม่สามารถเปลี่ยนแปลงได้ (ไม่มีค่าซ้ำ)",
+        "Map<K, V> // Map ที่ไม่สามารถเปลี่ยนแปลงได้ (Key-Value pairs)",
+        "Any // ประเภทที่ยอมรับค่าใดก็ได้ (คล้าย Object ใน Java)",
+        "Unit // ประเภทที่ไม่มีค่าคืนกลับ (คล้าย void ใน Java)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "val message = \"Hello Kotlin!\" // กำหนดค่าคงที่ message เป็นสตริง",
+          "var counter = 0 // กำหนดตัวแปร counter เป็นตัวเลข",
+          "val pi = 3.14159 // กำหนดค่าคงที่ pi เป็น Double (Type Inference)",
+          "var nullableString: String? = null // ตัวแปรที่สามารถเป็น null ได้",
+          "val numbers = listOf(1, 2, 3) // กำหนดค่าคงที่ List",
+          "var mutableList = mutableListOf(\"apple\", \"banana\") // กำหนดตัวแปร Mutable List"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "fun functionName(param: Type): ReturnType { ... } // การประกาศฟังก์ชันปกติ",
+        "{ param: Type -> expression } // Lambda expression (ฟังก์ชันนิรนาม)",
+        "fun ClassName.extensionFunction() { ... } // Extension Function"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nfun sum(a: Int, b: Int): Int {\n  return a + b\n}\n",
+          "// ฟังก์ชันทักทาย\nfun greet(name: String) {\n  println(\"Hello, $name!\")\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nval total = sum(2, 3) // total จะมีค่า 5\ngreet(\"Developer\") // แสดงผล 'Hello, Developer!'\n",
+          "// ฟังก์ชันที่มี Default Arguments และ Named Arguments\nfun calculateVolume(length: Int, width: Int = 1, height: Int = 1): Int {\n  return length * width * height\n}\nprintln(calculateVolume(10)) // 10\nprintln(calculateVolume(10, height = 5)) // 50 (ใช้ Named Arguments)\n",
+          "// ฟังก์ชัน Extension (เพิ่มฟังก์ชันให้คลาสที่มีอยู่แล้ว)\nfun String.addExclamation(): String {\n  return this + \"!\"\n}\nval text = \"Hello\".addExclamation() // Hello!\n",
+          "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\nfun operate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {\n  return operation(a, b)\n}\nval result = operate(5, 3) { x, y -> x * y } // Result: 15\n",
+          "// Asynchronous Programming (Coroutines)\n// Kotlin จัดการ Asynchronous ผ่าน Coroutines ซึ่งเป็น Lightweight Threads ที่มีประสิทธิภาพสูง\n// Coroutines ทำให้โค้ด Asynchronous เขียนและอ่านง่ายขึ้น โดยใช้ 'suspend' และ Builder เช่น 'launch', 'async'\n// import kotlinx.coroutines.*\n// suspend fun fetchData(): String {\n//   println(\"Fetching data...\")\n//   delay(1000) // จำลองการหน่วงเวลา 1 วินาที\n//   println(\"Data fetched!\")\n//   return \"Data fetched asynchronously\"\n// }\n// // ตัวอย่างการเรียกใช้ Coroutine (ต้องรันใน Coroutine Scope เช่น GlobalScope.launch)\n// /*\n// fun main() = runBlocking {\n//     val data = fetchData()\n//     println(\"Received: $data\")\n// }\n// */"
+      ],
+      "built_in (ในตัว)": [
+        "println() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "listOf() // ใช้สร้าง Immutable List",
+        "mutableListOf() // ใช้สร้าง Mutable List",
+        "mapOf() // ใช้สร้าง Immutable Map",
+        "mutableMapOf() // ใช้สร้าง Mutable Map",
+        "readLine() // ใช้รับข้อมูลจากผู้ใช้งาน",
+        "forEach() // เมธอดสำหรับวนซ้ำ Collection",
+        "filter() // เมธอดสำหรับกรองข้อมูลใน Collection",
+        "map() // เมธอดสำหรับแปลงข้อมูลใน Collection",
+        "apply() // Extension Function สำหรับการกำหนดค่า Object",
+        "also() // Extension Function สำหรับการทำงานเพิ่มเติมกับ Object",
+        "let() // Extension Function สำหรับ Null-Safe Call และ Scope Function"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "when (expression) { value -> /* ... */ else -> /* ... */ } // คำสั่ง when (คล้าย switch แต่ยืดหยุ่นกว่า)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (i in 1..5) { /* ... */ } // ลูป for-in สำหรับ Range (รวมค่าสุดท้าย)",
+        "for (i in 1 until 5) { /* ... */ } // ลูป for-in สำหรับ Range (ไม่รวมค่าสุดท้าย)",
+        "while (condition) { /* ... */ } // ลูป while",
+        "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)",
+        "for (item in collection) { /* ... */ } // ลูป for-in สำหรับวนซ้ำ Collection"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+        "Assignment: =, +=, -=, *=, /=, %=",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+        "Elvis: ?: // ตัวดำเนินการ Elvis (สำหรับจัดการค่า Null)",
+        "Safe Call: ?. // ตัวดำเนินการ Safe Call (สำหรับเรียกเมธอด/Property บน Optional)",
+        "Not-null asserted: !! // ตัวดำเนินการ Not-null asserted (ใช้เมื่อแน่ใจว่าไม่ใช่ Null)",
+        "Range: .. (Inclusive), until (Exclusive) // ตัวดำเนินการสำหรับช่วงตัวเลข",
+        "in // ตัวดำเนินการตรวจสอบการมีอยู่ของสมาชิกใน Collection หรือ Range"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else) และ If as Expression\nval grade = 80\nval message = if (grade >= 90) {\n  \"Grade A\"\n} else if (grade >= 80) {\n  \"Grade B\"\n} else {\n  \"Grade C\"\n}\nprintln(message) // แสดงผล 'Grade B'\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) และ 'when' expression\nfor (i in 0..2) {\n  when (i) {\n    0 -> println(\"First iteration\")\n    1 -> println(\"Second iteration\")\n    else -> println(\"Other iteration\")\n  }\n}\n",
+          "// ตัวอย่างที่ 3: การใช้งาน Class และ Object-Oriented Programming (OOP)\nclass Dog(val name: String, var age: Int) { // Primary Constructor\n  fun bark() {\n    println(\"$name says Woof!\")\n  }\n}\n// สร้าง Object จากคลาส Dog\nval myDog = Dog(\"Buddy\", 3)\nmyDog.bark() // แสดงผล 'Buddy says Woof!'\nprintln(\"Dog's age: ${myDog.age}\")\nmyDog.age = 4 // เปลี่ยนแปลงค่า age เพราะเป็น var\n\ninterface Greeter { // Interface\n  fun greet(name: String)\n}\nclass EnglishGreeter : Greeter { // Implement Interface\n  override fun greet(name: String) {\n    println(\"Hello, $name!\")\n  }\n}\nval greeter: Greeter = EnglishGreeter()\ngreeter.greet(\"World\") // Hello, World!\n",
+          "// ตัวอย่างที่ 4: Null Safety (การจัดการค่า Null)\nvar name: String? = \"Alice\" // สามารถเป็น null ได้\nvar length = name?.length // Safe call: หาก name เป็น null, length จะเป็น null\nprintln(\"Length: $length\") // แสดงผล 'Length: 5'\nname = null\nlength = name?.length\nprintln(\"Length: $length\") // แสดงผล 'Length: null'\n\n// Elvis operator ( ?: ) - ให้ค่า default ถ้าเป็น null\nval actualName = name ?: \"Guest\"\nprintln(\"Actual name: $actualName\") // แสดงผล 'Actual name: Guest'\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\nimport java.lang.NumberFormatException\ntry {\n  val numberString = \"abc\"\n  val number = numberString.toInt() // อาจเกิด NumberFormatException\n  println(\"Parsed number: $number\")\n} catch (e: NumberFormatException) {\n  println(\"Error: Invalid number format - ${e.message}\")\n} catch (e: Exception) {\n  println(\"An unexpected error occurred: ${e.message}\")\n} finally {\n  println(\"Execution finished.\")\n}\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ Collections (List, Map)\nval fruits = listOf(\"Apple\", \"Banana\", \"Cherry\") // Immutable List\nprintln(\"Fruits: $fruits\")\nval mutableFruits = mutableListOf(\"Orange\", \"Grape\") // Mutable List\nmutableFruits.add(\"Mango\")\nprintln(\"Mutable Fruits: $mutableFruits\")\n\nval userMap = mapOf(\"name\" to \"John\", \"age\" to 30) // Immutable Map\nprintln(\"User Map: $userMap\")\nval mutableUserMap = mutableMapOf(\"city\" to \"New York\") // Mutable Map\nmutableUserMap[\"zip\"] = \"10001\"\nprintln(\"Mutable User Map: $mutableUserMap\")"
+      ]
+  }
+}

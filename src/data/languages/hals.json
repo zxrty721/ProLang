@@ -1,0 +1,101 @@
+{
+  "id": 62,
+  "name": "HAL/S",
+  "slug": "hals",
+  "logo": "img/hals.png",
+  "desc": "HAL/S (High-order Assembly Language/Shuttle) คือภาษาโปรแกรมระดับสูงที่ออกแบบมาโดยเฉพาะสำหรับภารกิจการบินอวกาศที่มีความสำคัญยิ่งยวดและต้องการความน่าเชื่อถือสูงสุด โดยเป็นภาษาหลักที่ใช้ในการควบคุมการบินของกระสวยอวกาศของ NASA",
+  "by": "Intermetrics (NASA)",
+  "yr": "1972",
+  "level": "1",
+  "par": ["Procedural", "Imperative", "Real-time", "System Programming"],
+  "fields": ["Aero", "Embedded", "Render", "System"],
+  "rank": "Niche (ใช้ในระบบการบินอวกาศ)",
+  "salary_range": "฿45,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high","veryhigh"],
+  "pros": [
+      "ความน่าเชื่อถือและความปลอดภัยสูงมาก (ออกแบบมาเพื่อลดข้อผิดพลาด)",
+      "ควบคุมฮาร์ดแวร์ได้ละเอียดและมีประสิทธิภาพสูง",
+      "รองรับการประมวลผลแบบ Real-time ที่ซับซ้อน",
+      "มี Type System ที่เข้มงวดเพื่อป้องกันข้อผิดพลาด",
+      "เหมาะสำหรับระบบควบคุมที่มีความสำคัญต่อชีวิตและทรัพย์สิน"
+  ],
+  "cons": [
+      "เฉพาะทางสูง ไม่เหมาะกับแอปพลิเคชันทั่วไป",
+      "Learning Curve สูงมากและซับซ้อน",
+      "ชุมชนนักพัฒนาเล็กและแหล่งเรียนรู้จำกัด",
+      "การดีบักซับซ้อนและต้องใช้เครื่องมือเฉพาะ",
+      "โค้ดไม่สามารถนำไปใช้กับแพลตฟอร์มอื่นได้ง่าย"
+  ],
+  "frameworks": ["None (เป็นภาษาพื้นฐานสำหรับระบบฝังตัว)"],
+  "learn": ["NASA Documentation", "Intermetrics Archives", "Aerospace Engineering Texts (Limited Public Access)"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "DECLARE VELOCITY VECTOR (3) REAL; -- ประกาศตัวแปร Vector 3 มิติ ชนิด Real",
+        "DECLARE TEMPERATURE REAL; -- ประกาศตัวแปรอุณหภูมิ ชนิด Real",
+        "DECLARE STATUS_BITS BIT (8); -- ประกาศตัวแปร Bit String ขนาด 8 บิต"
+      ],
+      "types (ประเภท)": [
+        "SCALAR (REAL, INTEGER, BOOLEAN) // ตัวเลข (ทศนิยม, จำนวนเต็ม) และบูลีน",
+        "VECTOR (n) REAL // เวกเตอร์ (n มิติ) ของจำนวนจริง",
+        "MATRIX (m,n) REAL // เมทริกซ์ (m x n มิติ) ของจำนวนจริง",
+        "BIT (n) // Bit String ขนาด n บิต",
+        "CHARACTER (n) // สตริงตัวอักษรขนาด n ตัว"
+      ],
+      "examples (ตัวอย่าง)": [
+          "DECLARE POSITION VECTOR (3) REAL; -- กำหนดตัวแปรตำแหน่งเป็น Vector 3 มิติ",
+          "DECLARE DELTA_V VECTOR (3) REAL INITIAL (0.0, 0.0, 0.0); -- กำหนดตัวแปร Vector พร้อมค่าเริ่มต้น",
+          "DECLARE COMMAND_WORD BIT (16) INITIAL (B'1011001101011110'); -- กำหนด Bit String พร้อมค่าเริ่มต้น",
+          "DECLARE ENGINE_STATUS BOOLEAN; -- กำหนดตัวแปรสถานะเป็น Boolean"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "PROCEDURE COMPUTE_GUIDANCE (STATE IN VECTOR (6) REAL; COMMANDS OUT VECTOR (3) REAL); -- ประกาศ Procedure (คล้ายฟังก์ชันที่คืนค่าผ่าน Parameter)",
+        "FUNCTION CALCULATE_MAGNITUDE (V VECTOR (3) REAL) RETURNS REAL; -- ประกาศ Function (คืนค่ากลับ)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// Procedure สำหรับคำนวณแรงขับดัน\\nPROCEDURE COMPUTE_THRUST (THRUST_VECTOR OUT VECTOR (3) REAL);\\nBEGIN\\n  THRUST_VECTOR(1) = 100.0; -- กำหนดค่าแกน X ของแรงขับ\\n  THRUST_VECTOR(2) = 50.0;  -- กำหนดค่าแกน Y ของแรงขับ\\n  THRUST_VECTOR(3) = 0.0;   -- กำหนดค่าแกน Z ของแรงขับ\\nEND;\\n",
+          "// Function สำหรับคำนวณขนาดของ Vector\\nFUNCTION VECTOR_MAGNITUDE (V VECTOR (3) REAL) RETURNS REAL;\\nBEGIN\\n  RETURN SQRT(V(1)**2 + V(2)**2 + V(3)**2);\\nEND;\\n",
+          "// การเรียกใช้ Procedure/Function (ต้องอยู่ใน Main Program หรือ Task)\\n// DECLARE THRUST_COMMAND VECTOR (3) REAL;\\n// CALL COMPUTE_THRUST (THRUST_COMMAND); -- เรียกใช้ Procedure\\n// DECLARE SPEED REAL;\\n// SPEED = VECTOR_MAGNITUDE (THRUST_COMMAND); -- เรียกใช้ Function\\n",
+          "// การจัดการ I/O (ตัวอย่างแนวคิด)\\n// READ (SENSOR_CHANNEL) INTO TEMPERATURE; -- อ่านค่าจาก Sensor\\n// WRITE (ACTUATOR_CHANNEL) FROM CONTROL_SIGNAL; -- ส่งค่าไปยัง Actuator"
+      ],
+      "built_in (ในตัว)": [
+        "SQRT() // คำนวณรากที่สอง",
+        "SIN(), COS(), TAN() // ฟังก์ชันตรีโกณมิติ",
+        "ABS() // ค่าสัมบูรณ์",
+        "DOT_PRODUCT(V1, V2) // Dot product ของ Vector",
+        "CROSS_PRODUCT(V1, V2) // Cross product ของ Vector",
+        "MAGNITUDE(V) // ขนาดของ Vector",
+        "REPLACE // ใช้เปลี่ยนค่า Bit String บางส่วน"
+      ],
+      "async (Concurrency)": [
+        "TASK CONTROL_LOOP; -- ประกาศ Task สำหรับ Concurrency (ทำงานแบบ Real-time)\n-- ตัวอย่างการสื่อสารระหว่าง Tasks (Rendezvous)\\n-- ENTRY UPDATE_STATE (NEW_STATE IN VECTOR (6) REAL); -- Entry Point สำหรับ Task อื่นเรียกใช้\n-- ACCEPT UPDATE_STATE (NEW_STATE IN VECTOR (6) REAL) DO ... END; -- การรอรับการเรียกจาก Entry Point"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "/* This is a multi-line comment */",
+        "-- This is a single-line comment"
+      ],
+      "conditions (เงื่อนไข)": [
+        "IF condition THEN\\n  statement(s);\\nELSE IF another_condition THEN\\n  statement(s);\\nELSE\\n  statement(s);\\nEND IF; // คำสั่ง IF-ELSE IF-ELSE"
+      ],
+      "loops (การวนซ้ำ)": [
+        "FOR I FROM 1 TO 10 DO\\n  statement(s);\\nEND FOR; // ลูป FOR (นับเลข)",
+        "WHILE condition DO\\n  statement(s);\\nEND WHILE; // ลูป WHILE",
+        "LOOP\\n  statement(s);\\n  EXIT WHEN condition;\\nEND LOOP; // ลูปไม่รู้จบพร้อมเงื่อนไขออก"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, **, MOD, REM // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, ยกกำลัง, Modulo, Remainder",
+        "Comparison: =, /=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+        "Logical: AND, OR, NOT, XOR // ตัวดำเนินการตรรกะ: AND, OR, NOT, XOR",
+        "& // Concatenation (เชื่อมสตริง)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (IF-ELSE)\\nIF TEMPERATURE > 100.0 THEN\\n  CALL ACTIVATE_COOLING_SYSTEM;\\nELSE\\n  CALL DEACTIVATE_COOLING_SYSTEM;\\nEND IF;\\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป FOR\\nFOR I FROM 1 TO NUMBER_OF_CYCLES DO\\n  CALL PERFORM_CALCULATION (I);\\nEND FOR;\\n",
+          "// ตัวอย่างที่ 3: การจัดการข้อผิดพลาด (On-Unit / Exception)\\n// HAL/S มีกลไกการจัดการข้อผิดพลาดที่ละเอียด เช่น On-Unit สำหรับ Interrupts\\n// ON OVERFLOW DO\\n//    CALL LOG_ERROR ('Arithmetic Overflow Occurred');\\n//    RECOVER; -- พยายามกู้คืนสถานะ\\n// END ON;\\n",
+          "// ตัวอย่างที่ 4: การทำงานกับ Vector และ Matrix Operations\\nDECLARE A MATRIX (3,3) REAL;\\nDECLARE B MATRIX (3,3) REAL;\\nDECLARE C MATRIX (3,3) REAL;\\nDECLARE V VECTOR (3) REAL;\\n\\nC = A * B; -- การคูณเมทริกซ์\\nV = A * V; -- การคูณเมทริกซ์กับ Vector\\nV = V + (10.0, 5.0, 0.0); -- การบวก Vector กับ Constant Vector"
+      ]
+  }
+}

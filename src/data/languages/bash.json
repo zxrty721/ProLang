@@ -1,0 +1,97 @@
+{
+  "id": 36,
+  "name": "Bash",
+  "slug": "bash",
+  "logo": "img/bash.png",
+  "desc": "Bash (Bourne-Again SHell) เป็น Command Language Interpreter และ Shell Scripting Language ที่ใช้กันอย่างแพร่หลายในระบบปฏิบัติการ Linux, Unix และ macOS สำหรับการทำงานอัตโนมัติ, การจัดการระบบ, การประมวลผลไฟล์ และการทำงานผ่าน Command Line Interface (CLI)",
+  "by": "Brian Fox",
+  "yr": "1989",
+  "level": "2",
+  "par": ["Imperative", "Procedural", "Scripting"],
+  "fields": ["Script", "System", "Cloud"],
+  "rank": "ใช้โดย 28.1% ของนักพัฒนา System Administration",
+  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid"],
+  "pros": [
+    "ใช้งานง่ายสำหรับการจัดการระบบและไฟล์",
+    "เป็นมาตรฐานบนระบบ Unix-like ส่วนใหญ่",
+    "มีเครื่องมือ CLI จำนวนมากให้ใช้ร่วมกัน",
+    "เหมาะสำหรับงาน Automation ขนาดเล็กถึงกลาง"
+  ],
+  "cons": [
+    "ไวยากรณ์อาจซับซ้อนและผิดพลาดได้ง่ายสำหรับงานใหญ่ๆ",
+    "ประสิทธิภาพไม่สูงเท่าภาษา Compiled",
+    "การจัดการ Error ที่ซับซ้อนอาจทำได้ยาก",
+    "ไม่เหมาะกับงานที่ต้องมีการคำนวณซับซ้อน"
+  ],
+  "frameworks": [],
+  "learn": ["Bash Manual", "Linux Command Line Basics", "Shell Scripting Tutorial"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "variable_name=value // รูปแบบการประกาศตัวแปร"
+    ],
+    "types (ประเภท)": [
+      "String // สตริง (ข้อความ)",
+      "Number (Implicit) // ตัวเลข (ไม่ได้มีประเภทตัวเลขชัดเจน จะถือเป็นสตริงหากไม่ระบุการคำนวณ)",
+      "Array // อาร์เรย์ (ชุดข้อมูล)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "name=\"John Doe\" // กำหนดตัวแปร name เก็บสตริง 'John Doe'",
+      "age=30 // กำหนดตัวแปร age เก็บตัวเลข 30",
+      "files=(file1.txt file2.txt) // กำหนดอาร์เรย์ files",
+      "my_path=\"/home/user/docs\" // ตัวอย่างการกำหนด Path"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function_name() { ... } // รูปแบบการประกาศฟังก์ชันแบบมี keyword 'function'",
+      "name() { ... } // รูปแบบการประกาศฟังก์ชันแบบสั้น"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันทักทายรับพารามิเตอร์แรก\ngreet() {\n    echo \"Hello, $1!\";\n}\n",
+      "// ฟังก์ชันบวกเลขสองจำนวน\ncalculate_sum() {\n    sum=$(($1 + $2));\n    echo \"Sum: $sum\";\n}\n",
+      "// ฟังก์ชันแสดงวันที่และเวลาปัจจุบัน\nshow_datetime() {\n    date;\n}\n"
+    ],
+    "built_in (ในตัว)": [
+      "echo // แสดงข้อความออกหน้าจอ",
+      "cd // เปลี่ยนไดเรกทอรี",
+      "ls // แสดงรายการไฟล์และไดเรกทอรี",
+      "grep // ค้นหาข้อความในไฟล์",
+      "cat // แสดงเนื้อหาไฟล์",
+      "find // ค้นหาไฟล์และไดเรกทอรี",
+      "cp // คัดลอกไฟล์/ไดเรกทอรี",
+      "mv // ย้าย/เปลี่ยนชื่อไฟล์/ไดเรกทอรี",
+      "rm // ลบไฟล์/ไดเรกทอรี",
+      "mkdir // สร้างไดเรกทอรี",
+      "pwd // แสดง Path ของไดเรกทอรีปัจจุบัน"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single line comment // คอมเมนต์บรรทัดเดียว"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if [ condition ]; then ... fi // คำสั่ง if-then-fi",
+      "if [[ condition ]]; then ... fi // คำสั่ง if-then-fi (แบบใหม่และปลอดภัยกว่า)",
+      "case value in pattern) ... ;; esac // คำสั่ง case"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for variable in list; do ... done // ลูป for สำหรับวนซ้ำในรายการ",
+      "for (( i=0; i<10; i++ )); do ... done // ลูป for สไตล์ C-like",
+      "while [ condition ]; do ... done // ลูป while"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Numeric Comparison: -eq (เท่ากับ), -ne (ไม่เท่ากับ), -gt (มากกว่า), -lt (น้อยกว่า), -ge (มากกว่าหรือเท่ากับ), -le (น้อยกว่าหรือเท่ากับ)",
+      "String Comparison: == (เท่ากับ), != (ไม่เท่ากับ), < (น้อยกว่า), > (มากกว่า)",
+      "Logical: && (AND), || (OR), ! (NOT)",
+      "File Test: -f (เป็นไฟล์), -d (เป็นไดเรกทอรี), -e (มีอยู่)",
+      "String Test: -z (สตริงว่าง), -n (สตริงไม่ว่าง)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nif [ $age -ge 18 ]; then\n    echo \"Adult\";\nelse\n    echo \"Minor\";\nfi\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for\nfor file in *.txt; do\n    echo \"Processing $file\";\ndone\n",
+      "// ตัวอย่างที่ 3: การรับอินพุตจากผู้ใช้\nread -p \"Enter your name: \" user_name;\necho \"Welcome, $user_name!\";\n",
+      "// ตัวอย่างที่ 4: การทำงานกับไฟล์ (ตรวจสอบและสร้างไดเรกทอรี)\nfolder_name=\"my_scripts\"\nif [ ! -d \"$folder_name\" ]; then\n    mkdir \"$folder_name\";\n    echo \"Directory '$folder_name' created.\";\nelse\n    echo \"Directory '$folder_name' already exists.\";\nfi\n"
+    ]
+  }
+}

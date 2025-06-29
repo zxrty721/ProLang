@@ -1,0 +1,111 @@
+{
+  "id": 27,
+  "name": "Lua",
+  "slug": "lua",
+  "logo": "img/lua.png",
+  "desc": "Lua เป็นภาษา Scripting ที่มีน้ำหนักเบา (lightweight), ประสิทธิภาพสูง, และมีความสามารถในการขยาย (extensible) สูง เหมาะสำหรับการฝัง (embedding) ในแอปพลิเคชันอื่น ๆ เช่น เกม และระบบฝังตัว (embedded systems) มีไวยากรณ์ที่เรียบง่ายและเรียนรู้ได้เร็ว",
+  "by": "Roberto Ierusalimschy, Luiz Henrique de Figueiredo, and Waldemar Celes",
+  "yr": "1993",
+  "level": "2",
+  "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)"],
+  "fields": ["Game", "Script", "Robot", "Plugin"],
+  "rank": "25-30 ใช้ใน Game Development และ Embedded Systems",
+  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+      "มีน้ำหนักเบาและรวดเร็ว เหมาะสำหรับการฝัง",
+      "ไวยากรณ์เรียบง่ายและเรียนรู้ง่าย",
+      "มี Table ซึ่งเป็น Data Structure ที่ยืดหยุ่นมาก",
+      "ประสิทธิภาพสูงสำหรับภาษา Scripting",
+      "เป็นที่นิยมในอุตสาหกรรมเกม (Game Scripting)"
+  ],
+  "cons": [
+      "ระบบจัดการ Error ที่ค่อนข้างจำกัด",
+      "ชุมชนนักพัฒนาอาจเล็กกว่าภาษาหลักบางภาษา",
+      "ไม่มี Standard Library ที่ครอบคลุมเท่าภาษาอื่น",
+      "ไม่มีระบบ Type ในตัว (ก่อน Luau)",
+      "ไม่เหมาะสำหรับการพัฒนาแอปพลิเคชันขนาดใหญ่โดยลำพัง"
+  ],
+  "frameworks": ["Luvit (Web/Networking)", "OpenResty (Web Platform)", "Corona SDK (Game Dev)", "Love2D (Game Dev)"],
+  "learn": ["Lua.org Official Manual", "Programming in Lua (book)", "Learn Lua in 15 Minutes", "Codecademy"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "local myVar = 10 -- ตัวแปร Local (แนะนำให้ใช้)",
+        "globalVar = \"Hello\" -- ตัวแปร Global (ไม่แนะนำให้ใช้ถ้าไม่จำเป็น)",
+        "local name = 'Alice' -- การประกาศตัวแปรสตริง"
+      ],
+      "types (ประเภท)": [
+        "nil // ไม่มีค่า (คล้าย null หรือ undefined)",
+        "boolean (true, false) // ค่าความจริง",
+        "number (integers, floats) // ตัวเลข (ทั้งจำนวนเต็มและทศนิยม)",
+        "string // ข้อความ",
+        "function // ฟังก์ชัน",
+        "userdata // ข้อมูลที่กำหนดโดยผู้ใช้ (สำหรับ C/C++ Interfacing)",
+        "thread // Coroutine (สำหรับ Concurrency)",
+        "table // โครงสร้างข้อมูลที่ยืดหยุ่นที่สุดใน Lua (ใช้แทน Array, Map, Object)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "local score = 100 -- กำหนดตัวแปร score เป็นตัวเลข 100",
+          "local isActive = true -- กำหนดตัวแปร isActive เป็น Boolean",
+          "local message = \"Welcome!\" -- กำหนดตัวแปร message เป็นสตริง",
+          "local myTable = {key = 'value', 1, 2, 3} -- กำหนด Table (มีทั้ง Key-Value และ Array-like)",
+          "local colors = {\"red\", \"green\", \"blue\"} -- Table ใช้เป็น Array",
+          "local user_data = {name = \"Bob\", age = 25} -- Table ใช้เป็น Object"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "function funcName(param1, param2)\\n  -- code\\n  return result\\nend -- การประกาศฟังก์ชันปกติ",
+        "local anonFunc = function(x) return x * 2 end -- Anonymous function (ฟังก์ชันนิรนาม)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nlocal function add(a, b)\n  return a + b\nend\nprint(add(5, 3)) -- แสดงผล 8\n",
+          "// ฟังก์ชัน Recursive สำหรับ Factorial\nlocal function factorial(n)\n  if n == 0 then return 1 end\n  return n * factorial(n - 1)\nend\nprint(factorial(5)) -- แสดงผล 120\n",
+          "// ฟังก์ชันที่มี Optional Parameters และ Multiple Returns\nlocal function get_info(name, age)\n  age = age or \"Unknown\"\n  return \"Name: \" .. name, \"Age: \" .. age\nend\nlocal n, a = get_info(\"Alice\")\nprint(n, a) -- Name: Alice    Age: Unknown\nlocal n2, a2 = get_info(\"Bob\", 30)\nprint(n2, a2) -- Name: Bob    Age: 30\n",
+          "// Asynchronous Programming (Conceptual - Lua ใช้ Coroutines)\n// Lua รองรับ Coroutines ซึ่งเป็น Lightweight, Co-operative multitasking\n// ที่ช่วยในการจัดการ Asynchronous operations ได้ดี\n\n-- local co = coroutine.create(function ()\n--   print(\"Coroutine: Starting long task...\")\n--   coroutine.yield() -- หยุดการทำงานชั่วคราว\n--   print(\"Coroutine: Resumed and finished!\")\n-- end)\n\n-- print(\"Main: First run of coroutine\")\n-- coroutine.resume(co) -- เริ่ม/รัน Coroutine\n\n-- print(\"Main: Doing other work...\")\n-- -- ทำงานอื่นๆ ใน Main Thread\n\n-- print(\"Main: Resuming coroutine\")\n-- coroutine.resume(co) -- รัน Coroutine ต่อ\n"
+      ],
+      "built_in (ในตัว)": [
+        "print() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "type() // ใช้ตรวจสอบประเภทข้อมูล",
+        "tonumber() // ใช้แปลงสตริงเป็นตัวเลข",
+        "tostring() // ใช้แปลงค่าเป็นสตริง",
+        "require() // ใช้โหลด Module/Library",
+        "ipairs() // Iterator สำหรับวนซ้ำ Array-like Table (ตามลำดับ Index)",
+        "pairs() // Iterator สำหรับวนซ้ำ Table (Key-Value และ Array-like)",
+        "table.insert() // เมธอดสำหรับเพิ่มสมาชิกใน Table",
+        "table.remove() // เมธอดสำหรับลบสมาชิกออกจาก Table",
+        "math.random() // ใช้สร้างเลขสุ่ม",
+        "io.read() // อ่านข้อมูลจาก Input/ไฟล์",
+        "io.write() // เขียนข้อมูลไปยัง Output/ไฟล์"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "-- Single-line comment // คอมเมนต์บรรทัดเดียว",
+        "--[[ Multi-line\\n  comment --]] // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if condition then\\n  -- code\\nelseif anotherCondition then\\n  -- code\\nelse\\n  -- code\\nend // คำสั่ง if-elseif-else"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for i = 1, 10 do\\n  print(i)\\nend // ลูป for (นับเลข)",
+        "for i = 1, 10, 2 do\\n  print(i)\\nend -- ลูป for พร้อม Step (เช่น นับทีละ 2)",
+        "while condition do\\n  -- code\\nend // ลูป while",
+        "repeat\\n  -- code\\nuntil condition // ลูป repeat-until (ทำงานอย่างน้อยหนึ่งครั้ง)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, %, ^ // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+        "Comparison: ==, ~=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+        "Logical: and, or, not // ตัวดำเนินการตรรกะ: AND, OR, NOT",
+        "Concatenation: .. // ตัวดำเนินการเชื่อมสตริง",
+        "# // Length operator (สำหรับหาความยาวของ String หรือ Table)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nlocal age = 20\nif age >= 18 then\n  print(\"Adult\")\nelse\n  print(\"Minor\")\nend\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป for (นับเลข)\nfor i = 1, 3 do\n  print(\"Loop: \" .. i)\nend\n",
+          "// ตัวอย่างที่ 3: การใช้วงลูป Generic For (สำหรับ Table)\nlocal numbers = {10, 20, 30}\nfor i, v in ipairs(numbers) do -- ipairs สำหรับ Array-like tables (ตาม index)\n  print(i, v) -- แสดงผล Index และ Value\nend\n\nlocal user_info = {name = \"Charlie\", city = \"London\"}\nfor k, v in pairs(user_info) do -- pairs สำหรับทุก Key-Value ใน Table\n  print(k, v) -- แสดงผล Key และ Value\nend\n",
+          "// ตัวอย่างที่ 4: การทำงานกับ Table (Object-Oriented Programming แบบ Prototype-based)\nlocal Account = {}\nfunction Account:new(o)\n  o = o or {}\n  setmetatable(o, self)\n  self.__index = self\n  return o\nend\n\nfunction Account:withdraw(amount)\n  self.balance = self.balance - amount\nend\n\nlocal myAccount = Account:new({balance = 1000})\nmyAccount:withdraw(200)\nprint(\"Remaining balance: \" .. myAccount.balance) -- แสดงผล 'Remaining balance: 800'\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling) ด้วย Pcall\nlocal function risky_division(a, b)\n  if b == 0 then\n    error(\"Cannot divide by zero!\")\n  end\n  return a / b\nend\n\nlocal success, result = pcall(risky_division, 10, 2) -- pcall จะคืนค่า boolean (success) และผลลัพธ์/error\nif success then\n  print(\"Result: \" .. result)\nelse\n  print(\"Error: \" .. result)\nend\n\nlocal success2, result2 = pcall(risky_division, 10, 0)\nif success2 then\n  print(\"Result: \" .. result2)\nelse\n  print(\"Error: \" .. result2)\nend"
+      ]
+  }
+}

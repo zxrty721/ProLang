@@ -8,15 +8,21 @@
   justify-content: center;
   padding: 1rem;
   z-index: 1000;
-  overflow-y: auto; /* ✅ ให้ scroll ได้ถ้าเนื้อหาสูงเกิน */
+
+  /* ให้ scroll ได้เมื่อเนื้อหายาว */
+  overflow-y: auto;
+
+  /* smooth scroll บน iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* animation fade-in */
+  animation: fadeIn 0.2s ease-out;
+
+  /* ให้คลิกได้เฉพาะ background ไม่ไปขัดกับ content */
+  pointer-events: auto;
 }
 
-/* Fade-out when closing */
-.language-modal-overlay.fade-out {
-  opacity: 0;
-}
-
-/* Fade-out content animation */
+/* Fade-out animation ตอนปิด */
 .language-modal-overlay.fade-out .language-modal-content {
   transform: translateY(20px);
   opacity: 0;
@@ -31,32 +37,29 @@
   width: 100%;
   max-width: 800px;
   margin: auto;
-  max-height: calc(100vh - 2rem); /* ✅ ไม่ให้สูงเกินหน้าจอ */
+
+  /* กำหนดความสูงไม่เกิน viewport - padding */
+  max-height: calc(100vh - 2rem);
+
+  /* scroll content เมื่อยาวเกิน */
   overflow-y: auto;
+
   padding: 2rem;
   position: relative;
+
+  /* smooth scroll บน iOS */
+  -webkit-overflow-scrolling: touch;
+
   animation: slideIn 0.3s ease-out;
 }
 
-/* Scrollbar */
+/* scrollbar สวยๆ */
 .language-modal-content::-webkit-scrollbar {
   width: 6px;
 }
 .language-modal-content::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 3px;
-}
-
-/* ---------- Animations ---------- */
-@keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* ---------- Language Detail Box ---------- */
@@ -66,20 +69,44 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
   width: 95%;
   max-width: 720px;
   margin: auto;
-  max-height: 90vh;
-  overflow-y: auto;
+
+  /* ลบ scroll ซ้อน เพื่อ smooth */
+  max-height: none;
+  overflow-y: visible;
 }
 
-/* Scrollbar */
+/* scrollbar สำหรับ language-detail ถ้าอยากให้มี */
 .language-detail::-webkit-scrollbar {
   width: 6px;
 }
 .language-detail::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 3px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ---------- Header & Logo ---------- */
@@ -163,6 +190,8 @@
   color: #888;
   cursor: pointer;
   transition: color 0.2s ease;
+  user-select: none;
+  z-index: 10;
 }
 .modal-close-button:hover {
   color: #dc2626;
@@ -197,11 +226,6 @@
   background: linear-gradient(135deg, #8b8b8b, #575757, #686868);
 }
 
-html, body {
-  overflow-x: hidden;
-  height: 100%;
-}
-
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .language-detail {
@@ -222,4 +246,10 @@ html, body {
   .language-detail h1 {
     font-size: 1.5rem;
   }
+}
+
+/* ---------- Global ---------- */
+html, body {
+  overflow-x: hidden;
+  height: 100%;
 }

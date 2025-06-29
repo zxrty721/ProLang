@@ -1,0 +1,118 @@
+{
+  "id": 5,
+  "name": "Python",
+  "slug": "python",
+  "logo": "img/python.png",
+  "desc": "Python คือภาษาโปรแกรมที่ใช้งานง่ายและหลากหลาย เน้นความอ่านง่ายของโค้ด เหมาะสำหรับงานด้านวิทยาศาสตร์ข้อมูล, AI, เว็บ และการทำงานอัตโนมัติ",
+  "by": "Guido van Rossum",
+  "yr": "February 20, 1991",
+  "level": "4",
+  "par": ["Object-Oriented", "Imperative", "Functional", "Procedural", "Reflective"],
+  "fields": ["AI", "Data", "Backend", "Script", "Edu", "Testing", "Security", "Cloud", "Robot", "Network", "Finance", "Plugin", "Math", "Graphics", "Render"],
+  "rank": "1 ภาษายอดนิยมสูงสุดโลก (TIOBE Index 2025 - 23.88%)",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high", "veryhigh"],
+  "pros": [
+      "ไวยากรณ์เรียบง่าย อ่านและเรียนรู้ง่าย",
+      "มีไลบรารีมาตรฐานขนาดใหญ่และแพ็กเกจภายนอกจำนวนมาก",
+      "รองรับการทำงานหลากหลาย (เว็บ, AI, Data Science)",
+      "ชุมชนผู้ใช้งานแข็งแกร่งและให้การสนับสนุนดี"
+  ],
+  "cons": [
+      "ความเร็วในการประมวลผลช้ากว่าภาษาที่คอมไพล์",
+      "การใช้หน่วยความจำสูงในบางแอปพลิเคชัน",
+      "Global Interpreter Lock (GIL) จำกัดการทำงานแบบมัลติเธรดสำหรับงานที่ใช้ CPU มาก"
+  ],
+  "frameworks": ["Django", "Flask", "FastAPI", "NumPy", "Pandas", "Scikit-learn", "TensorFlow", "PyTorch"],
+  "learn": ["Python.org Official Docs", "Codecademy: Learn Python", "Real Python", "Google's Python Class"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "variable_name = value // วิธีการกำหนดค่าให้กับตัวแปร",
+        "x, y, z = 1, 2, 3 // การกำหนดค่าให้กับหลายตัวแปรพร้อมกัน (Multiple Assignment)"
+      ],
+      "types (ประเภท)": [
+        "int // ประเภทข้อมูลตัวเลขจำนวนเต็ม",
+        "float // ประเภทข้อมูลตัวเลขทศนิยม",
+        "str // ประเภทข้อมูลสตริง (ข้อความ)",
+        "list // ประเภทข้อมูลรายการที่สามารถเปลี่ยนแปลงได้ (คล้าย Array)",
+        "tuple // ประเภทข้อมูลรายการที่ไม่สามารถเปลี่ยนแปลงได้)",
+        "dict // ประเภทข้อมูลพจนานุกรม (key-value pairs)",
+        "set // ประเภทข้อมูลเซต (คอลเลกชันของรายการที่ไม่ซ้ำกัน)",
+        "bool // ประเภทข้อมูลบูลีน (True หรือ False)",
+        "NoneType // ประเภทข้อมูลสำหรับค่าว่างเปล่า"
+      ],
+      "examples (ตัวอย่าง)": [
+          "name = \"Alice\" // กำหนดตัวแปร name เก็บสตริง \"Alice\"",
+          "age = 25 // กำหนดตัวแปร age เก็บตัวเลข 25",
+          "is_active = True // กำหนดตัวแปร is_active เก็บค่าความจริง True",
+          "my_list = [10, 20, 30] // กำหนดตัวแปร my_list เก็บรายการตัวเลข"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "def function_name(params): ... // การประกาศฟังก์ชันแบบปกติโดยใช้คำสั่ง def",
+        "lambda args: expression // การประกาศฟังก์ชันแบบไม่ระบุชื่อ (Anonymous Function) แบบย่อ"
+      ],
+      "examples (ตัวอย่าง)": [
+          "def calculate_area(width, height): // ฟังก์ชันคำนวณพื้นที่\n  return width * height\n",
+          "add = lambda x, y: x + y // ฟังก์ชัน add แบบย่อ (Lambda Function) เพื่อบวกเลข\n",
+          "def greet(name='Guest'): // ฟังก์ชันพร้อมค่าเริ่มต้นสำหรับพารามิเตอร์\n  return f'Hello, {name}!'\nprint(greet()) // Hello, Guest!\nprint(greet('Alice')) // Hello, Alice!\n",
+          "def sum_all(*args): // ฟังก์ชันที่รับจำนวนอาร์กิวเมนต์แบบไม่จำกัด\n  return sum(args)\nprint(sum_all(1, 2, 3)) // 6\n",
+          "def build_profile(first, last, **kwargs): // ฟังก์ชันที่รับ keyword arguments แบบไม่จำกัด\n  profile = {'first_name': first, 'last_name': last}\n  profile.update(kwargs)\n  return profile\nprint(build_profile('John', 'Doe', age=30, city='New York'))\n",
+          "def create_adder(x): // ฟังก์ชันที่คืนค่าฟังก์ชัน (Closure)\n  def adder(y):\n    return x + y\n  return adder\nadd_5 = create_adder(5)\nprint(add_5(10)) // 15\n",
+          "def count_up_to(max): // ฟังก์ชัน Generator\n  i = 1\n  while i <= max:\n    yield i\n    i += 1\n\ncounter = count_up_to(3)\nprint(next(counter)) // 1\nprint(next(counter)) // 2\n",
+          "// Asynchronous Function (using asyncio)\n// โค้ดด้านล่างนี้เป็นตัวอย่างการใช้งานฟังก์ชันแบบ Asynchronous ซึ่งต้องรันในสภาพแวดล้อมที่รองรับ `asyncio` และ Event Loop ของ Python\n// import asyncio\n// async def fetch_data():\n//   print(\"Fetching data...\")\n//   await asyncio.sleep(1) // Simulate network delay\n//   print(\"Data fetched!\")\n//   return {\"data\": \"some_data\"}\n//\n// async def main():\n//   result = await fetch_data()\n//   print(result)\n//\n// asyncio.run(main())"
+      ],
+      "built_in (ในตัว)": [
+        "print() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "len() // ใช้หาความยาวของ Object (เช่น สตริง, ลิสต์)",
+        "input() // ใช้รับข้อมูลจากผู้ใช้งาน",
+        "range() // ใช้สร้างลำดับตัวเลข",
+        "type() // ใช้ตรวจสอบประเภทข้อมูลของ Object",
+        "str() // ใช้แปลงข้อมูลเป็นสตริง",
+        "int() // ใช้แปลงข้อมูลเป็นตัวเลขจำนวนเต็ม",
+        "list() // ใช้แปลงข้อมูลเป็นลิสต์"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": ["# Single line // คอมเมนต์บรรทัดเดียว", "\"\"\"Multi line\"\"\" // คอมเมนต์หลายบรรทัด (Docstrings)"],
+      "conditions (เงื่อนไข)": [
+        "if...elif...else // ใช้สร้างเงื่อนไข 'ถ้า...ไม่อย่างนั้นถ้า...นอกเหนือจากนั้น'"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for // วนซ้ำสำหรับแต่ละสมาชิกในลำดับ (เช่น ลิสต์, สตริง)",
+        "while // วนซ้ำตราบเท่าที่เงื่อนไขเป็นจริง"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "+ // ตัวดำเนินการบวก",
+        "- // ตัวดำเนินการลบ",
+        "* // ตัวดำเนินการคูณ",
+        "/ // ตัวดำเนินการหาร (ผลลัพธ์เป็น float)",
+        "% // ตัวดำเนินการโมดูลัส (หารเอาเศษ)",
+        "// // ตัวดำเนินการหารเอาส่วนเต็ม",
+        "** // ตัวดำเนินการยกกำลัง",
+        "== // ตัวดำเนินการเปรียบเทียบเท่ากัน",
+        "!= // ตัวดำเนินการเปรียบเทียบไม่เท่ากัน",
+        "> // ตัวดำเนินการมากกว่า",
+        "< // ตัวดำเนินการน้อยกว่า",
+        ">= // ตัวดำเนินการมากกว่าหรือเท่ากับ",
+        "<= // ตัวดำเนินการน้อยกว่าหรือเท่ากับ",
+        "and // ตัวดำเนินการตรรกะ 'และ'",
+        "or // ตัวดำเนินการตรรกะ 'หรือ'",
+        "not // ตัวดำเนินการตรรกะ 'ไม่'",
+        "in // ตัวดำเนินการสมาชิก 'มีอยู่ใน'",
+        "not in // ตัวดำเนินการสมาชิก 'ไม่มีอยู่ใน'",
+        "is // ตัวดำเนินการเอกลักษณ์ 'เป็น Object เดียวกัน'",
+        "is not // ตัวดำเนินการเอกลักษณ์ 'ไม่เป็น Object เดียวกัน'"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nif score >= 90: print('Grade A')\nelif score >= 70: print('Grade B')\nelse: print('Grade C') // ตรวจสอบคะแนนและแสดงเกรด",
+          "// ตัวอย่างที่ 2: การวนลูป (for loop) แบบพื้นฐาน\nfor i in range(3): print(i) // วนลูปให้ i มีค่า 0 ถึง 2",
+          "// ตัวอย่างที่ 3: การวนลูป (for loop) ผ่าน List\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n  print(f'I like {fruit}')",
+          "// ตัวอย่างที่ 4: การใช้วงลูป (while loop)\ncount = 0\nwhile count < 3:\n  print(f'Count is: {count}')\n  count += 1",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Try-Except)\ntry:\n  result = 10 / 0\nexcept ZeroDivisionError:\n  print('Error: Cannot divide by zero!')",
+          "// ตัวอย่างที่ 6: List Comprehension\nsquares = [x**2 for x in range(5)] // สร้างลิสต์ของกำลังสองของตัวเลข 0-4\nprint(squares)",
+          "// ตัวอย่างที่ 7: การทำงานกับ Dictionary\nperson = {'name': 'John', 'age': 30}\nprint(person['name']) // เข้าถึงค่าด้วย key\nperson['city'] = 'New York' // เพิ่ม key-value ใหม่\nprint(person) "
+      ]
+  }
+}

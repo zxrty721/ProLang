@@ -1,0 +1,106 @@
+{
+  "id": 57,
+  "name": "GLSL",
+  "slug": "glsl",
+  "logo": "img/glsl.png",
+  "desc": "GLSL (OpenGL Shading Language) เป็นภาษาโปรแกรมระดับสูง (High-level Shading Language) ที่ใช้สำหรับโปรแกรมมิ่งหน่วยประมวลผลกราฟิก (GPU) ใน Pipeline การแสดงผลกราฟิกแบบเรียลไทม์ (Real-time Graphics Rendering) เป็นส่วนหนึ่งของ OpenGL API ช่วยให้นักพัฒนาสามารถควบคุมกระบวนการ Render ภาพ 3D ได้อย่างละเอียด ตั้งแต่การคำนวณตำแหน่ง Vertex ไปจนถึงการคำนวณสีของ Pixel",
+  "by": "OpenGL Architecture Review Board (ARB)",
+  "yr": "2004",
+  "level": "2",
+  "par": ["Procedural", "Imperative", "Concurrent (implicitly)"],
+  "fields": ["Game", "Graphics", "Scientific", "Render", "VR"],
+  "rank": "เป็นมาตรฐานสำหรับ Real-time Graphics Rendering (ร่วมกับ HLSL)",
+  "salary_range": "฿40,000-75,000 บาท/เดือน (Junior), ฿75,000-140,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "ควบคุม GPU ได้โดยตรงเพื่อประสิทธิภาพสูงสุดในการ Render กราฟิก",
+    "เป็นส่วนหนึ่งของ OpenGL ซึ่งเป็น Open Standard",
+    "สามารถสร้าง Visual Effect ที่ซับซ้อนและสวยงามได้",
+    "ประมวลผลแบบขนานบน GPU ได้อย่างมีประสิทธิภาพ",
+    "เรียนรู้ได้ค่อนข้างง่ายสำหรับผู้ที่มีพื้นฐาน C/C++"
+  ],
+  "cons": [
+    "เฉพาะทางสูง (ใช้สำหรับกราฟิกโดยเฉพาะ)",
+    "ต้องมีความเข้าใจในหลักการกราฟิก 3D และ Linear Algebra",
+    "การดีบัก Shader ค่อนข้างยาก",
+    "ทำงานกับ Hardware โดยตรง การจัดการ Memory และ Resource ต้องทำด้วยตนเอง",
+    "ไม่เหมาะกับการเขียนโปรแกรมทั่วไป"
+  ],
+  "frameworks": ["OpenGL (Graphics API)", "GLFW", "GLUT", "SDL"],
+  "learn": ["OpenGL Documentation", "LearnOpenGL.com", "The Book of Shaders", "Scratchapixel (Computer Graphics)"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "in vec3 vertexColor; // Input variable (จาก Vertex Shader ไป Fragment Shader)",
+      "out vec4 FragColor; // Output variable (จาก Fragment Shader ไป Framebuffer)",
+      "uniform mat4 modelMatrix; // Uniform variable (ค่าคงที่ที่กำหนดจาก CPU)",
+      "const float PI = 3.14159; // Constant variable"
+    ],
+    "types (ประเภท)": [
+      "float // ทศนิยม",
+      "int // จำนวนเต็ม",
+      "uint // จำนวนเต็มบวก",
+      "bool // ค่าตรรกะ (true/false)",
+      "vec2, vec3, vec4 // Vector ของ float (2, 3, 4 องค์ประกอบ)",
+      "ivec2, ivec3, ivec4 // Vector ของ int",
+      "bvec2, bvec3, bvec4 // Vector ของ bool",
+      "mat2, mat3, mat4 // Matrix ของ float (2x2, 3x3, 4x4)",
+      "sampler1D, sampler2D, sampler3D // Sampler สำหรับ Texture (1D, 2D, 3D)",
+      "struct // โครงสร้างข้อมูล"
+    ],
+    "examples (ตัวอย่าง)": [
+      "in vec2 TexCoords; // Input: ค่า Coordinate สำหรับ Texture",
+      "out vec4 finalColor; // Output: สีสุดท้ายของ Pixel",
+      "uniform sampler2D textureSampler; // Uniform: Sampler สำหรับ Texture (ส่งมาจาก CPU)",
+      "float shininess = 32.0; // ตัวแปร float",
+      "vec3 lightPos = vec3(1.0, 1.0, 1.0); // Vector 3 มิติสำหรับตำแหน่งแสง"
+    ]
+  },
+  "functions": {
+    "declaration (การเขียน Shader)": [
+      "void main() { /* ... */ } // Main Function (จุดเริ่มต้นการทำงานของ Shader)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// Vertex Shader (คำนวณตำแหน่งของ Vertex)\\n#version 330 core\\nlayout (location = 0) in vec3 aPos;\\nlayout (location = 1) in vec3 aColor;\\n\\nout vec3 vertexColor;\\n\\nuniform mat4 model;\\nuniform mat4 view;\\nuniform mat4 projection;\\n\\nvoid main()\\n{\\n    gl_Position = projection * view * model * vec4(aPos, 1.0);\\n    vertexColor = aColor;\\n}\\n",
+      "// Fragment Shader (คำนวณสีของ Pixel)\\n#version 330 core\\nin vec3 vertexColor;\\nout vec4 FragColor;\\n\\nvoid main()\\n{\\n    FragColor = vec4(vertexColor, 1.0);\\n}\\n",
+      "// ฟังก์ชันที่ผู้ใช้กำหนด (User-defined Function)\\nfloat calculate_distance(vec3 p1, vec3 p2)\\n{\\n    return distance(p1, p2); // ใช้ built-in function distance\\n}\\n\\nvec3 apply_light(vec3 surface_color, vec3 light_direction, vec3 normal)\\n{\n    float diff = max(dot(normal, light_direction), 0.0);\n    return surface_color * diff;\n}\n"
+    ],
+    "built_in (ในตัว)": [
+      "gl_Position // Output จาก Vertex Shader (ตำแหน่งสุดท้ายของ Vertex)",
+      "gl_FragCoord // Input ใน Fragment Shader (ตำแหน่ง Pixel บนหน้าจอ)",
+      "gl_FrontFacing // Input ใน Fragment Shader (บอกว่า Pixel อยู่ด้านหน้าหรือหลัง)",
+      "texture() // ใช้ดึงค่าสีจาก Texture",
+      "dot() // Dot Product ของ Vector",
+      "cross() // Cross Product ของ Vector (สำหรับ vec3)",
+      "normalize() // ทำให้ Vector มีความยาวเท่ากับ 1",
+      "distance() // คำนวณระยะห่างระหว่างจุดสองจุด",
+      "mix() // Linear Interpolation (ผสมค่าสองค่า)",
+      "clamp() // จำกัดค่าให้อยู่ในช่วงที่กำหนด",
+      "sin(), cos(), tan() // ฟังก์ชันตรีโกณมิติ"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (int i = 0; i < 5; i++) { /* ... */ } // ลูป for",
+      "while (condition) { /* ... */ } // ลูป while"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+      "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+      ". (swizzling) // Swizzling (เช่น vec4.rgba, vec2.xy)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else) ใน Fragment Shader\\n#version 330 core\\nin vec3 vertexColor;\\nout vec4 FragColor;\\nuniform float threshold;\\n\\nvoid main()\\n{\\n    if (vertexColor.r > threshold) {\\n        FragColor = vec4(1.0, 0.0, 0.0, 1.0); // สีแดงถ้าค่า R เกิน threshold\\n    } else {\\n        FragColor = vec4(vertexColor, 1.0); // ใช้สีเดิม\\n    }\\n}\\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for ใน Fragment Shader (เช่น สำหรับ Lighting)\\n#version 330 core\\nuniform int numLights;\\nuniform vec3 lightPositions[4];\\nuniform vec3 objectColor;\\nout vec4 FragColor;\\n\\nvoid main()\\n{\\n    vec3 final_color = objectColor;\\n    for (int i = 0; i < numLights; i++) {\\n        // จำลองการคำนวณแสงแบบง่ายๆ\\n        final_color += objectColor * 0.1; // เพิ่มแสงทีละนิด\\n    }\\n    FragColor = vec4(final_color, 1.0);\\n}\\n",
+      "// ตัวอย่างที่ 3: การใช้ Swizzling และ Vector Operations\\nvec4 myVector = vec4(1.0, 2.0, 3.0, 4.0);\\nvec2 xy = myVector.xy; // xy = (1.0, 2.0)\\nvec3 rgb = myVector.rgb; // rgb = (1.0, 2.0, 3.0)\\nvec4 rearranged = myVector.yxwz; // rearranged = (2.0, 1.0, 4.0, 3.0)\\n\\nvec3 A = vec3(1.0, 0.0, 0.0);\\nvec3 B = vec3(0.0, 1.0, 0.0);\\nfloat dot_product = dot(A, B); // dot_product = 0.0\\nvec3 cross_product = cross(A, B); // cross_product = (0.0, 0.0, 1.0)\\n"
+    ]
+  }
+}

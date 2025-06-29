@@ -1,0 +1,110 @@
+{
+  "id": 25,
+  "name": "Haskell",
+  "slug": "haskell",
+  "logo": "img/haskell.png",
+  "desc": "Haskell เป็นภาษาโปรแกรม Functional ที่บริสุทธิ์ (Purely Functional) และเป็น Statically-typed เน้นความถูกต้องทางคณิตศาสตร์และการเขียนโค้ดที่ไม่เปลี่ยนแปลง (Immutable) เหมาะสำหรับงานวิจัย, การศึกษา และโปรแกรมที่ต้องการความเสถียรสูง",
+  "by": "Simon Peyton Jones, Philip Wadler, et al.",
+  "yr": "1990",
+  "level": "3",
+  "par": ["Functional", "Lazy Evaluation"],
+  "fields": ["Compiler", "Edu", "Math"],
+  "rank": "35-40 Niche ใน Functional Programming",
+  "salary_range": "฿38,000-60,000 บาท/เดือน (Junior), ฿60,000-105,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+      "โค้ดมีความถูกต้องทางคณิตศาสตร์สูง (Guaranteed Correctness)",
+      "ลด Bug จาก Side Effects",
+      "มี Type System ที่แข็งแกร่งและปลอดภัย",
+      "รองรับ Lazy Evaluation",
+      "เหมาะสำหรับ Concurrency"
+  ],
+  "cons": [
+      "Learning Curve สูงมาก (แนวคิด Functional ที่แตกต่าง)",
+      "เข้าใจ Monads และ Type Classes ได้ยาก",
+      "การดีบักอาจทำได้ยาก",
+      "ชุมชนนักพัฒนาเล็กและ Niche",
+      "ไม่ได้รับความนิยมในอุตสาหกรรมทั่วไป"
+  ],
+  "frameworks": ["Yesod", "Servant"],
+  "learn": ["Learn You a Haskell for Great Good!", "Haskell Book", "Haskell.org", "Stackage"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "let x = 5 -- การประกาศค่าคงที่ (Immutable by default)",
+        "let greeting = \"Hello\" -- การประกาศค่าคงที่สตริง"
+      ],
+      "types (ประเภท)": [
+        "Int // จำนวนเต็ม",
+        "Float // ทศนิยมความแม่นยำเดี่ยว",
+        "Double // ทศนิยมความแม่นยำคู่",
+        "Char // ตัวอักขระ",
+        "Bool // ค่าตรรกะ (True/False)",
+        "String // ข้อความ (List ของ Char)",
+        "List a // List ของ Type 'a' ใดๆ (เช่น [Int], [Char])",
+        "Tuple a b // Tuple (เก็บค่าหลายประเภทได้)",
+        "Maybe a // ประเภทที่อาจมีค่า (Just a) หรือไม่มีค่า (Nothing)",
+        "IO a // ประเภทสำหรับการทำงานที่มี Side Effect (เช่น I/O)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "let number = 10 -- กำหนดค่าคงที่ number เป็น 10",
+          "let message = \"Purely Functional\" -- กำหนดค่าคงที่ message เป็นสตริง",
+          "let myList = [1, 2, 3] -- สร้าง List ของตัวเลข",
+          "let myTuple = (\"Alice\", 30) -- สร้าง Tuple (สตริง, จำนวนเต็ม)",
+          "let optionalValue = Just 5 -- ตัวแปร Maybe ที่มีค่า",
+          "let noValue = Nothing -- ตัวแปร Maybe ที่ไม่มีค่า"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "functionName :: Type -> Type -> ReturnType\nfunctionName param1 param2 = expression -- การประกาศฟังก์ชันพร้อม Type Signature"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nadd :: Int -> Int -> Int\nadd a b = a + b\n",
+          "// ฟังก์ชันทักทาย (ใช้ IO เพื่อพิมพ์ออก Console)\ngreet :: String -> IO ()\ngreet name = putStrLn (\"Hello, \" ++ name ++ \"!\")\n",
+          "// การเรียกใช้ฟังก์ชัน\n-- ต้องรันใน main function หรือใน GHCi\n-- let sum = add 5 5 -- sum จะมีค่า 10\n-- greet \"Haskeller\" -- แสดงผล 'Hello, Haskeller!'\n",
+          "// ฟังก์ชัน Recursive สำหรับ Factorial\nfactorial :: Int -> Int\nfactorial 0 = 1\nfactorial n = n * factorial (n - 1)\n-- factorial 5 -- 120\n",
+          "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\napplyTwice :: (a -> a) -> a -> a\napplyTwice f x = f (f x)\n-- applyTwice (+1) 5 -- 7 (5 -> 6 -> 7)\n",
+          "// การทำงานกับ List โดยใช้ Pattern Matching\nsumList :: [Int] -> Int\nsumList [] = 0\nsumList (x:xs) = x + sumList xs\n-- sumList [1, 2, 3] -- 6\n",
+          "// Asynchronous Programming (Conceptual - Haskell ใช้ Monads และ Libraries)\n// Haskell จัดการ Concurrency และ Asynchronous Programming ผ่าน Monads (เช่น IO Monad, STM)\n// และ Libraries เช่น 'async' หรือ 'stm'\n// ตัวอย่างนี้แสดงแนวคิดการทำงานแบบ Asynchronous ด้วย `forkIO` (ใน IO Monad)\n/*\n-- import Control.Concurrent\n-- import Control.Monad\n\n-- asyncTask :: String -> IO ()\n-- asyncTask msg = do\n--   putStrLn $ \"Starting async task: \" ++ msg\n--   threadDelay 1000000 -- 1 วินาที (in microseconds)\n--   putStrLn $ \"Finished async task: \" ++ msg\n\n-- main :: IO ()\n-- main = do\n--   putStrLn \"Main: Starting...\"\n--   forkIO $ asyncTask \"Task A\"\n--   forkIO $ asyncTask \"Task B\"\n--   putStrLn \"Main: Continuing...\"\n--   threadDelay 2000000 -- ให้เวลากับ async tasks ได้รัน\n--   putStrLn \"Main: Done.\"\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "putStrLn // ใช้แสดงสตริงพร้อมขึ้นบรรทัดใหม่",
+        "getLine // ใช้รับสตริงจากผู้ใช้",
+        "map // ใช้แปลงทุก Element ใน List",
+        "filter // ใช้กรอง Element ใน List",
+        "foldl // ใช้ลด (Reduce) List จากซ้ายไปขวา",
+        "head // คืนค่า Element แรกของ List",
+        "tail // คืนค่า List ที่เหลือ (ไม่รวม Element แรก)",
+        "(++) // Concatenate List (เช่น String)",
+        "($) // Operator สำหรับ Apply Function (Function Application)"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "-- Single line comment // คอมเมนต์บรรทัดเดียว",
+        "{- Multi-line\n   comment -} // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if condition then expression1 else expression2 // คำสั่ง If-Else (เป็น Expression)",
+        "case expression of\n  pattern1 -> result1\n  pattern2 -> result2\n  _        -> defaultResult // Pattern Matching ด้วย Case Expression"
+      ],
+      "loops (การวนซ้ำ)": [
+        "// Haskell ไม่มี loop แบบ Imperative โดยตรง (for, while)\n// แต่จะใช้ Recursion, Higher-Order Functions (map, filter, fold) หรือ List Comprehensions แทน",
+        "map (+1) [1,2,3] -- [2,3,4] (การใช้ map เพื่อวนลูปและแปลงค่า)",
+        "[x * 2 | x <- [1..5], x `mod` 2 == 0] -- [4, 8] (List Comprehension - วนลูปและกรอง)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, ^ // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร (สำหรับ Float/Double), ยกกำลัง",
+        "Comparison: ==, /=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), not (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้ If-Else Expression\n-- if-else ใน Haskell เป็น Expression ที่คืนค่า\nlet age = 20\nlet status = if age >= 18 then \"Adult\" else \"Minor\"\n-- ใน main function หรือ GHCi\n-- putStrLn status -- แสดงผล 'Adult'\n",
+          "// ตัวอย่างที่ 2: การใช้ Map (Functional Loop)\n-- map เป็น Higher-Order Function ที่ใช้แปลงทุก Element ใน List\nlet numbers = [1, 2, 3]\nlet doubled = map (*2) numbers\n-- ใน main function หรือ GHCi\n-- print doubled -- แสดงผล '[2,4,6]'\n",
+          "// ตัวอย่างที่ 3: การใช้ Case Expression (Pattern Matching)\n-- Case expression ใช้สำหรับตรวจสอบรูปแบบของข้อมูลและคืนค่าตามรูปแบบนั้น\n-- factorial :: Int -> Int\n-- factorial n = case n of\n--   0 -> 1\n--   _ -> n * factorial (n - 1)\n-- factorial 4 -- 24\n",
+          "// ตัวอย่างที่ 4: การทำงานกับ List Comprehension\n-- List Comprehension เป็นวิธีที่กระชับในการสร้าง List ใหม่จาก List เดิม\nlet evenSquares = [x^2 | x <- [1..10], x `mod` 2 == 0]\n-- evenSquares -- [4, 16, 36, 64, 100] (กำลังสองของเลขคู่ 1-10)\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\n-- Haskell ใช้ `Either` หรือ `Maybe` Monad สำหรับการจัดการข้อผิดพลาดแบบ Functional\n-- หรือใช้ `try` จาก Control.Exception สำหรับ Exceptions จริงๆ\n\n-- safelyDivide :: Int -> Int -> Maybe Int\n-- safelyDivide _ 0 = Nothing\n-- safelyDivide a b = Just (a `div` b)\n\n-- -- ใน main function หรือ GHCi\n-- -- print $ safelyDivide 10 2 -- Just 5\n-- -- print $ safelyDivide 10 0 -- Nothing\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ IO (Input/Output)\n-- การทำงานกับ Side Effect เช่น I/O จะอยู่ใน IO Monad\n-- main :: IO ()\n-- main = do\n--   putStrLn \"Enter your name:\"\n--   name <- getLine\n--   putStrLn $ \"Hello, \" ++ name ++ \"!\"\n"
+      ]
+  }
+}

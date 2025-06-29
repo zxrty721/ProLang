@@ -1,0 +1,123 @@
+{
+  "id": 8,
+  "name": "Rust",
+  "slug": "rust",
+  "logo": "img/rust.png",
+  "desc": "Rust เป็นภาษาโปรแกรมที่เน้นความปลอดภัยของหน่วยความจำ, ความเร็ว และ Concurrency โดยไม่ใช้ Garbage Collector เหมาะสำหรับ System programming, WebAssembly, และ Blockchain",
+  "by": "Mozilla Research",
+  "yr": "2010",
+  "level": "2",
+  "par": ["Multi-paradigm", "Functional", "Imperative", "Concurrent"],
+  "fields": ["System", "Compiler", "Security", "Security", "Cloud", "Robot", "Network", "Tele", "Game", "Distributed", "HPC", "Aero", "Blockchain", "Graphics"],
+  "rank": "15 ใน TIOBE แต่เป็น Most Loved Language (84.9% ของนักพัฒนาชอบ)",
+  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high", "veryhigh"],
+  "pros": [
+      "ความปลอดภัยของหน่วยความจำ (Memory Safety) โดยไม่มี GC",
+      "ประสิทธิภาพสูงมาก",
+      "รองรับ Concurrency ได้อย่างปลอดภัย",
+      "ระบบ Type ที่แข็งแกร่ง (Strong Type System)",
+      "มีเครื่องมือจัดการแพ็คเกจที่ดี (Cargo)"
+  ],
+  "cons": [
+      "Learning Curve สูงมาก (โดยเฉพาะเรื่อง Borrowing และ Lifetimes)",
+      "เวลาในการคอมไพล์ค่อนข้างนาน",
+      "Syntax อาจจะซับซ้อนสำหรับผู้เริ่มต้น",
+      "ชุมชนยังเล็กกว่าภาษาหลักๆ"
+  ],
+  "frameworks": ["Actix Web", "Rocket", "Yew (WebAssembly)"],
+  "learn": ["The Rust Programming Language Book", "Rustlings", "Rust by Example", "Ferris' Guide"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "let x = 5; // Immutable by default (ค่าไม่สามารถเปลี่ยนแปลงได้โดยค่าเริ่มต้น)",
+        "let mut y = 10; // Mutable variable (ตัวแปรที่สามารถเปลี่ยนแปลงค่าได้)"
+      ],
+      "types (ประเภท)": [
+        "i8 // จำนวนเต็ม 8 บิต (มีเครื่องหมาย)",
+        "i16 // จำนวนเต็ม 16 บิต (มีเครื่องหมาย)",
+        "i32 // จำนวนเต็ม 32 บิต (มีเครื่องหมาย)",
+        "i64 // จำนวนเต็ม 64 บิต (มีเครื่องหมาย)",
+        "i128 // จำนวนเต็ม 128 บิต (มีเครื่องหมาย)",
+        "isize // จำนวนเต็มที่มีขนาดเท่ากับ Pointer (มีเครื่องหมาย)",
+        "u8 // จำนวนเต็ม 8 บิต (ไม่มีเครื่องหมาย)",
+        "u16 // จำนวนเต็ม 16 บิต (ไม่มีเครื่องหมาย)",
+        "u32 // จำนวนเต็ม 32 บิต (ไม่มีเครื่องหมาย)",
+        "u64 // จำนวนเต็ม 64 บิต (ไม่มีเครื่องหมาย)",
+        "u128 // จำนวนเต็ม 128 บิต (ไม่มีเครื่องหมาย)",
+        "usize // จำนวนเต็มที่มีขนาดเท่ากับ Pointer (ไม่มีเครื่องหมาย)",
+        "f32 // ทศนิยมความแม่นยำเดี่ยว",
+        "f64 // ทศนิยมความแม่นยำคู่",
+        "bool // ค่าความจริง (true/false)",
+        "char // ตัวอักขระ (Unicode Scalar Value)",
+        "tuple // กลุ่มของค่าที่มีประเภทต่างกันได้",
+        "array // อาร์เรย์ (ขนาดคงที่)",
+        "slice // มุมมองของข้อมูลในอาร์เรย์ (อ้างอิง)",
+        "struct // โครงสร้างข้อมูลที่กำหนดเอง",
+        "enum // ประเภทข้อมูลที่สามารถเป็นหนึ่งในหลายๆ ค่าที่กำหนดไว้"
+      ],
+      "examples (ตัวอย่าง)": [
+          "let age = 30; // ตัวแปร age (ค่าเปลี่ยนไม่ได้)",
+          "let mut count = 0; // ตัวแปร count (ค่าเปลี่ยนได้)",
+          "let greeting = \"Hello, Rust!\"; // ตัวแปร greeting เก็บสตริง",
+          "let numbers: [i32; 5] = [1, 2, 3, 4, 5]; // การประกาศอาร์เรย์ขนาดคงที่",
+          "let prices = vec![10.5, 20.0, 30.25]; // การประกาศ Vector (Dynamic Array)",
+          "let coordinates = (10, 20.5, 'Z'); // การประกาศ Tuple",
+          "struct Point { x: i32, y: i32 }; // การประกาศ Struct\nlet origin = Point { x: 0, y: 0 }; // การสร้าง instance ของ Struct"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "fn function_name(param: Type) -> ReturnType { /* ... */ } // การประกาศฟังก์ชัน"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ฟังก์ชันบวกเลขสองจำนวน\nfn add(a: i32, b: i32) -> i32 {\n  a + b // Rust คืนค่าสุดท้ายโดยไม่ต้องใช้ 'return' ถ้าไม่มี semicolon\n}\n",
+          "// ฟังก์ชันทักทาย\nfn greet(name: &str) {\n  println!(\"Hello, {}\", name); // 'println!' เป็น Macro ใน Rust\n}\n",
+          "// การเรียกใช้ฟังก์ชัน\nlet sum = add(5, 5); // sum จะมีค่า 10\ngreet(\"World\"); // แสดงผล 'Hello, World!'\n",
+          "// ฟังก์ชันที่คืนค่าหลายค่า (Tuple)\nfn divide_and_remainder(dividend: i32, divisor: i32) -> (i32, i32) {\n  (dividend / divisor, dividend % divisor)\n}\nlet (quotient, remainder) = divide_and_remainder(10, 3); // quotient = 3, remainder = 1\n",
+          "// เมธอดบน Struct (Method on Struct)\nstruct Rectangle {\n  width: u32,\n  height: u32,\n}\nimpl Rectangle {\n  fn area(&self) -> u32 { // เมธอดที่รับ immutable reference ของ self\n    self.width * self.height\n  }\n  fn can_hold(&self, other: &Rectangle) -> bool {\n    self.width > other.width && self.height > other.height\n  }\n}\nlet rect1 = Rectangle { width: 30, height: 50 };\nlet rect2 = Rectangle { width: 10, height: 40 };\nprintln!(\"Area of rect1: {}\", rect1.area()); // Area of rect1: 1500\nprintln!(\"Can rect1 hold rect2? {}\", rect1.can_hold(&rect2)); // true\n",
+          "// ฟังก์ชัน Generic (ใช้ Type Parameter)\nfn largest<T: PartialOrd + Copy>(list: &[T]) -> T {\n  let mut largest = list[0];\n  for &item in list.iter() {\n    if item > largest {\n      largest = item;\n    }\n  }\n  largest\n}\nlet number_list = vec![34, 50, 25, 100, 65];\nprintln!(\"Largest number: {}\", largest(&number_list)); // Largest number: 100\n",
+          "// Asynchronous Programming (Concurrency) ด้วย Tokio/Async-Std\n// Rust จัดการ Concurrency ผ่าน Async/Await และ Executor เช่น Tokio หรือ Async-Std\n// โค้ดด้านล่างนี้เป็นตัวอย่างที่ต้องรันในบริบทของ Async Runtime\n// use tokio::time::{sleep, Duration};\n// async fn fetch_data() -> String {\n//   println!(\"Fetching data...\");\n//   sleep(Duration::from_secs(1)).await; // จำลองการหน่วงเวลา\n//   println!(\"Data fetched!\");\n//   \"Data from async source\".to_string()\n// }\n// async fn main() {\n//   let data = fetch_data().await;\n//   println!(\"Received: {}\", data);\n// }\n// // ต้องรันด้วย: tokio::main (สำหรับ Tokio runtime)\n// // #[tokio::main]\n// // async fn main() { /* ... */ }"
+      ],
+      "built_in (ในตัว)": [
+        "println!() // Macro สำหรับแสดงผลข้อมูลออกทาง Console",
+        "vec![] // Macro สำหรับสร้าง Vector (Dynamic Array)",
+        "Option<T> // Enum สำหรับค่าที่อาจจะมีหรือไม่มี (Some(T) หรือ None)",
+        "Result<T, E> // Enum สำหรับการจัดการข้อผิดพลาด (Ok(T) หรือ Err(E))",
+        "String::from() // ใช้สร้าง String จาก string literal"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if condition { /* ... */ } else if condition { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "match expression { /* ... */ } // คำสั่ง match (คล้าย switch แต่มีประสิทธิภาพกว่า)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "loop { /* ... */ } // Infinite loop (ลูปไม่รู้จบ)",
+        "while condition { /* ... */ } // ลูป while",
+        "for item in collection { /* ... */ } // ลูป for สำหรับวนซ้ำ collection (เช่น Range, Vector)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+        ". // Accessor (เข้าถึงสมาชิกของ Struct/Enum)",
+        ":: // Path Separator (เข้าถึงไอเท็มใน Module/Crate)",
+        "-> // Return Type Arrow (ระบุประเภทค่าที่คืนกลับ)",
+        "& // Reference (การยืม)",
+        "&mut // Mutable Reference (การยืมแบบแก้ไขได้)",
+        "* // Dereference (เข้าถึงค่าที่ Reference ชี้ไป)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nfn main() {\n  let num = 10;\n  if num > 5 {\n    println!(\"Num is greater than 5\");\n  } else {\n    println!(\"Num is not greater than 5\");\n  }\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) และ Range\nfn main() {\n  for i in 0..3 { // Range ไม่รวมค่าสุดท้าย (0, 1, 2)\n    println!(\"Loop Rust: {}\", i);\n  }\n  for i in 0..=3 { // Range รวมถึงค่าสุดท้าย (0, 1, 2, 3)\n    println!(\"Loop inclusive Rust: {}\", i);\n  }\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Match Statement (Powerful Pattern Matching)\nfn main() {\n  let code = 200;\n  match code {\n    200 => println!(\"OK\"),\n    404 => println!(\"Not Found\"),\n    _ => println!(\"Unknown Code\"), // _ คือ Wildcard สำหรับค่าอื่นๆ ที่ไม่ได้ระบุ\n  }\n}\n",
+          "// ตัวอย่างที่ 4: การจัดการข้อผิดพลาดด้วย Result (Error Handling)\nfn divide(dividend: f64, divisor: f64) -> Result<f64, String> {\n  if divisor == 0.0 {\n    Err(String::from(\"Cannot divide by zero\"))\n  } else {\n    Ok(dividend / divisor)\n  }\n}\nfn main() {\n  match divide(10.0, 2.0) {\n    Ok(value) => println!(\"Result: {}\", value),\n    Err(error) => println!(\"Error: {}\", error),\n  }\n  match divide(10.0, 0.0) {\n    Ok(value) => println!(\"Result: {}\", value),\n    Err(error) => println!(\"Error: {}\", error),\n  }\n}\n",
+          "// ตัวอย่างที่ 5: Ownership และ Borrowing\nfn takes_ownership(some_string: String) { // some_string เข้ามาอยู่ใน Ownership\n  println!(\"{}\", some_string);\n} // some_string ถูก Drop (หน่วยความจำถูกคืน)\n\nfn takes_and_gives_back(a_string: String) -> String { // รับ Ownership และคืนกลับ\n  a_string\n}\n\nfn calculates_length(s: &String) -> usize { // ยืม (Borrow) ค่า String แบบ Immutable\n  s.len()\n}\nfn change_string(some_string: &mut String) { // ยืม (Borrow) ค่า String แบบ Mutable\n  some_string.push_str(\", world!\");\n}\nfn main() {\n  let s1 = String::from(\"hello\");\n  takes_ownership(s1); // s1 ถูกย้าย Ownership ไปแล้ว ไม่สามารถใช้ s1 ได้อีก\n  // println!(\"{}\", s1); // จะเกิด compile error\n\n  let s2 = String::from(\"hello\");\n  let s3 = takes_and_gives_back(s2); // s2 ถูกย้ายไป s3 แต่ S3 ยังใช้งานได้\n  println!(\"{}\", s3);\n\n  let s4 = String::from(\"hello\");\n  let len = calculates_length(&s4); // s4 ถูกยืม (Borrowed) ไม่ได้ถูกย้าย\n  println!(\"The length of '{}' is {}.\", s4, len);\n\n  let mut s5 = String::from(\"hello\");\n  change_string(&mut s5); // s5 ถูกยืมแบบ Mutable\n  println!(\"{}\", s5); // hello, world!\n}"
+      ]
+  }
+}

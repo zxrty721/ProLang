@@ -1,0 +1,95 @@
+{
+  "id": 39,
+  "name": "PL/SQL",
+  "slug": "plsql",
+  "logo": "img/oracle.png",
+  "desc": "PL/SQL เป็นภาษา Extension ที่เพิ่มความสามารถเชิงโครงสร้าง (Procedural) ให้กับ SQL ในฐานข้อมูล Oracle Database ใช้สำหรับเขียน Stored Procedures, Functions, Packages และ Triggers เพื่อจัดการและประมวลผลข้อมูลที่ซับซ้อนภายในฐานข้อมูลโดยตรง",
+  "by": "Oracle Corporation",
+  "yr": "1980s",
+  "level": "5",
+  "par": ["Procedural", "Declarative (SQL embedded)"],
+  "fields": ["DB"],
+  "rank": "35+ แข็งแกร่งใน Oracle Database Ecosystem",
+  "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-78,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+    "ประสิทธิภาพสูงในการประมวลผลข้อมูลใน Database Server",
+    "ลด Traffic ระหว่าง Client กับ Server",
+    "ช่วยให้การจัดการ Transaction ซับซ้อนทำได้ง่ายขึ้น",
+    "เป็นภาษาที่สำคัญสำหรับ Oracle Ecosystem"
+  ],
+  "cons": [
+    "เฉพาะสำหรับ Oracle Database",
+    "การดีบักและจัดการ Version Control อาจทำได้ยาก",
+    "Learning Curve สำหรับผู้เริ่มต้น SQL",
+    "ไม่เหมาะกับงานนอก Database"
+  ],
+  "frameworks": [],
+  "learn": ["Oracle PL/SQL Documentation", "Oracle Academy"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "variable_name datatype; // รูปแบบการประกาศตัวแปร"
+    ],
+    "types (ประเภท)": [
+      "VARCHAR2 // สตริงความยาวแปรผัน (สำหรับข้อความ)",
+      "NUMBER // ตัวเลข (ทั้งจำนวนเต็มและทศนิยม)",
+      "DATE // วันที่และเวลา",
+      "BOOLEAN // ค่าจริงหรือเท็จ (TRUE/FALSE)",
+      "RECORD // โครงสร้างข้อมูลที่กำหนดเอง (คล้าย Struct)",
+      "TABLE // โครงสร้างข้อมูลแบบ Array (ใช้กับ Type ที่กำหนดเอง)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "DECLARE\n  v_employee_name VARCHAR2(100); // ประกาศตัวแปรสตริง\n  v_salary NUMBER(10, 2) := 50000.00; // ประกาศตัวแปรตัวเลขพร้อมค่าเริ่มต้น\n  v_hire_date DATE := SYSDATE; // ประกาศตัวแปรวันที่\nBEGIN\n  -- เลือกข้อมูลชื่อพนักงานจากตาราง employees ที่มี id = 1 ไปยังตัวแปร v_employee_name\n  SELECT name INTO v_employee_name FROM employees WHERE id = 1;\n  -- แสดงผลค่าของตัวแปร\n  DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_employee_name);\n  DBMS_OUTPUT.PUT_LINE('Salary: ' || v_salary);\nEND;\n/"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "FUNCTION function_name (params) RETURN datatype IS ... END; // รูปแบบการประกาศฟังก์ชัน"
+    ],
+    "examples (ตัวอย่าง)": [
+      "CREATE OR REPLACE FUNCTION get_employee_count RETURN NUMBER IS\n  v_count NUMBER;\nBEGIN\n  SELECT COUNT(*) INTO v_count FROM employees;\n  RETURN v_count;\nEND;\n/\n",
+      "CREATE OR REPLACE FUNCTION calculate_bonus (p_salary NUMBER, p_performance_rating NUMBER) RETURN NUMBER IS\n  v_bonus NUMBER;\nBEGIN\n  v_bonus := p_salary * (p_performance_rating / 100);\n  RETURN v_bonus;\nEND;\n/\n",
+      "// การเรียกใช้ฟังก์ชัน\nDECLARE\n  emp_count NUMBER;\n  bonus_amount NUMBER;\nBEGIN\n  emp_count := get_employee_count(); // เรียกใช้ฟังก์ชัน get_employee_count\n  DBMS_OUTPUT.PUT_LINE('Total Employees: ' || emp_count);\n\n  bonus_amount := calculate_bonus(60000, 10); -- เรียกใช้ฟังก์ชัน calculate_bonus\n  DBMS_OUTPUT.PUT_LINE('Calculated Bonus: ' || bonus_amount);\nEND;\n/"
+    ],
+    "built_in (ในตัว)": [
+      "DBMS_OUTPUT.PUT_LINE // ใช้แสดงผลข้อมูลออกทาง Console (ใน SQL Developer/SQL*Plus)",
+      "TO_DATE // ใช้แปลงสตริงเป็นวันที่",
+      "TO_CHAR // ใช้แปลงข้อมูลเป็นสตริง",
+      "TRUNC // ตัดทศนิยมหรือส่วนของวันที่",
+      "ROUND // ปัดเศษตัวเลข",
+      "SYSDATE // วันที่และเวลาปัจจุบันของระบบ",
+      "LENGTH // หาความยาวของสตริง",
+      "SUBSTR // ดึงสตริงย่อย"
+    ],
+    "async (แนวคิด)": [
+      "// PL/SQL เป็นภาษาที่ทำงานบน Database Server และโดยธรรมชาติเป็น Synchronous\n-- การทำงานแบบ Asynchronous มักจะทำผ่านเทคนิคเช่น DBMS_SCHEDULER (สำหรับ Background Jobs)\n-- หรือ DBMS_AQ (Advanced Queuing) สำหรับการส่งข้อความระหว่าง Session/Application\n-- ไม่ได้มีโครงสร้าง async/await เหมือนภาษาสมัยใหม่"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "-- Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi line */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "IF condition THEN ... ELSIF condition THEN ... ELSE ... END IF; // คำสั่ง IF-ELSIF-ELSE"
+    ],
+    "loops (การวนซ้ำ)": [
+      "LOOP ... EXIT WHEN condition ... END LOOP; // ลูปพื้นฐานพร้อมเงื่อนไขออก",
+      "FOR variable IN start_val..end_val LOOP ... END LOOP; // ลูป FOR สำหรับช่วงตัวเลข",
+      "WHILE condition LOOP ... END LOOP; // ลูป WHILE"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, ยกกำลัง",
+      "Comparison: =, <>, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+      "Logical: AND, OR, NOT // ตัวดำเนินการตรรกะ: AND, OR, NOT",
+      "Concatenation: || // ตัวดำเนินการเชื่อมสตริง"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (IF-ELSIF-ELSE)\nDECLARE\n  v_salary NUMBER := 70000;\nBEGIN\n  IF v_salary > 60000 THEN\n    DBMS_OUTPUT.PUT_LINE('High Salary');\n  ELSIF v_salary >= 40000 THEN\n    DBMS_OUTPUT.PUT_LINE('Medium Salary');\n  ELSE\n    DBMS_OUTPUT.PUT_LINE('Low Salary');\n  END IF;\nEND;\n/\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป FOR\nBEGIN\n  FOR i IN 1..5 LOOP\n    DBMS_OUTPUT.PUT_LINE('Loop Count: ' || i);\n  END LOOP;\nEND;\n/\n",
+      "// ตัวอย่างที่ 3: การใช้ LOOP ... EXIT WHEN\nDECLARE\n  v_counter NUMBER := 0;\nBEGIN\n  LOOP\n    v_counter := v_counter + 1;\n    DBMS_OUTPUT.PUT_LINE('Current Counter: ' || v_counter);\n    EXIT WHEN v_counter >= 3;\n  END LOOP;\nEND;\n/\n",
+      "// ตัวอย่างที่ 4: การจัดการข้อผิดพลาด (Exception Handling)\nDECLARE\n  v_result NUMBER;\n  v_divisor NUMBER := 0;\nBEGIN\n  v_result := 10 / v_divisor; -- จะเกิด ZERO_DIVIDE Exception\n  DBMS_OUTPUT.PUT_LINE('Result: ' || v_result);\nEXCEPTION\n  WHEN ZERO_DIVIDE THEN\n    DBMS_OUTPUT.PUT_LINE('Error: Cannot divide by zero!');\n  WHEN OTHERS THEN\n    DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);\nEND;\n/\n",
+      "// ตัวอย่างที่ 5: การใช้งาน Cursor สำหรับวนซ้ำข้อมูลในตาราง\nDECLARE\n  CURSOR c_employees IS SELECT employee_id, name, salary FROM employees WHERE department_id = 10;\n  v_emp_id   employees.employee_id%TYPE;\n  v_emp_name employees.name%TYPE;\n  v_emp_salary employees.salary%TYPE;\nBEGIN\n  OPEN c_employees;\n  LOOP\n    FETCH c_employees INTO v_emp_id, v_emp_name, v_emp_salary;\n    EXIT WHEN c_employees%NOTFOUND;\n    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || v_emp_id || ', Name: ' || v_emp_name || ', Salary: ' || v_emp_salary);\n  END LOOP;\n  CLOSE c_employees;\nEND;\n/"
+    ]
+  }
+}

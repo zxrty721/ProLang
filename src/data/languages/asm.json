@@ -1,0 +1,86 @@
+{
+  "id": 20,
+  "name": "Assembly",
+  "slug": "assembly",
+  "logo": "img/asm.png",
+  "desc": "Assembly Language เป็นภาษาโปรแกรมระดับต่ำสุดที่มนุษย์อ่านได้ มีความสัมพันธ์โดยตรงกับสถาปัตยกรรมของ Processor ใช้ในการเขียนโปรแกรมที่ต้องการการควบคุมฮาร์ดแวร์อย่างสมบูรณ์แบบและประสิทธิภาพสูงสุด",
+  "by": "Various (Machine-specific)",
+  "yr": "1940s-1950s",
+  "level": "1",
+  "par": ["Imperative", "Procedural"],
+  "fields": ["Embedded", "System", "OS", "Security"],
+  "rank": "40+ Niche แต่จำเป็นสำหรับ Low-level Programming",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-95,000 บาท/เดือน (Senior)",
+  "pros": [
+      "ประสิทธิภาพสูงสุด",
+      "ควบคุมฮาร์ดแวร์ได้สมบูรณ์",
+      "ขนาดโปรแกรมเล็กมาก",
+      "ใช้ในการทำ Reverse Engineering และ Malware Analysis"
+  ],
+  "cons": [
+      "เรียนรู้และใช้งานยากที่สุด",
+      "ต้องมีความรู้เรื่องสถาปัตยกรรม Processor อย่างลึกซึ้ง",
+      "เขียนโปรแกรมซับซ้อนได้ยากและใช้เวลานาน",
+      "โค้ดไม่สามารถนำไปใช้กับ Processor ต่างชนิดกันได้",
+      "การดีบักซับซ้อน"
+  ],
+  "frameworks": ["None"],
+  "learn": ["Assembly Language for x86 Processors", "The Art of Assembly Language", "NASM Documentation", "MASM Documentation"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "section .data\n  my_var db 10 ; define byte (กำหนดค่า 1 ไบต์)\n  message db 'Hello', 0 ; define byte string (กำหนดสตริงพร้อม null terminator)"
+      ],
+      "types (ประเภท)": [
+        "BYTE (db) // กำหนด 1 ไบต์ (8 บิต)",
+        "WORD (dw) // กำหนด 1 คำ (2 ไบต์ / 16 บิต)",
+        "DWORD (dd) // กำหนด 1 คำคู่ (4 ไบต์ / 32 บิต)",
+        "QWORD (dq) // กำหนด 1 คำสี่เท่า (8 ไบต์ / 64 บิต)",
+        "Registers (EAX, EBX, ECX, EDX, etc.) // Register ของ CPU สำหรับเก็บข้อมูลชั่วคราว"
+      ],
+      "examples (ตัวอย่าง)": [
+          "section .data ; ส่วนสำหรับประกาศข้อมูล (data section)\n  num_val dw 1234 ; ตัวแปร num_val ขนาด Word (16-bit) ค่า 1234\n  text_msg db 'Assembly is fun!', 0 ; ตัวแปร text_msg เป็นสตริงพร้อม null terminator",
+          "section .text ; ส่วนสำหรับโค้ดคำสั่ง (code section)\n_start:\n  mov eax, 1 ; ย้ายค่า 1 ไปยัง Register EAX (สำหรับ sys_exit call)\n  mov ebx, 0 ; ย้ายค่า 0 ไปยัง Register EBX (Exit Code)\n  int 0x80 ; เรียก System Interrupt (Linux syscall)"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "my_function: ; ชื่อของฟังก์ชันหรือ Subroutine\n  ; function body (เนื้อหาของฟังก์ชัน)\n  ret ; คำสั่งคืนค่าจากการเรียกใช้ฟังก์ชัน"
+      ],
+      "examples (ตัวอย่าง)": [
+          "section .text\n  global _start\n\n_start:\n  ; Hello World ใน NASM (สำหรับ Linux x86-64)\n  mov rax, 1             ; sys_write (Linux syscall number for write)\n  mov rdi, 1             ; file descriptor 1 (stdout)\n  mov rsi, msg           ; address of string to output\n  mov rdx, len           ; length of string\n  syscall                ; Call the kernel\n\n  mov rax, 60            ; sys_exit (Linux syscall number for exit)\n  mov rdi, 0             ; exit code 0\n  syscall                ; Call the kernel\n\nsection .data\n  msg db 'Hello, World!', 0xA ; The string to print, 0xA is newline\n  len equ $ - msg           ; Length of the string"
+      ],
+      "built_in (ในตัว)": [
+        "mov // ย้ายข้อมูลจาก Source ไป Destination",
+        "add // บวกค่า",
+        "sub // ลบค่า",
+        "jmp // กระโดดไปยังตำแหน่งโค้ดที่ระบุ (Unconditional Jump)",
+        "call // เรียก Subroutine (Push Address ไปยัง Stack แล้ว Jump)",
+        "ret // คืนค่าจากการเรียก Subroutine (Pop Address จาก Stack แล้ว Jump)",
+        "int // เรียก Software Interrupt",
+        "push // เพิ่มค่าลงใน Stack",
+        "pop // ดึงค่าออกจาก Stack",
+        "cmp // เปรียบเทียบค่าสองค่า (ตั้งค่า Flag Register)",
+        "test // ทดสอบ Bit (ตั้งค่า Flag Register)"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "; Single line comment // คอมเมนต์บรรทัดเดียว (ขึ้นต้นด้วยเซมิโคลอน)"
+      ],
+      "conditions (เงื่อนไข)": [
+        "cmp reg, value ; เปรียบเทียบค่าใน Register กับ Value\nje label (Jump if Equal) ; กระโดดถ้าเท่ากัน\njne label (Jump if Not Equal) ; กระโดดถ้าไม่เท่ากัน\njg label (Jump if Greater) ; กระโดดถ้ามากกว่า\njl label (Jump if Less) ; กระโดดถ้าน้อยกว่า"
+      ],
+      "loops (การวนซ้ำ)": [
+        "loop_start: ; จุดเริ่มต้นของลูป\n  ; loop body (เนื้อหาของลูป)\n  dec ecx ; ลดค่า Register ECX ลง 1\n  jnz loop_start ; กระโดดกลับไป loop_start ถ้า ECX ไม่เท่ากับศูนย์"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: add, sub, mul, div // คำสั่งทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร",
+        "Logical: and, or, xor, not // คำสั่งตรรกะ: AND, OR, XOR, NOT",
+        "Bitwise: shl, shr, rol, ror // คำสั่ง Bitwise Shift (เลื่อนบิตซ้าย/ขวา), Rotate (หมุนบิตซ้าย/ขวา)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (Conditional Jump)\n  cmp eax, 10      ; เปรียบเทียบ EAX กับ 10\n  jg  greater_than_10 ; ถ้า EAX > 10 ให้กระโดดไป greater_than_10\n  ; code if eax <= 10 ; โค้ดส่วนนี้จะทำงานถ้า EAX น้อยกว่าหรือเท่ากับ 10\n  jmp end_if       ; กระโดดข้ามส่วน greater_than_10\ngreater_than_10:  ; Label สำหรับเมื่อ EAX > 10\n  ; code if eax > 10 ; โค้ดส่วนนี้จะทำงานถ้า EAX มากกว่า 10\nend_if:           ; จุดสิ้นสุดของเงื่อนไข",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (Loop)\n  mov ecx, 3       ; กำหนดให้ Register ECX เป็น 3 (จำนวนรอบของลูป)\nloop_count:\n  ; your code here ; โค้ดที่คุณต้องการให้วนซ้ำ\n  loop loop_count  ; คำสั่ง 'loop' จะลดค่า ECX ลง 1 และกระโดดกลับไปที่ Label 'loop_count' ถ้า ECX ยังไม่เป็นศูนย์"
+      ]
+  }
+}

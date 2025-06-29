@@ -1,0 +1,114 @@
+{
+  "id": 29,
+  "name": "Elixir",
+  "slug": "elixir",
+  "logo": "img/elixir.png",
+  "desc": "Elixir เป็นภาษา Functional Programming ที่ทำงานบน Erlang Virtual Machine (BEAM) มีจุดเด่นด้าน Concurrency, Fault-tolerance (ความทนทานต่อข้อผิดพลาด) และ Scalability สูงมาก ออกแบบมาเพื่อสร้างระบบที่มีความทนทานสูงและสามารถรองรับผู้ใช้จำนวนมหาศาล เหมาะสำหรับ Web Servers, APIs, Chat applications และ Distributed Systems",
+  "by": "José Valim",
+  "yr": "2012",
+  "level": "3",
+  "par": ["Functional", "Concurrent", "Dynamic"],
+  "fields": ["Backend", "Network", "Tele", "Distributed"],
+  "rank": "30-35 เติบโตใน High-concurrency Systems",
+  "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-88,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "Concurrency สูงและจัดการได้ง่าย (ผ่าน Actor Model)",
+    "Fault-tolerance (ระบบมีความทนทานต่อข้อผิดพลาดสูง)",
+    "Scalability ดีเยี่ยม (เนื่องจากมาจาก Erlang VM)",
+    "ไวยากรณ์ที่สะอาดและอ่านง่าย (คล้าย Ruby)",
+    "Hot Code Swapping (สามารถอัปเดตโค้ดได้โดยไม่ต้องหยุดระบบ)"
+  ],
+  "cons": [
+    "Learning Curve สูงสำหรับผู้ที่ไม่คุ้นเคยกับ Functional Programming หรือ Actor Model",
+    "Ecosystem และ Library ยังเล็กกว่าภาษาหลักๆ",
+    "จำนวนนักพัฒนาที่มีความเชี่ยวชาญค่อนข้างน้อย",
+    "การจัดการ Memory อาจต้องใช้ความเข้าใจเฉพาะ"
+  ],
+  "frameworks": ["Phoenix (Web Framework)", "Nerves (Embedded Systems)", "Ecto (Database Wrapper)"],
+  "learn": ["Elixir Official Website", "Elixir School", "Programming Elixir (Book)", "Phoenix Guides"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "name = \"Alice\" # การกำหนดค่าให้กับตัวแปร (Immutable by default)",
+      "age = 30 # ตัวเลข",
+      "list = [1, 2, 3] # List (คล้าย Array)"
+    ],
+    "types (ประเภท)": [
+      "Atoms (symbols, e.g., :ok) // ค่าคงที่ที่ไม่สามารถเปลี่ยนแปลงได้ มักใช้เป็น Key หรือ Status",
+      "Numbers (integers, floats) // ตัวเลข (จำนวนเต็ม, ทศนิยม)",
+      "Booleans (true, false) // ค่าความจริง",
+      "Strings // ข้อความ (ใช้ Double Quote)",
+      "Lists // รายการ (คล้าย Array ในภาษาอื่น, แต่เป็น Linked List)",
+      "Tuples // Tuple (ลำดับของค่าที่มีขนาดคงที่)",
+      "Maps // Map (Key-Value store, คล้าย Hash/Dictionary)",
+      "PIDs (Process Identifiers) // Process Identifier (สำหรับ Concurrency)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "name = \"Bob\" # กำหนดตัวแปร name เป็นสตริง",
+      "is_active = true # กำหนดตัวแ variabile is_active เป็น Boolean",
+      "user_data = %{name: \"Charlie\", age: 25} # กำหนด Map ด้วย Atom Keys",
+      "numbers = [10, 20, 30] # กำหนด List",
+      "tuple_example = {:ok, \"Success\", 123} # กำหนด Tuple",
+      "pid_example = spawn(fn -> :timer.sleep(1000) end) # ตัวอย่าง PID จากการสร้าง Process"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "def func_name(param1, param2) do\\n  # code\\n  result\\nend # การประกาศฟังก์ชันใน Module",
+      "add = fn a, b -> a + b end # Anonymous function (ฟังก์ชันนิรนาม)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวนใน Module\ndefmodule Math do\n  def add(a, b) do\n    a + b\n  end\nend\nresult = Math.add(5, 3) # เรียกใช้ฟังก์ชัน Math.add(5, 3)\nIO.puts(\"Sum: #{result}\") # แสดงผล \"Sum: 8\"\n",
+      "// ฟังก์ชันทักทาย\ndefmodule Greeter do\n  def greet(name) do\n    IO.puts(\"Hello, \" <> name <> \"!\") # ใช้ <> สำหรับเชื่อมสตริง\n  end\nend\nGreeter.greet(\"World\") # แสดงผล 'Hello, World!'\n",
+      "// ฟังก์ชันที่มี Pattern Matching และ Guard Clauses\ndefmodule MyMath do\n  def factorial(0), do: 1 # Base case: factorial ของ 0 คือ 1\n  def factorial(n) when n > 0 do # Recursive case: factorial ของ n เมื่อ n > 0\n    n * factorial(n - 1)\n  end\n  def factorial(n) do\n    IO.puts(\"Error: Factorial is not defined for negative numbers.\")\n    :error\n  end\nend\nIO.puts(\"Factorial of 5: #{MyMath.factorial(5)}\") # แสดงผล 'Factorial of 5: 120'\nIO.puts(\"Factorial of -1: #{MyMath.factorial(-1)}\") # แสดงผล Error message และ :error\n",
+      "// Concurrency (Actor Model - Spawning Processes)\ndefmodule GreeterProcess do\n  def start_link do\n    spawn_link(__MODULE__, :loop, []) # สร้าง Process ใหม่และเชื่อมโยง (link) กับ Process ปัจจุบัน\n  end\n\n  def loop do\n    receive do # รอรับข้อความ\n      {:greet, name} ->\n        IO.puts(\"Process received: Hello, #{name}!\")\n        loop()\n      :stop ->\n        IO.puts(\"Process stopping.\")\n    end\n  end\n\n  def send_greet(pid, name) do\n    send(pid, {:greet, name}) # ส่งข้อความไปยัง Process ด้วย PID\n  end\n\n  def stop(pid) do\n    send(pid, :stop)\n  end\nend\n\n# // ใน IEx (Elixir Shell):\n# // {:ok, pid} = GreeterProcess.start_link()\n# // GreeterProcess.send_greet(pid, \"Alice\")\n# // GreeterProcess.send_greet(pid, \"Bob\")\n# // GreeterProcess.stop(pid)\n"
+    ],
+    "built_in (ในตัว)": [
+      "IO.puts() // ใช้แสดงผลข้อมูลออกทาง Console",
+      "Enum.map() // ใช้แปลงทุก Element ใน Collection",
+      "String.split() // ใช้แบ่งสตริง",
+      "Map.get() // ใช้ดึงค่าจาก Map ด้วย Key",
+      "hd() // ใช้ดึง Head (Element แรก) ของ List",
+      "tl() // ใช้ดึง Tail (List ที่เหลือ) ของ List",
+      "if // คำสั่งเงื่อนไข",
+      "cond // คำสั่งเงื่อนไขที่ยืดหยุ่นกว่า if",
+      "case // คำสั่ง Pattern Matching",
+      "spawn() // ใช้สร้าง Process ใหม่ (สำหรับ Concurrency)",
+      "send() // ใช้ส่งข้อความไปยัง Process",
+      "receive() // ใช้รอรับข้อความจาก Process"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single-line comment // คอมเมนต์บรรทัดเดียว"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition do\\n  # code\\nelse if another_condition do\\n  # code\\nelse\\n  # code\\nend // คำสั่ง if-else if-else",
+      "case variable do\\n  1 -> # code\\n  _ -> # code\\nend // คำสั่ง case (Pattern Matching)",
+      "cond do\\n  condition1 -> result1\\n  condition2 -> result2\\n  true -> default_result\\nend // คำสั่ง cond (หลายเงื่อนไข)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "Enum.each([1, 2, 3], fn x -> IO.puts(x) end) // การวนซ้ำโดยใช้ Enum.each (Functional Style)",
+      "for x <- [1, 2, 3] do\\n  IO.puts(x)\\nend // For Comprehension (สำหรับสร้าง List ใหม่หรือ Side Effects)",
+      "while (condition) do # rarely used\\n  # code\\nend // ลูป while (ไม่ค่อยนิยมใช้ใน Elixir Functional Programming)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, rem // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, เศษเหลือ",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: and, or, not (boolean operators) // ตัวดำเนินการตรรกะ: AND, OR, NOT (สำหรับ Boolean)",
+      "Concatenation: <> (string), ++ (list), -- (list subtraction) // ตัวดำเนินการเชื่อม: สตริง, List, ลบ List",
+      "//. // Pipe operator (ส่งผลลัพธ์จากฟังก์ชันหนึ่งไปยังอีกฟังก์ชันหนึ่ง)",
+      "<> // String Concatenation",
+      "-> // Anonymous Function Arrow",
+      "<- // Generator in For Comprehension",
+      ": // Atom Prefix"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nage = 20\nif age >= 18 do\n  IO.puts(\"Adult\")\nelse\n  IO.puts(\"Minor\")\nend\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For Comprehension\nfor i <- 0..2 do\n  IO.puts(\"Loop: #{i}\")\nend\n",
+      "// ตัวอย่างที่ 3: การใช้ Case Statement (Pattern Matching)\nstatus = :active\ncase status do\n  :active -> IO.puts(\"Status is active.\")\n  :inactive -> IO.puts(\"Status is inactive.\")\n  _ -> IO.puts(\"Unknown status.\")\nend\n",
+      "// ตัวอย่างที่ 4: การทำงานกับ List และ Pattern Matching\ndefmodule ListOperations do\n  def sum_list([]) do\n    0\n  end\n  def sum_list([head | tail]) do\n    head + sum_list(tail)\n  end\nend\n\nIO.puts(\"Sum of [1, 2, 3]: #{ListOperations.sum_list([1, 2, 3])}\") # แสดงผล 'Sum of [1, 2, 3]: 6'\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Tuple-based error handling)\ndefmodule Divider do\n  def divide(a, 0), do: {:error, :division_by_zero} # ถ้าตัวหารเป็น 0\n  def divide(a, b), do: {:ok, a / b} # ถ้าหารได้ปกติ\nend\n\ncase Divider.divide(10, 2) do\n  {:ok, result} -> IO.puts(\"Result: #{result}\")\n  {:error, reason} -> IO.puts(\"Error: #{reason}\")\nend\n\ncase Divider.divide(10, 0) do\n  {:ok, result} -> IO.puts(\"Result: #{result}\")\n  {:error, reason} -> IO.puts(\"Error: #{reason}\")\nend\n"
+    ]
+  }
+}

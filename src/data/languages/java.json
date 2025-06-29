@@ -1,0 +1,114 @@
+{
+  "id": 4,
+  "name": "Java",
+  "slug": "java",
+  "logo": "img/java.png",
+  "desc": "Java เป็นภาษาโปรแกรมเชิงวัตถุที่ได้รับความนิยมสูง ถูกออกแบบมาให้เขียนครั้งเดียวสามารถรันได้ทุกที่ (Write Once, Run Anywhere) มีการใช้งานอย่างกว้างขวางในแอปพลิเคชันระดับองค์กร, Android, และ Big Data",
+  "by": "James Gosling",
+  "yr": "1995",
+  "level": "3",
+  "par": ["Object-Oriented", "Concurrent", "Structured", "Imperative", "Generic"],
+  "fields": ["Mobile", "Backend", "Desktop", "Cloud", "Testing", "Finance"],
+  "rank": "3 ใน TIOBE Index 2025 (10.66%)",
+  "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-100,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "แพลตฟอร์มเป็นอิสระ (JVM)",
+      "ประสิทธิภาพสูงและเสถียร",
+      "มี Ecosystem และไลบรารีขนาดใหญ่",
+      "มีการจัดการหน่วยความจำอัตโนมัติ (Garbage Collection)",
+      "ความปลอดภัยสูง"
+  ],
+  "cons": [
+      "ใช้หน่วยความจำค่อนข้างมาก",
+      "อาจมี Learning Curve สูงสำหรับผู้เริ่มต้น",
+      "การเขียนโค้ดอาจดูเยอะกว่าภาษาที่ทันสมัยกว่า",
+      "เวลาในการ Start-up แอปพลิเคชันอาจช้า"
+  ],
+  "frameworks": ["Spring Boot", "Hibernate", "Android SDK", "Apache Kafka", "Apache Spark"],
+  "learn": ["Oracle Java Documentation", "Baeldung", "GeeksforGeeks Java Tutorial", "Coursera: Java Programming"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "int count; // การประกาศตัวแปรจำนวนเต็ม",
+        "String message; // การประกาศตัวแปรสตริง",
+        "boolean status; // การประกาศตัวแปรบูลีน"
+      ],
+      "types (ประเภท)": [
+        "byte // จำนวนเต็มขนาด 8 บิต",
+        "short // จำนวนเต็มขนาด 16 บิต",
+        "int // จำนวนเต็มขนาด 32 บิต",
+        "long // จำนวนเต็มขนาด 64 บิต",
+        "float // ทศนิยมความแม่นยำเดี่ยว",
+        "double // ทศนิยมความแม่นยำคู่",
+        "char // ตัวอักขระ (Unicode)",
+        "boolean // ค่าจริงหรือเท็จ",
+        "String // คลาสสำหรับจัดการข้อความ",
+        "Object // คลาสแม่ของทุกคลาสใน Java",
+        "Array // โครงสร้างข้อมูลสำหรับเก็บกลุ่มของข้อมูลประเภทเดียวกัน"
+      ],
+      "examples (ตัวอย่าง)": [
+          "int age = 20; // กำหนดตัวแปร age เก็บตัวเลข 20",
+          "String name = \"Bob\"; // กำหนดตัวแปร name เก็บข้อความ",
+          "boolean isActive = false; // กำหนดตัวแปร isActive เก็บค่าความจริง",
+          "double price = 19.99; // กำหนดตัวแปร price เก็บเลขทศนิยม",
+          "int[] scores = {90, 85, 70}; // ประกาศและกำหนดค่าอาร์เรย์ของคะแนน"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "public static returnType methodName(parameters) { /* ... */ } // การประกาศเมธอด (ฟังก์ชัน) แบบปกติ",
+        "(parameters) -> expression // Lambda expression (ฟังก์ชันนิรนามแบบย่อ)",
+        "public returnType instanceMethod(parameters) { /* ... */ } // การประกาศ Instance Method (ต้องสร้าง Object ก่อนเรียกใช้)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// เมธอด (ฟังก์ชัน) สำหรับบวกเลขสองจำนวน\npublic int sum(int a, int b) {\n  return a + b;\n}\n",
+          "// เมธอด (ฟังก์ชัน) สำหรับแสดงข้อความออกทาง Console\npublic void displayInfo(String data) {\n  System.out.println(data);\n}\n",
+          "// การเรียกใช้เมธอด\nint total = sum(7, 8); // total จะมีค่า 15\ndisplayInfo(\"Java rocks!\"); // แสดงผล 'Java rocks!'\n",
+          "// เมธอด Overloading (ชื่อเมธอดเดียวกันแต่พารามิเตอร์ต่างกัน)\npublic int add(int a, int b) { return a + b; }\npublic double add(double a, double b) { return a + b; }\n// การเรียกใช้ Overloaded Method\nint sumInt = add(10, 20); // เรียก add(int, int)\ndouble sumDouble = add(10.5, 20.5); // เรียก add(double, double)\n",
+          "// เมธอดที่รับจำนวนอาร์กิวเมนต์แบบไม่จำกัด (Varargs)\npublic int sumAll(int... numbers) {\n  int totalSum = 0;\n  for (int num : numbers) {\n    totalSum += num;\n  }\n  return totalSum;\n}\n// การเรียกใช้ Varargs Method\nint varargsSum = sumAll(1, 2, 3, 4); // varargsSum จะมีค่า 10\n",
+          "// การใช้งาน Lambda expression (สำหรับ Functional Interface)\n// สมมติมี Functional Interface: interface MathOperation { int operate(int a, int b); }\n// MathOperation addition = (a, b) -> a + b;\n// System.out.println(\"Lambda Sum: \" + addition.operate(5, 5)); // แสดงผล 'Lambda Sum: 10'\n",
+          "// Asynchronous Programming (Concurrency) ด้วย Thread\n// Java จัดการ Concurrency ผ่าน Threads, Executors หรือ CompletableFuture\n// ตัวอย่างนี้เป็นการสร้างและรัน Thread ง่ายๆ\nclass MyRunnable implements Runnable {\n    public void run() {\n        System.out.println(\"Thread is running.\");\n    }\n}\n// ในเมธอด main หรือที่อื่น:\n// Thread thread = new Thread(new MyRunnable());\n// thread.start(); // เริ่มการทำงานของ Thread\n"
+      ],
+      "built_in (ในตัว)": [
+        "System.out.println() // ใช้แสดงผลข้อมูลออกทาง Console",
+        "ArrayList<T> // คอลเลกชันแบบ List ที่ปรับขนาดได้ (Generic)",
+        "HashMap<K, V> // คอลเลกชันแบบ Key-Value Pairs (Generic)",
+        "Math.random() // ใช้สร้างเลขสุ่ม (0.0 ถึงน้อยกว่า 1.0)",
+        "File.exists() // ใช้ตรวจสอบว่าไฟล์มีอยู่จริงหรือไม่ (ต้อง import java.io.File)"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+        "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (initialization; condition; increment) { /* ... */ } // ลูป for แบบดั้งเดิม",
+        "while (condition) { /* ... */ } // ลูป while",
+        "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)",
+        "for (Type item : collection) { /* ... */ } // Enhanced for loop (foreach) สำหรับวนซ้ำคอลเลกชัน"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+        "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+        "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "Ternary: ? : // ตัวดำเนินการเงื่อนไขแบบย่อ (Conditional Operator)",
+        "instanceof // ตัวดำเนินการตรวจสอบประเภท Object",
+        "new // ตัวดำเนินการสร้าง Object ใหม่"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nint time = 20;\nif (time < 18) {\n  System.out.println(\"Good day.\");\n} else if (time > 22) {\n  System.out.println(\"Good night.\");\n} else {\n  System.out.println(\"Good evening.\");\n}\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\nfor (int i = 0; i < 3; i++) {\n  System.out.println(\"Loop Java: \" + i);\n}\n",
+          "// ตัวอย่างที่ 3: การใช้ Switch Statement\nint dayOfWeek = 3; // 1 = Monday, 2 = Tuesday, etc.\nswitch (dayOfWeek) {\n  case 1:\n    System.out.println(\"Monday\");\n    break;\n  case 7:\n    System.out.println(\"Sunday\");\n    break;\n  default:\n    System.out.println(\"Mid-week day\");\n}\n",
+          "// ตัวอย่างที่ 4: การใช้งานคลาสและ Object-Oriented Programming (OOP)\npublic class Dog {\n  String name;\n  int age;\n\n  public Dog(String name, int age) { // Constructor\n    this.name = name;\n    this.age = age;\n  }\n\n  public void bark() {\n    System.out.println(name + \" says Woof!\");\n  }\n}\n// สร้าง Object จากคลาส Dog ในเมธอด main หรือที่อื่น\n// Dog myDog = new Dog(\"Buddy\", 3);\n// myDog.bark(); // แสดงผล \"Buddy says Woof!\"\n",
+          "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\nimport java.util.Scanner;\ntry {\n  Scanner scanner = new Scanner(System.in);\n  System.out.print(\"Enter a number: \");\n  int num = scanner.nextInt();\n  int result = 100 / num; // อาจเกิด ArithmeticException ถ้า num เป็น 0\n  System.out.println(\"Result: \" + result);\n} catch (ArithmeticException e) {\n  System.out.println(\"Error: Cannot divide by zero!\");\n} catch (Exception e) {\n  System.out.println(\"An unexpected error occurred: \" + e.getMessage());\n} finally {\n  System.out.println(\"Operation finished.\");\n}\n",
+          "// ตัวอย่างที่ 6: การทำงานกับ ArrayList (Collection Framework)\nimport java.util.ArrayList;\nArrayList<String> fruits = new ArrayList<>();\nfruits.add(\"Apple\");\nfruits.add(\"Banana\");\nfruits.add(\"Cherry\");\nSystem.out.println(\"Fruits: \" + fruits);\n",
+          "// ตัวอย่างที่ 7: การจัดการไฟล์ (File I/O) - การเขียนไฟล์\nimport java.io.FileWriter;\nimport java.io.IOException;\ntry {\n  FileWriter writer = new FileWriter(\"java_example.txt\");\n  writer.write(\"Hello from Java file!\\n\");\n  writer.close();\n  System.out.println(\"File 'java_example.txt' created.\");\n} catch (IOException e) {\n  System.out.println(\"An error occurred while writing to file: \" + e.getMessage());\n}\n"
+      ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "id": 50,
+  "name": "Vala",
+  "slug": "vala",
+  "logo": "img/vala.png",
+  "desc": "Vala เป็นภาษาโปรแกรมที่คอมไพล์เป็น C โดยอัตโนมัติ ซึ่งออกแบบมาเพื่อพัฒนาแอปพลิเคชันโดยใช้ GLib และ GNOME Libraries โดยเฉพาะ ทำให้สามารถเข้าถึง Object-Oriented Frameworks ที่เขียนด้วย C ได้ง่ายขึ้น มีไวยากรณ์คล้าย C# หรือ Java แต่ให้ประสิทธิภาพใกล้เคียงกับ C/C++",
+  "by": "J. B. Evain, Raffaele Sandrini, et al. (GNOME)",
+  "yr": "2006",
+  "level": "4",
+  "par": ["Object-Oriented", "Imperative", "Structured"],
+  "fields": ["Desktop"],
+  "rank": "45+ Niche ใน GNOME Development",
+  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-85,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+    "ประสิทธิภาพสูง (คอมไพล์เป็น Native C)",
+    "ไวยากรณ์ทันสมัยและคุ้นเคยสำหรับนักพัฒนา C#/Java",
+    "เข้าถึง GNOME/GTK+ Libraries ได้ง่ายและเป็นธรรมชาติ",
+    "มี Garbage Collection (Reference Counting)",
+    "เหมาะสำหรับพัฒนา Desktop Application บน Linux"
+  ],
+  "cons": [
+    "ผูกติดกับ GNOME Ecosystem ค่อนข้างมาก",
+    "ชุมชนนักพัฒนาเล็กและเฉพาะทาง",
+    "ขาด Library และ Frameworks ที่หลากหลายเมื่อเทียบกับภาษาหลัก",
+    "ทรัพยากรการเรียนรู้มีจำกัด",
+    "การดีบักอาจซับซ้อนขึ้นเมื่อต้องทำงานกับโค้ด C ที่ถูก Generate"
+  ],
+  "frameworks": ["GTK+ (GUI Library)", "GLib (Core Utility Library)"],
+  "learn": ["Vala-Lang.org Official Documentation", "Vala Tutorial", "GNOME Developer Documentation"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "int my_int = 10; // การประกาศตัวแปรจำนวนเต็ม",
+      "string my_string = \"Hello Vala\"; // การประกาศตัวแปรสตริง",
+      "bool is_active = true; // การประกาศตัวแปรบูลีน"
+    ],
+    "types (ประเภท)": [
+      "int // จำนวนเต็ม (เช่น int8, int16, int32, int64)",
+      "uint // จำนวนเต็มบวก (เช่น uint8, uint16, uint32, uint64)",
+      "float // ทศนิยมความแม่นยำเดี่ยว",
+      "double // ทศนิยมความแม่นยำคู่",
+      "bool // ค่าตรรกะ (true/false)",
+      "char // ตัวอักขระ",
+      "string // ข้อความ",
+      "array<T> // อาร์เรย์ (Fixed-size)",
+      "list<T> // List (Dynamic, Generic)",
+      "hash_table<K, V> // Hash Table (Key-Value pairs)",
+      "enum // Enumeration Type",
+      "struct // Structure (โครงสร้างข้อมูล)",
+      "class // Class (สำหรับ Object-Oriented)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "int counter = 0; // กำหนดตัวแปร counter เป็นจำนวนเต็ม 0",
+      "string user_name = \"Vala Dev\"; // กำหนดตัวแปร user_name เป็นสตริง",
+      "bool is_valid = false; // กำหนดตัวแปร is_valid เป็น Boolean",
+      "var numbers = {1, 2, 3}; // สร้าง Array (ใช้ var สำหรับ Type Inference)",
+      "List<string> fruit_list = new List<string>(); // สร้าง Generic List\nfruit_list.add(\"Apple\");"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "public return_type function_name(param1_type param1_name) { /* ... */ } // การประกาศฟังก์ชัน/เมธอด"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\npublic int add(int a, int b) {\n  return a + b;\n}\n",
+      "// ฟังก์ชันทักทาย (ใช้ stdout.printf สำหรับแสดงผล)\npublic void greet(string name) {\n  stdout.printf(\"Hello, %s!\\n\", name);\n}\n",
+      "// การเรียกใช้ฟังก์ชัน:\n// int sum_result = add(10, 20); // sum_result จะมีค่า 30\n// greet(\"GNOME User\"); // แสดงผล 'Hello, GNOME User!'\n",
+      "// เมธอดบนคลาส\npublic class MyClass : GLib.Object {\n  public int value;\n  public MyClass(int initial_value) {\n    this.value = initial_value;\n  }\n  public void print_value() {\n    stdout.printf(\"My value is: %d\\n\", this.value);\n  }\n}\n// การสร้าง Object และเรียกใช้เมธอด:\n// var obj = new MyClass(123);\n// obj.print_value(); // My value is: 123\n",
+      "// Asynchronous Programming (Asynchronous Methods / Futures)\n// Vala รองรับ Asynchronous Programming ผ่าน Asynchronous Methods และ Futures\n// ซึ่งทำให้การเขียนโค้ดที่ต้องรอ I/O หรือการทำงานคู่ขนานทำได้ง่ายขึ้น\n// ต้องใช้ GLib.MainLoop สำหรับการจัดการ Event Loop\n// private static async void fetch_data() {\n//   stdout.printf(\"Fetching data...\\n\");\n//   // Simulate a long-running operation with GLib.Timeout.add_seconds\n//   // This part typically involves GIO async operations, for simplicity, we simulate a delay.\n//   var loop = new GLib.MainLoop(null, false);\n//   GLib.Timeout.add_seconds(1, () => {\n//     stdout.printf(\"Data fetched!\\n\");\n//     loop.quit();\n//     return false; // Don't repeat the timeout\n//   });\n//   await loop.run_async(); // Wait for the main loop to quit after timeout\n//   stdout.printf(\"Data processed asynchronously.\\n\");\n// }\n// // ในฟังก์ชัน main หรือในบริบทที่เหมาะสม:\n// // public static int main(string[] args) {\n// //   fetch_data();\n// //   GLib.MainLoop loop = new GLib.MainLoop(null, false);\n// //   loop.run(); // Start the main loop to allow async tasks to run\n// //   return 0;\n// // }\n"
+    ],
+    "built_in (ในตัว)": [
+      "stdout.printf() // ใช้แสดงผลข้อมูลออกทาง Console (Format String)",
+      "stdin.read_line() // ใช้รับข้อมูลจากผู้ใช้งาน",
+      "GLib.List<T> // Generic List Collection",
+      "GLib.HashTable<K, V> // Generic Hash Table Collection",
+      "GLib.MainLoop // สำหรับจัดการ Event Loop (สำคัญสำหรับการทำ Asynchronous)",
+      "GLib.Timeout.add_seconds() // สำหรับการตั้งเวลาให้ฟังก์ชันทำงาน",
+      "int.parse() // แปลงสตริงเป็นจำนวนเต็ม",
+      "double.parse() // แปลงสตริงเป็นทศนิยม"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi-line comment */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else",
+      "switch (expression) { case value: /* ... */ break; default: /* ... */ } // คำสั่ง switch"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (int i = 0; i < 5; i++) { /* ... */ } // ลูป for แบบดั้งเดิม",
+      "while (condition) { /* ... */ } // ลูป while",
+      "do { /* ... */ } while (condition); // ลูป do-while (ทำงานอย่างน้อยหนึ่งครั้ง)",
+      "foreach (var item in collection) { /* ... */ } // ลูป foreach สำหรับวนซ้ำ Collection"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า: กำหนดค่า, บวกแล้วกำหนด, ลบแล้วกำหนด ฯลฯ",
+      "Comparison: ==, !=, >, <, >=, <= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า ฯลฯ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+      ". // Member Access Operator (เข้าถึงสมาชิกของ Object/Struct)",
+      ":: // Scope Resolution Operator (ในบางบริบท)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\npublic static void check_age(int age) {\n  if (age >= 18) {\n    stdout.printf(\"Adult\\n\");\n  } else {\n    stdout.printf(\"Minor\\n\");\n  }\n}\n// main: check_age(20); check_age(15);\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป (for loop)\npublic static void simple_loop() {\n  for (int i = 0; i < 3; i++) {\n    stdout.printf(\"Loop Vala: %d\\n\", i);\n  }\n}\n// main: simple_loop();\n",
+      "// ตัวอย่างที่ 3: การใช้ Switch Statement\npublic static void check_day(string day) {\n  switch (day) {\n    case \"Monday\":\n      stdout.printf(\"Start of week.\\n\");\n      break;\n    case \"Friday\":\n      stdout.printf(\"End of week!\\n\");\n      break;\n    default:\n      stdout.printf(\"Mid-week.\\n\");\n      break;\n  }\n}\n// main: check_day(\"Monday\"); check_day(\"Sunday\");\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Class และ Inheritance (OOP)\npublic class Animal : GLib.Object {\n  public string name { get; set; }\n  public Animal(string name) {\n    this.name = name;\n  }\n  public virtual void make_sound() {\n    stdout.printf(\"%s makes a sound.\\n\", this.name);\n  }\n}\npublic class Dog : Animal {\n  public Dog(string name) {\n    base(name);\n  }\n  public override void make_sound() {\n    stdout.printf(\"%s says Woof!\\n\", this.name);\n  }\n}\n// การสร้าง Object และเรียกใช้เมธอด:\n// var my_dog = new Dog(\"Buddy\");\n// my_dog.make_sound(); // Buddy says Woof!\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\npublic static void safe_divide(int a, int b) {\n  try {\n    if (b == 0) {\n      throw new Math.ArithmeticError.DIVISION_BY_ZERO(\"Cannot divide by zero!\");\n    }\n    stdout.printf(\"Result: %d\\n\", a / b);\n  } catch (Math.ArithmeticError e) {\n    stdout.printf(\"Caught Math Error: %s\\n\", e.message);\n  } catch (Error e) { // ดักจับ Error อื่นๆ\n    stdout.printf(\"Caught General Error: %s\\n\", e.message);\n  }\n}\n// main: safe_divide(10, 2); safe_divide(10, 0);\n",
+      "// ตัวอย่างที่ 6: การทำงานกับ List และ Foreach Loop\npublic static void process_fruits() {\n  List<string> fruits = new List<string>();\n  fruits.add(\"Apple\");\n  fruits.add(\"Banana\");\n  fruits.add(\"Cherry\");\n\n  stdout.printf(\"My fruits:\\n\");\n  foreach (var fruit in fruits) {\n    stdout.printf(\"- %s\\n\", fruit);\n  }\n}\n// main: process_fruits();\n"
+    ]
+  }
+}

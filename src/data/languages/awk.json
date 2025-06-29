@@ -1,0 +1,102 @@
+{
+  "id": 41,
+  "name": "AWK",
+  "slug": "awk",
+  "logo": "img/awk.jpg",
+  "desc": "AWK เป็นภาษาโปรแกรมสำหรับประมวลผลข้อความและข้อมูลที่เน้นรูปแบบ (pattern-scanning and processing language) โดยเฉพาะไฟล์ข้อความหรือ Stream ของข้อมูล มีความสามารถในการอ่านไฟล์ทีละบรรทัด วิเคราะห์ตามรูปแบบที่กำหนด และดำเนินการกับข้อมูลในแต่ละ Field หรือ Record",
+  "by": "Alfred Aho, Peter Weinberger, Brian Kernighan",
+  "yr": "1977",
+  "level": "2",
+  "par": ["Declarative", "Procedural", "Pattern-Action"],
+  "fields": ["Script", "Text"],
+  "rank": "40+ Niche ใน Text Processing และ Unix-like Systems",
+  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-65,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid"],
+  "pros": [
+    "ทรงพลังสำหรับการประมวลผลไฟล์ข้อความและ Log",
+    "ไวยากรณ์กระชับ เหมาะสำหรับ Scripting สั้นๆ",
+    "สามารถทำงานร่วมกับ Command Line Tools อื่นๆ ได้ดี",
+    "เป็นมาตรฐานบนระบบ Unix-like",
+    "ไม่ต้อง Compile (Interpreter-based)"
+  ],
+  "cons": [
+    "ไม่เหมาะสำหรับงาน General-purpose programming",
+    "ไวยากรณ์อาจดูแปลกและยากสำหรับผู้เริ่มต้น",
+    "การดีบักอาจทำได้ยากสำหรับ Script ที่ซับซ้อน",
+    "ประสิทธิภาพอาจไม่สูงเท่าภาษา Compiled สำหรับงานขนาดใหญ่"
+  ],
+  "frameworks": [],
+  "learn": ["AWK Manual", "Gawk User's Guide", "Awk by Example", "Unix/Linux Text Processing Tutorials"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "// ใน AWK ไม่มีการประกาศตัวแปรล่วงหน้า ตัวแปรจะถูกสร้างขึ้นเมื่อมีการกำหนดค่าครั้งแรก",
+      "field_variable // ตัวแปรสำหรับ Field เช่น $1, $2, $NF",
+      "built-in_variables // ตัวแปร Built-in เช่น NR, NF, FILENAME, RS, FS, OFS, ORS"
+    ],
+    "types (ประเภท)": [
+      "String // สตริง (ข้อความ)",
+      "Number (Implicit) // ตัวเลข (AWK จะแปลงเป็นตัวเลขหรือสตริงตามบริบท)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "BEGIN { total = 0; } // กำหนดตัวแปร total เป็น 0 ในบล็อก BEGIN",
+      "{ print $1, $3; } // พิมพ์ Field แรกและ Field ที่สามของแต่ละบรรทัด",
+      "{ sum = sum + $NF; } // บวกค่าใน Field สุดท้ายของแต่ละบรรทัดเข้ากับตัวแปร sum",
+      "// Built-in Variables:\n// NR (Number of Record): หมายเลขบรรทัดปัจจุบัน\n// NF (Number of Fields): จำนวน Field ในบรรทัดปัจจุบัน\n// FILENAME: ชื่อไฟล์ปัจจุบันที่กำลังประมวลผล\n// FS (Field Separator): ตัวคั่น Field (ค่าเริ่มต้นคือช่องว่าง/Tab)\n// OFS (Output Field Separator): ตัวคั่น Field สำหรับ Output (ค่าเริ่มต้นคือช่องว่าง)\n// RS (Record Separator): ตัวคั่น Record (ค่าเริ่มต้นคือ Newline)\n// ORS (Output Record Separator): ตัวคั่น Record สำหรับ Output (ค่าเริ่มต้นคือ Newline)"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function function_name(param1, param2, ...) { ... } // การประกาศฟังก์ชัน"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\nfunction add(a, b) {\n  return a + b;\n}\n",
+      "// ฟังก์ชันนับจำนวนคำในสตริง\nfunction count_words(s) {\n  return split(s, words, \" \"); // split() คืนค่าจำนวน Element ที่แบ่งได้\n}\n",
+      "// การเรียกใช้ฟังก์ชันใน AWK (จาก Action Block หรืออื่น ๆ)\n// { result = add($1, $2); print result; } // เรียกใช้ฟังก์ชัน add ด้วย Field $1 และ $2\n// { word_count = count_words($0); print \"Word count: \" word_count; } // เรียกใช้ฟังก์ชันนับคำ\n",
+      "// Built-in String Functions\n// length(string) : ความยาวของสตริง\n// substr(string, start, length) : ดึงสตริงย่อย\n// index(string, substring) : หาตำแหน่งของ substring\n// match(string, regexp) : ตรวจสอบว่าสตริงตรงกับ Regular Expression หรือไม่\n// sub(regexp, replacement, string) : แทนที่ครั้งแรกที่พบ Regular Expression\n// gsub(regexp, replacement, string) : แทนที่ทั้งหมดที่พบ Regular Expression\n// tolower(string) : แปลงเป็นตัวพิมพ์เล็ก\n// toupper(string) : แปลงเป็นตัวพิมพ์ใหญ่\n"
+    ],
+    "built_in (ในตัว)": [
+      "print // ใช้แสดงผลข้อมูล",
+      "printf // ใช้แสดงผลข้อมูลแบบจัดรูปแบบ",
+      "getline // อ่านบรรทัดถัดไปจาก Input",
+      "next // ข้ามไปยัง Record ถัดไป",
+      "exit // ออกจากโปรแกรม AWK",
+      "split // ใช้แบ่งสตริงออกเป็น Array",
+      "length // ใช้หาความยาวของสตริง",
+      "substr // ใช้ดึงสตริงย่อย",
+      "system // ใช้รัน Command ของ Shell",
+      "close // ปิดไฟล์หรือ Pipe"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "# Single line comment // คอมเมนต์บรรทัดเดียว"
+    ],
+    "conditions (เงื่อนไข)": [
+      "pattern { action } // รูปแบบทั่วไป: ถ้า pattern ตรง ให้ทำ action",
+      "if (condition) { action } else { action } // คำสั่ง if-else",
+      "condition ? true_action : false_action // Ternary operator"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for (init; cond; incr) { action } // ลูป for แบบ C-style",
+      "for (var in array) { action } // ลูป for-in สำหรับวนซ้ำ Array",
+      "while (condition) { action } // ลูป while"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, %, ^ // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส, ยกกำลัง",
+      "Assignment: =, +=, -=, *=, /=, %= // ตัวดำเนินการกำหนดค่า",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ",
+      "Logical: && (AND), || (OR), ! (NOT) // ตัวดำเนินการตรรกะ",
+      "Concatenation: (space between strings) // การเชื่อมสตริง (ใช้ช่องว่าง)",
+      "~ (match), !~ (not match) // ตัวดำเนินการ Match Regular Expression"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การพิมพ์บรรทัดทั้งหมด\n// awk '{ print }' filename.txt\n",
+      "// ตัวอย่างที่ 2: การพิมพ์บรรทัดที่มีคำว่า 'error'\n// awk '/error/ { print }' logfile.log\n",
+      "// ตัวอย่างที่ 3: การประมวลผล Field (พิมพ์ Field แรกและ Field สุดท้าย)\n// awk '{ print $1, $NF }' data.txt\n",
+      "// ตัวอย่างที่ 4: การใช้ BEGIN และ END Block (คำนวณผลรวม)\n// awk 'BEGIN { sum = 0; print \"Starting sum...\"; }\n// { sum += $1; } // บวก Field แรกของแต่ละบรรทัด\n// END { print \"Total sum: \", sum; }' numbers.txt\n",
+      "// ตัวอย่างที่ 5: การตั้งค่า Field Separator (FS) และ Output Field Separator (OFS)\n// awk 'BEGIN { FS = \":\"; OFS = \" | \"; } { print $1, $NF; }' /etc/passwd\n// (จะแยก Field ด้วย ':' และพิมพ์ Field แรกกับ Field สุดท้ายโดยคั่นด้วย ' | ')\n",
+      "// ตัวอย่างที่ 6: การใช้เงื่อนไข IF-ELSE\n// awk '{ if ($2 > 100) { print $1 \" is expensive\" } else { print $1 \" is affordable\" } }' prices.txt\n",
+      "// ตัวอย่างที่ 7: การใช้วงลูป FOR\n// awk '{ for (i=1; i<=NF; i++) { print \"Field \" i \": \" $i } }' data.txt\n"
+    ]
+  }
+}

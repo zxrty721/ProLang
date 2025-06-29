@@ -1,0 +1,107 @@
+{
+  "id": 6,
+  "name": "JavaScript",
+  "slug": "javascript",
+  "logo": "img/js.png",
+  "desc": "JavaScript คือภาษาโปรแกรมที่ทำให้เว็บมีชีวิตชีวา ทั้งปุ่มกด, แอนิเมชัน หรือการตรวจสอบข้อมูล รวมถึงสร้างแอปมือถือและโปรแกรมคอมพิวเตอร์ได้ด้วย",
+  "by": "Brendan Eich",
+  "yr": "December 4, 1995",
+  "level": "4",
+  "par": ["Multi-paradigm", "Event-driven", "Functional"],
+  "fields": ["Frontend", "Backend", "Plugin", "Testing", "Blockchain", "Graphics", "Render"],
+  "rank": "1 ในกลุ่ม Web Development (ใช้โดย 62.3% ของนักพัฒนาทั่วโลก)",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-85,000 บาท/เดือน (Senior)",
+  "salary": ["low", "mid", "high"],
+  "pros": [
+      "ใช้ได้หลายแพลตฟอร์ม (เว็บ, มือถือ, คอมพิวเตอร์)",
+      "มีแหล่งเรียนรู้และตัวช่วยเยอะมาก",
+      "เริ่มต้นเรียนรู้ได้ง่าย",
+      "ทำงานหลายอย่างพร้อมกันได้ดี",
+      "ปรับเปลี่ยนการใช้งานได้หลากหลาย"
+  ],
+  "cons": [
+      "การเขียนโค้ดอิสระ อาจทำให้ไม่เป็นระเบียบ",
+      "ทำงานซับซับซ้อนมากๆ ได้ช้ากว่าบางภาษา",
+      "การจัดการงานที่ต้องรออาจยุ่งยาก",
+      "อาจแสดงผลต่างกันในแต่ละเบราว์เซอร์",
+      "โค้ดบนเว็บสามารถถูกดูและแก้ไขง่าย"
+  ],
+  "frameworks": ["React", "Angular", "Vue.js", "Node.js (Runtime)", "Express.js", "Next.js"],
+  "learn": ["MDN Web Docs", "freeCodeCamp", "The Modern JavaScript Tutorial", "JavaScript.info"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "var // วิธีการประกาศตัวแปรแบบเก่า",
+        "let // วิธีการประกาศตัวแปรที่สามารถเปลี่ยนค่าได้",
+        "const // วิธีการประกาศค่าคงที่ที่ไม่สามารถเปลี่ยนค่าได้"
+      ],
+      "types (ประเภท)": [
+        "String // ประเภทข้อมูลข้อความ",
+        "Number // ประเภทข้อมูลตัวเลข",
+        "Boolean // ประเภทข้อมูลค่าจริงหรือเท็จ",
+        "Null // ประเภทข้อมูลค่าว่างเปล่าโดยเจตนา",
+        "Undefined // ประเภทข้อมูลค่าที่ยังไม่ได้กำหนด",
+        "Symbol // ประเภทข้อมูลค่าเฉพาะที่ไม่ซ้ำกัน",
+        "BigInt // ประเภทข้อมูลตัวเลขขนาดใหญ่มาก",
+        "Object // ประเภทข้อมูลกลุ่มของข้อมูลที่มีโครงสร้าง",
+        "Array // ประเภทข้อมูลรายการของข้อมูล"
+      ],
+      "examples (ตัวอย่าง)": [
+          "var name = 'John'; // กำหนดตัวแปร name เก็บสตริง 'John'",
+          "let age = 30; // กำหนดตัวแปร age เก็บตัวเลข 30 (เปลี่ยนค่าได้)",
+          "const PI = 3.14; // กำหนดค่าคงที่ PI เป็น 3.14 (เปลี่ยนค่าไม่ได้)",
+          "let numbers = [1, 2, 3]; // กำหนดตัวแปร numbers เก็บรายการตัวเลข"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "function name(params) { ... } // การประกาศฟังก์ชันแบบปกติ",
+        "() => { ... } (Arrow Function) // การประกาศฟังก์ชันแบบย่อ"
+      ],
+      "examples (ตัวอย่าง)": [
+          "function greet(name) { return 'Hello ' + name; } // ฟังก์ชัน greet เพื่อทักทาย",
+          "const add = (a, b) => a + b; // ฟังก์ชัน add แบบย่อ (Arrow Function) เพื่อบวกเลข",
+          "function calculateArea(width, height) { // ฟังก์ชันคำนวณพื้นที่\n  return width * height;\n}",
+          "const multiply = (x, y) => x * y; // ฟังก์ชัน Arrow Function สำหรับคูณเลข",
+          "function fetchData(url) { // ฟังก์ชันสำหรับการเรียกข้อมูลจาก URL\n  return fetch(url).then(response => response.json());\n}",
+          "async function getWeatherData(city) { // ฟังก์ชัน async/await สำหรับเรียกข้อมูลสภาพอากาศ\n  const response = await fetch(`https://api.example.com/weather?q=${city}`);\n  const data = await response.json();\n  return data;\n}",
+          "function createCounter() { // ฟังก์ชันที่คืนค่าฟังก์ชัน (Closure)\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2"
+      ],
+      "built_in (ในตัว)": [
+        "console.log() // ใช้แสดงผลข้อมูลใน Console (สำหรับนักพัฒนา)",
+        "setTimeout() // ใช้กำหนดให้โค้ดทำงานหลังจากผ่านไปกี่มิลลิวินาที",
+        "fetch() // ใช้สำหรับร้องขอข้อมูลจากเครือข่าย (เช่น โหลดข้อมูลจากเว็บไซต์อื่น)",
+        "JSON.parse() // ใช้แปลงข้อความที่เป็นรูปแบบ JSON ให้เป็น Object ใน JavaScript",
+        "Array.map() // ใช้สำหรับวนซ้ำและสร้าง Array ใหม่จาก Array เดิม"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": ["// Single line // คอมเมนต์บรรทัดเดียว", "/* Multi line */ // คอมเมนต์หลายบรรทัด"],
+      "conditions (เงื่อนไข)": [
+        "if...else // ใช้เมื่อมีเงื่อนไข 'ถ้าเป็นอย่างนี้ ให้ทำแบบนี้ ไม่อย่างนั้นให้ทำอีกแบบ'",
+        "switch // ใช้เมื่อมีหลายเงื่อนไขที่ต้องตรวจสอบกับค่าเดียว"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for // วนซ้ำตามจำนวนครั้งที่กำหนด",
+        "while // วนซ้ำตราบเท่าที่เงื่อนไขเป็นจริง",
+        "do...while // คล้าย while แต่จะทำงานอย่างน้อยหนึ่งครั้งก่อนตรวจสอบเงื่อนไข",
+        "forEach // วนซ้ำสำหรับแต่ละสมาชิกใน Array",
+        "for...of // วนซ้ำสำหรับค่าของสมาชิกใน Object ที่สามารถวนซ้ำได้",
+        "for...in // วนซ้ำสำหรับชื่อ property (key) ของ Object"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "+, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+        "==, === // ตัวดำเนินการเปรียบเทียบค่า: เท่ากันหรือไม่",
+        "!=, !== // ตัวดำเนินการเปรียบเทียบว่าไม่เท่ากัน",
+        "&& // AND: ทั้งสองเงื่อนไขต้องเป็นจริง",
+        "|| // OR: เงื่อนไขใดเงื่อนไขหนึ่งเป็นจริง",
+        "! // NOT: ตรงข้ามกับค่าเดิม"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nlet score = 75;\nif (score >= 80) {\n  console.log('Grade A');\n} else if (score >= 60) {\n  console.log('Grade B');\n} else {\n  console.log('Grade C');\n}",
+          "// ตัวอย่างที่ 2: การใช้วงลูป (for loop) เพื่อแสดงผลตัวเลข\nfor (let i = 0; i < 3; i++) {\n  console.log('Loop count: ' + i);\n}",
+          "// ตัวอย่างที่ 3: การใช้วงลูป (forEach) กับ Array\nconst fruits = ['apple', 'banana', 'cherry'];\nfruits.forEach(function(fruit) {\n  console.log('I like ' + fruit);\n});",
+          "// ตัวอย่างที่ 4: การใช้ Switch Statement\nlet day = 'Monday';\nswitch (day) {\n  case 'Monday':\n    console.log('Start of the week.');\n    break;\n  case 'Friday':\n    console.log('End of the week!');\n    break;\n  default:\n    console.log('Mid-week.');\n}",
+          "// ตัวอย่างที่ 5: การใช้ Operators (ตัวดำเนินการ) และ Boolean Logic\nlet a = 10;\nlet b = 5;\nlet isGreater = (a > b); // true\nlet isEqual = (a === b); // false\nlet result = isGreater && !isEqual; // true && true = true\nconsole.log('Is result true? ' + result);"
+      ]
+  }
+}

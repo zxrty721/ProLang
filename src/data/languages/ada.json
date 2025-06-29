@@ -1,0 +1,107 @@
+{
+  "id": 31,
+  "name": "Ada",
+  "slug": "ada",
+  "logo": "img/ada.png",
+  "desc": "Ada เป็นภาษาโปรแกรมที่มีโครงสร้างชัดเจนและแข็งแกร่ง (Strongly-typed) พัฒนาขึ้นโดยกระทรวงกลาโหมสหรัฐฯ เน้นความน่าเชื่อถือและความปลอดภัยสูง เหมาะสำหรับระบบฝังตัว (Embedded Systems), ระบบควบคุมแบบเรียลไทม์ (Real-time Systems) และระบบที่มีความสำคัญด้านความปลอดภัยสูง เช่น การบินและอวกาศ, การทหาร, และการควบคุมการจราจรทางอากาศ",
+  "by": "Jean Ichbiah (ทีมงาน)",
+  "yr": "1980 (Ada 83)",
+  "level": "1",
+  "par": ["Structured", "Object-Oriented", "Concurrent", "Imperative"],
+  "fields": ["Embedded", "Aero", "Robot"],
+  "rank": "45+ (Niche ในตลาดเฉพาะทาง)",
+  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-120,000 บาท/เดือน (Senior) - เป็นที่ต้องการสูงในอุตสาหกรรมเฉพาะทาง",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "ความน่าเชื่อถือและความปลอดภัยสูงมาก (built-in checks)",
+    "เหมาะสำหรับระบบขนาดใหญ่และซับซ้อน",
+    "มีคุณสมบัติ Concurrency ในตัว (Tasks)",
+    "Strongly-typed ช่วยลดข้อผิดพลาด",
+    "Modular Design ที่ดี"
+  ],
+  "cons": [
+    "Learning Curve สูง",
+    "ชุมชนนักพัฒนาเล็กและเฉพาะทาง",
+    "ไม่เหมาะกับแอปพลิเคชันทั่วไปหรือเว็บ",
+    "เวลาในการคอมไพล์นาน",
+    "ขาด Library ที่หลากหลายเมื่อเทียบกับภาษาอื่น"
+  ],
+  "frameworks": [],
+  "learn": ["AdaCore", "Wikibooks: Ada Programming", "Learn Ada"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "Variable_Name : Type_Name := Initial_Value; -- การประกาศตัวแปรพร้อมค่าเริ่มต้น",
+      "Constant_Name : constant Type_Name := Value; -- การประกาศค่าคงที่"
+    ],
+    "types (ประเภท)": [
+      "Integer // จำนวนเต็ม",
+      "Float // ทศนิยม",
+      "Boolean // ค่าตรรกะ (True, False)",
+      "Character // ตัวอักขระ",
+      "String // ข้อความ",
+      "Enumeration Types // ประเภทข้อมูลแบบแจงนับ (เช่น (Red, Green, Blue))",
+      "Record Types // ประเภทข้อมูลแบบ Record (คล้าย Struct ใน C)",
+      "Array Types // ประเภทข้อมูลแบบ Array",
+      "Access Types (Pointers) // ประเภทข้อมูลแบบ Pointer"
+    ],
+    "examples (ตัวอย่าง)": [
+      "My_Integer : Integer := 10; -- ประกาศตัวแปร Integer พร้อมค่าเริ่มต้น",
+      "Is_Active : Boolean := True; -- ประกาศตัวแปร Boolean",
+      "PI : constant Float := 3.14159; -- ประกาศค่าคงที่ Float",
+      "My_Array : array (1 .. 5) of Integer := (1, 2, 3, 4, 5); -- ประกาศ Array",
+      "type Color is (Red, Green, Blue); -- การประกาศ Enumeration Type\nMy_Color : Color := Red; -- การใช้ Enumeration Type"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "function Function_Name (Parameters) return Return_Type is\\n  -- body\\nend Function_Name; -- การประกาศ Function (มีค่าคืนกลับ)",
+      "procedure Procedure_Name (Parameters) is\\n  -- body\\nend Procedure_Name; -- การประกาศ Procedure (ไม่มีค่าคืนกลับโดยตรง)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "function Add (A, B : Integer) return Integer is\\nbegin\\n  return A + B;\\nend Add; -- ฟังก์ชันบวกเลขสองจำนวน",
+      "procedure Greet (Name : String) is\\nbegin\\n  Put_Line (\"Hello \" & Name); -- แสดงผลข้อความ\\nend Greet; -- Procedure ทักทาย",
+      "// การเรียกใช้ฟังก์ชัน/Procedure\n-- ใน Main Program:\n-- with Ada.Text_IO;\n-- use Ada.Text_IO;\n--\n-- procedure Main is\n--   Result : Integer;\n-- begin\n--   Result := Add(5, 5); -- Result จะมีค่า 10\n--   Put_Line (\"Sum is: \" & Integer'Image(Result)); -- แสดงผล 'Sum is: 10'\n--   Greet(\"Ada User\"); -- แสดงผล 'Hello Ada User'\n-- end Main;\n",
+      "function Get_Max (A, B : Integer) return Integer is\\nbegin\\n  if A > B then\\n    return A;\\n  else\\n    return B;\\n  end if;\\nend Get_Max; -- ฟังก์ชันหาค่าสูงสุด",
+      "procedure Swap (A, B : in out Integer) is\\n  Temp : Integer;\\nbegin\\n  Temp := A;\\n  A := B;\\n  B := Temp;\\nend Swap; -- Procedure สลับค่า (ใช้ in out parameter)"
+    ],
+    "built_in (ในตัว)": [
+      "Put_Line (from Text_IO) // ใช้แสดงผลข้อความออก Console",
+      "Get_Line (from Text_IO) // ใช้รับข้อความจาก Console",
+      "Integer'Image // Attribute สำหรับแปลง Integer เป็น String",
+      "Float'Image // Attribute สำหรับแปลง Float เป็น String",
+      "Integer'Value // Attribute สำหรับแปลง String เป็น Integer",
+      "Float'Value // Attribute สำหรับแปลง String เป็น Float"
+    ],
+    "async (Concurrency)": [
+      "task Task_Name is\\n  -- entry points (interfaces to other tasks)\\nend Task_Name;\\n\\n-- task body Task_Name is\\n-- begin\\n--   -- task logic\\n--   accept Entry_Point (Parameter : in Integer) do\\n--     -- handle parameter\\n--   end Entry_Point;\\n-- end Task_Name; -- การประกาศ Task (สำหรับ Concurrency)"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "-- This is an Ada comment -- คอมเมนต์บรรทัดเดียว"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if Condition then\\n  -- statements\\nelsif Another_Condition then\\n  -- statements\\nelse\\n  -- statements\\nend if; -- คำสั่ง if-elsif-else",
+      "case Expression is\\n  when Value1 =>\\n    -- statements\\n  when Value2 | Value3 =>\\n    -- statements (หลายค่า)\\n  when others =>\\n    -- statements (กรณีอื่นๆ)\\nend case; -- คำสั่ง case (คล้าย switch)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "loop\\n  -- statements\\n  exit when Condition;\\nend loop; -- Infinite loop พร้อมเงื่อนไขออก",
+      "while Condition loop\\n  -- statements\\nend loop; -- ลูป while",
+      "for Loop_Variable in Range loop\\n  -- statements\\nend loop; -- ลูป for (สำหรับช่วงตัวเลข)"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "+, -, *, /, mod, rem // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, Modulo, Remainder",
+      "** // ยกกำลัง",
+      "and, or, xor, not // ตัวดำเนินการตรรกะ: AND, OR, XOR, NOT",
+      "& // Concatenation (เชื่อมสตริง)",
+      "// Comparison: =, /=, <, <=, >, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, น้อยกว่าหรือเท่ากับ, มากกว่า, มากกว่าหรือเท่ากับ"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else\nprocedure If_Example is\n  My_Integer : Integer := 10;\nbegin\n  if My_Integer > 0 then\n    Put_Line (\"Positive\");\n  else\n    Put_Line (\"Non-positive\");\n  end if;\nend If_Example;\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป For\nprocedure For_Loop_Example is\nbegin\n  for I in 1 .. 3 loop\n    Put_Line (\"Loop: \" & Integer'Image(I));\n  end loop;\nend For_Loop_Example;\n",
+      "// ตัวอย่างที่ 3: การใช้ Case Statement\nprocedure Case_Example is\n  type Day_Type is (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);\n  Today : Day_Type := Monday;\nbegin\n  case Today is\n    when Monday .. Friday =>\n      Put_Line (\"It's a weekday.\");\n    when Saturday | Sunday =>\n      Put_Line (\"It's the weekend!\");\n  end case;\nend Case_Example;\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Record Types (Structs)\nprocedure Record_Example is\n  type Person_Type is record\n    Name : String(1 .. 20);\n    Age  : Integer;\n  end record;\n  John : Person_Type;\nbegin\n  John.Name := \"John Doe            \"; -- ต้องกำหนดความยาวให้ตรง\n  John.Age := 30;\n  Put_Line (\"Name: \" & John.Name & \", Age: \" & Integer'Image(John.Age));\nend Record_Example;\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\nprocedure Exception_Example is\n  Numerator   : Integer := 10;\n  Denominator : Integer := 0;\n  Result      : Integer;\nbegin\n  Result := Numerator / Denominator; -- จะเกิด Constraint_Error\n  Put_Line (\"Result: \" & Integer'Image(Result));\nexception\n  when Constraint_Error =>\n    Put_Line (\"Error: Division by zero or other constraint violation.\");\n  when others =>\n    Put_Line (\"An unexpected error occurred.\");\nend Exception_Example;\n"
+    ]
+  }
+}

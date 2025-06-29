@@ -1,0 +1,112 @@
+{
+  "id": 30,
+  "name": "Clojure",
+  "slug": "clojure",
+  "logo": "img/clojure.png",
+  "desc": "Clojure เป็นภาษา Functional Programming ในตระกูล Lisp ที่ทำงานบน JVM (Java Virtual Machine) มีจุดเด่นด้าน Persistent Data Structures, Concurrency ที่แข็งแกร่ง และการพัฒนาแบบ Interactive Development (REPL) เป็นที่นิยมใน Data Science, Web Development (ClojureScript) และ Distributed Systems สำหรับการสร้างแอปพลิเคชันที่ทนทานและมีประสิทธิภาพสูง",
+  "by": "Rich Hickey",
+  "yr": "2021",
+  "level": "3",
+  "par": ["Functional", "Concurrent", "Dynamic", "Lisp"],
+  "fields": ["Backend", "Compiler"],
+  "rank": "35-40 Niche ใน Functional Programming บน JVM",
+  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-92,000 บาท/เดือน (Senior)",
+  "salary": ["high", "veryhigh"],
+  "pros": [
+    "Functional Programming ที่บริสุทธิ์ ช่วยให้โค้ด Predictable",
+    "Concurrency ที่แข็งแกร่งและจัดการได้ง่าย",
+    "Persistent Data Structures ลด Mutability Bug",
+    "Interactive Development (REPL) ที่ยอดเยี่ยม",
+    "ทำงานร่วมกับ Java Ecosystem ได้อย่างสมบูรณ์",
+    "เหมาะสำหรับระบบที่ซับซ้อนและต้องการความทนทาน"
+  ],
+  "cons": [
+    "Learning Curve สูงมาก (แนวคิด Functional Programming, Syntax แบบ Lisp)",
+    "ไวยากรณ์ (Parentheses) อาจดูแปลกสำหรับผู้เริ่มต้น",
+    "Community เล็กกว่าภาษาหลักทั่วไป",
+    "เวลาในการ Startup ของ JVM อาจช้าสำหรับ Script เล็กๆ",
+    "Debugging อาจท้าทายกว่า"
+  ],
+  "frameworks": ["Luminus (Web)", "Reagent (Frontend with ClojureScript)", "yada (Web API)"],
+  "learn": ["Clojure.org Official Guide", "Brave Clojure (Book)", "Clojure for the Brave and True", "Practicalli Clojure"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "(def x 10) ; การประกาศตัวแปร Global (def)",
+      "(let [y 20] y) ; การประกาศตัวแปร Local (let)",
+      "(def name \"Alice\") ; การประกาศตัวแปรสตริง Global"
+    ],
+    "types (ประเภท)": [
+      "Numbers (integers, floats) // ตัวเลข (จำนวนเต็ม, ทศนิยม)",
+      "Strings // ข้อความ",
+      "Booleans (true, false) // ค่าความจริง",
+      "Keywords (:keyword) // Keyword (มักใช้เป็น Key ใน Map)",
+      "Symbols (my-var) // Symbol (ใช้เป็นชื่อตัวแปร, ฟังก์ชัน)",
+      "Lists // รายการ (โครงสร้างข้อมูลแบบ Linked List)",
+      "Vectors // Vector (คล้าย Array, เข้าถึงด้วย Index)",
+      "Maps // Map (Key-Value store, คล้าย Hash/Dictionary)",
+      "Sets // Set (ชุดของค่าที่ไม่ซ้ำกัน)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "(def counter 0) ; กำหนดตัวแปร Global counter เป็น 0",
+      "(def message \"Hello, Clojure!\") ; กำหนดตัวแปร Global message เป็นสตริง",
+      "(def is-active true) ; กำหนดตัวแปร Global is-active เป็น Boolean",
+      "(def numbers [1 2 3]) ; สร้าง Vector ของตัวเลข",
+      "(def user-profile {:name \"Eve\", :age 35}) ; สร้าง Map ด้วย Keyword Keys"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "(defn func-name [param1 param2] ; code ) ; การประกาศฟังก์ชัน (defn)",
+      "(def add (fn [a b] (+ a b))) ; Anonymous function (ฟังก์ชันนิรนาม)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\n(defn add [a b]\n  (+ a b))\n(def result (add 5 3)) ; result จะมีค่า 8\n(println (str \"Sum: \" result)) ; แสดงผล \"Sum: 8\"\n",
+      "// ฟังก์ชันทักทาย\n(defn greet [name]\n  (println (str \"Hello, \" name \"!\")))\n(greet \"World\") ; แสดงผล 'Hello, World!'\n",
+      "// ฟังก์ชันที่รับหลาย Arity (จำนวน Arguments)\n(defn multi-greet\n  ([] (println \"Hello, stranger!\")) ; ไม่มี arguments\n  ([name] (println (str \"Hello, \" name \"!\")))) ; หนึ่ง argument\n(multi-greet) ; Hello, stranger!\n(multi-greet \"Alice\") ; Hello, Alice!\n",
+      "// Higher-Order Function (ฟังก์ชันที่รับฟังก์ชันเป็น Argument)\n(defn operate [f a b]\n  (f a b))\n(def op-result (operate + 10 5)) ; op-result จะมีค่า 15\n(println (str \"Operation Result: \" op-result)) ; แสดงผล \"Operation Result: 15\"\n",
+      "// Asynchronous Programming (core.async)\n// Clojure ใช้ core.async library สำหรับ Asynchronous และ Concurrency\n// ซึ่งใช้แนวคิด CSP (Communicating Sequential Processes)\n/*\n(ns my-app.core\n  (:require [clojure.core.async :as a]))\n\n(defn long-task [ch]\n  (a/go\n    (println \"Starting long task...\")\n    (a/<! (a/timeout 1000)) ; รอ 1 วินาที\n    (println \"Long task finished!\")\n    (a/>! ch \"Data from async source\"))) ; ส่งข้อมูลไปยัง Channel\n\n(defn -main []\n  (let [result-chan (a/chan)]\n    (long-task result-chan)\n    (println \"Main program continues...\")\n    (let [result (a/<!! result-chan)] ; บล็อกเพื่อรอผลลัพธ์จาก Channel\n      (println (str \"Received: \" result)))))\n*/"
+    ],
+    "built_in (ในตัว)": [
+      "println // ใช้แสดงผลข้อมูลออกทาง Console",
+      "str // ใช้เชื่อมสตริง",
+      "+, -, *, / // ตัวดำเนินการทางคณิตศาสตร์ (เป็นฟังก์ชัน)",
+      "map // ใช้แปลงทุก Element ใน Collection",
+      "filter // ใช้กรอง Element ใน Collection",
+      "reduce // ใช้ลด (Reduce) Collection",
+      "if // คำสั่งเงื่อนไข",
+      "cond // คำสั่งเงื่อนไขที่ยืดหยุ่นกว่า if",
+      "loop/recur // ใช้สร้างลูปแบบ Recursive (Tail Call Optimization)",
+      "def // กำหนด Global Variable/Function",
+      "defn // กำหนด Function"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "; Single-line comment ; คอมเมนต์บรรทัดเดียว",
+      "(comment\\n  Multi-line\\n  comment) ; คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "(if condition ; true-branch ; false-branch ) ; คำสั่ง if-else (เป็น Expression ที่คืนค่า)",
+      "(cond\\n  (> x 10) \"Greater\"\\n  (< x 5) \"Smaller\"\\n  :else \"Middle\") ; คำสั่ง cond (หลายเงื่อนไข)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "(doseq [x [1 2 3]] (println x)) ; ลูป doseq (สำหรับ Side Effects)",
+      "(loop [i 0] (when (< i 3) (println i) (recur (inc i)))) ; ลูป loop/recur (Recursive Loop)",
+      "; Functional approaches like map, reduce are more common ; โดยทั่วไปจะใช้ map, reduce หรือ for comprehensions มากกว่า"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "; Operators are functions: (+ 1 2), (- 5 3) ; ตัวดำเนินการคือฟังก์ชัน (Infix Notation แบบ Lisp)",
+      "Arithmetic: +, -, *, /, rem // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, เศษเหลือ",
+      "Comparison: =, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: and, or, not // ตัวดำเนินการตรรกะ: AND, OR, NOT"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้ If-Else\n(def age 20)\n(if (>= age 18)\n  (println \"Adult\")\n  (println \"Minor\"))\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป Dotimes\n(dotimes [i 3] (println (str \"Loop: \" i)))\n",
+      "// ตัวอย่างที่ 3: การใช้ Cond (Conditional)\n(def score 75)\n(cond\n  (>= score 90) (println \"Grade A\")\n  (>= score 70) (println \"Grade B\")\n  :else (println \"Grade C\"))\n",
+      "// ตัวอย่างที่ 4: การทำงานกับ List และ Vector\n(def my-list '(1 2 3))\n(def my-vector [\"a\" \"b\" \"c\"])\n(println (first my-list)) ; 1\n(println (nth my-vector 1)) ; \"b\"\n(println (conj my-list 0)) ; (0 1 2 3) (สร้าง List ใหม่)\n(println (conj my-vector 4)) ; [1 2 3 4] (สร้าง Vector ใหม่)\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Exception Handling)\n(try\n  (/ 10 0) ; จะเกิด ArithmeticException\n  (catch ArithmeticException e\n    (println (str \"Caught error: \" (.getMessage e)))) ; ดักจับและพิมพ์ข้อความ error\n  (finally\n    (println \"Execution finished.\")))\n",
+      "// ตัวอย่างที่ 6: การทำงานกับ Map และ Destructuring\n(def user {:name \"Dave\", :age 40, :city \"Berlin\"})\n(println (:name user)) ; \"Dave\"\n(let [{:keys [name age]} user]\n  (println (str name \" is \" age \" years old.\"))) ; \"Dave is 40 years old.\"\n"
+    ]
+  }
+}

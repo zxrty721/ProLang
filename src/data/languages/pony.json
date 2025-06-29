@@ -1,0 +1,97 @@
+{
+  "id": 42,
+  "name": "Pony",
+  "slug": "pony",
+  "logo": "img/pony.jpg",
+  "desc": "Pony เป็นภาษาโปรแกรมที่เน้น Concurrency แบบ Actor-model และความปลอดภัยของหน่วยความจำโดยไม่มี Deadlock หรือ Data Race ออกแบบมาสำหรับระบบที่มีประสิทธิภาพสูงและมีความน่าเชื่อถือสูง",
+  "by": "Wallaroo Labs",
+  "yr": "2015",
+  "level": "4",
+  "par": ["Actor-Oriented", "Object-Oriented", "Functional", "Concurrent"],
+  "fields": ["System", "Compiler"],
+  "rank": "Niche ในตลาดเฉพาะทาง (ยังไม่เป็นที่นิยมในวงกว้าง)",
+  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-120,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high", "veryhigh"],
+  "pros": [
+    "ปลอดภัยจาก Data Race และ Deadlock โดยธรรมชาติ (Actor Model)",
+    "ประสิทธิภาพสูงมาก",
+    "มี Type System ที่แข็งแกร่ง",
+    "Garbage Collection ที่มี Latency ต่ำ",
+    "ไม่มี Null Pointer Exceptions"
+  ],
+  "cons": [
+    "Learning Curve สูงมาก (แนวคิด Actor Model, Type System ที่เข้มงวด)",
+    "ชุมชนนักพัฒนาเล็ก",
+    "ไม่เหมาะสำหรับงาน General-purpose programming",
+    "ขาด Library และ Frameworks ที่หลากหลาย",
+    "เครื่องมือพัฒนาอาจไม่สมบูรณ์เท่าภาษาอื่น"
+  ],
+  "frameworks": [],
+  "learn": ["Pony Official Website", "Pony Tutorial", "The Pony Book"],
+  "variables": {
+    "declaration (การประกาศ)": [
+      "let x: U64 = 10 // ตัวแปร Immutable (ค่าไม่สามารถเปลี่ยนแปลงได้)",
+      "var y: U64 = 20 // ตัวแปร Mutable (ค่าสามารถเปลี่ยนแปลงได้)"
+    ],
+    "types (ประเภท)": [
+      "U8, U16, U32, U64, U128 // จำนวนเต็มบวก (Unsigned Integers)",
+      "I8, I16, I32, I64, I128 // จำนวนเต็ม (Signed Integers)",
+      "F32, F64 // ทศนิยม (Floating-point)",
+      "Bool // บูลีน (true/false)",
+      "String // ข้อความ",
+      "Array[T] // อาร์เรย์ (เช่น Array[U64])",
+      "Map[K, V] // Map (Key-Value pairs)",
+      "Tuple // Tuple (กลุ่มของค่าที่มีประเภทต่างกันได้)",
+      "Object (Capabilities) // วัตถุ (Pony ใช้ Capability-based security)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "let name: String = \"Pony Lang\" // กำหนดตัวแปร name เป็นสตริง",
+      "var counter: U64 = 0 // กำหนดตัวแปร counter เป็นตัวเลขเริ่มต้น 0",
+      "let primes: Array[U64] = [2; 3; 5; 7] // สร้าง Array ของตัวเลขจำนวนเต็มบวก",
+      "let user_data: Map[String, String] = Map[String, String].from([(\"name\", \"Alice\"), (\"city\", \"Wonderland\")]) // สร้าง Map ของสตริง"
+    ]
+  },
+  "functions": {
+    "declaration (การประกาศ)": [
+      "fun method_name(param: Type): ReturnType => ... // การประกาศฟังก์ชัน/เมธอด"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ฟังก์ชันบวกเลขสองจำนวน\nfun add(a: U64, b: U64): U64 => a + b\n",
+      "// ฟังก์ชันส่งข้อความไปหา Actor อื่น (ตัวอย่างใน Actor Context)\nactor Main\n  new create(env: Env) =>\n    env.out.print(\"Hello, Pony!\")\n",
+      "// การเรียกใช้ฟังก์ชัน (ต้องอยู่ใน context ของ Actor หรือ Main)\n// let sum_result = add(10, 20) // sum_result จะมีค่า 30\n// env.out.print(sum_result.string()) // แสดงผล '30'\n",
+      "// Asynchronous Programming (ผ่าน Actor Model)\n// Pony จัดการ Concurrency ผ่าน Actor Model โดย Actor สื่อสารกันผ่าน Asynchronous Message Passing\nactor Logger\n  new create(env: Env) =>\n    None\n  be log(message: String) => // 'be' หมายถึง Behavior (Asynchronous Method)\n    env.out.print(message)\n\nactor Main\n  new create(env: Env) =>\n    let logger = Logger.create(env) // สร้าง instance ของ Logger actor\n    logger.log(\"This is an async log message\") // ส่ง message แบบ async\n    env.out.print(\"Main actor continues...\")\n"
+    ],
+    "built_in (ในตัว)": [
+      "print (method on OutStream) // ใช้แสดงผลข้อมูลออกทาง Console (เป็นเมธอดของ Object Env.out)",
+      "string (method on many types for conversion) // เมธอดสำหรับแปลงข้อมูลเป็น String",
+      "Array.push // เมธอดสำหรับเพิ่มสมาชิกใน Array",
+      "Map.insert // เมธอดสำหรับเพิ่ม Key-Value pair ใน Map"
+    ]
+  },
+  "syntax": {
+    "comments (คอมเมนต์)": [
+      "// Single line comment // คอมเมนต์บรรทัดเดียว",
+      "/* Multi-line comment */ // คอมเมนต์หลายบรรทัด"
+    ],
+    "conditions (เงื่อนไข)": [
+      "if condition then ... else ... end // คำสั่ง if-else",
+      "match expression then ... end // คำสั่ง match (Pattern Matching)"
+    ],
+    "loops (การวนซ้ำ)": [
+      "for item in collection do ... end // ลูป for สำหรับวนซ้ำ Collection",
+      "while condition do ... end // ลูป while"
+    ],
+    "operators (ตัวดำเนินการ)": [
+      "Arithmetic: +, -, *, /, % // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, โมดูลัส",
+      "Comparison: ==, !=, <, >, <=, >= // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, น้อยกว่า, มากกว่า ฯลฯ",
+      "Logical: and, or, not // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่ (เป็น keyword)"
+    ],
+    "examples (ตัวอย่าง)": [
+      "// ตัวอย่างที่ 1: การใช้เงื่อนไข (if-else)\nlet x: U64 = 15\nif x > 10 then\n  env.out.print(\"x is greater than 10\")\nelse\n  env.out.print(\"x is 10 or less\")\nend\n",
+      "// ตัวอย่างที่ 2: การใช้วงลูป for\nfor i in U64(1) until U64(4) do // ลูป i ตั้งแต่ 1 ถึง 3 (ไม่รวม 4)\n  env.out.print(\"Loop Pony: \" + i.string())\nend\n",
+      "// ตัวอย่างที่ 3: การใช้ Match Expression (Pattern Matching)\n// Match expression ใช้สำหรับตรวจสอบรูปแบบของข้อมูลและดำเนินการตามรูปแบบนั้นๆ\nlet value: (U64 | String) = \"hello\" // ตัวแปรที่มี Type เป็น Union (อาจเป็น U64 หรือ String)\nmatch value\nwhen _x: U64 then env.out.print(\"It's a number: \" + _x.string())\nwhen _s: String then env.out.print(\"It's a string: \" + _s)\nend\n",
+      "// ตัวอย่างที่ 4: การใช้งาน Actor (Concurrency)\n// Pony ใช้ Actor Model ในการจัดการ Concurrency ซึ่งแต่ละ Actor ทำงานอิสระและสื่อสารกันผ่าน Message Passing\nactor MyActor\n  new create(env: Env) => // Constructor สำหรับ MyActor\n    env.out.print(\"MyActor created\")\n\n  be receive_message(msg: String) => // Behavior (Asynchronous method) ของ MyActor\n    env.out.print(\"MyActor received: \" + msg)\n\nactor Main\n  new create(env: Env) => // Constructor สำหรับ Main Actor\n    let my_actor = MyActor.create(env) // สร้าง instance ของ MyActor\n    my_actor.receive_message(\"Hello from Main!\") // ส่ง message ไปยัง MyActor แบบ Asynchronous\n    env.out.print(\"Main actor finished sending message\")\n",
+      "// ตัวอย่างที่ 5: การจัดการข้อผิดพลาด (Error Handling - Result types)\n// Pony ใช้แนวคิดของ Result types (Union types) แทนการใช้ Exceptions เพื่อจัดการข้อผิดพลาด\n// ซึ่งทำให้การจัดการข้อผิดพลาดชัดเจนและปลอดภัยยิ่งขึ้น\n// fun safe_divide(a: U64, b: U64): (U64 | None) => // ฟังก์ชันที่อาจคืน U64 หรือ None\n//   if b == 0 then\n//     None // คืนค่า None ถ้าหารด้วยศูนย์\n//   else\n//     a / b\n//   end\n//\n// actor Main\n//   new create(env: Env) =>\n//     match safe_divide(10, 2)\n//     when let result: U64 => env.out.print(\"Result: \" + result.string()) // ถ้าสำเร็จ ได้ค่า U64\n//     when None => env.out.print(\"Cannot divide by zero\") // ถ้าเป็น None\n//     end\n//\n//     match safe_divide(10, 0)\n//     when let result: U64 => env.out.print(\"Result: \" + result.string())\n//     when None => env.out.print(\"Cannot divide by zero\")\n//     end\n"
+    ]
+  }
+}

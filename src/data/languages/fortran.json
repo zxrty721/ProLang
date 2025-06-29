@@ -1,0 +1,109 @@
+{
+  "id": 23,
+  "name": "Fortran",
+  "slug": "fortran",
+  "logo": "img/fortran.png",
+  "desc": "Fortran (Formula Translation) เป็นภาษาโปรแกรมที่เก่าแก่และยังคงใช้กันอย่างแพร่หลายในงานทางวิทยาศาสตร์และการคำนวณทางวิศวกรรม โดยเฉพาะงานที่เกี่ยวข้องกับ Supercomputing และ Numerical Analysis",
+  "by": "John Backus (IBM)",
+  "yr": "1957",
+  "level": "1",
+  "par": ["Procedural", "Imperative", "Array-oriented"],
+  "fields": ["Scientific", "HPC"],
+  "rank": "35-40 ยังใช้ใน High-Performance Scientific Computing",
+  "salary_range": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-80,000 บาท/เดือน (Senior)",
+  "salary": ["mid", "high"],
+  "pros": [
+      "ประสิทธิภาพสูงมากสำหรับการคำนวณตัวเลขและ Array",
+      "มีไลบรารีทางคณิตศาสตร์และวิทยาศาสตร์ที่แข็งแกร่ง",
+      "เหมาะสำหรับ Parallel Computing",
+      "มีความเสถียรและเชื่อถือได้"
+  ],
+  "cons": [
+      "ล้าสมัยและไม่เหมาะกับการพัฒนาเว็บ/แอปทั่วไป",
+      "Syntax ค่อนข้างโบราณและไม่ยืดหยุ่น",
+      "การจัดการ I/O ซับซ้อน",
+      "ชุมชนนักพัฒนาลดลง",
+      "การเรียนรู้อาจยากสำหรับผู้เริ่มต้น"
+  ],
+  "frameworks": ["None (เป็นภาษาพื้นฐาน)"],
+  "learn": ["Fortran Wiki", "Fortran-lang.org", "Fortran 90/95 for Scientists and Engineers"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "INTEGER :: i // การประกาศตัวแปรจำนวนเต็ม",
+        "REAL :: x // การประกาศตัวแปรทศนิยมความแม่นยำเดี่ยว",
+        "CHARACTER(len=20) :: name // การประกาศตัวแปรสตริงความยาว 20 ตัวอักษร"
+      ],
+      "types (ประเภท)": [
+        "INTEGER // จำนวนเต็ม",
+        "REAL // ทศนิยมความแม่นยำเดี่ยว",
+        "DOUBLE PRECISION // ทศนิยมความแม่นยำคู่",
+        "COMPLEX // จำนวนเชิงซ้อน",
+        "LOGICAL // ค่าตรรกะ (.TRUE. / .FALSE.)",
+        "CHARACTER(len=n) // สตริงความยาว n ตัวอักษร"
+      ],
+      "examples (ตัวอย่าง)": [
+          "INTEGER :: count = 10 // กำหนดตัวแปร count เก็บตัวเลข 10",
+          "REAL :: pi = 3.14159 // กำหนดตัวแปร pi เก็บค่าทศนิยม",
+          "CHARACTER(len=15) :: message = 'Hello Fortran' // กำหนดตัวแปร message เป็นสตริง",
+          "LOGICAL :: is_true = .TRUE. // กำหนดตัวแปร is_true เป็นค่าตรรกะ TRUE",
+          "INTEGER, DIMENSION(3) :: numbers = (/10, 20, 30/) // การประกาศและกำหนดค่า Array (Vector)",
+          "REAL, DIMENSION(2,2) :: matrix_A = RESHAPE((/1.0, 2.0, 3.0, 4.0/), SHAPE=(/2,2/)) // การประกาศและกำหนดค่า Matrix"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "FUNCTION func_name(param1, param2)\n  ! ... (เนื้อหาฟังก์ชัน)\nEND FUNCTION func_name // การประกาศ Function (คืนค่ากลับเป็นตัวฟังก์ชันเอง)",
+        "SUBROUTINE sub_name(param1, param2)\n  ! ... (เนื้อหา Subroutine)\nEND SUBROUTINE sub_name // การประกาศ Subroutine (ไม่มีค่าคืนกลับโดยตรง)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "FUNCTION add(a, b) // ฟังก์ชันบวกเลขสองจำนวน\n  INTEGER, INTENT(IN) :: a, b\n  INTEGER :: add\n  add = a + b\nEND FUNCTION add\n",
+          "SUBROUTINE print_data(value) // Subroutine สำหรับแสดงข้อความ\n  INTEGER, INTENT(IN) :: value\n  PRINT *, 'Value is: ', value\nEND SUBROUTINE print_data\n",
+          "// การเรียกใช้ฟังก์ชัน/Subroutine\nPROGRAM MainProgram\n  IMPLICIT NONE\n  INTEGER :: RESULT\n  CALL print_data(25)     ! แสดงผล 'Value is: 25'\n  RESULT = add(5, 5)       ! RESULT จะมีค่า 10\n  PRINT *, 'Sum is: ', RESULT\nEND PROGRAM MainProgram\n",
+          "SUBROUTINE calculate_area_and_perimeter(length, width, area, perimeter)\n  REAL, INTENT(IN)  :: length, width\n  REAL, INTENT(OUT) :: area, perimeter\n  area = length * width\n  perimeter = 2 * (length + width)\nEND SUBROUTINE calculate_area_and_perimeter\n// การเรียกใช้ Subroutine ที่ส่งค่ากลับทาง Argument (ใช้ INTENT(OUT))\n// PROGRAM Main\n//   IMPLICIT NONE\n//   REAL :: L = 10.0, W = 5.0, A, P\n//   CALL calculate_area_and_perimeter(L, W, A, P)\n//   PRINT *, 'Area = ', A, ' Perimeter = ', P\n// END PROGRAM Main\n",
+          "// Asynchronous Programming (แนวคิด - ผ่าน Modules/Libraries)\n// Fortran โดยพื้นฐานเป็นภาษา Sequential และ Parallel Computing (MPI, OpenMP)\n// การทำงานแบบ Asynchronous ที่แท้จริง (Non-blocking I/O) มักจะถูกจัดการโดย Library ภายนอก หรือระดับ OS\n// ตัวอย่างนี้เป็นการแสดงแนวคิดการทำงานที่อาจจะเกิดขึ้นในบริบทของ Parallel Computing (ไม่ใช่ async/await แบบสมัยใหม่)\n/*\nMODULE async_ops\nCONTAINS\n  SUBROUTINE long_computation(result)\n    REAL, INTENT(OUT) :: result\n    PRINT *, 'Starting long computation...'\n    CALL SLEEP(1) ! จำลองการหน่วงเวลา 1 วินาที (อาจต้องใช้ external module)\n    result = 42.0\n    PRINT *, 'Long computation finished!'\n  END SUBROUTINE long_computation\nEND MODULE async_ops\n\nPROGRAM MainAsync\n  USE async_ops\n  IMPLICIT NONE\n  REAL :: data_result\n\n  ! ใน Fortran, การทำ async มักจะเกี่ยวข้องกับ Parallelism\n  ! เช่น การใช้ MPI_IRECV สำหรับ Non-blocking receive หรือ OpenMP tasks\n  ! สำหรับตัวอย่างง่ายๆ นี้ เราเพียงเรียก Subroutine แบบปกติ\n  PRINT *, 'Main program continues while computation runs...'\n  CALL long_computation(data_result)\n  PRINT *, 'Received result: ', data_result\nEND PROGRAM MainAsync\n*/"
+      ],
+      "built_in (ในตัว)": [
+        "PRINT * // ใช้แสดงผลข้อมูลออกทาง Console (Free-format)",
+        "READ * // ใช้รับข้อมูลจากผู้ใช้งาน (Free-format)",
+        "SQRT() // คำนวณรากที่สอง",
+        "SIN() // คำนวณค่า Sine",
+        "COS() // คำนวณค่า Cosine",
+        "MAX() // หาค่าสูงสุด",
+        "MIN() // หาค่าต่ำสุด",
+        "ABS() // หาค่าสัมบูรณ์",
+        "MOD() // หาเศษ (Modulo)",
+        "LEN() // หาความยาวของสตริง",
+        "INT() // แปลงเป็นจำนวนเต็ม",
+        "REAL() // แปลงเป็นทศนิยม"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "! Single line comment // คอมเมนต์บรรทัดเดียว (Fortran 90/95+)",
+        "C This is a comment line (Legacy Fortran 77) // คอมเมนต์บรรทัดเดียว (ขึ้นต้นด้วย C หรือ * ใน Column 1)"
+      ],
+      "conditions (เงื่อนไข)": [
+        "IF (condition) THEN\n  ! ... (โค้ด)\nELSE IF (condition) THEN\n  ! ... (โค้ด)\nELSE\n  ! ... (โค้ด)\nEND IF // คำสั่ง IF-ELSE IF-ELSE",
+        "SELECT CASE (expression)\n  CASE (value1)\n    ! ... (โค้ด)\n  CASE (value2:value3) ! Range of values\n    ! ... (โค้ด)\n  CASE DEFAULT\n    ! ... (โค้ด)\nEND SELECT // คำสั่ง SELECT CASE (คล้าย Switch)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "DO i = 1, 5\n  ! ... (โค้ด)\nEND DO // ลูป DO (วนซ้ำตามช่วงตัวเลข)",
+        "DO WHILE (condition)\n  ! ... (โค้ด)\nEND DO // ลูป DO WHILE",
+        "DO // Infinite loop\n  ! ... (โค้ด)\n  IF (condition) EXIT // ออกจากลูป\nEND DO // ลูป DO แบบไม่รู้จบ"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "Arithmetic: +, -, *, /, ** // ตัวดำเนินการทางคณิตศาสตร์: บวก, ลบ, คูณ, หาร, ยกกำลัง",
+        "Assignment: = // ตัวดำเนินการกำหนดค่า",
+        "Comparison: .EQ., .NE., .GT., .LT., .GE., .LE. // ตัวดำเนินการเปรียบเทียบ: เท่ากับ, ไม่เท่ากับ, มากกว่า, น้อยกว่า, มากกว่าหรือเท่ากับ, น้อยกว่าหรือเท่ากับ",
+        "Logical: .AND., .OR., .NOT. // ตัวดำเนินการตรรกะ: และ, หรือ, ไม่",
+        "// // String Concatenation (Fortran 90+)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้ IF-ELSE\nPROGRAM ConditionalExample\n  IMPLICIT NONE\n  INTEGER :: num = 10\n  IF (num > 5) THEN\n    PRINT *, 'Num is greater than 5'\n  ELSE\n    PRINT *, 'Num is not greater than 5'\n  END IF\nEND PROGRAM ConditionalExample\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูป DO\nPROGRAM LoopExample\n  IMPLICIT NONE\n  INTEGER :: I\n  DO I = 1, 3\n    PRINT *, 'Loop Fortran: ', I\n  END DO\nEND PROGRAM LoopExample\n",
+          "// ตัวอย่างที่ 3: การใช้ SELECT CASE\nPROGRAM SelectCaseExample\n  IMPLICIT NONE\n  INTEGER :: score = 85\n  SELECT CASE (score)\n    CASE (90:100)\n      PRINT *, 'Grade A'\n    CASE (70:89)\n      PRINT *, 'Grade B'\n    CASE DEFAULT\n      PRINT *, 'Grade C'\n  END SELECT\nEND PROGRAM SelectCaseExample\n",
+          "// ตัวอย่างที่ 4: การทำงานกับ Array และ Vector Operations\nPROGRAM ArrayExample\n  IMPLICIT NONE\n  INTEGER, DIMENSION(3) :: A = (/1, 2, 3/)\n  INTEGER, DIMENSION(3) :: B = (/4, 5, 6/)\n  INTEGER, DIMENSION(3) :: C\n\n  C = A + B ! การบวก Element-wise\n  PRINT *, 'A + B = ', C\n\n  C = A * 2 ! การคูณด้วย Scalar\n  PRINT *, 'A * 2 = ', C\n\n  PRINT *, 'Sum of A: ', SUM(A) ! ใช้ Built-in function SUM\nEND PROGRAM ArrayExample\n",
+          "// ตัวอย่างที่ 5: การจัดการไฟล์ (File I/O)\nPROGRAM FileIOExample\n  IMPLICIT NONE\n  INTEGER :: unit_num = 10\n  CHARACTER(len=50) :: line_data\n\n  ! เขียนไฟล์\n  OPEN(UNIT=unit_num, FILE='fortran_output.txt', STATUS='REPLACE')\n  WRITE(unit_num, *) 'Hello from Fortran file!'\n  WRITE(unit_num, *) 'This is another line.'\n  CLOSE(unit_num)\n  PRINT *, 'File written: fortran_output.txt'\n\n  ! อ่านไฟล์\n  OPEN(UNIT=unit_num, FILE='fortran_output.txt', STATUS='OLD')\n  READ(unit_num, '(A)', END=100) line_data ! อ่านบรรทัดแรก\n  PRINT *, 'Read: ', TRIM(line_data)\n  READ(unit_num, '(A)', END=100) line_data ! อ่านบรรทัดที่สอง\n  PRINT *, 'Read: ', TRIM(line_data)\n100 CONTINUE\n  CLOSE(unit_num)\nEND PROGRAM FileIOExample\n"
+      ]
+  }
+}
