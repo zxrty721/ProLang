@@ -8,7 +8,7 @@
     "yr": "1970s",
     "level": "5",
     "par": ["Declarative"],
-    "fields": ["DB"],
+    "fields": ["DB", "Script"],
     "rank": "9-11 แต่กำลังลดลง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
     "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-75,000 บาท/เดือน (Senior)",
     "salary": ["low", "mid", "high"],

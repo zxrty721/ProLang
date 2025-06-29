@@ -8,7 +8,7 @@
   "yr": "1994",
   "level": "4",
   "par": ["Procedural", "Object-Oriented", "Imperative", "Functional"],
-  "fields": ["Backend", "Testing"],
+  "fields": ["Backend", "Testing", "Script"],
   "rank": "13-17 ลดลงอย่างต่อเนื่อง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
   "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-70,000 บาท/เดือน (Senior)",
   "salary": ["low", "mid", "high"],

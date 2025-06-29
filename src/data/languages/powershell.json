@@ -8,7 +8,7 @@
   "yr": "2006",
   "level": "2",
   "par": ["Object-Oriented", "Imperative", "Procedural", "Scripting"],
-  "fields": ["Script", "Admin"],
+  "fields": ["Script", "Admin", "Cloud"],
   "rank": "30+ แข็งแกร่งใน Windows Ecosystem",
   "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
   "salary": ["low", "mid", "high"],

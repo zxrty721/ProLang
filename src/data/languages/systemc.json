@@ -1,0 +1,100 @@
+{
+  "id": 63,
+  "name": "SystemC",
+  "slug": "systemc",
+  "logo": "img/systemc.png",
+  "desc": "SystemC เป็นไลบรารี C++ มาตรฐานที่ใช้สำหรับ Hardware Design, Modeling, Simulation และ Verification ในระดับ Transaction-Level Modeling (TLM) และ Register-Transfer Level (RTL) ถูกพัฒนาขึ้นเพื่อใช้ในการออกแบบระบบอิเล็กทรอนิกส์ที่ซับซ้อน โดยผสานความสามารถของ C++ กับแนวคิดของ Hardware Description Language (HDL) เพื่อให้สามารถสร้างโมเดลฮาร์ดแวร์และซอฟต์แวร์ร่วมกันได้",
+  "by": "Open SystemC Initiative (OSCI) / Accellera Systems Initiative",
+  "yr": "1999 (เวอร์ชัน 1.0)",
+  "level": "4",
+  "par": ["Object-Oriented", "Imperative", "Concurrent", "Event-Driven"],
+  "fields": ["Embedded Systems", "Hardware Design & Verification", "Electronic Design Automation (EDA)", "System-on-Chip (SoC) Design", "Digital Signal Processing"],
+  "rank": "Niche (เป็นมาตรฐานในอุตสาหกรรม EDA/Semiconductor)",
+  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-130,000 บาท/เดือน (Senior)",
+  "salary": ["veryhigh"],
+  "pros": [
+      "ใช้ C++ เป็นพื้นฐาน ทำให้เข้าถึงไลบรารี C++ และประสิทธิภาพของ C++ ได้",
+      "รองรับการออกแบบในหลายระดับ Abstraction (TLM, RTL)",
+      "จำลองการทำงานแบบ Concurrency ได้ดี (Processes, Events)",
+      "ช่วยให้สามารถออกแบบ Hardware/Software Co-design ได้อย่างมีประสิทธิภาพ",
+      "มีเครื่องมือ EDA รองรับและเป็นมาตรฐานอุตสาหกรรม"
+  ],
+  "cons": [
+      "Learning Curve สูง (ต้องเข้าใจทั้ง C++ และแนวคิดฮาร์ดแวร์)",
+      "การดีบักอาจซับซ้อน (เนื่องจากการทำงานแบบ Concurrent)",
+      "ไม่มี Garbage Collection (ต้องจัดการหน่วยความจำเองเหมือน C++)",
+      "ไม่เหมาะสำหรับแอปพลิเคชันทั่วไป",
+      "ชุมชนนักพัฒนาเฉพาะทาง"
+  ],
+  "frameworks": ["Accellera TLM-2.0 Standard"],
+  "learn": ["SystemC.org Official Website", "Accellera Systems Initiative", "Digital Design with SystemC (Book)", "Online EDA Tutorials"],
+  "variables": {
+      "declaration (การประกาศ)": [
+        "sc_signal<bool> clk; // ประกาศสัญญาณนาฬิกา (ชนิด boolean)",
+        "sc_in<int> data_in; // ประกาศพอร์ตอินพุต (ชนิด int)",
+        "sc_out<sc_logic> data_out; // ประกาศพอร์ตเอาต์พุต (ชนิด sc_logic)"
+      ],
+      "types (ประเภท)": [
+        "sc_bit // 1-bit logic type (0 หรือ 1)",
+        "sc_logic // 1-bit logic type (0, 1, X (Unknown), Z (High Impedance))",
+        "sc_bv<N> // Vector ของ sc_bit ขนาด N บิต",
+        "sc_lv<N> // Vector ของ sc_logic ขนาด N บิต",
+        "sc_int<N> // Signed integer ขนาด N บิต",
+        "sc_uint<N> // Unsigned integer ขนาด N บิต",
+        "sc_time // หน่วยเวลาสำหรับการจำลอง",
+        "sc_event // Event สำหรับการซิงโครไนซ์ Process"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// การประกาศสัญญาณและพอร์ต\n#include <systemc>\nusing namespace sc_core;\nusing namespace sc_dt;\nSC_MODULE(my_module) {\n  sc_in<bool> clk;          // พอร์ตอินพุตนาฬิกา\n  sc_in<sc_uint<8>> data;   // พอร์ตอินพุต 8 บิต unsigned integer\n  sc_out<sc_lv<16>> result; // พอร์ตเอาต์พุต 16 บิต logic vector\n\n  SC_CTOR(my_module) {\n    // Constructor ของ Module (ใช้สำหรับ Process binding)\n  }\n};",
+          "// การกำหนดค่าให้กับสัญญาณ\nsc_signal<int> counter_val;\ncounter_val = 5; // กำหนดค่าให้กับสัญญาณ",
+          "// การอ่านค่าจากพอร์ต\nint input_data = data_in.read();",
+          "// การเขียนค่าไปยังพอร์ต\ndata_out.write(SC_LOGIC_1);"
+      ]
+  },
+  "functions": {
+      "declaration (การประกาศ)": [
+        "SC_METHOD(function_name); // ประกาศ Process แบบ Method (ทำงานเมื่อ Triggered)",
+        "SC_THREAD(function_name); // ประกาศ Process แบบ Thread (ทำงานแบบ Concurrent)",
+        "SC_CTHREAD(function_name, clock_signal); // ประกาศ Process แบบ Clocked Thread (ทำงานตาม Clock Edge)"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// การประกาศ Module และ Process\n#include <systemc>\nusing namespace sc_core;\n\nSC_MODULE(Adder) {\n  sc_in<int> in1, in2;  // อินพุต 2 ตัว\n  sc_out<int> sum_out; // ผลรวมเอาต์พุต\n\n  void do_add() { // Process แบบ Method\n    sum_out.write(in1.read() + in2.read());\n    std::cout << sc_time_stamp() << \": Adder: \" << in1.read() << \" + \" << in2.read() << \" = \" << sum_out.read() << std::endl;\n  }\n\n  SC_CTOR(Adder) { // Constructor ของ Module\n    SC_METHOD(do_add); // กำหนด do_add เป็น Method Process\n    sensitive << in1 << in2; // Process นี้จะทำงานเมื่อ in1 หรือ in2 เปลี่ยนแปลง\n  }\n};\n",
+          "// การเรียกใช้ฟังก์ชันและ Event Handling\nSC_MODULE(Timer) {\n  sc_out<bool> tick; // สัญญาณ tick\n  void run_timer() {\n    while (true) {\n      wait(10, SC_NS); // รอ 10 นาโนวินาที\n      tick.write(!tick.read()); // สลับค่า tick\n      std::cout << sc_time_stamp() << \": Timer ticked!\\n\";\n    }\n  }\n\n  SC_CTOR(Timer) {\n    SC_THREAD(run_timer); // กำหนด run_timer เป็น Thread Process\n  }\n};\n",
+          "// Asynchronous Programming (Processes และ Events)\n// SystemC จัดการ Asynchronous และ Concurrency ผ่าน Built-in Primitives เช่น Processes (SC_METHOD, SC_THREAD)\n// และ Events (sc_event) สำหรับการซิงโครไนซ์\nSC_MODULE(ProducerConsumer) {\n  sc_port<sc_fifo_out_if<int>> producer_port; // Port สำหรับ Producer\\n  sc_port<sc_fifo_in_if<int>> consumer_port; // Port สำหรับ Consumer\\n\\n  void producer_process() {\\n    int data = 0;\\n    while (true) {\\n      wait(2, SC_NS);\\n      producer_port->write(data++); // เขียนข้อมูลลง FIFO\\n      std::cout << sc_time_stamp() << \": Producer wrote \" << data - 1 << std::endl;\\n    }\\n  }\\n\\n  void consumer_process() {\\n    while (true) {\\n      int received_data = consumer_port->read(); // อ่านข้อมูลจาก FIFO\\n      std::cout << sc_time_stamp() << \": Consumer read \" << received_data << std::endl;\\n      wait(3, SC_NS);\\n    }\\n  }\\n\\n  SC_CTOR(ProducerConsumer) {\\n    SC_THREAD(producer_process);\\n    SC_THREAD(consumer_process);\\n  }\\n};"
+      ],
+      "built_in (ในตัว)": [
+        "sc_start() // เริ่มการจำลอง",
+        "sc_stop() // หยุดการจำลอง",
+        "sc_time_stamp() // คืนค่าเวลาปัจจุบันของการจำลอง",
+        "wait() // ใช้หยุด Process ชั่วคราว (รอเวลาหรือ Event)",
+        "notify() // ใช้ Trigger Event",
+        "sc_report_error() // รายงานข้อผิดพลาด",
+        "sc_report_warning() // รายงานคำเตือน",
+        "SC_CTOR() // Macro สำหรับ Constructor ของ SystemC Module",
+        "sensitive << signal // กำหนดให้ Process ทำงานเมื่อสัญญาณเปลี่ยนแปลง"
+      ]
+  },
+  "syntax": {
+      "comments (คอมเมนต์)": [
+        "// Single line comment // คอมเมนต์บรรทัดเดียว (C++ style)",
+        "/* Multi-line\n   comment */ // คอมเมนต์หลายบรรทัด (C++ style)"
+      ],
+      "conditions (เงื่อนไข)": [
+        "if (condition) { /* ... */ } else if (condition) { /* ... */ } else { /* ... */ } // คำสั่ง if-else if-else (C++ style)"
+      ],
+      "loops (การวนซ้ำ)": [
+        "for (int i = 0; i < 5; i++) { /* ... */ } // ลูป for (C++ style)",
+        "while (condition) { /* ... */ } // ลูป while (C++ style)"
+      ],
+      "operators (ตัวดำเนินการ)": [
+        "C++ Operators: +, -, *, /, %, &&, ||, !, ==, !=, <, >, <=, >=, &, |, ^, ~, <<, >> // ตัวดำเนินการ C++ มาตรฐาน",
+        "<< // Operator สำหรับ sensitive list",
+        "-> // Operator สำหรับเข้าถึงสมาชิกของ Interface ผ่าน Port"
+      ],
+      "examples (ตัวอย่าง)": [
+          "// ตัวอย่างที่ 1: การใช้เงื่อนไขใน Process\nSC_MODULE(ThresholdDetector) {\n  sc_in<int> input_val;\n  sc_out<bool> output_flag;\n\n  void detect_threshold() {\n    if (input_val.read() > 100) {\n      output_flag.write(true);\n    } else {\n      output_flag.write(false);\n    }\n    std::cout << sc_time_stamp() << \": Input: \" << input_val.read() << \", Flag: \" << output_flag.read() << std::endl;\n  }\n\n  SC_CTOR(ThresholdDetector) {\n    SC_METHOD(detect_threshold);\n    sensitive << input_val;\n  }\n};\n",
+          "// ตัวอย่างที่ 2: การใช้วงลูปใน Thread Process\nSC_MODULE(Counter) {\n  sc_out<int> count_out;\n  sc_in<bool> reset_in;\n\n  void run_counter() {\n    int counter_val = 0;\n    while (true) {\n      if (reset_in.read()) {\n        counter_val = 0; // รีเซ็ตเคาน์เตอร์ถ้า reset เป็นจริง\n      } else {\n        counter_val++;\n      }\n      count_out.write(counter_val);\n      std::cout << sc_time_stamp() << \": Counter: \" << counter_val << std::endl;\n      wait(1, SC_NS); // รอ 1 นาโนวินาทีต่อรอบ\n    }\n  }\n\n  SC_CTOR(Counter) {\n    SC_THREAD(run_counter);\n    sensitive << reset_in; // หรือ sensitive << clk.pos() ถ้าเป็น clocked counter\n  }\n};\n",
+          "// ตัวอย่างที่ 3: การเชื่อมต่อ Module และรัน Simulation\n#include <systemc>\nusing namespace sc_core;\n\n// สมมติว่ามี Module Adder และ Timer ตามตัวอย่างด้านบนแล้ว\n\nint sc_main(int argc, char* argv[]) {\n  sc_signal<int> s_in1, s_in2, s_sum; // สัญญาณสำหรับเชื่อมต่อ\n  sc_signal<bool> s_tick; // สัญญาณสำหรับ Timer\n\n  // สร้าง instances ของ Module\n  Adder adder_inst(\"adder\");\n  Timer timer_inst(\"timer\");\n\n  // เชื่อมต่อพอร์ตกับสัญญาณ\n  adder_inst.in1(s_in1);\n  adder_inst.in2(s_in2);\n  adder_inst.sum_out(s_sum);\n\n  timer_inst.tick(s_tick);\n\n  // กำหนดค่าเริ่มต้นให้กับสัญญาณ\n  s_in1.write(5);\n  s_in2.write(3);\n\n  // กำหนดค่า input ให้เปลี่ยนแปลงระหว่าง Simulation\n  sc_start(10, SC_NS); // รัน Simulation 10 ns\n  s_in1.write(7); // เปลี่ยนค่า s_in1\n  s_in2.write(2); // เปลี่ยนค่า s_in2\n\n  sc_start(10, SC_NS); // รันต่ออีก 10 ns\n\n  sc_stop(); // หยุด Simulation\n  return 0;\n}\n"
+      ]
+  }
+}

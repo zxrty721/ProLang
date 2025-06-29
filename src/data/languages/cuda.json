@@ -7,7 +7,7 @@
   "by": "NVIDIA",
   "yr": "2006",
   "level": "1",
-  "par": ["Parallel Programming", "Imperative", "Low-level"],
+  "par": ["Parallel Programming", "Imperative", "Low-level", "Hardware"],
   "fields": ["HPC", "AI"],
   "rank": "เป็นมาตรฐานสำหรับ GPGPU (General-Purpose computing on Graphics Processing Units)",
   "salary_range": "฿50,000-90,000 บาท/เดือน (Junior), ฿90,000-180,000 บาท/เดือน (Senior)",

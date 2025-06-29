@@ -8,7 +8,7 @@
     "yr": "1979",
     "level": "3",
     "par": ["Multi-paradigm", "Object-Oriented", "Procedural", "Generic"],
-    "fields": ["Game", "Desktop", "System", "Compiler", "VR", "Security", "Robot", "Network", "Finance", "Plugin", "HPC", "Aero", "Graphics", "Render"],
+    "fields": ["Game", "Desktop", "System", "Compiler", "VR", "Security", "Robot", "Network", "Finance", "Plugin", "HPC", "Aero", "Graphics", "Render", "Digital"],
     "rank": "2 ใน TIOBE Index 2025 (11.37% และเติบโตแรง)",
     "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
     "salary": ["low", "mid", "high", "veryhigh"],

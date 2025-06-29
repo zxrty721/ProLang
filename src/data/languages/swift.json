@@ -8,7 +8,7 @@
   "yr": "2014",
   "level": "3",
   "par": ["Multi-paradigm", "Object-Oriented", "Functional", "Protocol-Oriented"],
-  "fields": ["Mobile", "Desktop"],
+  "fields": ["Mobile", "Desktop", "Script"],
   "rank": "10-12 สำหรับ iOS Development แต่กำลังลดลง (1.8% ใน TIOBE)",
   "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
   "salary": ["low", "mid", "high"],

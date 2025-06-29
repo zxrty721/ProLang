@@ -8,7 +8,7 @@
   "yr": "1993",
   "level": "5",
   "par": ["Functional", "Procedural", "Object-Oriented"],
-  "fields": ["Data", "Scientific"],
+  "fields": ["Data", "Scientific", "Script", "HPC"],
   "rank": "11-13 แต่กำลังลดลงเรื่อยๆ (แพ้ Python ใน Data Science)",
   "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-90,000 บาท/เดือน (Senior)",
   "salary": ["low", "mid", "high"],
