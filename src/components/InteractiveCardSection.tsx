@@ -1,9 +1,72 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, memo } from 'react';
 import LanguageCard from './LanguageCard';
 import LanguageDetail from './LanguageDetail';
 import FilterPanel from './FilterPanel';
 import { getDifficultyClass } from '../utils/card';
 import type { Language } from '../utils/language';
+
+// Simplified filter cache
+class FilterCache {
+  private cache = new Map<string, boolean>();
+  private maxSize = 200;
+
+  get(key: string): boolean | undefined {
+    const value = this.cache.get(key);
+    if (value !== undefined) {
+      this.cache.delete(key);
+      this.cache.set(key, value);
+    }
+    return value;
+  }
+
+  set(key: string, value: boolean): void {
+    if (this.cache.size >= this.maxSize) {
+      const firstKey = this.cache.keys().next().value;
+      if (firstKey !== undefined) {
+        this.cache.delete(firstKey);
+      }
+    }
+    this.cache.set(key, value);
+  }
+
+  clear(): void {
+    this.cache.clear();
+  }
+}
+
+const filterCache = new FilterCache();
+
+// Optimized filter functions
+const createFilterFunctions = () => ({
+  level: (lang: Language, filters: string[]) => {
+    if (!filters.length) return true;
+    const difficultyClass = getDifficultyClass(lang.level);
+    if (!difficultyClass) return false;
+    const levelClass = difficultyClass.toLowerCase().replace(' ', '-');
+    return filters.includes(levelClass);
+  },
+  
+  field: (lang: Language, filters: string[]) => {
+    if (!filters.length) return true;
+    return filters.some(filter => lang.fields.includes(filter));
+  },
+  
+  salary: (lang: Language, filters: string[]) => {
+    if (!filters.length) return true;
+    const salaries = Array.isArray(lang.salary) ? lang.salary : [lang.salary];
+    return filters.some(filter => salaries.includes(filter as any));
+  },
+  
+  search: (lang: Language, term: string) => {
+    if (!term) return true;
+    return lang.name.toLowerCase().includes(term.toLowerCase());
+  }
+});
+
+// Memoized components
+const MemoizedLanguageCard = memo(LanguageCard);
+const MemoizedLanguageDetail = memo(LanguageDetail);
+const MemoizedFilterPanel = memo(FilterPanel);
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
@@ -11,114 +74,134 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
   const [fieldFilter, setFieldFilter] = useState<string[]>([]);
   const [salaryFilter, setSalaryFilter] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showFilterPanel, setShowFilterPanel] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
+  const filterFunctions = useMemo(() => createFilterFunctions(), []);
+
+  const hasActiveFilters = useMemo(() => {
+    return !!(levelFilter.length || fieldFilter.length || salaryFilter.length || searchTerm.length);
+  }, [levelFilter.length, fieldFilter.length, salaryFilter.length, searchTerm.length]);
+
+  // Optimized filtering
   const filteredLanguages = useMemo(() => {
-    if (
-      levelFilter.length === 0 &&
-      fieldFilter.length === 0 &&
-      salaryFilter.length === 0 &&
-      searchTerm === ''
-    )
-      return languages;
-
-    return languages.filter((lang) => {
-      const rawLevelClass = getDifficultyClass(lang.level)?.toLowerCase().replace(' ', '-');
-      const matchesLevel =
-        !levelFilter.length || (rawLevelClass && levelFilter.includes(rawLevelClass));
-      const matchesField =
-        !fieldFilter.length || lang.fields.some((f) => fieldFilter.includes(f));
-      const matchesSalary =
-        !salaryFilter.length ||
-        salaryFilter.some((f) =>
-          (Array.isArray(lang.salary) ? lang.salary : [lang.salary]).includes(
-            f as 'low' | 'mid' | 'high' | 'veryhigh'
-          )
-        );
-      const matchesSearch = lang.name.toLowerCase().includes(searchTerm.toLowerCase());
-
-      return matchesLevel && matchesField && matchesSalary && matchesSearch;
+    if (!hasActiveFilters) return languages;
+    
+    return languages.filter(lang => {
+      if (searchTerm && !filterFunctions.search(lang, searchTerm)) return false;
+      if (levelFilter.length && !filterFunctions.level(lang, levelFilter)) return false;
+      if (fieldFilter.length && !filterFunctions.field(lang, fieldFilter)) return false;
+      if (salaryFilter.length && !filterFunctions.salary(lang, salaryFilter)) return false;
+      return true;
     });
-  }, [languages, levelFilter, fieldFilter, salaryFilter, searchTerm]);
+  }, [languages, levelFilter, fieldFilter, salaryFilter, searchTerm, hasActiveFilters, filterFunctions]);
 
   const handleReset = useCallback(() => {
     setLevelFilter([]);
     setFieldFilter([]);
     setSalaryFilter([]);
     setSearchTerm('');
+    filterCache.clear();
+  }, []);
+
+  const handleClearSearch = useCallback(() => {
+    setSearchTerm('');
   }, []);
 
   const openLanguageModal = useCallback((lang: Language) => {
     setSelectedLanguage(lang);
-    document.body.style.overflow = 'hidden';
+    setModalVisible(true);
   }, []);
 
   const closeModal = useCallback(() => {
-    setSelectedLanguage(null);
-    document.body.style.overflow = 'auto';
+    setModalVisible(false);
+    setTimeout(() => setSelectedLanguage(null), 150);
   }, []);
 
-  const showNoResults = useMemo(
-    () =>
-      filteredLanguages.length === 0 &&
-      (levelFilter.length > 0 ||
-        fieldFilter.length > 0 ||
-        salaryFilter.length > 0 ||
-        searchTerm !== ''),
-    [filteredLanguages, levelFilter, fieldFilter, salaryFilter, searchTerm]
-  );
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  }, []);
+
+  const showNoResults = !filteredLanguages.length && hasActiveFilters;
 
   return (
-    <div>
-      
-      <div className="flex min-h-screen w-full px-4 py-8 items-stretch gap-4 justify-center">
-        {/* FilterPanel */}
-        <div className="bg-white rounded-3xl shadow-xl p-4 text-sm">
-          <FilterPanel
-            levelFilter={levelFilter}
-            setLevelFilter={setLevelFilter}
-            fieldFilter={fieldFilter} 
-            setFieldFilter={setFieldFilter}
-            salaryFilter={salaryFilter}
-            setSalaryFilter={setSalaryFilter}
-          />
-        </div>
+    <div className="min-h-screen from-gray-900 via-gray-800 to-gray-900 text-gray-900">
+      <div className="flex w-full px-4 py-8 items-stretch gap-4 justify-center">
+        {/* Filter Toggle Button */}
+        <button
+          className="fixed top-6 left-6 z-30 px-4 py-2 bg-white text-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-150 border border-gray-200"
+          onClick={() => setShowFilterPanel(!showFilterPanel)}
+          aria-label={showFilterPanel ? "ปิดตัวกรอง" : "เปิดตัวกรอง"}
+        >
+          {showFilterPanel ? '✕' : '⚙️'} ตัวกรอง
+        </button>
 
-        {/* Maincard: fix width 1400px, อยู่กลาง */}
-        <div className="w-[1400px] mx-auto bg-white rounded-3xl p-6 h-full">
-          {/* Search */}
+        {/* FilterPanel */}
+        {showFilterPanel && (
+          <div className="fixed top-20 left-6 z-40 bg-white rounded-2xl shadow-2xl p-6 text-sm border border-gray-200 min-w-[320px] max-h-[80vh] overflow-y-auto transition-all duration-150 transform">
+            <div className="mb-4">
+              <h3 className="font-bold text-lg text-gray-800 mb-4">ตัวกรอง</h3>
+              <MemoizedFilterPanel
+                levelFilter={levelFilter}
+                setLevelFilter={setLevelFilter}
+                fieldFilter={fieldFilter}
+                setFieldFilter={setFieldFilter}
+                salaryFilter={salaryFilter}
+                setSalaryFilter={setSalaryFilter}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Main content */}
+        <div className={`w-full max-w-[1400px] mx-auto bg-white rounded-3xl p-6 shadow-xl transition-all duration-150 ease-out ${
+          selectedLanguage ? 'blur-sm scale-95 opacity-90' : ''
+        }`}>
+          {/* Search section */}
           <div className="flex flex-col items-center gap-4 mb-6">
             <h3 className="font-bold text-lg text-gray-800">ค้นหาชื่อ</h3>
             <input
               type="text"
               placeholder="ค้นหาชื่อภาษา..."
-              className="p-3 border border-gray-300 rounded-xl w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="p-3 border border-gray-300 rounded-xl w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-100"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleSearchChange}
+              autoComplete="off"
             />
             <div className="flex gap-4">
               <button
-                onClick={() => setSearchTerm('')}
-                className="px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md"
+                onClick={handleClearSearch}
+                className="px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md transition-colors duration-100 disabled:opacity-50"
+                disabled={!searchTerm}
               >
                 ล้างคำค้นหา
               </button>
               <button
                 onClick={handleReset}
-                className="px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 shadow-md"
+                className="px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 shadow-md transition-colors duration-100 disabled:opacity-50"
+                disabled={!hasActiveFilters}
               >
                 รีเซ็ตทั้งหมด
               </button>
             </div>
           </div>
 
-          {/* Card Grid */}
-          <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <p className="text-gray-500 col-span-full text-center py-5 text-sm">
-              พบภาษา {filteredLanguages.length}
+          {/* Results summary */}
+          <div className="text-center mb-4">
+            <p className="text-gray-500 text-sm">
+              {hasActiveFilters ? (
+                <>พบภาษา {filteredLanguages.length} จากทั้งหมด {languages.length}</>
+              ) : (
+                <>แสดงภาษาทั้งหมด {languages.length}</>
+              )}
             </p>
+          </div>
+
+          {/* Card Grid */}
+          <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredLanguages.length > 0 ? (
               filteredLanguages.map((lang) => (
-                <LanguageCard
+                <MemoizedLanguageCard
                   key={lang.id}
                   language={lang}
                   isSelected={selectedLanguage?.id === lang.id}
@@ -126,25 +209,39 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                 />
               ))
             ) : (
-              <p className="text-gray-500 col-span-full text-center py-10 text-xl">
-                ไม่พบภาษาตรงตามเงื่อนไข
-              </p>
+              <div className="col-span-full text-center py-10">
+                <p className="text-gray-500 text-xl mb-4">
+                  {showNoResults ? 'ไม่พบภาษาตรงตามเงื่อนไข' : 'ไม่มีข้อมูลภาษา'}
+                </p>
+                {showNoResults && (
+                  <button
+                    onClick={handleReset}
+                    className="px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md transition-colors duration-100"
+                  >
+                    ล้างตัวกรองทั้งหมด
+                  </button>
+                )}
+              </div>
             )}
           </section>
         </div>
 
-        {/* flex-grow: พื้นที่ว่างด้านขวา */}
-        <div className="flex-grow" />
-
         {/* Modal */}
         {selectedLanguage && (
           <div
-            className="language-modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-150 ease-out ${
+            modalVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+          
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.target === e.currentTarget && closeModal()}
           >
-            <LanguageDetail language={selectedLanguage} onClose={closeModal} />
+            <div className={`transform transition-all duration-150 ease-out ${
+              modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+            }`}>
+              <MemoizedLanguageDetail language={selectedLanguage} onClose={closeModal} />
+            </div>
           </div>
         )}
       </div>

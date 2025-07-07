@@ -28,7 +28,7 @@ export default function FilterPanel({
     <div className="flex flex-col gap-6 w-full">
       {/* Language Level Filter Section */}
       <div>
-        <h3 className="font-bold text-lg mb-3 text-gray-800">🌟ระดับภาษา :</h3>
+        <h3 className="font-bold text-lg mb-3 text-gray-800">🌟ระดับภาษา 5 ระดับ :</h3>
         <div className="flex flex-col gap-2">
           {['machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level', 'unknown'].map(level => (
             <label key={level} className="flex items-center text-gray-700 cursor-pointer">
@@ -49,7 +49,7 @@ export default function FilterPanel({
 
       {/* Field Filter Section */}
       <div className="mt-4">
-        <h3 className="font-bold text-lg mb-3 text-gray-800">💼สายงาน :</h3>
+        <h3 className="font-bold text-lg mb-3 text-gray-800">💼สายงาน {Object.entries(fieldMap).length} สายงาน :</h3>
         <div className="flex flex-col gap-2">
         {Object.entries(fieldMap).map(([code, label]) => (
             <label key={code} className="flex items-center text-gray-700 cursor-pointer">
@@ -67,7 +67,7 @@ export default function FilterPanel({
       </div>
 
       {/* Salary Range Filter Section */}
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <h3 className="font-bold text-lg mb-3 text-gray-800">💰ช่วงเงินเดือน :</h3>
         <div className="flex flex-col gap-2">
           {['low', 'mid', 'high', 'veryhigh'].map(sal => (
@@ -85,7 +85,7 @@ export default function FilterPanel({
             </label>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

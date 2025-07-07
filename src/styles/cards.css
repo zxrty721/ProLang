@@ -4,12 +4,23 @@
   background: #ffffff;
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.3s ease;
-  border: 1px solid #e2e8f0; /* soft border */
-  }
-  
-  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover .language-name {
+  /* ดึงค่าสีจากตัวแปร --level-highlight-color */
+  color: var(--level-highlight-color);
+  color:#818181;
+}
+
+/* Level Gradients */
 .lang-level.Machine-Level {
   background: linear-gradient(135deg, #5a2020, #ff3b3b, #5a2020);
 }
@@ -29,85 +40,33 @@
   background: linear-gradient(135deg, #4b5563, #9ca3af, #4b5563);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-}
-
+/* Hover Borders */
 .card.Machine-Level:hover {
   box-shadow: 0 10px 30px rgba(239, 68, 68, 0.35);
   border: 0.17rem solid #dc2626;
 }
-
 .card.Low-Level:hover {
-  box-shadow: 0 10px 30px rgba(0, 98, 255, 0.404);
+  box-shadow: 0 10px 30px rgba(0, 98, 255, 0.4);
   border: 0.17rem solid #3b82f6;
 }
-
 .card.Mid-Level:hover {
-  box-shadow: 0 10px 30px rgba(255, 183, 0, 0.418);
+  box-shadow: 0 10px 30px rgba(255, 183, 0, 0.4);
   border: 0.17rem solid #facc15;
 }
-
 .card.High-Level:hover {
   box-shadow: 0 10px 30px rgba(89, 241, 0, 0.35);
   border: 0.17rem solid #10b981;
 }
-
 .card.Very-High-Level:hover {
   box-shadow: 0 10px 30px rgba(168, 85, 247, 0.35);
   border: 0.17rem solid #a855f7;
 }
-
 .card.Unknown:hover {
   box-shadow: 0 10px 30px rgba(156, 163, 175, 0.35);
   border: 0.17rem solid #9ca3af;
 }
 
-
-a {
-  text-decoration: none;
-}
-
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.language-logo {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 1.5rem;
-  padding: 1rem;
-  display: flex;
-  color: white;
-  font-weight: 500px;
-}
-
-.logo-animate {
-  animation: logoFloat 3s ease-in-out infinite;
-}
-
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}
-
-.language-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1f2937; /* สีเทาเข้มนุ่ม */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.language-desc {
-  color: #475569; /* เทาอ่อน อ่านง่าย */
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-
+/* Badge */
 .lang-level {
   position: absolute;
   top: 0.4rem;
@@ -120,32 +79,52 @@ a {
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.level-animate {
-  animation: logoFloat 3s ease-out infinite;
+/* Logo & Name */
+.language-logo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  color: white;
+  font-weight: 500;
 }
 
-.SearchBox {
-  border: orange 2;
+.language-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  .nav-container {
-      flex-direction: column;
-      gap: 1rem;
-  }
-  
-  .nav-tabs {
-      justify-content: center;
-  }
-  
-  .languages-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-  }
+/* Description */
+.language-desc {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
 
-  main {
-      margin: 2rem auto;
-      padding: 1rem;
+/* Modal Overlay */
+.language-modal-overlay {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* No universal transition */
+.logo-animate {
+  height: auto;
+  animation: float 3s ease-in-out infinite; /* ชื่ออนิเมชัน, ระยะเวลา, รูปแบบการเคลื่อนไหว, วนซ้ำ */
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0px); /* เริ่มต้นที่ตำแหน่งปกติ */
   }
-  
+  50% {
+    transform: translateY(-10px); /* เลื่อนขึ้น 20px (หรือตามต้องการ) */
+  }
+  100% {
+    transform: translateY(0px); /* กลับมาตำแหน่งเดิม */
+  }
 }

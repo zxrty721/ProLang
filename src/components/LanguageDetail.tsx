@@ -389,14 +389,14 @@ const LanguageDetail = memo(({
         </div>
       )}
 
-      {language.salary_range && (
+      {/* {language.salary_range && (
         <div className="section mb-8">
           <h2 className="section-title text-2xl font-bold mb-4">💰 ช่วงเงินเดือน</h2>
           <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
             <span className="text-lg">{language.salary_range}</span>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Main Content Sections */}
       {infoSections.length > 0 && (
