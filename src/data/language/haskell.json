@@ -10,8 +10,6 @@
   "par": ["Functional", "Lazy Evaluation"],
   "fields": ["Compiler", "Edu", "Math", "Script"],
   "rank": "35-40 Niche ใน Functional Programming",
-  "salary_range": "฿38,000-60,000 บาท/เดือน (Junior), ฿60,000-105,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
       "โค้ดมีความถูกต้องทางคณิตศาสตร์สูง (Guaranteed Correctness)",
       "ลด Bug จาก Side Effects",

@@ -10,8 +10,6 @@
   "par": ["Functional", "Concurrent", "Dynamic", "Lisp"],
   "fields": ["Backend", "Compiler"],
   "rank": "35-40 Niche ใน Functional Programming บน JVM",
-  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-92,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "Functional Programming ที่บริสุทธิ์ ช่วยให้โค้ด Predictable",
     "Concurrency ที่แข็งแกร่งและจัดการได้ง่าย",

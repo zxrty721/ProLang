@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Functional", "Reflective"],
   "fields": ["Backend", "Script", "Testing"],
   "rank": "14 และลดลงต่อเนื่อง (2.1% ใน TIOBE)",
-  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-95,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "Syntax สวยงามและอ่านง่าย",
       "มี Ruby on Rails Framework ที่ทรงพลังสำหรับการพัฒนาเว็บ",

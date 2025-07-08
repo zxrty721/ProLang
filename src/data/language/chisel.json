@@ -10,8 +10,6 @@
   "par": ["Hardware Description", "Functional", "Object-Oriented", "Metaprogramming"],
   "fields": ["Hardware", "Digital"],
   "rank": "Niche ในงานวิจัยและออกแบบ Hardware ที่ทันสมัย",
-  "salary_range": "฿50,000-90,000 บาท/เดือน (Junior), ฿90,000-180,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "นำเสนอการออกแบบฮาร์ดแวร์ในระดับ Abstraction ที่สูงขึ้น",
     "ใช้ประโยชน์จากคุณสมบัติของ Scala (OOP, Functional, Metaprogramming)",

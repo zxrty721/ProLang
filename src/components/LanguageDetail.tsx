@@ -23,8 +23,8 @@ const InfoSection = memo(({ title, items, color, emoji, borderColor }: {
       {emoji} {title}
     </h3>
     <ul className="space-y-2 text-gray-700">
-      {items.map((item, i) => (
-        <li key={i} className="flex items-start">
+      {items.map((item) => (
+        <li key={item} className="flex items-start">
           <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
           <span className="leading-relaxed">{item}</span>
         </li>
@@ -55,12 +55,12 @@ const DetailSection = memo(({ title, type, data, titleColor, bgColor, emoji }: {
             {Array.isArray(value) ? (
               value.map((item, i) => (
                 <div key={i} className="mb-2">
-                  <CodeBlock content={String(item)} typecontent={type} className="my-2" />
+                  <CodeBlock content={String(item)} className="my-2" />
                 </div>
               ))
             ) : (
               <div className="mb-2">
-                <CodeBlock content={String(value)} typecontent={type} className="my-2" />
+                <CodeBlock content={String(value)} className="my-2" />
               </div>
             )}
           </div>
@@ -119,15 +119,16 @@ const LanguageDetail = memo(({
         </button>
 
         <div className="flex items-center space-x-4 mb-6">
-            <img
-              src={logoSrc}
-              alt={`${language.name} logo`}
-              width={24}
-              height={24}
-              className="language-logo logo-animate"
-              loading="lazy"
-              decoding="async"
-            />
+          <img
+            src={logoSrc}
+            alt={`${language.name} logo`}
+            width={24}
+            height={24}
+            className="language-logo logo-animate"
+            loading="lazy"
+            fetchPriority="low"
+            decoding="async"
+          />
           <h1 className={clsx("text-4xl font-bold", titleColor)}>{language.name}</h1>
         </div>
 
@@ -152,8 +153,8 @@ const LanguageDetail = memo(({
           <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
             <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>
             <div className="flex flex-wrap gap-2 mt-2">
-              {language.par.map((p, i) => (
-                <span key={i} className="tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">{p}</span>
+              {language.par.map((p) => (
+                <span key={p} className="tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">{p}</span>
               ))}
             </div>
           </div>
@@ -163,8 +164,8 @@ const LanguageDetail = memo(({
           <div className="section mb-8">
             <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง</h2>
             <div className="badge-group flex flex-wrap gap-2">
-              {language.fields.map((use, i) => (
-                <span key={i} className="badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+              {language.fields.map((use) => (
+                <span key={use} className="badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
                   {fieldMap[use] ?? use}
                 </span>
               ))}
@@ -186,8 +187,8 @@ const LanguageDetail = memo(({
             <h2 className="Header text-3xl font-bold text-gray-900 mb-6 border-b-4 border-blue-500 pb-3 bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-3 rounded-lg">
               🧠 ข้อมูลทั่วไป
             </h2>
-            {infoSections.map((section, i) => (
-              <InfoSection key={i} {...section} />
+            {infoSections.map((section) => (
+              <InfoSection key={section.title} {...section} />
             ))}
           </div>
         )}
@@ -197,8 +198,8 @@ const LanguageDetail = memo(({
             <h2 className="Header text-3xl font-bold text-gray-900 mb-6 border-b-4 border-blue-500 pb-3 bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-3 rounded-lg">
               🛠️ รายละเอียดทางเทคนิค
             </h2>
-            {technicalSections.map((section, i) => (
-              <DetailSection key={i} {...section} />
+            {technicalSections.map((section) => (
+              <DetailSection key={section.title} {...section} />
             ))}
           </div>
         )}

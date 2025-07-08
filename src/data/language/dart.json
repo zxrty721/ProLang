@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Functional"],
   "fields": ["Mobile", "Frontend"],
   "rank": "25-30 แต่เติบโตแรงด้วย Flutter (6.2% ของนักพัฒนา Mobile)",
-  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-85,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "เหมาะกับการพัฒนา Cross-platform ด้วย Flutter",
       "มี Hot Reload สำหรับการพัฒนาที่รวดเร็ว",

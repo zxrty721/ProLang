@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Concurrent", "Event-Driven"],
   "fields": ["Embedded", "Hardware", "Digital", "Hardware"],
   "rank": "Niche (เป็นมาตรฐานในอุตสาหกรรม EDA/Semiconductor)",
-  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-130,000 บาท/เดือน (Senior)",
-  "salary": ["veryhigh"],
   "pros": [
       "ใช้ C++ เป็นพื้นฐาน ทำให้เข้าถึงไลบรารี C++ และประสิทธิภาพของ C++ ได้",
       "รองรับการออกแบบในหลายระดับ Abstraction (TLM, RTL)",

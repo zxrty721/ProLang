@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, memo } from 'react';
+import { useState, useMemo, useCallback, memo, useDeferredValue, useTransition } from 'react';
 import LanguageCard from './LanguageCard';
 import LanguageDetail from './LanguageDetail';
 import FilterPanel from './FilterPanel';
@@ -71,8 +71,10 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
   const [fieldFilter, setFieldFilter] = useState<string[]>([]);
   const [salaryFilter, setSalaryFilter] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const deferredSearch = useDeferredValue(searchTerm);
   const [showFilterPanel, setShowFilterPanel] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const filterFunctions = useMemo(() => createFilterFunctions(), []);
 
@@ -83,13 +85,13 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
   const filteredLanguages = useMemo(() => {
     if (!hasActiveFilters) return languages;
     return languages.filter(lang => {
-      if (searchTerm && !filterFunctions.search(lang, searchTerm)) return false;
+      if (deferredSearch && !filterFunctions.search(lang, deferredSearch)) return false;
       if (levelFilter.length && !filterFunctions.level(lang, levelFilter)) return false;
       if (fieldFilter.length && !filterFunctions.field(lang, fieldFilter)) return false;
       if (salaryFilter.length && !filterFunctions.salary(lang, salaryFilter)) return false;
       return true;
     });
-  }, [languages, levelFilter, fieldFilter, salaryFilter, searchTerm, hasActiveFilters, filterFunctions]);
+  }, [languages, levelFilter, fieldFilter, salaryFilter, deferredSearch, hasActiveFilters, filterFunctions]);
 
   const handleReset = useCallback(() => {
     setLevelFilter([]);
@@ -114,7 +116,8 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
   }, []);
 
   const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+    const value = e.target.value;
+    startTransition(() => setSearchTerm(value));
   }, []);
 
   const handleNextLanguage = useCallback(() => {

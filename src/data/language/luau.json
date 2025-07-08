@@ -10,8 +10,6 @@
   "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)", "Statically-typed (Optional)"],
   "fields": ["Game", "Script", "Plugin"],
   "rank": "เป็นภาษาหลักสำหรับการพัฒนาใน Roblox (แพลตฟอร์มเกมยอดนิยม)",
-  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-80,000 บาท/เดือน (Senior) - ในอุตสาหกรรมเกม Roblox",
-  "salary": ["mid", "high"],
   "pros": [
     "เพิ่มความปลอดภัยของโค้ดด้วย Static Typing (Optional Typing)",
     "ประสิทธิภาพสูงกว่า Lua ดั้งเดิมในหลายกรณี",

@@ -10,8 +10,6 @@
   "par": ["Actor-Oriented", "Object-Oriented", "Functional", "Concurrent"],
   "fields": ["System", "Compiler"],
   "rank": "Niche ในตลาดเฉพาะทาง (ยังไม่เป็นที่นิยมในวงกว้าง)",
-  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-120,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high", "veryhigh"],
   "pros": [
     "ปลอดภัยจาก Data Race และ Deadlock โดยธรรมชาติ (Actor Model)",
     "ประสิทธิภาพสูงมาก",

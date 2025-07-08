@@ -10,8 +10,6 @@
   "par": ["Declarative", "Concurrent", "Structured", "Behavioral", "Dataflow"],
   "fields": ["Embedded", "Hardware", "Digital", "Aero"],
   "rank": "Top 2 HDL (ร่วมกับ Verilog/SystemVerilog)",
-  "salary_range": "฿45,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "เป็นภาษา HDL ที่เป็นมาตรฐาน IEEE",
     "มีความสามารถในการอธิบายพฤติกรรมวงจรและโครงสร้าง Hardware",

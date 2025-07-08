@@ -51,17 +51,18 @@ const LanguageCard = memo(({ language, isSelected, onClick }: LanguageCardProps)
         className="language-logo logo-animate"
         loading="lazy"
         decoding="async"
+        fetchPriority="low"
         onError={handleImageError}
       />
       <div className="language-name">{language.name}</div>
       <div className="language-desc">{truncatedDesc}</div>
       <div className="language-meta">
         <div className="flex flex-wrap gap-2">
-          {language.par.map((paradigm, i) => (
-            <span key={i} className="tag text-xs bg-gray-50 rounded-xl p-2 shadow-sm">
+        {language.par.map(paradigm => (
+            <span key={paradigm} className="tag text-xs bg-gray-50 rounded-xl p-2 shadow-sm">
               {paradigm}
             </span>
-          ))}
+         ))}
         </div>
         <span className={levelClassName}>
           {difficultyClass}

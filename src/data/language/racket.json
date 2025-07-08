@@ -10,8 +10,6 @@
   "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming", "Logic Programming (with extensions)"],
   "fields": ["Edu", "Compiler"],
   "rank": "Niche ใน Education และ Research",
-  "salary_range": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-80,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "สภาพแวดล้อมการพัฒนาภาษาที่ทรงพลัง (Language-oriented programming)",
     "มีเครื่องมือสำหรับสร้างภาษาเฉพาะทาง (DSLs) ได้ง่าย",

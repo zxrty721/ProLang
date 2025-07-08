@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Functional", "Procedural", "Reflective"],
   "fields": ["AI", "Data", "Backend", "Script", "Edu", "Testing", "Security", "Cloud", "Robot", "Network", "Finance", "Plugin", "Math", "Graphics", "Render", "HPC", "Aero", "Digital", "Hardware"],
   "rank": "1 ภาษายอดนิยมสูงสุดโลก (TIOBE Index 2025 - 23.88%)",
-  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high", "veryhigh"],
   "pros": [
       "ไวยากรณ์เรียบง่าย อ่านและเรียนรู้ง่าย",
       "มีไลบรารีมาตรฐานขนาดใหญ่และแพ็กเกจภายนอกจำนวนมาก",

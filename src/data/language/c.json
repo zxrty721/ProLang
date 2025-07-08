@@ -10,8 +10,6 @@
     "par": ["Procedural", "Imperative"],
     "fields": ["System", "Embedded", "OS", "Robot", "Compiler", "Security", "Network", "Tele", "Graphics", "HPC", "Aero", "Digital"],
     "rank": "4 ใน TIOBE Index 2025 (9.84% แต่ลดลง)",
-    "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
-    "salary": ["low", "mid", "high", "veryhigh"],
     "pros": [
         "ประสิทธิภาพสูงมาก (ใกล้เคียงภาษาเครื่อง)",
         "ควบคุมฮาร์ดแวร์ได้ละเอียด",

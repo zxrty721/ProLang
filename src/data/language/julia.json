@@ -10,8 +10,6 @@
   "par": ["Multi-paradigm", "Multiple dispatch", "High-performance"],
   "fields": ["Scientific", "Data", "Math", "HPC"],
   "rank": "25-30 เติบโตใน Scientific Computing (1.9% แต่กำลังเพิ่ม)",
-  "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-98,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ประสิทธิภาพสูงมากสำหรับการคำนวณตัวเลข",
     "เขียนง่ายและมีไวยากรณ์คล้าย Python",

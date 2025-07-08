@@ -10,8 +10,6 @@
   "par": ["Array-oriented", "Functional", "Procedural"],
   "fields": ["Math", "Scientific"],
   "rank": "45+ (Niche ในตลาดเฉพาะทาง)",
-  "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-95,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ความสามารถในการประมวลผล Array ที่ทรงพลังและกระชับ",
     "ช่วยลดปริมาณโค้ดที่ต้องเขียนลงอย่างมาก (Conciseness)",

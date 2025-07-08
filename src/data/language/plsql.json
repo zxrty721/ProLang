@@ -10,8 +10,6 @@
   "par": ["Procedural", "Declarative (SQL embedded)"],
   "fields": ["DB"],
   "rank": "35+ แข็งแกร่งใน Oracle Database Ecosystem",
-  "salary_range": "฿28,000-45,000 บาท/เดือน (Junior), ฿45,000-78,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
     "ประสิทธิภาพสูงในการประมวลผลข้อมูลใน Database Server",
     "ลด Traffic ระหว่าง Client กับ Server",

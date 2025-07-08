@@ -10,8 +10,6 @@
   "par": ["Procedural", "Imperative", "Low-level", "No Hidden Control Flow"],
   "fields": ["System", "OS", "Game"],
   "rank": "Top 5 ภาษาเกิดใหม่สาย Systems Programming",
-  "salary_range": "฿50,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high", "veryhigh"],
   "pros": [
     "ไม่มี hidden control flow (ทำให้เข้าใจ flow ได้ชัดเจน)",
     "แทนที่ C ได้โดยตรงและมี performance ใกล้เคียง",

@@ -10,8 +10,6 @@
   "par": ["Concurrent", "Structured", "Imperative"],
   "fields": ["Cloud", "System", "Network", "Testing", "Security", "Distributed"],
   "rank": "6-8 และเติบโตแรงใน Cloud/Backend (เพิ่มขึ้น 1.2% ใน 2024)",
-  "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-130,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "ประสิทธิภาพสูง (ใกล้เคียง C/C++)",
       "รองรับ Concurrency ได้ดีด้วย Goroutines",

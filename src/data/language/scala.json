@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Functional", "Concurrent"],
   "fields": ["Backend", "Data", "Finance", "Distributed"],
   "rank": "20-25 แข็งแกร่งใน Big Data (2.1% แต่เงินเดือนสูง)",
-  "salary_range": "฿45,000-70,000 บาท/เดือน (Junior), ฿70,000-125,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high", "veryhigh"],
   "pros": [
       "ทำงานร่วมกับ Java ได้ดีเยี่ยม",
       "รองรับ Functional Programming ที่ทรงพลัง",

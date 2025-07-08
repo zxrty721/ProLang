@@ -10,8 +10,6 @@
   "par": ["Imperative", "Object-Oriented", "Functional", "Metaprogramming"],
   "fields": ["System", "Game"],
   "rank": "35-40 (กำลังเติบโตใน Niche Areas)",
-  "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-100,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "ประสิทธิภาพสูงมาก (ใกล้เคียง C/C++)",
     "ไวยากรณ์ที่อ่านง่ายและกระชับ (คล้าย Python)",

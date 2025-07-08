@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Component-Oriented", "Structured", "Imperative", "Functional"],
   "fields": ["Game", "Desktop", "Mobile", "Plugin", "Render"],
   "rank": "5 ใน TIOBE Index 2025 (4.12%)",
-  "salary_range": "฿35,000-55,000 บาท/เดือน (Junior), ฿55,000-85,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "เป็นภาษาเชิงวัตถุที่ทันสมัยและทรงพลัง",
       "มี Ecosystem ที่สมบูรณ์แบบบน .NET",

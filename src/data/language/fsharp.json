@@ -10,8 +10,6 @@
   "par": ["Functional", "Imperative", "Object-Oriented"],
   "fields": ["Finance", "Scientific"],
   "rank": "35+ Niche ใน Functional Programming บน .NET",
-  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "รองรับ Functional Programming ที่บริสุทธิ์ ช่วยลด Bug",
     "ทำงานร่วมกับ .NET Ecosystem ได้อย่างสมบูรณ์",

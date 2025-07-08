@@ -10,8 +10,6 @@
   "par": ["Functional", "Imperative", "Static-Typed"],
   "fields": ["Frontend"],
   "rank": "Niche ในตลาดเฉพาะทาง (ยังไม่เป็นที่นิยมในวงกว้าง)",
-  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "Type System ที่แข็งแกร่งและปลอดภัยสูง",
     "คอมไพล์เป็น JavaScript ที่อ่านง่ายและมีขนาดเล็ก",

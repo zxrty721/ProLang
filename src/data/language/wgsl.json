@@ -10,8 +10,6 @@
   "par": ["Procedural", "Imperative", "Concurrent (implicitly)"],
   "fields": ["Game", "Graphics", "Scientific", "Render"],
   "rank": "กำลังจะกลายเป็นมาตรฐานใหม่สำหรับ Web Graphics (ร่วมกับ WebGPU)",
-  "salary_range": "฿45,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ออกแบบมาเพื่อ WebGPU โดยเฉพาะ ทำให้เข้ากันได้อย่างสมบูรณ์",
     "ความปลอดภัยสูงกว่า GLSL/HLSL ในบริบทของเว็บ",

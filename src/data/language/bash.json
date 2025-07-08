@@ -10,8 +10,6 @@
   "par": ["Imperative", "Procedural", "Scripting"],
   "fields": ["Script", "System", "Cloud"],
   "rank": "ใช้โดย 28.1% ของนักพัฒนา System Administration",
-  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid"],
   "pros": [
     "ใช้งานง่ายสำหรับการจัดการระบบและไฟล์",
     "เป็นมาตรฐานบนระบบ Unix-like ส่วนใหญ่",

@@ -10,8 +10,6 @@
   "par": ["Procedural", "Imperative", "Array-oriented"],
   "fields": ["Scientific", "HPC"],
   "rank": "35-40 ยังใช้ใน High-Performance Scientific Computing",
-  "salary_range": "฿28,000-48,000 บาท/เดือน (Junior), ฿48,000-80,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
       "ประสิทธิภาพสูงมากสำหรับการคำนวณตัวเลขและ Array",
       "มีไลบรารีทางคณิตศาสตร์และวิทยาศาสตร์ที่แข็งแกร่ง",

@@ -10,8 +10,6 @@
   "par": ["Parallel Programming", "Imperative", "Low-level"],
   "fields": ["HPC", "Scientific", "Hardware"],
   "rank": "เป็นมาตรฐานสำหรับ GPGPU (General-Purpose computing on Graphics Processing Units) ข้ามแพลตฟอร์ม",
-  "salary_range": "฿45,000-85,000 บาท/เดือน (Junior), ฿85,000-160,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "รองรับฮาร์ดแวร์ได้หลากหลาย (Cross-platform) ทั้ง CPU, GPU, FPGA จากผู้ผลิตต่าง ๆ",
     "เพิ่มประสิทธิภาพการประมวลผลด้วยการใช้ Parallel Computing",

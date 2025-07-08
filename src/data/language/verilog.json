@@ -10,8 +10,6 @@
   "par": ["Declarative", "Concurrent", "Structured"],
   "fields": ["Embedded", "Hardware", "Digital", "Aero"],
   "rank": "Top 2 HDL (ร่วมกับ VHDL)",
-  "salary_range": "฿45,000-80,000 บาท/เดือน (Junior), ฿80,000-150,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ใช้ในการออกแบบ Hardware โดยตรง",
     "รองรับการจำลอง (Simulation) พฤติกรรมวงจร",

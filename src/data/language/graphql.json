@@ -10,8 +10,6 @@
   "par": ["Declarative"],
   "fields": ["Backend", "API"],
   "rank": "20-25 เติบโตใน Modern API Development (5.1% ของนักพัฒนา)",
-  "salary_range": "฿35,000-58,000 บาท/เดือน (Junior), ฿58,000-98,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "Client สามารถระบุข้อมูลที่ต้องการได้อย่างแม่นยำ (ลด Over-fetching/Under-fetching)",
     "Single Endpoint สำหรับ Query ข้อมูลหลายประเภท",

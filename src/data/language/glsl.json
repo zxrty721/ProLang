@@ -10,8 +10,6 @@
   "par": ["Procedural", "Imperative", "Concurrent (implicitly)"],
   "fields": ["Game", "Graphics", "Scientific", "Render", "VR"],
   "rank": "เป็นมาตรฐานสำหรับ Real-time Graphics Rendering (ร่วมกับ HLSL)",
-  "salary_range": "฿40,000-75,000 บาท/เดือน (Junior), ฿75,000-140,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ควบคุม GPU ได้โดยตรงเพื่อประสิทธิภาพสูงสุดในการ Render กราฟิก",
     "เป็นส่วนหนึ่งของ OpenGL ซึ่งเป็น Open Standard",

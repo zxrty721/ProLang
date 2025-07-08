@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useMemo, memo } from 'react';
 import { fieldMap } from '../utils/card';
 
 interface FilterPanelProps {
@@ -10,82 +11,83 @@ interface FilterPanelProps {
   setSalaryFilter: (salary: string[]) => void;
 }
 
-export default function FilterPanel({
+const FilterPanel = ({
   levelFilter,
   setLevelFilter,
   fieldFilter,
   setFieldFilter,
   salaryFilter,
   setSalaryFilter,
-}: FilterPanelProps) {
+}: FilterPanelProps) => {
   const toggle = (value: string, current: string[], setFunc: (val: string[]) => void) => {
-    setFunc(current.includes(value) ? current.filter(v => v !== value) : [...current, value]);
+    const newValue = current.includes(value)
+      ? current.filter(v => v !== value)
+      : [...current, value];
+    if (newValue.length === current.length && newValue.every((v, i) => v === current[i])) return;
+    setFunc(newValue);
   };
 
+  const levelOptions = useMemo(() => [
+    'machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level', 'unknown'
+  ], []);
+
+  const fieldOptions = useMemo(() => Object.entries(fieldMap), []);
+
   return (
-    // Removed styling like bg-white, rounded-xl, shadow-xl from here.
-    // These styles will be applied to the parent container in InteractiveCardSection.
     <div className="flex flex-col gap-6 w-full">
       {/* Language Level Filter Section */}
       <div>
         <h3 className="font-bold text-lg mb-3 text-gray-800">🌟ระดับภาษา 5 ระดับ :</h3>
         <div className="flex flex-col gap-2">
-          {['machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level', 'unknown'].map(level => (
-            <label key={level} className="flex items-center text-gray-700 cursor-pointer">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
-                value={level}
-                checked={levelFilter.includes(level)}
-                onChange={() => toggle(level, levelFilter, setLevelFilter)}
-              />
-              <span className="ml-2">
-                {level.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())}
-              </span>
-            </label>
-          ))}
+          {levelOptions.map(level => {
+            const checked = levelFilter.includes(level);
+            return (
+              <button
+                key={level}
+                role="checkbox"
+                aria-checked={checked}
+                onClick={() => toggle(level, levelFilter, setLevelFilter)}
+                className={`flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
+                  ${checked ? 'bg-blue-100 font-semibold text-blue-800' : ''}`}
+              >
+                <span className="inline-block h-5 w-5 rounded border border-blue-600 bg-white">
+                  {checked && <span className="block w-full h-full bg-blue-600 rounded-sm" />}
+                </span>
+                <span>
+                  {level.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
       {/* Field Filter Section */}
       <div className="mt-4">
-        <h3 className="font-bold text-lg mb-3 text-gray-800">💼สายงาน {Object.entries(fieldMap).length} สายงาน :</h3>
+        <h3 className="font-bold text-lg mb-3 text-gray-800">💼สายงาน {fieldOptions.length} สายงาน :</h3>
         <div className="flex flex-col gap-2">
-        {Object.entries(fieldMap).map(([code, label]) => (
-            <label key={code} className="flex items-center text-gray-700 cursor-pointer">
-              <input
-                type="checkbox"
-                value={code}
-                checked={fieldFilter.includes(code)}
-                onChange={() => toggle(code, fieldFilter, setFieldFilter)}
-                className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
-              />
-              <span className="ml-2">{label}</span>
-            </label>
-          ))}
+          {fieldOptions.map(([code, label]) => {
+            const checked = fieldFilter.includes(code);
+            return (
+              <button
+                key={code}
+                role="checkbox"
+                aria-checked={checked}
+                onClick={() => toggle(code, fieldFilter, setFieldFilter)}
+                className={`flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
+                  ${checked ? 'bg-blue-100 font-semibold text-blue-800' : ''}`}
+              >
+                <span className="inline-block h-5 w-5 rounded border border-blue-600 bg-white">
+                  {checked && <span className="block w-full h-full bg-blue-600 rounded-sm" />}
+                </span>
+                <span>{label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
-
-      {/* Salary Range Filter Section */}
-      {/* <div className="mt-4">
-        <h3 className="font-bold text-lg mb-3 text-gray-800">💰ช่วงเงินเดือน :</h3>
-        <div className="flex flex-col gap-2">
-          {['low', 'mid', 'high', 'veryhigh'].map(sal => (
-            <label key={sal} className="flex items-center text-gray-700 cursor-pointer">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
-                value={sal}
-                checked={salaryFilter.includes(sal)}
-                onChange={() => toggle(sal, salaryFilter, setSalaryFilter)}
-              />
-              <span className="ml-2">
-                {sal === 'low' ? '15K–30K' : sal === 'mid' ? '30K–60K' : sal === 'high' ? '60K-100K' : '100K+'}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
-}
+};
+
+export default memo(FilterPanel);

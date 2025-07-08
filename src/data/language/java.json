@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Concurrent", "Structured", "Imperative", "Generic"],
   "fields": ["Mobile", "Backend", "Desktop", "Cloud", "Testing", "Finance"],
   "rank": "3 ใน TIOBE Index 2025 (10.66%)",
-  "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-100,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "แพลตฟอร์มเป็นอิสระ (JVM)",
       "ประสิทธิภาพสูงและเสถียร",

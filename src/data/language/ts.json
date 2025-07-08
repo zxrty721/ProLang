@@ -10,8 +10,6 @@
   "par": ["Multi-paradigm", "Object-Oriented", "Functional"],
   "fields": ["Frontend", "Backend", "Cloud", "Plugin", "Blockchain", "Render"],
   "rank": "12 แต่เติบโตแรงใน Modern Web Development (ใช้โดย 38.8% ของนักพัฒนา)",
-  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-120,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "เพิ่มความปลอดภัยของโค้ดด้วย Type Checking",
       "ช่วยให้โค้ดมีโครงสร้างและอ่านง่ายขึ้น",

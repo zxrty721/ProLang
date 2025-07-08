@@ -10,8 +10,6 @@
   "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)"],
   "fields": ["Game", "Script", "Robot", "Plugin"],
   "rank": "25-30 ใช้ใน Game Development และ Embedded Systems",
-  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
       "มีน้ำหนักเบาและรวดเร็ว เหมาะสำหรับการฝัง",
       "ไวยากรณ์เรียบง่ายและเรียนรู้ง่าย",

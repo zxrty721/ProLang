@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Procedural", "Scripting"],
   "fields": ["Script", "Admin", "Cloud"],
   "rank": "30+ แข็งแกร่งใน Windows Ecosystem",
-  "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
     "ทรงพลังในการจัดการระบบ Windows และ Azure",
     "ทำงานกับ Objects ได้ ทำให้จัดการข้อมูลได้มีประสิทธิภาพ",

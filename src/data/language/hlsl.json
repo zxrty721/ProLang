@@ -10,8 +10,6 @@
   "par": ["Procedural", "Imperative", "Concurrent (implicitly)"],
   "fields": ["Game", "Graphics", "Scientific", "Render", "VR"],
   "rank": "เป็นมาตรฐานสำหรับ Real-time Graphics Rendering บน Windows/Xbox (ร่วมกับ GLSL)",
-  "salary_range": "฿40,000-75,000 บาท/เดือน (Junior), ฿75,000-140,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ควบคุม GPU ได้โดยตรงเพื่อประสิทธิภาพสูงสุดในการ Render กราฟิกบน DirectX",
     "บูรณาการเข้ากับ Ecosystem ของ Microsoft (DirectX, Visual Studio)",

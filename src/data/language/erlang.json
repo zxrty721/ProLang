@@ -10,8 +10,6 @@
   "par": ["Functional", "Concurrent", "Declarative"],
   "fields": ["Tele", "Distributed"],
   "rank": "40+ (Niche ในตลาดเฉพาะทาง)",
-  "salary_range": "฿35,000-60,000 บาท/เดือน (Junior), ฿60,000-110,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ความสามารถในการทำงานพร้อมกันสูง (Massive Concurrency) ด้วย Actor Model",
     "ความทนทานต่อข้อผิดพลาด (Fault-tolerance) ในตัว (Let It Crash philosophy)",

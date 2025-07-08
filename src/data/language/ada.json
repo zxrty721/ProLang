@@ -10,8 +10,6 @@
   "par": ["Structured", "Object-Oriented", "Concurrent", "Imperative"],
   "fields": ["Embedded", "Aero", "Robot"],
   "rank": "45+ (Niche ในตลาดเฉพาะทาง)",
-  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-120,000 บาท/เดือน (Senior) - เป็นที่ต้องการสูงในอุตสาหกรรมเฉพาะทาง",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ความน่าเชื่อถือและความปลอดภัยสูงมาก (built-in checks)",
     "เหมาะสำหรับระบบขนาดใหญ่และซับซ้อน",

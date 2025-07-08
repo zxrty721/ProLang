@@ -10,8 +10,6 @@
   "par": ["Functional", "Imperative", "Object-Oriented"],
   "fields": ["Compiler", "Edu"],
   "rank": "Niche ใน Functional Programming และ Compiler Development",
-  "salary_range": "฿40,000-70,000 บาท/เดือน (Junior), ฿70,000-120,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high", "veryhigh"],
   "pros": [
     "ประสิทธิภาพสูง (ใกล้เคียง C)",
     "Type Inference ที่ทรงพลังและ Type Safety สูง",

@@ -10,8 +10,6 @@
   "par": ["Declarative", "Procedural", "Pattern-Action"],
   "fields": ["Script", "Text"],
   "rank": "40+ Niche ใน Text Processing และ Unix-like Systems",
-  "salary_range": "฿25,000-40,000 บาท/เดือน (Junior), ฿40,000-65,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid"],
   "pros": [
     "ทรงพลังสำหรับการประมวลผลไฟล์ข้อความและ Log",
     "ไวยากรณ์กระชับ เหมาะสำหรับ Scripting สั้นๆ",

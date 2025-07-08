@@ -10,8 +10,6 @@
   "par": ["Functional", "Concurrent", "Dynamic"],
   "fields": ["Backend", "Network", "Tele", "Distributed"],
   "rank": "30-35 เติบโตใน High-concurrency Systems",
-  "salary_range": "฿32,000-52,000 บาท/เดือน (Junior), ฿52,000-88,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "Concurrency สูงและจัดการได้ง่าย (ผ่าน Actor Model)",
     "Fault-tolerance (ระบบมีความทนทานต่อข้อผิดพลาดสูง)",

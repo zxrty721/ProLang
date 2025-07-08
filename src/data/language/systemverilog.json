@@ -10,8 +10,6 @@
   "par": ["Declarative", "Concurrent", "Structured", "Object-Oriented", "Constraint-Random"],
   "fields": ["Embedded", "Hardware", "Digital"],
   "rank": "1 ใน HDL และ Verification (ใช้มากที่สุดในอุตสาหกรรม)",
-  "salary_range": "฿50,000-90,000 บาท/เดือน (Junior), ฿90,000-180,000 บาท/เดือน (Senior)",
-  "salary": ["high", "veryhigh"],
   "pros": [
     "ความสามารถในการ Verify Hardware ที่ทรงพลัง (Assertion, Coverage)",
     "รองรับ Object-Oriented Programming (OOP) สำหรับ Testbench",

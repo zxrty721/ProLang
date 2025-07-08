@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Reflective", "Dynamic"],
   "fields": ["Edu"],
   "rank": "45+ ลดลงมาก แต่ยังมีใช้ใน Legacy Enterprise",
-  "salary_range": "฿26,000-42,000 บาท/เดือน (Junior), ฿42,000-72,000 บาท/เดือน (Senior)",
-  "salary": ["n/a"],
   "pros": [
     "Pure Object-Oriented System (ทุกอย่างเป็น Object)",
     "สภาพแวดล้อมการพัฒนาแบบโต้ตอบ (REPL) ที่ทรงพลัง",

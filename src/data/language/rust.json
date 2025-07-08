@@ -10,8 +10,6 @@
   "par": ["Multi-paradigm", "Functional", "Imperative", "Concurrent"],
   "fields": ["System", "Compiler", "Security", "Security", "Cloud", "Robot", "Network", "Tele", "Game", "Distributed", "HPC", "Aero", "Blockchain", "Graphics"],
   "rank": "15 ใน TIOBE แต่เป็น Most Loved Language (84.9% ของนักพัฒนาชอบ)",
-  "salary_range": "฿40,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high", "veryhigh"],
   "pros": [
       "ความปลอดภัยของหน่วยความจำ (Memory Safety) โดยไม่มี GC",
       "ประสิทธิภาพสูงมาก",

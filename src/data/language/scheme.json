@@ -10,8 +10,6 @@
   "par": ["Functional", "Procedural", "Reflective", "Metaprogramming"],
   "fields": ["Edu", "Compiler"],
   "rank": "45+ Niche ใน Education และ Computer Science Research",
-  "salary_range": "฿24,000-40,000 บาท/เดือน (Junior), ฿40,000-68,000 บาท/เดือน (Senior)",
-  "salary": ["n/a"],
   "pros": [
     "ไวยากรณ์ที่เรียบง่ายและสอดคล้อง (S-expressions)",
     "รองรับ Functional Programming อย่างเต็มที่",

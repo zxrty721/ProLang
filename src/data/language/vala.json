@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Structured"],
   "fields": ["Desktop"],
   "rank": "45+ Niche ใน GNOME Development",
-  "salary_range": "฿30,000-50,000 บาท/เดือน (Junior), ฿50,000-85,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "ประสิทธิภาพสูง (คอมไพล์เป็น Native C)",
     "ไวยากรณ์ทันสมัยและคุ้นเคยสำหรับนักพัฒนา C#/Java",

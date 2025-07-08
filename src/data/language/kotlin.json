@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Functional", "Procedural", "Concurrent"],
   "fields": ["Mobile", "Backend", "Script"],
   "rank": "18-20 Android Official Language แต่ความนิยมลดลง",
-  "salary_range": "฿38,000-60,000 บาท/เดือน (Junior), ฿60,000-105,000 บาท/เดือน (Senior)",
-  "salary": ["low", "mid", "high"],
   "pros": [
       "ใช้งานร่วมกับ Java ได้ 100% (Interoperability)",
       "ลด boilerplate code",

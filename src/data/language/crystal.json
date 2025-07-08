@@ -10,8 +10,6 @@
   "par": ["Object-Oriented", "Imperative", "Functional"],
   "fields": ["System", "Backend"],
   "rank": "ยังไม่ติดอันดับหลัก (กำลังเติบโตใน Niche Performance)",
-  "salary_range": "฿38,000-65,000 บาท/เดือน (Junior), ฿65,000-110,000 บาท/เดือน (Senior)",
-  "salary": ["mid", "high"],
   "pros": [
     "ประสิทธิภาพสูง (ใกล้เคียง C/C++/Go)",
     "ไวยากรณ์ที่สะอาดและอ่านง่าย (คล้าย Ruby)",
