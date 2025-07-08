@@ -119,7 +119,15 @@ const LanguageDetail = memo(({
         </button>
 
         <div className="flex items-center space-x-4 mb-6">
-          <img src={logoSrc} alt={`${language.name} logo`} className="language-detail-logo logo-animate" loading="lazy" />
+            <img
+              src={logoSrc}
+              alt={`${language.name} logo`}
+              width={24}
+              height={24}
+              className="language-logo logo-animate"
+              loading="lazy"
+              decoding="async"
+            />
           <h1 className={clsx("text-4xl font-bold", titleColor)}>{language.name}</h1>
         </div>
 
