@@ -181,7 +181,7 @@
 
 /* ---------- Close Button ---------- */
 .modal-close-button {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   font-size: 1.8rem;
@@ -191,8 +191,9 @@
   cursor: pointer;
   transition: color 0.2s ease;
   user-select: none;
-  z-index: 10;
+  z-index: 70;
 }
+
 .modal-close-button:hover {
   color: #dc2626;
 }

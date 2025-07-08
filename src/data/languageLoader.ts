@@ -1,34 +1,30 @@
-// src/data/languageLoader.ts
+import type { Language } from '../utils/language';
+// import ไฟล์ json ที่รวมไว้แล้ว (Astro รองรับ JSON import ด้วย assert)
+import rawLanguages from './languages/allLanguages.json' assert { type: 'json' };
 
-// ตรวจสอบให้แน่ใจว่าเส้นทางนี้ถูกต้อง และไฟล์ 'language.ts'
-// มีการ export interface ที่ชื่อ 'Language' และมี property ต่างๆ ครบถ้วน
-import { type Language } from '../utils/language';
+type VariablesType = Record<string, string[]>;
 
-// import.meta.glob โหลดไฟล์ JSON ทั้งหมดในโฟลเดอร์ languages ทันทีตอน Build Time
-// Type Parameter บอก TypeScript ว่าแต่ละโมดูลจะมี property 'default' ซึ่งคือ Type Language
-const modules = import.meta.glob<Record<string, { default: Language }>>('./languages/*.json', { eager: true });
+function normalizeVariables(vars: VariablesType): VariablesType {
+  return {
+    declaration: vars['declaration'] ?? vars['declaration (การประกาศ)'] ?? [],
+    types: vars['types'] ?? vars['types (ประเภท)'] ?? [],
+    examples: vars['examples'] ?? vars['examples (ตัวอย่าง)'] ?? [],
+  };
+}
+
+let cachedLanguages: Language[] | null = null;
 
 export function loadAllLanguages(): Language[] {
-    const allLanguages: Language[] = [];
+  if (cachedLanguages) return cachedLanguages;
 
-    for (const path in modules) {
-        // ใช้ Type Assertion แบบ 2 ขั้นตอน เพื่อให้ TypeScript ยอมรับ Type
-        // นี่คือการบอก TypeScript อย่างเข้มงวดว่า 'modules[path].default'
-        // คือข้อมูลของ Type 'Language' ที่เราต้องการ
-        allLanguages.push(modules[path].default as unknown as Language);
-    }
+  cachedLanguages = (rawLanguages as any[]).map(lang => ({
+    ...lang,
+    variables: normalizeVariables(lang.variables ?? {}),
+  }));
 
-    // จัดเรียงข้อมูลตามชื่อภาษา
-    // ถ้า Interface Language ของคุณถูกต้อง (มี property 'name')
-    // จะไม่มีข้อความแจ้งเตือนที่นี่
-    allLanguages.sort((a, b) => {
-        // เรียงตาม id ก่อน
-        if (a.id !== b.id) {
-          return a.id - b.id;
-        }
-        
-        return a.name.localeCompare(b.name);
-      });
+  // เรียงตาม id ก่อน return
+  cachedLanguages.sort((a, b) => a.id - b.id);
 
-    return allLanguages;
+  return cachedLanguages;
 }
+

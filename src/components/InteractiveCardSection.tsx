@@ -5,7 +5,6 @@ import FilterPanel from './FilterPanel';
 import { getDifficultyClass } from '../utils/card';
 import type { Language } from '../utils/language';
 
-// Simplified filter cache
 class FilterCache {
   private cache = new Map<string, boolean>();
   private maxSize = 200;
@@ -36,7 +35,6 @@ class FilterCache {
 
 const filterCache = new FilterCache();
 
-// Optimized filter functions
 const createFilterFunctions = () => ({
   level: (lang: Language, filters: string[]) => {
     if (!filters.length) return true;
@@ -45,25 +43,24 @@ const createFilterFunctions = () => ({
     const levelClass = difficultyClass.toLowerCase().replace(' ', '-');
     return filters.includes(levelClass);
   },
-  
+
   field: (lang: Language, filters: string[]) => {
     if (!filters.length) return true;
     return filters.some(filter => lang.fields.includes(filter));
   },
-  
+
   salary: (lang: Language, filters: string[]) => {
     if (!filters.length) return true;
     const salaries = Array.isArray(lang.salary) ? lang.salary : [lang.salary];
     return filters.some(filter => salaries.includes(filter as any));
   },
-  
+
   search: (lang: Language, term: string) => {
     if (!term) return true;
     return lang.name.toLowerCase().includes(term.toLowerCase());
   }
 });
 
-// Memoized components
 const MemoizedLanguageCard = memo(LanguageCard);
 const MemoizedLanguageDetail = memo(LanguageDetail);
 const MemoizedFilterPanel = memo(FilterPanel);
@@ -83,10 +80,8 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
     return !!(levelFilter.length || fieldFilter.length || salaryFilter.length || searchTerm.length);
   }, [levelFilter.length, fieldFilter.length, salaryFilter.length, searchTerm.length]);
 
-  // Optimized filtering
   const filteredLanguages = useMemo(() => {
     if (!hasActiveFilters) return languages;
-    
     return languages.filter(lang => {
       if (searchTerm && !filterFunctions.search(lang, searchTerm)) return false;
       if (levelFilter.length && !filterFunctions.level(lang, levelFilter)) return false;
@@ -122,12 +117,25 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
     setSearchTerm(e.target.value);
   }, []);
 
+  const handleNextLanguage = useCallback(() => {
+    if (!selectedLanguage || filteredLanguages.length === 0) return;
+    const currentIndex = filteredLanguages.findIndex(lang => lang.id === selectedLanguage.id);
+    const nextIndex = (currentIndex + 1) % filteredLanguages.length;
+    setSelectedLanguage(filteredLanguages[nextIndex]);
+  }, [selectedLanguage, filteredLanguages]);
+
+  const handlePrevLanguage = useCallback(() => {
+    if (!selectedLanguage || filteredLanguages.length === 0) return;
+    const currentIndex = filteredLanguages.findIndex(lang => lang.id === selectedLanguage.id);
+    const prevIndex = (currentIndex - 1 + filteredLanguages.length) % filteredLanguages.length;
+    setSelectedLanguage(filteredLanguages[prevIndex]);
+  }, [selectedLanguage, filteredLanguages]);
+
   const showNoResults = !filteredLanguages.length && hasActiveFilters;
 
   return (
     <div className="min-h-screen from-gray-900 via-gray-800 to-gray-900 text-gray-900">
       <div className="flex w-full px-4 py-8 items-stretch gap-4 justify-center">
-        {/* Filter Toggle Button */}
         <button
           className="fixed top-6 left-6 z-30 px-4 py-2 bg-white text-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-150 border border-gray-200"
           onClick={() => setShowFilterPanel(!showFilterPanel)}
@@ -136,7 +144,6 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
           {showFilterPanel ? '✕' : '⚙️'} ตัวกรอง
         </button>
 
-        {/* FilterPanel */}
         {showFilterPanel && (
           <div className="fixed top-20 left-6 z-40 bg-white rounded-2xl shadow-2xl p-6 text-sm border border-gray-200 min-w-[320px] max-h-[80vh] overflow-y-auto transition-all duration-150 transform">
             <div className="mb-4">
@@ -153,11 +160,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
           </div>
         )}
 
-        {/* Main content */}
-        <div className={`w-full max-w-[1400px] mx-auto bg-white rounded-3xl p-6 shadow-xl transition-all duration-150 ease-out ${
-          selectedLanguage ? 'blur-sm scale-95 opacity-90' : ''
-        }`}>
-          {/* Search section */}
+        <div className={`w-full max-w-[1400px] mx-auto bg-white rounded-3xl p-6 shadow-xl transition-all duration-150 ease-out ${selectedLanguage ? 'blur-sm scale-95 opacity-90' : ''}`}>
           <div className="flex flex-col items-center gap-4 mb-6">
             <h3 className="font-bold text-lg text-gray-800">ค้นหาชื่อ</h3>
             <input
@@ -186,7 +189,6 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
             </div>
           </div>
 
-          {/* Results summary */}
           <div className="text-center mb-4">
             <p className="text-gray-500 text-sm">
               {hasActiveFilters ? (
@@ -197,7 +199,6 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
             </p>
           </div>
 
-          {/* Card Grid */}
           <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredLanguages.length > 0 ? (
               filteredLanguages.map((lang) => (
@@ -226,23 +227,36 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
           </section>
         </div>
 
-        {/* Modal */}
         {selectedLanguage && (
-          <div
-          className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-150 ease-out ${
-            modalVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-          
-            role="dialog"
-            aria-modal="true"
-            onClick={(e) => e.target === e.currentTarget && closeModal()}
-          >
-            <div className={`transform transition-all duration-150 ease-out ${
-              modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-            }`}>
-              <MemoizedLanguageDetail language={selectedLanguage} onClose={closeModal} />
+          <>
+            <div
+              className={`fixed inset-0 bg-black/50 z-40 transition-all duration-150 ${modalVisible ? 'opacity-100' : 'opacity-0'}`}
+              onClick={closeModal}
+            />
+            <div
+              className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-150 ease-out ${modalVisible ? 'opacity-100' : 'opacity-0'}`}
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className={`transform transition-all duration-150 ease-out ${modalVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+                <MemoizedLanguageDetail language={selectedLanguage} onClose={closeModal} />
+              </div>
             </div>
-          </div>
+            <button
+              onClick={handlePrevLanguage}
+              className="modal-next-button fixed left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-120 z-[60] px-4 py-3 bg-white text-gray-800 rounded-full shadow-2xl hover:shadow-xl transition-all duration-200 border border-gray-200 hover:bg-gray-50"
+              aria-label="ภาษาก่อนหน้า"
+            >
+              <span className="text-xl">←</span>
+            </button>
+            <button
+              onClick={handleNextLanguage}
+              className="modal-next-button fixed right-1/2 top-1/2 transform -translate-y-1/2 translate-x-120 z-[60] px-4 py-3 bg-white text-gray-800 rounded-full shadow-2xl hover:shadow-xl transition-all duration-200 border border-gray-200 hover:bg-gray-50"
+              aria-label="ภาษาถัดไป"
+            >
+              <span className="text-xl">→</span>
+            </button>
+          </>
         )}
       </div>
     </div>

@@ -117,6 +117,10 @@
 }
 
 
+.modal-next-button:hover {
+  color: red;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0px); /* เริ่มต้นที่ตำแหน่งปกติ */
