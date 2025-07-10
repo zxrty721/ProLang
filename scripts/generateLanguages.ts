@@ -13,6 +13,7 @@ const OUTPUT_FILE_GZ = path.join(OUTPUT_DIR, 'allLanguages.json.gz');
 
 async function mergeLanguages() {
   const files = (await fs.readdir(LANG_DIR)).filter(f => f.endsWith('.json'));
+
   const merged = [];
 
   for (const file of files) {
@@ -24,8 +25,15 @@ async function mergeLanguages() {
     }
   }
 
-  return merged;
+  // ✅ เรียงตาม id แล้วเลือกแค่ 50 ภาษา
+  const sorted = merged
+    .filter(lang => typeof lang.id === 'number') // เผื่อป้องกันข้อมูลผิดพลาด
+    .sort((a, b) => a.id - b.id)
+    .slice(0, 50);
+
+  return sorted;
 }
+
 
 async function writeGzipFile(input: Buffer | string, outputPath: string) {
   return new Promise<void>((resolve, reject) => {

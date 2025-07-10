@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMemo, memo } from 'react';
-import { fieldMap } from '../utils/card';
+import { fieldMap } from '../../utils/card';
 
 interface FilterPanelProps {
   levelFilter: string[];

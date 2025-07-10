@@ -9,15 +9,20 @@ const { count = 0 } = Astro.props;
 ---
 
 <html lang="th">
+
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="/public/logo.png" />
     <title>ProLang Guide</title>
   </head>
+
   <body class="">
+
     <header class="gradient-bg ">
+      <img class="w-[200px] h-auto absolute top-4 left-4 z-50" src="/public/logo.png" alt="Logo" />
       <h1 class="text-5xl">🚀 Programming Languages Guide 🌐</h1>
-      <h2 class="text-2xl mt-6 ">เรียนรู้และเลือกภาษาทางคอมพิวเตอร์การเขียนโปรแกรมสำหรับงานซอฟต์แวร์และฮาร์ดแวร์ที่เหมาะสมกับความต้องการของคุณ</h2>
-      <p class="mt-5 text-white">
+      <h2 class=" text-2xl mt-6 ">เรียนรู้และเลือกภาษาทางคอมพิวเตอร์ที่เหมาะสมกับความต้องการของคุณ</h2>
+      <p class="mt-6 text-2xl text-blue-200">
           ทั้งหมด <strong>{count}</strong> ภาษา
       </p>
     </header>
@@ -31,4 +36,5 @@ const { count = 0 } = Astro.props;
     </footer>
 
   </body>
+
 </html>

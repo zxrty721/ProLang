@@ -22,9 +22,13 @@ export function loadAllLanguages(): Language[] {
     variables: normalizeVariables(lang.variables ?? {}),
   }));
 
-  // เรียงตาม id ก่อน return
+  // เรียงตาม id ก่อน
   cachedLanguages.sort((a, b) => a.id - b.id);
+
+  // จำกัดแค่ 50 ภาษา
+  cachedLanguages = cachedLanguages.slice(0, 50);
 
   return cachedLanguages;
 }
+
 

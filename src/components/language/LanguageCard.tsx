@@ -1,8 +1,8 @@
 // src/components/LanguageCard.tsx
 
 import React, { memo, useCallback } from 'react';
-import type { Language } from '../utils/language';
-import { getDifficultyClass } from '../utils/card';
+import type { Language } from '../../utils/language';
+import { getDifficultyClass } from '../../utils/card';
 
 interface LanguageCardProps {
   language: Language;
