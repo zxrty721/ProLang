@@ -46,8 +46,8 @@ const LanguageCard = memo(({ language, isSelected, onClick }: LanguageCardProps)
       <img
         src={logoSrc}
         alt={`${language.name} logo`}
-        width={24}
-        height={24}
+        width={50}
+        height={50}
         className="language-logo logo-animate"
         loading="lazy"
         decoding="async"

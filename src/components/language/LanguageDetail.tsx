@@ -114,14 +114,16 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
     return (
         <div className="relative w-full h-full">
             <div className="language-modal-content relative max-h-screen overflow-y-auto px-4">
-              <button className="modal-close-button group sticky top-1 right-1 z-[70] ml-auto block w-fit" onClick={handleClose} type="button" aria-label="ปิดหน้าต่าง">
-                <span className="text-2xl transition-transform group-hover:rotate-90 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border border-gray-200 hover:bg-gray-50">
-                  &times;
-                </span>
-              </button>
+                <div className="sticky top-0 z-[70] -mt-10 pt-1 pr-2 flex justify-end pointer-events-none">
+                    <button className="modal-close-button group pointer-events-auto" onClick={handleClose} type="button" aria-label="ปิดหน้าต่าง">
+                        <span className="text-2xl transition-transform duration-200 group-hover:rotate-90 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border border-gray-200 hover:bg-gray-50">
+                            &times;
+                        </span>
+                    </button>
+                </div>
 
                 <div className="flex items-center space-x-4 mb-6">
-                    <img src={logoSrc} alt={`${language.name} logo`} width={24} height={24} className="language-logo logo-animate" loading="lazy" fetchPriority="low" decoding="async" />
+                    <img src={logoSrc} alt={`${language.name} logo`} width={70} height={70} className="language-logo" loading="lazy" fetchPriority="low" decoding="async" />
                     <h1 className={clsx("text-4xl font-bold", titleColor)}>{language.name}</h1>
                 </div>
 

@@ -1,6 +1,6 @@
+// src/utils/languageLoader.ts
 import type { Language } from '../utils/language';
-// import ไฟล์ json ที่รวมไว้แล้ว (Astro รองรับ JSON import ด้วย assert)
-import rawLanguages from './languages/allLanguages.json' assert { type: 'json' };
+import rawLanguages from '../data/runtime/allLanguages.json' assert { type: 'json' };
 
 type VariablesType = Record<string, string[]>;
 
@@ -17,18 +17,10 @@ let cachedLanguages: Language[] | null = null;
 export function loadAllLanguages(): Language[] {
   if (cachedLanguages) return cachedLanguages;
 
-  cachedLanguages = (rawLanguages as any[]).map(lang => ({
+  cachedLanguages = (rawLanguages as any[]).map((lang) => ({
     ...lang,
     variables: normalizeVariables(lang.variables ?? {}),
   }));
 
-  // เรียงตาม id ก่อน
-  cachedLanguages.sort((a, b) => a.id - b.id);
-
-  // จำกัดแค่ 50 ภาษา
-  cachedLanguages = cachedLanguages.slice(0, 50);
-
   return cachedLanguages;
 }
-
-
