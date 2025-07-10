@@ -1,5 +1,6 @@
 /* --- Card Style --- */
 .card {
+  will-change: transform;
   position: relative;
   background: #ffffff;
   border-radius: 1rem;
@@ -15,7 +16,6 @@
 }
 
 .card:hover .language-name {
-  /* ดึงค่าสีจากตัวแปร --level-highlight-color */
   color: var(--level-highlight-color);
   color:#818181;
 }
@@ -108,15 +108,13 @@
   backdrop-filter: blur(4px);
 }
 
+.modal-next-button:hover {
+  color: red;
+}
 /* No universal transition */
 .logo-animate {
   height: auto;
   animation: float 3s ease-in-out infinite; /* ชื่ออนิเมชัน, ระยะเวลา, รูปแบบการเคลื่อนไหว, วนซ้ำ */
-}
-
-
-.modal-next-button:hover {
-  color: red;
 }
 
 @keyframes float {

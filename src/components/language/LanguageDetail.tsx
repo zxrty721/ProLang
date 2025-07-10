@@ -14,13 +14,13 @@ interface LanguageDetailProps {
 const InfoSection = memo(({ title, items, color, emoji, borderColor }: {
     title: string; items: string[]; color: string; emoji: string; borderColor: string;
 }) => (
-    <div className="mb-6 bg-white p-6 rounded-lg shadow-md border border-gray-100">
+    <div className="mb-6 bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
         <h3 className={clsx(`text-2xl font-bold mb-4 ${color} border-l-4 pl-4 bg-gradient-to-r from-blue-50 to-transparent py-2`, borderColor)}>
             {emoji} {title}
         </h3>
         <ul className="space-y-2 text-gray-700">
             {items.map((item, i) => (
-                <li key={i} className="flex items-start">
+                <li key={i} className="Client flex items-start">
                     <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="leading-relaxed">{item}</span>
                 </li>
@@ -32,14 +32,14 @@ const InfoSection = memo(({ title, items, color, emoji, borderColor }: {
 const DetailSection = memo(({ title, data, titleColor, bgColor, emoji }: {
     title: string; data: any; titleColor: string; bgColor: string; emoji: string;
 }) => (
-    <div className="mb-8 bg-white p-6 rounded-lg shadow-md border border-gray-100">
+    <div className="mb-8 bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
         <h3 className={clsx(`text-2xl font-bold mb-4 text-gray-800 border-l-4 pl-4 bg-gradient-to-r ${bgColor} to-transparent py-2`, titleColor)}>
             {emoji} {title}
         </h3>
         <div className="space-y-4">
             {Object.entries(data).filter(([k]) => k !== 'async').map(([key, value]) => (
                 <div key={key} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3 capitalize">
+                    <h4 className="Client text-lg font-semibold text-gray-800 mb-3 capitalize">
                         {key.replace('_', ' ')} :
                     </h4>
                     <div className="ml-2 space-y-2">
@@ -133,19 +133,19 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                 </div>
 
                 <div className="info-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">👨‍💻 ผู้สร้าง</span>
                         <span className="text-lg font-medium text-gray-900">{language.by}</span>
                     </div>
-                    <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">📆 ปีที่เริ่มใช้</span>
                         <span className="text-lg font-medium text-gray-900">{formattedYear}</span>
                     </div>
-                    <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">🌟 ระดับภาษา</span>
                         <span className={`lang-level-detail ${difficultyClass} text-lg font-medium`}>{difficultyClass}</span>
                     </div>
-                    <div className="info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>
                         <div className="flex flex-wrap gap-2 mt-2">
                             {language.par.map((p, i) => (
@@ -160,7 +160,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                         <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง</h2>
                         <div className="badge-group flex flex-wrap gap-2">
                             {language.fields.map((use, i) => (
-                                <span key={i} className="badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                <span key={i} className="Client badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
                                     {fieldMap[use] ?? use}
                                 </span>
                             ))}
@@ -171,7 +171,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                 {language.rank && (
                     <div className="section mb-8">
                         <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม</h2>
-                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <div className="Clientbg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                             <span className="text-lg">อันดับความนิยม: <strong>#{language.rank}</strong></span>
                         </div>
                     </div>
