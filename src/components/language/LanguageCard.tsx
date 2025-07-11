@@ -1,5 +1,3 @@
-// src/components/LanguageCard.tsx
-
 import React, { memo, useCallback } from 'react';
 import type { Language } from '../../utils/language';
 import { getDifficultyClass } from '../../utils/card';
@@ -15,24 +13,43 @@ const BASE_URL = import.meta.env.BASE_URL;
 const createFallbackSrc = (name: string) => 
   `https://placehold.co/60x60/cccccc/ffffff?text=${encodeURIComponent(name.charAt(0))}`;
 
+// Pre-compute class strings to avoid repeated concatenation
+const CLASS_CACHE = new Map<string, string>();
+const getCardClass = (isSelected: boolean, difficultyClass: string | null) => {
+  const key = `${isSelected ? 1 : 0}-${difficultyClass || ''}`;
+  if (!CLASS_CACHE.has(key)) {
+    CLASS_CACHE.set(key, 'card' + 
+      (isSelected ? ' active' : '') + 
+      (difficultyClass ? ' ' + difficultyClass : ''));
+  }
+  return CLASS_CACHE.get(key)!;
+};
+
+const getLevelClass = (difficultyClass: string | null) => {
+  const key = `level-${difficultyClass || ''}`;
+  if (!CLASS_CACHE.has(key)) {
+    CLASS_CACHE.set(key, 'lang-level level-animate' + 
+      (difficultyClass ? ' ' + difficultyClass : ''));
+  }
+  return CLASS_CACHE.get(key)!;
+};
+
 const LanguageCard = memo(({ language, isSelected, onClick }: LanguageCardProps) => {
   // Inline computations - ลด useMemo overhead
   const logoSrc = BASE_URL + language.logo;
   const fallbackSrc = createFallbackSrc(language.name);
   const difficultyClass = getDifficultyClass(language.level);
+  
+  // Use cached class strings
+  const cardClassName = getCardClass(isSelected, difficultyClass);
+  const levelClassName = getLevelClass(difficultyClass);
+
+  // Optimized description truncation
   const truncatedDesc = language.desc.length > 80 ? 
-    language.desc.substring(0, 80) + '...' : 
+    language.desc.slice(0, 80) + '...' : 
     language.desc;
 
-  // Direct string concatenation - เร็วกว่า template literals
-  const cardClassName = 'card' + 
-    (isSelected ? ' active' : '') + 
-    (difficultyClass ? ' ' + difficultyClass : '');
-  
-  const levelClassName = 'lang-level level-animate' + 
-    (difficultyClass ? ' ' + difficultyClass : '');
-
-  // Ultra-light error handler
+  // Ultra-light error handler with single assignment
   const handleImageError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget;
     if (img.src !== fallbackSrc) {

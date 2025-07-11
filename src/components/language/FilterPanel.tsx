@@ -7,8 +7,6 @@ interface FilterPanelProps {
   setLevelFilter: (levels: string[]) => void;
   fieldFilter: string[];
   setFieldFilter: (fields: string[]) => void;
-  salaryFilter: string[];
-  setSalaryFilter: (salary: string[]) => void;
 }
 
 const FilterPanel = ({
@@ -16,8 +14,6 @@ const FilterPanel = ({
   setLevelFilter,
   fieldFilter,
   setFieldFilter,
-  salaryFilter,
-  setSalaryFilter,
 }: FilterPanelProps) => {
   const toggle = (value: string, current: string[], setFunc: (val: string[]) => void) => {
     const newValue = current.includes(value)
@@ -47,7 +43,7 @@ const FilterPanel = ({
                 role="checkbox"
                 aria-checked={checked}
                 onClick={() => toggle(level, levelFilter, setLevelFilter)}
-                className={`flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
+                className={`cursor-pointer flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
                   ${checked ? 'bg-blue-100 font-semibold text-blue-800' : ''}`}
               >
                 <span className="inline-block h-5 w-5 rounded border border-blue-600 bg-white">
@@ -74,7 +70,7 @@ const FilterPanel = ({
                 role="checkbox"
                 aria-checked={checked}
                 onClick={() => toggle(code, fieldFilter, setFieldFilter)}
-                className={`flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
+                className={`cursor-pointer flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
                   ${checked ? 'bg-blue-100 font-semibold text-blue-800' : ''}`}
               >
                 <span className="inline-block h-5 w-5 rounded border border-blue-600 bg-white">

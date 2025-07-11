@@ -1,3 +1,10 @@
+/* ---------- Global ---------- */
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
 /* ---------- Modal Overlay ---------- */
 .language-modal-overlay {
   position: fixed;
@@ -8,21 +15,12 @@
   justify-content: center;
   padding: 1rem;
   z-index: 1000;
-
-  /* ให้ scroll ได้เมื่อเนื้อหายาว */
   overflow-y: auto;
-
-  /* smooth scroll บน iOS */
   -webkit-overflow-scrolling: touch;
-
-  /* animation fade-in */
   animation: fadeIn 0.2s ease-out;
-
-  /* ให้คลิกได้เฉพาะ background ไม่ไปขัดกับ content */
   pointer-events: auto;
 }
 
-/* Fade-out animation ตอนปิด */
 .language-modal-overlay.fade-out .language-modal-content {
   transform: translateY(20px);
   opacity: 0;
@@ -37,26 +35,18 @@
   width: 100%;
   max-width: 800px;
   margin: auto;
-
-  /* กำหนดความสูงไม่เกิน viewport - padding */
   max-height: calc(100vh - 2rem);
-
-  /* scroll content เมื่อยาวเกิน */
   overflow-y: auto;
-
   padding: 2rem;
   position: relative;
-
-  /* smooth scroll บน iOS */
   -webkit-overflow-scrolling: touch;
-
   animation: slideIn 0.3s ease-out;
 }
 
-/* scrollbar สวยๆ */
 .language-modal-content::-webkit-scrollbar {
   width: 6px;
 }
+
 .language-modal-content::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 3px;
@@ -69,44 +59,20 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-
   width: 95%;
   max-width: 720px;
   margin: auto;
-
-  /* ลบ scroll ซ้อน เพื่อ smooth */
   max-height: none;
   overflow-y: visible;
 }
 
-/* scrollbar สำหรับ language-detail ถ้าอยากให้มี */
 .language-detail::-webkit-scrollbar {
   width: 6px;
 }
+
 .language-detail::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 3px;
-}
-
-/* ---------- Animations ---------- */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* ---------- Header & Logo ---------- */
@@ -115,6 +81,7 @@
   font-weight: 700;
   color: #1f2937;
 }
+
 .language-detail-logo {
   width: 64px;
   height: 64px;
@@ -148,6 +115,7 @@
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
+
 .language-detail .info-box {
   display: flex;
   flex-direction: column;
@@ -164,6 +132,7 @@
   background: #d1fae5;
   color: #065f46;
 }
+
 .language-detail .tag {
   background: #e0f2fe;
   color: #0284c7;
@@ -172,6 +141,7 @@
   border-radius: 999px;
   margin-right: 0.4rem;
 }
+
 .language-detail .uses {
   display: flex;
   flex-wrap: wrap;
@@ -180,7 +150,6 @@
 }
 
 /* ---------- Close Button ---------- */
-
 .modal-close-button:hover {
   color: #dc2626;
 }
@@ -194,6 +163,22 @@
 .Client:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-radius: 1rem;
+}
+
+.detail:hover {
+  color: #0284c7;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+}
+
+.logo {
+  will-change: transform;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo:hover {
+  transform: translateY(-5px);
 }
 
 .lang-level-detail {
@@ -205,23 +190,50 @@
   font-weight: bold;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 .lang-level-detail.Machine-Level {
   background: linear-gradient(135deg, #5a2020, #ff0000, #5a2020);
 }
+
 .lang-level-detail.Low-Level {
   background: linear-gradient(135deg, #764ba2, #667eea, #764ba2);
 }
+
 .lang-level-detail.Mid-Level {
   background: linear-gradient(135deg, #fda085, #f6d365, #fda085);
 }
+
 .lang-level-detail.High-Level {
   background: linear-gradient(135deg, #8fd3f4, #84fab0, #8fd3f4);
 }
+
 .lang-level-detail.Very-High-Level {
   background: linear-gradient(135deg, #a18cd1, #fbc2eb, #a18cd1);
 }
+
 .lang-level-detail.Unknown {
   background: linear-gradient(135deg, #8b8b8b, #575757, #686868);
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ---------- Responsive ---------- */
@@ -244,10 +256,4 @@
   .language-detail h1 {
     font-size: 1.5rem;
   }
-}
-
-/* ---------- Global ---------- */
-html, body {
-  overflow-x: hidden;
-  height: 100%;
 }

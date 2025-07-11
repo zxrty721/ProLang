@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, memo } from 'react';
+import { useState, useMemo, memo, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import LanguageCard from './language/LanguageCard';
 import LanguageDetail from './language/LanguageDetail';
@@ -6,123 +6,116 @@ import FilterPanel from './language/FilterPanel';
 import { getDifficultyClass } from '../utils/card';
 import type { Language } from '../utils/language';
 
-const createFilters = () => ({
-  level: (lang: Language, filters: string[]) =>
-    !filters.length || filters.includes(getDifficultyClass(lang.level)?.toLowerCase().replace(' ', '-') ?? ''),
-  field: (lang: Language, filters: string[]) =>
-    !filters.length || filters.some(f => lang.fields.includes(f)),
-  salary: (lang: Language, filters: string[]) =>
-    !filters.length || filters.some(f => (Array.isArray(lang.salary) ? lang.salary : [lang.salary]).includes(f as any)),
-  search: (lang: Language, term: string) =>
-    !term || lang.name.toLowerCase().includes(term.toLowerCase())
-});
-
 const MemoCard = memo(LanguageCard);
 const MemoFilter = memo(FilterPanel);
 const MemoDetail = memo(LanguageDetail);
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selected, setSelected] = useState<Language | null>(null);
-  const [filters, setFilters] = useState({
-    level: [] as string[],
-    field: [] as string[],
-    salary: [] as string[],
-    search: ''
-  });
+  const [filters, setFilters] = useState({ level: [] as string[], field: [] as string[], search: '' });
   const [showFilter, setShowFilter] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const filterFns = useMemo(() => createFilters(), []);
+  // Debounced search with proper cleanup
+  useEffect(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setFilters(prev => ({ ...prev, search: searchInput }));
+    }, 100);
 
-  const hasFilters = useMemo(() => 
-    filters.level.length > 0 || filters.field.length > 0 || filters.salary.length > 0 || filters.search.length > 0,
-    [filters.level.length, filters.field.length, filters.salary.length, filters.search.length]
-  );
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [searchInput]);
+
+  // Memoized filter functions
+  const filterBySearch = useCallback((lang: Language, search: string) => 
+    !search || lang.name.toLowerCase().includes(search.toLowerCase())
+  , []);
+
+  const filterByLevel = useCallback((lang: Language, levels: string[]) => 
+    !levels.length || levels.includes(getDifficultyClass(lang.level)?.toLowerCase().replace(' ', '-') ?? '')
+  , []);
+
+  const filterByField = useCallback((lang: Language, fields: string[]) => 
+    !fields.length || fields.some(f => lang.fields.includes(f))
+  , []);
 
   const filtered = useMemo(() => {
-    if (!hasFilters) return languages;
-    
+    if (!filters.level.length && !filters.field.length && !filters.search) return languages;
+
     return languages.filter(lang => 
-      filterFns.search(lang, filters.search) &&
-      filterFns.level(lang, filters.level) &&
-      filterFns.field(lang, filters.field) &&
-      filterFns.salary(lang, filters.salary)
+      filterBySearch(lang, filters.search) &&
+      filterByLevel(lang, filters.level) &&
+      filterByField(lang, filters.field)
     );
-  }, [languages, filters, hasFilters, filterFns]);
+  }, [languages, filters, filterBySearch, filterByLevel, filterByField]);
 
-  const updateFilter = useCallback((key: keyof typeof filters, value: any) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
-  }, []);
-
-  const reset = useCallback(() => {
-    setFilters({ level: [], field: [], salary: [], search: '' });
-  }, []);
-
-  const openModal = useCallback((lang: Language) => {
-    setSelected(lang);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setSelected(null);
-  }, []);
+  const hasFilters = filters.level.length > 0 || filters.field.length > 0 || filters.search.length > 0;
 
   const navigate = useCallback((dir: 1 | -1) => {
     if (!selected || !filtered.length) return;
     const idx = filtered.findIndex(l => l.id === selected.id);
-    const next = (idx + dir + filtered.length) % filtered.length;
-    setSelected(filtered[next]);
+    if (idx === -1) return;
+    setSelected(filtered[(idx + dir + filtered.length) % filtered.length]);
   }, [selected, filtered]);
+
+  const reset = useCallback(() => {
+    setFilters({ level: [], field: [], search: '' });
+    setSearchInput('');
+  }, []);
+
+  const handleCardClick = useCallback((lang: Language) => setSelected(lang), []);
 
   return (
     <div className="min-h-screen text-gray-900">
       <div className="flex w-full px-4 py-8 items-stretch gap-4 justify-center relative">
-        
-        {/* Filter Toggle */}
+
         <button
-          className="fixed top-6 left-6 z-30 px-4 py-2 bg-white text-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200"
+          type="button"
+          className="cursor-pointer fixed top-6 left-6 z-30 px-4 py-2 bg-white text-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 transition-shadow"
           onClick={() => setShowFilter(!showFilter)}
         >
           {showFilter ? '✕' : '⚙️'} ตัวกรอง
         </button>
 
-        {/* Filter Panel */}
         {showFilter && (
           <div className="fixed top-20 left-6 z-40 bg-white rounded-2xl shadow-2xl p-6 text-sm border border-gray-200 min-w-[320px] max-h-[80vh] overflow-y-auto">
             <h3 className="font-bold text-lg text-gray-800 mb-4">ตัวกรอง</h3>
             <MemoFilter
               levelFilter={filters.level}
-              setLevelFilter={(v) => updateFilter('level', v)}
+              setLevelFilter={(v) => setFilters(prev => ({ ...prev, level: v }))}
               fieldFilter={filters.field}
-              setFieldFilter={(v) => updateFilter('field', v)}
-              salaryFilter={filters.salary}
-              setSalaryFilter={(v) => updateFilter('salary', v)}
+              setFieldFilter={(v) => setFilters(prev => ({ ...prev, field: v }))}
             />
           </div>
         )}
 
-        {/* Main Content */}
         <div className="w-full max-w-[1400px] mx-auto bg-white rounded-3xl p-6 shadow-xl">
-          
-          {/* Search Section */}
+
           <div className="flex flex-col items-center gap-4 mb-6">
             <h3 className="font-bold text-lg text-gray-800">ค้นหาชื่อ</h3>
             <input
               type="text"
               placeholder="ค้นหาชื่อภาษา..."
               className="p-3 border border-gray-300 rounded-xl w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={filters.search}
-              onChange={(e) => updateFilter('search', e.target.value)}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
             />
             <div className="flex gap-4">
               <button
-                onClick={() => updateFilter('search', '')}
-                className="px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md disabled:opacity-50"
-                disabled={!filters.search}
+                type="button"
+                onClick={() => setSearchInput('')}
+                className="cursor-pointer px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md disabled:opacity-50 transition-colors"
+                disabled={!searchInput}
               >
                 ล้างคำค้นหา
               </button>
               <button
+                type="button"
                 onClick={reset}
-                className="px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 shadow-md disabled:opacity-50"
+                className="cursor-pointer px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 shadow-md disabled:opacity-50 transition-colors"
                 disabled={!hasFilters}
               >
                 รีเซ็ตทั้งหมด
@@ -130,14 +123,14 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
             </div>
           </div>
 
-          {/* Results Count */}
           <div className="text-center mb-4">
             <p className="text-gray-500 text-sm">
-              {hasFilters ? `พบภาษา ${filtered.length} จากทั้งหมด ${languages.length}` : `แสดงภาษาทั้งหมด ${languages.length}`}
+              {hasFilters
+                ? `พบภาษา ${filtered.length} จากทั้งหมด ${languages.length}`
+                : `แสดงภาษาทั้งหมด ${languages.length}`}
             </p>
           </div>
 
-          {/* Cards Grid */}
           <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filtered.length > 0 ? (
               filtered.map((lang) => (
@@ -145,7 +138,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                   key={lang.id}
                   language={lang}
                   isSelected={selected?.id === lang.id}
-                  onClick={() => openModal(lang)}
+                  onClick={() => setSelected(lang)}
                 />
               ))
             ) : (
@@ -155,8 +148,9 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                 </p>
                 {hasFilters && (
                   <button
+                    type="button"
                     onClick={reset}
-                    className="px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md"
+                    className="cursor-pointer px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md transition-colors"
                   >
                     ล้างตัวกรองทั้งหมด
                   </button>
@@ -166,25 +160,23 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
           </section>
         </div>
 
-        {/* Modal */}
         {selected && createPortal(
           <>
-            <div
-              className="fixed inset-0 bg-black/50 z-40"
-              onClick={closeModal}
-            />
+            <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setSelected(null)} />
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-              <MemoDetail language={selected} onClose={closeModal} />
+              <MemoDetail language={selected} onClose={() => setSelected(null)} />
             </div>
             <button
+              type="button"
               onClick={() => navigate(-1)}
-              className="fixed left-6 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 bg-white/95 hover:bg-white text-gray-800 rounded-full shadow-xl hover:shadow-2xl border border-gray-200 flex items-center justify-center hover:scale-105 active:scale-95 transition-all"
+              className="cursor-pointer fixed left-6 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 bg-white/95 hover:bg-white text-gray-800 rounded-full shadow-xl hover:shadow-2xl border border-gray-200 flex items-center justify-center hover:scale-105 active:scale-95 transition-all"
             >
               <span className="text-xl">&lt;</span>
             </button>
             <button
+              type="button"
               onClick={() => navigate(1)}
-              className="fixed right-6 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 bg-white/95 hover:bg-white text-gray-800 rounded-full shadow-xl hover:shadow-2xl border border-gray-200 flex items-center justify-center hover:scale-105 active:scale-95 transition-all"
+              className="cursor-pointer fixed right-6 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 bg-white/95 hover:bg-white text-gray-800 rounded-full shadow-xl hover:shadow-2xl border border-gray-200 flex items-center justify-center hover:scale-105 active:scale-95 transition-all"
             >
               <span className="text-xl">&gt;</span>
             </button>
