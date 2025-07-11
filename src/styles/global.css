@@ -9,44 +9,15 @@ body {
 
   background: linear-gradient(
     to bottom,
-    #0f172a 0%,
+    #2c142c 0%,
     #1e293b 30%,
-    #334155 50%,
+    #284046 50%,
     #1e293b 70%,
-    #0f172a 100%
+    #101725 100%
   );
 
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
-
-/* ::before ลวดลายจาง ๆ เพิ่ม texture */
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/ProLang/background/grid.svg"); /* หรือ noise.png */
-  background-repeat: repeat;
-  opacity: 0.03;
-  z-index: 0;
-  pointer-events: none;
-}
-
-
-/* ::after ชั้น glow ฟุ้งเบลอแบบ AI */
-body::after {
-  content: "";
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
-  filter: blur(100px);
-  opacity: 0.2;
-  z-index: 0;
-  pointer-events: none;
 }
 
 /* --- Header --- */

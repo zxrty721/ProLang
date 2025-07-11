@@ -11,7 +11,7 @@ const { count = 0 } = Astro.props;
 
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="../../public/logo/logo.png">
+    <link rel="icon" href="logo/logo.png">
     <title>ProLang Guide</title>
   </head>
 
@@ -19,9 +19,9 @@ const { count = 0 } = Astro.props;
 
     <header class="gradient-bg ">
       <img class="w-[200px] h-auto absolute top-4 left-4 z-50" src="logo/logo.png" loading="lazy" decoding="async"/>
-      <h1 class="text-5xl">🚀 Programming Languages Guide 🌐</h1>
-      <h2 class="text-2xl mt-6 text-black dark:text-white">เรียนรู้และเลือกภาษาทางคอมพิวเตอร์ที่เหมาะสมกับความต้องการของคุณ</h2>
-      <p class="text-2xl mt-6 text-blue-200">
+      <h1 class="text-5xl text-white drop-shadow-[0_0_4px_white]">🚀 Programming Languages Guide 🌐</h1>
+      <h2 class="text-2xl mt-6 text-blue-200 drop-shadow-[0_0_4px_#bfdbfe]">เรียนรู้และเลือกภาษาทางคอมพิวเตอร์ที่เหมาะสมกับความต้องการของคุณ</h2>
+      <p class="text-xl mt-6 text-blue-100 drop-shadow-[0_0_6px_#d8b4fe]">
           ทั้งหมด <strong>{count}</strong> ภาษา
       </p>
     </header>
@@ -31,7 +31,12 @@ const { count = 0 } = Astro.props;
     </main>
 
     <footer class="gradient-bg text-3xl">
-      © 2025 ProLang นายทัศมา ภูลายยาว & นายวรวุฒิ สุขสกุล
+      <p class="text-purple-300 drop-shadow-[0_0_6px_#d8b4fe]">
+        © 2025 ProLang 
+        <span class="text-white">นายทัศมา ภูลายยาว</span>
+& 
+        <span class="text-white">นายวรวุฒิ สุขสกุล</span>
+      </p>
     </footer>
 
   </body>

@@ -70,7 +70,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
 
   return (
     <div className="min-h-screen text-gray-900">
-      <div className="flex w-full px-4 py-8 items-stretch gap-4 justify-center relative">
+      <div className="flex w-full px-4 items-stretch gap-4 justify-center relative">
 
         <button
           type="button"
@@ -110,7 +110,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                 className="cursor-pointer px-6 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 shadow-md disabled:opacity-50 transition-colors"
                 disabled={!searchInput}
               >
-                ล้างคำค้นหา
+                🧹 ล้างคำค้นหา
               </button>
               <button
                 type="button"
@@ -118,7 +118,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                 className="cursor-pointer px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 shadow-md disabled:opacity-50 transition-colors"
                 disabled={!hasFilters}
               >
-                รีเซ็ตทั้งหมด
+               🔄 รีเซ็ตทั้งหมด
               </button>
             </div>
           </div>
