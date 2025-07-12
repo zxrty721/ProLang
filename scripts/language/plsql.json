@@ -5,9 +5,7 @@
   "logo": "img/oracle.png",
   "desc": "PL/SQL เป็นภาษา Extension ที่เพิ่มความสามารถเชิงโครงสร้าง (Procedural) ให้กับ SQL ในฐานข้อมูล Oracle Database ใช้สำหรับเขียน Stored Procedures, Functions, Packages และ Triggers เพื่อจัดการและประมวลผลข้อมูลที่ซับซ้อนภายในฐานข้อมูลโดยตรง",
   "by": "Oracle Corporation",
-  "yr": "1980s",
   "level": "5",
-  "par": ["Procedural", "Declarative (SQL embedded)"],
   "fields": ["DB"],
   "rank": "35+ แข็งแกร่งใน Oracle Database Ecosystem",
   "pros": [

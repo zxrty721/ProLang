@@ -1,9 +1,13 @@
 import React, { memo, useMemo, useCallback } from 'react';
-import type { Language } from '../../utils/language.ts';
-import { getDifficultyClass } from '../../utils/card.ts';
 import { CodeBlock } from './Codeblock.tsx';
 import clsx from 'clsx';
+
 import { fieldMap } from '../../utils/card';
+import type { Language } from '../../utils/language.ts';
+import { getDifficultyClass, getDescLevel } from '../../utils/card.ts';
+
+import { getCountryname, getCountryflag, getOrganization, getCommunity, getParadigms, getWorksExamples, getRealWorldExamples, getFoundedYear} from '../../utils/languageCountries.ts';
+
 
 interface LanguageDetailProps {
     language: Language;
@@ -74,13 +78,14 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
     // Memoize expensive computations
     const formattedYear = useMemo(() => {
         try {
-            return FORMATTER.format(new Date(language.yr));
-        } catch { return language.yr; }
-    }, [language.yr]);
+            return FORMATTER.format(new Date(getFoundedYear(language.slug)));
+        } catch { return getFoundedYear(language.slug); }
+    }, [getFoundedYear(language.slug)]);
 
     const logoSrc = useMemo(() => BASE_URL + language.logo, [language.logo]);
     const difficultyClass = useMemo(() => getDifficultyClass(language.level), [language.level]);
-
+    const fieldlevelDesc = useMemo(() => getDescLevel(language.level), [language.level]);
+    
     // Memoize section arrays with early returns for better performance
     const infoSections = useMemo(() => {
         const sections = [];
@@ -88,7 +93,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
         if (language.fields?.length) {
             sections.push({ 
                 title: "การใช้งานหลัก", 
-                items: language.fields.map(f => fieldMap[f] ?? f), 
+                items: getRealWorldExamples(language.slug), 
                 color: "text-sky-400", 
                 emoji: '🚀', 
                 borderColor: "border-sky-500" 
@@ -192,6 +197,9 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
 
     const handleClose = useCallback(() => onClose(), [onClose]);
 
+    const countryName = getCountryname(language.slug);
+    const flagImageUrl = getCountryflag(language.slug);
+    
     return (
         <div className="relative w-full h-full">
             <div className="language-modal-content relative max-h-screen overflow-y-auto px-4">
@@ -213,32 +221,68 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                     <p className="desc text-gray-700 leading-relaxed">{language.desc}</p>
                 </div>
 
-                <div className="info-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="info-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">👨‍💻 ผู้สร้าง</span>
-                        <span className="text-lg font-medium text-gray-900">{language.by}</span>
+                        <span className="font-medium text-gray-900">{language.by}</span>
                     </div>
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">📆 ปีที่เริ่มใช้</span>
-                        <span className="text-lg font-medium text-gray-900">{formattedYear}</span>
+                        <span className="font-medium text-gray-900">{formattedYear}</span>
                     </div>
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
-                        <span className="section-title block text-xl text-gray-600 mb-2">🌟 ระดับภาษา</span>
-                        <span className={`lang-level-detail ${difficultyClass} text-lg font-medium`}>{difficultyClass}</span>
+                        <span className="section-title block text-xl text-gray-600 mb-2">🌍 ประเทศที่สร้าง</span>
+                        <span className="font-medium text-gray-900 flex items-center">
+                            {countryName}
+                            {flagImageUrl && (
+                                <img src={flagImageUrl} alt={`${countryName} Flag`} className="w-7 h-7 ml-2 rounded-sm" loading="lazy" decoding="async" fetchPriority="low"/>
+                            )}
+                        </span>
+                    </div>
+                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                        <span className="section-title block text-xl text-gray-600 mb-2">🏢 องค์กร</span>
+                        <span className=" font-medium text-gray-900">{getOrganization(language.slug)}</span>
+                    </div>
+                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                        <span className="section-title block text-xl text-gray-600 mb-2">⭐ ระดับความยาก</span>
+                        <span className={`lang-level-detail ${difficultyClass} font-medium block mb-2`}>
+                        {fieldlevelDesc}
+                        </span>
                     </div>
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>
                         <div className="flex flex-wrap gap-2 mt-2">
-                            {language.par.map((p, i) => (
-                                <span key={i} className="tag bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">{p}</span>
+                            {getParadigms(language.slug).map((p, i) => (
+                                <span key={i} className="tag bg-blue-200 text-blue-500 px-2 py-1 rounded text-sm">{p}</span>
                             ))}
                         </div>
                     </div>
                 </div>
 
+                <div className="section mb-8">
+                    <h2 className="section-title text-2xl font-bold mb-4">💡 ผลงาน :</h2>
+                    <div className="badge-group flex flex-wrap gap-2">
+                        {getWorksExamples(language.slug).map((p, i) => (
+                            <span key={i} className="Client badge tag bg-yellow-300 text-yellow-800 px-2 py-1 rounded-full text-sm">{p}</span>
+                        ))}
+                    </div>
+               </div>
+
+                <div className="section mb-8">
+                    <h2 className="section-title text-2xl font-bold mb-4">🤝 ชุมชน :</h2>
+                    <div className="badge-group flex flex-wrap gap-2">
+                        {getCommunity(language.slug).map((item, index) => (
+                            <span  key={index}
+                            className="Client badge green bg-purple-200 text-perple-500 px-3 py-1 rounded-full text-sm font-medium">
+                            {item}
+                            </span>
+                        ))}
+                    </div>
+               </div>
+
                 {mappedFields.length > 0 && (
                     <div className="section mb-8">
-                        <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง</h2>
+                        <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง :</h2>
                         <div className="badge-group flex flex-wrap gap-2">
                             {mappedFields.map((use, i) => (
                                 <span key={i} className="Client badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -251,9 +295,11 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
 
                 {language.rank && (
                     <div className="section mb-8">
-                        <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม</h2>
+                        <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม :</h2>
                         <div className="Clientbg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-                            <span className="text-lg">อันดับความนิยม: <strong>#{language.rank}</strong></span>
+                            <span className="text-lg">
+                                อันดับความนิยม: <strong className="text-yellow-600">#{language.rank}</strong>
+                            </span>
                         </div>
                     </div>
                 )}

@@ -5,9 +5,7 @@
   "logo": "img/graphql.png",
   "desc": "GraphQL คือภาษา Query Language สำหรับ API และเป็น Runtime สำหรับการทำ Query ด้วยข้อมูลที่มีอยู่ คุณลักษณะเฉพาะของ GraphQL คือความสามารถในการให้ Client กำหนดรูปแบบโครงสร้างของข้อมูลที่ต้องการจาก Server ได้อย่างชัดเจน",
   "by": "Facebook",
-  "yr": "2015 (Open Sourced)",
   "level": "5",
-  "par": ["Declarative"],
   "fields": ["Backend", "API"],
   "rank": "20-25 เติบโตใน Modern API Development (5.1% ของนักพัฒนา)",
   "pros": [

@@ -5,9 +5,7 @@
   "logo": "img/r.png",
   "desc": "R เป็นภาษาโปรแกรมและสภาพแวดล้อมซอฟต์แวร์สำหรับการวิเคราะห์ทางสถิติ, การแสดงผลข้อมูล และ Data Science มีแพ็กเกจจำนวนมากที่รองรับงานด้านสถิติและ Machine Learning",
   "by": "Ross Ihaka and Robert Gentleman",
-  "yr": "1993",
   "level": "5",
-  "par": ["Functional", "Procedural", "Object-Oriented"],
   "fields": ["Data", "Scientific", "Script", "HPC"],
   "rank": "11-13 แต่กำลังลดลงเรื่อยๆ (แพ้ Python ใน Data Science)",
   "pros": [

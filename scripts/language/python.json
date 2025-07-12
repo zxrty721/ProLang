@@ -5,9 +5,7 @@
   "logo": "img/python.png",
   "desc": "Python คือภาษาโปรแกรมที่ใช้งานง่ายและหลากหลาย เน้นความอ่านง่ายของโค้ด เหมาะสำหรับงานด้านวิทยาศาสตร์ข้อมูล, AI, เว็บ และการทำงานอัตโนมัติ",
   "by": "Guido van Rossum",
-  "yr": "February 20, 1991",
   "level": "4",
-  "par": ["Object-Oriented", "Imperative", "Functional", "Procedural", "Reflective"],
   "fields": ["AI", "Data", "Backend", "Script", "Edu", "Testing", "Security", "Cloud", "Robot", "Network", "Finance", "Plugin", "Math", "Graphics", "Render", "HPC", "Aero", "Digital", "Hardware"],
   "rank": "1 ภาษายอดนิยมสูงสุดโลก (TIOBE Index 2025 - 23.88%)",
   "pros": [

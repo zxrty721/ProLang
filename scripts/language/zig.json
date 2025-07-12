@@ -5,9 +5,7 @@
   "logo": "img/zig.png",
   "desc": "Zig เป็นภาษาโปรแกรมที่ออกแบบมาเพื่อให้เป็นทางเลือกแทน C โดยเน้นที่ประสิทธิภาพ ความปลอดภัย และความโปร่งใสในการจัดการหน่วยความจำ เหมาะสำหรับงานระดับล่าง เช่น ระบบปฏิบัติการ, Embedded, และ Game Engine",
   "by": "Andrew Kelley",
-  "yr": "2015",
   "level": "5",
-  "par": ["Procedural", "Imperative", "Low-level", "No Hidden Control Flow"],
   "fields": ["System", "OS", "Game"],
   "rank": "Top 5 ภาษาเกิดใหม่สาย Systems Programming",
   "pros": [

@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { useMemo, memo } from 'react';
-import { fieldMap } from '../../utils/card';
+import { fieldMap, getParadiamsShow } from '../../utils/card';
+import { getParadigms } from '../../utils/languageCountries'; // <-- Import สิ่งที่เราสร้างไว้
+
 
 interface FilterPanelProps {
   levelFilter: string[];
   setLevelFilter: (levels: string[]) => void;
+  parFilter: string[];
+  setParFilter: (par  : string[]) => void;
   fieldFilter: string[];
   setFieldFilter: (fields: string[]) => void;
 }
@@ -12,6 +16,8 @@ interface FilterPanelProps {
 const FilterPanel = ({
   levelFilter,
   setLevelFilter,
+  parFilter,
+  setParFilter,
   fieldFilter,
   setFieldFilter,
 }: FilterPanelProps) => {
@@ -31,6 +37,7 @@ const FilterPanel = ({
   );
 
   const fieldOptions = useMemo(() => Object.entries(fieldMap), []);
+  const ParOptions = useMemo(() => Object.entries(getParadiamsShow), []);
 
   return (
     <div className="flex flex-col gap-6 w-full">
@@ -63,6 +70,34 @@ const FilterPanel = ({
         </div>
       </div>
 
+       {/* Paradiams Filter */}
+       <div>
+      <h3 className="font-bold text-lg mb-3 text-gray-800">
+        🏗️รูปแบบการเขียน {ParOptions.length} รูปแบบ :
+      </h3>
+      <div className="flex flex-col gap-2">
+          {ParOptions.map(([code, label]) => {
+            const checked = parFilter.includes(code);
+            return (
+              <button
+                key={code}
+                role="checkbox"
+                aria-checked={checked}
+                onClick={() => toggle(code, parFilter, setParFilter)}
+                className={`cursor-pointer flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
+                  ${checked ? 'bg-blue-100 font-semibold text-blue-800' : ''}`}>
+                <span className="inline-block h-5 w-5 rounded border border-blue-400 bg-white transition">
+                  {checked && (
+                    <span className="block w-full h-full bg-blue-200 rounded-sm transition-transform scale-100 group-hover:scale-110" />
+                  )}
+                </span>
+                <span>{label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Field Filter */}
       <div className="mt-4">
         <h3 className="font-bold text-lg mb-3 text-gray-800">
@@ -78,11 +113,11 @@ const FilterPanel = ({
                 aria-checked={checked}
                 onClick={() => toggle(code, fieldFilter, setFieldFilter)}
                 className={`cursor-pointer flex items-center gap-2 text-gray-700 p-2 rounded hover:bg-gray-100 transition-all
-                  ${checked ? 'bg-blue-100 font-semibold text-blue-800' : ''}`}
+                  ${checked ? 'bg-green-100 font-semibold text-green-800' : ''}`}
               >
-                <span className="inline-block h-5 w-5 rounded border border-blue-400 bg-white transition">
+                <span className="inline-block h-5 w-5 rounded border border-green-400 bg-white transition">
                   {checked && (
-                    <span className="block w-full h-full bg-blue-200 rounded-sm transition-transform scale-100 group-hover:scale-110" />
+                    <span className="block w-full h-full bg-green-200 rounded-sm transition-transform scale-100 group-hover:scale-110" />
                   )}
                 </span>
                 <span>{label}</span>

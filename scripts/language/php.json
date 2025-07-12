@@ -5,9 +5,7 @@
   "logo": "img/php.png",
   "desc": "PHP เป็นภาษา Scripting ฝั่ง Server ที่ออกแบบมาเพื่อพัฒนา Web Application โดยเฉพาะ มีความนิยมอย่างมากในการสร้างเว็บไซต์แบบ Dynamic และมีการใช้งานอย่างแพร่หลายใน CMS ยอดนิยมอย่าง WordPress",
   "by": "Rasmus Lerdorf",
-  "yr": "1994",
   "level": "4",
-  "par": ["Procedural", "Object-Oriented", "Imperative", "Functional"],
   "fields": ["Backend", "Testing", "Script"],
   "rank": "13-17 ลดลงอย่างต่อเนื่อง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
   "pros": [

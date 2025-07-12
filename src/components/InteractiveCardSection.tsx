@@ -3,8 +3,10 @@ import { createPortal } from 'react-dom';
 import LanguageCard from './language/LanguageCard';
 import LanguageDetail from './language/LanguageDetail';
 import FilterPanel from './language/FilterPanel';
-import { getDifficultyClass } from '../utils/card';
+import { getDifficultyClass, getParadiamsShow } from '../utils/card';
+import { getParadigms } from '../utils/languageCountries'
 import type { Language } from '../utils/language';
+import { levels } from 'node_modules/astro/dist/core/logger/core';
 
 const MemoCard = memo(LanguageCard);
 const MemoFilter = memo(FilterPanel);
@@ -12,11 +14,11 @@ const MemoDetail = memo(LanguageDetail);
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selected, setSelected] = useState<Language | null>(null);
-  const [filters, setFilters] = useState({ level: [] as string[], field: [] as string[], search: '' });
+  const [filters, setFilters] = useState({ level: [] as string[], par: [] as string[], field: [] as string[], search: '' });
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
+  
   // Debounced search with proper cleanup
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -38,19 +40,24 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
     !levels.length || levels.includes(getDifficultyClass(lang.level)?.toLowerCase().replace(' ', '-') ?? '')
   , []);
 
+  const filterByPar = useCallback((lang: Language, paradigmsFilter: string[]) => 
+    !paradigmsFilter.length || paradigmsFilter.some(selectedPar => lang.par.includes(selectedPar))
+   ,[])
+
   const filterByField = useCallback((lang: Language, fields: string[]) => 
     !fields.length || fields.some(f => lang.fields.includes(f))
   , []);
 
   const filtered = useMemo(() => {
-    if (!filters.level.length && !filters.field.length && !filters.search) return languages;
+    if (!filters.level.length && !filters.par.length && !filters.field.length && !filters.search) return languages;
 
     return languages.filter(lang => 
       filterBySearch(lang, filters.search) &&
       filterByLevel(lang, filters.level) &&
+      filterByPar(lang, filters.par) &&
       filterByField(lang, filters.field)
     );
-  }, [languages, filters, filterBySearch, filterByLevel, filterByField]);
+  }, [languages, filters, filterBySearch, filterByLevel, filterByPar, filterByField]);
 
   const hasFilters = filters.level.length > 0 || filters.field.length > 0 || filters.search.length > 0;
 
@@ -62,7 +69,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
   }, [selected, filtered]);
 
   const reset = useCallback(() => {
-    setFilters({ level: [], field: [], search: '' });
+    setFilters({ level: [], par: [], field: [], search: '' });
     setSearchInput('');
   }, []);
 
@@ -86,6 +93,8 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
             <MemoFilter
               levelFilter={filters.level}
               setLevelFilter={(v) => setFilters(prev => ({ ...prev, level: v }))}
+              parFilter={filters.par}
+              setParFilter={(v) => setFilters(prev => ({ ...prev, par: v }))}
               fieldFilter={filters.field}
               setFieldFilter={(v) => setFilters(prev => ({ ...prev, field: v }))}
             />

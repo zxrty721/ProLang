@@ -5,9 +5,7 @@
   "logo": "img/ruby.png",
   "desc": "Ruby เป็นภาษาโปรแกรม Dynamic, Object-Oriented ที่เน้นความเรียบง่ายและ Productivitiy สูง โดยเฉพาะอย่างยิ่งเมื่อใช้ร่วมกับ Ruby on Rails Framework ซึ่งเป็นที่นิยมในการสร้าง Web Application",
   "by": "Yukihiro Matsumoto",
-  "yr": "1995",
   "level": "4",
-  "par": ["Object-Oriented", "Imperative", "Functional", "Reflective"],
   "fields": ["Backend", "Script", "Testing"],
   "rank": "14 และลดลงต่อเนื่อง (2.1% ใน TIOBE)",
   "pros": [

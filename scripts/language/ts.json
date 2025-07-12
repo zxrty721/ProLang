@@ -5,9 +5,7 @@
   "logo": "img/ts.png",
   "desc": "TypeScript คือ Superset ของ JavaScript ที่เพิ่มความสามารถด้าน Static Typing ทำให้โค้ดมีโครงสร้างมากขึ้น, ตรวจสอบข้อผิดพลาดได้ตั้งแต่ตอนพัฒนา และช่วยให้พัฒนาโปรเจกต์ขนาดใหญ่ได้ง่ายขึ้น",
   "by": "Microsoft",
-  "yr": "2012",
   "level": "4",
-  "par": ["Multi-paradigm", "Object-Oriented", "Functional"],
   "fields": ["Frontend", "Backend", "Cloud", "Plugin", "Blockchain", "Render"],
   "rank": "12 แต่เติบโตแรงใน Modern Web Development (ใช้โดย 38.8% ของนักพัฒนา)",
   "pros": [

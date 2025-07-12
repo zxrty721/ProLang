@@ -5,9 +5,7 @@
   "logo": "img/lisp.png",
   "desc": "Lisp (LISt Processing) เป็นภาษาโปรแกรมที่เก่าแก่เป็นอันดับสองรองจาก Fortran มีชื่อเสียงในด้าน AI, การประมวลผลสัญลักษณ์ และ Functional Programming โดดเด่นด้วยการใช้ Parentheses จำนวนมาก",
   "by": "John McCarthy",
-  "yr": "1958",
   "level": "3",
-  "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming"],
   "fields": ["Edu", "AI", "Aero"],
   "rank": "40+ Niche ใน AI Research และ Academic",
   "pros": [

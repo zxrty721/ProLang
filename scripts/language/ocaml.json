@@ -5,9 +5,7 @@
   "logo": "img/ocaml.png",
   "desc": "OCaml เป็นภาษาโปรแกรม Multi-paradigm ที่เน้น Functional Programming (โดยเฉพาะอย่างยิ่ง Static Type Inference) มีประสิทธิภาพสูงและมีความน่าเชื่อถือ พัฒนาโดย INRIA ใช้ในการวิจัย, การศึกษา, การสร้าง Compiler, ระบบการเงิน และ Web Development (ผ่าน ReScript/ReasonML)",
   "by": "INRIA (French Institute for Research in Computer Science and Automation)",
-  "yr": "1996",
   "level": "4",
-  "par": ["Functional", "Imperative", "Object-Oriented"],
   "fields": ["Compiler", "Edu"],
   "rank": "Niche ใน Functional Programming และ Compiler Development",
   "pros": [

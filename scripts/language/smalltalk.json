@@ -5,9 +5,7 @@
   "logo": "img/smalltalk.png",
   "desc": "Smalltalk เป็นภาษาโปรแกรมเชิงวัตถุบริสุทธิ์ (Pure Object-Oriented) ที่มีแนวคิดการทำงานแบบ Message Passing และสภาพแวดล้อมการพัฒนาแบบโต้ตอบ (Interactive Development Environment - IDE) ซึ่งเป็นผู้บุกเบิกแนวคิด GUI และการพัฒนาแบบ Rapid Prototyping มีอิทธิพลอย่างมากต่อภาษาและ Frameworks สมัยใหม่หลายตัว",
   "by": "Alan Kay, Dan Ingalls, Adele Goldberg, etc. (Xerox PARC)",
-  "yr": "1970s (Smalltalk-80)",
   "level": "3",
-  "par": ["Object-Oriented", "Reflective", "Dynamic"],
   "fields": ["Edu"],
   "rank": "45+ ลดลงมาก แต่ยังมีใช้ใน Legacy Enterprise",
   "pros": [

@@ -5,9 +5,7 @@
   "logo": "img/fsharp.png",
   "desc": "F# (F Sharp) เป็นภาษา Functional Programming ที่ทำงานบนแพลตฟอร์ม .NET พัฒนาโดย Microsoft Research มีคุณสมบัติเด่นด้าน Type Safety, Conciseness (กระชับ) และ Immutability (ไม่เปลี่ยนแปลงค่า) เหมาะสำหรับงาน Data Science, Web Development (Backend), Machine Learning และ Financial Modeling ที่ต้องการความน่าเชื่อถือสูง",
   "by": "Microsoft Research",
-  "yr": "2005",
   "level": "4",
-  "par": ["Functional", "Imperative", "Object-Oriented"],
   "fields": ["Finance", "Scientific"],
   "rank": "35+ Niche ใน Functional Programming บน .NET",
   "pros": [

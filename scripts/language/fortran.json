@@ -5,9 +5,7 @@
   "logo": "img/fortran.png",
   "desc": "Fortran (Formula Translation) เป็นภาษาโปรแกรมที่เก่าแก่และยังคงใช้กันอย่างแพร่หลายในงานทางวิทยาศาสตร์และการคำนวณทางวิศวกรรม โดยเฉพาะงานที่เกี่ยวข้องกับ Supercomputing และ Numerical Analysis",
   "by": "John Backus (IBM)",
-  "yr": "1957",
   "level": "1",
-  "par": ["Procedural", "Imperative", "Array-oriented"],
   "fields": ["Scientific", "HPC"],
   "rank": "35-40 ยังใช้ใน High-Performance Scientific Computing",
   "pros": [

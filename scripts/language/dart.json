@@ -5,9 +5,7 @@
   "logo": "img/dart.png",
   "desc": "Dart เป็นภาษาโปรแกรมที่พัฒนาโดย Google เน้นการสร้างแอปพลิเคชันแบบ Multi-platform โดยเฉพาะอย่างยิ่ง Mobile App ด้วย Flutter Framework สามารถ Compile เป็น Native Code ได้ ทำให้มีประสิทธิภาพสูง",
   "by": "Google",
-  "yr": "2011",
   "level": "3",
-  "par": ["Object-Oriented", "Imperative", "Functional"],
   "fields": ["Mobile", "Frontend"],
   "rank": "25-30 แต่เติบโตแรงด้วย Flutter (6.2% ของนักพัฒนา Mobile)",
   "pros": [

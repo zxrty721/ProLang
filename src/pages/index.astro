@@ -5,6 +5,11 @@ import { loadAllLanguages } from '../data/languageLoader';
 
 const allLanguages = await loadAllLanguages();
 const totalLanguages = allLanguages.length;
+
+// allLanguages.map((lang) => {
+//   console.log(lang.name)
+// })
+
 ---
 
 <BaseLayout count={totalLanguages}>

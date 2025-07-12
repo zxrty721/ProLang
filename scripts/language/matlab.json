@@ -5,9 +5,7 @@
   "logo": "img/matlab.png",
   "desc": "MATLAB เป็นภาษาและแพลตฟอร์มสำหรับการคำนวณเชิงตัวเลข (Numerical Computing) และการเขียนโปรแกรมเชิงเทคนิค มีชื่อเสียงในการวิเคราะห์ข้อมูล, พัฒนาอัลกอริทึม, สร้างโมเดล และ Simulation ทางวิศวกรรมและวิทยาศาสตร์",
   "by": "MathWorks",
-  "yr": "1984",
   "level": "5",
-  "par": ["Array-oriented", "Procedural", "Object-Oriented"],
   "fields": ["Scientific", "Data", "Math", "Aero", "HPC", "Digital"],
   "rank": "16-20 แข็งแกร่งใน Academic และ Engineering",
   "pros": [

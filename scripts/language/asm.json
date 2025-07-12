@@ -5,9 +5,7 @@
   "logo": "img/asm.png",
   "desc": "Assembly Language เป็นภาษาโปรแกรมระดับต่ำสุดที่มนุษย์อ่านได้ มีความสัมพันธ์โดยตรงกับสถาปัตยกรรมของ Processor ใช้ในการเขียนโปรแกรมที่ต้องการการควบคุมฮาร์ดแวร์อย่างสมบูรณ์แบบและประสิทธิภาพสูงสุด",
   "by": "Various (Machine-specific)",
-  "yr": "1940s-1950s",
   "level": "1",
-  "par": ["Imperative", "Procedural"],
   "fields": ["Embedded", "System", "OS", "Security", "Digital"],
   "pros": [
       "ประสิทธิภาพสูงสุด",

@@ -5,9 +5,7 @@
   "logo": "img/swift.png",
   "desc": "Swift เป็นภาษาโปรแกรมที่พัฒนาโดย Apple สำหรับสร้างแอปพลิเคชันบน iOS, macOS, watchOS, tvOS และ Linux เน้นความปลอดภัย, ประสิทธิภาพ และความทันสมัยในการเขียนโค้ด",
   "by": "Apple Inc.",
-  "yr": "2014",
   "level": "3",
-  "par": ["Multi-paradigm", "Object-Oriented", "Functional", "Protocol-Oriented"],
   "fields": ["Mobile", "Desktop", "Script"],
   "rank": "10-12 สำหรับ iOS Development แต่กำลังลดลง (1.8% ใน TIOBE)",
   "pros": [

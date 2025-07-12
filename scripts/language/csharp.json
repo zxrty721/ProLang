@@ -5,9 +5,7 @@
   "logo": "img/csharp.png",
   "desc": "C# (C-sharp) คือภาษาโปรแกรมเชิงวัตถุที่พัฒนาโดย Microsoft ใช้สำหรับสร้างแอปพลิเคชันหลากหลายประเภทบนแพลตฟอร์ม .NET เช่น Windows desktop apps, เว็บไซต์ (ASP.NET), เกม (Unity) และแอปบนมือถือ (Xamarin)",
   "by": "Microsoft (.NET team)",
-  "yr": "2000",
   "level": "3",
-  "par": ["Object-Oriented", "Component-Oriented", "Structured", "Imperative", "Functional"],
   "fields": ["Game", "Desktop", "Mobile", "Plugin", "Render"],
   "rank": "5 ใน TIOBE Index 2025 (4.12%)",
   "pros": [

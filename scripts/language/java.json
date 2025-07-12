@@ -5,9 +5,7 @@
   "logo": "img/java.png",
   "desc": "Java เป็นภาษาโปรแกรมเชิงวัตถุที่ได้รับความนิยมสูง ถูกออกแบบมาให้เขียนครั้งเดียวสามารถรันได้ทุกที่ (Write Once, Run Anywhere) มีการใช้งานอย่างกว้างขวางในแอปพลิเคชันระดับองค์กร, Android, และ Big Data",
   "by": "James Gosling",
-  "yr": "1995",
   "level": "3",
-  "par": ["Object-Oriented", "Concurrent", "Structured", "Imperative", "Generic"],
   "fields": ["Mobile", "Backend", "Desktop", "Cloud", "Testing", "Finance"],
   "rank": "3 ใน TIOBE Index 2025 (10.66%)",
   "pros": [

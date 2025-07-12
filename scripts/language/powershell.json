@@ -5,9 +5,7 @@
   "logo": "img/powershell.png",
   "desc": "PowerShell เป็น Command-line Shell และ Scripting Language ของ Microsoft ที่พัฒนาขึ้นมาเพื่อการจัดการระบบ Windows และ Cloud (Azure) มีความสามารถในการจัดการวัตถุ (Objects) ทำให้มีพลังมากกว่า Command Prompt เดิม และเป็นส่วนสำคัญในงาน DevOps และ Automation บนแพลตฟอร์ม Microsoft",
   "by": "Microsoft (Jeffrey Snover)",
-  "yr": "2006",
   "level": "2",
-  "par": ["Object-Oriented", "Imperative", "Procedural", "Scripting"],
   "fields": ["Script", "Admin", "Cloud"],
   "rank": "30+ แข็งแกร่งใน Windows Ecosystem",
   "pros": [

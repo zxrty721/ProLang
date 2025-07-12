@@ -5,9 +5,7 @@
     "logo": "img/cpp.png",
     "desc": "C++ คือภาษาโปรแกรมที่พัฒนาต่อยอดมาจาก C โดยเพิ่มความสามารถเชิงวัตถุ (Object-Oriented Programming) ทำให้สามารถสร้างโปรแกรมที่ซับซ้อนและมีโครงสร้างที่ดีได้ เหมาะสำหรับเกม, ซอฟต์แวร์ประสิทธิภาพสูง และระบบฝังตัว",
     "by": "Bjarne Stroustrup",
-    "yr": "1979",
     "level": "3",
-    "par": ["Multi-paradigm", "Object-Oriented", "Procedural", "Generic"],
     "fields": ["Game", "Desktop", "System", "Compiler", "VR", "Security", "Robot", "Network", "Finance", "Plugin", "HPC", "Aero", "Graphics", "Render", "Digital"],
     "rank": "2 ใน TIOBE Index 2025 (11.37% และเติบโตแรง)",
     "pros": [

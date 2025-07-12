@@ -5,9 +5,7 @@
   "logo": "img/cobol.png",
   "desc": "COBOL (Common Business-Oriented Language) เป็นภาษาโปรแกรมที่เก่าแก่และถูกออกแบบมาเพื่อการประมวลผลข้อมูลทางธุรกิจโดยเฉพาะ มักใช้ในระบบ Mainframe ของธนาคารและหน่วยงานรัฐบาล",
   "by": "CODASYL Committee",
-  "yr": "1959",
   "level": "1",
-  "par": ["Procedural", "Imperative"],
   "fields": ["Finance"],
   "rank": "45+ ลดลงแต่ยังจำเป็นใน Legacy Banking Systems",
   "pros": [

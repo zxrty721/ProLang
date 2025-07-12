@@ -5,9 +5,7 @@
   "logo": "img/rust.png",
   "desc": "Rust เป็นภาษาโปรแกรมที่เน้นความปลอดภัยของหน่วยความจำ, ความเร็ว และ Concurrency โดยไม่ใช้ Garbage Collector เหมาะสำหรับ System programming, WebAssembly, และ Blockchain",
   "by": "Mozilla Research",
-  "yr": "2010",
   "level": "2",
-  "par": ["Multi-paradigm", "Functional", "Imperative", "Concurrent"],
   "fields": ["System", "Compiler", "Security", "Security", "Cloud", "Robot", "Network", "Tele", "Game", "Distributed", "HPC", "Aero", "Blockchain", "Graphics"],
   "rank": "15 ใน TIOBE แต่เป็น Most Loved Language (84.9% ของนักพัฒนาชอบ)",
   "pros": [

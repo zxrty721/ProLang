@@ -5,9 +5,7 @@
     "logo": "img/sql.png",
     "desc": "SQL (Structured Query Language) ไม่ใช่ภาษาโปรแกรมมิ่งแบบทั่วไป แต่เป็นภาษามาตรฐานที่ใช้ในการจัดการและสอบถามข้อมูลจากฐานข้อมูลเชิงสัมพันธ์ (Relational Databases) เป็นสิ่งจำเป็นสำหรับนักพัฒนาซอฟต์แวร์ทุกคน",
     "by": "Donald D. Chamberlin and Raymond F. Boyce",
-    "yr": "1970s",
     "level": "5",
-    "par": ["Declarative"],
     "fields": ["DB", "Script"],
     "rank": "9-11 แต่กำลังลดลง (ตำแหน่งต่ำสุดเท่าที่เคยมี)",
     "pros": [

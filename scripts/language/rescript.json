@@ -5,9 +5,7 @@
   "logo": "img/rescript.png",
   "desc": "ReScript คือภาษาโปรแกรมที่คอมไพล์เป็น JavaScript ที่มีประสิทธิภาพสูง ออกแบบมาเพื่อการพัฒนา Web Application ที่เน้นความน่าเชื่อถือ, Type Safety และประสิทธิภาพสูงสุด เป็นทางเลือกที่น่าสนใจสำหรับ JavaScript และ TypeScript โดยใช้ Type Inference ที่ทรงพลังและ Functional Programming",
   "by": "Facebook (พัฒนาต่อจาก ReasonML)",
-  "yr": "2020",
   "level": "4",
-  "par": ["Functional", "Imperative", "Static-Typed"],
   "fields": ["Frontend"],
   "rank": "Niche ในตลาดเฉพาะทาง (ยังไม่เป็นที่นิยมในวงกว้าง)",
   "pros": [

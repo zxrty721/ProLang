@@ -5,9 +5,7 @@
   "logo": "img/js.png",
   "desc": "JavaScript คือภาษาโปรแกรมที่ทำให้เว็บมีชีวิตชีวา ทั้งปุ่มกด, แอนิเมชัน หรือการตรวจสอบข้อมูล รวมถึงสร้างแอปมือถือและโปรแกรมคอมพิวเตอร์ได้ด้วย",
   "by": "Brendan Eich",
-  "yr": "December 4, 1995",
   "level": "4",
-  "par": ["Multi-paradigm", "Event-driven", "Functional"],
   "fields": ["Frontend", "Backend", "Plugin", "Testing", "Blockchain", "Graphics", "Render", "Script"],
   "rank": "1 ในกลุ่ม Web Development (ใช้โดย 62.3% ของนักพัฒนาทั่วโลก)",
   "pros": [

@@ -5,9 +5,7 @@
   "logo": "img/go.png",
   "desc": "Go (หรือ Golang) เป็นภาษาโปรแกรมที่พัฒนาโดย Google เน้นความเรียบง่าย, ประสิทธิภาพสูง และรองรับการทำงานแบบ Concurrency ได้ดี เหมาะสำหรับ Backend services, Cloud computing, และ Networking tools",
   "by": "Robert Griesemer, Rob Pike, Ken Thompson",
-  "yr": "2009",
   "level": "2",
-  "par": ["Concurrent", "Structured", "Imperative"],
   "fields": ["Cloud", "System", "Network", "Testing", "Security", "Distributed"],
   "rank": "6-8 และเติบโตแรงใน Cloud/Backend (เพิ่มขึ้น 1.2% ใน 2024)",
   "pros": [

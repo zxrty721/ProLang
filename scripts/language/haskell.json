@@ -5,9 +5,7 @@
   "logo": "img/haskell.png",
   "desc": "Haskell เป็นภาษาโปรแกรม Functional ที่บริสุทธิ์ (Purely Functional) และเป็น Statically-typed เน้นความถูกต้องทางคณิตศาสตร์และการเขียนโค้ดที่ไม่เปลี่ยนแปลง (Immutable) เหมาะสำหรับงานวิจัย, การศึกษา และโปรแกรมที่ต้องการความเสถียรสูง",
   "by": "Simon Peyton Jones, Philip Wadler, et al.",
-  "yr": "1990",
   "level": "3",
-  "par": ["Functional", "Lazy Evaluation"],
   "fields": ["Compiler", "Edu", "Math", "Script"],
   "rank": "35-40 Niche ใน Functional Programming",
   "pros": [

@@ -5,9 +5,7 @@
   "logo": "img/prolog.png",
   "desc": "Prolog (PROgramming in LOGic) เป็นภาษาโปรแกรมเชิงตรรกะ (Logic Programming) ที่ใช้ในการสร้างระบบผู้เชี่ยวชาญ (Expert Systems), การประมวลผลภาษาธรรมชาติ และ AI เป็นหลัก โปรแกรมถูกเขียนในรูปของข้อเท็จจริงและกฎเกณฑ์",
   "by": "Alain Colmerauer and Robert Kowalski",
-  "yr": "1972",
   "level": "4",
-  "par": ["Logic Programming", "Declarative"],
   "fields": ["AI", "Edu"],
   "rank": "45+ Niche ใน Logic Programming",
   "pros": [

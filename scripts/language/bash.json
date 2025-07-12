@@ -5,9 +5,7 @@
   "logo": "img/bash.png",
   "desc": "Bash (Bourne-Again SHell) เป็น Command Language Interpreter และ Shell Scripting Language ที่ใช้กันอย่างแพร่หลายในระบบปฏิบัติการ Linux, Unix และ macOS สำหรับการทำงานอัตโนมัติ, การจัดการระบบ, การประมวลผลไฟล์ และการทำงานผ่าน Command Line Interface (CLI)",
   "by": "Brian Fox",
-  "yr": "1989",
   "level": "2",
-  "par": ["Imperative", "Procedural", "Scripting"],
   "fields": ["Script", "System", "Cloud"],
   "rank": "ใช้โดย 28.1% ของนักพัฒนา System Administration",
   "pros": [

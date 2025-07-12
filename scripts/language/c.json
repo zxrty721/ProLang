@@ -5,9 +5,7 @@
     "logo": "img/c.png",
     "desc": "C คือภาษาโปรแกรมที่มีประสิทธิภาพสูง ใช้สำหรับพัฒนาซอฟต์แวร์ระบบ เช่น ระบบปฏิบัติการ, ไดรเวอร์ และโปรแกรมที่ต้องการความเร็วสูง เหมาะสำหรับงานที่ต้องควบคุมฮาร์ดแวร์โดยตรง",
     "by": "Dennis Ritchie",
-    "yr": "1972",
     "level": "2",
-    "par": ["Procedural", "Imperative"],
     "fields": ["System", "Embedded", "OS", "Robot", "Compiler", "Security", "Network", "Tele", "Graphics", "HPC", "Aero", "Digital"],
     "rank": "4 ใน TIOBE Index 2025 (9.84% แต่ลดลง)",
     "pros": [

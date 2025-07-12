@@ -5,9 +5,7 @@
   "logo": "img/clojure.png",
   "desc": "Clojure เป็นภาษา Functional Programming ในตระกูล Lisp ที่ทำงานบน JVM (Java Virtual Machine) มีจุดเด่นด้าน Persistent Data Structures, Concurrency ที่แข็งแกร่ง และการพัฒนาแบบ Interactive Development (REPL) เป็นที่นิยมใน Data Science, Web Development (ClojureScript) และ Distributed Systems สำหรับการสร้างแอปพลิเคชันที่ทนทานและมีประสิทธิภาพสูง",
   "by": "Rich Hickey",
-  "yr": "2021",
   "level": "3",
-  "par": ["Functional", "Concurrent", "Dynamic", "Lisp"],
   "fields": ["Backend", "Compiler"],
   "rank": "35-40 Niche ใน Functional Programming บน JVM",
   "pros": [

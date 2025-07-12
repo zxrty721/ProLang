@@ -5,9 +5,7 @@
   "logo": "img/awk.jpg",
   "desc": "AWK เป็นภาษาโปรแกรมสำหรับประมวลผลข้อความและข้อมูลที่เน้นรูปแบบ (pattern-scanning and processing language) โดยเฉพาะไฟล์ข้อความหรือ Stream ของข้อมูล มีความสามารถในการอ่านไฟล์ทีละบรรทัด วิเคราะห์ตามรูปแบบที่กำหนด และดำเนินการกับข้อมูลในแต่ละ Field หรือ Record",
   "by": "Alfred Aho, Peter Weinberger, Brian Kernighan",
-  "yr": "1977",
   "level": "2",
-  "par": ["Declarative", "Procedural", "Pattern-Action"],
   "fields": ["Script", "Text"],
   "rank": "40+ Niche ใน Text Processing และ Unix-like Systems",
   "pros": [

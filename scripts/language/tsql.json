@@ -5,9 +5,7 @@
   "logo": "img/sqlserver.png",
   "desc": "T-SQL เป็นภาษา Extension ที่เพิ่มความสามารถเชิงโครงสร้าง (Procedural) ให้กับ SQL สำหรับ Microsoft SQL Server และ Azure SQL Database ใช้สำหรับสร้าง Stored Procedures, Functions, และ Triggers เพื่อขยายความสามารถของ SQL และประมวลผลข้อมูลที่ซับซ้อนบนฐานข้อมูลฝั่ง Server",
   "by": "Microsoft",
-  "yr": "1980s",
   "level": "5",
-  "par": ["Procedural", "Declarative (SQL embedded)"],
   "fields": ["DB"],
   "rank": "35+ แข็งแกร่งใน Microsoft SQL Server Environment",
   "pros": [

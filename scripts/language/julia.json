@@ -5,9 +5,7 @@
   "logo": "img/julia.png",
   "desc": "Julia คือภาษาโปรแกรมที่มีความเร็วสูง เหมาะสำหรับงานคำนวณทางวิทยาศาสตร์ วิเคราะห์ข้อมูล และ Machine Learning โดยเฉพาะ ถูกออกแบบมาให้มีความง่ายในการเขียนเหมือน Python แต่มีความเร็วใกล้เคียง C",
   "by": "Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman",
-  "yr": "February 2012",
   "level": "3",
-  "par": ["Multi-paradigm", "Multiple dispatch", "High-performance"],
   "fields": ["Scientific", "Data", "Math", "HPC"],
   "rank": "25-30 เติบโตใน Scientific Computing (1.9% แต่กำลังเพิ่ม)",
   "pros": [

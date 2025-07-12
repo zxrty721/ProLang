@@ -5,9 +5,7 @@
   "logo": "img/ada.png",
   "desc": "Ada เป็นภาษาโปรแกรมที่มีโครงสร้างชัดเจนและแข็งแกร่ง (Strongly-typed) พัฒนาขึ้นโดยกระทรวงกลาโหมสหรัฐฯ เน้นความน่าเชื่อถือและความปลอดภัยสูง เหมาะสำหรับระบบฝังตัว (Embedded Systems), ระบบควบคุมแบบเรียลไทม์ (Real-time Systems) และระบบที่มีความสำคัญด้านความปลอดภัยสูง เช่น การบินและอวกาศ, การทหาร, และการควบคุมการจราจรทางอากาศ",
   "by": "Jean Ichbiah (ทีมงาน)",
-  "yr": "1980 (Ada 83)",
   "level": "1",
-  "par": ["Structured", "Object-Oriented", "Concurrent", "Imperative"],
   "fields": ["Embedded", "Aero", "Robot"],
   "rank": "45+ (Niche ในตลาดเฉพาะทาง)",
   "pros": [

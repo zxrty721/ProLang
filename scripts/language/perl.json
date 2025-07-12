@@ -5,10 +5,8 @@
   "logo": "img/perl.png",
   "desc": "Perl เป็นภาษาโปรแกรมที่ยืดหยุ่นและมีพลังมาก มักใช้สำหรับการจัดการข้อความ, การประมวลผลระบบ และ Web Development ได้รับฉายาว่า 'Swiss Army Chainsaw' ของภาษาโปรแกรม",
   "by": "Larry Wall",
-  "yr": "1987",
   "level": "3",
-  "par": ["Procedural", "Object-Oriented", "Functional"],
-  "fields": ["Script", "QA", "Testing"],
+  "fields": ["Script", "Testing"],
   "rank": "30-35 ลดลงมาก แต่ยังใช้ใน Legacy Systems",
   "pros": [
       "มีประสิทธิภาพสูงในการจัดการข้อความและ Regex",

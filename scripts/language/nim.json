@@ -5,9 +5,7 @@
   "logo": "img/nim.png",
   "desc": "Nim เป็นภาษาโปรแกรม Statically-typed, Compiled ที่มุ่งเน้นประสิทธิภาพ, ความสามารถในการแสดงออก (Expressiveness), และความยืดหยุ่นในการเขียนโปรแกรม รองรับทั้ง Imperative, Object-Oriented, และ Functional Programming สามารถคอมไพล์เป็น Native Code, JavaScript หรือ C/C++ ได้ เหมาะสำหรับงาน System Programming, Web Development และ Game Development ที่ต้องการความเร็วสูง",
   "by": "Andreas Rumpf",
-  "yr": "2008 (เปิดตัวครั้งแรก)",
   "level": "4",
-  "par": ["Imperative", "Object-Oriented", "Functional", "Metaprogramming"],
   "fields": ["System", "Game"],
   "rank": "35-40 (กำลังเติบโตใน Niche Areas)",
   "pros": [

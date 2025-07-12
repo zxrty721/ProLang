@@ -5,9 +5,7 @@
   "logo": "img/luau.png",
   "desc": "Luau เป็นภาษาโปรแกรมที่พัฒนาต่อยอดมาจาก Lua โดยเพิ่มคุณสมบัติ Static Typing และประสิทธิภาพที่สูงขึ้น เน้นการใช้งานในสภาพแวดล้อมของ Roblox สำหรับการพัฒนาเกมและแอปพลิเคชันบนแพลตฟอร์มนี้ ช่วยให้นักพัฒนาสร้างโค้ดที่ปลอดภัย มีประสิทธิภาพ และดูแลรักษาง่ายขึ้น",
   "by": "Roblox Corporation",
-  "yr": "2017",
   "level": "3",
-  "par": ["Procedural", "Functional", "Object-Oriented (prototype-based)", "Statically-typed (Optional)"],
   "fields": ["Game", "Script", "Plugin"],
   "rank": "เป็นภาษาหลักสำหรับการพัฒนาใน Roblox (แพลตฟอร์มเกมยอดนิยม)",
   "pros": [

@@ -5,9 +5,7 @@
   "logo": "img/racket.png",
   "desc": "Racket เป็นภาษาโปรแกรม Multi-paradigm ในตระกูล Scheme/Lisp ที่เน้นการออกแบบภาษาโปรแกรมและ Metaprogramming มีสภาพแวดล้อมที่ครบวงจรสำหรับการศึกษา, การวิจัย และการพัฒนาซอฟต์แวร์ที่ซับซ้อน เป็นที่รู้จักกันดีในการให้คุณสร้างภาษาโปรแกรมของคุณเอง (DSLs) ได้อย่างง่ายดาย",
   "by": "PLT Inc.",
-  "yr": "2010",
   "level": "3",
-  "par": ["Functional", "Procedural", "Object-Oriented", "Metaprogramming", "Logic Programming (with extensions)"],
   "fields": ["Edu", "Compiler"],
   "rank": "Niche ใน Education และ Research",
   "pros": [

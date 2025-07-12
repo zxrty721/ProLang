@@ -5,9 +5,7 @@
   "logo": "img/scheme.png",
   "desc": "Scheme เป็นภาษาโปรแกรม Functional Programming ในตระกูล Lisp ที่เน้นความเรียบง่าย (Minimalism) และความสอดคล้องทางทฤษฎี (Theoretical Consistency) เป็นอย่างสูง ถูกใช้ในการศึกษาด้านวิทยาการคอมพิวเตอร์, การวิจัย และการพัฒนาแอปพลิเคชันที่ต้องการความยืดหยุ่นสูงและการจัดการโค้ดในฐานะข้อมูล (Code as Data)",
   "by": "Guy L. Steele Jr. and Gerald Jay Sussman",
-  "yr": "1975",
   "level": "3",
-  "par": ["Functional", "Procedural", "Reflective", "Metaprogramming"],
   "fields": ["Edu", "Compiler"],
   "rank": "45+ Niche ใน Education และ Computer Science Research",
   "pros": [

@@ -5,9 +5,7 @@
   "logo": "img/elixir.png",
   "desc": "Elixir เป็นภาษา Functional Programming ที่ทำงานบน Erlang Virtual Machine (BEAM) มีจุดเด่นด้าน Concurrency, Fault-tolerance (ความทนทานต่อข้อผิดพลาด) และ Scalability สูงมาก ออกแบบมาเพื่อสร้างระบบที่มีความทนทานสูงและสามารถรองรับผู้ใช้จำนวนมหาศาล เหมาะสำหรับ Web Servers, APIs, Chat applications และ Distributed Systems",
   "by": "José Valim",
-  "yr": "2012",
   "level": "3",
-  "par": ["Functional", "Concurrent", "Dynamic"],
   "fields": ["Backend", "Network", "Tele", "Distributed"],
   "rank": "30-35 เติบโตใน High-concurrency Systems",
   "pros": [

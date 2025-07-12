@@ -5,9 +5,7 @@
   "logo": "img/solidity.png",
   "desc": "Solidity คือภาษาโปรแกรมที่ใช้สำหรับเขียน Smart Contracts ที่ทำงานบน Ethereum Blockchain และ EVM (Ethereum Virtual Machine) Compatible Chains อื่นๆ เช่น BNB Smart Chain, Polygon เป็นภาษาหลักในการพัฒนาแอปพลิเคชันแบบกระจายศูนย์ (dApps) และ Token",
   "by": "Gavin Wood, Christian Reitwiessner, Alex Beregszaszi, Liana Husikyan, Yoichi Hirai",
-  "yr": "2014",
   "level": "3",
-  "par": ["Object-Oriented", "Imperative", "Contract-Oriented"],
   "fields": ["Blockchain"],
   "rank": "30+ เติบโตตาม Blockchain และ Web3 Trend",
   "pros": [

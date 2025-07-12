@@ -5,9 +5,7 @@
   "logo": "img/crystal.png",
   "desc": "Crystal เป็นภาษาโปรแกรม Statically-typed, Compiled ที่เน้นความเร็ว, ประสิทธิภาพ และไวยากรณ์ที่อ่านง่าย (คล้าย Ruby) ออกแบบมาเพื่อเป็นทางเลือกที่มีประสิทธิภาพสูงสำหรับ Ruby เหมาะสำหรับ Web Development, Command-line Tools และ System Programming",
   "by": "Ary Borenszweig, Juan Wajnerman, Brian Cardiff",
-  "yr": "2014 (เปิดตัวครั้งแรก)",
   "level": "4",
-  "par": ["Object-Oriented", "Imperative", "Functional"],
   "fields": ["System", "Backend"],
   "rank": "ยังไม่ติดอันดับหลัก (กำลังเติบโตใน Niche Performance)",
   "pros": [

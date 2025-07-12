@@ -5,9 +5,7 @@
   "logo": "img/vala.png",
   "desc": "Vala เป็นภาษาโปรแกรมที่คอมไพล์เป็น C โดยอัตโนมัติ ซึ่งออกแบบมาเพื่อพัฒนาแอปพลิเคชันโดยใช้ GLib และ GNOME Libraries โดยเฉพาะ ทำให้สามารถเข้าถึง Object-Oriented Frameworks ที่เขียนด้วย C ได้ง่ายขึ้น มีไวยากรณ์คล้าย C# หรือ Java แต่ให้ประสิทธิภาพใกล้เคียงกับ C/C++",
   "by": "J. B. Evain, Raffaele Sandrini, et al. (GNOME)",
-  "yr": "2006",
   "level": "4",
-  "par": ["Object-Oriented", "Imperative", "Structured"],
   "fields": ["Desktop"],
   "rank": "45+ Niche ใน GNOME Development",
   "pros": [

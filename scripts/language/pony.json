@@ -5,9 +5,7 @@
   "logo": "img/pony.jpg",
   "desc": "Pony เป็นภาษาโปรแกรมที่เน้น Concurrency แบบ Actor-model และความปลอดภัยของหน่วยความจำโดยไม่มี Deadlock หรือ Data Race ออกแบบมาสำหรับระบบที่มีประสิทธิภาพสูงและมีความน่าเชื่อถือสูง",
   "by": "Wallaroo Labs",
-  "yr": "2015",
   "level": "4",
-  "par": ["Actor-Oriented", "Object-Oriented", "Functional", "Concurrent"],
   "fields": ["System", "Compiler"],
   "rank": "Niche ในตลาดเฉพาะทาง (ยังไม่เป็นที่นิยมในวงกว้าง)",
   "pros": [

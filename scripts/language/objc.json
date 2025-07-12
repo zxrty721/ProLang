@@ -1,13 +1,11 @@
 {
   "id": 19,
   "name": "Objective-C",
-  "slug": "objective-c",
+  "slug": "objectivec",
   "logo": "img/objc.png",
   "desc": "Objective-C เป็นภาษาโปรแกรมเชิงวัตถุที่พัฒนามาจากภาษา C และเป็นภาษาหลักสำหรับการพัฒนาแอปพลิเคชันบน macOS และ iOS มายาวนานก่อน Swift จะเข้ามาแทนที่",
   "by": "Brad Cox and Tom Love",
-  "yr": "1980s",
   "level": "2",
-  "par": ["Object-Oriented", "Reflective", "Imperative"],
   "fields": ["Mobile", "Desktop"],
   "rank": "35-40 ลดลงอย่างรวดเร็วเนื่องจาก Swift",
   "pros": [
