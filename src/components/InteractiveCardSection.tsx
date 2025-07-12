@@ -1,12 +1,12 @@
+// InteractiveCardSection.tsx
 import { useState, useMemo, memo, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import LanguageCard from './language/LanguageCard';
 import LanguageDetail from './language/LanguageDetail';
 import FilterPanel from './language/FilterPanel';
-import { getDifficultyClass, getParadiamsShow } from '../utils/card';
-import { getParadigms } from '../utils/languageCountries'
+import SortPanel from './language/SortPanel';
+import { getDifficultyClass } from '../utils/card';
 import type { Language } from '../utils/language';
-import { levels } from 'node_modules/astro/dist/core/logger/core';
 
 const MemoCard = memo(LanguageCard);
 const MemoFilter = memo(FilterPanel);
@@ -15,43 +15,38 @@ const MemoDetail = memo(LanguageDetail);
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selected, setSelected] = useState<Language | null>(null);
   const [filters, setFilters] = useState({ level: [] as string[], par: [] as string[], field: [] as string[], search: '' });
+  const [sortOption, setSortOption] = useState('id-asc');
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
-  // Debounced search with proper cleanup
+
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       setFilters(prev => ({ ...prev, search: searchInput }));
     }, 100);
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
+    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
   }, [searchInput]);
 
-  // Memoized filter functions
-  const filterBySearch = useCallback((lang: Language, search: string) => 
+  const filterBySearch = useCallback((lang: Language, search: string) =>
     !search || lang.name.toLowerCase().includes(search.toLowerCase())
   , []);
 
-  const filterByLevel = useCallback((lang: Language, levels: string[]) => 
+  const filterByLevel = useCallback((lang: Language, levels: string[]) =>
     !levels.length || levels.includes(getDifficultyClass(lang.level)?.toLowerCase().replace(' ', '-') ?? '')
   , []);
 
-  const filterByPar = useCallback((lang: Language, paradigmsFilter: string[]) => 
+  const filterByPar = useCallback((lang: Language, paradigmsFilter: string[]) =>
     !paradigmsFilter.length || paradigmsFilter.some(selectedPar => lang.par.includes(selectedPar))
-   ,[])
+  , []);
 
-  const filterByField = useCallback((lang: Language, fields: string[]) => 
+  const filterByField = useCallback((lang: Language, fields: string[]) =>
     !fields.length || fields.some(f => lang.fields.includes(f))
   , []);
 
   const filtered = useMemo(() => {
     if (!filters.level.length && !filters.par.length && !filters.field.length && !filters.search) return languages;
-
-    return languages.filter(lang => 
+    return languages.filter(lang =>
       filterBySearch(lang, filters.search) &&
       filterByLevel(lang, filters.level) &&
       filterByPar(lang, filters.par) &&
@@ -59,21 +54,31 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
     );
   }, [languages, filters, filterBySearch, filterByLevel, filterByPar, filterByField]);
 
-  const hasFilters = filters.level.length > 0 || filters.field.length > 0 || filters.search.length > 0;
+  const sorted = useMemo(() => {
+    return [...filtered].sort((a, b) => {
+      switch (sortOption) {
+        case 'id-asc': return a.id - b.id;
+        case 'id-desc': return b.id - a.id;
+        case 'name-asc': return a.name.localeCompare(b.name);
+        case 'name-desc': return b.name.localeCompare(a.name);
+        default: return 0;
+      }
+    });
+  }, [filtered, sortOption]);
+
+  const hasFilters = filters.level.length > 0 || filters.par.length > 0 || filters.field.length > 0 || filters.search.length > 0;
 
   const navigate = useCallback((dir: 1 | -1) => {
-    if (!selected || !filtered.length) return;
-    const idx = filtered.findIndex(l => l.id === selected.id);
+    if (!selected || !sorted.length) return;
+    const idx = sorted.findIndex(l => l.id === selected.id);
     if (idx === -1) return;
-    setSelected(filtered[(idx + dir + filtered.length) % filtered.length]);
-  }, [selected, filtered]);
+    setSelected(sorted[(idx + dir + sorted.length) % sorted.length]);
+  }, [selected, sorted]);
 
   const reset = useCallback(() => {
     setFilters({ level: [], par: [], field: [], search: '' });
     setSearchInput('');
   }, []);
-
-  const handleCardClick = useCallback((lang: Language) => setSelected(lang), []);
 
   return (
     <div className="min-h-screen text-gray-900">
@@ -127,7 +132,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
                 className="cursor-pointer px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 shadow-md disabled:opacity-50 transition-colors"
                 disabled={!hasFilters}
               >
-               🔄 รีเซ็ตทั้งหมด
+                🔄 รีเซ็ตทั้งหมด
               </button>
             </div>
           </div>
@@ -140,9 +145,11 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
             </p>
           </div>
 
-          <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filtered.length > 0 ? (
-              filtered.map((lang) => (
+          <SortPanel sortOption={sortOption} setSortOption={setSortOption} />
+
+          <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
+            {sorted.length > 0 ? (
+              sorted.map((lang) => (
                 <MemoCard
                   key={lang.id}
                   language={lang}

@@ -16,28 +16,32 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-.card:hover .language-name {
+.card:hover .language-name, .card:hover .language-desc {
   color: var(--level-highlight-color);
-  color:#818181;
+  color:#a0a0a0;
+}
+
+.card:hover .language-par {
+  color: #3b82f6;
 }
 
 /* Level Gradients */
-.lang-level.Machine-Level {
+.lang-level.Machine-Level, .lang-level-detail.Machine-Level {
   background: linear-gradient(135deg, #5a2020, #ff3b3b, #5a2020);
 }
-.lang-level.Low-Level {
+.lang-level.Low-Level, .lang-level-detail.Low-Level {
   background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1e3a8a);
 }
-.lang-level.Mid-Level {
+.lang-level.Mid-Level, .lang-level-detail.Mid-Level {
   background: linear-gradient(135deg, #b45309, #fde047, #b45309);
 }
-.lang-level.High-Level {
+.lang-level.High-Level, .lang-level-detail.High-Level {
   background: linear-gradient(135deg, #065f46, #34d399, #065f46);
 }
-.lang-level.Very-High-Level {
+.lang-level.Very-High-Level, .lang-level-detail.Very-High-Level {
   background: linear-gradient(135deg, #6d28d9, #c084fc, #6d28d9);
 }
-.lang-level.Unknown {
+.lang-level.Unknown, .lang-level-detail.Unknown {
   background: linear-gradient(135deg, #4b5563, #9ca3af, #4b5563);
 }
 

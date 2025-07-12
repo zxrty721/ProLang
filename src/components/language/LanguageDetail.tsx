@@ -217,8 +217,8 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                 </div>
 
                 <div className="mb-6">
-                    <span className="section-title text-2xl font-bold mb-4">🧾 รายละเอียด</span>
-                    <p className="desc text-gray-700 leading-relaxed">{language.desc}</p>
+                    <span className="section-title text-2xl font-bold mb-4">🧾 รายละเอียด:</span>
+                    <p className="desc text-gray-700 leading-relaxed mt-3">{language.desc}</p>
                 </div>
 
                 <div className="info-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -243,11 +243,11 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                         <span className="section-title block text-xl text-gray-600 mb-2">🏢 องค์กร</span>
                         <span className=" font-medium text-gray-900">{getOrganization(language.slug)}</span>
                     </div>
-                    <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
+                    <div className="Client info-box bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">⭐ ระดับความยาก</span>
-                        <span className={`lang-level-detail ${difficultyClass} font-medium block mb-2`}>
-                        </span>
+                        <span className={`lang-level-detail text-center ${difficultyClass} font-medium block mb-2`}>
                         {fieldlevelDesc}
+                        </span>
                     </div>
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>
@@ -260,7 +260,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                 </div>
 
                 <div className="section mb-8">
-                    <h2 className="section-title text-2xl font-bold mb-4">💡 ผลงาน :</h2>
+                    <h2 className="section-title text-2xl font-bold mb-4">💡 ผลงาน:</h2>
                     <div className="badge-group flex flex-wrap gap-2">
                         {getWorksExamples(language.slug).map((p, i) => (
                             <span key={i} className="Client badge tag bg-yellow-300 text-yellow-800 px-2 py-1 rounded-full text-sm">{p}</span>
@@ -269,7 +269,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                </div>
 
                 <div className="section mb-8">
-                    <h2 className="section-title text-2xl font-bold mb-4">🤝 ชุมชน :</h2>
+                    <h2 className="section-title text-2xl font-bold mb-4">🤝 ชุมชน:</h2>
                     <div className="badge-group flex flex-wrap gap-2">
                         {getCommunity(language.slug).map((item, index) => (
                             <span  key={index}
@@ -282,7 +282,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
 
                 {mappedFields.length > 0 && (
                     <div className="section mb-8">
-                        <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง :</h2>
+                        <h2 className="section-title text-2xl font-bold mb-4">💼 ใช้ทำอะไรบ้าง:</h2>
                         <div className="badge-group flex flex-wrap gap-2">
                             {mappedFields.map((use, i) => (
                                 <span key={i} className="Client badge green bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -295,7 +295,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
 
                 {language.rank && (
                     <div className="section mb-8">
-                        <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม :</h2>
+                        <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม:</h2>
                         <div className="Clientbg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                             <span className="text-lg">
                                 อันดับความนิยม: <strong className="text-yellow-600">#{language.rank}</strong>

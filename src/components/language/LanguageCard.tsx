@@ -74,7 +74,7 @@ const LanguageCard = memo(({ language, isSelected, onClick }: LanguageCardProps)
       <div className="language-name">{language.name}</div>
       <div className="language-desc">{truncatedDesc}</div>
       <div className="language-meta">
-        <div className="flex flex-wrap gap-2">
+        <div className="language-par flex flex-wrap gap-2">
         {language.par.map(paradigm => (
             <span key={paradigm} className="tag text-xs bg-gray-50 rounded-xl p-2 shadow-sm">
               {paradigm}

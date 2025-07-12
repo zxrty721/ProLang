@@ -190,31 +190,7 @@ body {
   font-weight: bold;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-
-.lang-level-detail.Machine-Level {
-  background: linear-gradient(135deg, #5a2020, #ff0000, #5a2020);
-}
-
-.lang-level-detail.Low-Level {
-  background: linear-gradient(135deg, #764ba2, #667eea, #764ba2);
-}
-
-.lang-level-detail.Mid-Level {
-  background: linear-gradient(135deg, #fda085, #f6d365, #fda085);
-}
-
-.lang-level-detail.High-Level {
-  background: linear-gradient(135deg, #8fd3f4, #84fab0, #8fd3f4);
-}
-
-.lang-level-detail.Very-High-Level {
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb, #a18cd1);
-}
-
-.lang-level-detail.Unknown {
-  background: linear-gradient(135deg, #8b8b8b, #575757, #686868);
-}
-
+ 
 /* ---------- Animations ---------- */
 @keyframes fadeIn {
   from {

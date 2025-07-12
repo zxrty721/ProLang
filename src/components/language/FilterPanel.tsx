@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { useMemo, memo } from 'react';
 import { fieldMap, getParadiamsShow } from '../../utils/card';
-import { getParadigms } from '../../utils/languageCountries'; // <-- Import สิ่งที่เราสร้างไว้
-
 
 interface FilterPanelProps {
   levelFilter: string[];
@@ -31,16 +29,14 @@ const FilterPanel = ({
     setFunc(updated);
   };
 
-  const levelOptions = useMemo(
-    () => ['machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level', 'unknown'],
-    []
-  );
-
+  const levelOptions = useMemo(() => ['machine-level', 'low-level', 'mid-level', 'high-level', 'very-high-level', 'unknown'], [] );
   const fieldOptions = useMemo(() => Object.entries(fieldMap), []);
   const ParOptions = useMemo(() => Object.entries(getParadiamsShow), []);
 
   return (
     <div className="flex flex-col gap-6 w-full">
+      
+
       {/* Level Filter */}
       <div>
         <h3 className="font-bold text-lg mb-3 text-gray-800">
