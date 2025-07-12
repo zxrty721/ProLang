@@ -10,14 +10,14 @@ export function getDifficultyClass(diff: string): string {
 }
 
 export function getDescLevel(diff: string): string {
-  const levelDescriptions: { [key: string]: string} = {
-    "1": 'นี่คือภาษาระดับ Machine-Level ที่ใกล้เคียงฮาร์ดแวร์มากที่สุด',
-    "2": 'นี่คือภาษาระดับ Low-Level ที่ยังคงใกล้เคียงฮาร์ดแวร์ แต่พออ่านเข้าใจได้',
-    "3": 'นี่คือภาษาระดับ Mid-Level ที่อยู่กึ่งกลางระหว่าง Low-Level และ High-Level',
-    "4": 'นี่คือภาษาระดับ High-Level ที่เขียนและอ่านง่าย พัฒนาได้รวดเร็ว',
-    "5": 'นี่คือภาษาระดับ Very-High-Level ที่ออกแบบมาสำหรับงานเฉพาะทางและ Abstract สูงมาก',
-  }
-  return levelDescriptions[diff.toLowerCase()] || 'ไม่ทราบระดับของภาษา';
+  const levelDescriptions: { [key: string]: string } = {
+    "1": 'ภาษานี้ใกล้เคียงกับฮาร์ดแวร์มากที่สุด เขียนยาก แต่คุมทุกอย่างได้ละเอียดสุดๆ',
+    "2": 'ยังอยู่ใกล้ฮาร์ดแวร์ แต่เริ่มอ่านรู้เรื่องมากขึ้น ใช้ควบคุมระบบแบบเจาะลึก',
+    "3": 'อยู่ตรงกลางระหว่างเขียนง่ายกับควบคุมได้ดี ใช้ได้ทั้งงานทั่วไปและงานเฉพาะทาง',
+    "4": 'ภาษานี้ใช้ง่าย อ่านสบาย เหมาะกับงานเขียนโปรแกรมทั่วไป พัฒนาไว',
+    "5": 'เป็นภาษาที่ง่ายสุดๆ เน้นใช้งานเฉพาะด้าน เช่น คำนวณเลข วิเคราะห์ข้อมูล หรือสั่งงานแบบอัตโนมัติ',
+  };
+  return levelDescriptions[diff.toLowerCase()] || 'ยังไม่รู้ว่าภาษานี้อยู่ระดับไหนเลย';
 };
 
 export const getParadiamsShow: Record<string, string> = {

@@ -82,7 +82,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
         } catch { return getFoundedYear(language.slug); }
     }, [getFoundedYear(language.slug)]);
 
-    const logoSrc = useMemo(() => BASE_URL + language.logo, [language.logo]);
+    const logoSrc = useMemo(() => BASE_URL + 'images/' + language.logo, [language.logo]);
     const difficultyClass = useMemo(() => getDifficultyClass(language.level), [language.level]);
     const fieldlevelDesc = useMemo(() => getDescLevel(language.level), [language.level]);
     
@@ -246,8 +246,8 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">⭐ ระดับความยาก</span>
                         <span className={`lang-level-detail ${difficultyClass} font-medium block mb-2`}>
-                        {fieldlevelDesc}
                         </span>
+                        {fieldlevelDesc}
                     </div>
                     <div className="Client info-box bg-white p-4 rounded-lg font-bold border border-gray-200 shadow-sm">
                         <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>

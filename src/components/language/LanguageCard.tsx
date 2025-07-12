@@ -36,7 +36,7 @@ const getLevelClass = (difficultyClass: string | null) => {
 
 const LanguageCard = memo(({ language, isSelected, onClick }: LanguageCardProps) => {
   // Inline computations - ลด useMemo overhead
-  const logoSrc = BASE_URL + language.logo;
+  const logoSrc = BASE_URL + 'images/' + language.logo;
   const fallbackSrc = createFallbackSrc(language.name);
   const difficultyClass = getDifficultyClass(language.level);
   

@@ -553,7 +553,7 @@ export function getCountryflag(slug: string): string {
     const info = languageMap[slug.toLowerCase()];
     if (!info) return "/none";
     const BASE_URL = import.meta.env.BASE_URL;
-    return BASE_URL + 'flags/' + info.flag;
+    return BASE_URL + 'images/flags/' + info.flag;
 }
 
 /** คืน community เป็น array ของ strings พร้อม Emoji */
