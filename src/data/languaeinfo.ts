@@ -1,30 +1,7 @@
-// languageInfo.ts
-// languageInfo.ts
+import type { info } from '../utils/language'
 
-interface LanguageInfo {
-    country: string;
-    flag: string;
-    community: string[];
-    organization: string;
-    
-    // 1. "ผลงาน"
-    //    เก็บตัวอย่างโปรเจกต์/ผลิตภัณฑ์ที่เป็นรูปธรรมที่สร้างด้วยภาษานี้
-    worksExamples: string[]; 
-
-    // 2. "การใช้งานหลัก"
-    //    เก็บข้อความอธิบายหมวดหมู่การใช้งานหลัก/โดดเด่นของภาษานั้นๆ โดยตรง
-    //    *** ไม่มี fieldMap มาเกี่ยวข้องแล้ว ***
-    realWorldExamples: string[]; 
-
-    founded: string;
-
-    // 3. "รูปแบบการเขียนโปรแกรม" (Paradigms)
-    //    เก็บประเภทของรูปแบบการเขียนโค้ดที่ภาษานั้นๆ รองรับ
-    paradigms: string[]; // <-- เพิ่มฟิลด์นี้เข้ามา
-}
-
-export const languageMap: Record<string, LanguageInfo> = {
-    // --- ตัวอย่างสำหรับ Python (อัปเดตใหม่) ---
+export const languageMap: Record<string, info> = {
+    // --- ตัวอย่างสำหรับ Python ---
     python: {
         country: "เนเธอร์แลนด์ (NL)",
         flag: "nl.png",
@@ -38,36 +15,48 @@ export const languageMap: Record<string, LanguageInfo> = {
             "📜 เครื่องมือ Scripting / Automation (Ansible)"
         ],
         realWorldExamples: [
-            "⚙️ Web Backend (ส่วนหลังเว็บ)", 
-            "📊 Data Science", 
+            "⚙️ Web Backend (ส่วนหลังเว็บ)",
+            "📊 Data Science",
             "🧠 ปัญญาประดิษฐ์ (AI)",
-            "📜 Scripting" 
+            "📜 Scripting"
         ],
         founded: "December 1990",
-        paradigms: ["Object-Oriented", "Imperative", "Functional", "Procedural"], // <-- เพิ่มข้อมูล paradigms
+        paradigms: ["Object-Oriented", "Imperative", "Functional", "Procedural"],
+        popularityScore: 13.91, // TIOBE Index June 2024: #1 (13.91%)
+        popularitySources: {
+            tiobe: "13.91% (TIOBE Index June 2024, #1)",
+            pypl: "27.50% (PYPL Index June 2024, #1)",
+            stackOverflow: "48.07% (Stack Overflow 2023, Most Used)",
+        },
     },
-    // --- ตัวอย่างสำหรับ Java (อัปเดตใหม่) ---
+    // --- ตัวอย่างสำหรับ Java ---
     java: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
         community: ["🤝 Java Community Process (JCP)", "📚 Dev.java", "💬 Stack Overflow Java tag", "👥 comunitiez/java Reddit r/java"],
         organization: "Oracle",
         worksExamples: [
-            "🏢 แอปพลิเคชันองค์กร (Spring Boot)", 
-            "📱 แอปมือถือ Android", 
-            "📊 แพลตฟอร์ม Big Data (Apache Hadoop, Apache Kafka)", 
+            "🏢 แอปพลิเคชันองค์กร (Spring Boot)",
+            "📱 แอปมือถือ Android",
+            "📊 แพลตฟอร์ม Big Data (Apache Hadoop, Apache Kafka)",
             "🌐 เว็บแอปพลิเคชันระดับ Enterprise (Gmail, Twitter - บางส่วน)"
         ],
         realWorldExamples: [
-            "⚙️ Web Backend (ส่วนหลังเว็บ)", 
-            "📱 การพัฒนาแอปมือถือ", 
+            "⚙️ Web Backend (ส่วนหลังเว็บ)",
+            "📱 การพัฒนาแอปมือถือ",
             "📊 Data Processing / Big Data",
-            "🛠️ ระบบ Enterprise" 
+            "🛠️ ระบบ Enterprise"
         ],
         founded: "May 23, 1995",
-        paradigms: ["Object-Oriented", "Imperative", "Functional", "Procedural"], // <-- เพิ่มข้อมูล paradigms
+        paradigms: ["Object-Oriented", "Imperative", "Functional", "Procedural"],
+        popularityScore: 11.51, // TIOBE Index June 2024: #2 (11.51%)
+        popularitySources: {
+            tiobe: "11.51% (TIOBE Index June 2024, #2)",
+            pypl: "17.91% (PYPL Index June 2024, #2)",
+            stackOverflow: "30.55% (Stack Overflow 2023, Most Used)",
+        },
     },
-    // ... (คุณจะต้องอัปเดตข้อมูลของภาษาอื่นๆ ใน languageMap ให้มีฟิลด์ paradigms และ realWorldExamples เก็บข้อความโดยตรง) ...
+    // --- C ---
     c: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -77,7 +66,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["💻 ระบบปฏิบัติการ", "🔌 ระบบสมองกลฝังตัว", "🗄️ ระบบฐานข้อมูล", "🎮 การพัฒนาเกม"],
         founded: "1972",
         paradigms: ["Procedural", "Imperative"],
+        popularityScore: 9.77, // TIOBE Index June 2024: #3 (9.77%)
+        popularitySources: {
+            tiobe: "9.77% (TIOBE Index June 2024, #3)",
+            pypl: "7.74% (PYPL Index June 2024, #3)",
+            stackOverflow: "19.34% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- C++ ---
     cpp: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -87,7 +83,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["💻 ระบบปฏิบัติการ", "🖥️ แอปพลิเคชันเดสก์ท็อป", "🎮 การพัฒนาเกม", "🎨 กราฟิก/มัลติมีเดีย"],
         founded: "1979",
         paradigms: ["Object-Oriented", "Imperative", "Procedural", "Functional"],
+        popularityScore: 8.87, // TIOBE Index June 2024: #4 (8.87%)
+        popularitySources: {
+            tiobe: "8.87% (TIOBE Index June 2024, #4)",
+            pypl: "8.11% (PYPL Index June 2024, #4)",
+            stackOverflow: "22.25% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- C# ---
     csharp: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -97,7 +100,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎮 การพัฒนาเกม", "🖥️ แอปพลิเคชันเดสก์ท็อป", "⚙️ Web Backend (ส่วนหลังเว็บ)", "☁️ Cloud Computing"],
         founded: "2000",
         paradigms: ["Object-Oriented", "Imperative", "Functional", "Procedural"],
+        popularityScore: 6.54, // TIOBE Index June 2024: #5 (6.54%)
+        popularitySources: {
+            tiobe: "6.54% (TIOBE Index June 2024, #5)",
+            pypl: "6.00% (PYPL Index June 2024, #5)",
+            stackOverflow: "26.97% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- JavaScript ---
     javascript: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -107,7 +117,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🌐 Web Frontend (ส่วนหน้าเว็บ)", "⚙️ Web Backend (ส่วนหลังเว็บ)", "📱 การพัฒนาแอปมือถือ", "🖥️ แอปพลิเคชันเดสก์ท็อป"],
         founded: "December 4, 1995",
         paradigms: ["Imperative", "Functional", "Object-Oriented", "Event-Driven"],
+        popularityScore: 2.14, // TIOBE Index June 2024: #7 (2.14%) - Note: TIOBE often separates JS & TS
+        popularitySources: {
+            tiobe: "2.14% (TIOBE Index June 2024, #7)",
+            pypl: "3.27% (PYPL Index June 2024, #6)",
+            stackOverflow: "63.51% (Stack Overflow 2023, Most Used - most used language)",
+        },
     },
+    // --- Go ---
     go: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -117,7 +134,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["☁️ Cloud Computing", "📡 บริการเครือข่าย", "⚙️ Web Backend (ส่วนหลังเว็บ)", "🛠️ Command Line Tools"],
         founded: "November 10, 2009",
         paradigms: ["Imperative", "Procedural"],
+        popularityScore: 1.34, // TIOBE Index June 2024: #10 (1.34%)
+        popularitySources: {
+            tiobe: "1.34% (TIOBE Index June 2024, #10)",
+            pypl: "1.49% (PYPL Index June 2024, #10)",
+            stackOverflow: "12.28% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Rust ---
     rust: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -127,7 +151,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["💻 การเขียนโปรแกรมระบบ", "🔗 Blockchain", "⚡ ระบบประสิทธิภาพสูง", "🕸️ WebAssembly"],
         founded: "2010",
         paradigms: ["Imperative", "Functional"],
+        popularityScore: 0.77, // TIOBE Index June 2024: #19 (0.77%)
+        popularitySources: {
+            tiobe: "0.77% (TIOBE Index June 2024, #19)",
+            pypl: "0.93% (PYPL Index June 2024, #16)",
+            stackOverflow: "17.75% (Stack Overflow 2023, Most Loved)", // Often highly loved
+        },
     },
+    // --- TypeScript ---
     typescript: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -137,7 +168,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🌐 Web Frontend (ส่วนหน้าเว็บ)", "⚙️ Web Backend (ส่วนหลังเว็บ)", "🖥️ แอปพลิเคชันเดสก์ท็อป", "☁️ Cloud Computing"],
         founded: "October 1, 2012",
         paradigms: ["Object-Oriented", "Imperative", "Functional"], // Inherits from JS but often used with strong OOP/Functional patterns
+        popularityScore: 1.48, // TIOBE Index June 2024: #8 (1.48%)
+        popularitySources: {
+            tiobe: "1.48% (TIOBE Index June 2024, #8)",
+            pypl: "2.16% (PYPL Index June 2024, #7)",
+            stackOverflow: "38.87% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- PHP ---
     php: {
         country: "แคนาดา (CA)",
         flag: "ca.png",
@@ -147,7 +185,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚙️ Web Backend (ส่วนหลังเว็บ)", "🌐 การพัฒนาเว็บไซต์", "🛒 E-commerce"],
         founded: "1994",
         paradigms: ["Imperative", "Object-Oriented", "Procedural", "Functional"],
+        popularityScore: 1.63, // TIOBE Index June 2024: #6 (1.63%)
+        popularitySources: {
+            tiobe: "1.63% (TIOBE Index June 2024, #6)",
+            pypl: "2.28% (PYPL Index June 2024, #8)",
+            stackOverflow: "19.98% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Ruby ---
     ruby: {
         country: "ญี่ปุ่น (JP)",
         flag: "jp.png",
@@ -157,7 +202,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚙️ Web Backend (ส่วนหลังเว็บ)", "🛠️ DevOps", "📜 Scripting"],
         founded: "December 21, 1995",
         paradigms: ["Object-Oriented", "Imperative", "Functional", "Procedural"],
+        popularityScore: 0.94, // TIOBE Index June 2024: #14 (0.94%)
+        popularitySources: {
+            tiobe: "0.94% (TIOBE Index June 2024, #14)",
+            pypl: "1.04% (PYPL Index June 2024, #13)",
+            stackOverflow: "6.71% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Swift ---
     swift: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -167,7 +219,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📱 การพัฒนาแอปมือถือ (iOS)", "🖥️ แอปพลิเคชันเดสก์ท็อป (macOS)", "💻 ระบบปฏิบัติการ"],
         founded: "June 2, 2014",
         paradigms: ["Object-Oriented", "Functional", "Imperative"],
+        popularityScore: 0.88, // TIOBE Index June 2024: #15 (0.88%)
+        popularitySources: {
+            tiobe: "0.88% (TIOBE Index June 2024, #15)",
+            pypl: "0.86% (PYPL Index June 2024, #17)",
+            stackOverflow: "7.77% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Kotlin ---
     kotlin: {
         country: "รัสเซีย (RU)",
         flag: "ru.png",
@@ -177,7 +236,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📱 การพัฒนาแอปมือถือ (Android)", "⚙️ Web Backend (ส่วนหลังเว็บ)", "☁️ Cloud Computing"],
         founded: "July 2011",
         paradigms: ["Object-Oriented", "Functional", "Imperative"],
+        popularityScore: 0.69, // TIOBE Index June 2024: #20 (0.69%)
+        popularitySources: {
+            tiobe: "0.69% (TIOBE Index June 2024, #20)",
+            pypl: "0.81% (PYPL Index June 2024, #18)",
+            stackOverflow: "8.32% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- R ---
     r: {
         country: "นิวซีแลนด์ (NZ)",
         flag: "nz.png",
@@ -187,7 +253,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📊 วิทยาศาสตร์ข้อมูล", "🔬 การวิเคราะห์ข้อมูล", "🎨 การสร้างภาพข้อมูล", "🧠 Machine Learning"],
         founded: "1993",
         paradigms: ["Functional", "Imperative"],
+        popularityScore: 0.68, // TIOBE Index June 2024: #21 (0.68%)
+        popularitySources: {
+            tiobe: "0.68% (TIOBE Index June 2024, #21)",
+            pypl: "1.06% (PYPL Index June 2024, #12)",
+            stackOverflow: "5.57% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- SQL ---
     sql: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -197,7 +270,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🗄️ การจัดการฐานข้อมูล", "📊 การจัดการข้อมูล"],
         founded: "1974",
         paradigms: ["Declarative"], // SQL is primarily declarative
+        popularityScore: 1.25, // TIOBE Index June 2024: #11 (1.25%)
+        popularitySources: {
+            tiobe: "1.25% (TIOBE Index June 2024, #11)",
+            pypl: "2.05% (PYPL Index June 2024, #9)",
+            stackOverflow: "47.78% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Dart ---
     dart: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -207,7 +287,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📱 การพัฒนาแอปมือถือ (Cross-platform)", "🌐 Web Frontend (ส่วนหน้าเว็บ)", "🖥️ แอปพลิเคชันเดสก์ท็อป"],
         founded: "October 10, 2011",
         paradigms: ["Object-Oriented", "Imperative", "Functional"],
+        popularityScore: 0.49, // TIOBE Index June 2024: #26 (0.49%)
+        popularitySources: {
+            tiobe: "0.49% (TIOBE Index June 2024, #26)",
+            pypl: "0.49% (PYPL Index June 2024, #21)",
+            stackOverflow: "5.82% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Scala ---
     scala: {
         country: "สวิตเซอร์แลนด์ (CH)",
         flag: "ch.png",
@@ -217,7 +304,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📊 Big Data", "⚙️ Web Backend (ส่วนหลังเว็บ)", "☁️ Cloud Computing", "⚡ ระบบกระจาย (Distributed Systems)"],
         founded: "2003",
         paradigms: ["Functional", "Object-Oriented"],
+        popularityScore: 0.44, // TIOBE Index June 2024: #30 (0.44%)
+        popularitySources: {
+            tiobe: "0.44% (TIOBE Index June 2024, #30)",
+            pypl: "0.41% (PYPL Index June 2024, #23)",
+            stackOverflow: "2.71% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Perl ---
     perl: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -227,7 +321,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📜 Scripting", "⚙️ Web Backend (ส่วนหลังเว็บ)", "📄 การประมวลผลข้อความ"],
         founded: "December 18, 1987",
         paradigms: ["Imperative", "Procedural", "Object-Oriented", "Functional"],
+        popularityScore: 0.46, // TIOBE Index June 2024: #28 (0.46%)
+        popularitySources: {
+            tiobe: "0.46% (TIOBE Index June 2024, #28)",
+            pypl: "0.26% (PYPL Index June 2024, #33)",
+            stackOverflow: "1.89% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Objective-C ---
     objectivec: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -237,7 +338,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📱 การพัฒนาแอปมือถือ (iOS เดิม)", "🖥️ แอปพลิเคชันเดสก์ท็อป (macOS เดิม)", "🎨 กราฟิกและมัลติมีเดีย"],
         founded: "1984",
         paradigms: ["Object-Oriented", "Imperative"],
+        popularityScore: 0.45, // TIOBE Index June 2024: #29 (0.45%)
+        popularitySources: {
+            tiobe: "0.45% (TIOBE Index June 2024, #29)",
+            pypl: "0.19% (PYPL Index June 2024, #38)",
+            stackOverflow: "0.78% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Assembly ---
     assembly: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -247,7 +355,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["💻 การเขียนโปรแกรมระบบ", "🔌 ระบบสมองกลฝังตัว", "🛡️ ความปลอดภัยไซเบอร์ (Malware)"],
         founded: "1940s",
         paradigms: ["Imperative", "Procedural"],
+        popularityScore: 0.42, // TIOBE Index June 2024: #33 (0.42%)
+        popularitySources: {
+            tiobe: "0.42% (TIOBE Index June 2024, #33)",
+            pypl: "0.25% (PYPL Index June 2024, #34)",
+            stackOverflow: "2.44% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- MATLAB ---
     matlab: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -257,7 +372,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["➕ การคำนวณทางคณิตศาสตร์", "🔬 วิทยาศาสตร์และวิศวกรรม", "📊 การวิเคราะห์ข้อมูล"],
         founded: "1984",
         paradigms: ["Imperative", "Procedural", "Functional", "Object-Oriented"], // Can be used in various styles
+        popularityScore: 0.65, // TIOBE Index June 2024: #22 (0.65%)
+        popularitySources: {
+            tiobe: "0.65% (TIOBE Index June 2024, #22)",
+            pypl: "0.58% (PYPL Index June 2024, #19)",
+            stackOverflow: "1.23% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- COBOL ---
     cobol: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -267,7 +389,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🏦 ระบบการเงิน/ธนาคาร", "🛠️ Mainframe Systems"],
         founded: "1959",
         paradigms: ["Imperative", "Procedural"],
+        popularityScore: 0.38, // TIOBE Index June 2024: #36 (0.38%)
+        popularitySources: {
+            tiobe: "0.38% (TIOBE Index June 2024, #36)",
+            pypl: "0.14% (PYPL Index June 2024, #44)",
+            // Stack Overflow doesn't typically track COBOL actively
+        },
     },
+    // --- Fortran ---
     fortran: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -277,7 +406,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🔬 การคำนวณทางวิทยาศาสตร์", "🚀 High-Performance Computing (HPC)", "➕ คณิตศาสตร์"],
         founded: "1957",
         paradigms: ["Imperative", "Procedural"],
+        popularityScore: 0.32, // TIOBE Index June 2024: #39 (0.32%)
+        popularitySources: {
+            tiobe: "0.32% (TIOBE Index June 2024, #39)",
+            pypl: "0.15% (PYPL Index June 2024, #42)",
+            // Stack Overflow doesn't typically track Fortran actively
+        },
     },
+    // --- Lisp ---
     lisp: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -287,7 +423,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🧠 ปัญญาประดิษฐ์ (AI)", "📄 การประมวลผลข้อความ", "📚 การวิจัยทางคอมพิวเตอร์"],
         founded: "1958",
         paradigms: ["Functional", "Imperative"],
+        popularityScore: 0.17, // TIOBE Index June 2024: #48 (0.17%) - includes Common Lisp
+        popularitySources: {
+            tiobe: "0.17% (TIOBE Index June 2024, #48)",
+            pypl: "0.16% (PYPL Index June 2024, #40)",
+        },
     },
+    // --- Haskell ---
     haskell: {
         country: "ออสเตรเลีย (AU)",
         flag: "au.png",
@@ -297,7 +439,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🔬 การวิจัยทางวิทยาการคอมพิวเตอร์", "💰 ระบบการเงิน", "⚙️ Web Backend (ส่วนหลังเว็บ)"],
         founded: "1990",
         paradigms: ["Functional", "Declarative"],
+        popularityScore: 0.28, // TIOBE Index June 2024: #42 (0.28%)
+        popularitySources: {
+            tiobe: "0.28% (TIOBE Index June 2024, #42)",
+            pypl: "0.29% (PYPL Index June 2024, #30)",
+            stackOverflow: "1.16% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Prolog ---
     prolog: {
         country: "ฝรั่งเศส (FR)",
         flag: "fr.png",
@@ -307,7 +456,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🧠 ปัญญาประดิษฐ์ (AI)", "📚 ระบบฐานความรู้"],
         founded: "1972",
         paradigms: ["Logic Programming", "Declarative"],
+        popularityScore: 0.12, // TIOBE Index June 2024: #50 (0.12%)
+        popularitySources: {
+            tiobe: "0.12% (TIOBE Index June 2024, #50)",
+            pypl: "0.10% (PYPL Index June 2024, #48)",
+        },
     },
+    // --- Lua ---
     lua: {
         country: "บราซิล (BR)",
         flag: "br.png",
@@ -317,8 +472,15 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎮 การพัฒนาเกม", "🔌 ระบบสมองกลฝังตัว", "📜 Scripting"],
         founded: "1993",
         paradigms: ["Imperative", "Procedural", "Functional", "Event-Driven"],
+        popularityScore: 0.81, // TIOBE Index June 2024: #17 (0.81%)
+        popularitySources: {
+            tiobe: "0.81% (TIOBE Index June 2024, #17)",
+            pypl: "0.33% (PYPL Index June 2024, #28)",
+            stackOverflow: "1.89% (Stack Overflow 2023, Most Used)",
+        },
     },
-    luau: { // Based on Lua
+    // --- Luau (Based on Lua, specific to Roblox) ---
+    luau: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
         community: ["🧱 Roblox Developer Forum", "💬 Luau Discord"],
@@ -327,7 +489,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎮 การพัฒนาเกม", "🎓 การศึกษา (เครื่องมือสร้างเกม)"],
         founded: "2020",
         paradigms: ["Imperative", "Procedural", "Functional"],
+        popularityScore: 0.05, // Estimate, as it's a niche language based on Lua
+        popularitySources: {
+            // No direct TIOBE/PYPL/SO data for Luau, as it's a dialect
+            custom: "เฉพาะแพลตฟอร์ม Roblox",
+        },
     },
+    // --- Elixir ---
     elixir: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -337,7 +505,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚙️ Web Backend (ส่วนหลังเว็บ)", "⚡ ระบบ Concurrent", "🌐 ระบบกระจาย (Distributed Systems)"],
         founded: "2012",
         paradigms: ["Functional", "Declarative"],
+        popularityScore: 0.17, // TIOBE Index June 2024: #49 (0.17%)
+        popularitySources: {
+            tiobe: "0.17% (TIOBE Index June 2024, #49)",
+            pypl: "0.14% (PYPL Index June 2024, #43)",
+            stackOverflow: "2.12% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Clojure ---
     clojure: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -347,7 +522,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚙️ Web Backend (ส่วนหลังเว็บ)", "📊 Data Processing", "💰 ระบบการเงิน"],
         founded: "2007",
         paradigms: ["Functional", "Imperative"], // Has an imperative host language (Java) but idiomatic Clojure is functional
+        popularityScore: 0.19, // TIOBE Index June 2024: #46 (0.19%)
+        popularitySources: {
+            tiobe: "0.19% (TIOBE Index June 2024, #46)",
+            pypl: "0.12% (PYPL Index June 2024, #46)",
+            stackOverflow: "0.95% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Ada ---
     ada: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -357,7 +539,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🔌 ระบบสมองกลฝังตัว", "🚀 ระบบการบินและอวกาศ", "🛡️ ระบบความปลอดภัยสูง"],
         founded: "1980",
         paradigms: ["Imperative", "Object-Oriented", "Procedural"],
+        popularityScore: 0.14, // TIOBE Index June 2024: #54 (0.14%)
+        popularitySources: {
+            tiobe: "0.14% (TIOBE Index June 2024, #54)",
+            // No direct PYPL/SO data for Ada typically
+        },
     },
+    // --- Scheme ---
     scheme: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -367,7 +555,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎓 การศึกษา", "🔬 การวิจัยทางคอมพิวเตอร์", "📚 ภาษาโปรแกรม"],
         founded: "1975",
         paradigms: ["Functional", "Imperative"],
+        popularityScore: 0.1, // Estimate, often grouped under Lisp
+        popularitySources: {
+            // No direct TIOBE/PYPL/SO data for Scheme
+        },
     },
+    // --- Smalltalk ---
     smalltalk: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -377,7 +570,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎓 การศึกษา", "💰 ระบบการเงิน", "🖥️ การพัฒนาระบบ"],
         founded: "1970s",
         paradigms: ["Object-Oriented"],
+        popularityScore: 0.08, // Estimate, quite niche
+        popularitySources: {
+            // No direct TIOBE/PYPL/SO data for Smalltalk
+        },
     },
+    // --- Julia ---
     julia: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -387,7 +585,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📊 วิทยาศาสตร์ข้อมูล", "🧮 การคำนวณเชิงตัวเลข", "🧠 Machine Learning", "📈 การวิเคราะห์เชิงปริมาณ"],
         founded: "2012",
         paradigms: ["Imperative", "Functional", "Object-Oriented"],
+        popularityScore: 0.55, // TIOBE Index June 2024: #25 (0.55%)
+        popularitySources: {
+            tiobe: "0.55% (TIOBE Index June 2024, #25)",
+            pypl: "0.40% (PYPL Index June 2024, #24)",
+            stackOverflow: "2.16% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- Solidity ---
     solidity: {
         country: "เยอรมนี (DE)",
         flag: "de.png",
@@ -397,7 +602,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🔗 Blockchain", "✍️ Smart Contracts", "🌐 Decentralized Applications"],
         founded: "2014",
         paradigms: ["Object-Oriented", "Imperative"],
+        popularityScore: 0.09, // Estimate, growing but niche
+        popularitySources: {
+            // No direct TIOBE/PYPL/SO data for Solidity
+            custom: "เฉพาะ Blockchain (Ethereum)",
+        },
     },
+    // --- Bash ---
     bash: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -407,7 +618,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📜 Scripting", "🛠️ การดูแลระบบ", "🚀 DevOps"],
         founded: "1989",
         paradigms: ["Procedural", "Imperative"],
+        popularityScore: 0.79, // TIOBE Index June 2024: #18 (0.79%) - often grouped as "Shell"
+        popularitySources: {
+            tiobe: "0.79% (TIOBE Index June 2024, #18 - as 'Shell')",
+            stackOverflow: "26.33% (Stack Overflow 2023, Most Used - as 'Bash/Shell')",
+        },
     },
+    // --- PowerShell ---
     powershell: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -417,7 +634,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📜 Scripting", "🛠️ การดูแลระบบ (Windows)", "☁️ Cloud Automation"],
         founded: "2006",
         paradigms: ["Imperative", "Procedural", "Object-Oriented", "Functional"],
+        popularityScore: 0.36, // TIOBE Index June 2024: #37 (0.36%)
+        popularitySources: {
+            tiobe: "0.36% (TIOBE Index June 2024, #37)",
+            stackOverflow: "6.91% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- GraphQL ---
     graphql: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -427,7 +650,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚙️ API Development", "📦 การดึงข้อมูล", "🌐 Web Services"],
         founded: "2012",
         paradigms: ["Declarative"], // GraphQL is a query language, inherently declarative
+        popularityScore: 0.15, // Estimate, often considered a query language/API spec, not a full programming language
+        popularitySources: {
+            stackOverflow: "12.04% (Stack Overflow 2023, Most Used - as a technology)",
+        },
     },
+    // --- PL/SQL ---
     plsql: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -437,7 +665,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🗄️ การจัดการฐานข้อมูล (Oracle)", "📊 การประมวลผลข้อมูล"],
         founded: "1980s",
         paradigms: ["Procedural", "Imperative", "Declarative"],
+        popularityScore: 0.25, // TIOBE Index June 2024: #44 (0.25%)
+        popularitySources: {
+            tiobe: "0.25% (TIOBE Index June 2024, #44)",
+            // No specific PYPL/SO data often
+        },
     },
+    // --- T-SQL ---
     tsql: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -447,7 +681,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🗄️ การจัดการฐานข้อมูล (SQL Server)", "📊 การประมวลผลข้อมูล"],
         founded: "1980s",
         paradigms: ["Procedural", "Imperative", "Declarative"],
+        popularityScore: 0.22, // TIOBE Index June 2024: #45 (0.22%)
+        popularitySources: {
+            tiobe: "0.22% (TIOBE Index June 2024, #45)",
+            // No specific PYPL/SO data often
+        },
     },
+    // --- AWK ---
     awk: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -457,7 +697,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["📄 การประมวลผลข้อความ", "📊 การวิเคราะห์ข้อมูล", "📜 Scripting"],
         founded: "1977",
         paradigms: ["Procedural", "Imperative"],
+        popularityScore: 0.16, // TIOBE Index June 2024: #52 (0.16%)
+        popularitySources: {
+            tiobe: "0.16% (TIOBE Index June 2024, #52)",
+            // No specific PYPL/SO data often
+        },
     },
+    // --- Pony ---
     pony: {
         country: "สหราชอาณาจักร (GB)",
         flag: "gb.png",
@@ -467,7 +713,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚡ ระบบ Concurrent", "🌐 ระบบกระจาย (Distributed Systems)", "📡 เครือข่ายประสิทธิภาพสูง"],
         founded: "2010",
         paradigms: ["Object-Oriented", "Imperative"],
+        popularityScore: 0.05, // Estimate
+        popularitySources: {
+            custom: "เฉพาะทาง, เน้น Concurrency",
+        },
     },
+    // --- ReScript ---
     rescript: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -477,7 +728,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🌐 Web Frontend (ส่วนหน้าเว็บ)", "🛡️ การเขียนโค้ดที่ปลอดภัย (Type-safe)"],
         founded: "2020",
         paradigms: ["Functional"],
+        popularityScore: 0.07, // Estimate, relatively new/niche
+        popularitySources: {
+            custom: "เฉพาะทาง, Compile to JS, เน้น Type Safety",
+        },
     },
+    // --- Racket ---
     racket: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -487,7 +743,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎓 การศึกษา", "🔬 การวิจัยทางคอมพิวเตอร์", "🛠️ การสร้างภาษาเฉพาะทาง (DSLs)"],
         founded: "1999",
         paradigms: ["Functional", "Imperative"], // Supports multiple paradigms within its framework
+        popularityScore: 0.06, // Estimate, academic/research focus
+        popularitySources: {
+            custom: "เน้นการศึกษาและวิจัย, สร้าง DSLs",
+        },
     },
+    // --- Nim ---
     nim: {
         country: "เยอรมนี (DE)",
         flag: "de.png",
@@ -497,7 +758,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🚀 ระบบประสิทธิภาพสูง", "🔌 ระบบสมองกลฝังตัว", "📜 Scripting", "⚙️ Web Backend (ส่วนหลังเว็บ)"],
         founded: "2008",
         paradigms: ["Imperative", "Procedural", "Object-Oriented", "Functional"],
+        popularityScore: 0.09, // Estimate, growing niche
+        popularitySources: {
+            custom: "ประสิทธิภาพสูง, C-like syntax",
+        },
     },
+    // --- Crystal ---
     crystal: {
         country: "อาร์เจนตินา (AR)",
         flag: "ar.png",
@@ -507,7 +773,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["⚙️ Web Backend (ส่วนหลังเว็บ)", "🛠️ Command Line Tools", "🚀 ระบบประสิทธิภาพสูง"],
         founded: "2012",
         paradigms: ["Object-Oriented", "Imperative", "Functional"],
+        popularityScore: 0.08, // Estimate, similar to Ruby but compiled
+        popularitySources: {
+            custom: "ประสิทธิภาพสูง, คล้าย Ruby",
+        },
     },
+    // --- Zig ---
     zig: {
         country: "สหรัฐอเมริกา (US)",
         flag: "us.png",
@@ -517,7 +788,12 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["💻 การเขียนโปรแกรมระบบ", "🔌 ระบบสมองกลฝังตัว", "🔄 Cross-compilation"],
         founded: "2016",
         paradigms: ["Imperative", "Procedural"],
+        popularityScore: 0.1, // Estimate, modern C alternative
+        popularitySources: {
+            custom: "การเขียน System Programming, ความปลอดภัย",
+        },
     },
+    // --- F# ---
     fsharp: {
         country: "สหราชอาณาจักร (GB)",
         flag: "gb.png",
@@ -527,7 +803,14 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["💰 ระบบการเงิน", "📊 วิทยาศาสตร์ข้อมูล", "⚙️ Web Backend (ส่วนหลังเว็บ)", "☁️ Cloud Computing"],
         founded: "2002",
         paradigms: ["Functional", "Imperative", "Object-Oriented"],
+        popularityScore: 0.2, // TIOBE Index June 2024: #46 (0.20%)
+        popularitySources: {
+            tiobe: "0.20% (TIOBE Index June 2024, #46)",
+            pypl: "0.08% (PYPL Index June 2024, #50)",
+            stackOverflow: "1.08% (Stack Overflow 2023, Most Used)",
+        },
     },
+    // --- OCaml ---
     ocaml: {
         country: "ฝรั่งเศส (FR)",
         flag: "fr.png",
@@ -537,7 +820,13 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🎓 การศึกษา", "🔬 การวิจัยทางคอมพิวเตอร์", "💰 ระบบการเงิน", "⚙️ การพัฒนา Compiler"],
         founded: "1996",
         paradigms: ["Functional", "Imperative", "Object-Oriented"],
+        popularityScore: 0.16, // TIOBE Index June 2024: #53 (0.16%)
+        popularitySources: {
+            tiobe: "0.16% (TIOBE Index June 2024, #53)",
+            pypl: "0.08% (PYPL Index June 2024, #49)",
+        },
     },
+    // --- Vala ---
     vala: {
         country: "เยอรมนี (DE)",
         flag: "de.png",
@@ -547,59 +836,9 @@ export const languageMap: Record<string, LanguageInfo> = {
         realWorldExamples: ["🖥️ แอปพลิเคชันเดสก์ท็อป (Linux)", "🛠️ System Utilities"],
         founded: "2006",
         paradigms: ["Object-Oriented", "Imperative"],
+        popularityScore: 0.03, // Estimate, niche for GNOME desktop
+        popularitySources: {
+            custom: "เฉพาะ GNOME Desktop",
+        },
     },
 };
-export function getCountryflag(slug: string): string {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return "/none";
-    const BASE_URL = import.meta.env.BASE_URL;
-    return BASE_URL + 'images/flags/' + info.flag;
-}
-
-/** คืน community เป็น array ของ strings พร้อม Emoji */
-export function getCommunity(slug: string): string[] {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return [];
-    return info.community;
-}
-
-// ฟังก์ชันสำหรับดึง "รูปแบบการเขียนโปรแกรม" (Paradigms)
-export function getParadigms(slug: string): string[] {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return [];
-    return info.paradigms;
-}
-
-/** คืนองค์กร (organization) */
-export function getOrganization(slug: string): string {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return "ไม่ทราบองค์กร";
-    return info.organization;
-}
-
-// ฟังก์ชันสำหรับดึง "ผลงาน" (worksExamples)
-export function getWorksExamples(slug: string): string[] {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return [];
-    return info.worksExamples;
-}
-
-// ฟังก์ชันสำหรับดึง "การใช้งานหลัก" (realWorldExamples)
-export function getRealWorldExamples(slug: string): string[] {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return [];
-    return info.realWorldExamples;
-}
-// ฟังก์ชันสำหรับดึงชื่อประเทศ (ตอนนี้จะรวมตัวย่อแล้ว)
-export function getCountryname(slug: string): string {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return "ไม่ทราบชื่อประเทศ";
-    return info.country;
-}
-/** คืนปีที่ก่อตั้ง */
-export function getFoundedYear(slug: string): string {
-    const info = languageMap[slug.toLowerCase()];
-    if (!info) return "ไม่ทราบปี";
-    return info.founded;
-}
-

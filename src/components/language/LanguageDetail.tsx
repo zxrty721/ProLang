@@ -2,11 +2,11 @@ import React, { memo, useMemo, useCallback } from 'react';
 import { CodeBlock } from './Codeblock.tsx';
 import clsx from 'clsx';
 
-import { fieldMap } from '../../utils/card';
+import { fieldMap, getParadiamsShow } from '../../utils/card';
 import type { Language } from '../../utils/language.ts';
 import { getDifficultyClass, getDescLevel } from '../../utils/card.ts';
 
-import { getCountryname, getCountryflag, getOrganization, getCommunity, getParadigms, getWorksExamples, getRealWorldExamples, getFoundedYear} from '../../utils/languageCountries.ts';
+import { getCountryname, getCountryflag, getOrganization, getCommunity, getParadigms, getWorksExamples, getRealWorldExamples, getFoundedYear, getPopularityScore, getPopularitySources} from '../../utils/languageInfo.ts';
 
 
 interface LanguageDetailProps {
@@ -196,7 +196,9 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
     );
 
     const handleClose = useCallback(() => onClose(), [onClose]);
-
+    
+    const popularityScore = getPopularityScore(language.slug); // ดึงคะแนน
+    const popularitySources = getPopularitySources(language.slug); // ดึงแหล่งที่มา
     const countryName = getCountryname(language.slug);
     const flagImageUrl = getCountryflag(language.slug);
     
@@ -253,7 +255,7 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                         <span className="section-title block text-xl text-gray-600 mb-2">🛠️ รูปแบบการเขียน</span>
                         <div className="flex flex-wrap gap-2 mt-2">
                             {getParadigms(language.slug).map((p, i) => (
-                                <span key={i} className="tag bg-blue-200 text-blue-500 px-2 py-1 rounded text-sm">{p}</span>
+                                <span key={i} className="tag bg-blue-200 text-blue-500 px-2 py-1 rounded text-sm">{getParadiamsShow[p]}</span>
                             ))}
                         </div>
                     </div>
@@ -297,9 +299,18 @@ const LanguageDetail = memo(({ language, onClose, titleColor = 'text-gray-900' }
                     <div className="section mb-8">
                         <h2 className="section-title text-2xl font-bold mb-4">📊 ความนิยม:</h2>
                         <div className="Clientbg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-                            <span className="text-lg">
-                                อันดับความนิยม: <strong className="text-yellow-600">#{language.rank}</strong>
-                            </span>
+                        {popularityScore !== null && (
+                            <p className="text-xl font-semibold text-purple-700 mb-2">
+                                🌟 ความนิยม (TIOBE): {popularityScore}%
+                            </p>
+                            )}
+                            {popularitySources && (
+                                <div className="text-[14px] text-gray-500">
+                                    {popularitySources.tiobe && <p>{popularitySources.tiobe}</p>}
+                                    {popularitySources.pypl && <p>{popularitySources.pypl}</p>}
+                                    {popularitySources.stackOverflow && <p>{popularitySources.stackOverflow}</p>}
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}

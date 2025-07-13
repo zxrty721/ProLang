@@ -51,3 +51,22 @@ export interface Language {
     config: string[];
   };
 }
+
+export interface info {
+  country: string;
+  flag: string;
+  community: string[];
+  organization: string;
+  worksExamples: string[];
+  realWorldExamples: string[];
+  founded: string;
+  paradigms: string[];
+  // --- เพิ่มฟิลด์ความนิยม ---
+  popularityScore: number; // คะแนนความนิยม (ใช้ TIOBE Index เป็นหลัก, เป็นเปอร์เซ็นต์)
+  popularitySources: { // แหล่งที่มาของข้อมูลความนิยมอื่นๆ
+      tiobe?: string; // เช่น "15.67% (TIOBE Index June 2024)"
+      pypl?: string;  // เช่น "27.27% (PYPL Index June 2024)"
+      stackOverflow?: string; // เช่น "48.07% (Stack Overflow 2023, Most Used)"
+      [key: string]: string | undefined; // อนุญาตให้เพิ่มแหล่งอื่นได้
+  };
+}

@@ -21,13 +21,13 @@ export function getDescLevel(diff: string): string {
 };
 
 export const getParadiamsShow: Record<string, string> = {
-  "Object-Oriented": "🧩 Object-Oriented",
-  "Functional": "➡️ Functional",
-  "Procedural": "⚙️ Procedural",
-  "Declarative": "📝 Declarative",
-  "Imperative": "✍️ Imperative",
-  "Logic Programming": "🧠 Logic Programming",
-  "Event-Driven": "⚡ Event-Driven",
+  "Object-Oriented": "🧩 Object-Oriented (เชิงวัตถุ)",
+  "Functional": "➡️ Functional (เชิงฟังก์ชัน)",
+  "Procedural": "⚙️ Procedural (เชิงกระบวนการ)",
+  "Declarative": "📝 Declarative (เชิงประกาศ)",
+  "Imperative": "✍️ Imperative (เชิงคำสั่ง)",
+  "Logic Programming": "🧠 Logic Programming (เชิงตรรกะ)",
+  "Event-Driven": "⚡ Event-Driven (เชิงเหตุการณ์)",
 };
 
 export const fieldMap: Record<string, string> = {

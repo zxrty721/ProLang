@@ -5,18 +5,23 @@ import LanguageCard from './language/LanguageCard';
 import LanguageDetail from './language/LanguageDetail';
 import FilterPanel from './language/FilterPanel';
 import SortPanel from './language/SortPanel';
+import PopularityRanking from './PopularityRanking';
+
 import { getDifficultyClass } from '../utils/card';
 import type { Language } from '../utils/language';
+import { getPopularityScore } from '../utils/languageInfo';
 
 const MemoCard = memo(LanguageCard);
 const MemoFilter = memo(FilterPanel);
 const MemoDetail = memo(LanguageDetail);
+const MemoPopularityRanking = memo(PopularityRanking);
 
 export default function InteractiveCardSection({ languages }: { languages: Language[] }) {
   const [selected, setSelected] = useState<Language | null>(null);
   const [filters, setFilters] = useState({ level: [] as string[], par: [] as string[], field: [] as string[], search: '' });
   const [sortOption, setSortOption] = useState('id-asc');
   const [showFilter, setShowFilter] = useState(false);
+  const [showRank, setShowRank] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -44,6 +49,7 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
     !fields.length || fields.some(f => lang.fields.includes(f))
   , []);
 
+  // Helper function to get popularity score
   const filtered = useMemo(() => {
     if (!filters.level.length && !filters.par.length && !filters.field.length && !filters.search) return languages;
     return languages.filter(lang =>
@@ -61,10 +67,13 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
         case 'id-desc': return b.id - a.id;
         case 'name-asc': return a.name.localeCompare(b.name);
         case 'name-desc': return b.name.localeCompare(a.name);
+        case 'popularity-asc': return (getPopularityScore(a.slug) ?? 0) - (getPopularityScore(b.slug) ?? 0);
+        case 'popularity-desc': return (getPopularityScore(b.slug) ?? 0) - (getPopularityScore(a.slug) ?? 0);
         default: return 0;
       }
     });
-  }, [filtered, sortOption]);
+  }, [filtered, sortOption, ]);
+
 
   const hasFilters = filters.level.length > 0 || filters.par.length > 0 || filters.field.length > 0 || filters.search.length > 0;
 
@@ -82,6 +91,23 @@ export default function InteractiveCardSection({ languages }: { languages: Langu
 
   return (
     <div className="min-h-screen text-gray-900">
+      {/* Popularity Ranking Section */}
+      <div className="flex justify-center mb-5">
+        <button
+          type="button"
+          className="cursor-pointer px-4 py-2 bg-white text-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 transition-shadow"
+          onClick={() => setShowRank(!showRank)}
+        >
+          {showRank ? '✕' : '🏆'} อันดับความนิยม
+        </button>
+      </div>
+
+      {showRank && (
+      <div className="flex w-full px-4 items-stretch gap-4 justify-center relative">
+        <MemoPopularityRanking languages={languages} />
+      </div>
+      )}
+
       <div className="flex w-full px-4 items-stretch gap-4 justify-center relative">
 
         <button
